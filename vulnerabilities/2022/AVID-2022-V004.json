@@ -1,0 +1,40 @@
+{
+    "vuln_id": "AVID-2022-V004",
+    "metadata": {
+        "event_class": "Model inference",
+        "vuln_class": "AIID incident",
+        "taxonomy_version": "0.1"
+    },
+    "description": {
+        "lang": "eng",
+        "name": "Facebook translates 'good morning' into 'attack them', leading to arrest",
+        "value": "Facebook's automatic language translation software incorrectly translated an Arabic post saying \"Good morning\" into Hebrew saying \"hurt them\", leading to the arrest of a Palestinian man in Beitar Illit, Israel."
+    },
+    "reports": [],
+    "references": [
+        {
+            "label": "Incident 72: Facebook translates 'good morning' into 'attack them', leading to arrest",
+            "url": "https://incidentdatabase.ai/cite/72"
+        }
+    ],
+    "tags": {
+        "avid": {
+            "risk_domain": ["Performance"],
+            "sep_id": ["P0401","P0402"],
+            "lifecycle_stage": ["Deployment"],
+            "lifecycle_stage_id": ["L06"]
+        },
+        "aiid": {
+            "incident_id": "AIID0072",
+            "report_count": 27,
+            "incident_date": "2017-10-17",
+            "editors": "Sean McGregor, Khoa Lam",
+            "named_entities": ["Israeli Police", "Facebook", "Beitar Illit", "Israel"]
+        },
+        "config": {
+            "developer": "Facebook",
+            "domain": "Information and communication",
+            "task": ["natural language processing", "language translation"]
+        }
+    }
+}

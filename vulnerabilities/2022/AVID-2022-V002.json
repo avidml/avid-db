@@ -1,0 +1,41 @@
+{
+    "vuln_id": "AVID-2022-V002",
+    "metadata": {
+        "event_class": "Model evaluation",
+        "vuln_class": "LLM evaluation",
+        "taxonomy_version": "0.1"
+    },
+    "description": {
+        "lang": "eng",
+        "name": "Gender Bias in Sentence Completion Tasks performed by xlm-roberta-base",
+        "value": "xyz xyz"
+    },
+    "reports": [
+        {
+            "report_id": "AVID-2022-R0002",
+            "report_name": "Hurtful sentence completion measured on winobias using the HONEST metric"
+        }
+    ],
+    "references": [
+        {
+            "label": "xlm-roberta-base on Hugging Face",
+            "url": "https://huggingface.co/xlm-roberta-base"
+        }          
+    ],
+    "tags": {
+        "avid": {
+            "risk_domain": ["Ethics"],
+            "sep_id": ["E0101"],
+            "lifecycle_stage": ["Model Development","Evaluation"],
+            "lifecycle_stage_id": ["L04","L05"]
+        },
+        "hf": {
+            "model_name": "xlm-roberta-base"
+        },
+        "config": {
+            "domain": [],
+            "task": ["Masked Language Modelling"],
+            "architecture": ["XLMRobertaForMaskedLM","Transformer"]
+        }
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "report_id": "AVID-2022-R0001",
+    "metadata": {
+        "event_class": "Model inference", // eqvt to datamodel in splk escu
+        "vuln_class": "LLM evaluation",
+        "vuln_subclass": "Detection", // eqvt to type in splk escu
+        "taxonomy_version": "0.1"
+    },
+    "submission": {
+        "submitter_name": "Harry Saini",
+        "submitter_org": "AVID",
+        "date": "2022-11-09"
+    },
+    "description": {
+        "lang": "eng",
+        "name": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased using the HONEST metric",
+        "description": "xyz xyz"
+    },
+    "vuln_metrics": [
+        {
+            "name": "honest", 
+            "features": {
+                "sensitive": "gender",
+                "measured": "prostitution"
+            },
+            "detection": {
+                "class": "significance_test",
+                "name": "proportions_ztest",
+                "description": ""
+            }
+        }
+    ],
+    "references": [
+        {
+            "type": "model", 
+            "name": "bert-base-uncased", 
+            "source": "hf_hub", 
+            "url": "bert-base-uncased", 
+            "meta": {
+                "task": "Masked Language Modelling"
+            }
+        },
+        {
+            "type": "evaluation_data", 
+            "name": "winobias", 
+            "source": "hf_hub", 
+            "url": "sasha/wino_bias_cloze1", 
+            "meta": {
+                "split": "test"
+                }
+            },
+        {
+            "type": "evaluation_data", 
+            "name": "winobias", 
+            "source": "hf_hub", 
+            "url": "sasha/wino_bias_cloze2", 
+            "meta": {
+                "split": "test"
+                }
+            },
+        {
+            "type": "misc", 
+            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models", 
+            "source": "github", 
+            "url": "MilaNLProc/honest", 
+            "meta": {}
+        },
+        {
+            "type": "misc", 
+            "name": "Measuring Hurtful Sentence Completion in Language Models", 
+            "source": "web", 
+            "url": "https://aclanthology.org/2021.naacl-main.191", 
+            "meta": {}
+        }
+    ],
+    "tags": {
+        "avid": {
+            "risk_domain": ["Ethics"],
+            "sep_id": ["E0101"],
+            "lifecycle_stage": ["Model Development","Evaluation"],
+            "lifecycle_stage_id": ["L04","L05"]
+        },
+        "hf": [
+            {
+                "type": "model", 
+                "name": "bert-base-uncased"
+            },
+            {
+                "type": "dataset", 
+                "name": "sasha/wino_bias_cloze1"
+            },
+            {
+                "type": "dataset", 
+                "name": "sasha/wino_bias_cloze2"
+            },
+            {
+                "type": "metric", 
+                "name": "perplexity"
+            }
+        ]
+    }
+}

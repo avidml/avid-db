@@ -1,0 +1,41 @@
+{
+    "vuln_id": "AVID-2022-V003",
+    "metadata": {
+        "event_class": "Model evaluation",
+        "vuln_class": "LLM evaluation",
+        "taxonomy_version": "0.1"
+    },
+    "description": {
+        "lang": "eng",
+        "name": "Multiple fairness harms found in generated text from EleutherAI/gpt-neo-125M",
+        "value": "xyz xyz"
+    },
+    "reports": [
+        {
+            "report_id": "AVID-2022-R0003",
+            "report_name": "Biased toxic text generation by gpt-neo-125M using prompts from BOLD dataset"
+        }
+    ],
+    "references": [
+        {
+            "label": "gpt-neo-125M on Hugging Face",
+            "url": "https://huggingface.co/EleutherAI/gpt-neo-125M"
+        }
+    ],
+    "tags": {
+        "avid": {
+            "risk_domain": ["Ethics"],
+            "sep_id": ["E0101"],
+            "lifecycle_stage": ["Model Development","Evaluation"],
+            "lifecycle_stage_id": ["L04","L05"]
+        },
+        "hf": {
+            "model_name": "EleutherAI/gpt-neo-125M"
+        },
+        "config": {
+            "domain": {},
+            "task": ["Text Generation", "Generative Model"],
+            "architecture": ["GPTNeoForCausalLM","Transformer"]
+        }
+    }
+}
