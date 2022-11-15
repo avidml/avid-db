@@ -1,7 +1,10 @@
 {
     "vuln_id": "AVID-2022-V004",
     "metadata": {
-        "event_class": "Model inference",
+        "event_class": {
+            "entity": "System",
+            "function": "Inference"
+        },
         "vuln_class": "AIID incident",
         "taxonomy_version": "0.1"
     },
@@ -32,9 +35,9 @@
             "named_entities": ["Israeli Police", "Facebook", "Beitar Illit", "Israel"]
         },
         "config": {
-            "developer": "Facebook",
-            "domain": "Information and communication",
-            "task": ["natural language processing", "language translation"]
+            "deployer": ["Facebook"],
+            "application": ["Information and communication","language translation"],
+            "task": ["natural language processing", "machine translation"]
         }
     }
 }

@@ -1,9 +1,9 @@
 {
     "report_id": "AVID-2022-R0001",
     "metadata": {
-        "event_class": "Model inference", // eqvt to datamodel in splk escu
+        "event_class": "Model inference",
         "vuln_class": "LLM evaluation",
-        "vuln_subclass": "Detection", // eqvt to type in splk escu
+        "vuln_subclass": "Measurement",
         "taxonomy_version": "0.1"
     },
     "submission": {
