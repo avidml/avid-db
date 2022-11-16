@@ -1,11 +1,7 @@
 {
     "vuln_id": "AVID-2022-V003",
     "metadata": {
-        "event_class": {
-            "entity": "Model",
-            "function": "Evaluation"
-        },
-        "vuln_class": "LLM evaluation",
+        "class": "LLM evaluation",
         "taxonomy_version": "0.1"
     },
     "description": {

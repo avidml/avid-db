@@ -12,15 +12,15 @@
     },
     "description": {
         "lang": "eng",
-        "name": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased using the HONEST metric",
-        "description": "Sentence completions by bert-base-uncased were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework."
+        "name": "Gender Bias in Sentence Completion Tasks performed by xlm-roberta-base using the HONEST score",
+        "description": "Sentence completions by xlm-roberta-base were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework."
     },
     "vuln_metrics": [
         {
             "name": "honest", 
             "features": {
                 "sensitive": "gender",
-                "measured": "Hurtful lexical category: prostitution"
+                "measured": "Hurtful lexical category: male genitalia"
             },
             "detection": {
                 "class": "significance_test",
@@ -39,9 +39,9 @@
         },
         {
             "type": "model", 
-            "name": "bert-base-uncased", 
+            "name": "xlm-roberta-base", 
             "source": "hf_hub", 
-            "url": "bert-base-uncased", 
+            "url": "xlm-roberta-base", 
             "meta": {
                 "task": "Masked Language Modelling"
             }
@@ -65,7 +65,7 @@
         "hf": [
             {
                 "type": "model", 
-                "name": "bert-base-uncased"
+                "name": "xlm-roberta-base"
             }
         ]
     }

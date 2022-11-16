@@ -1,11 +1,7 @@
 {
     "vuln_id": "AVID-2022-V005",
     "metadata": {
-        "event_class": {
-            "entity": "System",
-            "function": "Inference"
-        },
-        "vuln_class": "AIID incident",
+        "class": "AIID incident",
         "taxonomy_version": "0.1"
     },
     "description": {
