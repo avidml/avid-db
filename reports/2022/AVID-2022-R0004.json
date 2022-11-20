@@ -13,7 +13,7 @@
     "description": {
         "lang": "eng",
         "name": "Profession bias reinforcing gender stereotypes found in bert-base-uncased, as measured on the Winobias dataset",
-        "description": "Filling in pronouns in sentences tagged with professions using bert-base-uncased were found to be significantly biased on the Winobias dataset."
+        "description": "Filling in pronouns in sentences tagged with professions using xlm-roberta-base were found to be significantly biased on the Winobias dataset."
     },
     "vuln_metrics": [
         {
@@ -38,9 +38,9 @@
         },
         {
             "type": "model", 
-            "name": "bert-base-uncased", 
+            "name": "xlm-roberta-base", 
             "source": "hf_hub", 
-            "url": "bert-base-uncased"
+            "url": "xlm-roberta-base"
         },
         {
             "type": "misc", 
@@ -51,7 +51,7 @@
     ],
     "tags": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
+            "vuln_id": "AVID-2022-V002",
             "risk_domain": ["Ethics"],
             "sep_view": [
                 {
@@ -69,7 +69,7 @@
         "hf": [
             {
                 "type": "model", 
-                "name": "bert-base-uncased"
+                "name": "xlm-roberta-base"
             },
             {
                 "type": "dataset", 

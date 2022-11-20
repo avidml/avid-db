@@ -12,7 +12,13 @@
     "reports": [
         {
             "report_id": "AVID-2022-R0002",
-            "report_name": "Hurtful sentence completion measured on winobias using the HONEST metric"
+            "class": "Detection",
+            "name": "Gender Bias in Sentence Completion Tasks performed by xlm-roberta-base using the HONEST score",
+        },
+        {
+            "report_id": "AVID-2022-R0004",
+            "class": "Detection",
+            "name": "Profession bias reinforcing gender stereotypes found in xlm-roberta-base, as measured on the Winobias dataset"
         }
     ],
     "references": [
