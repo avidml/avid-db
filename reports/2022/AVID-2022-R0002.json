@@ -34,33 +34,38 @@
             "type": "source", 
             "name": "Gender Bias Evaluation for Masked Language modelling: HONEST", 
             "source": "github", 
-            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb", 
-            "meta": {}
+            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
         },
         {
             "type": "model", 
             "name": "xlm-roberta-base", 
             "source": "hf_hub", 
-            "url": "xlm-roberta-base", 
-            "meta": {
-                "task": "Masked Language Modelling"
-            }
+            "url": "xlm-roberta-base"
+
         },
         {
             "type": "misc", 
             "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models", 
             "source": "github", 
-            "url": "MilaNLProc/honest", 
-            "meta": {}
+            "url": "MilaNLProc/honest"
         }
     ],
     "tags": {
         "avid": {
-            "vuln_id": ["AVID-2022-V001"],
+            "vuln_id": "AVID-2022-V002",
             "risk_domain": ["Ethics"],
-            "sep_id": ["E0101"],
-            "lifecycle_stage": ["Evaluation"],
-            "lifecycle_stage_id": ["L05"]
+            "sep_view": [
+                {
+                    "id": "E0101",
+                    "name": "Group Fairness"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L05",
+                    "stage": "Evaluation"
+                }
+            ]
         },
         "hf": [
             {

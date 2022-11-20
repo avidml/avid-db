@@ -19,9 +19,18 @@
     "tags": {
         "avid": {
             "risk_domain": ["Ethics"],
-            "sep_id": ["E0202"],
-            "lifecycle_stage": ["Deployment"],
-            "lifecycle_stage_id": ["L06"]
+            "sep_view": [
+                {
+                    "id": "E0202",
+                    "name": "Local Explanations"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L06",
+                    "stage": "Deployment"
+                }
+            ]
         },
         "aiid": {
             "incident_id": "AIID0137",

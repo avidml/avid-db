@@ -19,9 +19,18 @@
     "tags": {
         "avid": {
             "risk_domain": ["Ethics"],
-            "sep_id": ["E0402"],
-            "lifecycle_stage": ["Deployment"],
-            "lifecycle_stage_id": ["L06"]
+            "sep_view": [
+                {
+                    "id": "E0402",
+                    "name": "Generative Minsinformation"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L06",
+                    "stage": "Deployment"
+                }
+            ]
         },
         "aiid": {
             "incident_id": "AIID0198",
@@ -33,7 +42,10 @@
         "config": {
             "deployer": [],
             "application": [],
-            "task": ["computer vision","generative"]
+            "task": [
+                "computer vision",
+                "generative"
+            ]
         }
     }
 }

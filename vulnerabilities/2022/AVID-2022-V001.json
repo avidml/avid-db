@@ -12,12 +12,12 @@
     "reports": [
         {
             "report_id": "AVID-2022-R0001",
-            "class": "Measurement",
+            "class": "Detection",
             "name": "Gender Bias in sentence completion Tasks performed by bert-base-uncased using the HONEST metric"
         },
         {
             "report_id": "AVID-2022-R0003",
-            "class": "Measurement",
+            "class": "Detection",
             "name": "Profession bias reinforcing gender stereotypes found in bert-base-uncased, as measured on the Winobias dataset"
         }
     ],
@@ -30,17 +30,32 @@
     "tags": {
         "avid": {
             "risk_domain": ["Ethics"],
-            "sep_id": ["E0101"],
-            "lifecycle_stage": ["Evaluation"],
-            "lifecycle_stage_id": ["L05"]
+            "sep_view": [
+                {
+                    "id": "E0101",
+                    "name": "Group Fairness"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L05",
+                    "stage": "Evaluation"
+                }
+            ]
         },
-        "hf": {
-            "model_name": "bert-base-uncased"
-        },
+        "hf": [
+            {
+                "type": "model",
+                "name": "bert-base-uncased"
+            }
+        ],
         "config": {
             "application": [],
             "task": ["Masked Language Modelling"],
-            "architecture": ["BertForMaskedLM","Transformer"]
+            "architecture": [
+                "BertForMaskedLM",
+                "Transformer"
+            ]
         }
     }
 }

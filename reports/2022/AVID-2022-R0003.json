@@ -1,5 +1,5 @@
 {
-    "report_id": "AVID-2022-R0002",
+    "report_id": "AVID-2022-R0003",
     "metadata": {
         "class": "LLM evaluation",
         "type": "Measurement",
@@ -12,89 +12,64 @@
     },
     "description": {
         "lang": "eng",
-        "name": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased using the HONEST metric",
-        "description": "xyz xyz"
+        "name": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased measured on the Winobias dataset",
+        "description": "Filling in pronouns insentences tagged with professions using bert-base-uncased were found to be significantly biased on the Winobias dataset."
     },
     "vuln_metrics": [
         {
             "name": "honest", 
             "features": {
                 "sensitive": "gender",
-                "measured": "prostitution"
+                "measured": "Hurtful lexical category: prostitution"
             },
             "detection": {
                 "class": "significance_test",
-                "name": "proportions_ztest",
-                "description": ""
+                "name": "Two-sample z test for proportions",
+                "description": "Test whether gender specific HONEST scores are significantly different"
             }
         }
     ],
     "references": [
         {
+            "type": "source", 
+            "name": "Gender Bias Evaluation for Masked Language modelling: Winobias", 
+            "source": "github", 
+            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_winobias.ipynb"
+        },
+        {
             "type": "model", 
             "name": "bert-base-uncased", 
             "source": "hf_hub", 
-            "url": "bert-base-uncased", 
-            "meta": {
-                "task": "Masked Language Modelling"
-            }
-        },
-        {
-            "type": "evaluation_data", 
-            "name": "winobias", 
-            "source": "hf_hub", 
-            "url": "sasha/wino_bias_cloze1", 
-            "meta": {
-                "split": "test"
-                }
-            },
-        {
-            "type": "evaluation_data", 
-            "name": "winobias", 
-            "source": "hf_hub", 
-            "url": "sasha/wino_bias_cloze2", 
-            "meta": {
-                "split": "test"
-                }
-            },
-        {
-            "type": "misc", 
-            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models", 
-            "source": "github", 
-            "url": "MilaNLProc/honest", 
-            "meta": {}
+            "url": "bert-base-uncased"
         },
         {
             "type": "misc", 
-            "name": "Measuring Hurtful Sentence Completion in Language Models", 
+            "name": "WinoBias", 
             "source": "web", 
-            "url": "https://aclanthology.org/2021.naacl-main.191", 
-            "meta": {}
+            "url": "https://uclanlp.github.io/corefBias/overview"
         }
     ],
     "tags": {
         "avid": {
+            "vuln_id": "AVID-2022-V001",
             "risk_domain": ["Ethics"],
-            "sep_id": ["E0101"],
-            "lifecycle_stage": ["Model Development","Evaluation"],
-            "lifecycle_stage_id": ["L04","L05"]
+            "sep_view": [
+                {
+                    "id": "E0101",
+                    "name": "Group Fairness"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L05",
+                    "stage": "Evaluation"
+                }
+            ]
         },
         "hf": [
             {
                 "type": "model", 
                 "name": "bert-base-uncased"
-            },
-            {
-                "type": "dataset", 
-                "name": "sasha/wino_bias_cloze1"
-            },
-            {
-                "type": "dataset", 
-                "name": "sasha/wino_bias_cloze2"
-            },
-            {
-                "type": "metric", 
-                "name": "perplexity"
             }
         ]
     }

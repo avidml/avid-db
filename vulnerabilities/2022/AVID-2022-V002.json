@@ -24,17 +24,32 @@
     "tags": {
         "avid": {
             "risk_domain": ["Ethics"],
-            "sep_id": ["E0101"],
-            "lifecycle_stage": ["Model Development","Evaluation"],
-            "lifecycle_stage_id": ["L04","L05"]
+            "sep_view": [
+                {
+                    "id": "E0101",
+                    "name": "Group Fairness"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L05",
+                    "stage": "Evaluation"
+                }
+            ]
         },
-        "hf": {
-            "model_name": "xlm-roberta-base"
-        },
+        "hf": [
+            {
+                "type": "model",
+                "name": "bert-base-uncased"
+            }
+        ],
         "config": {
             "application": [],
             "task": ["Masked Language Modelling"],
-            "architecture": ["XLMRobertaForMaskedLM","Transformer"]
+            "architecture": [
+                "XLMRobertaForMaskedLM",
+                "Transformer"
+            ]
         }
     }
 }

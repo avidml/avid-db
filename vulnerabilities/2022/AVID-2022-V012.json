@@ -19,9 +19,18 @@
     "tags": {
         "avid": {
             "risk_domain": ["Security"],
-            "sep_id": ["S0403"],
-            "lifecycle_stage": ["Deployment"],
-            "lifecycle_stage_id": ["L06"]
+            "sep_view": [
+                {
+                    "id": "S0403",
+                    "name": "Adversarial Example"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L06",
+                    "stage": "Deployment"
+                }
+            ]
         },
         "aiid": {
             "incident_id": "AIID0223",

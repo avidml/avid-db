@@ -19,9 +19,18 @@
     "tags": {
         "avid": {
             "risk_domain": ["Ethics"],
-            "sep_id": ["E0101"],
-            "lifecycle_stage": ["Deployment"],
-            "lifecycle_stage_id": ["L06"]
+            "sep_view": [
+                {
+                    "id": "E0101",
+                    "name": "Group Fairness"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L06",
+                    "stage": "Deployment"
+                }
+            ]
         },
         "aiid": {
             "incident_id": "AIID0054",
@@ -31,9 +40,18 @@
             "named_entities": []
         },
         "config": {
-            "deployer": ["PredPol", "Chicago Police Department"],
-            "application": ["Public administration and defence","Predictive policing"],
-            "task": ["machine learning","generative"]
+            "deployer": [
+                "PredPol", 
+                "Chicago Police Department"
+            ],
+            "application": [
+                "Public administration and defence",
+                "Predictive policing"
+            ],
+            "task": [
+                "machine learning",
+                "generative"
+            ]
         }
     }
 }

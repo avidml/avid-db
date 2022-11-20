@@ -19,16 +19,29 @@
     "tags": {
         "avid": {
             "risk_domain": ["Performance"],
-            "sep_id": ["P0402"],
-            "lifecycle_stage": ["Deployment"],
-            "lifecycle_stage_id": ["L06"]
+            "sep_view": [
+                {
+                    "id": "P0402",
+                    "name": "Physical Safety"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L06",
+                    "stage": "Deployment"
+                }
+            ]
         },
         "aiid": {
             "incident_id": "AIID0004",
             "report_count": 24,
             "incident_date": "2018-03-18",
             "editors": "Sean McGregor, Khoa Lam",
-            "named_entities": ["Uber", "Elaine Herzberg", "pedestrians"]
+            "named_entities": [
+                "Uber", 
+                "Elaine Herzberg", 
+                "pedestrians"
+            ]
         },
         "config": {
             "deployer": [],
