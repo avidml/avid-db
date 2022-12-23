@@ -1,19 +1,43 @@
 {
-    "vuln_id": "AVID-2022-V001",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
-        "class": "LLM evaluation",
-        "taxonomy_version": "0.1"
+        "vuln_id": "AVID-2022-V001"
     },
+    "affects": {
+        "developer": [],
+        "deployer": [
+            "HuggingFace"
+        ],
+        "artifact": [
+            {
+                "type": "model",
+                "name": "bert-base-uncased"
+            }
+        ]
+    },
+    "problemtype": {
+        "class": "LLM evaluation",
+        "description": {
+            "lang": "eng",
+            "value": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased"
+        }
+    },
+    "references": [
+        {
+            "label": "bert-base-uncased on Hugging Face",
+            "url": "https://huggingface.co/bert-base-uncased"
+        }
+    ],
     "description": {
         "lang": "eng",
-        "name": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased",
         "value": "xyz xyz"
     },
     "reports": [
         {
             "report_id": "AVID-2022-R0001",
             "class": "Detection",
-            "name": "Gender Bias in sentence completion Tasks performed by bert-base-uncased using the HONEST metric"
+            "name": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased using the HONEST metric"
         },
         {
             "report_id": "AVID-2022-R0003",
@@ -21,15 +45,11 @@
             "name": "Profession bias reinforcing gender stereotypes found in bert-base-uncased, as measured on the Winobias dataset"
         }
     ],
-    "references": [
-        {
-            "label": "bert-base-uncased on Hugging Face",
-            "url": "https://huggingface.co/bert-base-uncased"
-        }          
-    ],
-    "tags": {
+    "impact": {
         "avid": {
-            "risk_domain": ["Ethics"],
+            "risk_domain": [
+                "Ethics"
+            ],
             "sep_view": [
                 {
                     "id": "E0101",
@@ -41,21 +61,16 @@
                     "id": "L05",
                     "stage": "Evaluation"
                 }
-            ]
-        },
-        "hf": [
-            {
-                "type": "model",
-                "name": "bert-base-uncased"
-            }
-        ],
-        "config": {
-            "application": [],
-            "task": ["Masked Language Modelling"],
-            "architecture": [
-                "BertForMaskedLM",
-                "Transformer"
-            ]
+            ],
+            "taxonomy_version": "0.1"
         }
-    }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Harry Saini, AVID"
+        }
+    ],
+    "published_date": "2022-12-23",
+    "last_modified_date": "2022-12-23"
 }

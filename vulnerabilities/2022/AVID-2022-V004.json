@@ -1,24 +1,41 @@
 {
-    "vuln_id": "AVID-2022-V004",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
+        "vuln_id": "AVID-2022-V004"
+    },
+    "affects": {
+        "developer": [],
+        "deployer": {
+            "name": [
+                "Facebook"
+            ],
+            "artifact": ""
+        }
+    },
+    "problemtype": {
         "class": "AIID incident",
-        "taxonomy_version": "0.1"
+        "description": {
+            "lang": "eng",
+            "value": "Facebook translates 'good morning' into 'attack them', leading to arrest"
+        }
     },
-    "description": {
-        "lang": "eng",
-        "name": "Facebook translates 'good morning' into 'attack them', leading to arrest",
-        "value": "Facebook's automatic language translation software incorrectly translated an Arabic post saying \"Good morning\" into Hebrew saying \"hurt them\", leading to the arrest of a Palestinian man in Beitar Illit, Israel."
-    },
-    "reports": [],
     "references": [
         {
             "label": "Incident 72: Facebook translates 'good morning' into 'attack them', leading to arrest",
             "url": "https://incidentdatabase.ai/cite/72"
         }
     ],
-    "tags": {
+    "description": {
+        "lang": "eng",
+        "value": "Facebook's automatic language translation software incorrectly translated an Arabic post saying \"Good morning\" into Hebrew saying \"hurt them\", leading to the arrest of a Palestinian man in Beitar Illit, Israel."
+    },
+    "reports": [],
+    "impact": {
         "avid": {
-            "risk_domain": ["Performance"],
+            "risk_domain": [
+                "Performance"
+            ],
             "sep_view": [
                 {
                     "id": "P0401",
@@ -34,30 +51,16 @@
                     "id": "L06",
                     "stage": "Deployment"
                 }
-            ]
-        },
-        "aiid": {
-            "incident_id": "AIID0072",
-            "report_count": 27,
-            "incident_date": "2017-10-17",
-            "editors": "Sean McGregor, Khoa Lam",
-            "named_entities": [
-                "Israeli Police", 
-                "Facebook", 
-                "Beitar Illit", 
-                "Israel"
-            ]
-        },
-        "config": {
-            "deployer": ["Facebook"],
-            "application": [
-                "Information and communication",
-                "language translation"
             ],
-            "task": [
-                "natural language processing", 
-                "machine translation"
-            ]
+            "taxonomy_version": "0.1"
         }
-    }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Sean McGregor, Khoa Lam, AIID"
+        }
+    ],
+    "published_date": "2022-12-23",
+    "last_modified_date": "2022-12-23"
 }

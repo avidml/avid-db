@@ -1,24 +1,41 @@
 {
-    "vuln_id": "AVID-2022-V006",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
+        "vuln_id": "AVID-2022-V006"
+    },
+    "affects": {
+        "developer": [],
+        "deployer": {
+            "name": [
+                "YouTube"
+            ],
+            "artifact": ""
+        }
+    },
+    "problemtype": {
         "class": "AIID incident",
-        "taxonomy_version": "0.1"
+        "description": {
+            "lang": "eng",
+            "value": "YouTube's Algorithms Failed to Remove Violating Content Related to Suicide and Self-Harm"
+        }
     },
-    "description": {
-        "lang": "eng",
-        "name": "YouTube's Algorithms Failed to Remove Violating Content Related to Suicide and Self-Harm",
-        "value": "Terms-of-service-violating videos related to suicide and self-harm reportedly bypassed YouTube’s content moderation algorithms, allegedly resulting in exposure of graphic content to young users via recommended videos."
-    },
-    "reports": [],
     "references": [
         {
             "label": "Incident 281: YouTube's Algorithms Failed to Remove Violating Content Related to Suicide and Self-Harm",
             "url": "https://incidentdatabase.ai/cite/281"
         }
     ],
-    "tags": {
+    "description": {
+        "lang": "eng",
+        "value": "Terms-of-service-violating videos related to suicide and self-harm reportedly bypassed YouTube's content moderation algorithms, allegedly resulting in exposure of graphic content to young users via recommended videos."
+    },
+    "reports": [],
+    "impact": {
         "avid": {
-            "risk_domain": ["Performance"],
+            "risk_domain": [
+                "Performance"
+            ],
             "sep_view": [
                 {
                     "id": "P0401",
@@ -34,19 +51,16 @@
                     "id": "L06",
                     "stage": "Deployment"
                 }
-            ]
-        },
-        "aiid": {
-            "incident_id": "AIID0281",
-            "report_count": 3,
-            "incident_date": "2019-02-04",
-            "editors": "Khoa Lam",
-            "named_entities": []
-        },
-        "config": {
-            "deployer": ["YouTube"],
-            "application": [],
-            "task": []
+            ],
+            "taxonomy_version": "0.1"
         }
-    }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Khoa Lam, AIID"
+        }
+    ],
+    "published_date": "2022-12-23",
+    "last_modified_date": "2022-12-23"
 }

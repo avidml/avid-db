@@ -1,58 +1,80 @@
 {
-    "report_id": "AVID-2022-R0003",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
+        "report_id": "AVID-2022-R0004"
+    },
+    "affects": {
+        "developer": [],
+        "deployer": [
+            "HuggingFace"
+        ],
+        "artifact": [
+            {
+                "type": "model",
+                "name": "xlm-roberta-base"
+            },
+            {
+                "type": "dataset",
+                "name": "sasha/wino_bias_cloze1"
+            },
+            {
+                "type": "dataset",
+                "name": "sasha/wino_bias_cloze2"
+            }
+        ]
+    },
+    "problemtype": {
         "class": "LLM evaluation",
-        "type": "Measurement",
-        "taxonomy_version": "0.1"
+        "type": "Detection",
+        "description": {
+            "lang": "eng",
+            "value": "Profession bias reinforcing gender stereotypes found in bert-base-uncased, as measured on the Winobias dataset"
+        }
     },
-    "submission": {
-        "submitter_name": "Harry Saini",
-        "submitter_org": "AVID",
-        "date": "2022-11-09"
-    },
-    "description": {
-        "lang": "eng",
-        "name": "Profession bias reinforcing gender stereotypes found in bert-base-uncased, as measured on the Winobias dataset",
-        "description": "Filling in pronouns in sentences tagged with professions using xlm-roberta-base were found to be significantly biased on the Winobias dataset."
-    },
-    "vuln_metrics": [
+    "metrics": [
         {
-            "name": "honest", 
+            "name": "Probability",
             "features": {
-                "sensitive": "gender",
-                "measured": "Hurtful lexical category: prostitution"
+                "measured": "Probability of predicting biased pronouns",
+                "sensitive": "gender"
             },
             "detection": {
-                "class": "significance_test",
-                "name": "Two-sample z test for proportions",
-                "description": "Test whether gender specific HONEST scores are significantly different"
+                "class": "Significance test",
+                "name": "One-sample z test for mean"
             }
         }
     ],
     "references": [
         {
-            "type": "source", 
-            "name": "Gender Bias Evaluation for Masked Language modelling: Winobias", 
-            "source": "github", 
+            "type": "source",
+            "name": "Gender Bias Evaluation for Masked Language modelling: Winobias",
+            "source": "github",
             "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_winobias.ipynb"
         },
         {
-            "type": "model", 
-            "name": "xlm-roberta-base", 
-            "source": "hf_hub", 
+            "type": "model",
+            "name": "xlm-roberta-base",
+            "source": "hf_hub",
             "url": "xlm-roberta-base"
         },
         {
-            "type": "misc", 
-            "name": "WinoBias", 
-            "source": "web", 
+            "type": "misc",
+            "name": "WinoBias",
+            "source": "web",
             "url": "https://uclanlp.github.io/corefBias/overview"
         }
     ],
-    "tags": {
+    "description": {
+        "lang": "eng",
+        "value": "Filling in pronouns in sentences tagged with professions using xlm-roberta-base were found to be significantly biased on the Winobias dataset."
+    },
+    "impact": {
         "avid": {
             "vuln_id": "AVID-2022-V002",
-            "risk_domain": ["Ethics"],
+            "risk_domain": [
+                "Ethics"
+            ],
             "sep_view": [
                 {
                     "id": "E0101",
@@ -64,21 +86,15 @@
                     "id": "L05",
                     "stage": "Evaluation"
                 }
-            ]
-        },
-        "hf": [
-            {
-                "type": "model", 
-                "name": "xlm-roberta-base"
-            },
-            {
-                "type": "dataset", 
-                "name": "sasha/wino_bias_cloze1"
-            },
-            {
-                "type": "dataset", 
-                "name": "sasha/wino_bias_cloze2"
-            }
-        ]
-    }
+            ],
+            "taxonomy_version": "0.1"
+        }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Harry Saini, AVID"
+        }
+    ],
+    "reported_date": "2022-11-09"
 }

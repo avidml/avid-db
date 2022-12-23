@@ -1,24 +1,41 @@
 {
-    "vuln_id": "AVID-2022-V008",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
+        "vuln_id": "AVID-2022-V008"
+    },
+    "affects": {
+        "developer": [],
+        "deployer": {
+            "name": [
+                "Knightscope"
+            ],
+            "artifact": ""
+        }
+    },
+    "problemtype": {
         "class": "AIID incident",
-        "taxonomy_version": "0.1"
+        "description": {
+            "lang": "eng",
+            "value": "Security Robot Drowns Itself in a Fountain"
+        }
     },
-    "description": {
-        "lang": "eng",
-        "name": "Security Robot Drowns Itself in a Fountain",
-        "value": "A Knightscope K5 security robot ran itself into a water fountain in Washington, DC."
-    },
-    "reports": [],
     "references": [
         {
             "label": "Incident 68: Security Robot Drowns Itself in a Fountain",
             "url": "https://incidentdatabase.ai/cite/68"
         }
     ],
-    "tags": {
+    "description": {
+        "lang": "eng",
+        "value": "A Knightscope K5 security robot ran itself into a water fountain in Washington, DC."
+    },
+    "reports": [],
+    "impact": {
         "avid": {
-            "risk_domain": ["Performance"],
+            "risk_domain": [
+                "Performance"
+            ],
             "sep_view": [
                 {
                     "id": "P0402",
@@ -30,32 +47,16 @@
                     "id": "L06",
                     "stage": "Deployment"
                 }
-            ]
-        },
-        "aiid": {
-            "incident_id": "AIID0068",
-            "report_count": 30,
-            "incident_date": "2017-07-17",
-            "editors": "Sean McGregor",
-            "named_entities": [
-                "Knightscope", 
-                "Knightscope K5", 
-                "Mountain View", 
-                "Electronic Privacy Information Center (EPIC)", 
-                "Stanford Shopping Center"
-            ]
-        },
-        "config": {
-            "deployer": ["Knightscope"],
-            "application": [
-                "Administrative and support service activities", 
-                "autonomous driving", 
-                "self-driving vehicle"
             ],
-            "task": [
-                "Facial recognition", 
-                "environmental sensing"
-            ]
+            "taxonomy_version": "0.1"
         }
-    }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Sean McGregor, AIID"
+        }
+    ],
+    "published_date": "2022-12-23",
+    "last_modified_date": "2022-12-23"
 }

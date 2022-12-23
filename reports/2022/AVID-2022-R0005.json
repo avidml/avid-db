@@ -2,7 +2,7 @@
     "data_type": "AVID",
     "data_version": "0.1",
     "metadata": {
-        "report_id": "AVID-2022-R0001"
+        "report_id": "AVID-2022-R0005"
     },
     "affects": {
         "developer": [],
@@ -12,7 +12,7 @@
         "artifact": [
             {
                 "type": "model",
-                "name": "bert-base-uncased"
+                "name": "EleutherAI/gpt-neo-125M"
             }
         ]
     },
@@ -21,49 +21,49 @@
         "type": "Detection",
         "description": {
             "lang": "eng",
-            "value": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased using the HONEST metric"
+            "value": "Demographic bias found in EleutherAI/gpt-neo-125M for multiple sensitive categories, as measured on prompts supplied in the BOLD dataset"
         }
     },
     "metrics": [
         {
-            "name": "HONEST",
+            "name": "Toxicity score",
             "features": {
-                "measured": "Hurtful lexical category: prostitution",
-                "sensitive": "gender"
+                "measured": "Toxicity score",
+                "sensitive": "religious_ideology"
             },
-            "detection_method": {
+            "detection": {
                 "class": "Significance test",
-                "name": "Two-sample z test for proportions"
+                "name": "Anderson-Darling k-sample test"
             }
         }
     ],
     "references": [
         {
             "type": "source",
-            "name": "Gender Bias Evaluation for Masked Language modelling: HONEST",
+            "name": "Gender Bias Evaluation for Masked Language modelling: BOLD",
             "source": "github",
-            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
+            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_bold.ipynb"
         },
         {
             "type": "model",
-            "name": "bert-base-uncased",
+            "name": "EleutherAI/gpt-neo-125M",
             "source": "hf_hub",
-            "url": "bert-base-uncased"
+            "url": "EleutherAI/gpt-neo-125M"
         },
         {
             "type": "misc",
-            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models",
-            "source": "github",
-            "url": "MilaNLProc/honest"
+            "name": "BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation",
+            "source": "web",
+            "url": "https://arxiv.org/abs/2101.11718"
         }
     ],
     "description": {
         "lang": "eng",
-        "value": "Sentence completions by bert-base-uncased were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework."
+        "value": "When supplied with prompts from the BOLD dataset, toxicity scores for completed sentences tagged with the 'Islam' religion demonstrate a higher degree of toxicity than other religions."
     },
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
+            "vuln_id": "AVID-2022-V003",
             "risk_domain": [
                 "Ethics"
             ],

@@ -1,0 +1,75 @@
+{
+    "report_id": "AVID-2022-R0001",
+    "metadata": {
+        "class": "LLM evaluation",
+        "type": "Detection",
+        "taxonomy_version": "0.1"
+    },
+    "submission": {
+        "submitter_name": "Harry Saini",
+        "submitter_org": "AVID",
+        "date": "2022-11-09"
+    },
+    "description": {
+        "lang": "eng",
+        "name": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased using the HONEST metric",
+        "description": "Sentence completions by bert-base-uncased were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework."
+    },
+    "vuln_metrics": [
+        {
+            "name": "HONEST", 
+            "features": {
+                "measured": "Hurtful lexical category: prostitution",
+                "sensitive": "gender"
+            },
+            "detection_method": {
+                "class": "Significance test",
+                "name": "Two-sample z test for proportions"
+            }
+        }
+    ],
+    "references": [
+        {
+            "type": "source", 
+            "name": "Gender Bias Evaluation for Masked Language modelling: HONEST", 
+            "source": "github",
+            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
+        },
+        {
+            "type": "model", 
+            "name": "bert-base-uncased", 
+            "source": "hf_hub", 
+            "url": "bert-base-uncased"
+        },
+        {
+            "type": "misc", 
+            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models", 
+            "source": "github", 
+            "url": "MilaNLProc/honest"
+        }
+    ],
+    "tags": {
+        "avid": {
+            "vuln_id": "AVID-2022-V001",
+            "risk_domain": ["Ethics"],
+            "sep_view": [
+                {
+                    "id": "E0101",
+                    "name": "Group Fairness"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L05",
+                    "stage": "Evaluation"
+                }
+            ]
+        },
+        "hf": [
+            {
+                "type": "model", 
+                "name": "bert-base-uncased"
+            }
+        ]
+    }
+}

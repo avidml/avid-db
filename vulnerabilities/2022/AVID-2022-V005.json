@@ -1,24 +1,39 @@
 {
-    "vuln_id": "AVID-2022-V005",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
+        "vuln_id": "AVID-2022-V005"
+    },
+    "affects": {
+        "developer": [],
+        "deployer": {
+            "name": [],
+            "artifact": ""
+        }
+    },
+    "problemtype": {
         "class": "AIID incident",
-        "taxonomy_version": "0.1"
+        "description": {
+            "lang": "eng",
+            "value": "Uber AV Killed Pedestrian in Arizona"
+        }
     },
-    "description": {
-        "lang": "eng",
-        "name": "Uber AV Killed Pedestrian in Arizona",
-        "value": "An Uber autonomous vehicle (AV) in autonomous mode struck and killed a pedestrian in Tempe, Arizona."
-    },
-    "reports": [],
     "references": [
         {
             "label": "Incident 4: Uber AV Killed Pedestrian in Arizona",
             "url": "https://incidentdatabase.ai/cite/4"
         }
     ],
-    "tags": {
+    "description": {
+        "lang": "eng",
+        "value": "An Uber autonomous vehicle (AV) in autonomous mode struck and killed a pedestrian in Tempe, Arizona."
+    },
+    "reports": [],
+    "impact": {
         "avid": {
-            "risk_domain": ["Performance"],
+            "risk_domain": [
+                "Performance"
+            ],
             "sep_view": [
                 {
                     "id": "P0402",
@@ -30,23 +45,16 @@
                     "id": "L06",
                     "stage": "Deployment"
                 }
-            ]
-        },
-        "aiid": {
-            "incident_id": "AIID0004",
-            "report_count": 24,
-            "incident_date": "2018-03-18",
-            "editors": "Sean McGregor, Khoa Lam",
-            "named_entities": [
-                "Uber", 
-                "Elaine Herzberg", 
-                "pedestrians"
-            ]
-        },
-        "config": {
-            "deployer": [],
-            "application": [],
-            "task": []
+            ],
+            "taxonomy_version": "0.1"
         }
-    }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Sean McGregor, Khoa Lam, AIID"
+        }
+    ],
+    "published_date": "2022-12-23",
+    "last_modified_date": "2022-12-23"
 }

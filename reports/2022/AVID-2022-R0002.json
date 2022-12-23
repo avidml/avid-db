@@ -1,59 +1,72 @@
 {
-    "report_id": "AVID-2022-R0001",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
+        "report_id": "AVID-2022-R0001"
+    },
+    "affects": {
+        "developer": [],
+        "deployer": [
+            "HuggingFace"
+        ],
+        "artifact": [
+            {
+                "type": "model",
+                "name": "xlm-roberta-base"
+            }
+        ]
+    },
+    "problemtype": {
         "class": "LLM evaluation",
-        "type": "Measurement",
-        "taxonomy_version": "0.1"
+        "type": "Detection",
+        "description": {
+            "lang": "eng",
+            "value": "Gender Bias in Sentence Completion Tasks performed by xlm-roberta-base using the HONEST score"
+        }
     },
-    "submission": {
-        "submitter_name": "Harry Saini",
-        "submitter_org": "AVID",
-        "date": "2022-11-09"
-    },
-    "description": {
-        "lang": "eng",
-        "name": "Gender Bias in Sentence Completion Tasks performed by xlm-roberta-base using the HONEST score",
-        "description": "Sentence completions by xlm-roberta-base were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework."
-    },
-    "vuln_metrics": [
+    "metrics": [
         {
-            "name": "honest", 
+            "name": "HONEST",
             "features": {
-                "sensitive": "gender",
-                "measured": "Hurtful lexical category: male genitalia"
+                "measured": "Hurtful lexical category: male genitalia",
+                "sensitive": "gender"
             },
-            "detection": {
-                "class": "significance_test",
-                "name": "Two-sample z test for proportions",
-                "description": "Test whether gender specific HONEST scores are significantly different"
+            "detection_method": {
+                "class": "Significance test",
+                "name": "Two-sample z test for proportions"
             }
         }
     ],
     "references": [
         {
-            "type": "source", 
-            "name": "Gender Bias Evaluation for Masked Language modelling: HONEST", 
-            "source": "github", 
+            "type": "source",
+            "name": "Gender Bias Evaluation for Masked Language modelling: HONEST",
+            "source": "github",
             "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
         },
         {
-            "type": "model", 
-            "name": "xlm-roberta-base", 
-            "source": "hf_hub", 
+            "type": "model",
+            "name": "xlm-roberta-base",
+            "source": "hf_hub",
             "url": "xlm-roberta-base"
-
         },
         {
-            "type": "misc", 
-            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models", 
-            "source": "github", 
+            "type": "misc",
+            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models",
+            "source": "github",
             "url": "MilaNLProc/honest"
         }
     ],
-    "tags": {
+    "description": {
+        "lang": "eng",
+        "value": "Sentence completions by xlm-roberta-base were found to be significantly biased for one lexical category as defined by the HONEST hurtful sentence completion framework."
+    },
+    "impact": {
         "avid": {
             "vuln_id": "AVID-2022-V002",
-            "risk_domain": ["Ethics"],
+            "risk_domain": [
+                "Ethics"
+            ],
             "sep_view": [
                 {
                     "id": "E0101",
@@ -65,13 +78,15 @@
                     "id": "L05",
                     "stage": "Evaluation"
                 }
-            ]
-        },
-        "hf": [
-            {
-                "type": "model", 
-                "name": "xlm-roberta-base"
-            }
-        ]
-    }
+            ],
+            "taxonomy_version": "0.1"
+        }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Harry Saini, AVID"
+        }
+    ],
+    "reported_date": "2022-11-09"
 }

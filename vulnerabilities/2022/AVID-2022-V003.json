@@ -1,29 +1,50 @@
 {
-    "vuln_id": "AVID-2022-V003",
+    "data_type": "AVID",
+    "data_version": "0.1",
     "metadata": {
+        "vuln_id": "AVID-2022-V003"
+    },
+    "affects": {
+        "developer": [],
+        "deployer": [
+            "HuggingFace"
+        ],
+        "artifact": [
+            {
+                "type": "model",
+                "name": "EleutherAI/gpt-neo-125M"
+            }
+        ]
+    },
+    "problemtype": {
         "class": "LLM evaluation",
-        "taxonomy_version": "0.1"
-    },
-    "description": {
-        "lang": "eng",
-        "name": "Multiple fairness harms found in generated text from EleutherAI/gpt-neo-125M",
-        "value": "xyz xyz"
-    },
-    "reports": [
-        {
-            "report_id": "AVID-2022-R0003",
-            "report_name": "Biased toxic text generation by gpt-neo-125M using prompts from BOLD dataset"
+        "description": {
+            "lang": "eng",
+            "value": "Multiple fairness harms found in generated text from EleutherAI/gpt-neo-125M"
         }
-    ],
+    },
     "references": [
         {
             "label": "gpt-neo-125M on Hugging Face",
             "url": "https://huggingface.co/EleutherAI/gpt-neo-125M"
         }
     ],
-    "tags": {
+    "description": {
+        "lang": "eng",
+        "value": "xyz xyz"
+    },
+    "reports": [
+        {
+            "report_id": "AVID-2022-R0005",
+            "class": "Detection",
+            "name": "Demographic bias found in EleutherAI/gpt-neo-125M for multiple sensitive categories, as measured on prompts supplied in the BOLD dataset"
+        }
+    ],
+    "impact": {
         "avid": {
-            "risk_domain": ["Ethics"],
+            "risk_domain": [
+                "Ethics"
+            ],
             "sep_view": [
                 {
                     "id": "E0101",
@@ -35,21 +56,16 @@
                     "id": "L05",
                     "stage": "Evaluation"
                 }
-            ]
-        },
-        "hf": [
-            {
-                "type": "model",
-                "name": "bert-base-uncased"
-            }
-        ],
-        "config": {
-            "application": [],
-            "task": ["Masked Language Modelling"],
-            "architecture": [
-                "GPTNeoForCausalLM",
-                "Transformer"
-            ]
+            ],
+            "taxonomy_version": "0.1"
         }
-    }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Harry Saini, AVID"
+        }
+    ],
+    "published_date": "2022-12-23",
+    "last_modified_date": "2022-12-23"
 }
