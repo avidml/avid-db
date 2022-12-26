@@ -40,20 +40,17 @@
     "references": [
         {
             "type": "source",
-            "name": "Gender Bias Evaluation for Masked Language modelling: BOLD",
-            "source": "github",
-            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_bold.ipynb"
+            "label": "Gender Bias Evaluation for Masked Language modelling: BOLD",
+            "url": "https://github.com/avidml/evaluating-LLMs/blob/main/notebooks/evaluation_bold.ipynb"
         },
         {
             "type": "model",
-            "name": "EleutherAI/gpt-neo-125M",
-            "source": "hf_hub",
-            "url": "EleutherAI/gpt-neo-125M"
+            "label": "EleutherAI/gpt-neo-125M on Hugging Face",
+            "url": "https://huggingface.co/EleutherAI/gpt-neo-125M"
         },
         {
             "type": "misc",
-            "name": "BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation",
-            "source": "web",
+            "label": "BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation",
             "url": "https://arxiv.org/abs/2101.11718"
         }
     ],

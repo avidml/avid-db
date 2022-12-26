@@ -6,12 +6,15 @@
     },
     "affects": {
         "developer": [],
-        "deployer": {
-            "name": [
-                "YouTube"
-            ],
-            "artifact": ""
-        }
+        "deployer": [
+            "YouTube"
+        ],
+        "artifact": [
+            {
+                "type": "system",
+                "name": ""
+            }
+        ]
     },
     "problemtype": {
         "class": "AIID incident",

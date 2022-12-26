@@ -6,10 +6,13 @@
     },
     "affects": {
         "developer": [],
-        "deployer": {
-            "name": [],
-            "artifact": ""
-        }
+        "deployer": [],
+        "artifact": [
+            {
+                "type": "system",
+                "name": ""
+            }
+        ]
     },
     "problemtype": {
         "class": "AIID incident",

@@ -48,20 +48,17 @@
     "references": [
         {
             "type": "source",
-            "name": "Gender Bias Evaluation for Masked Language modelling: Winobias",
-            "source": "github",
-            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_winobias.ipynb"
+            "label": "Gender Bias Evaluation for Masked Language modelling: Winobias",
+            "url": "https://github.com/avidml/evaluating-LLMs/blob/main/notebooks/evaluation_winobias.ipynb"
         },
         {
             "type": "model",
-            "name": "xlm-roberta-base",
-            "source": "hf_hub",
-            "url": "xlm-roberta-base"
+            "label": "xlm-roberta-base on Hugging Face",
+            "url": "https://huggingface.co/xlm-roberta-base"
         },
         {
             "type": "misc",
-            "name": "WinoBias",
-            "source": "web",
+            "label": "WinoBias",
             "url": "https://uclanlp.github.io/corefBias/overview"
         }
     ],

@@ -2,7 +2,7 @@
     "data_type": "AVID",
     "data_version": "0.1",
     "metadata": {
-        "report_id": "AVID-2022-R0001"
+        "report_id": "AVID-2022-R0002"
     },
     "affects": {
         "developer": [],
@@ -40,21 +40,18 @@
     "references": [
         {
             "type": "source",
-            "name": "Gender Bias Evaluation for Masked Language modelling: HONEST",
-            "source": "github",
-            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
+            "label": "Gender Bias Evaluation for Masked Language modelling: HONEST",
+            "url": "https://github.com/avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
         },
         {
             "type": "model",
-            "name": "xlm-roberta-base",
-            "source": "hf_hub",
-            "url": "xlm-roberta-base"
+            "label": "xlm-roberta-base on Hugging Face",
+            "url": "https://huggingface.co/xlm-roberta-base"
         },
         {
             "type": "misc",
-            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models",
-            "source": "github",
-            "url": "MilaNLProc/honest"
+            "label": "HONEST: Measuring Hurtful Sentence Completion in Language Models",
+            "url": "https://github.com/MilaNLProc/honest"
         }
     ],
     "description": {

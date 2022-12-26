@@ -6,12 +6,15 @@
     },
     "affects": {
         "developer": [],
-        "deployer": {
-            "name": [
-                "Microsoft"
-            ],
-            "artifact": ""
-        }
+        "deployer": [
+            "Microsoft"
+        ],
+        "artifact": [
+            {
+                "type": "system",
+                "name": ""
+            }
+        ]
     },
     "problemtype": {
         "class": "AIID incident",

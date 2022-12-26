@@ -40,21 +40,18 @@
     "references": [
         {
             "type": "source",
-            "name": "Gender Bias Evaluation for Masked Language modelling: HONEST",
-            "source": "github",
-            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
+            "label": "Gender Bias Evaluation for Masked Language modelling: HONEST",
+            "url": "https://github.com/avidml/evaluating-LLMs/blob/main/notebooks/evaluation_honest.ipynb"
         },
         {
             "type": "model",
-            "name": "bert-base-uncased",
-            "source": "hf_hub",
-            "url": "bert-base-uncased"
+            "label": "bert-base-uncased on Hugging Face",
+            "url": "https://huggingface.co/bert-base-uncased"
         },
         {
             "type": "misc",
-            "name": "HONEST: Measuring Hurtful Sentence Completion in Language Models",
-            "source": "github",
-            "url": "MilaNLProc/honest"
+            "label": "HONEST: Measuring Hurtful Sentence Completion in Language Models",
+            "url": "https://github.com/MilaNLProc/honest"
         }
     ],
     "description": {

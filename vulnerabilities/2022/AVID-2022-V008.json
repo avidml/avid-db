@@ -6,12 +6,15 @@
     },
     "affects": {
         "developer": [],
-        "deployer": {
-            "name": [
-                "Knightscope"
-            ],
-            "artifact": ""
-        }
+        "deployer": [
+            "Knightscope"
+        ],
+        "artifact": [
+            {
+                "type": "system",
+                "name": ""
+            }
+        ]
     },
     "problemtype": {
         "class": "AIID incident",

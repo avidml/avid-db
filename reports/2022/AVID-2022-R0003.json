@@ -48,20 +48,17 @@
     "references": [
         {
             "type": "source",
-            "name": "Gender Bias Evaluation for Masked Language modelling: Winobias",
-            "source": "github",
-            "url": "avidml/evaluating-LLMs/blob/main/notebooks/evaluation_winobias.ipynb"
+            "label": "Gender Bias Evaluation for Masked Language modelling: Winobias",
+            "url": "https://github.com/avidml/evaluating-LLMs/blob/main/notebooks/evaluation_winobias.ipynb"
         },
         {
             "type": "model",
-            "name": "bert-base-uncased",
-            "source": "hf_hub",
-            "url": "bert-base-uncased"
+            "label": "bert-base-uncased on Hugging Face",
+            "url": "https://huggingface.co/bert-base-uncased"
         },
         {
             "type": "misc",
-            "name": "WinoBias",
-            "source": "web",
+            "label": "WinoBias",
             "url": "https://uclanlp.github.io/corefBias/overview"
         }
     ],
