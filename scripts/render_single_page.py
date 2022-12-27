@@ -28,8 +28,6 @@ if __name__ == "__main__":
     # load input json file
     if ast.literal_eval(args.v):
         logging.info("Rendering "+args.i+" into "+args.o)
-    yr = args.i.split('-')[1]
-    infile = args.i.split('/')[-1]
     j = json.load(open(args.i))
 
     # render components
@@ -41,15 +39,9 @@ if __name__ == "__main__":
     Affected = renderAffected(j)
     Info = renderInfo(j, is_report=is_report)
     if is_report:
-        Info.append(
-            '- [AVID Entry](https://github.com/avidml/avid-db/tree/main/reports/'+yr+'/'+infile+')\n'
-        )
         Final = ''.join(Header+Desc+References+Taxonomy+Affected+Info)
     else:
         Report = renderReports(j)
-        Info.append(
-            '- [AVID Entry](https://github.com/avidml/avid-db/tree/main/vulnerabilities/'+yr+'/'+infile+')\n'
-        )
         Final = ''.join(Header+Desc+Report+References+Taxonomy+Affected+Info)
 
     # put together everything and save

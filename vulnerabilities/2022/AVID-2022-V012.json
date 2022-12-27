@@ -2,14 +2,14 @@
     "data_type": "AVID",
     "data_version": "0.1",
     "metadata": {
-        "vuln_id": "AVID-2022-V009"
+        "vuln_id": "AVID-2022-V012"
     },
     "affects": {
         "developer": [],
         "deployer": [],
         "artifact": [
             {
-                "type": "system",
+                "type": "System",
                 "name": ""
             }
         ]

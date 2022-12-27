@@ -11,15 +11,15 @@
         ],
         "artifact": [
             {
-                "type": "model",
+                "type": "Model",
                 "name": "xlm-roberta-base"
             },
             {
-                "type": "dataset",
+                "type": "Dataset",
                 "name": "sasha/wino_bias_cloze1"
             },
             {
-                "type": "dataset",
+                "type": "Dataset",
                 "name": "sasha/wino_bias_cloze2"
             }
         ]

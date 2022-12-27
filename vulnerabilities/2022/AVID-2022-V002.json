@@ -11,7 +11,7 @@
         ],
         "artifact": [
             {
-                "type": "model",
+                "type": "Model",
                 "name": "xlm-roberta-base"
             }
         ]
@@ -36,12 +36,12 @@
     "reports": [
         {
             "report_id": "AVID-2022-R0002",
-            "class": "Detection",
+            "type": "Detection",
             "name": "Gender Bias in Sentence Completion Tasks performed by xlm-roberta-base using the HONEST metric"
         },
         {
             "report_id": "AVID-2022-R0004",
-            "class": "Detection",
+            "type": "Detection",
             "name": "Profession bias reinforcing gender stereotypes found in xlm-roberta-base, as measured on the Winobias dataset"
         }
     ],

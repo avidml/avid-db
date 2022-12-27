@@ -25,10 +25,10 @@ def renderDesc(vuln):
 
 def renderReports(vuln):
     reports = vuln['reports']
-    header = ['## Reports \n\n', '| ID | Class | Name |\n']
+    header = ['## Reports \n\n', '| ID | Type | Name |\n']
     divider = ['| --- | --- | --- | \n']
     content = [
-        '| '+rep['report_id']+' | '+rep['class']+' | '+rep['name']+' |\n'
+        '| ['+rep['report_id']+'](../'+rep['report_id']+') | '+rep['type']+' | '+rep['name']+' |\n'
         for rep in reports
     ]
     return header+divider+content+['\n']
@@ -68,14 +68,20 @@ def renderAffected(vuln):
     return header+content+['\n']
 
 def renderInfo(vuln, is_report=False):
+    if is_report:
+        id = vuln['metadata']['report_id']
+    else:
+        id = vuln['metadata']['vuln_id']
+    yr = id.split('-')[1]
+        
     header = ['## Other information\n\n']
-
     if is_report:
         content = [
             '- **Report Type:** '+vuln['problemtype']['type']+'\n',
             '- **Credits:** '+('; '.join([cred['value'] for cred in vuln['credit']]))+'\n',
             '- **Date Reported:** '+vuln['reported_date']+'\n',
-            '- **Version:** '+vuln['data_version']+'\n'
+            '- **Version:** '+vuln['data_version']+'\n',
+            '- [AVID Entry](https://github.com/avidml/avid-db/tree/main/reports/'+yr+'/'+id+'.json)\n'
         ]        
     else:
         content = [
@@ -83,6 +89,7 @@ def renderInfo(vuln, is_report=False):
             '- **Credits:** '+('; '.join([cred['value'] for cred in vuln['credit']]))+'\n',
             '- **Date Published:** '+vuln['published_date']+'\n',
             '- **Date Last Modified:** '+vuln['last_modified_date']+'\n',
-            '- **Version:** '+vuln['data_version']+'\n'
+            '- **Version:** '+vuln['data_version']+'\n',
+            '- [AVID Entry](https://github.com/avidml/avid-db/tree/main/vulnerabilities/'+yr+'/'+id+'.json)\n'
         ]
     return header+content+['\n']

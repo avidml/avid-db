@@ -9,7 +9,7 @@
         "deployer": [],
         "artifact": [
             {
-                "type": "system",
+                "type": "System",
                 "name": ""
             }
         ]

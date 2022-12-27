@@ -11,7 +11,7 @@
         ],
         "artifact": [
             {
-                "type": "model",
+                "type": "Model",
                 "name": "bert-base-uncased"
             }
         ]

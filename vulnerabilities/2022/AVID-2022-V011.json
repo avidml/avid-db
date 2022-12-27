@@ -5,14 +5,15 @@
         "vuln_id": "AVID-2022-V011"
     },
     "affects": {
-        "developer": [],
+        "developer": [
+            "PredPol"
+        ],
         "deployer": [
-            "PredPol",
             "Chicago Police Department"
         ],
         "artifact": [
             {
-                "type": "system",
+                "type": "System",
                 "name": ""
             }
         ]

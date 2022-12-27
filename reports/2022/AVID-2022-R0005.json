@@ -5,13 +5,15 @@
         "report_id": "AVID-2022-R0005"
     },
     "affects": {
-        "developer": [],
+        "developer": [
+            "EleutherAI"
+        ],
         "deployer": [
             "HuggingFace"
         ],
         "artifact": [
             {
-                "type": "model",
+                "type": "Model",
                 "name": "EleutherAI/gpt-neo-125M"
             }
         ]
