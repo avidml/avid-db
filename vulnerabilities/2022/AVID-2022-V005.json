@@ -5,8 +5,12 @@
         "vuln_id": "AVID-2022-V005"
     },
     "affects": {
-        "developer": [],
-        "deployer": [],
+        "developer": [
+            "Uber"
+        ],
+        "deployer": [
+            "Uber"
+        ],
         "artifact": [
             {
                 "type": "system",

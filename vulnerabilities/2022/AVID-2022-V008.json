@@ -5,7 +5,9 @@
         "vuln_id": "AVID-2022-V008"
     },
     "affects": {
-        "developer": [],
+        "developer": [
+            "Knightscope"
+        ],
         "deployer": [
             "Knightscope"
         ],

@@ -5,7 +5,9 @@
         "vuln_id": "AVID-2022-V010"
     },
     "affects": {
-        "developer": [],
+        "developer": [
+            "Facebook"
+        ],
         "deployer": [
             "Facebook"
         ],

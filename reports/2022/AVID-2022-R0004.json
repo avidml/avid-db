@@ -29,7 +29,7 @@
         "type": "Detection",
         "description": {
             "lang": "eng",
-            "value": "Profession bias reinforcing gender stereotypes found in bert-base-uncased, as measured on the Winobias dataset"
+            "value": "Profession bias reinforcing gender stereotypes found in xlm-roberta-base, as measured on the Winobias dataset"
         }
     },
     "metrics": [
@@ -91,6 +91,10 @@
         {
             "lang": "eng",
             "value": "Harry Saini, AVID"
+        },
+        {
+            "lang": "eng",
+            "value": "Sasha Luccioni, Hugging Face"
         }
     ],
     "reported_date": "2022-11-09"

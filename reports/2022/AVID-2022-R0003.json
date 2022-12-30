@@ -91,6 +91,10 @@
         {
             "lang": "eng",
             "value": "Harry Saini, AVID"
+        },
+        {
+            "lang": "eng",
+            "value": "Sasha Luccioni, Hugging Face"
         }
     ],
     "reported_date": "2022-11-09"

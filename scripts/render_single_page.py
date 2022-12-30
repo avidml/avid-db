@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     # load input json file
     if ast.literal_eval(args.v):
-        logging.info("Rendering "+args.i+" into "+args.o)
+        logging.info(args.i+" -> "+args.o)
     j = json.load(open(args.i))
 
     # render components

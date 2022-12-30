@@ -5,7 +5,9 @@
         "vuln_id": "AVID-2022-V013"
     },
     "affects": {
-        "developer": [],
+        "developer": [
+            "Microsoft"
+        ],
         "deployer": [
             "Microsoft"
         ],

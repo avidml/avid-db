@@ -5,7 +5,9 @@
         "vuln_id": "AVID-2022-V006"
     },
     "affects": {
-        "developer": [],
+        "developer": [
+            "YouTube"
+        ],
         "deployer": [
             "YouTube"
         ],

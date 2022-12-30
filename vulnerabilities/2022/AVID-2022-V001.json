@@ -31,7 +31,7 @@
     ],
     "description": {
         "lang": "eng",
-        "value": "xyz xyz"
+        "value": "Sentence Completion Tasks performed by bert-base-uncased demonstrate significant gender bias, perpetuating negative social and professional stereotypes against females."
     },
     "reports": [
         {
@@ -69,6 +69,10 @@
         {
             "lang": "eng",
             "value": "Harry Saini, AVID"
+        },
+        {
+            "lang": "eng",
+            "value": "Sasha Luccioni, Hugging Face"
         }
     ],
     "published_date": "2022-12-23",

@@ -5,8 +5,12 @@
         "vuln_id": "AVID-2022-V012"
     },
     "affects": {
-        "developer": [],
-        "deployer": [],
+        "developer": [
+            "Hive Box"
+        ],
+        "deployer": [
+            "Hive Box"
+        ],
         "artifact": [
             {
                 "type": "System",

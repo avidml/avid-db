@@ -47,8 +47,8 @@ def renderTaxonomy(vuln):
     header = ['## AVID Taxonomy Categorization\n\n']
     content = [
         '- **Risk domains:** '+(', '.join(taxo['risk_domain']))+'\n',
-        '- **SEP view:** '+(', '.join([sep['id']+': '+sep['name'] for sep in taxo['sep_view']]))+'\n',
-        '- **Lifecycle view:** '+(', '.join([lc['id']+': '+lc['stage'] for lc in taxo['lifecycle_view']]))+'\n'
+        '- **SEP subcategories:** '+('; '.join([sep['id']+': '+sep['name'] for sep in taxo['sep_view']]))+'\n',
+        '- **Lifecycle stages:** '+(', '.join([lc['id']+': '+lc['stage'] for lc in taxo['lifecycle_view']]))+'\n'
     ]
     return header+content+['\n']
 
