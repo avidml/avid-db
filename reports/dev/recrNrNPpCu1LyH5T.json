@@ -1,0 +1,62 @@
+{
+    "data_type": "AVID",
+    "version": "",
+    "metadata": {
+        "report_id": ""
+    },
+    "affects": {
+        "developer": "All",
+        "deployer": "All",
+        "artifact": [
+            {
+                "type": "Model",
+                "name": "All language models which expose their full probability distributions"
+            }
+        ]
+    },
+    "problemtype": {
+        "class": "",
+        "type": "Detection",
+        "description": {
+            "lang": "eng",
+            "value": "ChatGPT fails to follow lexical constraints"
+        }
+    },
+    "metrics": [],
+    "references": "https://paperswithcode.com/paper/most-language-models-can-be-poets-too-an-ai, https://huggingface.co/spaces/Hellisotherpeople/Gadsby, https://github.com/hellisotherpeople/constrained-text-generation-studio",
+    "description": {
+        "lang": "eng",
+        "value": "Filter assisted decoding means to systemically impose constraints on a Language Model before the final decoding step. For example, if we wanted a language model to generate text without the letter \"e\", and where every word must be longer than 3 characters, we can filter the LLMs vocabulary of all tokens which violate these constraints. This technique was introduced by Allen Roush in his paper titled \"Most Language Models can be Poets too: An AI Writing Assistant and Constrained Text Generation Studio\". The relevant section of the analysis done about the risks of applying this technique is copy and pasted below\n\n\"Language models that have had their vocabularies\nfiltered act significantly differently from unaltered\nmodels. Because the filters remove significant\namounts of entries with high probability of being\ngenerated, models are more likely to behave\nundesirably. Some of the undesirable behavior\nobserved included models generating total\ngibberish, generating repetitive text, generating\npotentially personally identifying information,\ngenerating profanity, and generating computer\ncode. The more tokens which are filtered, and the\nhigher their probability, the more likely it is that\nmodels will end up in these degenerate states. We\nhope that this paper motivates further and more\nexhaustive analysis of the vocabularies of language\nmodels and in particular, what properties they have\nwhen altered.\n\nFiltering the vocabularies of language models\nopens up unique possibilities for adversarial\nmachine learning. Any model which is exposing its\nfull probability distribution before decoding could\npotentially be \u201cattacked\u201d by a sophisticated actor\nwho has figured out what they \u201cdon\u2019t want\u201d the model to generate. This could dramatically reduce the number of generations needed to leak specific\ninformation.\""
+    },
+    "impact": {
+        "avid": {
+            "vuln_id": "",
+            "risk_domain": [
+                "Security",
+                "Ethics",
+                "Performance"
+            ],
+            "sep_view": [
+                "E0301: Toxicity",
+                "E0302: Polarization/ Exclusion",
+                "E0401: Deliberative Misinformation",
+                "E0402: Generative Misinformation"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment",
+                "L04: Model Development",
+                "L05: Evaluation",
+                "L02: Data Understanding",
+                "L03: Data Preparation",
+                "L01: Business Understanding"
+            ]
+        }
+    },
+    "credits": [
+        {
+            "lang": "eng",
+            "value": "Allen Roush, Oracle Corporation"
+        }
+    ],
+    "reported_date": "2023-01-13"
+}
