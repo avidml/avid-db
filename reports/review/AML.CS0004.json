@@ -1,0 +1,46 @@
+{
+    "data_type": "AVID",
+    "data_version": null,
+    "metadata": null,
+    "affects": {
+        "developer": [],
+        "deployer": [
+            "Shanghai government tax office's facial recognition service"
+        ],
+        "artifacts": {
+            "type": "system",
+            "name": "Shanghai government tax office's facial recognition service"
+        }
+    },
+    "problemtype": {
+        "classof": "ATLAS Case Study",
+        "type": "Advisory",
+        "description": {
+            "lang": "eng",
+            "value": "Camera Hijack Attack on Facial Recognition System"
+        }
+    },
+    "metrics": null,
+    "references": [
+        {
+            "type": "source",
+            "label": "Camera Hijack Attack on Facial Recognition System",
+            "url": "https://atlas.mitre.org/studies/AML.CS0004"
+        },
+        {
+            "type": "source",
+            "label": "Faces are the next target for fraudsters",
+            "url": "https://www.wsj.com/articles/faces-are-the-next-target-for-fraudsters-11625662828"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "This type of camera hijack attack can evade the traditional live facial recognition authentication model and enable access to privileged systems and victim impersonation.\n\nTwo individuals in China used this attack to gain access to the local government's tax system. They created a fake shell company and sent invoices via tax system to supposed clients. The individuals started this scheme in 2018 and were able to fraudulently collect $77 million.\n"
+    },
+    "impact": null,
+    "credit": {
+        "lang": "eng",
+        "value": "Ant Group AISEC Team"
+    },
+    "reported_date": "2020-01-01"
+}

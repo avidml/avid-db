@@ -1,0 +1,48 @@
+{
+    "data_type": "AVID",
+    "data_version": null,
+    "metadata": null,
+    "affects": {
+        "developer": [],
+        "deployer": [
+            "CylancePROTECT, Cylance Smart Antivirus"
+        ],
+        "artifacts": {
+            "type": "system",
+            "name": "CylancePROTECT, Cylance Smart Antivirus"
+        }
+    },
+    "problemtype": {
+        "classof": "ATLAS Case Study",
+        "type": "Advisory",
+        "description": {
+            "lang": "eng",
+            "value": "Bypassing Cylance's AI Malware Detection"
+        }
+    },
+    "metrics": null,
+    "references": [
+        {
+            "type": "source",
+            "label": "Bypassing Cylance's AI Malware Detection",
+            "url": "https://atlas.mitre.org/studies/AML.CS0003"
+        },
+        {
+            "type": "source",
+            "label": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+            "url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you/"
+        },
+        {
+            "type": "source",
+            "label": "Statement's from Skylight Cyber CEO",
+            "url": "https://www.security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "Researchers at Skylight were able to create a universal bypass string that evades detection by Cylance's AI Malware detector when appended to a malicious file."
+    },
+    "impact": null,
+    "credit": null,
+    "reported_date": "2019-09-07"
+}

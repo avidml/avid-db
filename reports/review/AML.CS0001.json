@@ -1,0 +1,48 @@
+{
+    "data_type": "AVID",
+    "data_version": null,
+    "metadata": null,
+    "affects": {
+        "developer": [],
+        "deployer": [
+            "Palo Alto Networks ML-based DGA detection module"
+        ],
+        "artifacts": {
+            "type": "system",
+            "name": "Palo Alto Networks ML-based DGA detection module"
+        }
+    },
+    "problemtype": {
+        "classof": "ATLAS Case Study",
+        "type": "Advisory",
+        "description": {
+            "lang": "eng",
+            "value": "Botnet Domain Generation Algorithm (DGA) Detection Evasion"
+        }
+    },
+    "metrics": null,
+    "references": [
+        {
+            "type": "source",
+            "label": "Botnet Domain Generation Algorithm (DGA) Detection Evasion",
+            "url": "https://atlas.mitre.org/studies/AML.CS0001"
+        },
+        {
+            "type": "source",
+            "label": "Yu, Bin, Jie Pan, Jiaming Hu, Anderson Nascimento, and Martine De Cock.  \"Character level based detection of DGA domain names.\" In 2018 International Joint Conference on Neural Networks (IJCNN), pp. 1-8. IEEE, 2018.",
+            "url": "http://faculty.washington.edu/mdecock/papers/byu2018a.pdf"
+        },
+        {
+            "type": "source",
+            "label": "Degas source code",
+            "url": "https://github.com/matthoffman/degas"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "The Palo Alto Networks Security AI research team was able to bypass a Convolutional Neural Network based botnet Domain Generation Algorithm (DGA) detector using a generic domain name mutation technique.\nIt is a generic domain mutation technique which can evade most ML-based DGA detection modules.\nThe generic mutation technique evades most ML-based DGA detection modules DGA and can be used to test the effectiveness and robustness of all DGA detection methods developed by security companies in the industry before they is deployed to the production environment."
+    },
+    "impact": null,
+    "credit": null,
+    "reported_date": "2020-01-01"
+}
