@@ -20,7 +20,7 @@
             "value": "Evasion of Deep Learning Detector for Malware C&C Traffic"
         }
     },
-    "metrics": null,
+    "metrics": [],
     "references": [
         {
             "type": "source",
@@ -37,7 +37,38 @@
         "lang": "eng",
         "value": "The Palo Alto Networks Security AI research team tested a deep learning model for malware command and control (C&C) traffic detection in HTTP traffic.\nBased on the publicly available [paper by Le et al.](https://arxiv.org/abs/1802.03162), we built a model that was trained on a similar dataset as our production model and had similar performance.\nThen we crafted adversarial samples, queried the model, and adjusted the adversarial sample accordingly until the model was evaded."
     },
-    "impact": null,
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Security"
+            ],
+            "sep_view": [
+                {
+                    "id": "S0403",
+                    "name": "Adversarial Example"
+                },
+                {
+                    "id": "S0400",
+                    "name": "Model Bypass"
+                }
+            ],
+            "lifecycle_view": [
+                {
+                    "id": "L04",
+                    "stage": "Model Development"
+                },
+                {
+                    "id": "L05",
+                    "stage": "Evaluation"
+                },
+                {
+                    "id": "L06",
+                    "stage": "Deployment"
+                }
+            ],
+            "taxonomy_version": "0.1"
+        }
+    },
     "credit": null,
     "reported_date": "2020-01-01"
 }
