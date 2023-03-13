@@ -11,15 +11,15 @@
         "deployer": [
             "Uber"
         ],
-        "artifact": [
+        "artifacts": [
             {
-                "type": "system",
+                "type": "System",
                 "name": ""
             }
         ]
     },
     "problemtype": {
-        "class": "AIID incident",
+        "classof": "AIID Incident",
         "description": {
             "lang": "eng",
             "value": "Uber AV Killed Pedestrian in Arizona"
@@ -42,16 +42,10 @@
                 "Performance"
             ],
             "sep_view": [
-                {
-                    "id": "P0402",
-                    "name": "Physical Safety"
-                }
+                "P0402: Physical safety"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L06",
-                    "stage": "Deployment"
-                }
+                "L06: Deployment"
             ],
             "taxonomy_version": "0.1"
         }

@@ -7,7 +7,7 @@
     "affects": {
         "developer": [],
         "deployer": [],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "System",
                 "name": ""
@@ -15,7 +15,7 @@
         ]
     },
     "problemtype": {
-        "class": "AIID incident",
+        "classof": "AIID Incident",
         "description": {
             "lang": "eng",
             "value": "Israeli Tax Authority Employed Opaque Algorithm to Impose Fines, Reportedly Refusing to Provide an Explanation for Amount Calculation to a Farmer"
@@ -38,16 +38,10 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0202",
-                    "name": "Local Explanations"
-                }
+                "E0202: Local explanations"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L06",
-                    "stage": "Deployment"
-                }
+                "L06: Deployment"
             ],
             "taxonomy_version": "0.1"
         }

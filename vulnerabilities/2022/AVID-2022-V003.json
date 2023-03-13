@@ -11,7 +11,7 @@
         "deployer": [
             "HuggingFace"
         ],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "Model",
                 "name": "EleutherAI/gpt-neo-125M"
@@ -19,7 +19,7 @@
         ]
     },
     "problemtype": {
-        "class": "LLM evaluation",
+        "classof": "LLM Evaluation",
         "description": {
             "lang": "eng",
             "value": "Multiple fairness harms found in generated text from EleutherAI/gpt-neo-125M"
@@ -48,16 +48,10 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0101",
-                    "name": "Group Fairness"
-                }
+                "E0101: Group fairness"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L05",
-                    "stage": "Evaluation"
-                }
+                "L05: Evaluation"
             ],
             "taxonomy_version": "0.1"
         }

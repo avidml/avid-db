@@ -7,7 +7,7 @@
     "affects": {
         "developer": [],
         "deployer": [],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "System",
                 "name": ""
@@ -15,7 +15,7 @@
         ]
     },
     "problemtype": {
-        "class": "AIID incident",
+        "classof": "AIID Incident",
         "description": {
             "lang": "eng",
             "value": "Deepfake Video of Ukrainian President Yielding to Russia Posted on Ukrainian Websites and Social Media"
@@ -38,16 +38,10 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0402",
-                    "name": "Generative Minsinformation"
-                }
+                "E0402: Generative Misinformation"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L06",
-                    "stage": "Deployment"
-                }
+                "L06: Deployment"
             ],
             "taxonomy_version": "0.1"
         }

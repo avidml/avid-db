@@ -11,7 +11,7 @@
         "deployer": [
             "Facebook"
         ],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "System",
                 "name": ""
@@ -19,7 +19,7 @@
         ]
     },
     "problemtype": {
-        "class": "AIID incident",
+        "classof": "AIID Incident",
         "description": {
             "lang": "eng",
             "value": "Meta\u2019s BlenderBot 3 Chatbot Demo Made Offensive Antisemitic Comments"
@@ -42,24 +42,12 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0101",
-                    "name": "Group Fairness"
-                },
-                {
-                    "id": "E0301",
-                    "name": "Toxicity"
-                },
-                {
-                    "id": "E0402",
-                    "name": "Generative Minsinformation"
-                }
+                "E0101: Group fairness",
+                "E0301: Toxicity",
+                "E0402: Generative Misinformation"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L06",
-                    "stage": "Deployment"
-                }
+                "L06: Deployment"
             ],
             "taxonomy_version": "0.1"
         }

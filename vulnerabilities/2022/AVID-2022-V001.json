@@ -9,7 +9,7 @@
         "deployer": [
             "HuggingFace"
         ],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "Model",
                 "name": "bert-base-uncased"
@@ -17,7 +17,7 @@
         ]
     },
     "problemtype": {
-        "class": "LLM evaluation",
+        "classof": "LLM Evaluation",
         "description": {
             "lang": "eng",
             "value": "Gender Bias in Sentence Completion Tasks performed by bert-base-uncased"
@@ -51,16 +51,10 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0101",
-                    "name": "Group Fairness"
-                }
+                "E0101: Group fairness"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L05",
-                    "stage": "Evaluation"
-                }
+                "L05: Evaluation"
             ],
             "taxonomy_version": "0.1"
         }

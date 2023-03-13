@@ -11,7 +11,7 @@
         "deployer": [
             "Chicago Police Department"
         ],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "System",
                 "name": ""
@@ -19,7 +19,7 @@
         ]
     },
     "problemtype": {
-        "class": "AIID incident",
+        "classof": "AIID Incident",
         "description": {
             "lang": "eng",
             "value": "Predictive Policing Biases of PredPol"
@@ -42,17 +42,12 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0101",
-                    "name": "Group Fairness"
-                }
+                "E0101: Group fairness"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L06",
-                    "stage": "Deployment"
-                }
+                "L06: Deployment"
             ],
+
             "taxonomy_version": "0.1"
         }
     },
