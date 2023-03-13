@@ -7,10 +7,12 @@
         "deployer": [
             "Clearview AI facial recognition tool"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Clearview AI facial recognition tool"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Clearview AI facial recognition tool"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

@@ -7,10 +7,12 @@
         "deployer": [
             "Palo Alto Networks malware detection system"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Palo Alto Networks malware detection system"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Palo Alto Networks malware detection system"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

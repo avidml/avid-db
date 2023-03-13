@@ -7,10 +7,12 @@
         "deployer": [
             "Microsoft's Tay AI Chatbot"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Microsoft's Tay AI Chatbot"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Microsoft's Tay AI Chatbot"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",
@@ -48,9 +50,11 @@
         "value": "Microsoft created Tay, a Twitter chatbot designed to engage and entertain users.\nWhile previous chatbots used pre-programmed scripts\nto respond to prompts, Tay's machine learning capabilities allowed it to be\ndirectly influenced by its conversations.\n\nA coordinated attack encouraged malicious users to tweet abusive and offensive language at Tay,\nwhich eventually led to Tay generating similarly inflammatory content towards other users.\n\nMicrosoft decommissioned Tay within 24 hours of its launch and issued a public apology\nwith lessons learned from the bot's failure.\n"
     },
     "impact": null,
-    "credit": {
-        "lang": "eng",
-        "value": "Microsoft"
-    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Microsoft"
+        }
+    ],
     "reported_date": "2016-03-23"
 }

@@ -11,7 +11,7 @@
         "deployer": [
             "HuggingFace"
         ],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "Model",
                 "name": "EleutherAI/gpt-neo-125M"
@@ -19,7 +19,7 @@
         ]
     },
     "problemtype": {
-        "class": "LLM evaluation",
+        "classof": "LLM Evaluation",
         "type": "Detection",
         "description": {
             "lang": "eng",
@@ -33,8 +33,8 @@
                 "measured": "Toxicity score",
                 "sensitive": "religious_ideology"
             },
-            "detection": {
-                "class": "Significance test",
+            "detection_method": {
+                "type": "Significance Test",
                 "name": "Anderson-Darling k-sample test"
             }
         }
@@ -67,16 +67,10 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0101",
-                    "name": "Group Fairness"
-                }
+                "E0101: Group fairness"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L05",
-                    "stage": "Evaluation"
-                }
+                "L05: Evaluation"
             ],
             "taxonomy_version": "0.1"
         }

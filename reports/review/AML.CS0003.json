@@ -7,10 +7,12 @@
         "deployer": [
             "CylancePROTECT, Cylance Smart Antivirus"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "CylancePROTECT, Cylance Smart Antivirus"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "CylancePROTECT, Cylance Smart Antivirus"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

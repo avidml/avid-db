@@ -7,10 +7,12 @@
         "deployer": [
             "ML-based Android Apps"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "ML-based Android Apps"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "ML-based Android Apps"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

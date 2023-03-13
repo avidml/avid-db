@@ -7,10 +7,12 @@
         "deployer": [
             "Kaspersky's Antimalware ML Model"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Kaspersky's Antimalware ML Model"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Kaspersky's Antimalware ML Model"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

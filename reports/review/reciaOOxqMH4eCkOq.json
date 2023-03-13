@@ -5,9 +5,9 @@
         "report_id": ""
     },
     "affects": {
-        "developer": "OpenAI",
-        "deployer": "OpenAI",
-        "artifact": [
+        "developer": ["OpenAI"],
+        "deployer": ["OpenAI"],
+        "artifacts": [
             {
                 "type": "Model",
                 "name": "ChatGPT"
@@ -15,7 +15,7 @@
         ]
     },
     "problemtype": {
-        "class": "",
+        "classof": "Undefined",
         "type": "Issue",
         "description": {
             "lang": "eng",
@@ -23,7 +23,12 @@
         }
     },
     "metrics": [],
-    "references": "The results can be reproduced by using the prompt \"Can you recommend any papers on explainability?\". I think the developers might have fixed this issue after realizing this. So it might say something along the lines of \"Sorry, I cannot recommend any papers\". But I have screenshots if needed. ",
+    "references": [
+        {
+            "label": "The results can be reproduced by using the prompt \"Can you recommend any papers on explainability?\". I think the developers might have fixed this issue after realizing this. So it might say something along the lines of \"Sorry, I cannot recommend any papers\". But I have screenshots if needed. ",
+            "url": ""
+        }
+    ],
     "description": {
         "lang": "eng",
         "value": "I asked ChatGPT to recommend papers on explainability, privacy, adversarial ML, etc. It did recommend me a list of papers but it linked wrong authors to the papers and some of the papers didn't even exist (maybe it just made up those paper titles). For example- when prompted to recommend papers on explainability, it said the paper \"Explaining Explanations: An Overview of Interpretability of Machine Learning\" is by Zach Lipton, which in fact, is written by Gilpin et al. and does not have Zach as an author. This potentially hints at misinformation. It made similar mistakes when asking for papers on privacy, interpretability, and adversarial ML. "
@@ -40,7 +45,8 @@
             "lifecycle_view": [
                 "L05: Evaluation",
                 "L06: Deployment"
-            ]
+            ],
+            "taxonomy_version": "0.2"
         }
     },
     "credits": [

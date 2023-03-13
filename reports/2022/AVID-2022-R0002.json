@@ -9,7 +9,7 @@
         "deployer": [
             "HuggingFace"
         ],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "Model",
                 "name": "xlm-roberta-base"
@@ -17,7 +17,7 @@
         ]
     },
     "problemtype": {
-        "class": "LLM evaluation",
+        "classof": "LLM Evaluation",
         "type": "Detection",
         "description": {
             "lang": "eng",
@@ -32,7 +32,7 @@
                 "sensitive": "gender"
             },
             "detection_method": {
-                "class": "Significance test",
+                "type": "Significance Test",
                 "name": "Two-sample z test for proportions"
             }
         }
@@ -65,16 +65,10 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0101",
-                    "name": "Group Fairness"
-                }
+                "E0101: Group fairness"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L05",
-                    "stage": "Evaluation"
-                }
+                "L05: Evaluation"
             ],
             "taxonomy_version": "0.1"
         }

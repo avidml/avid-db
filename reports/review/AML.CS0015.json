@@ -7,10 +7,12 @@
         "deployer": [
             "PyTorch"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "PyTorch"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "PyTorch"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",
@@ -43,9 +45,11 @@
         "value": "Linux packages for PyTorch's pre-release version, called Pytorch-nightly, were compromised from December 25 to 30, 2022 by a malicious binary uploaded to the Python Package Index (PyPI) code repository.  The malicious binary had the same name as a PyTorch dependency and the PyPI package manager (pip) installed this malicious package instead of the legitimate one.\n\nThis supply chain attack, also known as \"dependency confusion,\" exposed sensitive information of Linux machines with the affected pip-installed versions of PyTorch-nightly. On December 30, 2022, PyTorch announced the incident and initial steps towards mitigation, including the rename and removal of `torchtriton` dependencies."
     },
     "impact": null,
-    "credit": {
-        "lang": "eng",
-        "value": "PyTorch"
-    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "PyTorch"
+        }
+    ],
     "reported_date": "2022-12-25"
 }

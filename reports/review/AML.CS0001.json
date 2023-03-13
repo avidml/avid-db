@@ -7,10 +7,12 @@
         "deployer": [
             "Palo Alto Networks ML-based DGA detection module"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Palo Alto Networks ML-based DGA detection module"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Palo Alto Networks ML-based DGA detection module"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

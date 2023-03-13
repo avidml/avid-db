@@ -7,10 +7,12 @@
         "deployer": [
             "Internal Microsoft Azure Service"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Internal Microsoft Azure Service"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Internal Microsoft Azure Service"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

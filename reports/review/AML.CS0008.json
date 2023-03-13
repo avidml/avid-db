@@ -7,10 +7,12 @@
         "deployer": [
             "ProofPoint Email Protection System"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "ProofPoint Email Protection System"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "ProofPoint Email Protection System"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

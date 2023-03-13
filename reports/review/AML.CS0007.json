@@ -7,10 +7,12 @@
         "deployer": [
             "OpenAI GPT-2"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "OpenAI GPT-2"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "OpenAI GPT-2"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

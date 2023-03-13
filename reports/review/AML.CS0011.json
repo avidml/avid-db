@@ -7,10 +7,12 @@
         "deployer": [
             "New Microsoft AI Product"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "New Microsoft AI Product"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "New Microsoft AI Product"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

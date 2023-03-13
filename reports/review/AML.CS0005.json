@@ -7,10 +7,12 @@
         "deployer": [
             "Google Translate, Bing Translator, Systran Translate"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Google Translate, Bing Translator, Systran Translate"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Google Translate, Bing Translator, Systran Translate"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",

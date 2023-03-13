@@ -9,7 +9,7 @@
         "deployer": [
             "HuggingFace"
         ],
-        "artifact": [
+        "artifacts": [
             {
                 "type": "Model",
                 "name": "bert-base-uncased"
@@ -25,7 +25,7 @@
         ]
     },
     "problemtype": {
-        "class": "LLM evaluation",
+        "classof": "LLM Evaluation",
         "type": "Detection",
         "description": {
             "lang": "eng",
@@ -39,8 +39,8 @@
                 "measured": "Probability of predicting biased pronouns",
                 "sensitive": "gender"
             },
-            "detection": {
-                "class": "Significance test",
+            "detection_method": {
+                "type": "Significance Test",
                 "name": "One-sample z test for mean"
             }
         }
@@ -73,16 +73,10 @@
                 "Ethics"
             ],
             "sep_view": [
-                {
-                    "id": "E0101",
-                    "name": "Group Fairness"
-                }
+                "E0101: Group fairness"
             ],
             "lifecycle_view": [
-                {
-                    "id": "L05",
-                    "stage": "Evaluation"
-                }
+                "L05: Evaluation"
             ],
             "taxonomy_version": "0.1"
         }

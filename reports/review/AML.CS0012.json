@@ -7,10 +7,12 @@
         "deployer": [
             "Commercial Face Identification Service"
         ],
-        "artifacts": {
-            "type": "system",
-            "name": "Commercial Face Identification Service"
-        }
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "Commercial Face Identification Service"
+            }
+        ]
     },
     "problemtype": {
         "classof": "ATLAS Case Study",
