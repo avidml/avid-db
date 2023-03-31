@@ -24,7 +24,18 @@
             "value": "Confusing Antimalware Neural Networks"
         }
     },
-    "references": null,
+    "references": [
+        {
+            "type": "source",
+            "label": "Confusing Antimalware Neural Networks",
+            "url": "https://atlas.mitre.org/studies/AML.CS0014"
+        },
+        {
+            "type": "source",
+            "label": "Article, \"How to confuse antimalware neural networks. Adversarial attacks and protection\"",
+            "url": "https://securelist.com/how-to-confuse-antimalware-neural-networks-adversarial-attacks-and-protection/102949/"
+        }
+    ],
     "description": {
         "lang": "eng",
         "value": "Cloud storage and computations have become popular platforms for deploying ML malware detectors.\nIn such cases, the features for models are built on users' systems and then sent to cybersecurity company servers.\nThe Kaspersky ML research team explored this gray-box scenario and showed that feature knowledge is enough for an adversarial attack on ML models.\n\nThey attacked one of Kaspersky's antimalware ML models without white-box access to it and successfully evaded detection for most of the adversarially modified malware files."
@@ -45,6 +56,6 @@
         }
     },
     "credit": null,
-    "published_date": "2023-03-30",
-    "last_modified_date": "2023-03-30"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

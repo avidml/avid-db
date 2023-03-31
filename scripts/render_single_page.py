@@ -38,7 +38,7 @@ if __name__ == "__main__":
     Taxonomy = renderTaxonomy(j)
     Affected = renderAffected(j)
     Info = renderInfo(j, is_report=is_report)
-    if is_report:
+    if (is_report) or (j['reports'] is None):
         Final = ''.join(Header+Desc+References+Taxonomy+Affected+Info)
     else:
         Report = renderReports(j)

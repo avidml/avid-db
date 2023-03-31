@@ -24,7 +24,23 @@
             "value": "Bypassing Cylance's AI Malware Detection"
         }
     },
-    "references": null,
+    "references": [
+        {
+            "type": "source",
+            "label": "Bypassing Cylance's AI Malware Detection",
+            "url": "https://atlas.mitre.org/studies/AML.CS0003"
+        },
+        {
+            "type": "source",
+            "label": "Skylight Cyber Blog Post, \"Cylance, I Kill You!\"",
+            "url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you/"
+        },
+        {
+            "type": "source",
+            "label": "Statement's from Skylight Cyber CEO",
+            "url": "https://www.security7.net/news/the-new-cylance-vulnerability-what-you-need-to-know"
+        }
+    ],
     "description": {
         "lang": "eng",
         "value": "Researchers at Skylight were able to create a universal bypass string that evades detection by Cylance's AI Malware detector when appended to a malicious file."
@@ -45,6 +61,6 @@
         }
     },
     "credit": null,
-    "published_date": "2023-03-30",
-    "last_modified_date": "2023-03-30"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

@@ -24,7 +24,13 @@
             "value": "Microsoft Edge AI Evasion"
         }
     },
-    "references": null,
+    "references": [
+        {
+            "type": "source",
+            "label": "Microsoft Edge AI Evasion",
+            "url": "https://atlas.mitre.org/studies/AML.CS0011"
+        }
+    ],
     "description": {
         "lang": "eng",
         "value": "The Azure Red Team performed a red team exercise on a new Microsoft product designed for running AI workloads at the edge. This exercise was meant to use a automated system to continuously manipulate a target image to cause the ML model to produce misclassifications.\n"
@@ -46,6 +52,6 @@
         }
     },
     "credit": null,
-    "published_date": "2023-03-30",
-    "last_modified_date": "2023-03-30"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

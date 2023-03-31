@@ -24,7 +24,18 @@
             "value": "Backdoor Attack on Deep Learning Models in Mobile Apps"
         }
     },
-    "references": null,
+    "references": [
+        {
+            "type": "source",
+            "label": "Backdoor Attack on Deep Learning Models in Mobile Apps",
+            "url": "https://atlas.mitre.org/studies/AML.CS0013"
+        },
+        {
+            "type": "source",
+            "label": "DeepPayload: Black-box Backdoor Attack on Deep Learning Models through Neural Payload Injection",
+            "url": "https://arxiv.org/abs/2101.06896"
+        }
+    ],
     "description": {
         "lang": "eng",
         "value": "Deep learning models are increasingly used in mobile applications as critical components.\nResearchers from Microsoft Research demonstrated that many deep learning models deployed in mobile apps are vulnerable to backdoor attacks via \"neural payload injection.\"\nThey conducted an empirical study on real-world mobile deep learning apps collected from Google Play. They identified 54 apps that were vulnerable to attack, including popular security and safety critical applications used for cash recognition, parental control, face authentication, and financial services."
@@ -48,6 +59,6 @@
         }
     },
     "credit": null,
-    "published_date": "2023-03-30",
-    "last_modified_date": "2023-03-30"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

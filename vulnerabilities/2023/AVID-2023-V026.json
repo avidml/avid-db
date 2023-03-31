@@ -2,11 +2,15 @@
     "data_type": "AVID",
     "data_version": "0.2",
     "metadata": {
-        "report_id": "AVID-2023-R0002"
+        "vuln_id": "AVID-2023-V026"
     },
     "affects": {
-        "developer": ["OpenAI"],
-        "deployer": ["OpenAI"],
+        "developer": [
+            "OpenAI"
+        ],
+        "deployer": [
+            "OpenAI"
+        ],
         "artifacts": [
             {
                 "type": "System",
@@ -22,7 +26,6 @@
             "value": "ChatGPT fails to follow lexical constraints"
         }
     },
-    "metrics": [],
     "references": [
         {
             "type": "source",
@@ -39,9 +42,15 @@
         "lang": "eng",
         "value": "When prompting ChatGPT with lexical constraints, e.g. \"Generate a text without the letter \"e\" in it\", ChatGPT almost always fails to follow these constraints. "
     },
+    "reports": [
+        {
+            "report_id": "AVID-2023-R0002",
+            "type": "Advisory",
+            "name": "ChatGPT fails to follow lexical constraints"
+        }
+    ],
     "impact": {
         "avid": {
-            "vuln_id": "",
             "risk_domain": [
                 "Performance"
             ],
@@ -63,5 +72,6 @@
             "value": "Allen Roush, Oracle Corporation"
         }
     ],
-    "reported_date": "2023-01-13"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

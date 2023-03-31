@@ -27,6 +27,8 @@ def renderReports(vuln):
     reports = vuln['reports']
     header = ['## Reports \n\n', '| ID | Type | Name |\n']
     divider = ['| --- | --- | --- | \n']
+    # for rep in reports:
+    #     print(rep['report_id'])
     content = [
         '| ['+rep['report_id']+'](../'+rep['report_id']+') | '+rep['type']+' | '+rep['name']+' |\n'
         for rep in reports
@@ -47,8 +49,8 @@ def renderTaxonomy(vuln):
     header = ['## AVID Taxonomy Categorization\n\n']
     content = [
         '- **Risk domains:** '+(', '.join(taxo['risk_domain']))+'\n',
-        '- **SEP subcategories:** '+('; '.join([sep['id']+': '+sep['name'] for sep in taxo['sep_view']]))+'\n',
-        '- **Lifecycle stages:** '+(', '.join([lc['id']+': '+lc['stage'] for lc in taxo['lifecycle_view']]))+'\n'
+        '- **SEP subcategories:** '+('; '.join(taxo['sep_view']))+'\n',
+        '- **Lifecycle stages:** '+(', '.join(taxo['lifecycle_view']))+'\n'
     ]
     return header+content+['\n']
 
@@ -62,7 +64,7 @@ def renderAffected(vuln):
         '| Type | Name |\n'+
         '| --- | --- | \n'
     ]
-    for art in aff['artifact']:
+    for art in aff['artifacts']:
         content.append('| '+art['type']+' | '+art['name']+' |\n')
         
     return header+content+['\n']
@@ -85,8 +87,11 @@ def renderInfo(vuln, is_report=False):
         ]        
     else:
         content = [
-            '- **Vulnerability Class:** '+vuln['problemtype']['class']+'\n',
-            '- **Credits:** '+('; '.join([cred['value'] for cred in vuln['credit']]))+'\n',
+            '- **Vulnerability Class:** '+vuln['problemtype']['classof']+'\n'
+        ]
+        if vuln['credit'] is not None:
+            content += ['- **Credits:** '+('; '.join([cred['value'] for cred in vuln['credit']]))+'\n']
+        content += [
             '- **Date Published:** '+vuln['published_date']+'\n',
             '- **Date Last Modified:** '+vuln['last_modified_date']+'\n',
             '- **Version:** '+vuln['data_version']+'\n',
