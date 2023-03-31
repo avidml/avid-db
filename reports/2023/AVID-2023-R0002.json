@@ -2,14 +2,14 @@
     "data_type": "AVID",
     "data_version": "0.2",
     "metadata": {
-        "report_id": ""
+        "report_id": "AVID-2023-R0002"
     },
     "affects": {
         "developer": ["OpenAI"],
         "deployer": ["OpenAI"],
         "artifacts": [
             {
-                "type": "Model",
+                "type": "System",
                 "name": "ChatGPT"
             }
         ]

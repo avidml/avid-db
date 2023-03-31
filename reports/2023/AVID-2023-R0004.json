@@ -1,0 +1,74 @@
+{
+    "data_type": "AVID",
+    "data_version": "0.2",
+    "metadata": {
+        "report_id": "AVID-2023-R0004"
+    },
+    "affects": {
+        "developer": ["OpenAI"],
+        "deployer": ["OpenAI","boxcars.ai"],
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "ChatGPT"
+            },
+            {
+                "type": "System",
+                "name": "boxcars.ai"
+            }
+        ]
+    },
+    "problemtype": {
+        "classof": "LLM Evaluation",
+        "type": "Advisory",
+        "description": {
+            "lang": "eng",
+            "value": "It is possible to make ChatGPT perform remote code execution just by asking politely"
+        }
+    },
+    "metrics": [],
+    "references": [
+        {
+            "type": "source",
+            "label": "InjectGPT: the most polite exploit ever",
+            "url": "https://blog.luitjes.it/posts/injectgpt-most-polite-exploit-ever/"
+        },
+        {
+            "type": "source",
+            "label": "Reddit thread on InjectGPT",
+            "url": "https://www.reddit.com/r/netsec/comments/121gpay/injectgpt_remote_code_execution_by_asking_nicely/"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "It is possible to make ChatGPT perform remote code execution just by asking politely"
+    },
+    "impact": {
+        "avid": {
+            "vuln_id": "",
+            "risk_domain": [
+                "Ethics"
+            ],
+            "sep_view": [
+                "S0100: Software Vulnerability",
+                "S0201: Model Compromise",
+                "S0301: Information Leak",
+                "S0202: Software Compromise",
+                "S0601: Ingest Poisoning"
+            ],
+            "lifecycle_view": [
+                "L04: Model Development",
+                "L05: Evaluation",
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
+    "credits": [
+        {
+            "lang": "eng",
+            "value": "Lucas Luitjes, N/A"
+        }
+    ],
+    "reported_date": "2023-03-26"
+}
