@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V003"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,21 +24,14 @@
             "value": "VirusTotal Poisoning"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "VirusTotal Poisoning",
-            "url": "https://atlas.mitre.org/studies/AML.CS0002"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
         "value": "McAfee Advanced Threat Research noticed an increase in reports of a certain ransomware family that was out of the ordinary. Case investigation revealed that many samples of that particular ransomware family were submitted through a popular virus-sharing platform within a short amount of time. Further investigation revealed that based on string similarity the samples were all equivalent, and based on code similarity they were between 98 and 74 percent similar. Interestingly enough, the compile time was the same for all the samples. After more digging, researchers discovered that someone used 'metame' a metamorphic code manipulating tool to manipulate the original file towards mutant variants. The variants would not always be executable, but are still classified as the same ransomware family."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
@@ -55,5 +50,6 @@
             "value": "McAfee Advanced Threat Research"
         }
     ],
-    "reported_date": "2020-01-01"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V006"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,36 +24,14 @@
             "value": "Attack on Machine Translation Service - Google Translate, Bing Translator, and Systran Translate"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "Attack on Machine Translation Service - Google Translate, Bing Translator, and Systran Translate",
-            "url": "https://atlas.mitre.org/studies/AML.CS0005"
-        },
-        {
-            "type": "source",
-            "label": "Wallace, Eric, et al. \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\" EMNLP 2020",
-            "url": "https://arxiv.org/abs/2004.15015"
-        },
-        {
-            "type": "source",
-            "label": "Project Page, \"Imitation Attacks and Defenses for Black-box Machine Translation Systems\"",
-            "url": "https://www.ericswallace.com/imitation"
-        },
-        {
-            "type": "source",
-            "label": "Google under fire for mistranslating Chinese amid Hong Kong protests",
-            "url": "https://thehill.com/policy/international/asia-pacific/449164-google-under-fire-for-mistranslating-chinese-amid-hong-kong/"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
         "value": "Machine translation services (such as Google Translate, Bing Translator, and Systran Translate) provide public-facing UIs and APIs.\nA research group at UC Berkeley utilized these public endpoints to create a replicated model with near-production state-of-the-art translation quality.\nBeyond demonstrating that IP can be functionally stolen from a black-box system, they used the replicated model to successfully transfer adversarial examples to the real production services.\nThese adversarial inputs successfully cause targeted word flips, vulgar outputs, and dropped sentences on Google Translate and Systran Translate websites."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
@@ -69,5 +49,6 @@
         }
     },
     "credit": null,
-    "reported_date": "2020-04-30"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

@@ -1,6 +1,6 @@
 {
     "data_type": "AVID",
-    "data_version": null,
+    "data_version": "0.2",
     "metadata": null,
     "affects": {
         "developer": [],

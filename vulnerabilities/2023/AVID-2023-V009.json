@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V009"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,41 +24,14 @@
             "value": "ProofPoint Evasion"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "ProofPoint Evasion",
-            "url": "https://atlas.mitre.org/studies/AML.CS0008"
-        },
-        {
-            "type": "source",
-            "label": "National Vulnerability Database entry for CVE-2019-20634",
-            "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20634"
-        },
-        {
-            "type": "source",
-            "label": "2019 DerbyCon presentation \"42: The answer to life, the universe, and everything offensive security\"",
-            "url": "https://github.com/moohax/Talks/blob/master/slides/DerbyCon19.pdf"
-        },
-        {
-            "type": "source",
-            "label": "Proof Pudding (CVE-2019-20634) Implementation on GitHub",
-            "url": "https://github.com/moohax/Proof-Pudding"
-        },
-        {
-            "type": "source",
-            "label": "2019 DerbyCon video presentation \"42: The answer to life, the universe, and everything offensive security\"",
-            "url": "https://www.youtube.com/watch?v=CsvkYoxtexQ&ab_channel=AdrianCrenshaw"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
         "value": "Proof Pudding (CVE-2019-20634) is a code repository that describes how ML researchers evaded ProofPoint's email protection system by first building a copy-cat email protection ML model, and using the insights to bypass the live system. More specifically, the insights allowed researchers to craft malicious emails that received preferable scores, going undetected by the system. Each word in an email is scored numerically based on multiple variables and if the overall score of the email is too low, ProofPoint will output an error, labeling it as SPAM."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
@@ -70,5 +45,6 @@
         }
     },
     "credit": null,
-    "reported_date": "2019-09-09"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V001"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,26 +24,14 @@
             "value": "Evasion of Deep Learning Detector for Malware C&C Traffic"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "Evasion of Deep Learning Detector for Malware C&C Traffic",
-            "url": "https://atlas.mitre.org/studies/AML.CS0000"
-        },
-        {
-            "type": "source",
-            "label": "Le, Hung, et al. \"URLNet: Learning a URL representation with deep learning for malicious URL detection.\" arXiv preprint arXiv:1802.03162 (2018).",
-            "url": "https://arxiv.org/abs/1802.03162"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
         "value": "The Palo Alto Networks Security AI research team tested a deep learning model for malware command and control (C&C) traffic detection in HTTP traffic.\nBased on the publicly available [paper by Le et al.](https://arxiv.org/abs/1802.03162), we built a model that was trained on a similar dataset as our production model and had similar performance.\nThen we crafted adversarial samples, queried the model, and adjusted the adversarial sample accordingly until the model was evaded."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
@@ -56,5 +46,6 @@
         }
     },
     "credit": null,
-    "reported_date": "2020-01-01"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

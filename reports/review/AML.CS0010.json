@@ -1,6 +1,6 @@
 {
     "data_type": "AVID",
-    "data_version": null,
+    "data_version": "0.2",
     "metadata": null,
     "affects": {
         "developer": [],
@@ -34,7 +34,23 @@
         "lang": "eng",
         "value": "The Microsoft AI Red Team performed a red team exercise on an internal Azure service with the intention of disrupting its service. This operation had a combination of traditional ATT&CK enterprise techniques such as finding valid account, and exfiltrating data -- all interleaved with adversarial ML specific steps such as offline and online evasion examples."
     },
-    "impact": null,
+    "impact": {
+        "avid": {
+            "vuln_id": "AVID-2022-V001",
+            "risk_domain": [
+                "Security"
+            ],
+            "sep_view": [
+                "S0100: Software Vulnerability",
+                "S0301: Information Leak",
+                "S0403: Adversarial Example"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
     "credit": null,
     "reported_date": "2020-01-01"
 }

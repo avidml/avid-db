@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V015"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,31 +24,14 @@
             "value": "Compromised PyTorch Dependency Chain"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "Compromised PyTorch Dependency Chain",
-            "url": "https://atlas.mitre.org/studies/AML.CS0015"
-        },
-        {
-            "type": "source",
-            "label": "PyTorch statement on compromised dependency",
-            "url": "https://pytorch.org/blog/compromised-nightly-dependency/"
-        },
-        {
-            "type": "source",
-            "label": "Analysis by BleepingComputer",
-            "url": "https://www.bleepingcomputer.com/news/security/pytorch-discloses-malicious-dependency-chain-compromise-over-holidays/"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
         "value": "Linux packages for PyTorch's pre-release version, called Pytorch-nightly, were compromised from December 25 to 30, 2022 by a malicious binary uploaded to the Python Package Index (PyPI) code repository.  The malicious binary had the same name as a PyTorch dependency and the PyPI package manager (pip) installed this malicious package instead of the legitimate one.\n\nThis supply chain attack, also known as \"dependency confusion,\" exposed sensitive information of Linux machines with the affected pip-installed versions of PyTorch-nightly. On December 30, 2022, PyTorch announced the incident and initial steps towards mitigation, including the rename and removal of `torchtriton` dependencies."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
@@ -69,5 +54,6 @@
             "value": "PyTorch"
         }
     ],
-    "reported_date": "2022-12-25"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

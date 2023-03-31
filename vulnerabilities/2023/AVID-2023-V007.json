@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V007"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,36 +24,14 @@
             "value": "ClearviewAI Misconfiguration"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "ClearviewAI Misconfiguration",
-            "url": "https://atlas.mitre.org/studies/AML.CS0006"
-        },
-        {
-            "type": "source",
-            "label": "TechCrunch Article, \"Security lapse exposed Clearview AI source code\"",
-            "url": "https://techcrunch.com/2020/04/16/clearview-source-code-lapse/"
-        },
-        {
-            "type": "source",
-            "label": "Gizmodo Article, \"We Found Clearview AI's Shady Face Recognition App\"",
-            "url": "https://gizmodo.com/we-found-clearview-ais-shady-face-recognition-app-1841961772"
-        },
-        {
-            "type": "source",
-            "label": "New York Times Article, \"The Secretive Company That Might End Privacy as We Know It\"",
-            "url": "https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
         "value": "Clearview AI makes a facial recognition tool that searches publicly available photos for matches.  This tool has been used for investigative purposes by law enforcement agencies and other parties.\n\nClearview AI's source code repository, though password protected, was misconfigured to allow an arbitrary user to register an account.\nThis allowed an external researcher to gain access to a private code repository that contained Clearview AI production credentials, keys to cloud storage buckets containing 70K video samples, and copies of its applications and Slack tokens.\nWith access to training data, a bad-actor has the ability to cause an arbitrary misclassification in the deployed model.\nThese kinds of attacks illustrate that any attempt to secure ML system should be on top of \"traditional\" good cybersecurity hygiene such as locking down the system with least privileges, multi-factor authentication and monitoring and auditing."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
@@ -69,5 +49,6 @@
         }
     },
     "credit": null,
-    "reported_date": "2020-04-16"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

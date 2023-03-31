@@ -1,16 +1,18 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V004"
+    },
     "affects": {
         "developer": [],
         "deployer": [
-            "New Microsoft AI Product"
+            "CylancePROTECT, Cylance Smart Antivirus"
         ],
         "artifacts": [
             {
                 "type": "System",
-                "name": "New Microsoft AI Product"
+                "name": "CylancePROTECT, Cylance Smart Antivirus"
             }
         ]
     },
@@ -19,29 +21,21 @@
         "type": "Advisory",
         "description": {
             "lang": "eng",
-            "value": "Microsoft Edge AI Evasion"
+            "value": "Bypassing Cylance's AI Malware Detection"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "Microsoft Edge AI Evasion",
-            "url": "https://atlas.mitre.org/studies/AML.CS0011"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
-        "value": "The Azure Red Team performed a red team exercise on a new Microsoft product designed for running AI workloads at the edge. This exercise was meant to use a automated system to continuously manipulate a target image to cause the ML model to produce misclassifications.\n"
+        "value": "Researchers at Skylight were able to create a universal bypass string that evades detection by Cylance's AI Malware detector when appended to a malicious file."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
             "sep_view": [
-                "S0301: Information Leak",
                 "S0403: Adversarial Example"
             ],
             "lifecycle_view": [
@@ -51,5 +45,6 @@
         }
     },
     "credit": null,
-    "reported_date": "2020-02-01"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

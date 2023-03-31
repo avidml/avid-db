@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V012"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,21 +24,14 @@
             "value": "Face Identification System Evasion via Physical Countermeasures"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "Face Identification System Evasion via Physical Countermeasures",
-            "url": "https://atlas.mitre.org/studies/AML.CS0012"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
         "value": "MITRE's AI Red Team demonstrated a physical-domain evasion attack on a commercial face identification service with the intention of inducing a targeted misclassification.\nThis operation had a combination of traditional ATT&CK enterprise techniques such as finding Valid account, and Executing code via an API - all interleaved with adversarial ML specific attacks.\n"
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
@@ -52,5 +47,6 @@
         }
     },
     "credit": null,
-    "reported_date": "2020-01-01"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

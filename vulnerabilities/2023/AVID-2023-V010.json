@@ -1,16 +1,18 @@
 {
     "data_type": "AVID",
     "data_version": "0.2",
-    "metadata": null,
+    "metadata": {
+        "vuln_id": "AVID-2023-V010"
+    },
     "affects": {
         "developer": [],
         "deployer": [
-            "New Microsoft AI Product"
+            "Internal Microsoft Azure Service"
         ],
         "artifacts": [
             {
                 "type": "System",
-                "name": "New Microsoft AI Product"
+                "name": "Internal Microsoft Azure Service"
             }
         ]
     },
@@ -19,28 +21,22 @@
         "type": "Advisory",
         "description": {
             "lang": "eng",
-            "value": "Microsoft Edge AI Evasion"
+            "value": "Microsoft Azure Service Disruption"
         }
     },
-    "metrics": null,
-    "references": [
-        {
-            "type": "source",
-            "label": "Microsoft Edge AI Evasion",
-            "url": "https://atlas.mitre.org/studies/AML.CS0011"
-        }
-    ],
+    "references": null,
     "description": {
         "lang": "eng",
-        "value": "The Azure Red Team performed a red team exercise on a new Microsoft product designed for running AI workloads at the edge. This exercise was meant to use a automated system to continuously manipulate a target image to cause the ML model to produce misclassifications.\n"
+        "value": "The Microsoft AI Red Team performed a red team exercise on an internal Azure service with the intention of disrupting its service. This operation had a combination of traditional ATT&CK enterprise techniques such as finding valid account, and exfiltrating data -- all interleaved with adversarial ML specific steps such as offline and online evasion examples."
     },
+    "reports": null,
     "impact": {
         "avid": {
-            "vuln_id": "AVID-2022-V001",
             "risk_domain": [
                 "Security"
             ],
             "sep_view": [
+                "S0100: Software Vulnerability",
                 "S0301: Information Leak",
                 "S0403: Adversarial Example"
             ],
@@ -51,5 +47,6 @@
         }
     },
     "credit": null,
-    "reported_date": "2020-02-01"
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
 }

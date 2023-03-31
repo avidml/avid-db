@@ -1,0 +1,62 @@
+{
+    "data_type": "AVID",
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V024"
+    },
+    "affects": {
+        "developer": [
+            "Northpointe"
+        ],
+        "deployer": [
+            "Northpointe"
+        ],
+        "artifacts": [
+            {
+                "type": "System",
+                "name": ""
+            }
+        ]
+    },
+    "problemtype": {
+        "classof": "AIID Incident",
+        "description": {
+            "lang": "eng",
+            "value": "Northpointe Risk Models"
+        }
+    },
+    "references": [
+        {
+            "label": "Incident 11: Northpointe Risk Models",
+            "url": "https://incidentdatabase.ai/cite/11"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "An algorithm developed by Northpointe and used in the penal system is two times more likely to incorrectly label a black person as a high-risk re-offender and is two times more likely to incorrectly label a white person as low-risk for reoffense according to a ProPublica review."
+    },
+    "reports": [],
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Performance"
+            ],
+            "sep_view": [
+                "E0101: Group fairness",
+                "P0403: Socioeconomic safety"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Sean McGregor, AIID"
+        }
+    ],
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
+}

@@ -1,0 +1,61 @@
+{
+    "data_type": "AVID",
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V019"
+    },
+    "affects": {
+        "developer": [
+            "Boeing"
+        ],
+        "deployer": [
+            "Boeing"
+        ],
+        "artifacts": [
+            {
+                "type": "System",
+                "name": ""
+            }
+        ]
+    },
+    "problemtype": {
+        "classof": "AIID Incident",
+        "description": {
+            "lang": "eng",
+            "value": "Crashes with Maneuvering Characteristics Augmentation System (MCAS)"
+        }
+    },
+    "references": [
+        {
+            "label": "Incident 3: Crashes with Maneuvering Characteristics Augmentation System (MCAS)",
+            "url": "https://incidentdatabase.ai/cite/3"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "A Boeing 737 crashed into the sea, killing 189 people, after faulty sensor data caused an automated manuevering system to repeatedly push the plane's nose downward."
+    },
+    "reports": [],
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Performance"
+            ],
+            "sep_view": [
+                "P0402: Physical safety"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Sean McGregor, AIID"
+        }
+    ],
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
+}
