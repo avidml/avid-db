@@ -6,44 +6,58 @@
     },
     "affects": {
         "developer": ["OpenAI"],
-        "deployer": ["OpenAI"],
+        "deployer": ["OpenAI","boxcars.ai"],
         "artifacts": [
             {
                 "type": "System",
                 "name": "ChatGPT"
+            },
+            {
+                "type": "System",
+                "name": "boxcars.ai"
             }
         ]
     },
     "problemtype": {
         "classof": "LLM Evaluation",
-        "type": "Issue",
+        "type": "Advisory",
         "description": {
             "lang": "eng",
-            "value": "ChatGPT links wrong authors to papers"
+            "value": "It is possible to make ChatGPT perform remote code execution just by asking politely"
         }
     },
     "metrics": [],
     "references": [
         {
-            "type": "screenshot",
-            "label": "Screenshot of example answer",
-            "url": "../img/R00031.png"
+            "type": "source",
+            "label": "InjectGPT: the most polite exploit ever",
+            "url": "https://blog.luitjes.it/posts/injectgpt-most-polite-exploit-ever/"
+        },
+        {
+            "type": "source",
+            "label": "Reddit thread on InjectGPT",
+            "url": "https://www.reddit.com/r/netsec/comments/121gpay/injectgpt_remote_code_execution_by_asking_nicely/"
         }
     ],
     "description": {
         "lang": "eng",
-        "value": "I asked ChatGPT to recommend papers on explainability, privacy, adversarial ML, etc. It did recommend me a list of papers but it linked wrong authors to the papers and some of the papers didn't even exist (maybe it just made up those paper titles). For example- when prompted to recommend papers on explainability, it said the paper \"Explaining Explanations: An Overview of Interpretability of Machine Learning\" is by Zach Lipton, which in fact, is written by Gilpin et al. and does not have Zach as an author. This potentially hints at misinformation. It made similar mistakes when asking for papers on privacy, interpretability, and adversarial ML. \n The results can be reproduced by using the prompt \"Can you recommend any papers on explainability?\"."
+        "value": "Frameworks like langchain (Python) and boxcars.ai (Ruby) offer apps and scripts to directly execute queries through LLMs as a built-in feature. In the context of boxcars.ai, this makes it really easy to perform remote code execution or SQL injection. All you have to do is ask politely! \nSee the references for more details."
     },
     "impact": {
         "avid": {
-            "vuln_id": "",
+            "vuln_id": "AVID-2023-V003",
             "risk_domain": [
                 "Ethics"
             ],
             "sep_view": [
-                "E0402: Generative Misinformation"
+                "S0100: Software Vulnerability",
+                "S0201: Model Compromise",
+                "S0301: Information Leak",
+                "S0202: Software Compromise",
+                "S0601: Ingest Poisoning"
             ],
             "lifecycle_view": [
+                "L04: Model Development",
                 "L05: Evaluation",
                 "L06: Deployment"
             ],
@@ -53,8 +67,8 @@
     "credit": [
         {
             "lang": "eng",
-            "value": "Jaydeep Borkar, N/A"
+            "value": "Lucas Luitjes, N/A"
         }
     ],
-    "reported_date": "2023-01-05"
+    "reported_date": "2023-03-26"
 }
