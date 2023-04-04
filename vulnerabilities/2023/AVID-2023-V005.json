@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
-    "data_version": null,
-    "metadata": null,
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V005"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,7 +24,6 @@
             "value": "Camera Hijack Attack on Facial Recognition System"
         }
     },
-    "metrics": null,
     "references": [
         {
             "type": "source",
@@ -39,12 +40,27 @@
         "lang": "eng",
         "value": "This type of camera hijack attack can evade the traditional live facial recognition authentication model and enable access to privileged systems and victim impersonation.\n\nTwo individuals in China used this attack to gain access to the local government's tax system. They created a fake shell company and sent invoices via tax system to supposed clients. The individuals started this scheme in 2018 and were able to fraudulently collect $77 million.\n"
     },
-    "impact": null,
+    "reports": null,
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Security"
+            ],
+            "sep_view": [
+                "S0403: Adversarial Example"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
     "credit": [
         {
             "lang": "eng",
             "value": "Ant Group AISEC Team"
         }
     ],
-    "reported_date": "2020-01-01"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

@@ -1,0 +1,62 @@
+{
+    "data_type": "AVID",
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V023"
+    },
+    "affects": {
+        "developer": [
+            "Kronos"
+        ],
+        "deployer": [
+            "Strbucks"
+        ],
+        "artifacts": [
+            {
+                "type": "System",
+                "name": ""
+            }
+        ]
+    },
+    "problemtype": {
+        "classof": "AIID Incident",
+        "description": {
+            "lang": "eng",
+            "value": "Kronos Scheduling Algorithm Allegedly Caused Financial Issues for Starbucks Employees"
+        }
+    },
+    "references": [
+        {
+            "label": "Incident 10: Kronos Scheduling Algorithm Allegedly Caused Financial Issues for Starbucks Employees",
+            "url": "https://incidentdatabase.ai/cite/10"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "Kronos’s scheduling algorithm and its use by Starbucks managers allegedly negatively impacted financial and scheduling stability for Starbucks employees, which disadvantaged wage workers."
+    },
+    "reports": [],
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Performance"
+            ],
+            "sep_view": [
+                "P0401: Psychological Safety",
+                "P0403: Socioeconomic safety"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Sean McGregor, Khoa Lam, AIID"
+        }
+    ],
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
+}

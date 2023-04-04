@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
-    "data_version": null,
-    "metadata": null,
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V011"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,7 +24,6 @@
             "value": "Microsoft Edge AI Evasion"
         }
     },
-    "metrics": null,
     "references": [
         {
             "type": "source",
@@ -34,7 +35,23 @@
         "lang": "eng",
         "value": "The Azure Red Team performed a red team exercise on a new Microsoft product designed for running AI workloads at the edge. This exercise was meant to use a automated system to continuously manipulate a target image to cause the ML model to produce misclassifications.\n"
     },
-    "impact": null,
+    "reports": null,
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Security"
+            ],
+            "sep_view": [
+                "S0301: Information Leak",
+                "S0403: Adversarial Example"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
     "credit": null,
-    "reported_date": "2020-02-01"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
-    "data_version": null,
-    "metadata": null,
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V004"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,7 +24,6 @@
             "value": "Bypassing Cylance's AI Malware Detection"
         }
     },
-    "metrics": null,
     "references": [
         {
             "type": "source",
@@ -44,7 +45,22 @@
         "lang": "eng",
         "value": "Researchers at Skylight were able to create a universal bypass string that evades detection by Cylance's AI Malware detector when appended to a malicious file."
     },
-    "impact": null,
+    "reports": null,
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Security"
+            ],
+            "sep_view": [
+                "S0403: Adversarial Example"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
     "credit": null,
-    "reported_date": "2019-09-07"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

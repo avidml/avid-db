@@ -1,7 +1,9 @@
 {
     "data_type": "AVID",
-    "data_version": null,
-    "metadata": null,
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V006"
+    },
     "affects": {
         "developer": [],
         "deployer": [
@@ -22,7 +24,6 @@
             "value": "Attack on Machine Translation Service - Google Translate, Bing Translator, and Systran Translate"
         }
     },
-    "metrics": null,
     "references": [
         {
             "type": "source",
@@ -49,7 +50,26 @@
         "lang": "eng",
         "value": "Machine translation services (such as Google Translate, Bing Translator, and Systran Translate) provide public-facing UIs and APIs.\nA research group at UC Berkeley utilized these public endpoints to create a replicated model with near-production state-of-the-art translation quality.\nBeyond demonstrating that IP can be functionally stolen from a black-box system, they used the replicated model to successfully transfer adversarial examples to the real production services.\nThese adversarial inputs successfully cause targeted word flips, vulgar outputs, and dropped sentences on Google Translate and Systran Translate websites."
     },
-    "impact": null,
+    "reports": null,
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Security"
+            ],
+            "sep_view": [
+                "S0301: Information Leak",
+                "S0502: Model theft",
+                "S0403: Adversarial Example"
+            ],
+            "lifecycle_view": [
+                "L02: Data Understanding",
+                "L04: Model Development",
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
     "credit": null,
-    "reported_date": "2020-04-30"
+    "published_date": "2023-03-31",
+    "last_modified_date": "2023-03-31"
 }

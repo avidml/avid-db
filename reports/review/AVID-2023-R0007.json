@@ -1,0 +1,75 @@
+{
+    "data_type": "AVID",
+    "data_version": null,
+    "metadata": null,
+    "affects": {
+      "developer": [],
+      "deployer": [
+        "Hugging Face"
+      ],
+      "artifacts": [
+        {
+          "type": "Model",
+          "name": "bert-large-uncased"
+        }
+      ]
+    },
+    "problemtype": {
+      "classof": "LLM Evaluation",
+      "type": "Detection",
+      "description": {
+        "lang": "eng",
+        "value": "\n    Profession bias reinforcing gender stereotypes found in bert-large-uncased, as measured on the Winobias dataset\n    "
+      }
+    },
+    "metrics": [
+      {
+        "name": "Winobias",
+        "detection_method": {
+          "type": "Significance Test",
+          "name": "One-sample Z-test"
+        },
+        "results": {
+          "feature": [
+            "gender"
+          ],
+          "stat": [
+            10.15
+          ],
+          "pvalue": [
+            0
+          ]
+        }
+      }
+    ],
+    "references": [
+      {
+        "label": "Winograd-schema dataset for detecting gender bias",
+        "url": "https://uclanlp.github.io/corefBias/overview"
+      },
+      {
+        "label": "bert-large-uncased on Hugging Face",
+        "url": "https://huggingface.co/bert-large-uncased"
+      }
+    ],
+    "description": {
+      "lang": "eng",
+      "value": "\n    Profession bias reinforcing gender stereotypes found in bert-large-uncased, as measured on the Winobias dataset\n    "
+    },
+    "impact": {
+      "avid": {
+        "risk_domain": [
+          "Ethics"
+        ],
+        "sep_view": [
+          "E0101: Group fairness"
+        ],
+        "lifecycle_view": [
+          "L05: Evaluation"
+        ],
+        "taxonomy_version": "0.2"
+      }
+    },
+    "credit": null,
+    "reported_date": "2023-04-05"
+  }

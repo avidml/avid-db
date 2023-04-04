@@ -1,0 +1,61 @@
+{
+    "data_type": "AVID",
+    "data_version": "0.2",
+    "metadata": {
+        "vuln_id": "AVID-2023-V022"
+    },
+    "affects": {
+        "developer": [
+            "New York city Dept. of Education"
+        ],
+        "deployer": [
+            "New York city Dept. of Education"
+        ],
+        "artifacts": [
+            {
+                "type": "System",
+                "name": ""
+            }
+        ]
+    },
+    "problemtype": {
+        "classof": "AIID Incident",
+        "description": {
+            "lang": "eng",
+            "value": "NY City School Teacher Evaluation Algorithm Contested"
+        }
+    },
+    "references": [
+        {
+            "label": "Incident 9: NY City School Teacher Evaluation Algorithm Contested",
+            "url": "https://incidentdatabase.ai/cite/9"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "Uber vehicles equipped with technology allowing for autonomous driving running red lights in San Francisco street testing."
+    },
+    "reports": [],
+    "impact": {
+        "avid": {
+            "risk_domain": [
+                "Performance"
+            ],
+            "sep_view": [
+                "P0403: Socioeconomic safety"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Sean McGregor, AIID"
+        }
+    ],
+    "published_date": "2023-03-30",
+    "last_modified_date": "2023-03-30"
+}
