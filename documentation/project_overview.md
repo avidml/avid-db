@@ -1,4 +1,4 @@
-# AI Vulnerability Data Base
+# AI Vulnerability Database
 The [AI Vulnerability Database (AVID)](https://avidml.org) is an open-source knowledge base of failure modes for Artificial Intelligence (AI) models, datasets, and systems.
 
 **Our Mission**
