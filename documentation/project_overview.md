@@ -26,7 +26,7 @@ Our [taxonomy](https://avidml.org/taxonomy/) is iteratively developed through co
 ## Technical implementation
 To foster trust we're building a secure and transparent system leveraging well-known infrastructure and methods. Our editorial process for reports, including contestation, will occur directly within github so that every decision is made within public view. We're building our database as a serverless application using core AWS services to provide scale and security while trying to minimize our carbon footprint. 
 
-![System Diagram]()*As you can see from the system diagram we have all of our open source code housed within github. Our Backend is run through AWS with direct usage of Github authentication, auditing, and an API that will allow people to integrate the data into their systems.*
+![System Diagram](/assets/system-diagram.jpg)*As you can see from the system diagram we have all of our open source code housed within github. Our Backend is run through AWS with direct usage of Github authentication, auditing, and an API that will allow people to integrate the data into their systems.*
 
 We are building our systems so that anyone can adopt our [datamodel](https://github.com/avidml/avidtools/tree/main/avidtools/datamodels) to build their own database internal to their organization. By doing this we encourage a network of federated databases where AVID acts as the bridge both to the public and between private entities. We want people to perform ethical disclosure through AVID's editorial process while enabling them to leverage the standards we're building to improve their own internal product development.
 ## Editorial process
@@ -37,6 +37,8 @@ Today our editorial process starts with either a submission to our form, using a
 4. Webmaster renders new reports and vulns to .md files in `website/exampleSite/content/database`
 
 We aim to make this less manual over the course of the next 6 months by building an editorial UI and creating the tools necessary to leverage our data model directly within other systems to make pushing reports to AVID easier and with more complete information up front. Our decisions for each report will be logged in Github so that it's done in an open and transparent manner.
+
+![Editorial Process](/assets/editorial-process.jpg)*Here you can see that our goal is to support people submitting reports to AVID from any number of public model hubs and private repositories within their organization.*
 
 ## HuggingFace Space for educational purposes
 To help make our database approachable, and as a proof of concept for people who may want to build direct integrations with AVID, we built a simple experience that highlights how detections work. We combined public datasets used for bias detection with statistical tests to show one meaningful way of identifying vulnerabilities within a model on HuggingFace. 
