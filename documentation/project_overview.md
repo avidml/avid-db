@@ -28,7 +28,7 @@ To foster trust we're building a secure and transparent system leveraging well-k
 
 ![System Diagram](/assets/system-diagram.jpg)*As you can see from the system diagram we have all of our open source code housed within github. Our Backend is run through AWS with direct usage of Github authentication, auditing, and an API that will allow people to integrate the data into their systems.*
 
-We are building our systems so that anyone can adopt our [datamodel](https://github.com/avidml/avidtools/tree/main/avidtools/datamodels) to build their own database internal to their organization. By doing this we encourage a network of federated databases where AVID acts as the bridge both to the public and between private entities. We want people to perform ethical disclosure through AVID's editorial process while enabling them to leverage the standards we're building to improve their own internal product development.
+We are building our systems so that anyone can adopt our [data model](https://github.com/avidml/avidtools/tree/main/avidtools/datamodels) to build their own database internal to their organization. By doing this we encourage a network of federated databases where AVID acts as the bridge both to the public and between private entities. We want people to perform ethical disclosure through AVID's editorial process while enabling them to leverage the standards we're building to improve their own internal product development.
 ## Editorial process
 Today our editorial process starts with either a submission to our form, using airtable, or by someone creating an issue in Github. Then we have a manual four step process:
 1. An editor maps inputs mapped to a Report datamodel and, published as json to `avid-db/reports/review`
