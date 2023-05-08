@@ -1,7 +1,7 @@
 {
     "namespace": "avid-lifecycle",
     "description": "Adopting the CRISP-DM lifecycle as a starting point, the AVID Taxonomy for lifecycle maps out the stages of development for datasets, models, and systems within the AI ecosystem.",
-    "version": 0.2,
+    "version": 1,
     "predicates": [
         {
             "value": "lifecycle",

@@ -1,7 +1,7 @@
 {
     "namespace": "avid-effect",
     "description": "The domains, categories, and subcategories in this view provide a ‘risk surface’ for the AI artifact being evaluated, may it be a dataset, model, or the whole system.",
-    "version": 0.2,
+    "version": 1,
     "predicates": [
         {
             "value": "security",
