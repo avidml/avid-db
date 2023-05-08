@@ -1,0 +1,378 @@
+{
+    "namespace": "trail-of-bits-ODDs",
+    "description": "Based on the Operational Design Domain Taxonomy from Heidy Khlaaf's publication 'Toward Comprehensive Risk Assessments and Assurance of AI-Based Systems'.",
+    "refs": [
+        "https://github.com/trailofbits/publications/blob/master/papers/toward_comprehensive_risk_assessments.pdf"
+    ],
+    "version": 1,
+    "predicates": [
+        {
+            "value": "application",
+            "expanded": "Application",
+            "description": "The specific area or domain of intended use for a system."
+        },
+        {
+            "value": "users-agents",
+            "expanded": "Users and Human Agents",
+            "description": "The people who interact with, modify and correct, or are affected by the system."
+        },
+        {
+            "value": "vector",
+            "expanded": "Vector",
+            "description": "The risk and attack surfaces within the system that must be examined to assess hazards and harms."
+        },
+        {
+            "value": "protected-characteristics",
+            "expanded": "Protected Characteristics",
+            "description": "Attributes of protected, marginalized, and vulnerable groups who are disproportionately affected by ML models."
+        },
+        {
+            "value": "assets",
+            "expanded": "Assets",
+            "description": "The components that support the system's proper functioning."
+        }
+    ],
+    "values": [
+        {
+            "predicate": "application",
+            "entry": [
+                {
+                    "value": "arts-culture",
+                    "expanded": "Arts & Culture"
+                },
+                {
+                    "value": "auto-transport",
+                    "expanded": "Automotive & Transportation"
+                },
+                {
+                    "value": "communications",
+                    "expanded": "Communications"
+                },
+                {
+                    "value": "finance",
+                    "expanded": "Finance & Economics"
+                },
+                {
+                    "value": "government",
+                    "expanded": "Government & Civics"
+                },
+                {
+                    "value": "human-health",
+                    "expanded": "Human Health"
+                },
+                {
+                    "value": "media",
+                    "expanded": "Journalism and Media"
+                },
+                {
+                    "value": "law",
+                    "expanded": "Law"
+                },
+                {
+                    "value": "manufacturing",
+                    "expanded": "Manufacturing and Commerce"
+                },
+                {
+                    "value": "marketing",
+                    "expanded": "Marketing, Advertising, and Microtargeting"
+                },
+                {
+                    "value": "opportunity",
+                    "expanded": "Opportunity and Livelihood"
+                },
+                {
+                    "value": "productivity",
+                    "expanded": "Productivity and Education"
+                },
+                {
+                    "value": "infrastructure",
+                    "expanded": "Safety-Critical and Infrastructure"
+                },
+                {
+                    "value": "defense",
+                    "expanded": "Security and Defense"
+                },
+                {
+                    "value": "stem",
+                    "expanded": "Science, Technology, Engineering, and Mathematics"
+                },
+                {
+                    "value": "political",
+                    "expanded": "Social and Political Advocacy"
+                }
+            ]
+        },
+        {
+            "predicate": "users-agents",
+            "entry": [
+                {
+                    "value": "end-user",
+                    "expanded": "End User"
+                },
+                {
+                    "value": "model-user",
+                    "expanded": "Model User"
+                },
+                {
+                    "value": "model-subject",
+                    "expanded": "Model Subject"
+                },
+                {
+                    "value": "data-subject",
+                    "expanded": "Data Subject"
+                },
+                {
+                    "value": "data-owner",
+                    "expanded": "Data Owner"
+                },
+                {
+                    "value": "model-owner",
+                    "expanded": "Model Owner"
+                },
+                {
+                    "value": "data-labeler-training",
+                    "expanded": "Data Labeler (Training)"
+                },
+                {
+                    "value": "hitl",
+                    "expanded": "Human-in-the-loop (HITL)"
+                },
+                {
+                    "value": "hitl-corrective",
+                    "expanded": "Fine Tuning & Corrective (HITL)"
+                },
+                {
+                    "value": "hitl-resilience",
+                    "expanded": "Resilience (HITL)"
+                },
+                {
+                    "value": "hitl-justifactory",
+                    "expanded": "Justifactory (HITL)"
+                },
+                {
+                    "value": "hitl-dignitary",
+                    "expanded": "Dignitary (HITL)"
+                },
+                {
+                    "value": "hitl-accountability",
+                    "expanded": "Accountability (HITL)"
+                },
+                {
+                    "value": "hitl-stand-in",
+                    "expanded": "Stand In (HITL)"
+                },
+                {
+                    "value": "hitl-friction",
+                    "expanded": "Friction (HITL)"
+                },
+                {
+                    "value": "hitl-warm-body",
+                    "expanded": "Warm Body (HITL)"
+                },
+                {
+                    "value": "hitl-interface-link",
+                    "expanded": "Interface Link (HITL)"
+                }
+            ]
+        },
+        {
+            "predicate": "vector",
+            "entry": [
+                {
+                    "value": "physical",
+                    "expanded": "Physical or Physical-Infrastructure"
+                },
+                {
+                    "value": "physical-sensor",
+                    "expanded": "Sensor"
+                },
+                {
+                    "value": "physical-cyber",
+                    "expanded": "Cyber Physical"
+                },
+                {
+                    "value": "physical-corporeal",
+                    "expanded": "Corporeal"
+                },
+                {
+                    "value": "data",
+                    "expanded": "Data (Vector)"
+                },
+                {
+                    "value": "training-data",
+                    "expanded": "Training Data (Vector)"
+                },
+                {
+                    "value": "test-data",
+                    "expanded": "Test Data (Vector)"
+                },
+                {
+                    "value": "model",
+                    "expanded": "Model (Vector)"
+                },
+                {
+                    "value": "architecture",
+                    "expanded": "Architecture and Algorithm (Vector)"
+                },
+                {
+                    "value": "parameters",
+                    "expanded": "Parameters and Hyperparameters (Vector)"
+                },
+                {
+                    "value": "source",
+                    "expanded": "Source Code (Vector)"
+                },
+                {
+                    "value": "infrastructure",
+                    "expanded": "Software Infrastructure (Vector)"
+                },
+                {
+                    "value": "interface",
+                    "expanded": "Interface"
+                },
+                {
+                    "value": "ux-ui",
+                    "expanded": "User Interface and User Experience (UI/UX)"
+                },
+                {
+                    "value": "apis",
+                    "expanded": "APIs"
+                },
+                {
+                    "value": "i-o",
+                    "expanded": "Input & Output (I/O)"
+                },
+                {
+                    "value": "deployment",
+                    "expanded": "Deployment and Distribution"
+                },
+                {
+                    "value": "management",
+                    "expanded": "Management of the Deployment"
+                },
+                {
+                    "value": "monitoring",
+                    "expanded": "Monitoring of the Deployment"
+                },
+                {
+                    "value": "maintenance",
+                    "expanded": "Maintenance of the Deployment"
+                }
+            ]
+        },
+        {
+            "predicate": "protected-characteristics",
+            "entry": [
+                {
+                    "value": "age",
+                    "expanded": "Age"
+                },
+                {
+                    "value": "birth",
+                    "expanded": "Birth"
+                },
+                {
+                    "value": "class-caste",
+                    "expanded": "Class or Caste"
+                },
+                {
+                    "value": "descent",
+                    "expanded": "Descent"
+                },
+                {
+                    "value": "disability",
+                    "expanded": "Disability"
+                },
+                {
+                    "value": "gender-identity",
+                    "expanded": "Gender Identity"
+                },
+                {
+                    "value": "genetics",
+                    "expanded": "Genetic Information"
+                },
+                {
+                    "value": "health-status",
+                    "expanded": "Health Status"
+                },
+                {
+                    "value": "language",
+                    "expanded": "Language"
+                },
+                {
+                    "value": "marriage",
+                    "expanded": "Marriage and Civil Partnerships"
+                },
+                {
+                    "value": "migration",
+                    "expanded": "Immigration or Migration Status"
+                },
+                {
+                    "value": "origin",
+                    "expanded": "National, Ethnic, or Social Origin"
+                },
+                {
+                    "value": "opinion",
+                    "expanded": "Political or Other Opinion"
+                },
+                {
+                    "value": "reproductive",
+                    "expanded": "Reproductive rights (e.g. pregnancy and maternity)"
+                },
+                {
+                    "value": "property",
+                    "expanded": "Property, birth, or other status"
+                },
+                {
+                    "value": "race",
+                    "expanded": "Race"
+                },
+                {
+                    "value": "religion",
+                    "expanded": "Religion or Belief"
+                },
+                {
+                    "value": "sex",
+                    "expanded": "Sex"
+                },
+                {
+                    "value": "sexual-orientation",
+                    "expanded": "Sexual Orientation"
+                }
+            ]
+        },
+        {
+            "predicate": "assets",
+            "entry": [
+                {
+                    "value": "compute",
+                    "expanded": "Compute"
+                },
+                {
+                    "value": "data-assets",
+                    "expanded": "Data (Asset)"
+                },
+                {
+                    "value": "tooling",
+                    "expanded": "Tooling"
+                },
+                {
+                    "value": "system",
+                    "expanded": "AI System Components and Subcomponents"
+                },
+                {
+                    "value": "human-resources",
+                    "expanded": "Human Resources"
+                },
+                {
+                    "value": "monetary",
+                    "expanded": "Monetary"
+                },
+                {
+                    "value": "physical-assets",
+                    "expanded": "Physical (Assets)"
+                }
+            ]
+        }
+    ]
+}
