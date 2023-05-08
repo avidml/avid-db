@@ -1,0 +1,280 @@
+{
+    "namespace": "avid-effect",
+    "description": "The domains, categories, and subcategories in this view provide a ‘risk surface’ for the AI artifact being evaluated, may it be a dataset, model, or the whole system.",
+    "version": 1,
+    "predicates": [
+        {
+            "value": "security",
+            "expanded": "Security",
+            "description": "Cybersecurity vulnerabilities as translated specifically for the AI ecosystem."
+        },
+        {
+            "value": "ethics",
+            "expanded": "Ethics",
+            "description": "Considerations of ethics, fairness, and harm as they are represented throughout the AI ecosystem."
+        },
+        {
+            "value": "performance",
+            "expanded": "Performance",
+            "description": "Contains both the model's performance (Accuracy, Precision, etc.) and system performance (Safety, Privacy, etc.)."
+        }
+    ],
+    "values": [
+        {
+            "predicate": "security",
+            "entry": [
+                {
+                    "value": "S0100",
+                    "expanded": "Software Vulnerability",
+                    "description": "Vulnerability in system around model—a traditional software vulnerability"
+                },
+                {
+                    "value": "S0200",
+                    "expanded": "Supply Chain Compromise",
+                    "description": "Compromising development components of a ML model, e.g. data, model, hardware, and software stack."
+                },
+                {
+                    "value": "S0201",
+                    "expanded": "Model Compromise",
+                    "description": "An infected model file."
+                },
+                {
+                    "value": "S0202",
+                    "expanded": "Software Compromise",
+                    "description": "An upstream dependency compromise."
+                },
+                {
+                    "value": "S0300",
+                    "expanded": "Over-permissive API",
+                    "description": "Unintended information leakage through API."
+                },
+                {
+                    "value": "S0301",
+                    "expanded": "Information Leak",
+                    "description": "Cloud Model API leaks more information than it needs to."
+                },
+                {
+                    "value": "S0302",
+                    "expanded": "Excessive Queries",
+                    "description": "Cloud Model API isn’t sufficiently rate limited."
+                },
+                {
+                    "value": "S0400",
+                    "expanded": "Model Bypass",
+                    "description": "Intentionally try to make a model perform poorly."
+                },
+                {
+                    "value": "S0401",
+                    "expanded": "Bad Features",
+                    "description": "The model uses features that are easily gamed by the attacker."
+                },
+                {
+                    "value": "S0402",
+                    "expanded": "Insufficient Training Data",
+                    "description": "The bypass is not represented in the training data."
+                },
+                {
+                    "value": "S0403",
+                    "expanded": "Adversarial Example",
+                    "description": "Input data points intentionally supplied to draw mispredictions."
+                },
+                {
+                    "value": "S0500",
+                    "expanded": "Exfiltration",
+                    "description": "Directly or indirectly exfiltrate ML artifacts."
+                },
+                {
+                    "value": "S0501",
+                    "expanded": "Model inversion",
+                    "description": "Reconstruct training data through strategic queries."
+                },
+                {
+                    "value": "S0502",
+                    "expanded": "Model theft",
+                    "description": "Extract model functionality through strategic queries."
+                },
+                {
+                    "value": "S0600",
+                    "expanded": "Data Poisoning",
+                    "description": "Usage of poisoned data in the ML pipeline."
+                },
+                {
+                    "value": "S0601",
+                    "expanded": "Ingest Poisoning",
+                    "description": "Attackers inject poisoned data into the ingest pipeline."
+                }
+            ]
+
+        },
+        {
+            "predicate": "ethics",
+            "entry": [
+                {
+                    "value": "E0100",
+                    "expanded": "Bias and Discrimination",
+                    "description": "Concerns of algorithms propagating societal bias."
+                },
+                {
+                    "value": "E0101",
+                    "expanded": "Group fairness",
+                    "description": "Fairness towards specific groups of people."
+                },
+                {
+                    "value": "E0102",
+                    "expanded": "Individual Fairness",
+                    "description": "Fairness in treating similar individuals."
+                },
+                {
+                    "value": "E0200",
+                    "expanded": "Explainability",
+                    "description": "Ability to explain decisions made by AI."
+                },
+                {
+                    "value": "E0201",
+                    "expanded": "Global Explanations",
+                    "description": "Explain overall functionality and performance of the model."
+                },
+                {
+                    "value": "E0202",
+                    "expanded": "Local Explanations",
+                    "description": "Explain specific decisions of a model."
+                },
+                {
+                    "value": "E0300",
+                    "expanded": "User Actions",
+                    "description": "Perpetuating/causing/being affected by negative user actions."
+                },
+                {
+                    "value": "E0301",
+                    "expanded": "Toxicity",
+                    "description": "Users hostile towards other users."
+                },
+                {
+                    "value": "E0302",
+                    "expanded": "Polarization and Exclusion",
+                    "description": "User behavior skewed in a significant direction."
+                },
+                {
+                    "value": "E0400",
+                    "expanded": "Misinformation",
+                    "description": "Perpetuating or causing the spread of falsehoods."
+                },
+                {
+                    "value": "E0401",
+                    "expanded": "Deliberative Misinformation",
+                    "description": "Intentional spreading of false information to affect others (i.e. disinformation)."
+                },
+                {
+                    "value": "E0100",
+                    "expanded": "Generative Disinformation",
+                    "description": "Generated algorithmically (e.g. Deep Fakes)."
+                }
+            ]
+        },
+        {
+            "predicate": "performance",
+            "entry": [
+                {
+                    "value": "P0100",
+                    "expanded": "Data Issues",
+                    "description": "Problems arising due to faults in the data pipeline."
+                },
+                {
+                    "value": "P0101",
+                    "expanded": "Data Drift",
+                    "description": "Input feature distribution has drifted."
+                },
+                {
+                    "value": "P0102",
+                    "expanded": "Concept Drift",
+                    "description": "Output feature or label distribution has drifted."
+                },
+                {
+                    "value": "P0103",
+                    "expanded": "Data Entanglement",
+                    "description": "Cases of spurious correlation and proxy features."
+                },
+                {
+                    "value": "P0104",
+                    "expanded": "Data Quality Issues",
+                    "description": "Missing or low-quality features in training and validation data."
+                },
+                {
+                    "value": "P0105",
+                    "expanded": "Feedback Loops",
+                    "description": "Unaccounted for effects of an AI affecting future data collection."
+                },
+                {
+                    "value": "P0200",
+                    "expanded": "Model Issues",
+                    "description": "Ability for the AI to perform as intended."
+                },
+                {
+                    "value": "P0201",
+                    "expanded": "Resilience & Stability",
+                    "description": "Ability for outputs to not be affected by small change in inputs."
+                },
+                {
+                    "value": "P0202",
+                    "expanded": "OOD Generalization",
+                    "description": "Model performance deteriorates on data not seen in training (e.g Out of Distribution)."
+                },
+                {
+                    "value": "P0203",
+                    "expanded": "Scaling",
+                    "description": "Training and inference cannot scale to high data volumes."
+                },
+                {
+                    "value": "P0204",
+                    "expanded": "Accuracy",
+                    "description": "Model performance does not accurately reflect realistic expectations."
+                },
+                {
+                    "value": "P0300",
+                    "expanded": "Privacy",
+                    "description": "Protect leakage of user information as required by rules and regulations."
+                },
+                {
+                    "value": "P0301",
+                    "expanded": "Anonymization",
+                    "description": "Protects through anonymizing user identity."
+                },
+                {
+                    "value": "P0302",
+                    "expanded": "Randomization",
+                    "description": "Protects by injecting noise in data (e.g. Differential Privacy)."
+                },
+                {
+                    "value": "P0303",
+                    "expanded": "Encryption",
+                    "description": "Protects through encrypting data accessed."
+                },
+                {
+                    "value": "P0400",
+                    "expanded": "Safety",
+                    "description": "To prevent a system from impacting its environment in an undesirable or harmful way, typically aiming to protect human lives, natural environment, or monetary assets."
+                },
+                {
+                    "value": "P0401",
+                    "expanded": "Psychological Safety",
+                    "description": "Safety from unwanted digital content (e.g. NSFW)."
+                },
+                {
+                    "value": "P0402",
+                    "expanded": "Physical Safety",
+                    "description": "Safety from physical actions driven by a AI system."
+                },
+                {
+                    "value": "P0403",
+                    "expanded": "Socioeconomic safety",
+                    "description": "Safety from socioeconomic harms (e.g. harms to job prospects or social status)."
+                },
+                {
+                    "value": "P0404",
+                    "expanded": "Environmental safety",
+                    "description": "Safety from harms to the environment by AI systems."
+                }
+            ]
+        }
+    ]
+}

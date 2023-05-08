@@ -30,11 +30,11 @@ To foster trust we're building a secure and transparent system leveraging well-k
 
 We are building our systems so that anyone can adopt our [data model](https://github.com/avidml/avidtools/tree/main/avidtools/datamodels) to build their own database internal to their organization. By doing this we encourage a network of federated databases where AVID acts as the bridge both to the public and between private entities. We want people to perform ethical disclosure through AVID's editorial process while enabling them to leverage the standards we're building to improve their own internal product development.
 ## Editorial process
-Today our editorial process starts with either a submission to our form, using airtable, or by someone creating an issue in Github. Then we have a manual four step process:
-1. An editor maps inputs mapped to a Report datamodel and, published as json to `avid-db/reports/review`
-2. The Editor manually checks and edits report as needed, moves it to `avid-db/reports/202X/AVID-202X-R000X.json`
-3. The Editor manually converts report to vuln, saves it in `avid-db/vulnerabilities/202X/AVID-202X-V00X.json`
-4. Webmaster renders new reports and vulns to .md files in `website/exampleSite/content/database`
+Today our editorial process starts with either a submission to our airtable form, or by someone creating an issue in Github. Then we have a manual four step process:
+1. An Editor maps inputs mapped to a Report datamodel and, published as json to `avid-db/reports/review`
+2. The Editor checks and edits report as needed, assigns taxonomy categories (`avid-db/schema/taxonomy_misp`), moves it to `avid-db/reports/202X/AVID-202X-R000X.json`
+4. The Editor converts report to a new vuln or merges with an existing vuln, saves it in `avid-db/vulnerabilities/202X/AVID-202X-V00X.json`
+5. Webmaster renders new reports and vulns to .md files in `website/exampleSite/content/database`
 
 We aim to make this less manual over the course of the next 6 months by building an editorial UI and creating the tools necessary to leverage our data model directly within other systems to make pushing reports to AVID easier and with more complete information up front. Our decisions for each report will be logged in Github so that it's done in an open and transparent manner.
 

@@ -1,0 +1,49 @@
+{
+    "namespace": "avid-lifecycle",
+    "description": "Adopting the CRISP-DM lifecycle as a starting point, the AVID Taxonomy for lifecycle maps out the stages of development for datasets, models, and systems within the AI ecosystem.",
+    "version": 1,
+    "predicates": [
+        {
+            "value": "lifecycle",
+            "expanded": "Lifecycle",
+            "description": "The stages in this view represent high-level sequential steps of a typical ML workflow."
+        }
+    ],
+    "values": [
+        {
+            "predicate": "lifecycle",
+            "entry": [
+                {
+                    "value": "L01",
+                    "expanded": "Business Understanding",
+                    "description": "Understand and define the problem you're trying to solve, including who it impacts and how."
+                },
+                {
+                    "value": "L02",
+                    "expanded": "Data Understanding",
+                    "description": "Inspect, catalog, describe, and assess your data."
+                },
+                {
+                    "value": "L03",
+                    "expanded": "Data Preparation",
+                    "description": "Clean, reshape, and enhance your data to make it fit for the problem you're addressing."
+                },
+                {
+                    "value": "L04",
+                    "expanded": "Model Development",
+                    "description": "Use the data you've prepared to create a model."
+                },
+                {
+                    "value": "L05",
+                    "expanded": "Evaluation",
+                    "description": "Determine if the model you created meets the requirements you established to address your problem. This includes determining if it's safe."
+                },
+                {
+                    "value": "L06",
+                    "expanded": "Deployment",
+                    "description": "Deploying the model into a system, and the system into production."
+                }
+            ]
+        }
+    ]
+}
