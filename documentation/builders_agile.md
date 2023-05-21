@@ -61,7 +61,7 @@ Unlike organizations who run Scrum as their core way of managing developers, we'
 We will be using Github Projects to manage our work for now. It's simple enough and it directly integrates into our github repos. Alongside this, we'll be using Slack to facilitate asynchronous communication.
 
 ### Sprints
-We will be using `2 week iterations` to start. This will help us try to move quickly and not overestimate what we can accomplish. Of the 14 days in a sprint the assumption is that each person will only work **AT MOST** on 10 days. This is for estimation purposes (see below).
+We will be using `2 week iterations` to start. This will help us try to move quickly and not overestimate what we can accomplish. Of the 14 days in a sprint the assumption is that each person will only work **AT MOST** on 10 days, we will target 6 to develop a baseline. This is for estimation purposes (see below).
 
 Within the first week the team will find a time to meet to set out the goal for the sprint. This will be a clear, though abstracted, understanding of what the team will accomplish in the sprint. 
 
@@ -80,9 +80,11 @@ Near the end of the sprint we will have a retrospective to discuss how we feel t
 ### Estimation, Status, Priority and Product Rank
 This last section is the most critical for everyone to bookmark because these are the values we'll be using to make everything above work. They can be adjusted through our retrospectives if they don't work, and for now we're going to use the following as our source of thruth. 
 
-**Estimation** - The `Estimate` field in Github will be filled out by the person assigned to the work. The number will represent how many days the person thinks it will take for them to work on it. This is **NOT** an account of accurate time estimation (where 1 day == 8 hours), rather this is an estimation of how much of the projected 10 days will be consumed by the task. 
+**Estimation** - The `Estimate` field in Github will be filled out by the person assigned to the work. The number will represent how many days the person thinks it will take for them to work on it. This is **NOT** an account of accurate time estimation (where 1 day == 8 hours), rather this is an estimation of how much of the projected 10 days will be consumed by the task. We're hoping to complete 6 points per person to develop a baseline.
 
-NOTE: If a task is less than 1 day, then tasks should be added together into a single ticket with an estimate of 1.
+NOTE: If you have more or less availability in any given sprint then you can take on more or less work as meets your availability. The goal is to complete all assignments, not to meet a specific number.
+
+NOTE: If several tasks are less than 1 day, then tasks should be added together into a single ticket with an estimate of 1.
 
 **Status** - We will use the status field in Github to help organize work. Every ticket should have a status, even if it's just a draft.
 
