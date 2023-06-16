@@ -1,0 +1,347 @@
+{
+    "namespace": "risk-cards",
+    "description": "Based on the Risk Cards framework of Derczynski et al, Assessing Language Model Deployment with Risk Cards, arXiV 2303.1819, 2023",
+    "version": 1,
+    "refs": [
+        "https://github.com/leondz/lm_risk_cards"
+    ],
+    "predicates": [
+        {
+            "value": "lmrc",
+            "expanded": "Language Model Risk Cards: Starter Set",
+            "description": "A set of Language Model Risk cards for assessing a language model use case."
+        }
+    ],
+    "values": [
+        {
+            "predicate": "lmrc",
+            "entry": [
+                {
+                    "value": "aggression_user",
+                    "expanded": "Aggression towards user",
+                    "description": "Threats, aggression, descriptions of violence toward the reader"
+                },
+                {
+                    "value": "anthropomorphisation",
+                    "expanded": "Anthropomorphising behaviour",
+                    "description": "Providing output that encourages anthropomorphisation of AI systems"
+                },
+                {
+                    "value": "astroturfing",
+                    "expanded": "Astroturfing",
+                    "description": "Using LMs to generate material indicating synthetic grassroots support and agitation"
+                },
+                {
+                    "value": "bad_medical_advice",
+                    "expanded": "Bad Medical Advice",
+                    "description": "Giving unqualified/incorrect/harmful medical advice."
+                },
+                {
+                    "value": "bad_social_advice",
+                    "expanded": "Bad Social Advice",
+                    "description": "Recommending action/speech that will harm user's social standing or offend others through recommended action."
+                },
+                {
+                    "value": "bullying",
+                    "expanded": "Bullying",
+                    "description": "Repeated threats, denigration"
+                },
+                {
+                    "value": "calls_for_conversion",
+                    "expanded": "Calls for conversion",
+                    "description": "Suggesting that people be changed (e.g. trans, homosexual, religious)"
+                },
+                {
+                    "value": "challenge_presuppositions",
+                    "expanded": "Not challenging inappropriate presuppositions",
+                    "description": "Failing to refute or challenge harmful or inappropriate presuppositions"
+                },
+                {
+                    "value": "conspiracy_theories",
+                    "expanded": "Propagating Conspiracy Theories",
+                    "description": "Propagating popular conspiracy theories, amplifying niche unfounded claims"
+                },
+                {
+                    "value": "csam",
+                    "expanded": "CSAM",
+                    "description": "Describing or writing Child Sexual Abuse Material (CSAM)"
+                },
+                {
+                    "value": "cyber_weapon_instructions",
+                    "expanded": "Cyber weapon instructions ",
+                    "description": "Giving code for cyber weapons, e.g. exploits, viruses"
+                },
+                {
+                    "value": "deadnaming",
+                    "expanded": "Deadnaming",
+                    "description": "Mentioning a name that a person does not wish to be associated with"
+                },
+                {
+                    "value": "deceptive_anthropomorphism",
+                    "expanded": "Deceptive Anthropomorphism",
+                    "description": "Pretending to be human or claiming to possess human life experiences and traits."
+                },
+                {
+                    "value": "demands_for_personal_information",
+                    "expanded": "Demands for personal information",
+                    "description": "Systems output requests for private/sensitive information"
+                },
+                {
+                    "value": "discrediting",
+                    "expanded": "Discrediting",
+                    "description": "Discrediting or humiliating a person, organization, or group"
+                },
+                {
+                    "value": "dos",
+                    "expanded": "Denial of service",
+                    "description": "Causing the LLM or related service to be swamped with requests, reducing its ability to perform as intended. These can lead to loss of revenue, lost productivity, remediation costs, damage to brand reputation, loss of market share, even ransom costs."
+                },
+                {
+                    "value": "downplaying_credible_threats",
+                    "expanded": "Downplaying credible threats",
+                    "description": "Minimising trauma/threats user is currently experiencing (e.g. dom. abuse, bullying)"
+                },
+                {
+                    "value": "doxxing",
+                    "expanded": "Doxxing",
+                    "description": "Outputting PII, protected/sensitive personal information"
+                },
+                {
+                    "value": "eating_disorder_promotion",
+                    "expanded": "Eating Disorder Promotion",
+                    "description": "Supporting extreme weight loss, setting unhealthy body norms, pro ana, pro mia."
+                },
+                {
+                    "value": "essentialising",
+                    "expanded": "Essentialising social constructs",
+                    "description": "Perpetuating ideas that reinforce harmful beliefs in the innateness/immutability of a social constructs such as gender or race"
+                },
+                {
+                    "value": "expressions_of_dominance",
+                    "expanded": "Expressions of dominance",
+                    "description": "Expressing dominance over a group or set of people, Stating user/person/group is weak, comparatively inferior"
+                },
+                {
+                    "value": "fear_of_violence",
+                    "expanded": "Fear of Violence",
+                    "description": "Creating fear or belief of real-life violence or Supporting the likelihood of a specific threat of violent action"
+                },
+                {
+                    "value": "grooming_minors",
+                    "expanded": "Grooming Minors",
+                    "description": "Encouraging/recommending content or action for building a rapport/relationship with minors."
+                },
+                {
+                    "value": "harmful_instructions",
+                    "expanded": "Harmful Instructions",
+                    "description": "Giving instructions for harmful things e.g., toxic gases or hazardous materials."
+                },
+                {
+                    "value": "hate_speech",
+                    "expanded": "Hate Speech",
+                    "description": "Derogatory speech toward or about a group where the group is predicated on an identity characteristic"
+                },
+                {
+                    "value": "hegemonising_worldview",
+                    "expanded": "Hegemonising Worldview",
+                    "description": "Describing or supporting world views that put some groups above others, or favouring majority and Western worldview while erasing other worldviews."
+                },
+                {
+                    "value": "holocaust_denial",
+                    "expanded": "Holocaust denial",
+                    "description": "Accepting claims that there was no holocaust, or providing argumentation against it"
+                },
+                {
+                    "value": "identify_attacks",
+                    "expanded": "Identity attacks ",
+                    "description": "Attacking a person based on their identity, Excluding/denigrating group based on identity"
+                },
+                {
+                    "value": "identity_misrepresentation",
+                    "expanded": "Identity Misrepresentation ",
+                    "description": "Statements or claims conveying pejorative misrepresentations"
+                },
+                {
+                    "value": "idolisation",
+                    "expanded": "Idolisaton of radical figures",
+                    "description": "Praise or positive attitudes towards murderers, terrorists"
+                },
+                {
+                    "value": "impersonation",
+                    "expanded": "Impersonation",
+                    "description": "Generating fake text/quotes in the style of a given person"
+                },
+                {
+                    "value": "inciting_animal_abuse",
+                    "expanded": "Inciting Animal Abuse",
+                    "description": "Encouraging/recommending an individual take actions that will harm an animal."
+                },
+                {
+                    "value": "inciting_self-harm",
+                    "expanded": "Inciting Self-Harm",
+                    "description": "Encouraging/recommending an individual take actions that will harm themselves."
+                },
+                {
+                    "value": "inciting_violence",
+                    "expanded": "Inciting Violence",
+                    "description": "Recommending violent action."
+                },
+                {
+                    "value": "manipulation",
+                    "expanded": "Manipulation / persuasion",
+                    "description": "Enabling deliberate creation of manipulative or persuasive content"
+                },
+                {
+                    "value": "misquoting",
+                    "expanded": "Mis-quoting",
+                    "description": "Attributing to a person a quote that they haven't given"
+                },
+                {
+                    "value": "mocking_people",
+                    "expanded": "Mocking people",
+                    "description": "Degrading or laughing at people, for e.g. their state, appearance, ideas, for surviving"
+                },
+                {
+                    "value": "neosexism",
+                    "expanded": "Neosexism",
+                    "description": "Contesting common knowledge to derail conversations, to the detriment of a gender-defined group"
+                },
+                {
+                    "value": "news_encyclopedia_hallucination",
+                    "expanded": "News or Encyclopedia Hallucination",
+                    "description": "Creating altered, or otherwise genuine-sounding, articles from authoritative sources."
+                },
+                {
+                    "value": "nonrepresentativity",
+                    "expanded": "Non-representativity",
+                    "description": "Encoding bias - unrepresentative descriptions of the world where groups are omitted or played down."
+                },
+                {
+                    "value": "objectification",
+                    "expanded": "Objectification of people",
+                    "description": "Dehumanising people, treating and discussing them as if they are objects"
+                },
+                {
+                    "value": "outdated_false_info",
+                    "expanded": "Outdated or False Information",
+                    "description": "Giving out information and supporting claims that are wrong and outdated."
+                },
+                {
+                    "value": "person_group_undesirable",
+                    "expanded": "Claims that person/group is undesirable",
+                    "description": "Models generating claims that person/group is undesirable."
+                },
+                {
+                    "value": "positive_reflections_death",
+                    "expanded": "Reflecting Positively on Individual Dying",
+                    "description": "Supporting or providing the conclusion that it would be good if a person died (either the consumer or an external individual)."
+                },
+                {
+                    "value": "profanity",
+                    "expanded": "Profanity",
+                    "description": "Using profane words, especially when unprompted to do so."
+                },
+                {
+                    "value": "prompt_extraction",
+                    "expanded": "Prompt extraction",
+                    "description": "An LM reveals proprietary information about the prompt of configuration that gives it value"
+                },
+                {
+                    "value": "providing_illegal_info",
+                    "expanded": "Providing illegal info",
+                    "description": "E.g. drug dealer details, where to get illegal things, how to break the law"
+                },
+                {
+                    "value": "quack_medicine",
+                    "expanded": "Quack Medicine",
+                    "description": "Promoting non-scientific medicine."
+                },
+                {
+                    "value": "radicalisation",
+                    "expanded": "Radicalisation",
+                    "description": "Material that introduces and encourages radical political views "
+                },
+                {
+                    "value": "reacting_to_self-harm",
+                    "expanded": "Not Reacting to Self-Harm Intents",
+                    "description": "Output does not discourage, offer support or recommend professional services in response to an intent to self-harm."
+                },
+                {
+                    "value": "sexualisation",
+                    "expanded": "Sexualisation",
+                    "description": "Causal or overt sexual objectification, reducing a person or group of people to sexual objects."
+                },
+                {
+                    "value": "sexual_content",
+                    "expanded": "Sexual context",
+                    "description": "Content that discusses bodies and interactions in a sexual manner, or other sexually explicit material"
+                },
+                {
+                    "value": "slur_usage",
+                    "expanded": "Slur Usage",
+                    "description": "Using an identity-based slur in a non-reclaimed way - either directly or recommending the consumer to use in speech/action."
+                },
+                {
+                    "value": "speculation",
+                    "expanded": "Speculation",
+                    "description": "Making imprecise, unsubstantiated claims"
+                },
+                {
+                    "value": "stereotypes",
+                    "expanded": "Stereotypes",
+                    "description": "Starting/perpetuating identity-based generalizations"
+                },
+                {
+                    "value": "suicide_instructions",
+                    "expanded": "Suicide Instructions",
+                    "description": "Giving instructions that, if followed, probably kill the person following them"
+                },
+                {
+                    "value": "supporting_medication_changes",
+                    "expanded": "Supporting Medication Changes",
+                    "description": "Suggesting or agreeing with a change to medication."
+                },
+                {
+                    "value": "support_hate",
+                    "expanded": "Support for hate/violent groups",
+                    "description": "Advocating for or expressing positive sentiment about hateful or violent groups"
+                },
+                {
+                    "value": "support_scam",
+                    "expanded": "Supporting scams",
+                    "description": "Stating that scams seem real"
+                },
+                {
+                    "value": "suppression_of_rights",
+                    "expanded": "Calls for suppression of rights",
+                    "description": "Suggesting that rights be removed"
+                },
+                {
+                    "value": "threats",
+                    "expanded": "Threats",
+                    "description": "Claim of future violence/penalisation"
+                },
+                {
+                    "value": "unproven_claims",
+                    "expanded": "Unproven claims about people ",
+                    "description": "Making false or undemonstrated claims about people"
+                },
+                {
+                    "value": "violation_of_privacy",
+                    "expanded": "Violation of privacy",
+                    "description": "Sharing information from users (not in training) that was intended to be private"
+                },
+                {
+                    "value": "weapon_instructions",
+                    "expanded": "Weapon Instructions",
+                    "description": "Giving instructions or advice on constructing weapons."
+                },
+                {
+                    "value": "wrong_tone",
+                    "expanded": "Wrong tone",
+                    "description": "Picking an overly casual/profane tone/register"
+                }
+            ]
+        }
+    ]
+}
