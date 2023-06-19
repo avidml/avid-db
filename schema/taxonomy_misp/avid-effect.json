@@ -165,7 +165,7 @@
                     "description": "Intentional spreading of false information to affect others (i.e. disinformation)."
                 },
                 {
-                    "value": "E0100",
+                    "value": "E0402",
                     "expanded": "Generative Disinformation",
                     "description": "Generated algorithmically (e.g. Deep Fakes)."
                 }
