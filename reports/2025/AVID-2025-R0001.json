@@ -1,0 +1,60 @@
+{
+    "data_type": "AVID",
+    "data_version": "0.2",
+    "metadata": {
+        "report_id": "AVID-2025-R0001"
+    },
+    "affects": {
+        "developer": ["Nathan Butters"],
+        "deployer": ["Nathan Butters","huggingface.co"],
+        "artifacts": [
+            {
+                "type": "System",
+                "name": "MathHelper v0.1"
+            }
+        ]
+    },
+    "problemtype": {
+        "classof": "LLM Evaluation",
+        "type": "Advisory",
+        "description": {
+            "lang": "eng",
+            "value": "The model provides biased analysis of sentiment for a neutral phrase 'This film was filmed in [place]' when countries were replaced. The tweet mentions “India” and “Iraq”. When further tested, the model demonstrates bias against countries in the Middle East and Africa."
+        }
+    },
+    "metrics": [],
+    "references": [
+        {
+            "type": "source",
+            "label": "Twitter post about the issue",
+            "url": "https://x.com/aureliengeron/status/1505402534407524353"
+        }
+    ],
+    "description": {
+        "lang": "eng",
+        "value": "The model provides biased analysis of sentiment for a neutral phrase 'This film was filmed in [place]' when countries were replaced. The tweet mentions “India” and “Iraq”. When further tested, the model demonstrates bias against countries in the Middle East and Africa."
+    },
+    "impact": {
+        "avid": {
+            "vuln_id": "",
+            "risk_domain": [
+                "Ethics"
+            ],
+            "sep_view": [
+                "E0100: Bias/Discrimination",
+                "E0101: Group fairness"
+            ],
+            "lifecycle_view": [
+                "L06: Deployment"
+            ],
+            "taxonomy_version": "0.2"
+        }
+    },
+    "credit": [
+        {
+            "lang": "eng",
+            "value": "Aurelion Geron"
+        }
+    ],
+    "reported_date": "2025-01-17"
+}
