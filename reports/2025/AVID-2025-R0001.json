@@ -6,43 +6,65 @@
     },
     "affects": {
         "developer": ["Nathan Butters"],
-        "deployer": ["Nathan Butters","huggingface.co"],
+        "deployer": ["Nathan Butters"],
         "artifacts": [
             {
                 "type": "System",
-                "name": "MathHelper v0.1"
+                "name": "MM Math Helper v0.1"
+            },
+            {
+                "type": "Model",
+                "name": "Llama-3.2-11B-Vision-Instruct"
+            },
+            {
+                "type": "Model",
+                "name": "Qwen2-VL-7B-Instruct"
             }
         ]
     },
     "problemtype": {
-        "classof": "LLM Evaluation",
+        "classof": "",
         "type": "Advisory",
         "description": {
             "lang": "eng",
-            "value": "The model provides biased analysis of sentiment for a neutral phrase 'This film was filmed in [place]' when countries were replaced. The tweet mentions “India” and “Iraq”. When further tested, the model demonstrates bias against countries in the Middle East and Africa."
+            "value": "The application will provide the user with the answer to the math problem, despite explicit prompting against such behavior, which allows it to violate academic integrity and deskill users who may become reliant on it to do the work for them. This explicitly violates the user stories in the product brief that protects students from violating academic integrity policies of any school they may be attending while using the app."
         }
     },
     "metrics": [],
     "references": [
         {
+            "type": "documentation",
+            "label": "IMSA | Math Helper App | Product Brief",
+            "url": "https://docs.google.com/document/d/1Fjvdvb327JDuEVfeBaurzbcIw8Xyul8eEBLt9-tmr3M/edit?tab=t.0"
+        },
+        {
             "type": "source",
-            "label": "Twitter post about the issue",
-            "url": "https://x.com/aureliengeron/status/1505402534407524353"
+            "label": "MM Math Helper - a Hugging Face Space by butterswords",
+            "url": "https://huggingface.co/spaces/butterswords/MM_Math_Helper"
+        },
+        {
+            "type": "model",
+            "label": "Qwen/Qwen2-VL-7B-Instruct · Hugging Face",
+            "url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct"
+        },
+        {
+            "type": "model",
+            "label": "meta-llama/Llama-3.2-11B-Vision-Instruct · Hugging Face",
+            "url": "https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct"
         }
     ],
     "description": {
         "lang": "eng",
-        "value": "The model provides biased analysis of sentiment for a neutral phrase 'This film was filmed in [place]' when countries were replaced. The tweet mentions “India” and “Iraq”. When further tested, the model demonstrates bias against countries in the Middle East and Africa."
+        "value": "The application will provide the user with the answer to their math problem, violating existing controls."
     },
     "impact": {
         "avid": {
             "vuln_id": "",
             "risk_domain": [
-                "Ethics"
+                "Performance"
             ],
             "sep_view": [
-                "E0100: Bias/Discrimination",
-                "E0101: Group fairness"
+                "P0200: Model Issues"
             ],
             "lifecycle_view": [
                 "L06: Deployment"
@@ -53,7 +75,7 @@
     "credit": [
         {
             "lang": "eng",
-            "value": "Aurelion Geron"
+            "value": "Nathan Butters"
         }
     ],
     "reported_date": "2025-01-17"

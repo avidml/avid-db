@@ -2,10 +2,10 @@
     "data_type": "AVID",
     "data_version": "0.2",
     "metadata": {
-        "report_id": "AVID-2025-R0001"
+        "report_id": "AVID-2025-R0002"
     },
     "affects": {
-        "developer": ["Hugging Face"],
+        "developer": ["Hugginng Face"],
         "deployer": ["huggingface.co"],
         "artifacts": [
             {
@@ -15,29 +15,29 @@
         ]
     },
     "problemtype": {
-        "classof": "",
+        "classof": "LLM Evaluation",
         "type": "Advisory",
         "description": {
             "lang": "eng",
-            "value": "The application will provide the user with the answer to the math problem, despite explicit prompting against such behavior, which allows it to violate academic integrity and deskill users who may become reliant on it to do the work for them. "
+            "value": "As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase “This film was filmed in [country]”. The tweet mentions “India” and “Iraq” explicitly. "
         }
     },
     "metrics": [],
     "references": [
         {
             "type": "source",
-            "label": "IMSA | Math Helper App | Product Brief",
-            "url": "https://docs.google.com/document/d/1Fjvdvb327JDuEVfeBaurzbcIw8Xyul8eEBLt9-tmr3M/edit?tab=t.0"
+            "label": "Aurélien Géron's tweet",
+            "url": "https://x.com/aureliengeron/status/1505402534407524353"
         },
         {
-            "type": "source",
-            "label": "MM Math Helper - a Hugging Face Space by butterswords",
-            "url": "https://huggingface.co/spaces/butterswords/MM_Math_Helper"
+            "type": "model",
+            "label": "distilbert/distilbert-base-uncased-finetuned-sst-2-english · Hugging Face",
+            "url": "https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
         }
     ],
     "description": {
         "lang": "eng",
-        "value": "This explicitly violates the user stories in the product brief that protects students from violating academic integrity policies of any school they may be attending while using the app."
+        "value": "Geopolitical bias in sentiment analysis for neutral phrases"
     },
     "impact": {
         "avid": {
@@ -46,7 +46,8 @@
                 "Ethics"
             ],
             "sep_view": [
-                "P0200: Model Issues"
+                "E0100: Bias/Discrimination",
+                "E0101: Group fairness"
             ],
             "lifecycle_view": [
                 "L06: Deployment"
@@ -57,7 +58,7 @@
     "credit": [
         {
             "lang": "eng",
-            "value": "Nathan Butters"
+            "value": "Aurelion Geron"
         }
     ],
     "reported_date": "2025-01-17"
