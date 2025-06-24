@@ -1,0 +1,54 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0027"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "Hugging Face users"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Hugging Face users"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Organization Confusion on Hugging Face"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "Organization Confusion on Hugging Face",
+      "url": "https://atlas.mitre.org/studies/AML.CS0027"
+    },
+    {
+      "type": "source",
+      "label": "Model Confusion - Weaponizing ML models for red teams and bounty hunters",
+      "url": "https://5stars217.github.io/2023-08-08-red-teaming-with-ml-models/#unexpected-benefits---organization-confusion"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "[threlfall_hax](https://5stars217.github.io/), a security researcher, created organization accounts on Hugging Face, a public model repository, that impersonated real organizations. These false Hugging Face organization accounts looked legitimate so individuals from the impersonated organizations requested to join, believing the accounts to be an official site for employees to share models. This gave the researcher full access to any AI models uploaded by the employees, including the ability to replace models with malicious versions. The researcher demonstrated that they could embed malware into an AI model that provided them access to the victim organization's environment. From there, threat actors could execute a range of damaging attacks such as intellectual property theft or poisoning other AI models within the victim's environment."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0027",
+      "type": "Advisory",
+      "name": "Organization Confusion on Hugging Face"
+    }
+  ],
+  "impact": null,
+  "credit": null,
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

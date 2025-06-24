@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0023"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "Multiple systems"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Multiple systems"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "ShadowRay"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "ShadowRay",
+      "url": "https://atlas.mitre.org/studies/AML.CS0023"
+    },
+    {
+      "type": "source",
+      "label": "ShadowRay: First Known Attack Campaign Targeting AI Workloads Actively Exploited In The Wild",
+      "url": "https://www.oligo.security/blog/shadowray-attack-ai-workloads-actively-exploited-in-the-wild"
+    },
+    {
+      "type": "source",
+      "label": "ShadowRay: AI Infrastructure Is Being Exploited In the Wild",
+      "url": "https://protectai.com/threat-research/shadowray-ai-infrastructure-is-being-exploited-in-the-wild"
+    },
+    {
+      "type": "source",
+      "label": "CVE-2023-48022",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022"
+    },
+    {
+      "type": "source",
+      "label": "Anyscale Update on CVEs",
+      "url": "https://www.anyscale.com/blog/update-on-ray-cves-cve-2023-6019-cve-2023-6020-cve-2023-6021-cve-2023-48022-cve-2023-48023"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Ray is an open-source Python framework for scaling production AI workflows. Ray's Job API allows for arbitrary remote execution by design. However, it does not offer authentication, and the default configuration may expose the cluster to the internet. Researchers at Oligo discovered that Ray clusters have been actively exploited for at least seven months. Adversaries can use victim organization's compute power and steal valuable information. The researchers estimate the value of the compromised machines to be nearly 1 billion USD.\n\nFive vulnerabilities in Ray were reported to Anyscale, the maintainers of Ray. Anyscale promptly fixed four of the five vulnerabilities. However, the fifth vulnerability [CVE-2023-48022](https://nvd.nist.gov/vuln/detail/CVE-2023-48022) remains disputed. Anyscale maintains that Ray's lack of authentication is a design decision, and that Ray is meant to be deployed in a safe network environment. The Oligo researchers deem this a \"shadow vulnerability\" because in disputed status, the CVE does not show up in static scans."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0023",
+      "type": "Advisory",
+      "name": "ShadowRay"
+    }
+  ],
+  "impact": null,
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Oligo Research Team"
+    }
+  ],
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

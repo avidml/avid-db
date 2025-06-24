@@ -1,0 +1,54 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0021"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "OpenAI ChatGPT"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "OpenAI ChatGPT"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "ChatGPT Conversation Exfiltration"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "ChatGPT Conversation Exfiltration",
+      "url": "https://atlas.mitre.org/studies/AML.CS0021"
+    },
+    {
+      "type": "source",
+      "label": "ChatGPT Plugins: Data Exfiltration via Images & Cross Plugin Request Forgery",
+      "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "[Embrace the Red](https://embracethered.com/blog/) demonstrated that ChatGPT users' conversations can be exfiltrated via an indirect prompt injection. To execute the attack, a threat actor uploads a malicious prompt to a public website, where a ChatGPT user may interact with it. The prompt causes ChatGPT to respond with the markdown for an image, whose URL has the user's conversation secretly embedded. ChatGPT renders the image for the user, creating a automatic request to an adversary-controlled script and exfiltrating the user's conversation. Additionally, the researcher demonstrated how the prompt can execute other plugins, opening them up to additional harms."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0021",
+      "type": "Advisory",
+      "name": "ChatGPT Conversation Exfiltration"
+    }
+  ],
+  "impact": null,
+  "credit": null,
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

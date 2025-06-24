@@ -1,0 +1,54 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0029"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "Google Bard"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Google Bard"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Google Bard Conversation Exfiltration"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "Google Bard Conversation Exfiltration",
+      "url": "https://atlas.mitre.org/studies/AML.CS0029"
+    },
+    {
+      "type": "source",
+      "label": "Hacking Google Bard - From Prompt Injection to Data Exfiltration",
+      "url": "https://embracethered.com/blog/posts/2023/google-bard-data-exfiltration/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "[Embrace the Red](https://embracethered.com/blog/) demonstrated that Bard users' conversations could be exfiltrated via an indirect prompt injection. To execute the attack, a threat actor shares a Google Doc containing the prompt with the target user who then interacts with the document via Bard to inadvertently execute the prompt. The prompt causes Bard to respond with the markdown for an image, whose URL has the user's conversation secretly embedded. Bard renders the image for the user, creating an automatic request to an adversary-controlled script and exfiltrating the user's conversation. The request is not blocked by Google's Content Security Policy (CSP), because the script is hosted as a Google Apps Script with a Google-owned domain.\n\nNote: Google has fixed this vulnerability. The CSP remains the same, and Bard can still render images for the user, so there may be some filtering of data embedded in URLs."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0029",
+      "type": "Advisory",
+      "name": "Google Bard Conversation Exfiltration"
+    }
+  ],
+  "impact": null,
+  "credit": null,
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

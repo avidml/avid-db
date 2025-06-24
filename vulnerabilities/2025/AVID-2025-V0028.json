@@ -1,0 +1,69 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0028"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "Private Container Registries"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Private Container Registries"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AI Model Tampering via Supply Chain Attack"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "AI Model Tampering via Supply Chain Attack",
+      "url": "https://atlas.mitre.org/studies/AML.CS0028"
+    },
+    {
+      "type": "source",
+      "label": "Silent Sabotage: Weaponizing AI Models in Exposed Containers",
+      "url": "https://www.trendmicro.com/vinfo/br/security/news/cyber-attacks/silent-sabotage-weaponizing-ai-models-in-exposed-containers"
+    },
+    {
+      "type": "source",
+      "label": "Exposed Container Registries: A Potential Vector for Supply-Chain Attacks",
+      "url": "https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/exposed-container-registries-a-potential-vector-for-supply-chain-attacks"
+    },
+    {
+      "type": "source",
+      "label": "Mining Through Mountains of Information and Risk: Containers and Exposed Container Registries",
+      "url": "https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/mining-through-mountains-of-information-and-risk-containers-and-exposed-container-registries"
+    },
+    {
+      "type": "source",
+      "label": "The Growing Threat of Unprotected Container Registries: An Urgent Call to Action",
+      "url": "https://www.dreher.in/blog/unprotected-container-registries"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Researchers at Trend Micro, Inc. used service indexing portals and web searching tools to identify over 8,000 misconfigured private container registries exposed on the internet. Approximately 70% of the registries also had overly permissive access controls that allowed write access. In their analysis, the researchers found over 1,000 unique AI models embedded in private container images within these open registries that could be pulled without authentication.\n\nThis exposure could allow adversaries to download, inspect, and modify container contents, including sensitive AI model files. This is an exposure of valuable intellectual property which could be stolen by an adversary. Compromised images could also be pushed to the registry, leading to a supply chain attack, allowing malicious actors to compromise the integrity of AI models used in production systems."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0028",
+      "type": "Advisory",
+      "name": "AI Model Tampering via Supply Chain Attack"
+    }
+  ],
+  "impact": null,
+  "credit": null,
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

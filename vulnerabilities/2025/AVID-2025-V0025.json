@@ -1,0 +1,54 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0025"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "10 web-scale datasets"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "10 web-scale datasets"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Web-Scale Data Poisoning: Split-View Attack"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "Web-Scale Data Poisoning: Split-View Attack",
+      "url": "https://atlas.mitre.org/studies/AML.CS0025"
+    },
+    {
+      "type": "source",
+      "label": "Poisoning Web-Scale Training Datasets is Practical",
+      "url": "https://arxiv.org/pdf/2302.10149"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Many recent large-scale datasets are distributed as a list of URLs pointing to individual datapoints. The researchers show that many of these datasets are vulnerable to a \"split-view\" poisoning attack. The attack exploits the fact that the data viewed when it was initially collected may differ from the data viewed by a user during training. The researchers identify expired and buyable domains that once hosted dataset content, making it possible to replace portions of the dataset with poisoned data. They demonstrate that for 10 popular web-scale datasets, enough of the domains are purchasable to successfully carry out a poisoning attack."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0025",
+      "type": "Advisory",
+      "name": "Web-Scale Data Poisoning: Split-View Attack"
+    }
+  ],
+  "impact": null,
+  "credit": null,
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

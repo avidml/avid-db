@@ -1,0 +1,54 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0020"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "Microsoft Bing Chat"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Microsoft Bing Chat"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Indirect Prompt Injection Threats: Bing Chat Data Pirate"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+      "url": "https://atlas.mitre.org/studies/AML.CS0020"
+    },
+    {
+      "type": "source",
+      "label": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+      "url": "https://greshake.github.io/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Whenever interacting with Microsoft's new Bing Chat LLM Chatbot, a user can allow Bing Chat permission to view and access currently open websites throughout the chat session. Researchers demonstrated the ability for an attacker to plant an injection in a website the user is visiting, which silently turns Bing Chat into a Social Engineer who seeks out and exfiltrates personal information. The user doesn't have to ask about the website or do anything except interact with Bing Chat while the website is opened in the browser in order for this attack to be executed.\n\nIn the provided demonstration, a user opened a prepared malicious website containing an indirect prompt injection attack (could also be on a social media site) in Edge. The website includes a prompt which is read by Bing and changes its behavior to access user information, which in turn can sent to an attacker."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0020",
+      "type": "Advisory",
+      "name": "Indirect Prompt Injection Threats: Bing Chat Data Pirate"
+    }
+  ],
+  "impact": null,
+  "credit": null,
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

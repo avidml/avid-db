@@ -1,0 +1,59 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0031"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "Hugging Face users"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Hugging Face users"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Malicious Models on Hugging Face"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "Malicious Models on Hugging Face",
+      "url": "https://atlas.mitre.org/studies/AML.CS0031"
+    },
+    {
+      "type": "source",
+      "label": "Malicious ML models discovered on Hugging Face platform",
+      "url": "https://www.reversinglabs.com/blog/rl-identifies-malware-ml-model-hosted-on-hugging-face?&web_view=true"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Researchers at ReversingLabs have identified malicious models containing embedded malware hosted on the Hugging Face model repository. The models were found to execute reverse shells when loaded, which grants the threat actor command and control capabilities on the victim's system. Hugging Face uses Picklescan to scan models for malicious code, however these models were not flagged as malicious. The researchers discovered that the model files were seemingly purposefully corrupted in a way that the malicious payload is executed before the model ultimately fails to de-serialize fully. Picklescan relied on being able to fully de-serialize the model.\n\nSince becoming aware of this issue, Hugging Face has removed the models and has made changes to Picklescan to catch this particular attack. However, pickle files are fundamentally unsafe as they allow for arbitrary code execution, and there may be other types of malicious pickles that Picklescan cannot detect."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0031",
+      "type": "Advisory",
+      "name": "Malicious Models on Hugging Face"
+    }
+  ],
+  "impact": null,
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "ReversingLabs"
+    }
+  ],
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}

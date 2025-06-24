@@ -1,0 +1,54 @@
+{
+  "data_type": "AVID",
+  "data_version": null,
+  "metadata": {
+    "vuln_id": "AVID-2025-V0018"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "Google Colab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Google Colab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "ATLAS Case Study",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary Code Execution with Google Colab"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "Arbitrary Code Execution with Google Colab",
+      "url": "https://atlas.mitre.org/studies/AML.CS0018"
+    },
+    {
+      "type": "source",
+      "label": "Be careful who you colab with",
+      "url": "https://medium.com/mlearning-ai/careful-who-you-colab-with-fa8001f933e7"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Google Colab is a Jupyter Notebook service that executes on virtual machines.  Jupyter Notebooks are often used for ML and data science research and experimentation, containing executable snippets of Python code and common Unix command-line functionality.  In addition to data manipulation and visualization, this code execution functionality can allow users to download arbitrary files from the internet, manipulate files on the virtual machine, and so on.\n\nUsers can also share Jupyter Notebooks with other users via links.  In the case of notebooks with malicious code, users may unknowingly execute the offending code, which may be obfuscated or hidden in a downloaded script, for example.\n\nWhen a user opens a shared Jupyter Notebook in Colab, they are asked whether they'd like to allow the notebook to access their Google Drive.  While there can be legitimate reasons for allowing Google Drive access, such as to allow a user to substitute their own files, there can also be malicious effects such as data exfiltration or opening a server to the victim's Google Drive.\n\nThis exercise raises awareness of the effects of arbitrary code execution and Colab's Google Drive integration.  Practice secure evaluations of shared Colab notebook links and examine code prior to execution."
+  },
+  "reports": [
+    {
+      "report_id": "ATLAS-AML.CS0018",
+      "type": "Advisory",
+      "name": "Arbitrary Code Execution with Google Colab"
+    }
+  ],
+  "impact": null,
+  "credit": null,
+  "published_date": "2025-06-23",
+  "last_modified_date": "2025-06-23"
+}
