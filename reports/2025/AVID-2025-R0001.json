@@ -27,7 +27,7 @@
         "type": "Advisory",
         "description": {
             "lang": "eng",
-            "value": "The application will provide the user with the answer to the math problem, despite explicit prompting against such behavior, which allows it to violate academic integrity and deskill users who may become reliant on it to do the work for them. This explicitly violates the user stories in the product brief that protects students from violating academic integrity policies of any school they may be attending while using the app."
+            "value": "The application will provide the user with the answer to their math problem, violating existing controls."
         }
     },
     "metrics": [],
@@ -55,7 +55,7 @@
     ],
     "description": {
         "lang": "eng",
-        "value": "The application will provide the user with the answer to their math problem, violating existing controls."
+        "value": "The application will provide the user with the answer to the math problem, despite explicit prompting against such behavior, which allows it to violate academic integrity and deskill users who may become reliant on it to do the work for them. This explicitly violates the user stories in the product brief that protects students from violating academic integrity policies of any school they may be attending while using the app."
     },
     "impact": {
         "avid": {
