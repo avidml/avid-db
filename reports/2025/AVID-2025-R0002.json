@@ -19,7 +19,7 @@
         "type": "Advisory",
         "description": {
             "lang": "eng",
-            "value": "As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase “This film was filmed in [country]”. The tweet mentions “India” and “Iraq” explicitly. "
+            "value": "Geopolitical bias in sentiment analysis for neutral phrases"
         }
     },
     "metrics": [],
@@ -37,7 +37,7 @@
     ],
     "description": {
         "lang": "eng",
-        "value": "Geopolitical bias in sentiment analysis for neutral phrases"
+        "value": "As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase “This film was filmed in [country]”. The tweet mentions “India” and “Iraq” explicitly. "
     },
     "impact": {
         "avid": {
