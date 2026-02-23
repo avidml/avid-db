@@ -116,6 +116,15 @@ def _module_name_from_probe(probe_name: str) -> str:
     return probe_name.split(".", 1)[0] if "." in probe_name else probe_name
 
 
+def _lowercase_first_char(text: str) -> str:
+    if not text:
+        return text
+    first = text[0]
+    if first.isalpha():
+        return first.lower() + text[1:]
+    return text
+
+
 def _ensure_required_probe_suffix(
     probe_name: str,
     summary: str,
@@ -123,7 +132,9 @@ def _ensure_required_probe_suffix(
 ) -> str:
     module_name = _module_name_from_probe(probe_name)
     base = summary.strip().rstrip(".")
-    behavior = module_behavior.strip().rstrip(".")
+    behavior = _lowercase_first_char(
+        module_behavior.strip().rstrip(".")
+    )
 
     tests_clause = base
     lower_base = base.lower()
@@ -149,6 +160,7 @@ def _ensure_required_probe_suffix(
 def _normalize_probe_summary_with_suffix(
     probe_name: str,
     summary: str,
+    module_behavior_override: Optional[str] = None,
 ) -> str:
     text = summary.strip()
     if not text:
@@ -183,11 +195,29 @@ def _normalize_probe_summary_with_suffix(
         if behavior_match:
             module_behavior = behavior_match.group(1).strip()
 
+    if module_behavior_override:
+        module_behavior = module_behavior_override
+
     return _ensure_required_probe_suffix(
         probe_name,
         summary_core,
         module_behavior,
     )
+
+
+def _extract_probe_summary_core(summary: str) -> str:
+    text = summary.strip()
+    if not text:
+        return ""
+
+    marker = "this probe is part of the "
+    lower_text = text.lower()
+    marker_index = lower_text.find(marker)
+    if marker_index >= 0:
+        return text[:marker_index].strip().rstrip(".")
+
+    first_sentence = re.split(r"(?<=[.!?])\s+", text, maxsplit=1)[0].strip()
+    return first_sentence.rstrip(".")
 
 
 def _clean_html_to_text(fragment: str) -> str:
@@ -250,6 +280,7 @@ def _fetch_probe_reference_text(probe_name: str) -> Optional[str]:
 async def _summarize_probe_docstring(
     api_key: Optional[str],
     probe_name: str,
+    module_behavior: str,
 ) -> str:
     reference_text = await asyncio.to_thread(
         _fetch_probe_reference_text,
@@ -262,48 +293,101 @@ async def _summarize_probe_docstring(
         return _failsafe_probe_description(probe_name)
 
     try:
-        text = await asyncio.to_thread(
-            _summarize_docstring_via_openai_http,
+        summary_text, _ = await asyncio.to_thread(
+            _summarize_probe_summary_parts_via_openai_http,
             api_key,
             probe_name,
             reference_text,
+            False,
         )
-        if text:
-            return text
+
+        if summary_text and module_behavior:
+            return _ensure_required_probe_suffix(
+                probe_name,
+                summary_text,
+                module_behavior,
+            )
     except Exception:
         return _failsafe_probe_description(probe_name)
 
     return _failsafe_probe_description(probe_name)
 
 
-def _load_probe_summary_cache(cache_path: Path) -> Dict[str, str]:
+def _empty_cache_structure() -> Dict[str, Dict[str, str]]:
+    return {
+        "probe_summaries": {},
+        "module_behaviors": {},
+    }
+
+
+def _load_probe_summary_cache(cache_path: Path) -> Dict[str, Dict[str, str]]:
+    cache = _empty_cache_structure()
     if not cache_path.exists():
-        return {}
+        return cache
 
     try:
         with cache_path.open("r", encoding="utf-8") as file_obj:
             data = json.load(file_obj)
-        if isinstance(data, dict):
-            return {str(key): str(value) for key, value in data.items()}
+        if not isinstance(data, dict):
+            return cache
+
+        if "probe_summaries" in data or "module_behaviors" in data:
+            probe_summaries = data.get("probe_summaries", {})
+            module_behaviors = data.get("module_behaviors", {})
+
+            if isinstance(probe_summaries, dict):
+                cache["probe_summaries"] = {
+                    str(key): str(value)
+                    for key, value in probe_summaries.items()
+                }
+            if isinstance(module_behaviors, dict):
+                cache["module_behaviors"] = {
+                    str(key): str(value)
+                    for key, value in module_behaviors.items()
+                }
+            return cache
+
+        cache["probe_summaries"] = {
+            str(key): str(value) for key, value in data.items()
+        }
+        return cache
     except Exception:
-        return {}
-
-    return {}
+        return cache
 
 
-def _save_probe_summary_cache(cache_path: Path, cache: Dict[str, str]):
+def _save_probe_summary_cache(
+    cache_path: Path,
+    cache: Dict[str, Dict[str, str]],
+):
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     with cache_path.open("w", encoding="utf-8") as file_obj:
         json.dump(cache, file_obj, indent=2, ensure_ascii=False)
         file_obj.write("\n")
 
 
-def _summarize_docstring_via_openai_http(
+def _summarize_probe_summary_parts_via_openai_http(
     api_key: str,
     probe_name: str,
     reference_text: str,
-) -> str:
+    include_module_behavior: bool,
+):
     snippet = reference_text[:12000]
+    schema_sentence = (
+        "Return strict JSON with keys summary and module_behavior."
+        if include_module_behavior
+        else "Return strict JSON with key summary."
+    )
+    user_request = (
+        "Use only the documentation text provided. Return JSON with: "
+        "(1) summary = one short sentence about what this specific probe "
+        "tests (<=25 words), (2) module_behavior = short phrase starting "
+        "with a verb that describes what the module does (<=12 words)."
+        if include_module_behavior
+        else "Use only the documentation text provided. Return JSON with: "
+        "summary = one short sentence about what this specific probe tests "
+        "(<=25 words)."
+    )
+
     payload = {
         "model": "gpt-4o-mini",
         "temperature": 0,
@@ -312,18 +396,13 @@ def _summarize_docstring_via_openai_http(
                 "role": "system",
                 "content": (
                     "Summarize security probe documentation for technical "
-                    "incident reports. Return strict JSON with keys "
-                    "summary and module_behavior."
+                    f"incident reports. {schema_sentence}"
                 ),
             },
             {
                 "role": "user",
                 "content": (
-                    "Use only the documentation text provided. Return JSON "
-                    "with: (1) summary = one short sentence about what this "
-                    "specific probe tests (<=25 words), (2) module_behavior "
-                    "= short phrase starting with a verb that describes what "
-                    "the module does (<=12 words).\n\n"
+                    f"{user_request}\n\n"
                     f"Probe: {probe_name}\n"
                     f"Reference text:\n{snippet}"
                 ),
@@ -364,17 +443,17 @@ def _summarize_docstring_via_openai_http(
             time.sleep(1.5 * attempt)
 
     if response_data is None:
-        return ""
+        return "", None
 
     choices = response_data.get("choices", [])
     if not choices:
-        return ""
+        return "", None
 
     message = choices[0].get("message", {})
     content = message.get("content", "")
     payload_text = str(content).strip()
     if not payload_text:
-        return ""
+        return "", None
 
     if payload_text.startswith("```"):
         payload_text = re.sub(
@@ -389,47 +468,56 @@ def _summarize_docstring_via_openai_http(
     try:
         parsed = json.loads(payload_text)
         summary = str(parsed.get("summary", "")).strip()
-        module_behavior = str(parsed.get("module_behavior", "")).strip()
-        if summary and module_behavior:
-            return _ensure_required_probe_suffix(
-                probe_name,
-                summary,
-                module_behavior,
-            )
+        if not summary:
+            return "", None
+        module_behavior = parsed.get("module_behavior")
+        if module_behavior is None:
+            return summary, None
+        return summary, str(module_behavior).strip() or None
     except Exception:
         match = re.search(r"\{[\s\S]*\}", payload_text)
         if match:
             try:
                 parsed = json.loads(match.group(0))
                 summary = str(parsed.get("summary", "")).strip()
-                module_behavior = str(
-                    parsed.get("module_behavior", "")
-                ).strip()
-                if summary and module_behavior:
-                    return _ensure_required_probe_suffix(
-                        probe_name,
-                        summary,
-                        module_behavior,
-                    )
+                if not summary:
+                    return "", None
+                module_behavior = parsed.get("module_behavior")
+                if module_behavior is None:
+                    return summary, None
+                return summary, str(module_behavior).strip() or None
             except Exception:
                 pass
 
-    return ""
+    return "", None
 
 
 async def _get_probe_summaries_async(
     probe_names,
     cache_path: Path,
-) -> Dict[str, str]:
-    cache = _load_probe_summary_cache(cache_path)
+) -> tuple[Dict[str, str], Dict[str, str]]:
+    cache_bundle = _load_probe_summary_cache(cache_path)
+    probe_cache = cache_bundle.get("probe_summaries", {})
+    module_cache = cache_bundle.get("module_behaviors", {})
+
+    for probe_name, summary in list(probe_cache.items()):
+        probe_cache[probe_name] = _extract_probe_summary_core(str(summary))
+
     unresolved = [
         probe_name
         for probe_name in sorted(set(probe_names))
-        if probe_name and probe_name not in cache
+        if probe_name and probe_name not in probe_cache
     ]
 
     if not unresolved:
-        return cache
+        _save_probe_summary_cache(
+            cache_path,
+            {
+                "probe_summaries": probe_cache,
+                "module_behaviors": module_cache,
+            },
+        )
+        return probe_cache, module_cache
 
     api_key = _get_openai_api_key()
     if not api_key:
@@ -438,11 +526,73 @@ async def _get_probe_summaries_async(
             "using failsafe probe descriptions"
         )
 
+    unresolved_modules = sorted(
+        {
+            _module_name_from_probe(probe_name)
+            for probe_name in unresolved
+            if _module_name_from_probe(probe_name) not in module_cache
+        }
+    )
+
+    probe_by_module = {}
+    for probe_name in unresolved:
+        module_name = _module_name_from_probe(probe_name)
+        probe_by_module.setdefault(module_name, probe_name)
+
     semaphore = asyncio.Semaphore(3)
+
+    async def summarize_module_behavior(module_name: str):
+        async with semaphore:
+            representative_probe = probe_by_module.get(module_name)
+            if not representative_probe:
+                return module_name, None
+
+            reference_text = await asyncio.to_thread(
+                _fetch_probe_reference_text,
+                representative_probe,
+            )
+            if not reference_text or not api_key:
+                return module_name, None
+
+            try:
+                _, generated_module_behavior = await asyncio.to_thread(
+                    _summarize_probe_summary_parts_via_openai_http,
+                    api_key,
+                    representative_probe,
+                    reference_text,
+                    True,
+                )
+                return module_name, generated_module_behavior
+            except Exception:
+                return module_name, None
+
+    module_results = await asyncio.gather(
+        *(
+            summarize_module_behavior(module_name)
+            for module_name in unresolved_modules
+        ),
+        return_exceptions=True,
+    )
+
+    for result in module_results:
+        if isinstance(result, Exception):
+            continue
+        module_name, behavior = result
+        if behavior:
+            module_cache[module_name] = behavior
 
     async def summarize_one(probe_name: str):
         async with semaphore:
-            summary = await _summarize_probe_docstring(api_key, probe_name)
+            module_name = _module_name_from_probe(probe_name)
+            module_behavior = module_cache.get(
+                module_name,
+                "evaluates model behavior for this probe family",
+            )
+            summary = await _summarize_probe_docstring(
+                api_key,
+                probe_name,
+                module_behavior=module_behavior,
+            )
             return probe_name, summary
 
     results = await asyncio.gather(
@@ -454,12 +604,12 @@ async def _get_probe_summaries_async(
         if isinstance(result, Exception):
             continue
         probe_name, summary = result
-        cache[probe_name] = summary
+        probe_cache[probe_name] = _extract_probe_summary_core(summary)
 
     generated = len(unresolved)
     fallback_count = 0
     for probe_name in unresolved:
-        summary = cache.get(probe_name, "")
+        summary = probe_cache.get(probe_name, "")
         if summary.startswith("More information on the probe `"):
             fallback_count += 1
     api_count = generated - fallback_count
@@ -469,8 +619,14 @@ async def _get_probe_summaries_async(
         f"fallback={fallback_count}"
     )
 
-    _save_probe_summary_cache(cache_path, cache)
-    return cache
+    _save_probe_summary_cache(
+        cache_path,
+        {
+            "probe_summaries": probe_cache,
+            "module_behaviors": module_cache,
+        },
+    )
+    return probe_cache, module_cache
 
 
 def _shorten_artifact_model_names(report: dict) -> Optional[str]:
@@ -523,6 +679,7 @@ def _apply_litellm_deployer_mapping(report: dict):
 def _rebuild_text_descriptions(
     report: dict,
     model_name: str,
+    developer_name: str,
     deployer_name: str,
     probe_name: Optional[str],
     probe_summary: str,
@@ -536,7 +693,7 @@ def _rebuild_text_descriptions(
     )
     problemtype_description["lang"] = "eng"
     problemtype_description["value"] = (
-        f"The model {model_name} from {deployer_name} was evaluated by the "
+        f"The model {model_name} from {developer_name} was evaluated by the "
         f"Garak LLM Vulnerability scanner using the probe `{probe_name}`."
     )
 
@@ -546,9 +703,7 @@ def _rebuild_text_descriptions(
     description["value"] = (
         f"{probe_summary}\n\n"
         f"The {subject_label_display} {model_name} was evaluated on this "
-        "probe.\n\n"
-        f"The model {model_name} from {deployer_name} was evaluated by the "
-        f"Garak LLM Vulnerability scanner using the probe `{probe_name}`."
+        "probe."
     )
 
 
@@ -563,6 +718,9 @@ def _normalize_metric_results(report: dict):
 
     results = first_metric.get("results")
     if isinstance(results, list):
+        for row in results:
+            if isinstance(row, dict):
+                row.pop("index", None)
         return
 
     if not isinstance(results, dict) or not results:
@@ -584,13 +742,15 @@ def _normalize_metric_results(report: dict):
     for row_key in sorted(row_keys, key=sort_key):
         row = {}
         for column_name, column_values in results.items():
+            if str(column_name).strip().lower() == "index":
+                continue
             row[column_name] = column_values.get(row_key)
         normalized_rows.append(row)
 
     first_metric["results"] = normalized_rows
 
 
-def _extract_primary_model_and_deployer(report: dict):
+def _extract_primary_model_developer_and_deployer(report: dict):
     affects = report.get("affects", {})
 
     model_name = None
@@ -604,13 +764,20 @@ def _extract_primary_model_and_deployer(report: dict):
     if not model_name:
         model_name = "the model"
 
+    developer = _to_list(affects.get("developer"))
+    developer_name = developer[0] if developer else "the model developer"
+
     deployer = _to_list(affects.get("deployer"))
     deployer_name = deployer[0] if deployer else "the deployment platform"
 
-    return model_name, deployer_name
+    return model_name, developer_name, deployer_name
 
 
-def _review_report(report: dict, probe_summaries: Dict[str, str]):
+def _review_report(
+    report: dict,
+    probe_summaries: Dict[str, str],
+    module_behaviors: Dict[str, str],
+):
     preferred_model_name = _shorten_artifact_model_names(report)
     _apply_litellm_deployer_mapping(report)
     apply_review_normalizations(
@@ -620,6 +787,11 @@ def _review_report(report: dict, probe_summaries: Dict[str, str]):
 
     probe_name = _extract_probe_name(report)
     if probe_name:
+        module_name = _module_name_from_probe(probe_name)
+        module_behavior = module_behaviors.get(
+            module_name,
+            "evaluates model behavior for this probe family",
+        )
         raw_summary = probe_summaries.get(
             probe_name,
             _failsafe_probe_description(probe_name),
@@ -627,15 +799,19 @@ def _review_report(report: dict, probe_summaries: Dict[str, str]):
         probe_summary = _normalize_probe_summary_with_suffix(
             probe_name,
             raw_summary,
+            module_behavior_override=module_behavior,
         )
     else:
         probe_summary = "Garak probe metadata is available in the report."
 
-    model_name, deployer_name = _extract_primary_model_and_deployer(report)
+    model_name, developer_name, deployer_name = (
+        _extract_primary_model_developer_and_deployer(report)
+    )
     subject_label = choose_model_subject_label(report)
     _rebuild_text_descriptions(
         report,
         model_name=model_name,
+        developer_name=developer_name,
         deployer_name=deployer_name,
         probe_name=probe_name,
         probe_summary=probe_summary,
@@ -750,12 +926,12 @@ def main():
             if probe_name:
                 probe_names.append(probe_name)
 
-        probe_summaries = asyncio.run(
+        probe_summaries, module_behaviors = asyncio.run(
             _get_probe_summaries_async(probe_names, CACHE_PATH)
         )
 
         for report in reports:
-            _review_report(report, probe_summaries)
+            _review_report(report, probe_summaries, module_behaviors)
 
         if not args.dry_run:
             _save_reports(input_path, reports, shape)
