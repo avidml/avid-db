@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0034"
+  },
+  "affects": {
+    "developer": [
+      "Google"
+    ],
+    "deployer": [
+      "Google"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Keras"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary Code Execution via Crafted Keras Config for Model Loading"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1550"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/keras-team/keras/pull/20751",
+      "url": "https://github.com/keras-team/keras/pull/20751"
+    },
+    {
+      "type": "source",
+      "label": "https://towerofhanoi.it/writeups/cve-2025-1550/",
+      "url": "https://towerofhanoi.it/writeups/cve-2025-1550/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Keras Model.load_model function permits arbitrary code execution, even with safe_mode=True, through a manually constructed, malicious .keras archive. By altering the config.json file within the archive, an attacker can specify arbitrary Python modules and functions, along with their arguments, to be loaded and executed during model loading."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-11"
+}

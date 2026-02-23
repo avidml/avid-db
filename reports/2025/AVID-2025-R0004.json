@@ -13,7 +13,7 @@
     ],
     "artifacts": [
       {
-        "type": "Model",
+        "type": "System",
         "name": "gpt-4o-mini-2024-07-18"
       }
     ]

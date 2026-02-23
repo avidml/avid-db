@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0040"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Microsoft Account"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Microsoft Account Elevation of Privilege Vulnerability"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-21396"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-21396",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-21396"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Missing authorization in Microsoft Account allows an unauthorized attacker to elevate privileges over a network."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H/E:U/RL:O/RC:C",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-862",
+        "description": "CWE-862: Missing Authorization",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2025-01-29"
+}

@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0101"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "DALL-E3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "NSFWOpenAI DALL-E3 Guardrail Jailbreak via \"Artistic Escalation\" Tactic"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/8a0eace8-6724-4ec4-8af9-3cee8e8a97c9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting DALL-E3 from OpenAI. The specific flaw manifests when the attacker begins with seemingly artistic or mythological requests and progressively escalates the explicitness through iterative refinement requests, thereby allowing the attacker to bypass restrictions and produce sexually explicit imagery."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 1: Minimal Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Rhetoric",
+          "Strategy": "Persuasion and Manipulation",
+          "Technique": "Surprise Attack"
+        },
+        {
+          "Category": "Language",
+          "Strategy": "Stylizing",
+          "Technique": "Synonymous Language"
+        },
+        {
+          "Category": "Rhetoric",
+          "Strategy": "Persuasion and Manipulation",
+          "Technique": "Escalating"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Anonymous"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

@@ -1,0 +1,93 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0047"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PyTorch"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "PyTorch torch.nn.utils.rnn.pad_packed_sequence memory corruption"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-2998"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.302047",
+      "url": "https://vuldb.com/?id.302047"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.302047",
+      "url": "https://vuldb.com/?ctiid.302047"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.524151",
+      "url": "https://vuldb.com/?submit.524151"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/149622",
+      "url": "https://github.com/pytorch/pytorch/issues/149622"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/149622#issue-2935495265",
+      "url": "https://github.com/pytorch/pytorch/issues/149622#issue-2935495265"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability was found in PyTorch 2.6.0. It has been declared as critical. Affected by this vulnerability is the function torch.nn.utils.rnn.pad_packed_sequence. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-119",
+        "description": "Memory Corruption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-31"
+}

@@ -40,6 +40,7 @@ def process_jsonl_file(
     id_manager: IDManager,
     create_vulns: bool = False,
     year: int = None,
+    delete_source: bool = False,
     dry_run: bool = False,
 ):
     """
@@ -50,6 +51,7 @@ def process_jsonl_file(
         id_manager: IDManager instance for tracking IDs
         create_vulns: Whether to create vulnerabilities from reports
         year: Year for ID generation. Defaults to current year.
+        delete_source: Delete input file after successful processing
         dry_run: If True, don't actually save files
     """
     if year is None:
@@ -61,6 +63,8 @@ def process_jsonl_file(
     reports_processed = 0
     vulns_created = 0
     
+    had_processing_error = False
+
     with open(jsonl_path, "r", encoding="utf-8") as f:
         for line_num, line in enumerate(f, 1):
             line = line.strip()
@@ -111,10 +115,22 @@ def process_jsonl_file(
                 
             except json.JSONDecodeError as e:
                 print(f"  ERROR: Invalid JSON on line {line_num}: {e}")
+                had_processing_error = True
                 continue
             except Exception as e:
                 print(f"  ERROR: Failed to process line {line_num}: {e}")
+                had_processing_error = True
                 continue
+
+    if delete_source and not dry_run:
+        if had_processing_error:
+            print(
+                "Skipping source deletion because one or more lines "
+                "failed to process"
+            )
+        else:
+            jsonl_path.unlink()
+            print(f"Deleted source file: {jsonl_path}")
     
     print()
     print("=" * 80)
@@ -130,6 +146,7 @@ def process_json_file(
     id_manager: IDManager,
     create_vuln: bool = False,
     year: int = None,
+    delete_source: bool = False,
     dry_run: bool = False,
 ):
     """
@@ -140,6 +157,7 @@ def process_json_file(
         id_manager: IDManager instance for tracking IDs
         create_vuln: Whether to create vulnerability from report
         year: Year for ID generation. Defaults to current year.
+        delete_source: Delete input file after successful processing
         dry_run: If True, don't actually save files
     """
     if year is None:
@@ -179,6 +197,10 @@ def process_json_file(
             else:
                 vuln_loc = f"vulnerabilities/{year}/{vuln_id}.json"
                 print(f"[DRY RUN] Would save vulnerability to: {vuln_loc}")
+
+        if delete_source and not dry_run:
+            json_path.unlink()
+            print(f"Deleted source file: {json_path}")
         
         print()
         print("=" * 80)
@@ -215,6 +237,11 @@ def main():
         action="store_true",
         help="Show what would be done without actually doing it",
     )
+    parser.add_argument(
+        "--delete-source",
+        action="store_true",
+        help="Delete input file after successful publish",
+    )
     
     args = parser.parse_args()
     
@@ -232,6 +259,7 @@ def main():
             id_manager,
             create_vulns=args.create_vulns,
             year=args.year,
+            delete_source=args.delete_source,
             dry_run=args.dry_run,
         )
     elif args.input_path.suffix == ".json":
@@ -240,6 +268,7 @@ def main():
             id_manager,
             create_vuln=args.create_vulns,
             year=args.year,
+            delete_source=args.delete_source,
             dry_run=args.dry_run,
         )
     else:

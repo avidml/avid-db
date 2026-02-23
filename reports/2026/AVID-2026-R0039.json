@@ -1,0 +1,88 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0039"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Mage AI"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Mage AI insecure default initialization of resource"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-2129"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.299049",
+      "url": "https://vuldb.com/?id.299049"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.299049",
+      "url": "https://vuldb.com/?ctiid.299049"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.510690",
+      "url": "https://vuldb.com/?submit.510690"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/zn9988/publications/blob/main/2.Mage-AI%20-%20Insecure%20Default%20Authentication%20Setup%20Leading%20to%20Zero-Click%20RCE/README.md",
+      "url": "https://github.com/zn9988/publications/blob/main/2.Mage-AI%20-%20Insecure%20Default%20Authentication%20Setup%20Leading%20to%20Zero-Click%20RCE/README.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability was found in Mage AI 0.9.75. It has been classified as problematic. This affects an unknown part. The manipulation leads to insecure default initialization of resource. It is possible to initiate the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. The real existence of this vulnerability is still doubted at the moment. After 7 months of repeated follow-ups by the researcher, Mage AI has decided to not accept this issue as a valid security vulnerability and has confirmed that they will not be addressing it."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.6,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1188",
+        "description": "Insecure Default Initialization of Resource",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-09"
+}

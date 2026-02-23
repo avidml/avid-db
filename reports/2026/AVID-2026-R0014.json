@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0014"
+  },
+  "affects": {
+    "developer": [
+      "eosphoros-ai"
+    ],
+    "deployer": [
+      "eosphoros-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "eosphoros-ai/db-gpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Write via SQL Injection in eosphoros-ai/db-gpt"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10835"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e32fda74-ca83-431c-8de8-08274ba686c9",
+      "url": "https://huntr.com/bounties/e32fda74-ca83-431c-8de8-08274ba686c9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In eosphoros-ai/db-gpt version v0.6.0, the web API `POST /api/v1/editor/sql/run` allows execution of arbitrary SQL queries without any access control. This vulnerability can be exploited by attackers to perform Arbitrary File Write using DuckDB SQL, enabling them to write arbitrary files to the victim's file system. This can potentially lead to Remote Code Execution (RCE)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-89",
+        "description": "CWE-89 Improper Neutralization of Special Elements used in an SQL Command",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

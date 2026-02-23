@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0002"
+  },
+  "affects": {
+    "developer": [
+      "mintplex-labs"
+    ],
+    "deployer": [
+      "mintplex-labs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mintplex-labs/anything-llm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Incorrect Authorization in mintplex-labs/anything-llm"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10109"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/ad3c9e76-679d-4775-b203-96947ff73551",
+      "url": "https://huntr.com/bounties/ad3c9e76-679d-4775-b203-96947ff73551"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mintplex-labs/anything-llm/commit/8d302c3f670c582b09d47e96132c248101447a11",
+      "url": "https://github.com/mintplex-labs/anything-llm/commit/8d302c3f670c582b09d47e96132c248101447a11"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the mintplex-labs/anything-llm repository, as of commit 5c40419, allows low privilege users to access the sensitive API endpoint \"/api/system/custom-models\". This access enables them to modify the model's API key and base path, leading to potential API key leakage and denial of service on chats."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:H",
+      "baseScore": 8.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863 Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

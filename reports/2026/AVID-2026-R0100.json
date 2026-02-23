@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0100"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "DALL-E3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "NSFWOpenAI DALL-E3 Guardrail Jailbreak via \"Feminist Art Description\" Tactic"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/78819949-0069-4cdb-817e-70957ffd2293"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting DALL-E3 from OpenAI. The specific flaw manifests when the attacker frames explicit content requests within feminist discourse and artistic terminology, using concepts like \"bodily autonomy\" and \"sacred feminine\". Successful application of the tactic allows the attacker to bypass restrictions around generating explicit imagery that is otherwise restricted.."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 3: Cultural and Traditional Depictions",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Language",
+          "Strategy": "Prompt Injection",
+          "Technique": "Strong Arm Attack"
+        },
+        {
+          "Category": "Stratagems",
+          "Strategy": "Meta Prompting",
+          "Technique": "Perspective Shifting"
+        },
+        {
+          "Category": "Language",
+          "Strategy": "Stylizing",
+          "Technique": "Synonymous Language"
+        },
+        {
+          "Category": "Rhetoric",
+          "Strategy": "Socratic Questioning",
+          "Technique": "Identity Characteristics"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Anonymous"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

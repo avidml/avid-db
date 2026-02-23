@@ -1,0 +1,93 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0049"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PyTorch"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "PyTorch torch.jit.script memory corruption"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3000"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.302049",
+      "url": "https://vuldb.com/?id.302049"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.302049",
+      "url": "https://vuldb.com/?ctiid.302049"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.524197",
+      "url": "https://vuldb.com/?submit.524197"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/149623",
+      "url": "https://github.com/pytorch/pytorch/issues/149623"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/149623#issue-2935703015",
+      "url": "https://github.com/pytorch/pytorch/issues/149623#issue-2935703015"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability classified as critical has been found in PyTorch 2.6.0. This affects the function torch.jit.script. The manipulation leads to memory corruption. It is possible to launch the attack on the local host. The exploit has been disclosed to the public and may be used."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-119",
+        "description": "Memory Corruption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-31"
+}

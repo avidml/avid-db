@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0035"
+  },
+  "affects": {
+    "developer": [
+      "mmaitre314"
+    ],
+    "deployer": [
+      "mmaitre314"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "picklescan"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "picklescan - Security scanning bypass via 'pip main'"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1716"
+    },
+    {
+      "type": "source",
+      "label": "https://www.sonatype.com/security-advisories/cve-2025-1716",
+      "url": "https://www.sonatype.com/security-advisories/cve-2025-1716"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mmaitre314/picklescan/commit/78ce704227c51f070c0c5fb4b466d92c62a7aa3d",
+      "url": "https://github.com/mmaitre314/picklescan/commit/78ce704227c51f070c0c5fb4b466d92c62a7aa3d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-655q-fx9r-782v",
+      "url": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-655q-fx9r-782v"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "picklescan before 0.0.21 does not treat 'pip' as an unsafe global. An attacker could craft a malicious model that uses Pickle to pull in a malicious PyPI package (hosted, for example, on pypi.org or GitHub) via `pip.main()`. Because pip is not a restricted global, the model, when scanned with picklescan, would pass security checks and appear to be safe, when it could instead prove to be problematic."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-184",
+        "description": "CWE-184 Incomplete List of Disallowed Inputs",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-02-26"
+}

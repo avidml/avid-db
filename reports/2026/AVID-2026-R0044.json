@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0044"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure promptflow-core"
+      },
+      {
+        "type": "System",
+        "name": "Azure promptflow-tools"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Azure Promptflow Remote Code Execution Vulnerability"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-24986"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-24986",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-24986"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper isolation or compartmentalization in Azure PromptFlow allows an unauthorized attacker to execute code over a network."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N/E:U/RL:O/RC:C",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-653",
+        "description": "CWE-653: Improper Isolation or Compartmentalization",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2025-03-11"
+}

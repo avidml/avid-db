@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0021"
+  },
+  "affects": {
+    "developer": [
+      "lunary-ai"
+    ],
+    "deployer": [
+      "lunary-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "lunary-ai/lunary"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Access Control in lunary-ai/lunary"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-11300"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/8dca7994-0d92-491e-a419-02adfe23ffa4",
+      "url": "https://huntr.com/bounties/8dca7994-0d92-491e-a419-02adfe23ffa4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lunary-ai/lunary/commit/79dc370596d979b756f6ea0250d97a2d02385ecd",
+      "url": "https://github.com/lunary-ai/lunary/commit/79dc370596d979b756f6ea0250d97a2d02385ecd"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In lunary-ai/lunary before version 1.6.3, an improper access control vulnerability exists where a user can access prompt data of another user. This issue affects version 1.6.2 and the main branch. The vulnerability allows unauthorized users to view sensitive prompt data by accessing specific URLs, leading to potential exposure of critical information."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-639",
+        "description": "CWE-639 Authorization Bypass Through User-Controlled Key",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

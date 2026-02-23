@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0099"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "OpenAI GPT-4o"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "OpenAI GPT-4o Guardrail Jailbreak via \"Layered Summarization\" Tactic"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/55029360-7b19-4c84-8795-fa89622e4006"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting OpenAI GPT-4o. The specific flaw manifests when the attacker requests multiple layers of summarization with selective focus instructions, combined with demands for direct quotes, thereby allowing the attacker to bypass inference restrictions around providing information hazards and violating laws."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 3: Significant Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Fictionalizing",
+          "Strategy": "Re-storying",
+          "Technique": "Goal Hijacking"
+        },
+        {
+          "Category": "Rhetoric",
+          "Strategy": "Persuasion and Manipulation",
+          "Technique": "Latent Space Distraction"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Mike Takahashi (@TakSec)"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

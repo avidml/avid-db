@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0037"
+  },
+  "affects": {
+    "developer": [
+      "mmaitre314"
+    ],
+    "deployer": [
+      "mmaitre314"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "picklescan"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "picklescan ZIP archive manipulation attack leads to crash"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1944"
+    },
+    {
+      "type": "source",
+      "label": "https://www.sonatype.com/security-advisories/cve-2025-1944",
+      "url": "https://www.sonatype.com/security-advisories/cve-2025-1944"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-7q5r-7gvp-wc82",
+      "url": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-7q5r-7gvp-wc82"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mmaitre314/picklescan/commit/e58e45e0d9e091159c1554f9b04828bbb40b9781",
+      "url": "https://github.com/mmaitre314/picklescan/commit/e58e45e0d9e091159c1554f9b04828bbb40b9781"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "picklescan before 0.0.23 is vulnerable to a ZIP archive manipulation attack that causes it to crash when attempting to extract and scan PyTorch model archives. By modifying the filename in the ZIP header while keeping the original filename in the directory listing, an attacker can make PickleScan raise a BadZipFile error. However, PyTorch's more forgiving ZIP implementation still allows the model to be loaded, enabling malicious payloads to bypass detection."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-345",
+        "description": "CWE-345 Insufficient Verification of Data Authenticity",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-10"
+}

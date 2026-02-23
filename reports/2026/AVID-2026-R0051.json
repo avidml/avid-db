@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0051"
+  },
+  "affects": {
+    "developer": [
+      "Mozilla"
+    ],
+    "deployer": [
+      "Mozilla"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Firefox"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2025-3035"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3035"
+    },
+    {
+      "type": "source",
+      "label": "https://bugzilla.mozilla.org/show_bug.cgi?id=1952268",
+      "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1952268"
+    },
+    {
+      "type": "source",
+      "label": "https://www.mozilla.org/security/advisories/mfsa2025-20/",
+      "url": "https://www.mozilla.org/security/advisories/mfsa2025-20/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "By first using the AI chatbot in one tab and later activating it in another tab, the document title of the previous tab would leak into the chat prompt. This vulnerability affects Firefox < 137."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2025-04-01"
+}

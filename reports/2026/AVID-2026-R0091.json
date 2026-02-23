@@ -1,0 +1,55 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0091"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "OpenAI Sora"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "NSFWOpenAI Sora Guardrail Jailbreak via \"Anatomical Escalation\" Tactic"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/24b04730-9634-4d76-996d-185e0c4f64ef"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting OpenAI Sora. The specific flaw manifests through a technique that combines technical anatomical terminology with creative visual elements, specifically requesting bio-luminescent symbols that conform to body contours. This approach allows the attacker to bypass inference restrictions around generating potentially inappropriate visual content by framing the request in artistic and technical language."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 1: Minimal Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Language",
+          "Strategy": "Stylizing",
+          "Technique": "Synonymous Language"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Anonymous"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

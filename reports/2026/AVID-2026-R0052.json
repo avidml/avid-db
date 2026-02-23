@@ -1,0 +1,93 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0052"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PyTorch"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "PyTorch torch.jit.jit_module_from_flatbuffer memory corruption"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3121"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.303012",
+      "url": "https://vuldb.com/?id.303012"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.303012",
+      "url": "https://vuldb.com/?ctiid.303012"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.525049",
+      "url": "https://vuldb.com/?submit.525049"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/149800",
+      "url": "https://github.com/pytorch/pytorch/issues/149800"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/149800#issue-2940240700",
+      "url": "https://github.com/pytorch/pytorch/issues/149800#issue-2940240700"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability classified as problematic has been found in PyTorch 2.6.0. Affected is the function torch.jit.jit_module_from_flatbuffer. The manipulation leads to memory corruption. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 3.3,
+      "baseSeverity": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-119",
+        "description": "Memory Corruption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-02"
+}

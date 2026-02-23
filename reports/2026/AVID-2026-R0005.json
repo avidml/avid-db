@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0005"
+  },
+  "affects": {
+    "developer": [
+      "lunary-ai"
+    ],
+    "deployer": [
+      "lunary-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "lunary-ai/lunary"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Access Control in lunary-ai/lunary"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10330"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/598ecd65-1723-4fb7-a9aa-9c4f56a5a2aa",
+      "url": "https://huntr.com/bounties/598ecd65-1723-4fb7-a9aa-9c4f56a5a2aa"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lunary-ai/lunary/commit/8ba1b8ba2c2c30b1cec30eb5777c1fda670cbbfc",
+      "url": "https://github.com/lunary-ai/lunary/commit/8ba1b8ba2c2c30b1cec30eb5777c1fda670cbbfc"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In lunary-ai/lunary version 1.5.6, the `/v1/evaluators/` endpoint lacks proper access control, allowing any user associated with a project to fetch all evaluator data regardless of their role. This vulnerability permits low-privilege users to access potentially sensitive evaluation data."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-862",
+        "description": "CWE-862 Missing Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

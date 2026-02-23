@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0013"
+  },
+  "affects": {
+    "developer": [
+      "eosphoros-ai"
+    ],
+    "deployer": [
+      "eosphoros-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "eosphoros-ai/db-gpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Write in eosphoros-ai/db-gpt"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10834"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/0d598508-151a-4050-9ccd-31bb82955e7a",
+      "url": "https://huntr.com/bounties/0d598508-151a-4050-9ccd-31bb82955e7a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "eosphoros-ai/db-gpt version 0.6.0 contains a vulnerability in the RAG-knowledge endpoint that allows for arbitrary file write. The issue arises from the ability to pass an absolute path to a call to `os.path.join`, enabling an attacker to write files to arbitrary locations on the target server. This vulnerability can be exploited by setting the `doc_file.filename` to an absolute path, which can lead to overwriting system files or creating new SSH-key entries."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73 External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

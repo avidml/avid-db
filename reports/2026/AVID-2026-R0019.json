@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0019"
+  },
+  "affects": {
+    "developer": [
+      "invoke-ai"
+    ],
+    "deployer": [
+      "invoke-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "invoke-ai/invokeai"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Delete in invoke-ai/invokeai"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-11042"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/635535a7-c804-4789-ac3a-48d951263987",
+      "url": "https://huntr.com/bounties/635535a7-c804-4789-ac3a-48d951263987"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/invoke-ai/invokeai/commit/5440c037674882b2ab7acd59087e9bb04b49657a",
+      "url": "https://github.com/invoke-ai/invokeai/commit/5440c037674882b2ab7acd59087e9bb04b49657a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In invoke-ai/invokeai version v5.0.2, the web API `POST /api/v1/images/delete` is vulnerable to Arbitrary File Deletion. This vulnerability allows unauthorized attackers to delete arbitrary files on the server, potentially including critical or sensitive system files such as SSH keys, SQLite databases, and configuration files. This can impact the integrity and availability of applications relying on these files."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73 External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0007"
+  },
+  "affects": {
+    "developer": [
+      "lunary-ai"
+    ],
+    "deployer": [
+      "lunary-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "lunary-ai/lunary"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Missing Authorization in lunary-ai/lunary"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10762"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/23ab508e-d956-4861-b28f-0569d3b404a6",
+      "url": "https://huntr.com/bounties/23ab508e-d956-4861-b28f-0569d3b404a6"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lunary-ai/lunary/commit/91587496673da24cb7ddedfbbd6e602592b20ef6",
+      "url": "https://github.com/lunary-ai/lunary/commit/91587496673da24cb7ddedfbbd6e602592b20ef6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In lunary-ai/lunary before version 1.5.9, the /v1/evaluators/ endpoint allows users to delete evaluators of a project by sending a DELETE request. However, the route lacks proper access control, such as middleware to ensure that only users with appropriate roles can delete evaluator data. This vulnerability allows low-privilege users to delete evaluators data, causing permanent data loss and potentially hindering operations."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-862",
+        "description": "CWE-862 Missing Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}
