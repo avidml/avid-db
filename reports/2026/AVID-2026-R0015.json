@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0015"
+  },
+  "affects": {
+    "developer": [
+      "eosphoros-ai"
+    ],
+    "deployer": [
+      "eosphoros-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "eosphoros-ai/db-gpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Cross-Site Request Forgery (CSRF) in eosphoros-ai/db-gpt"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10906"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/8864aca5-a342-4dab-b866-b2882ba6f160",
+      "url": "https://huntr.com/bounties/8864aca5-a342-4dab-b866-b2882ba6f160"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In version 0.6.0 of eosphoros-ai/db-gpt, the `uvicorn` app created by `dbgpt_server` uses an overly permissive instance of `CORSMiddleware` which sets the `Access-Control-Allow-Origin` to `*` for all requests. This configuration makes all endpoints exposed by the server vulnerable to Cross-Site Request Forgery (CSRF). An attacker can exploit this vulnerability to interact with any endpoints of the instance, even if the instance is not publicly exposed to the network."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:L",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

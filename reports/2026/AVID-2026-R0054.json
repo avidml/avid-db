@@ -1,0 +1,113 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0054"
+  },
+  "affects": {
+    "developer": [
+      "ageerle"
+    ],
+    "deployer": [
+      "ageerle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ruoyi-ai"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "ageerle ruoyi-ai API Interface SysModelController.java improper authorization"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3199"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.303152",
+      "url": "https://vuldb.com/?id.303152"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.303152",
+      "url": "https://vuldb.com/?ctiid.303152"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.545830",
+      "url": "https://vuldb.com/?submit.545830"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/Tr0e/CVE_Hunter/blob/main/ruoyi-ai/ruoyi-ai_UnauthorizedAccess_01.md",
+      "url": "https://github.com/Tr0e/CVE_Hunter/blob/main/ruoyi-ai/ruoyi-ai_UnauthorizedAccess_01.md"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ageerle/ruoyi-ai/issues/43#issuecomment-2763091490",
+      "url": "https://github.com/ageerle/ruoyi-ai/issues/43#issuecomment-2763091490"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ageerle/ruoyi-ai/issues/43",
+      "url": "https://github.com/ageerle/ruoyi-ai/issues/43"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gwozai/ruoyi-ai/commit/c0daf641fb25b244591b7a6c3affa35c69d321fe",
+      "url": "https://github.com/gwozai/ruoyi-ai/commit/c0daf641fb25b244591b7a6c3affa35c69d321fe"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ageerle/ruoyi-ai/releases/tag/v2.0.2",
+      "url": "https://github.com/ageerle/ruoyi-ai/releases/tag/v2.0.2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability was found in ageerle ruoyi-ai up to 2.0.1 and classified as critical. Affected by this issue is some unknown functionality of the file ruoyi-modules/ruoyi-system/src/main/java/org/ruoyi/system/controller/system/SysModelController.java of the component API Interface. The manipulation leads to improper authorization. The attack may be launched remotely. The exploit has been disclosed to the public and may be used. Upgrading to version 2.0.2 is able to address this issue. The name of the patch is c0daf641fb25b244591b7a6c3affa35c69d321fe. It is recommended to upgrade the affected component."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-285",
+        "description": "Improper Authorization",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-266",
+        "description": "Incorrect Privilege Assignment",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-04"
+}

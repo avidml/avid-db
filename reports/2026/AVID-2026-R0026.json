@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0026"
+  },
+  "affects": {
+    "developer": [
+      "infiniflow"
+    ],
+    "deployer": [
+      "infiniflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "infiniflow/ragflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF in infiniflow/ragflow"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12779"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/3cc748ba-2afb-4bfe-8553-10eb6d6dd4f0",
+      "url": "https://huntr.com/bounties/3cc748ba-2afb-4bfe-8553-10eb6d6dd4f0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Server-Side Request Forgery (SSRF) vulnerability exists in infiniflow/ragflow version 0.12.0. The vulnerability is present in the `POST /v1/llm/add_llm` and `POST /v1/conversation/tts` endpoints. Attackers can specify an arbitrary URL as the `api_base` when adding an `OPENAITTS` model, and subsequently access the `tts` REST API endpoint to read contents from the specified URL. This can lead to unauthorized access to internal web resources."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

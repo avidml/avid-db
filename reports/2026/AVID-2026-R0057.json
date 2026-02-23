@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0057"
+  },
+  "affects": {
+    "developer": [
+      "bentoml"
+    ],
+    "deployer": [
+      "bentoml"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "BentoML"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Insecure Deserialization leads to RCE in BentoML's runner server"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32375"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bentoml/BentoML/security/advisories/GHSA-7v4r-c989-xh26",
+      "url": "https://github.com/bentoml/BentoML/security/advisories/GHSA-7v4r-c989-xh26"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "BentoML is a Python library for building online serving systems optimized for AI apps and model inference. Prior to 1.4.8, there was an insecure deserialization in BentoML's runner server. By setting specific headers and parameters in the POST request, it is possible to execute any unauthorized arbitrary code on the server, which will grant the attackers to have the initial access and information disclosure on the server. This vulnerability is fixed in 1.4.8."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-09"
+}

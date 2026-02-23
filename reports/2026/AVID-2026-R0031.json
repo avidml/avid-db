@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0031"
+  },
+  "affects": {
+    "developer": [
+      "mintplex-labs"
+    ],
+    "deployer": [
+      "mintplex-labs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mintplex-labs/anything-llm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Exposure of Sensitive Information in mintplex-labs/anything-llm"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6842"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/cd911fc7-ac6b-4974-acd0-9cc926fa8d9e",
+      "url": "https://huntr.com/bounties/cd911fc7-ac6b-4974-acd0-9cc926fa8d9e"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mintplex-labs/anything-llm/commit/8b1ceb30c159cf3a10efa16275bc6849d84e4ea8",
+      "url": "https://github.com/mintplex-labs/anything-llm/commit/8b1ceb30c159cf3a10efa16275bc6849d84e4ea8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In version 1.5.5 of mintplex-labs/anything-llm, the `/setup-complete` API endpoint allows unauthorized users to access sensitive system settings. The data returned by the `currentSettings` function includes sensitive information such as API keys for search engines, which can be exploited by attackers to steal these keys and cause loss of user assets."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-306",
+        "description": "CWE-306 Missing Authentication for Critical Function",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0009"
+  },
+  "affects": {
+    "developer": [
+      "eosphoros-ai"
+    ],
+    "deployer": [
+      "eosphoros-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "eosphoros-ai/db-gpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service (DoS) via Multipart Boundary in eosphoros-ai/db-gpt"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10829"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e3a4a0ad-a2e0-497f-a2e0-e3c0ec7c4de4",
+      "url": "https://huntr.com/bounties/e3a4a0ad-a2e0-497f-a2e0-e3c0ec7c4de4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Denial of Service (DoS) vulnerability in the multipart request boundary processing mechanism of eosphoros-ai/db-gpt v0.6.0 allows unauthenticated attackers to cause excessive resource consumption. The server fails to handle excessive characters appended to the end of multipart boundaries, leading to an infinite loop and complete denial of service for all users. This vulnerability affects all endpoints processing multipart/form-data requests."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-835",
+        "description": "CWE-835 Loop with Unreachable Exit Condition",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

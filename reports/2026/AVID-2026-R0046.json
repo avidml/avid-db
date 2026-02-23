@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0046"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-2867"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/512509",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/512509"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue has been discovered in the GitLab Duo with Amazon Q affecting all versions from 17.8 before 17.8.6, 17.9 before 17.9.3, and 17.10 before 17.10.1. A specifically crafted issue could manipulate AI-assisted development features to potentially expose sensitive project data to unauthorized users."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 4.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-27"
+}

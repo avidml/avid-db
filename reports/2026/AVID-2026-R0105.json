@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0105"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "DALL-E3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "NSFWOpenAI DALL-E3  Guardrail Jailbreak via \"Historical Polaroid\" Tactic"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/b444ec15-a055-4e35-9ee0-eaa95d91507a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting DALL-E3 from OpenAI. The specific flaw manifests through a combination of historical context framing and vintage format specification that appears to bypass content filtering by contextualizing potentially exploitative imagery within seemingly innocent historical and photographic framing, thereby allowing the attacker to bypass inference restrictions around generating inappropriate or exploitative content."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 1: Minimal Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Possible Worlds",
+          "Strategy": "World Building",
+          "Technique": "Scenarios"
+        },
+        {
+          "Category": "Rhetoric",
+          "Strategy": "Persuasion and Manipulation",
+          "Technique": "Latent Space Distraction"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Edward Morris"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

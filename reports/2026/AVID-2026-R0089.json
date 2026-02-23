@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0089"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "DALL-E3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "NSFWOpenAI DALL-E3 Guardrail Jailbreak via \"Classical Art Reframing\" Tactic"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/0d97ce9d-29aa-45a0-8b5c-f71daee04ea5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting DALL-E3 from OpenAI. The specific flaw manifests when the attacker frames requests for nudity through a combination of historical framing and artistic merit defense. Thereby allowing the attacker to bypass inference restrictions around generating explicit visual content."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 2: Moderate Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Language",
+          "Strategy": "Stylizing",
+          "Technique": "Synonymous Language"
+        },
+        {
+          "Category": "Possible Worlds",
+          "Strategy": "World Building",
+          "Technique": "Scenarios"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Mike Takahashi (@TakSec)"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

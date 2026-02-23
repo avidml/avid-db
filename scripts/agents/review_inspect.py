@@ -9,6 +9,10 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import urlopen
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from utils.review_normalizers import apply_review_normalizations  # noqa: E402
+
 
 SITE_ROOT = "https://ukgovernmentbeis.github.io/inspect_evals"
 CYSE2_URL = (
@@ -19,14 +23,6 @@ PATTERN = re.compile(
     r"^Evaluation of the LLM (.+?) on the (.+?) benchmark using Inspect Evals$"
 )
 CATEGORY_CANDIDATES = ("safeguards", "scheming", "bias")
-
-
-def _to_list(value):
-    if isinstance(value, list):
-        return [str(item) for item in value]
-    if value is None:
-        return []
-    return [str(value)]
 
 
 def _clean_html_to_text(fragment: str) -> str:
@@ -159,20 +155,6 @@ def _fetch_sections(benchmark: str):
     )
 
 
-def _update_developer_deployer(report: dict):
-    affects = report.setdefault("affects", {})
-    developer = _to_list(affects.get("developer"))
-    deployer = _to_list(affects.get("deployer"))
-
-    if developer:
-        canonical = developer
-    else:
-        canonical = deployer
-
-    affects["developer"] = canonical
-    affects["deployer"] = canonical
-
-
 def _build_new_description(
     model_name: str,
     overview: str,
@@ -225,7 +207,7 @@ def process_report(file_path: Path):
     if "lang" not in description:
         description["lang"] = "eng"
 
-    _update_developer_deployer(report)
+    apply_review_normalizations(report, preferred_model_name=model_name)
 
     with file_path.open("w", encoding="utf-8") as file_obj:
         json.dump(report, file_obj, indent=2)

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0016"
+  },
+  "affects": {
+    "developer": [
+      "langchain-ai"
+    ],
+    "deployer": [
+      "langchain-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "langchain-ai/langchain"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Exposure of Sensitive System Information via ImagePromptTemplate in langchain-ai/langchain"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10940"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/be1ee1cb-2147-4ff4-a57b-b6045271cf27",
+      "url": "https://huntr.com/bounties/be1ee1cb-2147-4ff4-a57b-b6045271cf27"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langchain-ai/langchain/commit/c1e742347f9701aadba8920e4d1f79a636e50b68",
+      "url": "https://github.com/langchain-ai/langchain/commit/c1e742347f9701aadba8920e4d1f79a636e50b68"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in langchain-core versions >=0.1.17,<0.1.53, >=0.2.0,<0.2.43, and >=0.3.0,<0.3.15 allows unauthorized users to read arbitrary files from the host file system. The issue arises from the ability to create langchain_core.prompts.ImagePromptTemplate's (and by extension langchain_core.prompts.ChatPromptTemplate's) with input variables that can read any user-specified path from the server file system. If the outputs of these prompt templates are exposed to the user, either directly or through downstream model outputs, it can lead to the exposure of sensitive information."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-497",
+        "description": "CWE-497 Exposure of Sensitive System Information to an Unauthorized Control Sphere",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

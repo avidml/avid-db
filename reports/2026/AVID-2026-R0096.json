@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0096"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "OpenAI DALL-E3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "NSFWOpenAI DALL-E3 Guardrail Jailbreak via \"Debug Framework Simulation\" Tactic"
+    }
+  },
+  "references": [
+    {
+      "label": "0Din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/9ec1b1fe-c910-422a-a8fc-5d77d58ec904"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting OpenAI's DALL-E3. The specific flaw manifests when the attacker establishes a fictitious debugging framework complete with state management, checkpointing, and replay functionality. By framing requests within this technical debugging context, the attacker creates a permissive environment that allows bypassing inference restrictions around generating prohibited visual content."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 1: Minimal Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Fictionalizing",
+          "Strategy": "Re-storying",
+          "Technique": "Goal Hijacking"
+        },
+        {
+          "Category": "Possible Worlds",
+          "Strategy": "Emulations",
+          "Technique": "Unreal Computing"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Anonymous"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

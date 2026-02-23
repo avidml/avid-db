@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0038"
+  },
+  "affects": {
+    "developer": [
+      "mmaitre314"
+    ],
+    "deployer": [
+      "mmaitre314"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "picklescan"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "picklescan - Zip Flag Bit Exploit Crashes Picklescan But Not PyTorch"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1945"
+    },
+    {
+      "type": "source",
+      "label": "https://www.sonatype.com/security-advisories/cve-2025-1945",
+      "url": "https://www.sonatype.com/security-advisories/cve-2025-1945"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-w8jq-xcqf-f792",
+      "url": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-w8jq-xcqf-f792"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mmaitre314/picklescan/commit/e58e45e0d9e091159c1554f9b04828bbb40b9781",
+      "url": "https://github.com/mmaitre314/picklescan/commit/e58e45e0d9e091159c1554f9b04828bbb40b9781"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "picklescan before 0.0.23 fails to detect malicious pickle files inside PyTorch model archives when certain ZIP file flag bits are modified. By flipping specific bits in the ZIP file headers, an attacker can embed malicious pickle files that remain undetected by PickleScan while still being successfully loaded by PyTorch's torch.load(). This can lead to arbitrary code execution when loading a compromised model."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-345",
+        "description": "CWE-345 Insufficient Verification of Data Authenticity",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-10"
+}

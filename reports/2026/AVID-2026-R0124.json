@@ -1,0 +1,55 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0124"
+  },
+  "affects": {
+    "developer": [
+      "Amazon"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "Amazon Rufus"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "Amazon Rufus Guardrail Jailbreak via ASCII Decimal Encoding"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/f48a25fc-5801-4712-8c79-a969dfac3253"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting multiple LLM implementations. The specific flaw manifests through a combination of ASCII decimal encoding and strategic obfuscation, allowing the attacker to bypass inference restrictions around providing information hazards and violating laws."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 3: Significant Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Language",
+          "Strategy": "Code and Encode",
+          "Technique": "Other Encoding"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "0Din Team"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}

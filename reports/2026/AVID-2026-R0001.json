@@ -1,0 +1,85 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0001"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Container Toolkit"
+      },
+      {
+        "type": "System",
+        "name": "GPU Operator"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-0132"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0132"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5582",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5582"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Container Toolkit 1.16.1 or earlier contains a Time-of-check Time-of-Use (TOCTOU) vulnerability when used with default configuration where a specifically crafted container image may gain access to the host file system. This does not impact use cases where CDI is used. A successful exploit of this vulnerability may lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "baseScore": 9.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-367",
+        "description": "CWE-367 Time-of-check Time-of-use (TOCTOU) Race Condition",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-26"
+}

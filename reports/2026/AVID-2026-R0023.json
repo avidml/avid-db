@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0023"
+  },
+  "affects": {
+    "developer": [
+      "invoke-ai"
+    ],
+    "deployer": [
+      "invoke-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "invoke-ai/invokeai"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution via Model Deserialization in invoke-ai/invokeai"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12029"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/9b790f94-1b1b-4071-bc27-78445d1a87a3",
+      "url": "https://huntr.com/bounties/9b790f94-1b1b-4071-bc27-78445d1a87a3"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/invoke-ai/invokeai/commit/756008dc5899081c5aa51e5bd8f24c1b3975a59e",
+      "url": "https://github.com/invoke-ai/invokeai/commit/756008dc5899081c5aa51e5bd8f24c1b3975a59e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A remote code execution vulnerability exists in invoke-ai/invokeai versions 5.3.1 through 5.4.2 via the /api/v2/models/install API. The vulnerability arises from unsafe deserialization of model files using torch.load without proper validation. Attackers can exploit this by embedding malicious code in model files, which is executed upon loading. This issue is fixed in version 5.4.3."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

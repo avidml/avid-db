@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0036"
+  },
+  "affects": {
+    "developer": [
+      "mmaitre314"
+    ],
+    "deployer": [
+      "mmaitre314"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "picklescan"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "picklescan - Security scanning bypass via non-standard file extensions"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1889"
+    },
+    {
+      "type": "source",
+      "label": "https://www.sonatype.com/security-advisories/cve-2025-1889",
+      "url": "https://www.sonatype.com/security-advisories/cve-2025-1889"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-655q-fx9r-782v",
+      "url": "https://github.com/mmaitre314/picklescan/security/advisories/GHSA-655q-fx9r-782v"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "picklescan before 0.0.22 only considers standard pickle file extensions in the scope for its vulnerability scan. An attacker could craft a malicious model that uses Pickle and include a malicious pickle file with a non-standard file extension. Because the malicious pickle file inclusion is not considered as part of the scope of picklescan, the file would pass security checks and appear to be safe, when it could instead prove to be problematic."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-646",
+        "description": "CWE-646 Reliance on File Name or Extension of Externally-Supplied File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-03"
+}

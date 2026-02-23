@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0008"
+  },
+  "affects": {
+    "developer": [
+      "invoke-ai"
+    ],
+    "deployer": [
+      "invoke-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "invoke-ai/invokeai"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service (DoS) in invoke-ai/invokeai"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10821"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/0ac24835-c4c0-4f11-938a-d5641dfb80b2",
+      "url": "https://huntr.com/bounties/0ac24835-c4c0-4f11-938a-d5641dfb80b2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Denial of Service (DoS) vulnerability in the multipart request boundary processing mechanism of the Invoke-AI server (version v5.0.1) allows unauthenticated attackers to cause excessive resource consumption. The server fails to handle excessive characters appended to the end of multipart boundaries, leading to an infinite loop and a complete denial of service for all users. The affected endpoint is `/api/v1/images/upload`."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-835",
+        "description": "CWE-835 Loop with Unreachable Exit Condition",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

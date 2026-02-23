@@ -1,0 +1,61 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0123"
+  },
+  "affects": {
+    "developer": [
+      "Google"
+    ],
+    "deployer": [
+      "G-Suite users"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Google Gemini"
+      },
+      {
+        "type": "System",
+        "name": "Google Workspace"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "Google Gemini G-Suite Prompt Injection Vulnerability"
+    }
+  },
+  "references": [
+    {
+      "label": "0din.ai Disclosure",
+      "url": "https://0din.ai/disclosures/e24d9e6b-8c5e-4e2f-ad4f-2abc0072307a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A prompt injection vulnerability has been discovered affecting Google Gemini across G-Suite applications such as email. The specific flaw allows an attacker to send an email containing a prompt injection to a victim. When the victim requests Gemini to summarize their unread emails, they receive a manipulated response that appears to be legitimate, originating from Gemini itself."
+  },
+  "impact": {
+    "odin": {
+      "SocialImpactScore": "Level 2: Moderate Risk",
+      "JailbreakTaxonomy": [
+        {
+          "Category": "Stratagems",
+          "Strategy": "Meta Prompting",
+          "Technique": "Deceptive Formatting"
+        }
+      ]
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "blurrylogic"
+    }
+  ],
+  "reported_date": "2026-02-19"
+}
