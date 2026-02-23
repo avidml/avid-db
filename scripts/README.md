@@ -66,6 +66,26 @@ Inspect Evals-specific reviewer for report JSON files.
 This script updates Inspect benchmark description content and then applies the
 same shared normalizations used by `review/default.py`.
 
+### `review/garak.py`
+Garak-specific reviewer for report files (`.json` or `.jsonl`).
+
+This script:
+- Applies shared normalizations from `review/normalizers.py`
+- Applies Garak mappings (`litellm`→`Together AI` deployer, model name shortening after first `/`)
+- Converts `metrics[0].results` from dataframe-style dict-of-dicts into a list of row dicts
+- Updates `problemtype.description.value` and enriches `description.value`
+- Summarizes Garak probe docstrings using async `gpt-4o-mini` calls with cache in `review/.garak_probe_summary_cache.json`
+- Falls back to a probe link if summarization fails
+
+**Examples:**
+```bash
+# Review Garak JSONL in place
+python review/garak.py ../reports/review/garak.run.avid.jsonl
+
+# Dry run
+python review/garak.py ../reports/review/garak.run.avid.jsonl --dry-run
+```
+
 ### `publish.py`
 Main publishing script for processing reports from the review folder.
 

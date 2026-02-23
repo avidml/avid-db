@@ -72,6 +72,8 @@ def extract_model_names(
 def _infer_developer_from_models(model_names: List[str]) -> Optional[str]:
     for model_name in model_names:
         normalized = model_name.lower()
+        if "kimi" in normalized:
+            return "Moonshot AI"
         if "llama" in normalized:
             return "Meta"
         if "mistral" in normalized:
@@ -160,3 +162,21 @@ def apply_review_normalizations(
         model_names=model_names,
     )
     return artifacts_updated or developer_updated
+
+
+def choose_model_subject_label(report: dict) -> str:
+    model_names = extract_model_names(report)
+    if any(name.strip() for name in model_names):
+        return "llm"
+
+    affects = report.get("affects", {})
+    artifacts = affects.get("artifacts")
+    if isinstance(artifacts, list):
+        for artifact in artifacts:
+            if not isinstance(artifact, dict):
+                continue
+            artifact_type = str(artifact.get("type", "")).strip().lower()
+            if artifact_type in {"model", "llm", "language model"}:
+                return "llm"
+
+    return "AI system"
