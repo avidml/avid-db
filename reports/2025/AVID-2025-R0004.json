@@ -47,7 +47,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security. WMDP serves as both a proxy evaluation for hazardous knowledge in large language models (LLMs) and a benchmark for unlearning methods to remove such knowledge.\n\nWe evaluated the LLM gpt-4o-mini-2024-07-18 on this benchmark.\n\n## Measurement details\n\nA simple accuracy is calculated over the datapoints."
+    "value": "WMDP is a dataset of 3,668 multiple-choice questions surrounding hazardous knowledge in biosecurity, cybersecurity, and chemical security. WMDP serves as both a proxy evaluation for hazardous knowledge in large language models (LLMs) and a benchmark for unlearning methods to remove such knowledge.\n\nThe AI system gpt-4o-mini-2024-07-18 was evaluated on this benchmark.\n\n## Measurement details\n\nA simple accuracy is calculated over the datapoints."
   },
   "impact": {
     "avid": {
