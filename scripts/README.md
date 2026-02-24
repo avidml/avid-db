@@ -39,53 +39,6 @@ python publish.py ../reports/review/cve_digest_20251206_143052.jsonl --year 2025
 
 ## Scripts
 
-### `review/default.py`
-General review script for draft report files (`.json` or `.jsonl`) before publishing.
-
-This script:
-- Applies OpenAI/GPT artifact normalization (`type: "System"`)
-- Applies developer mapping from model name (`Llama`→`Meta`, `Mistral`→`Mistral`, `DeepSeek`→`DeepSeek`)
-- Saves normalized updates back to the input file in place
-- Does not assign AVID IDs
-
-**Examples:**
-```bash
-# Review a JSONL digest file in place
-python review/default.py ../reports/review/cve_digest_20260219_103343.jsonl
-
-# Review a single JSON report in place
-python review/default.py ../reports/review/draft_report.json
-
-# Preview without modifying the file
-python review/default.py ../reports/review/cve_digest_20260219_103343.jsonl --dry-run
-```
-
-### `review/inspect.py`
-Inspect Evals-specific reviewer for report JSON files.
-
-This script updates Inspect benchmark description content and then applies the
-same shared normalizations used by `review/default.py`.
-
-### `review/garak.py`
-Garak-specific reviewer for report files (`.json` or `.jsonl`).
-
-This script:
-- Applies shared normalizations from `review/normalizers.py`
-- Applies Garak mappings (`litellm`→`Together AI` deployer, model name shortening after first `/`)
-- Converts `metrics[0].results` from dataframe-style dict-of-dicts into a list of row dicts
-- Updates `problemtype.description.value` and enriches `description.value`
-- Summarizes Garak probe docstrings using async `gpt-4o-mini` calls with cache in `review/.garak_probe_summary_cache.json`
-- Falls back to a probe link if summarization fails
-
-**Examples:**
-```bash
-# Review Garak JSONL in place
-python review/garak.py ../reports/review/garak.run.avid.jsonl
-
-# Dry run
-python review/garak.py ../reports/review/garak.run.avid.jsonl --dry-run
-```
-
 ### `publish.py`
 Main publishing script for processing reports from the review folder.
 
@@ -94,7 +47,6 @@ Main publishing script for processing reports from the review folder.
 - `--create-vulns`: Create vulnerabilities from reports (default: False)
 - `--year YYYY`: Year for ID generation (default: current year)
 - `--dry-run`: Preview actions without making changes
-- `--delete-source`: Delete input file after successful publish
 
 **Examples:**
 ```bash
@@ -109,9 +61,6 @@ python publish.py ../reports/review/draft_report.json --create-vulns
 
 # Dry run to see what would happen
 python publish.py ../reports/review/cve_digest_20251206_143052.jsonl --create-vulns --dry-run
-
-# Publish and delete source review file when complete
-python publish.py ../reports/review/cve_digest_20251206_143052.jsonl --delete-source
 ```
 
 ### `utils/id_manager.py`
