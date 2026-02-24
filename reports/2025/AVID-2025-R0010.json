@@ -47,7 +47,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "CyberMetric is a collection of four datasets containing 80, 500, 2000 and 10000 multiple-choice questions, designed to evaluate understanding across nine domains within cybersecurity: Disaster Recovery and BCP, Identity and Access Management (IAM), IoT Security, Cryptography, Wireless Security, Network Security, Cloud Security, Penetration Testing, and Compliance/Audit.\n\nWe evaluated the LLM gpt-4o-mini-2024-07-18 on this benchmark.\n\n## Measurement details\n\nA simple accuracy is calculated over the datapoints."
+    "value": "CyberMetric is a collection of four datasets containing 80, 500, 2000 and 10000 multiple-choice questions, designed to evaluate understanding across nine domains within cybersecurity: Disaster Recovery and BCP, Identity and Access Management (IAM), IoT Security, Cryptography, Wireless Security, Network Security, Cloud Security, Penetration Testing, and Compliance/Audit.\n\nThe AI system gpt-4o-mini-2024-07-18 was evaluated on this benchmark.\n\n## Measurement details\n\nA simple accuracy is calculated over the datapoints."
   },
   "impact": {
     "avid": {

@@ -47,7 +47,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models\u2019 risky capabilities in cybersecurity.\n\nWe evaluated the LLM Llama-3.3-70B-Instruct-Turbo on this benchmark.\n\n## Measurement details\n\nA simple average is calculated over the test cases, indicating the rate at which the model behavior could be classified as harmful (lower scores are better)."
+    "value": "CyberSecEval2 is A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models\u2019 risky capabilities in cybersecurity.\n\nThe LLM Llama-3.3-70B-Instruct-Turbo was evaluated on this benchmark.\n\n## Measurement details\n\nA simple average is calculated over the test cases, indicating the rate at which the model behavior could be classified as harmful (lower scores are better)."
   },
   "impact": {
     "avid": {

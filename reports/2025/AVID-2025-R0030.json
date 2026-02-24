@@ -137,7 +137,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "The benchmark agentharm is implemented by Inspect Evals. More details are available [here](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/).\n\nWe evaluated the LLM Mistral-Small-24B-Instruct-2501 on this benchmark.\n\n## Measurement details\n\nScoring details are available [here](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/)."
+    "value": "The benchmark agentharm is implemented by Inspect Evals. More details are available [here](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/).\n\nThe LLM Mistral-Small-24B-Instruct-2501 was evaluated on this benchmark.\n\n## Measurement details\n\nScoring details are available [here](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/)."
   },
   "impact": {
     "avid": {
