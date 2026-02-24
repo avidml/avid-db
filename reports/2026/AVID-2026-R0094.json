@@ -8,7 +8,9 @@
       "Anthropic",
       "OpenAI"
     ],
-    "deployer": [],
+    "deployer": [
+      "OpenAI"
+    ],
     "artifacts": [
       {
         "type": "System",

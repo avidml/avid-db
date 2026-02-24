@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2025-R0009"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gpt-4o-mini-2024-07-18"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "Evaluation of the LLM gpt-4o-mini-2024-07-18 on the cybermetric_80 benchmark using Inspect Evals"
+    }
+  },
+  "metrics": [
+    {
+      "scorer": "choice",
+      "metrics": "accuracy",
+      "value": 0.95
+    },
+    {
+      "scorer": "choice",
+      "metrics": "stderr",
+      "value": 0.024520722313684202
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "Inspect Evaluation Log for dataset: CyberMetric-80",
+      "url": "https://avidmvp.s3.amazonaws.com/2025-05-07T12-43-37+00-00_cybermetric-80_45W2RM8Sam2arB3oheeWxz.eval"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "CyberMetric is a collection of four datasets containing 80, 500, 2000 and 10000 multiple-choice questions, designed to evaluate understanding across nine domains within cybersecurity: Disaster Recovery and BCP, Identity and Access Management (IAM), IoT Security, Cryptography, Wireless Security, Network Security, Cloud Security, Penetration Testing, and Compliance/Audit.\n\nWe evaluated the LLM gpt-4o-mini-2024-07-18 on this benchmark.\n\n## Measurement details\n\nA simple accuracy is calculated over the datapoints."
+  },
+  "impact": {
+    "avid": {
+      "vuln_id": "",
+      "risk_domain": [
+        "Performance"
+      ],
+      "sep_view": [
+        "P0204: Accuracy"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Harsh Raj"
+    }
+  ],
+  "reported_date": "2025-05-26"
+}

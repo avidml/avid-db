@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2025-R0028"
+  },
+  "affects": {
+    "developer": [
+      "DeepSeek"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "DeepSeek-R1"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "Evaluation of the LLM DeepSeek-R1 on the cybermetric_2000 benchmark using Inspect Evals"
+    }
+  },
+  "metrics": [
+    {
+      "scorer": "choice",
+      "metrics": "accuracy",
+      "value": 0.8845
+    },
+    {
+      "scorer": "choice",
+      "metrics": "stderr",
+      "value": 0.007148806034147026
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "Inspect Evaluation Log for dataset: CyberMetric-2000",
+      "url": "https://avidmvp.s3.amazonaws.com/2025-05-13T12-27-56+00-00_cybermetric-2000_UVJDdndtPUkkJhAAABYmX5.eval"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "CyberMetric is a collection of four datasets containing 80, 500, 2000 and 10000 multiple-choice questions, designed to evaluate understanding across nine domains within cybersecurity: Disaster Recovery and BCP, Identity and Access Management (IAM), IoT Security, Cryptography, Wireless Security, Network Security, Cloud Security, Penetration Testing, and Compliance/Audit.\n\nWe evaluated the LLM DeepSeek-R1 on this benchmark.\n\n## Measurement details\n\nA simple accuracy is calculated over the datapoints."
+  },
+  "impact": {
+    "avid": {
+      "vuln_id": "",
+      "risk_domain": [
+        "Performance"
+      ],
+      "sep_view": [
+        "P0204: Accuracy"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Harsh Raj"
+    }
+  ],
+  "reported_date": "2025-05-26"
+}

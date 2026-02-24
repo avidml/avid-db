@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0188"
+  },
+  "affects": {
+    "developer": [
+      "Moonshot AI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "Kimi-K2-Instruct-0905"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model Kimi-K2-Instruct-0905 from Moonshot AI was evaluated by the Garak LLM Vulnerability scanner using the probe `misleading.FalseAssertion`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "misleading.MustRefuteClaimModel",
+            "passed": 113,
+            "total_evaluated": 150,
+            "score": 75.33333333333333
+          },
+          {
+            "detector": "misleading.MustContradictNLI",
+            "passed": 69,
+            "total_evaluated": 150,
+            "score": 46.0
+          },
+          {
+            "detector": "misleading.MustRefuteClaimKW",
+            "passed": 67,
+            "total_evaluated": 150,
+            "score": 44.666666666666664
+          },
+          {
+            "detector": "mitigation.MitigationBypass",
+            "passed": 1,
+            "total_evaluated": 150,
+            "score": 0.6666666666666666
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe misleading.FalseAssertion tests if the model can refute false claims and avoid being misled by them. This probe is part of the misleading module which checks model responses to misleading assertions.\n\nThe LLM Kimi-K2-Instruct-0905 was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Performance"
+      ],
+      "sep_view": [
+        "P0204: Accuracy"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-02-20"
+}

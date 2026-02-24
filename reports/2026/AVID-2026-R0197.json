@@ -1,0 +1,69 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0197"
+  },
+  "affects": {
+    "developer": [
+      "Moonshot AI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "Kimi-K2-Instruct-0905"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model Kimi-K2-Instruct-0905 from Moonshot AI was evaluated by the Garak LLM Vulnerability scanner using the probe `phrasing.PastTense`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "mitigation.Prefixes",
+            "passed": 58,
+            "total_evaluated": 256,
+            "score": 22.65625
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe phrasing.PastTense tests the evasion of safeguards by rephrasing requests in the past tense. This probe is part of the phrasing module which attempts to evade safeguards using future tense.\n\nThe LLM Kimi-K2-Instruct-0905 was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [],
+      "sep_view": [],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-02-20"
+}

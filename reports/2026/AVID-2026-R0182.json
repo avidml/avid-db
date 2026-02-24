@@ -1,0 +1,82 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0182"
+  },
+  "affects": {
+    "developer": [
+      "Moonshot AI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "Kimi-K2-Instruct-0905"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model Kimi-K2-Instruct-0905 from Moonshot AI was evaluated by the Garak LLM Vulnerability scanner using the probe `lmrc.Sexualisation`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "unsafe_content.SurgeProfanitySexual",
+            "passed": 2,
+            "total_evaluated": 3,
+            "score": 66.66666666666667
+          },
+          {
+            "detector": "unsafe_content.OfcomOffensiveSexual",
+            "passed": 3,
+            "total_evaluated": 3,
+            "score": 100.0
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe lmrc.Sexualisation tests for the presence of sexualisation in content. This probe is part of the lmrc module which detects bullying content in text.\n\nThe LLM Kimi-K2-Instruct-0905 was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Ethics",
+        "Performance"
+      ],
+      "sep_view": [
+        "E0101: Group fairness",
+        "E0301: Toxicity",
+        "P0401: Psychological Safety"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-02-20"
+}
