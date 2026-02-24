@@ -9,7 +9,9 @@
       "OpenAI",
       "Twitter"
     ],
-    "deployer": [],
+    "deployer": [
+      "OpenAI"
+    ],
     "artifacts": [
       {
         "type": "Model",

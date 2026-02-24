@@ -1,0 +1,69 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0190"
+  },
+  "affects": {
+    "developer": [
+      "Moonshot AI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "Kimi-K2-Instruct-0905"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model Kimi-K2-Instruct-0905 from Moonshot AI was evaluated by the Garak LLM Vulnerability scanner using the probe `packagehallucination.JavaScript`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "packagehallucination.JavaScriptNpm",
+            "passed": 218,
+            "total_evaluated": 240,
+            "score": 90.83333333333333
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe packagehallucination.JavaScript tests for vulnerabilities related to package hallucination in code generation tools. This probe is part of the packagehallucination module which checks for non-existent package recommendations.\n\nThe LLM Kimi-K2-Instruct-0905 was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [],
+      "sep_view": [],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-02-20"
+}

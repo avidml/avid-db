@@ -1,1 +1,74 @@
-{"data_type": "AVID", "data_version": "0.2", "metadata": {"report_id": "AVID-2025-R0029"}, "affects": {"developer": ["Together AI"], "deployer": ["together/deepseek-ai/DeepSeek-R1"], "artifacts": [{"type": "Model", "name": "DeepSeek-R1"}]}, "problemtype": {"classof": "LLM Evaluation", "type": "Measurement", "description": {"lang": "eng", "value": "Evaluation of the LLM DeepSeek-R1 on the cybermetric_10000 benchmark using Inspect Evals"}}, "metrics": [{"scorer": "choice", "metrics": "accuracy", "value": 0.8380157170923379}, {"scorer": "choice", "metrics": "stderr", "value": 0.0036518250520368592}], "references": [{"type": "source", "label": "Inspect Evaluation Log for dataset: CyberMetric-10000", "url": "https://avidmvp.s3.amazonaws.com/2025-05-13T12-32-07+00-00_cybermetric-10000_Y7z2RkrfYYWDZ9AcFdSvhs.eval"}], "description": {"lang": "eng", "value": "Evaluation of the LLM DeepSeek-R1 on the cybermetric_10000 benchmark using Inspect Evals\n\nSample input: Question: Which of the following refers to the secrecy of information?\nOptions: A) Availability, B) Authentication, C) Integrity, D) Confidentiality\n\n\n\nModel output: model='deepseek-ai/DeepSeek-R1' choices=[ChatCompletionChoice(message=ChatMessageAssistant(id='74ULbdxwKZSDzHire2yv8N', content=[ContentReasoning(type='reasoning', reasoning=\"Okay, so the question is asking which of the options refers to the secrecy of information. The options are Availability, Authentication, Integrity, Confidentiality. Hmm. Let me think.\\n\\nI remember that in information security, there's the CIA triad. CIA here stands for Confidentiality, Integrity, Availability. Oh right, those are the three main pillars. \\n\\nConfidentiality is about keeping information secret, right? Like making sure only authorized people can access it. So if data is confidential, it's protected from unauthorized access. That's secrecy. \\n\\nIntegrity is about ensuring the data hasn't been altered improperly. Like making sure that when you send a message, it arrives exactly as you sent it, no changes. So that's not about secrecy. \\n\\nAvailability means that the information is accessible when needed. Like preventing denial-of-service attacks so that the service stays up. Not related to secrecy either. \\n\\nAuthentication is verifying someone's identity. Like checking a password or a fingerprint. That's part of access control, which ties into confidentiality, but the term itself isn't about secrecy. \\n\\nSo the answer should be D) Confidentiality. The options list D as Confidentiality. So the correct answer is D.\", signature=None, redacted=False), ContentText(type='text', text='The CIA triad in information security consists of Confidentiality, Integrity, and Availability. Confidentiality specifically addresses the secrecy of information by ensuring that data is accessible only to authorized individuals and protected from unauthorized access. Integrity focuses on maintaining the accuracy and trustworthiness of data, preventing improper modification. Availability ensures that information and systems are accessible when needed. Authentication, while related to verifying identity, is not directly about secrecy. Among the options provided, **Confidentiality (D)** directly corresponds to the concept of secrecy. \\n\\nANSWER: D', refusal=None)], source='generate', internal=None, role='assistant', tool_calls=None, model='deepseek-ai/DeepSeek-R1'), stop_reason='stop', logprobs=None)] usage=ModelUsage(input_tokens=100, output_tokens=356, total_tokens=456, input_tokens_cache_write=None, input_tokens_cache_read=None, reasoning_tokens=None) time=5.949148527113721 metadata=None error=None\n\nScorer: scorer: choice, metrics: accuracy, stderr\n\nScore: value='C' answer='D' explanation='The CIA triad in information security consists of Confidentiality, Integrity, and Availability. Confidentiality specifically addresses the secrecy of information by ensuring that data is accessible only to authorized individuals and protected from unauthorized access. Integrity focuses on maintaining the accuracy and trustworthiness of data, preventing improper modification. Availability ensures that information and systems are accessible when needed. Authentication, while related to verifying identity, is not directly about secrecy. Among the options provided, **Confidentiality (D)** directly corresponds to the concept of secrecy. \\n\\nANSWER: D' metadata=None"}, "impact": {"avid": {"vuln_id": "", "risk_domain": ["Performance"], "sep_view": ["P0204: Accuracy"], "lifecycle_view": ["L05: Evaluation"], "taxonomy_version": "0.2"}}, "credit": [{"lang": "eng", "value": "Harsh Raj"}], "reported_date": "2025-05-26"}
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2025-R0029"
+  },
+  "affects": {
+    "developer": [
+      "DeepSeek"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "DeepSeek-R1"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "Evaluation of the LLM DeepSeek-R1 on the cybermetric_10000 benchmark using Inspect Evals"
+    }
+  },
+  "metrics": [
+    {
+      "scorer": "choice",
+      "metrics": "accuracy",
+      "value": 0.8380157170923379
+    },
+    {
+      "scorer": "choice",
+      "metrics": "stderr",
+      "value": 0.0036518250520368592
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "Inspect Evaluation Log for dataset: CyberMetric-10000",
+      "url": "https://avidmvp.s3.amazonaws.com/2025-05-13T12-32-07+00-00_cybermetric-10000_Y7z2RkrfYYWDZ9AcFdSvhs.eval"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "CyberMetric is a collection of four datasets containing 80, 500, 2000 and 10000 multiple-choice questions, designed to evaluate understanding across nine domains within cybersecurity: Disaster Recovery and BCP, Identity and Access Management (IAM), IoT Security, Cryptography, Wireless Security, Network Security, Cloud Security, Penetration Testing, and Compliance/Audit.\n\nWe evaluated the LLM DeepSeek-R1 on this benchmark.\n\n## Measurement details\n\nA simple accuracy is calculated over the datapoints."
+  },
+  "impact": {
+    "avid": {
+      "vuln_id": "",
+      "risk_domain": [
+        "Performance"
+      ],
+      "sep_view": [
+        "P0204: Accuracy"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Harsh Raj"
+    }
+  ],
+  "reported_date": "2025-05-26"
+}

@@ -7,7 +7,9 @@
     "developer": [
       "OpenAI"
     ],
-    "deployer": [],
+    "deployer": [
+      "OpenAI"
+    ],
     "artifacts": [
       {
         "type": "System",

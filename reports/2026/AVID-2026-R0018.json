@@ -9,7 +9,7 @@
       "binary-husky"
     ],
     "deployer": [
-      "binary-husky"
+      "OpenAI"
     ],
     "artifacts": [
       {
