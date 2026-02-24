@@ -1,22 +1,22 @@
-# Review/Enrich Scripts
+# Review/Normalize Scripts
 
-This folder contains CLI entrypoints for enriching review files in place before publish.
+This folder contains CLI entrypoints for normalizing review files in place before publish.
 
 ## Scripts
 
 - `default.py`
-  - Generic enrich pass for `.json` and `.jsonl` files.
-  - Uses `avidtools.connectors.base.enrich_file`.
+  - Generic normalize pass for `.json` and `.jsonl` files.
+  - Uses `avidtools.connectors.base.normalize_file`.
 
 - `inspect.py`
-  - Inspect-specific enrich logic for single report JSON files.
+  - Inspect-specific normalize logic for single report JSON files.
   - Uses `avidtools.connectors.inspect.process_report`.
   - If an inspect benchmark cannot be resolved to supported categories,
     the report file is deleted.
 
 - `garak.py`
-  - Garak-specific enrich logic for `.json` and `.jsonl` files.
-  - Uses `avidtools.connectors.garak.enrich_file`.
+  - Garak-specific normalize logic for `.json` and `.jsonl` files.
+  - Uses `avidtools.connectors.garak.normalize_file`.
 
 ## Typical usage
 

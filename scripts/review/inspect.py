@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""CLI for Inspect report enrich in AVID DB."""
+"""CLI for Inspect report normalize in AVID DB."""
 
 import argparse
 import sys
@@ -25,7 +25,7 @@ from avidtools.connectors.inspect import (  # noqa: E402
 
 
 parser = argparse.ArgumentParser(
-    description="Enrich and correct Inspect Evals AVID report JSON files."
+    description="Normalize and correct Inspect Evals AVID report JSON files."
 )
 parser.add_argument("report", type=Path, help="Path to report JSON file")
 args = parser.parse_args()
