@@ -23,7 +23,7 @@
     "type": "Measurement",
     "description": {
       "lang": "eng",
-      "value": "Evaluation of the LLM gpt-4o-mini-2024-07-18 on the cyse2_prompt_injection benchmark using Inspect Evals"
+      "value": "Evaluation of the AI system gpt-4o-mini-2024-07-18 on the cyse2_prompt_injection benchmark using Inspect Evals"
     }
   },
   "metrics": [
