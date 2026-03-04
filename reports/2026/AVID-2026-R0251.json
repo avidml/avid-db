@@ -1,0 +1,43 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0251"
+  },
+  "affects": {
+    "developer": [
+      "The Browser Company"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Dia"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "Data exfiltration via prompt injection"
+    }
+  },
+  "references": [
+    {
+      "label": "Dia Browser Security Bulletin",
+      "url": "https://www.diabrowser.com/security/bulletins#security-story-of-fetch_web_content"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Dia's fetch_web_content feature was found to be vulnerable to data exfiltration through prompt injection, allowing attackers to extract sensitive user information by encoding it in URLs. Initial detection-based security measures failed, leading to the feature's removal and a complete architectural redesign to enforce URL provenance and mitigate the risk of exploitation."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Dia Browser"
+    }
+  ],
+  "reported_date": "2026-03-04"
+}

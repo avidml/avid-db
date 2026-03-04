@@ -1,0 +1,49 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0252"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ChatGPT"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Bypassing ChatGPT image safeguards"
+    }
+  },
+  "references": [
+    {
+      "label": "Mindgard Blog",
+      "url": "https://mindgard.ai/blog/bypassing-image-safeguards-in-chatgpt"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Mindgard's research reveals vulnerabilities in ChatGPT's image safeguards, demonstrating how memory manipulation can bypass security measures, allowing the generation of explicit content. The findings highlight systemic weaknesses in AI moderation and the need for continuous adversarial testing to protect against misuse."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Jim Nightingale"
+    },
+    {
+      "lang": "eng",
+      "value": "mindgard.ai"
+    }
+  ],
+  "reported_date": "2026-03-04"
+}

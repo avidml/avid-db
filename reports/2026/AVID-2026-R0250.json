@@ -1,0 +1,44 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0250"
+  },
+  "affects": {
+    "developer": [
+      "Wix",
+      "Base44"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Base44"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Critical authentication bypass vulnerability in Base44"
+    }
+  },
+  "references": [
+    {
+      "label": "Wiz Blog on Base44 Vulnerability",
+      "url": "https://www.wiz.io/blog/critical-vulnerability-base44"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Wiz Research identified a critical vulnerability in the Base44 vibe coding platform that allowed unauthorized access to private applications. The vulnerability was due to exposed registration and verification endpoints that could be exploited with a non-secret app_id, bypassing authentication controls such as Single Sign-On (SSO). This flaw posed significant risks as it enabled attackers to access sensitive enterprise data without proper authorization. The issue was responsibly disclosed, and a fix was implemented within 24 hours."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Wiz Research"
+    }
+  ],
+  "reported_date": "2026-03-04"
+}
