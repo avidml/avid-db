@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "PyTorch torch.jit.jit_module_from_flatbuffer memory corruption"
+      "value": "PyTorch torch.jit.jit_module_from_flatbuffer memory corruption (CVE-2025-3121)"
     }
   },
   "references": [

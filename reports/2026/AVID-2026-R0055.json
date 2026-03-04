@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Arbitrary file write from Cursor Agent through a prompt injection from malicious @Docs"
+      "value": "Arbitrary file write from Cursor Agent through a prompt injection from malicious @Docs (CVE-2025-32018)"
     }
   },
   "references": [

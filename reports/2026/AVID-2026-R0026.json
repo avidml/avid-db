@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "SSRF in infiniflow/ragflow"
+      "value": "SSRF in infiniflow/ragflow (CVE-2024-12779)"
     }
   },
   "references": [

@@ -9,7 +9,7 @@
       "binary-husky"
     ],
     "deployer": [
-      "OpenAI"
+      "binary-husky"
     ],
     "artifacts": [
       {
@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Prompt Injection Leading to RCE in binary-husky/gpt_academic Plugin `manim`"
+      "value": "Prompt Injection Leading to RCE in binary-husky/gpt_academic Plugin `manim` (CVE-2024-10954)"
     }
   },
   "references": [

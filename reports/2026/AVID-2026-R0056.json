@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "ageerle ruoyi-ai SysNoticeController.java improper authorization"
+      "value": "ageerle ruoyi-ai SysNoticeController.java improper authorization (CVE-2025-3202)"
     }
   },
   "references": [

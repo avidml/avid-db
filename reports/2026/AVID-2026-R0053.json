@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "PyTorch CUDACachingAllocator.cpp torch.cuda.memory.caching_allocator_delete memory corruption"
+      "value": "PyTorch CUDACachingAllocator.cpp torch.cuda.memory.caching_allocator_delete memory corruption (CVE-2025-3136)"
     }
   },
   "references": [

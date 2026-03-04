@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Arbitrary File Delete in invoke-ai/invokeai"
+      "value": "Arbitrary File Delete in invoke-ai/invokeai (CVE-2024-11042)"
     }
   },
   "references": [

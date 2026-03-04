@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "picklescan - Zip Flag Bit Exploit Crashes Picklescan But Not PyTorch"
+      "value": "picklescan - Zip Flag Bit Exploit Crashes Picklescan But Not PyTorch (CVE-2025-1945)"
     }
   },
   "references": [

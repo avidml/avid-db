@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Improper Privilege Management in lunary-ai/lunary"
+      "value": "Improper Privilege Management in lunary-ai/lunary (CVE-2024-10273)"
     }
   },
   "references": [

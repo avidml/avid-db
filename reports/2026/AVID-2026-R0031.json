@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Exposure of Sensitive Information in mintplex-labs/anything-llm"
+      "value": "Exposure of Sensitive Information in mintplex-labs/anything-llm (CVE-2024-6842)"
     }
   },
   "references": [

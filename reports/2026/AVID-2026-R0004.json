@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Improper Authorization in lunary-ai/lunary"
+      "value": "Improper Authorization in lunary-ai/lunary (CVE-2024-10274)"
     }
   },
   "references": [

@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "NI Vision Builder AI VBAI File Processing Missing Warning Remote Code Execution Vulnerability"
+      "value": "NI Vision Builder AI VBAI File Processing Missing Warning Remote Code Execution Vulnerability (CVE-2025-2450)"
     }
   },
   "references": [

@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Improper Enforcement of Unique Constraint in lunary-ai/lunary"
+      "value": "Improper Enforcement of Unique Constraint in lunary-ai/lunary (CVE-2024-11301)"
     }
   },
   "references": [

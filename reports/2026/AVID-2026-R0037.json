@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "picklescan ZIP archive manipulation attack leads to crash"
+      "value": "picklescan ZIP archive manipulation attack leads to crash (CVE-2025-1944)"
     }
   },
   "references": [

@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Uncontrolled Resource Consumption in mlflow/mlflow"
+      "value": "Uncontrolled Resource Consumption in mlflow/mlflow (CVE-2024-6838)"
     }
   },
   "references": [

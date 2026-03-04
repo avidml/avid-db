@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "picklescan - Security scanning bypass via non-standard file extensions"
+      "value": "picklescan - Security scanning bypass via non-standard file extensions (CVE-2025-1889)"
     }
   },
   "references": [

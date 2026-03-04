@@ -27,7 +27,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Azure Promptflow Remote Code Execution Vulnerability"
+      "value": "Azure Promptflow Remote Code Execution Vulnerability (CVE-2025-24986)"
     }
   },
   "references": [

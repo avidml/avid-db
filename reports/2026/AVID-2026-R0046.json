@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Improper Control of Generation of Code ('Code Injection') in GitLab"
+      "value": "Improper Control of Generation of Code ('Code Injection') in GitLab (CVE-2025-2867)"
     }
   },
   "references": [

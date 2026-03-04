@@ -9,7 +9,7 @@
       "binary-husky"
     ],
     "deployer": [
-      "OpenAI"
+      "binary-husky"
     ],
     "artifacts": [
       {
@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Code Injection in binary-husky/gpt_academic"
+      "value": "Code Injection in binary-husky/gpt_academic (CVE-2024-10950)"
     }
   },
   "references": [

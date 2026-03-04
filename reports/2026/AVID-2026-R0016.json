@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Exposure of Sensitive System Information via ImagePromptTemplate in langchain-ai/langchain"
+      "value": "Exposure of Sensitive System Information via ImagePromptTemplate in langchain-ai/langchain (CVE-2024-10940)"
     }
   },
   "references": [

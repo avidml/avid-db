@@ -27,7 +27,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "IBM watsonx.ai cross-site scripting"
+      "value": "IBM watsonx.ai cross-site scripting (CVE-2024-49785)"
     }
   },
   "references": [
