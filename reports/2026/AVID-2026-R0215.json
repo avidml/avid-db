@@ -1,0 +1,101 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0215"
+  },
+  "affects": {
+    "developer": [
+      "clawdbot"
+    ],
+    "deployer": [
+      "clawdbot"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "clawdbot"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenClaw has Remote Code Execution via System Prompt Injection in Slack Channel Descriptions (CVE-2026-24764)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-24764"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-782p-5fr5-7fj8",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-782p-5fr5-7fj8"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/35eb40a7000b59085e9c638a80fd03917c7a095e",
+      "url": "https://github.com/openclaw/openclaw/commit/35eb40a7000b59085e9c638a80fd03917c7a095e"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.3",
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.3"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw (formerly Clawdbot) is a personal AI assistant users run on their own devices. In versions 2026.2.2 and below, when the Slack integration is enabled, channel metadata (topic/description) can be incorporated into the model's system prompt. Prompt injection is a documented risk for LLM-driven systems. This issue increases the injection surface by allowing untrusted Slack channel metadata to be treated as higher-trust system input. This issue has been fixed in version 2026.2.3."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N",
+      "baseScore": 3.7,
+      "baseSeverity": "LOW",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-74",
+        "description": "CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-19"
+}

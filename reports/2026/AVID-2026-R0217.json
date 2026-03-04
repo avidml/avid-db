@@ -1,0 +1,106 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0217"
+  },
+  "affects": {
+    "developer": [
+      "OpenClaw"
+    ],
+    "deployer": [
+      "OpenClaw"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "OpenClaw"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2026-25253"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-25253"
+    },
+    {
+      "type": "source",
+      "label": "https://depthfirst.com/post/1-click-rce-to-steal-your-moltbot-data-and-keys",
+      "url": "https://depthfirst.com/post/1-click-rce-to-steal-your-moltbot-data-and-keys"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-g8p2-7wf7-98mq",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-g8p2-7wf7-98mq"
+    },
+    {
+      "type": "source",
+      "label": "https://openclaw.ai/blog",
+      "url": "https://openclaw.ai/blog"
+    },
+    {
+      "type": "source",
+      "label": "https://ethiack.com/news/blog/one-click-rce-moltbot",
+      "url": "https://ethiack.com/news/blog/one-click-rce-moltbot"
+    },
+    {
+      "type": "source",
+      "label": "https://x.com/0xacb/status/2016913750557651228",
+      "url": "https://x.com/0xacb/status/2016913750557651228"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw (aka clawdbot or Moltbot) before 2026.1.29 obtains a gatewayUrl value from a query string and automatically makes a WebSocket connection without prompting, sending a token value."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-669",
+        "description": "CWE-669 Incorrect Resource Transfer Between Spheres",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-01"
+}
