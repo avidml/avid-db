@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Microsoft Account Elevation of Privilege Vulnerability"
+      "value": "Microsoft Account Elevation of Privilege Vulnerability (CVE-2025-21396)"
     }
   },
   "references": [

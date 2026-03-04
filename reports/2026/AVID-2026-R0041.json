@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Azure AI Face Service Elevation of Privilege Vulnerability"
+      "value": "Azure AI Face Service Elevation of Privilege Vulnerability (CVE-2025-21415)"
     }
   },
   "references": [

@@ -6,7 +6,7 @@
   },
   "affects": {
     "developer": [
-      "Meta"
+      "run-llama"
     ],
     "deployer": [
       "run-llama"
@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "SQL Injection in run-llama/llama_index"
+      "value": "SQL Injection in run-llama/llama_index (CVE-2024-12911)"
     }
   },
   "references": [

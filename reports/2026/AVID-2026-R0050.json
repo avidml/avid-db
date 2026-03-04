@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "PyTorch torch.lstm_cell memory corruption"
+      "value": "PyTorch torch.lstm_cell memory corruption (CVE-2025-3001)"
     }
   },
   "references": [

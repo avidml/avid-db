@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Denial of Service (DoS) in invoke-ai/invokeai"
+      "value": "Denial of Service (DoS) in invoke-ai/invokeai (CVE-2024-10821)"
     }
   },
   "references": [

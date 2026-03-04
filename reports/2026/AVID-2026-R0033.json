@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Improper Authorization and Duplicate Slug Vulnerability in lunary-ai/lunary"
+      "value": "Improper Authorization and Duplicate Slug Vulnerability in lunary-ai/lunary (CVE-2024-9000)"
     }
   },
   "references": [

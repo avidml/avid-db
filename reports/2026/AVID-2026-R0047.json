@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "PyTorch torch.nn.utils.rnn.pad_packed_sequence memory corruption"
+      "value": "PyTorch torch.nn.utils.rnn.pad_packed_sequence memory corruption (CVE-2025-2998)"
     }
   },
   "references": [

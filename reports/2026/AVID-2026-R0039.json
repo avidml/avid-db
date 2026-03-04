@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Mage AI insecure default initialization of resource"
+      "value": "Mage AI insecure default initialization of resource (CVE-2025-2129)"
     }
   },
   "references": [

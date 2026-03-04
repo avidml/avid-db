@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Remote Code Execution via Model Deserialization in invoke-ai/invokeai"
+      "value": "Remote Code Execution via Model Deserialization in invoke-ai/invokeai (CVE-2024-12029)"
     }
   },
   "references": [

@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "BentoML Allows Remote Code Execution (RCE) via Insecure Deserialization"
+      "value": "BentoML Allows Remote Code Execution (RCE) via Insecure Deserialization (CVE-2025-27520)"
     }
   },
   "references": [

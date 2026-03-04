@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Langflow < 1.3.0 Unauthenticated RCE via /api/v1/validate/code"
+      "value": "Langflow < 1.3.0 Unauthenticated RCE via /api/v1/validate/code (CVE-2025-3248)"
     }
   },
   "references": [

@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Insecure Deserialization leads to RCE in BentoML's runner server"
+      "value": "Insecure Deserialization leads to RCE in BentoML's runner server (CVE-2025-32375)"
     }
   },
   "references": [

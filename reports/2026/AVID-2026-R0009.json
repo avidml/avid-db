@@ -9,7 +9,7 @@
       "eosphoros-ai"
     ],
     "deployer": [
-      "OpenAI"
+      "eosphoros-ai"
     ],
     "artifacts": [
       {
@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Denial of Service (DoS) via Multipart Boundary in eosphoros-ai/db-gpt"
+      "value": "Denial of Service (DoS) via Multipart Boundary in eosphoros-ai/db-gpt (CVE-2024-10829)"
     }
   },
   "references": [

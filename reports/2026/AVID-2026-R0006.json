@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Path Traversal in mintplex-labs/anything-llm"
+      "value": "Path Traversal in mintplex-labs/anything-llm (CVE-2024-10513)"
     }
   },
   "references": [

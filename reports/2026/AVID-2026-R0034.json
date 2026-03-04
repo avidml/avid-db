@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Arbitrary Code Execution via Crafted Keras Config for Model Loading"
+      "value": "Arbitrary Code Execution via Crafted Keras Config for Model Loading (CVE-2025-1550)"
     }
   },
   "references": [

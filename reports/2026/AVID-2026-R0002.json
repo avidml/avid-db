@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "Incorrect Authorization in mintplex-labs/anything-llm"
+      "value": "Incorrect Authorization in mintplex-labs/anything-llm (CVE-2024-10109)"
     }
   },
   "references": [

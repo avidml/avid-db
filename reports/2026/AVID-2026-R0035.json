@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "picklescan - Security scanning bypass via 'pip main'"
+      "value": "picklescan - Security scanning bypass via 'pip main' (CVE-2025-1716)"
     }
   },
   "references": [
