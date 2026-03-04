@@ -1,0 +1,45 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0249"
+  },
+  "affects": {
+    "developer": [
+      "DeepSeek"
+    ],
+    "deployer": [
+      "DeepSeek"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "DeepSeek ClickHouse Database"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Issue",
+    "description": {
+      "lang": "eng",
+      "value": "Exposed ClickHouse database leaking sensitive information"
+    }
+  },
+  "references": [
+    {
+      "label": "Wiz Blog",
+      "url": "https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Wiz Research identified a publicly accessible ClickHouse database belonging to DeepSeek, exposing over a million lines of sensitive log streams, including chat history, API secrets, and backend details. The database was open and unauthenticated, allowing full control over database operations and posing significant security risks."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Wiz Research"
+    }
+  ],
+  "reported_date": "2026-03-04"
+}

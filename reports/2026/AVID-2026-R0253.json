@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0253"
+  },
+  "affects": {
+    "developer": [
+      "The Browser Company of New York"
+    ],
+    "deployer": [
+      "The Browser Company of New York"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Dia"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Dia: Increased Spoof Risk; Missing full screen toast (CVE-2025-13132)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-13132"
+    },
+    {
+      "type": "source",
+      "label": "https://www.diabrowser.com/security/bulletins#CVE-2025-13132",
+      "url": "https://www.diabrowser.com/security/bulletins#CVE-2025-13132"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "This vulnerability allowed a site to enter fullscreen, after a user click, without a full-screen notification (toast) appearing. Without this notification, users could potentially be misled about what site they were on if a malicious site renders a fake UI (like a fake address bar.)"
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:H/A:N",
+      "baseScore": 7.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1021",
+        "description": "CWE-1021 Improper Restriction of Rendered UI Layers or Frames",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-11-21"
+}

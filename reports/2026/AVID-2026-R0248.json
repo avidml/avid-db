@@ -1,0 +1,43 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0248"
+  },
+  "affects": {
+    "developer": [
+      "Moltbook"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Moltbook Platform"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Misconfigured database exposes sensitive API keys"
+    }
+  },
+  "references": [
+    {
+      "label": "Wiz Blog",
+      "url": "https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Moltbook, an AI social network, suffered a significant security breach due to a misconfigured Supabase database that allowed unauthenticated access to sensitive data. This exposure included 1.5 million API keys, 35,000 email addresses, and private messages between agents. The vulnerability stemmed from the lack of Row Level Security (RLS) policies, enabling full read and write access to all platform data. The issue was disclosed and resolved within hours, but it raised critical concerns about security practices in rapidly developed AI applications."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Wiz Research"
+    }
+  ],
+  "reported_date": "2026-03-04"
+}
