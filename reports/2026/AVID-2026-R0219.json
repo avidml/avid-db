@@ -36,6 +36,11 @@
       "type": "source",
       "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-r8g4-86fx-92mq",
       "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-r8g4-86fx-92mq"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
     }
   ],
   "description": {

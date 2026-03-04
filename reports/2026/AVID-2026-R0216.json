@@ -36,6 +36,11 @@
       "type": "source",
       "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-q284-4pvr-m585",
       "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-q284-4pvr-m585"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
     }
   ],
   "description": {

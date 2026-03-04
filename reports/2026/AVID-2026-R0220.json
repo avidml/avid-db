@@ -36,6 +36,11 @@
       "type": "source",
       "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-g55j-c2v4-pjcg",
       "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-g55j-c2v4-pjcg"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
     }
   ],
   "description": {

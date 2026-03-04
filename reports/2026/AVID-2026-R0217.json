@@ -56,6 +56,11 @@
       "type": "source",
       "label": "https://x.com/0xacb/status/2016913750557651228",
       "url": "https://x.com/0xacb/status/2016913750557651228"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
     }
   ],
   "description": {

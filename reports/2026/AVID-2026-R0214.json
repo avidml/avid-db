@@ -46,6 +46,11 @@
       "type": "source",
       "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.1.29",
       "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.1.29"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
     }
   ],
   "description": {

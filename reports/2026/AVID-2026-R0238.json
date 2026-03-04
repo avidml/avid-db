@@ -41,6 +41,11 @@
       "type": "source",
       "label": "https://github.com/openclaw/openclaw/commit/c6c53437f7da033b94a01d492e904974e7bda74c",
       "url": "https://github.com/openclaw/openclaw/commit/c6c53437f7da033b94a01d492e904974e7bda74c"
+    },
+    {
+      "type": "source",
+      "label": "OpenClawCVEs repository",
+      "url": "https://github.com/jgamblin/OpenClawCVEs"
     }
   ],
   "description": {
