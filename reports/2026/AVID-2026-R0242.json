@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0242"
+  },
+  "affects": {
+    "developer": [
+      "openclaw"
+    ],
+    "deployer": [
+      "openclaw"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openclaw"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenClaw Discord moderation authorization used untrusted sender identity in tool-driven flows (CVE-2026-27484)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-27484"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-wh94-p5m6-mr7j",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-wh94-p5m6-mr7j"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/775816035ecc6bb243843f8000c9a58ff609e32d",
+      "url": "https://github.com/openclaw/openclaw/commit/775816035ecc6bb243843f8000c9a58ff609e32d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.19",
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.19"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw is a personal AI assistant. In versions 2026.2.17 and below, the Discord moderation action handling (timeout, kick, ban) uses sender identity from request parameters in tool-driven flows, instead of trusted runtime sender context. In setups where Discord moderation actions are enabled and the bot has the necessary guild permissions, a non-admin user can request moderation actions by spoofing sender identity fields. This issue has been fixed in version 2026.2.18."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-862",
+        "description": "CWE-862: Missing Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-21"
+}

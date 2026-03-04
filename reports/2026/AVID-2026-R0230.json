@@ -1,0 +1,82 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0230"
+  },
+  "affects": {
+    "developer": [
+      "openclaw"
+    ],
+    "deployer": [
+      "openclaw"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openclaw"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenClaw skills.status could leak secrets to operator.read clients (CVE-2026-26326)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-26326"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-8mh7-phf8-xgfm",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-8mh7-phf8-xgfm"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/d3428053d95eefbe10ecf04f92218ffcba55ae5a",
+      "url": "https://github.com/openclaw/openclaw/commit/d3428053d95eefbe10ecf04f92218ffcba55ae5a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/ebc68861a61067fc37f9298bded3eec9de0ba783",
+      "url": "https://github.com/openclaw/openclaw/commit/ebc68861a61067fc37f9298bded3eec9de0ba783"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.14",
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.14"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw is a personal AI assistant. Prior to version 2026.2.14, `skills.status` could disclose secrets to `operator.read` clients by returning raw resolved config values in `configChecks` for skill `requires.config` paths. Version 2026.2.14 stops including raw resolved config values in requirement checks (return only `{ path, satisfied }`) and narrows the Discord skill requirement to the token key. In addition to upgrading, users should rotate any Discord tokens that may have been exposed to read-scoped clients."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-200",
+        "description": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-19"
+}

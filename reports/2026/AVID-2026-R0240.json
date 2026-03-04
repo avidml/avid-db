@@ -1,0 +1,82 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0240"
+  },
+  "affects": {
+    "developer": [
+      "openclaw"
+    ],
+    "deployer": [
+      "openclaw"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openclaw"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenClaw hardened the skill download target directory validation (CVE-2026-27008)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-27008"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-h7f7-89mm-pqh6",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-h7f7-89mm-pqh6"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/2363e1b0853a028e47f90dcc1066e3e9809d65f1",
+      "url": "https://github.com/openclaw/openclaw/commit/2363e1b0853a028e47f90dcc1066e3e9809d65f1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/b6305e97256d67e439719faacf5af3de9727d6e1",
+      "url": "https://github.com/openclaw/openclaw/commit/b6305e97256d67e439719faacf5af3de9727d6e1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.15",
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.15"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw is a personal AI assistant. Prior to version 2026.2.15, a bug in `download` skill installation allowed `targetDir` values from skill frontmatter to resolve outside the per-skill tools directory if not strictly validated. In the admin-only `skills.install` flow, this could write files outside the intended install sandbox. Version 2026.2.15 contains a fix for the issue."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73: External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-19"
+}

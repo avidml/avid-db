@@ -1,0 +1,100 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0221"
+  },
+  "affects": {
+    "developer": [
+      "openclaw"
+    ],
+    "deployer": [
+      "openclaw"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openclaw"
+      },
+      {
+        "type": "System",
+        "name": "@openclaw/bluebubbles"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenClaw has BlueBubbles webhook auth bypass via loopback proxy trust (CVE-2026-26316)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-26316"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-pchc-86f6-8758",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-pchc-86f6-8758"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/743f4b28495cdeb0d5bf76f6ebf4af01f6a02e5a",
+      "url": "https://github.com/openclaw/openclaw/commit/743f4b28495cdeb0d5bf76f6ebf4af01f6a02e5a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/f836c385ffc746cb954e8ee409f99d079bfdcd2f",
+      "url": "https://github.com/openclaw/openclaw/commit/f836c385ffc746cb954e8ee409f99d079bfdcd2f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.13",
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.13"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw is a personal AI assistant. Prior to 2026.2.13, the optional BlueBubbles iMessage channel plugin could accept webhook requests as authenticated based only on the TCP peer address being loopback (`127.0.0.1`, `::1`, `::ffff:127.0.0.1`) even when the configured webhook secret was missing or incorrect. This does not affect the default iMessage integration unless BlueBubbles is installed and enabled. Version 2026.2.13 contains a patch. Other mitigations include setting a non-empty BlueBubbles webhook password and avoiding deployments where a public-facing reverse proxy forwards to a loopback-bound Gateway without strong upstream authentication."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863: Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-19"
+}

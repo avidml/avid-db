@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0241"
+  },
+  "affects": {
+    "developer": [
+      "openclaw"
+    ],
+    "deployer": [
+      "openclaw"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openclaw"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenClaw affected by Stored XSS in Control UI via unsanitized assistant name/avatar in inline script injection (CVE-2026-27009)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-27009"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-37gc-85xm-2ww6",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-37gc-85xm-2ww6"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/3b4096e02e7e335f99f5986ec1bd566e90b14a7e",
+      "url": "https://github.com/openclaw/openclaw/commit/3b4096e02e7e335f99f5986ec1bd566e90b14a7e"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/adc818db4a4b3b8d663e7674ef20436947514e1b",
+      "url": "https://github.com/openclaw/openclaw/commit/adc818db4a4b3b8d663e7674ef20436947514e1b"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.15",
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.15"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw is a personal AI assistant. Prior to version 2026.2.15, a atored XSS issue in the OpenClaw Control UI when rendering assistant identity (name/avatar) into an inline `<script>` tag without script-context-safe escaping. A crafted value containing `</script>` could break out of the script tag and execute attacker-controlled JavaScript in the Control UI origin. Version 2026.2.15 removed inline script injection and serve bootstrap config from a JSON endpoint and added a restrictive Content Security Policy for the Control UI (`script-src 'self'`, no inline scripts)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N",
+      "baseScore": 5.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-19"
+}

@@ -1,0 +1,87 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0247"
+  },
+  "affects": {
+    "developer": [
+      "openclaw"
+    ],
+    "deployer": [
+      "openclaw"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openclaw"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenClaw: ACP prompt-size checks missing in local stdio bridge could reduce responsiveness with very large inputs (CVE-2026-27576)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-27576"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/security/advisories/GHSA-cxpw-2g23-2vgw",
+      "url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-cxpw-2g23-2vgw"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/63e39d7f57ac4ad4a5e38d17e7394ae7c4dd0b9c",
+      "url": "https://github.com/openclaw/openclaw/commit/63e39d7f57ac4ad4a5e38d17e7394ae7c4dd0b9c"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/8ae2d5110f6ceadef73822aa3db194fb60d2ba68",
+      "url": "https://github.com/openclaw/openclaw/commit/8ae2d5110f6ceadef73822aa3db194fb60d2ba68"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/commit/ebcf19746f5c500a41817e03abecadea8655654a",
+      "url": "https://github.com/openclaw/openclaw/commit/ebcf19746f5c500a41817e03abecadea8655654a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.19",
+      "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.2.19"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenClaw is a personal AI assistant. In versions 2026.2.17 and below, the ACP bridge accepts very large prompt text blocks and can assemble oversized prompt payloads before forwarding them to chat.send. Because ACP runs over local stdio, this mainly affects local ACP clients (for example IDE integrations) that send unusually large inputs. This issue has been fixed in version 2026.2.19."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-400",
+        "description": "CWE-400: Uncontrolled Resource Consumption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2026-02-21"
+}
