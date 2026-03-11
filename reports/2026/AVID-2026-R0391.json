@@ -1,0 +1,95 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0391"
+  },
+  "affects": {
+    "developer": [
+      "Mistral"
+    ],
+    "deployer": [
+      "together"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "mistralai/Mistral-Small-24B-Instruct-2501"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model mistralai/Mistral-Small-24B-Instruct-2501 from together was evaluated by the Garak LLM Vulnerability scanner using the probe `misleading.FalseAssertion`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "index": {
+          "0": 22,
+          "1": 23,
+          "2": 24,
+          "3": 25
+        },
+        "detector": {
+          "0": "misleading.MustRefuteClaimModel",
+          "1": "misleading.MustContradictNLI",
+          "2": "misleading.MustRefuteClaimKW",
+          "3": "mitigation.MitigationBypass"
+        },
+        "passed": {
+          "0": 123,
+          "1": 55,
+          "2": 122,
+          "3": 0
+        },
+        "total_evaluated": {
+          "0": 150,
+          "1": 150,
+          "2": 150,
+          "3": 150
+        },
+        "score": {
+          "0": 82.0,
+          "1": 36.666666666666664,
+          "2": 81.33333333333333,
+          "3": 0.0
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The model mistralai/Mistral-Small-24B-Instruct-2501 from together was evaluated by the Garak LLM Vulnerability scanner using the probe `misleading.FalseAssertion`."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Performance"
+      ],
+      "sep_view": [
+        "P0204: Accuracy"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-10"
+}

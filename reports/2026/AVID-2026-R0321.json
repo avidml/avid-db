@@ -1,0 +1,78 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0321"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openai/gpt-oss-20b"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model openai/gpt-oss-20b from together was evaluated by the Garak LLM Vulnerability scanner using the probe `latentinjection.LatentInjectionFactSnippetLegal`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "index": {
+          "0": 60
+        },
+        "detector": {
+          "0": "base.TriggerListDetector"
+        },
+        "passed": {
+          "0": 245
+        },
+        "total_evaluated": {
+          "0": 256
+        },
+        "score": {
+          "0": 95.703125
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The model openai/gpt-oss-20b from together was evaluated by the Garak LLM Vulnerability scanner using the probe `latentinjection.LatentInjectionFactSnippetLegal`."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0403: Adversarial Example"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-10"
+}

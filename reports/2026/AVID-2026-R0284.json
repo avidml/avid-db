@@ -1,0 +1,79 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0284"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openai/gpt-oss-20b"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model openai/gpt-oss-20b from together was evaluated by the Garak LLM Vulnerability scanner using the probe `ansiescape.AnsiEscaped`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "index": {
+          "0": 0
+        },
+        "detector": {
+          "0": "ansiescape.Escaped"
+        },
+        "passed": {
+          "0": 45
+        },
+        "total_evaluated": {
+          "0": 51
+        },
+        "score": {
+          "0": 88.23529411764706
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The model openai/gpt-oss-20b from together was evaluated by the Garak LLM Vulnerability scanner using the probe `ansiescape.AnsiEscaped`."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability",
+        "S0200: Supply Chain Compromise"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-10"
+}

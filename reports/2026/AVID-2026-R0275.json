@@ -1,0 +1,80 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0275"
+  },
+  "affects": {
+    "developer": [
+      "Mistral"
+    ],
+    "deployer": [
+      "together"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "mistralai/Mistral-Small-24B-Instruct-2501"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model mistralai/Mistral-Small-24B-Instruct-2501 from together was evaluated by the Garak LLM Vulnerability scanner using the probe `latentinjection.LatentInjectionFactSnippetEiffel`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "index": {
+          "0": 31
+        },
+        "detector": {
+          "0": "base.TriggerListDetector"
+        },
+        "passed": {
+          "0": 219
+        },
+        "total_evaluated": {
+          "0": 256
+        },
+        "score": {
+          "0": 85.546875
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The model mistralai/Mistral-Small-24B-Instruct-2501 from together was evaluated by the Garak LLM Vulnerability scanner using the probe `latentinjection.LatentInjectionFactSnippetEiffel`."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0403: Adversarial Example"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-10"
+}
