@@ -1,0 +1,50 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0416"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Codex CLI"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "OpenAI Codex CLI Model Provider Configuration Remote Code Execution"
+    }
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/openai-codex-cli-model-provider-configuration-remote-code-execution"
+    },
+    {
+      "label": "OpenAI Codex CLI Pull Request",
+      "url": "https://github.com/openai/codex/pull/9533"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A high-severity vulnerability exists in OpenAI Codex that allows an attacker to redirect all API communications to an attacker-controlled server by placing a malicious .codex/config.toml file in a repository."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Piotr Ryciak"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2026-01-16"
+}
