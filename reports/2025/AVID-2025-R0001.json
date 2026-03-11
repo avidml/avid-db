@@ -1,82 +1,86 @@
 {
-    "data_type": "AVID",
-    "data_version": "0.3",
-    "metadata": {
-        "report_id": "AVID-2025-R0001"
-    },
-    "affects": {
-        "developer": ["Nathan Butters"],
-        "deployer": ["Nathan Butters"],
-        "artifacts": [
-            {
-                "type": "System",
-                "name": "MM Math Helper v0.1"
-            },
-            {
-                "type": "Model",
-                "name": "Llama-3.2-11B-Vision-Instruct"
-            },
-            {
-                "type": "Model",
-                "name": "Qwen2-VL-7B-Instruct"
-            }
-        ]
-    },
-    "problemtype": {
-        "classof": "",
-        "type": "Advisory",
-        "description": {
-            "lang": "eng",
-            "value": "The application will provide the user with the answer to their math problem, violating existing controls."
-        }
-    },
-    "metrics": [],
-    "references": [
-        {
-            "type": "documentation",
-            "label": "IMSA | Math Helper App | Product Brief",
-            "url": "https://docs.google.com/document/d/1Fjvdvb327JDuEVfeBaurzbcIw8Xyul8eEBLt9-tmr3M/edit?tab=t.0"
-        },
-        {
-            "type": "source",
-            "label": "MM Math Helper - a Hugging Face Space by butterswords",
-            "url": "https://huggingface.co/spaces/butterswords/MM_Math_Helper"
-        },
-        {
-            "type": "model",
-            "label": "Qwen/Qwen2-VL-7B-Instruct · Hugging Face",
-            "url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct"
-        },
-        {
-            "type": "model",
-            "label": "meta-llama/Llama-3.2-11B-Vision-Instruct · Hugging Face",
-            "url": "https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct"
-        }
+  "data_type": "AVID",
+  "data_version": "0.3.1",
+  "metadata": {
+    "report_id": "AVID-2025-R0001"
+  },
+  "affects": {
+    "developer": [
+      "Nathan Butters"
     ],
+    "deployer": [
+      "Nathan Butters"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MM Math Helper v0.1"
+      },
+      {
+        "type": "Model",
+        "name": "Llama-3.2-11B-Vision-Instruct"
+      },
+      {
+        "type": "Model",
+        "name": "Qwen2-VL-7B-Instruct"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "",
+    "type": "Advisory",
     "description": {
-        "lang": "eng",
-        "value": "The application will provide the user with the answer to the math problem, despite explicit prompting against such behavior, which allows it to violate academic integrity and deskill users who may become reliant on it to do the work for them. This explicitly violates the user stories in the product brief that protects students from violating academic integrity policies of any school they may be attending while using the app."
+      "lang": "eng",
+      "value": "The application will provide the user with the answer to their math problem, violating existing controls."
+    }
+  },
+  "metrics": [],
+  "references": [
+    {
+      "type": "documentation",
+      "label": "IMSA | Math Helper App | Product Brief",
+      "url": "https://docs.google.com/document/d/1Fjvdvb327JDuEVfeBaurzbcIw8Xyul8eEBLt9-tmr3M/edit?tab=t.0"
     },
-    "impact": {
-        "avid": {
-            "vuln_id": "",
-            "risk_domain": [
-                "Performance"
-            ],
-            "sep_view": [
-                "P0200: Model Issues"
-            ],
-            "lifecycle_view": [
-                "L06: Deployment"
-            ],
-            "taxonomy_version": "0.2"
-        }
+    {
+      "type": "source",
+      "label": "MM Math Helper - a Hugging Face Space by butterswords",
+      "url": "https://huggingface.co/spaces/butterswords/MM_Math_Helper"
     },
-    "credit": [
-        {
-            "lang": "eng",
-            "value": "Nathan Butters"
-        }
-    ],
-    "reported_date": "2025-01-17"
+    {
+      "type": "model",
+      "label": "Qwen/Qwen2-VL-7B-Instruct · Hugging Face",
+      "url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct"
+    },
+    {
+      "type": "model",
+      "label": "meta-llama/Llama-3.2-11B-Vision-Instruct · Hugging Face",
+      "url": "https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The application will provide the user with the answer to the math problem, despite explicit prompting against such behavior, which allows it to violate academic integrity and deskill users who may become reliant on it to do the work for them. This explicitly violates the user stories in the product brief that protects students from violating academic integrity policies of any school they may be attending while using the app."
+  },
+  "impact": {
+    "avid": {
+      "vuln_id": "",
+      "risk_domain": [
+        "Performance"
+      ],
+      "sep_view": [
+        "P0200: Model Issues"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Nathan Butters"
+    }
+  ],
+  "reported_date": "2025-01-17"
 }

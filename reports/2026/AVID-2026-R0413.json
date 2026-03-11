@@ -49,5 +49,6 @@
       "value": "Mindgard"
     }
   ],
-  "reported_date": "2026-01-28"
+  "reported_date": "2026-01-28",
+  "data_version": "0.3.1"
 }

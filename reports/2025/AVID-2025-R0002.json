@@ -1,65 +1,69 @@
 {
-    "data_type": "AVID",
-    "data_version": "0.3",
-    "metadata": {
-        "report_id": "AVID-2025-R0002"
-    },
-    "affects": {
-        "developer": ["Hugginng Face"],
-        "deployer": ["huggingface.co"],
-        "artifacts": [
-            {
-                "type": "Model",
-                "name": "distilbert-base-uncased-finetuned-sst-2-english"
-            }
-        ]
-    },
-    "problemtype": {
-        "classof": "LLM Evaluation",
-        "type": "Advisory",
-        "description": {
-            "lang": "eng",
-            "value": "Geopolitical bias in sentiment analysis for neutral phrases"
-        }
-    },
-    "metrics": [],
-    "references": [
-        {
-            "type": "source",
-            "label": "Aurélien Géron's tweet",
-            "url": "https://x.com/aureliengeron/status/1505402534407524353"
-        },
-        {
-            "type": "model",
-            "label": "distilbert/distilbert-base-uncased-finetuned-sst-2-english · Hugging Face",
-            "url": "https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
-        }
+  "data_type": "AVID",
+  "data_version": "0.3.1",
+  "metadata": {
+    "report_id": "AVID-2025-R0002"
+  },
+  "affects": {
+    "developer": [
+      "Hugginng Face"
     ],
+    "deployer": [
+      "huggingface.co"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "distilbert-base-uncased-finetuned-sst-2-english"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Advisory",
     "description": {
-        "lang": "eng",
-        "value": "As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase “This film was filmed in [country]”. The tweet mentions “India” and “Iraq” explicitly. "
+      "lang": "eng",
+      "value": "Geopolitical bias in sentiment analysis for neutral phrases"
+    }
+  },
+  "metrics": [],
+  "references": [
+    {
+      "type": "source",
+      "label": "Aurélien Géron's tweet",
+      "url": "https://x.com/aureliengeron/status/1505402534407524353"
     },
-    "impact": {
-        "avid": {
-            "vuln_id": "",
-            "risk_domain": [
-                "Ethics"
-            ],
-            "sep_view": [
-                "E0100: Bias/Discrimination",
-                "E0101: Group fairness"
-            ],
-            "lifecycle_view": [
-                "L06: Deployment"
-            ],
-            "taxonomy_version": "0.2"
-        }
-    },
-    "credit": [
-        {
-            "lang": "eng",
-            "value": "Aurelion Geron"
-        }
-    ],
-    "reported_date": "2025-01-17"
+    {
+      "type": "model",
+      "label": "distilbert/distilbert-base-uncased-finetuned-sst-2-english · Hugging Face",
+      "url": "https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase “This film was filmed in [country]”. The tweet mentions “India” and “Iraq” explicitly. "
+  },
+  "impact": {
+    "avid": {
+      "vuln_id": "",
+      "risk_domain": [
+        "Ethics"
+      ],
+      "sep_view": [
+        "E0100: Bias/Discrimination",
+        "E0101: Group fairness"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Aurelion Geron"
+    }
+  ],
+  "reported_date": "2025-01-17"
 }

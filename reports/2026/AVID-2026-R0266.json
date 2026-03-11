@@ -76,5 +76,6 @@
       "taxonomy_version": ""
     }
   },
-  "reported_date": "2026-03-10"
+  "reported_date": "2026-03-10",
+  "data_version": "0.3.1"
 }
