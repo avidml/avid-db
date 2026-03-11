@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Zed IDE LSP Configuration Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

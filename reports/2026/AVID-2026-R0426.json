@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Google Antigravity IDE Persistent Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

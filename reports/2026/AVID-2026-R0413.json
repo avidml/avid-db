@@ -22,7 +22,8 @@
     "description": {
       "lang": "eng",
       "value": "OpenAI ChatGPT Content Safety Explicit Image Bypass"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

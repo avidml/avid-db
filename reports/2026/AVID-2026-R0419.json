@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Amazon Kiro IDE Data Exfiltration via Steering File"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

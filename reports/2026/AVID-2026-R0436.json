@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Mistral Vibe CLI MCP Configuration Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

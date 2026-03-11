@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Cline Bot AI Coding Agent Code Execution via Prompt Injection and TOCTOU Script Invocation"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

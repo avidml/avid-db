@@ -56,7 +56,8 @@
     "description": {
       "lang": "eng",
       "value": "JetBrains Junie AI Coding Agent guidelines.md Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

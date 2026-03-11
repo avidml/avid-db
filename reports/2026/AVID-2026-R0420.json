@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Google Gemini CLI Tool Discovery Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

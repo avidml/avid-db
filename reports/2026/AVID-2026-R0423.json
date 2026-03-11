@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "TheLibrarian.io Internal Cloud Environment Access via web_fetch Tool"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

@@ -24,7 +24,8 @@
     "description": {
       "lang": "eng",
       "value": "Protect AI Jailbreak and Prompt Injection Guardrail Evasion"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

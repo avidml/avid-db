@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Microsoft Azure AI Content Safety Guardrail Evasion"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

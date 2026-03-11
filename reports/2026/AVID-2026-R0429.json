@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Cline Bot AI Coding Agent Data Exfiltration via Prompt Injection and DNS"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

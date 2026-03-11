@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Zed IDE MCP Configuration Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

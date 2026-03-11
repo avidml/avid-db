@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Mistral Vibe CLI Shell Expansion Command Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

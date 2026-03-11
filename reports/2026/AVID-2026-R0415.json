@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "OpenAI Codex CLI Notify Field Configuration Remote Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

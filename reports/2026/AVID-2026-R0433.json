@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Meta Prompt Guard Guardrail Evasion"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

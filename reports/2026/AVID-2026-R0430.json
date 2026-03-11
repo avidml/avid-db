@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Nvidia NemoGuard Jailbreak Detect Guardrail Evasion"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

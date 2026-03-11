@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Eclipse Theia IDE MCP Configuration Code Execution"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {

@@ -20,7 +20,8 @@
     "description": {
       "lang": "eng",
       "value": "Amazon Kiro IDE Data Exfiltration via Filename Prompt Injection and Kiro Powers Registry Fetching"
-    }
+    },
+    "type": "Advisory"
   },
   "references": [
     {
