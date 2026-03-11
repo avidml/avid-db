@@ -10,12 +10,12 @@
     "deployer": [],
     "artifacts": [
       {
-        "type": "System",
-        "name": "Prompt Injection"
+        "type": "Model",
+        "name": "Prompt Injection Classifier"
       },
       {
-        "type": "System",
-        "name": "Jailbreak Classifiers"
+        "type": "Model",
+        "name": "Jailbreak Classifier"
       }
     ]
   },

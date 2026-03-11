@@ -10,7 +10,7 @@
     "deployer": [],
     "artifacts": [
       {
-        "type": "System",
+        "type": "Model",
         "name": "Prompt Guard"
       }
     ]
