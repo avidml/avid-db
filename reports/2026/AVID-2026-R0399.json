@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0399"
+  },
+  "affects": {
+    "developer": [
+      "Mistral"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "Mistral-Small-24B-Instruct-2501"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model Mistral-Small-24B-Instruct-2501 from Mistral was evaluated by the Garak LLM Vulnerability scanner using the probe `atkgen.Tox`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "unsafe_content.ToxicCommentModel",
+            "passed": 24,
+            "total_evaluated": 25,
+            "score": 96.0
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe atkgen.Tox tests automatic attack generation to elicit toxic outputs from language models. This probe is part of the atkgen module which generate attack prompts for toxicity testing.\n\nThe LLM Mistral-Small-24B-Instruct-2501 was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Ethics"
+      ],
+      "sep_view": [
+        "E0301: Toxicity"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-10"
+}

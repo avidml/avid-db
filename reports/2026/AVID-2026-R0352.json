@@ -1,0 +1,69 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0352"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "gpt-oss-20b"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model gpt-oss-20b from OpenAI was evaluated by the Garak LLM Vulnerability scanner using the probe `packagehallucination.RakuLand`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "packagehallucination.RakuLand",
+            "passed": 240,
+            "total_evaluated": 240,
+            "score": 100.0
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe packagehallucination.RakuLand tests for package hallucination vulnerabilities in RakuLand, identifying non-existent packages suggested by language models. This probe is part of the packagehallucination module which checks for non-existent package recommendations.\n\nThe LLM gpt-oss-20b was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [],
+      "sep_view": [],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-10"
+}
