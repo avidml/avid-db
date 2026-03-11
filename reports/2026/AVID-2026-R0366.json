@@ -1,0 +1,46 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0366"
+  },
+  "affects": {
+    "developer": [
+      "Mistral"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Vibe CLI"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Mistral Vibe CLI Shell Expansion Command Execution"
+    }
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/mistral-vibe-cli-shell-expansion-command-execution"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Shell expansion is not filtered when running commands, so it’s possible to run arbitrary OS commands through $() syntax."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Piotr Ryciak"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2026-01-02"
+}

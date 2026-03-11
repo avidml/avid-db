@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0351"
+  },
+  "affects": {
+    "developer": [
+      "JetBrains"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Junie AI"
+      },
+      {
+        "type": "System",
+        "name": "IntelliJ IDEA"
+      },
+      {
+        "type": "System",
+        "name": "PyCharm Pro"
+      },
+      {
+        "type": "System",
+        "name": "GoLand"
+      },
+      {
+        "type": "System",
+        "name": "CLion"
+      },
+      {
+        "type": "System",
+        "name": "Rider"
+      },
+      {
+        "type": "System",
+        "name": "PhpStorm"
+      },
+      {
+        "type": "System",
+        "name": "WebStorm"
+      },
+      {
+        "type": "System",
+        "name": "RustOver"
+      },
+      {
+        "type": "System",
+        "name": "RubyMine"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "JetBrains Junie AI Coding Agent guidelines.md Code Execution"
+    }
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/jetbrains-junie-ai-coding-agent-guidelines-md-code-execution"
+    },
+    {
+      "label": "Patched Junie Changelog",
+      "url": "https://plugins.jetbrains.com/plugin/26104-junie-the-ai-coding-agent-by-jetbrains/versions/stable/920958"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Junie AI coding assistant reads a guidelines.md file within a project’s .junie directory and treats the contents as additional user-level instructions when handling any request to the chat interface. Malicious instructions can be placed within this file that can cause Junie to execute unsafe commands without requiring user approval."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Aaron Portnoy"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2025-11-14"
+}
