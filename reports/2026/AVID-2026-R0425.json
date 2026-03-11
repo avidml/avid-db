@@ -1,0 +1,55 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0425"
+  },
+  "affects": {
+    "developer": [
+      "Zed Industries"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Zed IDE"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Zed IDE MCP Configuration Code Execution"
+    },
+    "type": "Advisory"
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/zed-ide-mcp-configuration-code-execution"
+    },
+    {
+      "label": "Zed IDE Vulnerabilities & Coordinated Disclosure",
+      "url": "https://mindgard.ai/blog/zed-ide-vulnerabilities-coordinated-disclosure"
+    },
+    {
+      "label": "Zed blog post",
+      "url": "https://zed.dev/blog/secure-by-default"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Zed IDE loads Model Context Protocol (MCP) configurations from the settings.json file located within a project’s .zed subdirectory. A malicious MCP configuration can contain arbitrary shell commands that run on the host system with the privileges of the user running the IDE. This can be triggered automatically without any user interaction besides opening the project in the IDE."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Aaron Portnoy"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2025-11-16"
+}

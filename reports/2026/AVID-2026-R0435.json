@@ -1,0 +1,51 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0435"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure AI Content Safety"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Microsoft Azure AI Content Safety Guardrail Evasion"
+    },
+    "type": "Advisory"
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/microsoft-azure-ai-content-safety-guardrail-evasion"
+    },
+    {
+      "label": "Bypassing Azure AI Content Safety Guardrails",
+      "url": "https://mindgard.ai/blog/bypassing-azure-ai-content-safety-guardrails"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Azure OpenAI studio enables developers to deploy OpenAI models within their Azure organisation. Developers can use a service called ‘Azure AI Content Safety’ to provide text moderation upon the inputs and outputs of a deployed model that aims to detect sensitive content, such as, hate speech, violence, before reaching downstream applications. We have successfully demonstrated how an attacker can fully evade, or greatly degrade, classification accuracy of the text moderation service upon a dataset of hate speech inputs."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "William Hackett Lewis Birch"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2024-03-04"
+}

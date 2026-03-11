@@ -1,0 +1,55 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0427"
+  },
+  "affects": {
+    "developer": [
+      "Cline"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Cline AI Coding Agent"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Cline Bot AI Coding Agent Code Execution via Prompt Injection and TOCTOU Script Invocation"
+    },
+    "type": "Advisory"
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/cline-bot-ai-coding-agent-code-execution-via-prompt-injection-and-toctou-script-invocation"
+    },
+    {
+      "label": "From Prompt to Pwn: Cline Bot AI Coding Agent Vulnerabilities",
+      "url": "https://mindgard.ai/blog/cline-coding-agent-vulnerabilities"
+    },
+    {
+      "label": "Cline AI Coding Agent Website",
+      "url": "https://cline.bot/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cline is vulnerable to prompt injection when analyzing source code files. This prompt injection can be used to execute arbitrary code by breaking the model’s ability to analyze an entire potential execution chain for safety."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Aaron Portnoy"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2025-08-27"
+}

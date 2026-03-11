@@ -1,0 +1,51 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0418"
+  },
+  "affects": {
+    "developer": [
+      "Amazon"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Kiro IDE"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Amazon Kiro IDE Data Exfiltration via Filename Prompt Injection and Kiro Powers Registry Fetching"
+    },
+    "type": "Advisory"
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/amazon-kiro-ide-data-exfiltration-via-filename-prompt-injection-and-kiro-powers-registry-fetching"
+    },
+    {
+      "label": "Amazon Kiro Website",
+      "url": "https://kiro.dev/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Amazon Kiro IDE is vulnerable to a data exfiltration issue that can be exploited through a prompt injection and abuse of the Kiro Powers features. By crafting a repository containing a directory with prompt injection instructions in its name, an attacker can coerce the application to visit an attacker controlled website while submitting sensitive local file contents."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Aaron Portnoy"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2025-12-11"
+}

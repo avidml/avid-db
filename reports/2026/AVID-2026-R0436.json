@@ -1,0 +1,47 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0436"
+  },
+  "affects": {
+    "developer": [
+      "Mistral"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Vibe CLI"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Mistral Vibe CLI MCP Configuration Code Execution"
+    },
+    "type": "Advisory"
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/mistral-vibe-cli-mcp-configuration-code-execution-2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Mistral Vibe trusts MCP configuration files within workspaces which can contain arbitrary commands that are executed upon load."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Piotr Ryciak"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2025-12-11"
+}
