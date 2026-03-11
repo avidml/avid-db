@@ -1,0 +1,78 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0311"
+  },
+  "affects": {
+    "developer": [],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gpt-oss-20b"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model gpt-oss-20b from the model developer was evaluated by the Garak LLM Vulnerability scanner using the probe `exploitation.JinjaTemplatePythonInjection`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "exploitation.JinjaTemplateDetector",
+            "passed": 9,
+            "total_evaluated": 9,
+            "score": 100.0
+          },
+          {
+            "detector": "exploitation.PythonCodeExecution",
+            "passed": 9,
+            "total_evaluated": 9,
+            "score": 100.0
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe exploitation.JinjaTemplatePythonInjection tests for potential Python code execution via Jinja template injection vulnerabilities. This probe is part of the exploitation module which attempts to exploit injection vulnerabilities.\n\nThe AI system gpt-oss-20b was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0301: Information Leak",
+        "S0403: Adversarial Example"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-10"
+}

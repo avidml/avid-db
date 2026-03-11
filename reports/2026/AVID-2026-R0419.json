@@ -1,0 +1,50 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0419"
+  },
+  "affects": {
+    "developer": [
+      "Amazon"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Kiro IDE"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Amazon Kiro IDE Data Exfiltration via Steering File"
+    }
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/amazon-kiro-ide-data-exfiltration-via-steering-file"
+    },
+    {
+      "label": "Amazon Kiro Website",
+      "url": "https://kiro.dev/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Amazon Kiro IDE is vulnerable to a data exfiltration issue that can be exploited through steering file directives. By carefully crafting a steering file to read a local file and render a Markdown image, an attacker can coerce the AI send sensitive data to an external server."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "Aaron Portnoy"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2025-12-08"
+}

@@ -1,0 +1,50 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0433"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Prompt Guard"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "Third-party Report",
+    "description": {
+      "lang": "eng",
+      "value": "Meta Prompt Guard Guardrail Evasion"
+    }
+  },
+  "references": [
+    {
+      "label": "Mindgard Disclosure",
+      "url": "https://mindgard.ai/disclosures/meta-prompt-guard-guardrail-evasion"
+    },
+    {
+      "label": "Bypassing Azure AI Content Safety Guardrails",
+      "url": "https://mindgard.ai/blog/bypassing-azure-ai-content-safety-guardrails"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Meta offer an open source Prompt Injection and Jailbreak classifier on HuggingFace called Meta Prompt Guard. These classifiers are heavily used by a range of guardrail systems and are designed to enable developers of AI applications to detect and react to incoming prompt injections and jailbreaks. We successfully demonstrated how an attacker can fully evade, or greatly degrade, classification accuracy of the classifier, enabling prompt injections and jailbreaks to pass through filters and subsequently to the protected AI application."
+  },
+  "credit": [
+    {
+      "lang": "eng",
+      "value": "William Hackett Lewis Birch"
+    },
+    {
+      "lang": "eng",
+      "value": "Mindgard"
+    }
+  ],
+  "reported_date": "2025-03-11"
+}
