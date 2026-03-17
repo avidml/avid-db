@@ -23,6 +23,42 @@ from avidtools.datamodels.vulnerability import (  # noqa: E402
 from avidtools.datamodels.components import AvidTaxonomy  # noqa: E402
 
 
+def _flatten_report_metrics(data: dict) -> dict:
+    """Convert Metric schema entries to legacy flat report metric objects."""
+
+    metrics = data.get("metrics")
+    if not isinstance(metrics, list):
+        return data
+
+    flattened = []
+    changed = False
+    for metric in metrics:
+        if (
+            isinstance(metric, dict)
+            and "name" in metric
+            and "results" in metric
+            and "detection_method" in metric
+        ):
+            results = metric.get("results") or {}
+            detection_method = metric.get("detection_method") or {}
+            flattened.append(
+                {
+                    "scorer": results.get("scorer")
+                    or detection_method.get("name"),
+                    "metrics": metric.get("name"),
+                    "value": results.get("value"),
+                }
+            )
+            changed = True
+        else:
+            flattened.append(metric)
+
+    if changed:
+        data = dict(data)
+        data["metrics"] = flattened
+    return data
+
+
 def load_report_from_json(file_path: Path) -> Report:
     """
     Load a Report object from a JSON file.
@@ -48,8 +84,9 @@ def save_report_to_json(report: Report, file_path: Path):
     """
     file_path.parent.mkdir(parents=True, exist_ok=True)
     with open(file_path, "w", encoding="utf-8") as f:
-        json_str = report.model_dump_json(exclude_none=True, indent=2)
-        f.write(json_str)
+        report_data = report.model_dump(mode="json", exclude_none=True)
+        report_data = _flatten_report_metrics(report_data)
+        json.dump(report_data, f, indent=2)
 
 
 def save_vulnerability_to_json(vuln: Vulnerability, file_path: Path):
