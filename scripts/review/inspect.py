@@ -3,7 +3,6 @@
 """CLI for Inspect report normalize in AVID DB."""
 
 import argparse
-import json
 import sys
 from pathlib import Path
 from typing import List
@@ -22,8 +21,9 @@ sys.path.insert(0, str(avidtools_path))
 
 from avidtools.connectors.inspect import (  # noqa: E402
     UnsupportedInspectBenchmarkError,
-    convert_eval_log,
+    convert_eval_logs,
     process_report,
+    write_reports_jsonl,
 )
 
 
@@ -47,7 +47,12 @@ parser.add_argument(
 parser.add_argument(
     "--normalize",
     action="store_true",
-    help="Apply Inspect normalization while converting eval logs",
+    help="Apply Inspect normalization while converting eval logs (default)",
+)
+parser.add_argument(
+    "--no-normalize",
+    action="store_true",
+    help="Disable Inspect normalization while converting eval logs",
 )
 parser.add_argument(
     "--output",
@@ -107,14 +112,8 @@ def _collect_files(paths: List[Path], suffixes: tuple[str, ...]) -> List[Path]:
             files.append(path)
     return files
 
-
-def _report_payload(report):
-    if hasattr(report, "model_dump"):
-        return report.model_dump(mode="json")
-    return report.dict()
-
-
 if args.convert_evals:
+    normalize = args.normalize or not args.no_normalize
     eval_files = _collect_files(resolved_inputs, (".eval", ".json"))
     if not eval_files:
         print("ERROR: No .eval or .json eval log files found in input paths")
@@ -123,9 +122,9 @@ if args.convert_evals:
     converted_reports = []
     for eval_path in eval_files:
         try:
-            reports = convert_eval_log(
-                str(eval_path),
-                normalize=args.normalize,
+            reports = convert_eval_logs(
+                [eval_path],
+                normalize=normalize,
                 s3_bucket=args.s3_bucket,
                 s3_key_prefix=args.s3_prefix,
                 s3_region=args.s3_region,
@@ -142,15 +141,10 @@ if args.convert_evals:
             sys.exit(1)
 
     output_path = args.output.resolve()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    with output_path.open("w", encoding="utf-8") as file_obj:
-        for report in converted_reports:
-            file_obj.write(json.dumps(_report_payload(report)))
-            file_obj.write("\n")
+    written = write_reports_jsonl(converted_reports, output_path)
 
     print(
-        f"Wrote {len(converted_reports)} report(s) to consolidated JSONL: "
+        f"Wrote {written} report(s) to consolidated JSONL: "
         f"{output_path}"
     )
     sys.exit(0)
