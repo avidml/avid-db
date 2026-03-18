@@ -23,8 +23,33 @@ from avidtools.datamodels.vulnerability import (  # noqa: E402
 from avidtools.datamodels.components import AvidTaxonomy  # noqa: E402
 
 
+def _is_inspect_eval_report(data: dict) -> bool:
+    """Return True when the report was produced by an Inspect AI evaluation."""
+    description_value = (
+        data.get("problemtype", {})
+        .get("description", {})
+        .get("value", "")
+    )
+    if "using Inspect Evals" in description_value:
+        return True
+    for ref in data.get("references") or []:
+        if isinstance(ref, dict) and "Inspect Evaluation Log" in str(
+            ref.get("label", "")
+        ):
+            return True
+    return False
+
+
 def _flatten_report_metrics(data: dict) -> dict:
-    """Convert Metric schema entries to legacy flat report metric objects."""
+    """Convert Metric schema entries to legacy flat report metric objects.
+
+    Flattening is only applied to Inspect AI evaluation reports.  All other
+    report types (e.g. Garak) carry tabular ``results.rows`` data that must
+    be preserved in the structured format.
+    """
+
+    if not _is_inspect_eval_report(data):
+        return data
 
     metrics = data.get("metrics")
     if not isinstance(metrics, list):
