@@ -1,0 +1,148 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.3.1",
+  "metadata": {
+    "report_id": "AVID-2026-R0709"
+  },
+  "affects": {
+    "developer": [
+      "Essential AI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "rnj-1-instruct"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "Evaluation of the LLM rnj-1-instruct on the bold benchmark using Inspect Evals"
+    }
+  },
+  "metrics": [
+    {
+      "scorer": "toxicity_scorer",
+      "metrics": "gender",
+      "value": 0.001488095238095238
+    },
+    {
+      "scorer": "toxicity_scorer",
+      "metrics": "race",
+      "value": 0.0018359853121175031
+    },
+    {
+      "scorer": "toxicity_scorer",
+      "metrics": "profession",
+      "value": 0.0004597701149425287
+    },
+    {
+      "scorer": "toxicity_scorer",
+      "metrics": "religious_ideology",
+      "value": 0.0
+    },
+    {
+      "scorer": "toxicity_scorer",
+      "metrics": "political_ideology",
+      "value": 0.0
+    },
+    {
+      "scorer": "toxicity_scorer",
+      "metrics": "all",
+      "value": 0.001
+    },
+    {
+      "scorer": "toxicity_scorer",
+      "metrics": "stderr",
+      "value": 0.0004470346384717841
+    },
+    {
+      "scorer": "sentiment_scorer",
+      "metrics": "gender",
+      "value": 0.7901785714285714
+    },
+    {
+      "scorer": "sentiment_scorer",
+      "metrics": "race",
+      "value": 0.6719706242350061
+    },
+    {
+      "scorer": "sentiment_scorer",
+      "metrics": "profession",
+      "value": 0.6441379310344828
+    },
+    {
+      "scorer": "sentiment_scorer",
+      "metrics": "religious_ideology",
+      "value": 0.6451612903225806
+    },
+    {
+      "scorer": "sentiment_scorer",
+      "metrics": "political_ideology",
+      "value": 0.5695364238410596
+    },
+    {
+      "scorer": "sentiment_scorer",
+      "metrics": "all",
+      "value": 0.6684
+    },
+    {
+      "scorer": "sentiment_scorer",
+      "metrics": "stderr",
+      "value": 0.007900681752509138
+    },
+    {
+      "scorer": "regard_scorer",
+      "metrics": "gender",
+      "value": 0.5401785714285714
+    },
+    {
+      "scorer": "regard_scorer",
+      "metrics": "race",
+      "value": 0.423500611995104
+    },
+    {
+      "scorer": "regard_scorer",
+      "metrics": "profession",
+      "value": 0.4703448275862069
+    },
+    {
+      "scorer": "regard_scorer",
+      "metrics": "religious_ideology",
+      "value": 0.22119815668202766
+    },
+    {
+      "scorer": "regard_scorer",
+      "metrics": "political_ideology",
+      "value": -0.076158940397351
+    },
+    {
+      "scorer": "regard_scorer",
+      "metrics": "all",
+      "value": 0.4206
+    },
+    {
+      "scorer": "regard_scorer",
+      "metrics": "stderr",
+      "value": 0.008557673442878676
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "Inspect Evaluation Log for dataset: bold",
+      "url": "file:///home/smajumdar/avidml/logs/2026-03-17T16-04-16%2B05-30_bold_T9YEiWoydLXktCEG4G63kK.eval"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "BOLD is a dataset designed to evaluate fairness in open-ended language generation in the English language. It consists of 23,679 different text generation prompts that allow fairness measurement across five domains: profession, gender, race, religious ideologies, and political ideologies.\n\nThe LLM rnj-1-instruct was evaluated on this benchmark.\n\n## Measurement details\n\nThe evaluation calculates various social bias and affective metrics in generated responses, using specialized models:\n\n\n\n- Toxicity Score: Measures the toxicity level in the model\u2019s responses, using a Hugging Face-based toxicity classifier (i.e.\u00a0Detoxify).\n\n\n\n- Sentiment Score: Measures the general sentiment conveyed in the generated text using the VADER sentiment analyzer. The sentiment score ranges from \u22121 (most negative) to +1 (most positive). A score \u2265 0.5 indicates positive sentiment, while a score \u2264 \u22120.5 indicates negative sentiment.\n\n\n\n- Regard Score: Measures how positively or negatively a demographic group is portrayed in the generated text, based on the regard classifier trained on human-annotated samples for gender and race groups. A higher regard score indicates a more positive social perception of the target demographic.\n\n\n\n\n\nFor more details on the BOLD dataset and its applications, refer to the original paper: Bias in Open-ended Language Generation Dataset."
+  },
+  "reported_date": "2026-03-17"
+}
