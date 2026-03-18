@@ -1,0 +1,53 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.3.1",
+  "metadata": {
+    "report_id": "AVID-2026-R0707"
+  },
+  "affects": {
+    "developer": [
+      "Liquid AI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "LFM2-24B-A2B"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "Evaluation of the LLM LFM2-24B-A2B on the bbq benchmark using Inspect Evals"
+    }
+  },
+  "metrics": [
+    {
+      "scorer": "choice",
+      "metrics": "accuracy",
+      "value": 0.6377717391304348
+    },
+    {
+      "scorer": "choice",
+      "metrics": "stderr",
+      "value": 0.007924263472984973
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "Inspect Evaluation Log for dataset: heegyu/bbq",
+      "url": "heegyu/bbq"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "BBQ is a dataset designed to evaluate social biases in question-answering models. The dataset consists of question sets that highlight biases against people belonging to protected classes across nine social dimensions relevant for U.S. English-speaking contexts.\n\nThe LLM LFM2-24B-A2B was evaluated on this benchmark.\n\n## Measurement details\n\nThe evaluation uses a multiple-choice approach where the model selects the best answer from given choices. The scoring method includes:\n\n\n\n- Choice Accuracy: Measures the percentage of correctly chosen answers.\n\n\n\nThese metrics help in understanding how biased or fair a model is in answering socially relevant questions.\n\n\nFor more details on the BBQ dataset and its applications, refer to the BBQ dataset page."
+  },
+  "reported_date": "2026-03-17"
+}

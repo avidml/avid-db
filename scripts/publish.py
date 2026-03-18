@@ -35,6 +35,46 @@ sys.path.insert(0, str(avidtools_path))
 from avidtools.datamodels.report import Report  # noqa: E402
 
 
+def _coerce_legacy_metrics(data: dict) -> dict:
+    """Convert legacy flat metrics format to Report Metric schema."""
+
+    metrics = data.get("metrics")
+    if not isinstance(metrics, list):
+        return data
+
+    coerced_metrics = []
+    changed = False
+    for metric in metrics:
+        if (
+            isinstance(metric, dict)
+            and "name" not in metric
+            and "metrics" in metric
+            and "value" in metric
+        ):
+            scorer = metric.get("scorer")
+            coerced_metrics.append(
+                {
+                    "name": metric.get("metrics"),
+                    "detection_method": {
+                        "type": "Significance Test",
+                        "name": scorer or "unknown",
+                    },
+                    "results": {
+                        "value": metric.get("value"),
+                        "scorer": scorer,
+                    },
+                }
+            )
+            changed = True
+        else:
+            coerced_metrics.append(metric)
+
+    if changed:
+        data = dict(data)
+        data["metrics"] = coerced_metrics
+    return data
+
+
 def process_jsonl_file(
     jsonl_path: Path,
     id_manager: IDManager,
@@ -70,6 +110,7 @@ def process_jsonl_file(
             try:
                 # Parse JSON line
                 data = json.loads(line)
+                data = _coerce_legacy_metrics(data)
                 report = Report(**data)
                 
                 # Get next report ID

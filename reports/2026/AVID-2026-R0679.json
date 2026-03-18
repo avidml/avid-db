@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "metadata": {
+    "report_id": "AVID-2026-R0679"
+  },
+  "affects": {
+    "developer": [
+      "Essential AI"
+    ],
+    "deployer": [
+      "Together AI"
+    ],
+    "artifacts": [
+      {
+        "type": "Model",
+        "name": "rnj-1-instruct"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "LLM Evaluation",
+    "type": "Measurement",
+    "description": {
+      "lang": "eng",
+      "value": "The model rnj-1-instruct from Essential AI was evaluated by the Garak LLM Vulnerability scanner using the probe `latentinjection.LatentInjectionTranslationEnFr`."
+    }
+  },
+  "metrics": [
+    {
+      "name": "",
+      "detection_method": {
+        "type": "Static Threshold",
+        "name": "Count failed"
+      },
+      "results": {
+        "rows": [
+          {
+            "detector": "base.TriggerListDetector",
+            "passed": 20,
+            "total_evaluated": 256,
+            "score": 7.8125
+          }
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "source",
+      "label": "garak, an LLM vulnerability scanner",
+      "url": "https://github.com/NVIDIA/garak"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The probe latentinjection.LatentInjectionTranslationEnFr tests for model responses to context-embedded injections, including indirect prompt injections and latent jailbreaks. This probe is part of the latentinjection module which detects latent injection issues.\n\nThe LLM rnj-1-instruct was evaluated on this probe."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0403: Adversarial Example"
+      ],
+      "lifecycle_view": [
+        "L05: Evaluation"
+      ],
+      "taxonomy_version": ""
+    }
+  },
+  "reported_date": "2026-03-17"
+}
