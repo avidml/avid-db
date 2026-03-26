@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1167"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-45908"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-45908"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2022-002.md",
+      "url": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2022-002.md"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/PaddlePaddle/Paddle/commit/26c419ca386aeae3c461faf2b828d00b48e908eb",
+      "url": "https://github.com/PaddlePaddle/Paddle/commit/26c419ca386aeae3c461faf2b828d00b48e908eb"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In PaddlePaddle before 2.4, paddle.audio.functional.get_window is vulnerable to code injection because it calls eval on a user-supplied winstr. This may lead to arbitrary code execution.\n\nReason for inclusion in AVID: CVE-2022-45908 describes a code execution vulnerability in PaddlePaddle (an AI framework) due to eval on user-supplied input in paddle.audio.functional.get_window. This directly concerns software used to build/train/deploy AI systems, i.e., a dependency/framework in the AI stack. It is a security/vulnerability issue with potential RCE, and the report provides explicit evidence (CVE entry, advisory, commit) of the flaw. Therefore it qualifies as a software supply-chain vulnerability in general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-11-26"
+}

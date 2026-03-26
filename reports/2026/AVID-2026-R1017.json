@@ -1,0 +1,111 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1017"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Missing validation causes denial of service via `DeleteSessionTensor` in TensorFlow (CVE-2022-29194)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-29194"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-h5g4-ppwx-48q2",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-h5g4-ppwx-48q2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/cff267650c6a1b266e4b4500f69fbc49cdd773c5",
+      "url": "https://github.com/tensorflow/tensorflow/commit/cff267650c6a1b266e4b4500f69fbc49cdd773c5"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/core/kernels/session_ops.cc#L128-L144",
+      "url": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/core/kernels/session_ops.cc#L128-L144"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, the implementation of `tf.raw_ops.DeleteSessionTensor` does not fully validate the input arguments. This results in a `CHECK`-failure which can be used to trigger a denial of service attack. Versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4 contain a patch for this issue.\n\nReason for inclusion in AVID: CVE-2022-29194 describes a vulnerability in TensorFlow's DeleteSessionTensor input validation causing a denial of service. TensorFlow is a core ML/AI framework; this is a software supply-chain vulnerability affecting AI pipelines that depend on the library. Evidence: CVE description, affected versions, patches, references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-05-20"
+}

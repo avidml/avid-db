@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1231"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Hive Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Hive Provider Beeline Remote Command Execution (CVE-2023-28706)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28706"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/30212",
+      "url": "https://github.com/apache/airflow/pull/30212"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/dl20xxd51xvlx0zzc0wzgxfjwgtbbxo3",
+      "url": "https://lists.apache.org/thread/dl20xxd51xvlx0zzc0wzgxfjwgtbbxo3"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/04/07/2",
+      "url": "http://www.openwall.com/lists/oss-security/2023/04/07/2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Software Foundation Apache Airflow Hive Provider.This issue affects Apache Airflow Hive Provider: before 6.0.0.\n\nReason for inclusion in AVID: CVE-2023-28706 describes a code injection (CWE-94) vulnerability in Apache Airflow Hive Provider that can lead to remote code execution. Airflow and its providers are commonly used to orchestrate AI/ML pipelines and data processing tasks, making this a software component frequently involved in AI system stacks. As it affects a dependency/orchestration component used to build, deploy, or run AI workflows, it qualifies as a software supply-chain issue in general-purpose AI systems. The vulnerability is clearly security-related and well-supported by the CVE entry and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-07"
+}

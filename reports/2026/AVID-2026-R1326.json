@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1326"
+  },
+  "affects": {
+    "developer": [
+      "prefecthq"
+    ],
+    "deployer": [
+      "prefecthq"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "prefecthq/prefect"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Cross-Site Request Forgery (CSRF) in prefecthq/prefect (CVE-2023-6022)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6022"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/dab47d99-551c-4355-9ab1-c99cb90235af",
+      "url": "https://huntr.com/bounties/dab47d99-551c-4355-9ab1-c99cb90235af"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/prefecthq/prefect/commit/227dfcc7e3374c212a4bcd68b14e090b1c02d9d3",
+      "url": "https://github.com/prefecthq/prefect/commit/227dfcc7e3374c212a4bcd68b14e090b1c02d9d3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cross-Site Request Forgery (CSRF) in GitHub repository prefecthq/prefect prior to 2.16.5.\n\nReason for inclusion in AVID: CVE-2023-6022 describes a Cross-Site Request Forgery (CSRF) vulnerability in prefecthq/prefect, a widely used workflow orchestration tool in ML/AI pipelines. This is a software supply chain component (deployment/operational tooling) that AI systems commonly depend on, and the vulnerability is security-related (CSRF) with high impact. The CVE entry and references provide sufficient evidence to classify for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-16"
+}

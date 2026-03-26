@@ -1,0 +1,84 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0885"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-39906"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-39906"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/341566",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/341566"
+    },
+    {
+      "type": "source",
+      "label": "https://hackerone.com/reports/1347600",
+      "url": "https://hackerone.com/reports/1347600"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-39906.json",
+      "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-39906.json"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper validation of ipynb files in GitLab CE/EE version 13.5 and above allows an attacker to execute arbitrary JavaScript code on the victim's behalf.\n\nReason for inclusion in AVID: The CVE describes a security vulnerability in GitLab that allows executing arbitrary JavaScript via ipynb files. GitLab is widely used in ML pipelines and AI workflows (notebooks, CI/CD), so this affects software used to build/deploy AI systems. It is a security/safety vulnerability with potential impact to data integrity/confidentiality. The description provides sufficient signal (CVE id, affected versions, CVSS). Therefore it should be kept for AVID curation under AI supply chain scope."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N",
+      "baseScore": 8.7,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2021-11-04"
+}

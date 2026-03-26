@@ -1,0 +1,76 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1354"
+  },
+  "affects": {
+    "developer": [
+      "quantumcloud"
+    ],
+    "deployer": [
+      "quantumcloud"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI ChatBot for WordPress \u2013 WPBot"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AI ChatBot <= 5.3.4 - Missing Authorization via openai_file_delete_callback (CVE-2024-0453)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0453"
+    },
+    {
+      "type": "source",
+      "label": "https://www.wordfence.com/threat-intel/vulnerabilities/id/7e0ef4a5-42d7-4cea-b19f-51917e3ee55f?source=cve",
+      "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/7e0ef4a5-42d7-4cea-b19f-51917e3ee55f?source=cve"
+    },
+    {
+      "type": "source",
+      "label": "https://plugins.trac.wordpress.org/browser/chatbot/trunk/includes/openai/qcld-bot-openai.php#L133",
+      "url": "https://plugins.trac.wordpress.org/browser/chatbot/trunk/includes/openai/qcld-bot-openai.php#L133"
+    },
+    {
+      "type": "source",
+      "label": "https://plugins.trac.wordpress.org/changeset/3089461/chatbot/trunk/includes/openai/qcld-bot-openai.php",
+      "url": "https://plugins.trac.wordpress.org/changeset/3089461/chatbot/trunk/includes/openai/qcld-bot-openai.php"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The AI ChatBot plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the openai_file_delete_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to delete files from a linked OpenAI account.\n\nReason for inclusion in AVID: CVE-2024-0453 describes an authorization bypass in the AI ChatBot WordPress plugin that allows authenticated users to delete files from a linked OpenAI account. This is a vulnerability in a third-party component used to deploy AI chat capabilities, i.e., a software supply-chain component in AI deployments. It concerns AI-related software and constitutes a security vulnerability (data integrity/privilege escalation). The report provides sufficient signals (affected versions, impact, and references) to support curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:N",
+      "baseScore": 5.0,
+      "baseSeverity": "MEDIUM"
+    }
+  },
+  "reported_date": "2024-05-22"
+}

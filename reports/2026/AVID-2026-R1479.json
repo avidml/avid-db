@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1479"
+  },
+  "affects": {
+    "developer": [
+      "aws"
+    ],
+    "deployer": [
+      "aws"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "sagemaker-python-sdk"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Command Injection in sagemaker-python-sdk (CVE-2024-34073)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-34073"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/sagemaker-python-sdk/security/advisories/GHSA-7pc3-pr3q-58vg",
+      "url": "https://github.com/aws/sagemaker-python-sdk/security/advisories/GHSA-7pc3-pr3q-58vg"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/sagemaker-python-sdk/pull/4556",
+      "url": "https://github.com/aws/sagemaker-python-sdk/pull/4556"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/sagemaker-python-sdk/commit/2d873d53f708ea570fc2e2a6974f8c3097fe9df5",
+      "url": "https://github.com/aws/sagemaker-python-sdk/commit/2d873d53f708ea570fc2e2a6974f8c3097fe9df5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "sagemaker-python-sdk is a library for training and deploying machine learning models on Amazon SageMaker. In affected versions the capture_dependencies function in `sagemaker.serve.save_retrive.version_1_0_0.save.utils` module allows for potentially unsafe Operating System (OS) Command Injection if inappropriate command is passed as the \u201crequirements_path\u201d parameter. This consequently may allow an unprivileged third party to cause remote code execution, denial of service, affecting both confidentiality and integrity. This issue has been addressed in version 2.214.3. Users are advised to upgrade. Users unable to upgrade should not override the \u201crequirements_path\u201d parameter of capture_dependencies function in `sagemaker.serve.save_retrive.version_1_0_0.save.utils`, and instead use the default value.\n\nReason for inclusion in AVID: CVE-2024-34073 describes a command injection vulnerability in sagemaker-python-sdk, a library used to train and deploy ML models. The flaw enables OS command execution (CWE-78) with potential remote code execution, DoS, and confidentiality/integrity impact. It affects a software component used in AI pipelines and is in the software supply chain (dependencies/runtimes for AI systems). Mitigation is upgrading to version 2.214.3; guidance is provided to avoid unsafe usage of the affected parameter. Sufficient evidence is present to classify as a software supply chain vulnerability in AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-03"
+}

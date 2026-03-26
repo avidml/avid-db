@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1642"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gaizhenbiao/chuanhuchatgpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF in gaizhenbiao/chuanhuchatgpt (CVE-2025-0188)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0188"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/879d2470-eca5-49c0-b3d1-57469cfff412",
+      "url": "https://huntr.com/bounties/879d2470-eca5-49c0-b3d1-57469cfff412"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Server-Side Request Forgery (SSRF) vulnerability was discovered in gaizhenbiao/chuanhuchatgpt version 20240914. The vulnerability allows an attacker to construct a response link by saving the response in a folder named after the SHA-1 hash of the target URL. This enables the attacker to access the response directly, potentially leading to unauthorized access to internal systems, data theft, service disruption, or further attacks such as port scanning and accessing metadata endpoints.\n\nReason for inclusion in AVID: The CVE describes an SSRF vulnerability in a software artifact named gaizhenbiao/chuanhuchatgpt, an AI chat-related application. This is a software component that could be used in building or deploying general-purpose AI systems and could be exploited to access internal resources, exfiltrate data, or disrupt services in AI pipelines. Therefore it affects the software supply chain of AI systems. The vulnerability is CVE-style with clear impact on security and safety. Sufficient evidence provided by CVE entry and CVSS data."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

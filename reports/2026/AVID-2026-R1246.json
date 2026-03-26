@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1246"
+  },
+  "affects": {
+    "developer": [
+      "Spring"
+    ],
+    "deployer": [
+      "Spring"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Spring For Apache Kafka"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Java Deserialization vulnerability in Spring-Kafka When Improperly Configured (CVE-2023-34040)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-34040"
+    },
+    {
+      "type": "source",
+      "label": "https://spring.io/security/cve-2023-34040",
+      "url": "https://spring.io/security/cve-2023-34040"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In Spring for Apache Kafka 3.0.9 and earlier and versions 2.9.10 and earlier, a possible deserialization attack vector existed, but only if unusual configuration was applied. An attacker would have to construct a malicious serialized object in one of the deserialization exception record headers.\n\nSpecifically, an application is vulnerable when all of the following are true:\n\n  *  The user does not\u00a0configure an ErrorHandlingDeserializer for the key and/or value of the record\n  *  The user explicitly sets container properties checkDeserExWhenKeyNull and/or checkDeserExWhenValueNull container properties to true.\n  *  The user allows untrusted sources to publish to a Kafka topic\n\n\nBy default, these properties are false, and the container only attempts to deserialize the headers if an ErrorHandlingDeserializer is configured. The ErrorHandlingDeserializer prevents the vulnerability by removing any such malicious headers before processing the record.\n\nReason for inclusion in AVID: CVE-2023-34040 describes a Java deserialization vulnerability in Spring-Kafka, a software component commonly used in AI data pipelines and deployment stacks (e.g., Kafka-based ingestion/streaming for ML workloads). This is a software supply chain vulnerability affecting a dependency used to build/run AI systems. It is a CVE-style security vulnerability (deserialization attack) with conditions and remediation guidance, not hardware/firmware-only. The report provides affected versions, conditions for exploitation, and references, giving sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-24"
+}

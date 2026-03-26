@@ -1,0 +1,66 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0923"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Bot Framework SDK for .NET Framework"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Bot Framework SDK Remote Code Execution Vulnerability (CVE-2021-43225)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-43225"
+    },
+    {
+      "type": "source",
+      "label": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-43225",
+      "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-43225"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Bot Framework SDK Remote Code Execution Vulnerability\n\nReason for inclusion in AVID: CVE-2021-43225 is a remote code execution vulnerability in the Bot Framework SDK for .NET Framework. The Bot Framework SDK is a software component commonly used to build and deploy AI chatbots and conversational agents, i.e., it is part of the software stack used to create AI systems. This constitutes a software supply-chain issue for AI systems (dependencies/runtime used in AI pipelines), not hardware/firmware. The vulnerability is security-focused (RCE) with published CVE/NVD/MSRC references, providing sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:P/RL:O/RC:C",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH"
+    }
+  },
+  "reported_date": "2021-12-15"
+}

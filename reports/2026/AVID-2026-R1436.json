@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1436"
+  },
+  "affects": {
+    "developer": [
+      "Allegro.AI"
+    ],
+    "deployer": [
+      "Allegro.AI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ClearML"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-24590"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-24590"
+    },
+    {
+      "type": "source",
+      "label": "https://hiddenlayer.com/research/not-so-clear-how-mlops-solutions-can-muddy-the-waters-of-your-supply-chain/",
+      "url": "https://hiddenlayer.com/research/not-so-clear-how-mlops-solutions-can-muddy-the-waters-of-your-supply-chain/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Deserialization of untrusted data can occur in versions 0.17.0 to 1.14.2 of the client SDK of Allegro AI\u2019s ClearML platform, enabling a maliciously uploaded artifact to run arbitrary code on an end user\u2019s system when interacted with.\n\nReason for inclusion in AVID: CVE-2024-24590 describes a deserialization vulnerability in Allegro AI ClearML client SDK (versions 0.17.0\u20131.14.2) that enables arbitrary code execution via a maliciously uploaded artifact. This directly concerns software used in AI/ML workflows (AI tooling, model management, and MLOps pipelines) and impacts the software supply chain of general-purpose AI systems. It is a security vulnerability (RCE) with explicit evidence in CVSS/CWE entries."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.0,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-06"
+}

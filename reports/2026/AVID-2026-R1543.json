@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1543"
+  },
+  "affects": {
+    "developer": [
+      "agnaistic"
+    ],
+    "deployer": [
+      "agnaistic"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "agnai"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Agnai vulnerable to Remote Code Execution via JS Upload using Directory Traversal (CVE-2024-47169)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-47169"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/agnaistic/agnai/security/advisories/GHSA-mpch-89gm-hm83",
+      "url": "https://github.com/agnaistic/agnai/security/advisories/GHSA-mpch-89gm-hm83"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Agnai is an artificial-intelligence-agnostic multi-user, mult-bot roleplaying chat system. A vulnerability in versions prior to 1.0.330 permits attackers to upload arbitrary files to attacker-chosen locations on the server, including JavaScript, enabling the execution of commands within those files. This issue could result in unauthorized access, full server compromise, data leakage, and other critical security threats. This does not affect `agnai.chat`, installations using S3-compatible storage, or self-hosting that is not publicly exposed. This does affect publicly hosted installs without S3-compatible storage. Version 1.0.330 fixes this vulnerability.\n\nReason for inclusion in AVID: CVE-2024-47169 describes a remote code execution vulnerability in Agnai, an AI-focused chat system. It allows uploading arbitrary files via directory traversal and executing uploaded JavaScript on the server, enabling full server compromise. This is a software vulnerability in a component used within AI deployment/serving stacks, affecting AI workloads and pipelines. The report provides CVSS details, affected versions, and a fixed version, offering sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-35",
+        "description": "CWE-35: Path Traversal: '.../...//'",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-434",
+        "description": "CWE-434: Unrestricted Upload of File with Dangerous Type",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-26"
+}

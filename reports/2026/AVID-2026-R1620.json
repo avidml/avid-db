@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1620"
+  },
+  "affects": {
+    "developer": [
+      "modelscope"
+    ],
+    "deployer": [
+      "modelscope"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "modelscope/agentscope"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution via Deserialization in modelscope/agentscope (CVE-2024-8502)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8502"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/7a42da2a-2ae5-442d-aff9-c9a3b47870eb",
+      "url": "https://huntr.com/bounties/7a42da2a-2ae5-442d-aff9-c9a3b47870eb"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the RpcAgentServerLauncher class of modelscope/agentscope v0.0.6a3 allows for remote code execution (RCE) via deserialization of untrusted data using the dill library. The issue occurs in the AgentServerServicer.create_agent method, where serialized input is deserialized using dill.loads, enabling an attacker to execute arbitrary commands on the server.\n\nReason for inclusion in AVID: CVE-2024-8502 describes remote code execution via deserialization in the modelscope/agentscope package, a software component used in AI agent frameworks. This is a software supply chain vulnerability affecting a dependency used to build/deploy AI systems, triggering RCE through untrusted data deserialization. It concerns AI models/frameworks/tooling, and has clear security impact (RCE). Therefore it should be kept for AVID curation as an AI software supply chain vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

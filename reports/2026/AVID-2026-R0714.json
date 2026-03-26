@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0714"
+  },
+  "affects": {
+    "developer": [
+      "Oracle Corporation"
+    ],
+    "deployer": [
+      "Oracle Corporation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Oracle Cloud Infrastructure Data Science Notebook Sessions"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-2138"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-2138"
+    },
+    {
+      "type": "source",
+      "label": "https://support.oracle.com",
+      "url": "https://support.oracle.com"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Vulnerability in the Oracle Cloud Infrastructure Data Science Notebook Sessions. Easily exploitable vulnerability allows low privileged attacker with access to the physical communication segment attached to the hardware where the Oracle Cloud Infrastructure Data Science Notebook Sessions executes to compromise Oracle Cloud Infrastructure Data Science Notebook Sessions. Successful attacks of this vulnerability can result in unauthorized update, insert or delete access to some of Oracle Cloud Infrastructure Data Science Notebook Sessions accessible data as well as unauthorized read access to a subset of Oracle Cloud Infrastructure Data Science Notebook Sessions accessible data. All affected customers were notified of CVE-2021-2138 by Oracle. CVSS 3.1 Base Score 4.6 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N)\n\nReason for inclusion in AVID: CVE-2021-2138 relates to a vulnerability in Oracle Cloud Infrastructure Data Science Notebook Sessions, a service used for AI/ML workflows (notebook environments). It enables unauthorized access/alteration of data via a low-privilege attacker with network-adjacent access. This is a software component used in AI tooling within the GP AI stack, not hardware/firmware only. The CVE provides explicit security impact, scope, and evidence. Therefore it is relevant to the AI supply chain and should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 4.6,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "ADJACENT_NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2021-03-03"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1296"
+  },
+  "affects": {
+    "developer": [
+      "mintplex-labs"
+    ],
+    "deployer": [
+      "mintplex-labs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mintplex-labs/anything-llm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SQL Injection in mintplex-labs/anything-llm (CVE-2023-4899)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-4899"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.dev/bounties/70a2fb18-f030-4abb-9ddc-13f94107ac9d",
+      "url": "https://huntr.dev/bounties/70a2fb18-f030-4abb-9ddc-13f94107ac9d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mintplex-labs/anything-llm/commit/dc3dfbf31495fe316b21ee184b9317b38101d30e",
+      "url": "https://github.com/mintplex-labs/anything-llm/commit/dc3dfbf31495fe316b21ee184b9317b38101d30e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "SQL Injection in GitHub repository mintplex-labs/anything-llm prior to 0.0.1.\n\nReason for inclusion in AVID: The CVE describes a SQL injection vulnerability (CWE-89) in an AI-related software project (mintplex-labs/anything-llm) that would be used in AI model deployment/serving pipelines. It affects the integrity and confidentiality of data, has CVSS high severity, and concerns software components used in building/running general-purpose AI systems (the artifact itself). The report provides explicit evidence (CVE, NVD entry, commit link) supporting this vulnerability in a software artifact central to AI stacks. Therefore it should be kept for AVID curation as a software supply chain vulnerability in AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-89",
+        "description": "CWE-89 Improper Neutralization of Special Elements used in an SQL Command",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-09-11"
+}

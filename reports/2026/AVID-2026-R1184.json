@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1184"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA CUDA Toolkit"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-25510"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25510"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5456",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5456"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA CUDA Toolkit SDK for Linux and Windows contains a NULL pointer dereference in cuobjdump, where a local user running the tool against a malformed binary may cause a limited denial of service.\n\nReason for inclusion in AVID: CVE-2023-25510 describes a NULL pointer dereference in NVIDIA CUDA Toolkit's cuobjdump, which can cause a local denial of service. CUDA Toolkit is a software component widely used in AI/ML development and deployment (GPU-accelerated pipelines, tooling, and runtime). This implies a vulnerability in a software dependency/toolchain integral to building/running general-purpose AI systems, i.e., a software supply chain issue within AI stacks. The vulnerability is explicitly security-related (DoS) and is evidenced by the CVE entry and CWE classification. Therefore, it should be kept for AVID curation as a software supply chain vulnerability affecting AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+      "baseScore": 3.3,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-476",
+        "description": "CWE-476 NULL Pointer Dereference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-22"
+}

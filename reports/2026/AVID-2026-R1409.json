@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1409"
+  },
+  "affects": {
+    "developer": [
+      "ltdrdata"
+    ],
+    "deployer": [
+      "ltdrdata"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ComfyUI-Manager"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21574"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21574"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ltdrdata/ComfyUI-Manager/commit/ffc095a3e5acc1c404773a0510e6d055a6a72b0e",
+      "url": "https://github.com/ltdrdata/ComfyUI-Manager/commit/ffc095a3e5acc1c404773a0510e6d055a6a72b0e"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ltdrdata/ComfyUI-Manager/blob/ffc095a3e5acc1c404773a0510e6d055a6a72b0e/glob/manager_server.py#L798",
+      "url": "https://github.com/ltdrdata/ComfyUI-Manager/blob/ffc095a3e5acc1c404773a0510e6d055a6a72b0e/glob/manager_server.py#L798"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The issue stems from a missing validation of the pip field in a POST request sent to the /customnode/install endpoint used to install custom nodes which is added to the server by the extension. This allows an attacker to craft a request that triggers a pip install on a user controlled package or URL, resulting in remote code execution (RCE) on the server.\n\nReason for inclusion in AVID: CVE-2024-21574 describes a server-side vulnerability in ComfyUI-Manager where an unauthenticated POST to /customnode/install can trigger pip install of a user-controlled package, leading to remote code execution. This directly concerns AI software tooling and extensions, is a software supply chain risk in AI pipelines (installing custom nodes/dependencies from untrusted sources), and is a security vulnerability with clear evidence in the CVE report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "Code Injection",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-12-12"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1612"
+  },
+  "affects": {
+    "developer": [
+      "danswer-ai"
+    ],
+    "deployer": [
+      "danswer-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "danswer-ai/danswer"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CSRF in danswer-ai/danswer (CVE-2024-8065)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8065"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/61b58753-af36-43fd-b1b9-f3019532dd08",
+      "url": "https://huntr.com/bounties/61b58753-af36-43fd-b1b9-f3019532dd08"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Cross-Site Request Forgery (CSRF) vulnerability in version v1.4.1 of danswer-ai/danswer allows attackers to perform unauthorized actions in the context of the victim's browser. This includes connecting the victim's application with a malicious Slack Bot, inviting users, and deleting chats, among other actions. The application does not implement any CSRF protection, making it susceptible to these attacks.\n\nReason for inclusion in AVID: The AVID candidate describes a CVE-2024-8065 CSRF vulnerability in danswer-ai/danswer, an AI-oriented software component. This vulnerability is in software used to build/deploy AI systems (web/app layer of an AI assistant framework), representing a software supply-chain issue within AI stacks. It is a genuine security vulnerability (CSRF leading to unauthorized actions). The report provides sufficient evidence (CVSS, description, references) to assess risk."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

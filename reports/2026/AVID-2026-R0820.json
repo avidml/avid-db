@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0820"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openEuler:mindspore"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-33651"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-33651"
+    },
+    {
+      "type": "source",
+      "label": "https://gitee.com/mindspore/community/blob/master/security/security_advisory_list/mssa-2021-004_en.md",
+      "url": "https://gitee.com/mindspore/community/blob/master/security/security_advisory_list/mssa-2021-004_en.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "When performing the analytical operation of the DepthwiseConv2D operator, if the attribute depth_multiplier is 0, it will cause a division by 0 exception.\n\nReason for inclusion in AVID: CVE-2021-33651 describes a division-by-zero vulnerability in MindSpore's DepthwiseConv2D operator when depth_multiplier is 0. This is a flaw in an AI framework/component used in ML pipelines, affecting software that builds/trains/runs AI systems. The affected artifact (openEuler:mindspore) indicates a software supply-chain component. It is a security-related bug (potential crash/DoS) and there is explicit CVE/NVD/advisory coverage, providing sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-369",
+        "description": "CWE-369 Division by Zero Exception",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-06-27"
+}

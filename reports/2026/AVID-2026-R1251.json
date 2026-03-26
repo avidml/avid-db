@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1251"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Jupyter Extension for Visual Studio Code"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Visual Studio Code Jupyter Extension Spoofing Vulnerability (CVE-2023-36018)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-36018"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36018",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36018"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Visual Studio Code Jupyter Extension Spoofing Vulnerability\n\nReason for inclusion in AVID: CVE-2023-36018 describes a spoofing vulnerability in the Visual Studio Code Jupyter extension, with potential leakage of private data (CWE-359). The VS Code Jupyter extension is a tooling component widely used in AI development workflows (notebooks, data exploration, model prototyping). As such, a vulnerability in this tooling can impact AI software supply chains by affecting the environment used to build, train, package, or run AI systems. The report includes credible sources (NVD, MSRC) and a CVSS 3.1 score indicating high impact, supporting classification as a security vulnerability in AI tooling. Therefore, it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-359",
+        "description": "CWE-359: Exposure of Private Personal Information to an Unauthorized Actor",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2023-11-14"
+}

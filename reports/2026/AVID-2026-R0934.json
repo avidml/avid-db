@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0934"
+  },
+  "affects": {
+    "developer": [
+      "JFrog"
+    ],
+    "deployer": [
+      "JFrog"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "JFrog Artifactory"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-0668"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-0668"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jfrog.com/confluence/display/JFROG/CVE-2022-0668%3A+Artifactory+Authentication+Bypass",
+      "url": "https://www.jfrog.com/confluence/display/JFROG/CVE-2022-0668%3A+Artifactory+Authentication+Bypass"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "JFrog Artifactory prior to 7.37.13 is vulnerable to Authentication Bypass, which can lead to Privilege Escalation when a specially crafted request is sent by an unauthenticated user.\n\nReason for inclusion in AVID: CVE-2022-0668 describes an authentication bypass in JFrog Artifactory, enabling privilege escalation. Artifactory is a software artifact repository commonly used in AI/ML development pipelines to store dependencies, models, and build artifacts. A vulnerability in this component can compromise the software supply chain underpinning AI systems (CI/CD, artifact management, model artifacts). Therefore it is a software supply chain issue relevant to general-purpose AI systems and constitutes a security vulnerability with clear evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-274",
+        "description": "CWE-274 Improper Handling of Insufficient Privileges",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-01-08"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1351"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "RAPIDS cuDF and cuML"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-0140"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0140"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5597",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5597"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA RAPIDS contains a vulnerability in cuDF and cuML, where a user could cause a deserialization of untrusted data issue. A successful exploit of this vulnerability might lead to code execution, data tampering, denial of service, and information disclosure.\n\nReason for inclusion in AVID: CVE-2024-0140 concerns NVIDIA RAPIDS cuDF/cuML deserialization vulnerability enabling code execution, affecting AI data processing libraries used in ML pipelines. This is a software supply-chain vulnerability in components used to build/train/deploy AI systems. The report provides CVE details, affected artifacts, and impact, supporting its relevance to AI stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:H/A:H",
+      "baseScore": 6.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-28"
+}

@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1550"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-48057"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-48057"
+    },
+    {
+      "type": "source",
+      "label": "https://rumbling-slice-eb0.notion.site/LocalAI-deleted-model-with-storage-XSS-CSRF-vulnerability-in-mudler-localai-101e3cda9e8c80e0ac12fe418d5dd982?pvs=4",
+      "url": "https://rumbling-slice-eb0.notion.site/LocalAI-deleted-model-with-storage-XSS-CSRF-vulnerability-in-mudler-localai-101e3cda9e8c80e0ac12fe418d5dd982?pvs=4"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/AfterSnows/1bd7ee5a3a42dbb5f5ff67f7f9c8ccec",
+      "url": "https://gist.github.com/AfterSnows/1bd7ee5a3a42dbb5f5ff67f7f9c8ccec"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "localai <=2.20.1 is vulnerable to Cross Site Scripting (XSS). When calling the delete model API and passing inappropriate parameters, it can cause a one-time storage XSS, which will trigger the payload when a user accesses the homepage.\n\nReason for inclusion in AVID: The CVE describes a storage XSS vulnerability in LocalAI (<= 2.20.1) via the delete model API, enabling attacker-controlled payload execution when a homepage is loaded. This is a software vulnerability in an AI model-serving component used in AI pipelines, representing a risk to general-purpose AI systems. The issue pertains to a software supply chain\u2014specifically a dependency/framework used to deploy AI models\u2014rather than hardware/firmware. There is explicit CVE and corroborating references, providing sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-11-04"
+}

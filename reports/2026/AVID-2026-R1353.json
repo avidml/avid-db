@@ -1,0 +1,76 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1353"
+  },
+  "affects": {
+    "developer": [
+      "quantumcloud"
+    ],
+    "deployer": [
+      "quantumcloud"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI ChatBot for WordPress \u2013 WPBot"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AI ChatBot <= 5.3.4 - Missing Authorization via openai_file_list_callback (CVE-2024-0451)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0451"
+    },
+    {
+      "type": "source",
+      "label": "https://www.wordfence.com/threat-intel/vulnerabilities/id/1c0572a5-6cc9-43ab-a4a3-c8d3b93c8fcf?source=cve",
+      "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/1c0572a5-6cc9-43ab-a4a3-c8d3b93c8fcf?source=cve"
+    },
+    {
+      "type": "source",
+      "label": "https://plugins.trac.wordpress.org/browser/chatbot/trunk/includes/openai/qcld-bot-openai.php#L175",
+      "url": "https://plugins.trac.wordpress.org/browser/chatbot/trunk/includes/openai/qcld-bot-openai.php#L175"
+    },
+    {
+      "type": "source",
+      "label": "https://plugins.trac.wordpress.org/changeset/3089461/chatbot/trunk/includes/openai/qcld-bot-openai.php",
+      "url": "https://plugins.trac.wordpress.org/changeset/3089461/chatbot/trunk/includes/openai/qcld-bot-openai.php"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The AI ChatBot plugin for WordPress is vulnerable to unauthorized access of data due to a missing capability check on the openai_file_list_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to list files existing in a linked OpenAI account.\n\nReason for inclusion in AVID: CVE-2024-0451 describes a missing authorization check in the AI ChatBot WordPress plugin (OpenAI integration) allowing authenticated attackers to enumerate files in a linked OpenAI account. This is a software vulnerability affecting an AI software component used in AI workflows (plugin using OpenAI), representing a supply chain issue in AI deployment stacks. The report provides explicit details (affected version <= 5.3.4, impact, references from NVD/Wordfence), establishing a clear security flaw with real-world impact on AI software components."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
+      "baseScore": 5.0,
+      "baseSeverity": "MEDIUM"
+    }
+  },
+  "reported_date": "2024-05-22"
+}

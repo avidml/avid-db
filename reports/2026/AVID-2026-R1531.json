@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1531"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow: Authenticated DAG authors could execute code on scheduler nodes (CVE-2024-45034)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-45034"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/41672",
+      "url": "https://github.com/apache/airflow/pull/41672"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/b4fcw33vh60yfg9990n5vmc7sy2dcgjx",
+      "url": "https://lists.apache.org/thread/b4fcw33vh60yfg9990n5vmc7sy2dcgjx"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow versions before 2.10.1 have a vulnerability that allows\u00a0DAG authors to add local settings to the DAG folder and get it executed by the scheduler, where the scheduler is not supposed to execute code submitted by the DAG author. \nUsers are advised to upgrade to version 2.10.1 or later, which has fixed the vulnerability.\n\nReason for inclusion in AVID: This CVE concerns Apache Airflow, a widely-used AI/ML pipeline orchestration tool. Authenticated DAG authors can execute code on the scheduler, a concrete code-execution vulnerability in software essential to building/running AI workflows. Airflow is a core component in the software supply chain for AI systems (orchestration, scheduling, deployment pipelines), so this vulnerability has direct implications for AI-related software supply chains. The CVE description and references provide clear evidence and remediation guidance."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-250",
+        "description": "CWE-250: Execution with Unnecessary Privileges",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-07"
+}

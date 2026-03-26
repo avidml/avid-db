@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1583"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Missing client_id in parisneo/lollms-webui (CVE-2024-6040)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6040"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/ac0bbb1d-89aa-42ba-bc48-1b59bd16acc7",
+      "url": "https://huntr.com/bounties/ac0bbb1d-89aa-42ba-bc48-1b59bd16acc7"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In parisneo/lollms-webui version v9.8, the lollms_binding_infos is missing the client_id parameter, which leads to multiple security vulnerabilities. Specifically, the endpoints /reload_binding, /install_binding, /reinstall_binding, /unInstall_binding, /set_active_binding_settings, and /update_binding_settings are susceptible to CSRF attacks and local attacks. An attacker can exploit this vulnerability to perform unauthorized actions on the victim's machine.\n\nReason for inclusion in AVID: The CVE describes a CSRF vulnerability in parisneo/lollms-webui (a web UI used to manage LLMs), affecting endpoints used in AI model deployment/management. This is a software component commonly used in AI pipelines, representing a potential security risk in the AI software stack. Therefore, it fits as a software supply chain vulnerability in general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L",
+      "baseScore": 4.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-01"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1584"
+  },
+  "affects": {
+    "developer": [
+      "mudler"
+    ],
+    "deployer": [
+      "mudler"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mudler/localai"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF and Partial LFI in /models/apply Endpoint in mudler/localai (CVE-2024-6095)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6095"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/4799262d-72dc-43c8-bc99-81d0dce996dc",
+      "url": "https://huntr.com/bounties/4799262d-72dc-43c8-bc99-81d0dce996dc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mudler/localai/commit/2fc6fe806b903ac0a70218b21b5c84443a1b0866",
+      "url": "https://github.com/mudler/localai/commit/2fc6fe806b903ac0a70218b21b5c84443a1b0866"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the /models/apply endpoint of mudler/localai versions 2.15.0 allows for Server-Side Request Forgery (SSRF) and partial Local File Inclusion (LFI). The endpoint supports both http(s):// and file:// schemes, where the latter can lead to LFI. However, the output is limited due to the length of the error message. This vulnerability can be exploited by an attacker with network access to the LocalAI instance, potentially allowing unauthorized access to internal HTTP(s) servers and partial reading of local files. The issue is fixed in version 2.17.\n\nReason for inclusion in AVID: CVE-2024-6095 describes a network-accessible SSRF and partial LFI in the /models/apply endpoint of mudler/localai, an AI model-serving component. This directly concerns AI software used to deploy and run general-purpose AI systems (model serving/runtime). It is a security vulnerability in a software package that is part of the AI stack, with potential impact on internal services and local data. The issue is mitigated in a newer version (2.17). This satisfies AI relevance, GPAI supply-chain scope, and security impact with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N",
+      "baseScore": 5.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-06"
+}

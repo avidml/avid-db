@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1161"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-42041"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42041"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/d8s-file-system/",
+      "url": "https://pypi.org/project/d8s-file-system/"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/democritus-hashes/",
+      "url": "https://pypi.org/project/democritus-hashes/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/dadadadada111/info/issues/2",
+      "url": "https://github.com/dadadadada111/info/issues/2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The d8s-file-system package for Python, as distributed on PyPI, included a potential code-execution backdoor inserted by a third party. The backdoor is the democritus-hashes package. The affected version is 0.1.0.\n\nReason for inclusion in AVID: CVE-2022-42041 describes a backdoored Python package (d8s-file-system) distributed via PyPI, with a potential code-execution backdoor introduced by a third party (democritus-hashes). The vulnerability is in a software supply chain artifact (a Python dependency) that could be used in AI software stacks and pipelines, posing a security risk to general-purpose AI systems. The description provides explicit evidence of a code-execution backdoor and affected version 0.1.0, with references to reliable sources (NVD, PyPI pages). This constitutes a software supply-chain security vulnerability relevant to AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-10-11"
+}

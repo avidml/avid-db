@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1295"
+  },
+  "affects": {
+    "developer": [
+      "mintplex-labs"
+    ],
+    "deployer": [
+      "mintplex-labs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mintplex-labs/anything-llm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Authentication Bypass by Primary Weakness in mintplex-labs/anything-llm (CVE-2023-4898)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-4898"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.dev/bounties/a3dda692-7e8a-44a9-bd96-24cfd3f721d2",
+      "url": "https://huntr.dev/bounties/a3dda692-7e8a-44a9-bd96-24cfd3f721d2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mintplex-labs/anything-llm/commit/dc3dfbf31495fe316b21ee184b9317b38101d30e",
+      "url": "https://github.com/mintplex-labs/anything-llm/commit/dc3dfbf31495fe316b21ee184b9317b38101d30e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Authentication Bypass by Primary Weakness in GitHub repository mintplex-labs/anything-llm prior to 0.0.1.\n\nReason for inclusion in AVID: CVE-2023-4898 describes a remote authentication bypass in mintplex-labs/anything-llm (prior to 0.0.1). The affected project is an AI-focused library used in AI model tooling/workflows, i.e., a software component commonly involved in building/deploying GP AI systems. This constitutes a software supply-chain vulnerability affecting dependencies/runtimes in AI stacks. The CVE is security-related with public references (NVD entry, commit), providing sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-305",
+        "description": "CWE-305 Authentication Bypass by Primary Weakness",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-09-11"
+}

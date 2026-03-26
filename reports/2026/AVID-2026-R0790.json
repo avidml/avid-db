@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0790"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Division by zero in TFLite's implementation of `TransposeConv` (CVE-2021-29588)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-29588"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-vfr4-x8j2-3rf9",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-vfr4-x8j2-3rf9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/801c1c6be5324219689c98e1bd3e0ca365ee834d",
+      "url": "https://github.com/tensorflow/tensorflow/commit/801c1c6be5324219689c98e1bd3e0ca365ee834d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. The optimized implementation of the `TransposeConv` TFLite operator is [vulnerable to a division by zero error](https://github.com/tensorflow/tensorflow/blob/0d45ea1ca641b21b73bcf9c00e0179cda284e7e7/tensorflow/lite/kernels/internal/optimized/optimized_ops.h#L5221-L5222). An attacker can craft a model such that `stride_{h,w}` values are 0. Code calling this function must validate these arguments. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2021-29588 describes a division-by-zero vulnerability in TensorFlow Lite's TransposeConv operator. This is a software vulnerability in a widely used AI framework/component (TensorFlow/TFLite) that is directly involved in building, deploying, and running AI models. It affects AI software stacks and their runtimes, i.e., the supply chain for general-purpose AI systems. The vulnerability is exploitable by crafting a model argument (stride values) and results in a crash/denial of service, meeting the security vulnerability criterion. The report provides sufficient evidence (references, affected versions, and fix plan)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 2.5,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-369",
+        "description": "CWE-369: Divide By Zero",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-05-14"
+}

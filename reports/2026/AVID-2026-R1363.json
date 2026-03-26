@@ -1,0 +1,93 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1363"
+  },
+  "affects": {
+    "developer": [
+      "flairNLP"
+    ],
+    "deployer": [
+      "flairNLP"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "flair"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "flairNLP flair Mode File Loader clustering.py ClusteringModel code injection (CVE-2024-10073)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10073"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.280722",
+      "url": "https://vuldb.com/?id.280722"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.280722",
+      "url": "https://vuldb.com/?ctiid.280722"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.420055",
+      "url": "https://vuldb.com/?submit.420055"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bayuncao/vul-cve-20",
+      "url": "https://github.com/bayuncao/vul-cve-20"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bayuncao/vul-cve-20/blob/main/PoC.py",
+      "url": "https://github.com/bayuncao/vul-cve-20/blob/main/PoC.py"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability, which was classified as critical, was found in flairNLP flair 0.14.0. Affected is the function ClusteringModel of the file flair\\models\\clustering.py of the component Mode File Loader. The manipulation leads to code injection. It is possible to launch the attack remotely. The complexity of an attack is rather high. The exploitability is told to be difficult. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.\n\nReason for inclusion in AVID: The CVE describes a code-injection vulnerability in Flair NLP (flair 0.14.0) affecting the ClusteringModel in the Mode File Loader. Flair is an AI/NLP library used in ML pipelines, so this vulnerability concerns AI software stacks and their deployment/run components. It enables remote code execution, a clear security risk in software used to build/train/deploy AI systems. Public CVE entry with references supports sufficiency of evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "baseScore": 5.0,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "Code Injection",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-17"
+}

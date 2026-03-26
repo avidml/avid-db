@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1445"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Pulsar"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Pulsar: Pulsar Functions Worker's Archive Extraction Vulnerability Allows Unauthorized File Modification (CVE-2024-27317)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-27317"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/ct9xmvlf7lompc1pxvlsb60qstfsm9po",
+      "url": "https://lists.apache.org/thread/ct9xmvlf7lompc1pxvlsb60qstfsm9po"
+    },
+    {
+      "type": "source",
+      "label": "https://pulsar.apache.org/security/CVE-2024-27317/",
+      "url": "https://pulsar.apache.org/security/CVE-2024-27317/"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2024/03/12/10",
+      "url": "http://www.openwall.com/lists/oss-security/2024/03/12/10"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In Pulsar Functions Worker, authenticated users can upload functions in jar or nar files. These files, essentially zip files, are extracted by the Functions Worker. However, if a malicious file is uploaded, it could exploit a directory traversal vulnerability. This occurs when the filenames in the zip files, which aren't properly validated, contain special elements like \"..\", altering the directory path. This could allow an attacker to create or modify files outside of the designated extraction directory, potentially influencing system behavior. This vulnerability also applies to the Pulsar Broker when it is configured with \"functionsWorkerEnabled=true\".\n\nThis issue affects Apache Pulsar versions from 2.4.0 to 2.10.5, from 2.11.0 to 2.11.3, from 3.0.0 to 3.0.2, from 3.1.0 to 3.1.2, and 3.2.0. \n\n2.10 Pulsar Function Worker users should upgrade to at least 2.10.6.\n2.11 Pulsar Function Worker users should upgrade to at least 2.11.4.\n3.0 Pulsar Function Worker users should upgrade to at least 3.0.3.\n3.1 Pulsar Function Worker users should upgrade to at least 3.1.3.\n3.2 Pulsar Function Worker users should upgrade to at least 3.2.1.\n\nUsers operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.\n\nReason for inclusion in AVID: CVE-2024-27317 describes a directory traversal vulnerability in Apache Pulsar Functions Worker which allows an authenticated user to modify files outside the intended extraction directory via crafted archive uploads (jar/nar). Pulsar is commonly used in AI data pipelines, model serving, and orchestration as part of AI/ML software stacks; thus this vulnerability is within a software component that can affect AI systems and their deployment pipelines. It is a network-exploitable security vulnerability in a software supply-chain-relevant component (artifact processing/serving), not a hardware/firmware issue. The evidence (CVSS details, affected versions, remediation guidance) supports classification as a security vulnerability in a component used to build/run AI workloads."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:L",
+      "baseScore": 8.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-12"
+}

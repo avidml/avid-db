@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0879"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Storm"
+      },
+      {
+        "type": "System",
+        "name": "Apache Storm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Shell Command Injection Vulnerability in Nimbus Thrift Server (CVE-2021-38294)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-38294"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread.html/r5fe881f6ca883908b7a0f005d35115af49f43beea7a8b0915e377859%40%3Cuser.storm.apache.org%3E",
+      "url": "https://lists.apache.org/thread.html/r5fe881f6ca883908b7a0f005d35115af49f43beea7a8b0915e377859%40%3Cuser.storm.apache.org%3E"
+    },
+    {
+      "type": "source",
+      "label": "https://seclists.org/oss-sec/2021/q4/44",
+      "url": "https://seclists.org/oss-sec/2021/q4/44"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/165019/Apache-Storm-Nimbus-2.2.0-Command-Execution.html",
+      "url": "http://packetstormsecurity.com/files/165019/Apache-Storm-Nimbus-2.2.0-Command-Execution.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Command Injection vulnerability exists in the getTopologyHistory service of the Apache Storm 2.x prior to 2.2.1 and Apache Storm 1.x prior to 1.2.4. A specially crafted thrift request to the Nimbus server allows Remote Code Execution (RCE) prior to authentication.\n\nReason for inclusion in AVID: CVE-2021-38294 describes a remote code execution (RCE) via a crafted Thrift request against Apache Storm's Nimbus server. Apache Storm is a data-processing framework commonly used as part of AI/ML data pipelines (ingestion/streamingprocessed data feeding models and workflows). Thus, this vulnerability affects software components that can be part of the general-purpose AI system supply chain (data pipelines, orchestration, runtimes) and represents a security vulnerability with clear evidence. While not AI-specific, it directly impacts the software stack that underpins AI deployments in production environments."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-74",
+        "description": "CWE-74 Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-10-25"
+}

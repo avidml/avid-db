@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1652"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Weak Password Requirements in mlflow/mlflow (CVE-2025-1474)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1474"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e79f7774-10fe-46b2-b522-e73b748e3b2d",
+      "url": "https://huntr.com/bounties/e79f7774-10fe-46b2-b522-e73b748e3b2d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/commit/149c9e18aa219bc47e86b432e130e467a36f4a17",
+      "url": "https://github.com/mlflow/mlflow/commit/149c9e18aa219bc47e86b432e130e467a36f4a17"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In mlflow/mlflow version 2.18, an admin is able to create a new user account without setting a password. This vulnerability could lead to security risks, as accounts without passwords may be susceptible to unauthorized access. Additionally, this issue violates best practices for secure user account management. The issue is fixed in version 2.19.0.\n\nReason for inclusion in AVID: The CVE describes a security vulnerability in mlflow (an AI/ML tooling/framework) where an admin can create a user without a password. Mlflow is used in AI pipelines and deployment workflows; this vulnerability affects the software supply chain for general-purpose AI systems, is a CVE-style vulnerability (weak password requirements), and the report provides affected version, fix version, and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 3.8,
+      "baseSeverity": "LOW",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-521",
+        "description": "CWE-521 Weak Password Requirements",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

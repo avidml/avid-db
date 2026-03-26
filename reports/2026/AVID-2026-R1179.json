@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1179"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Jena"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Jena: Exposure of arbitrary execution in script engine expressions. (CVE-2023-22665)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-22665"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/s0dmpsxcwqs57l4qfs415klkgmhdxq7s",
+      "url": "https://lists.apache.org/thread/s0dmpsxcwqs57l4qfs415klkgmhdxq7s"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/07/11/11",
+      "url": "http://www.openwall.com/lists/oss-security/2023/07/11/11"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "There is insufficient checking of user queries in Apache Jena versions 4.7.0 and earlier, when invoking custom scripts. It allows a remote user to execute arbitrary javascript via a SPARQL query.\n\nReason for inclusion in AVID: CVE-2023-22665 describes remote code execution via SPARQL expressions in Apache Jena due to insufficient input checking. While not AI-specific, Apache Jena is a general-purpose data/knowledge graph framework that can be used as a dependency in AI/data pipelines and knowledge-graph components within AI systems. Therefore, this vulnerability can impact the software supply chain of general-purpose AI systems if Jena is used in their data handling/knowledge components. The report provides explicit CVE details, affected versions, and the nature of the vulnerability, supporting its classification as a security vulnerability in a software component used in AI stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-917",
+        "description": "CWE-917 Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-25"
+}

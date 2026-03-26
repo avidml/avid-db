@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1371"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service and Arbitrary File Write in h2oai/h2o-3 (CVE-2024-10572)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10572"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/db8939a0-9be8-4d0f-a8b0-1bd181666da2",
+      "url": "https://huntr.com/bounties/db8939a0-9be8-4d0f-a8b0-1bd181666da2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In h2oai/h2o-3 version 3.46.0.1, the `run_tool` command exposes classes in the `water.tools` package through the `ast` parser. This includes the `XGBoostLibExtractTool` class, which can be exploited to shut down the server and write large files to arbitrary directories, leading to a denial of service.\n\nReason for inclusion in AVID: CVE-2024-10572 affects h2o-3, a machine-learning framework used in AI pipelines. It allows denial of service and arbitrary file writes by exposing internal tool classes via an AST parser, a security vulnerability in a software component commonly used to build/train/deploy AI systems. This makes it a software supply-chain-relevant issue for general-purpose AI stacks. The CVE entry provides details and CVSS metrics supporting its severity."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

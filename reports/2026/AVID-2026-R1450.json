@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1450"
+  },
+  "affects": {
+    "developer": [
+      "jupyter-server"
+    ],
+    "deployer": [
+      "jupyter-server"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "jupyter-scheduler"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "jupyter-scheduler's endpoint is missing authentication (CVE-2024-28188)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-28188"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter-scheduler/security/advisories/GHSA-v9g2-g7j4-4jxc",
+      "url": "https://github.com/jupyter-server/jupyter-scheduler/security/advisories/GHSA-v9g2-g7j4-4jxc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter_server/pull/1392",
+      "url": "https://github.com/jupyter-server/jupyter_server/pull/1392"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jupyter Scheduler is collection of extensions for programming jobs to run now or run on a schedule. The list of conda environments of `jupyter-scheduler` users maybe be exposed, potentially revealing information about projects that a specific user may be working on. This vulnerability has been patched in version(s) 1.1.6, 1.2.1, 1.8.2 and 2.5.2.\n\nReason for inclusion in AVID: CVE-2024-28188 concerns jupyter-scheduler, a software component commonly used in AI workflows (Jupyter-based job scheduling). The vulnerability describes an unauthenticated endpoint that can expose sensitive information (e.g., conda environments), a network vulnerability with potential impact on AI pipelines. It affects components used to build/run AI systems and has published patches, with CVE/NVD references. This provides sufficient signal for AI-specific supply-chain curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-200",
+        "description": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-287",
+        "description": "CWE-287: Improper Authentication",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-23"
+}

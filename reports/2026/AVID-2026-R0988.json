@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0988"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Multiple `CHECK`-fails in `function.cc` in Tensorflow (CVE-2022-23586)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23586"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-43jf-985q-588j",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-43jf-985q-588j"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/3d89911481ba6ebe8c88c1c0b595412121e6c645",
+      "url": "https://github.com/tensorflow/tensorflow/commit/3d89911481ba6ebe8c88c1c0b595412121e6c645"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/dcc21c7bc972b10b6fb95c2fb0f4ab5a59680ec2",
+      "url": "https://github.com/tensorflow/tensorflow/commit/dcc21c7bc972b10b6fb95c2fb0f4ab5a59680ec2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/a1320ec1eac186da1d03f033109191f715b2b130/tensorflow/core/framework/function.cc",
+      "url": "https://github.com/tensorflow/tensorflow/blob/a1320ec1eac186da1d03f033109191f715b2b130/tensorflow/core/framework/function.cc"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Tensorflow is an Open Source Machine Learning Framework. A malicious user can cause a denial of service by altering a `SavedModel` such that assertions in `function.cc` would be falsified and crash the Python interpreter. The fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2022-23586 describes a vulnerability in TensorFlow where a crafted SavedModel can trigger assertions and crash the Python interpreter, causing a denial of service. TensorFlow is a core AI/ML framework, and this vulnerability affects the software stack used to build, train, deploy, and run general-purpose AI systems (e.g., models and serving pipelines). The report provides explicit evidence (CVE, affected versions, fixed versions, CVSS details, and references), satisfying the criteria for a software supply-chain vulnerability in AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-617",
+        "description": "CWE-617: Reachable Assertion",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-02-04"
+}

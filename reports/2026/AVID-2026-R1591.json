@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1591"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Overwrite through tarfile-extraction in aimhubio/aim (CVE-2024-6829)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6829"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/7c97065c-1b63-4982-82c1-8038be0ed570",
+      "url": "https://huntr.com/bounties/7c97065c-1b63-4982-82c1-8038be0ed570"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in aimhubio/aim version 3.19.3 allows an attacker to exploit the `tarfile.extractall()` function to extract the contents of a maliciously crafted tarfile to arbitrary locations on the host server. The attacker can control `repo.path` and `run_hash` to bypass directory existence checks and extract files to unintended locations, potentially overwriting critical files. This can lead to arbitrary data being written to arbitrary locations on the remote tracking server, which could be used for further attacks such as writing a new SSH key to the target server.\n\nReason for inclusion in AVID: CVE-2024-6829 describes an arbitrary file overwrite vulnerability in aimhubio/aim (version 3.19.3) via tarfile.extractall(), enabling an attacker to overwrite arbitrary files on the host by manipulating tar contents. This relates to AI tooling (an AI experiment/tracking server) used in AI pipelines. It affects a software component that could be part of the build/run/deploy stack for general-purpose AI systems, representing a software supply chain risk. The vulnerability is security-focused (data/host integrity, potential escalation), with CVSS 3.0 base score 9.1 and CWE-73. The report provides explicit details, impact, and references, supporting curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73 External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

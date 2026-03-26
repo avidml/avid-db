@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1421"
+  },
+  "affects": {
+    "developer": [
+      "AMD"
+    ],
+    "deployer": [
+      "AMD"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AMD Ryzen\u2122 AI Software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21975"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21975"
+    },
+    {
+      "type": "source",
+      "label": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7017.html",
+      "url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7017.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper input validation in the NPU driver could allow an attacker to supply a specially crafted pointer potentially leading to arbitrary code execution.\n\nReason for inclusion in AVID: CVE-2024-21975 describes a software vulnerability in AMD's NPU driver within the Ryzen AI software stack, enabling local arbitrary code execution via specially crafted input. This affects components used to build/run AI workloads (AI acceleration driver) and thus pertains to AI systems and their software supply chain. It is a security vulnerability with actionable details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-12"
+}

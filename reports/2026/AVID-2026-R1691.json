@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1691"
+  },
+  "affects": {
+    "developer": [
+      "pytorch"
+    ],
+    "deployer": [
+      "pytorch"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "pytorch"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "PyTorch: `torch.load` with `weights_only=True` leads to remote code execution (CVE-2025-32434)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32434"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/security/advisories/GHSA-53q9-r3pm-6pq6",
+      "url": "https://github.com/pytorch/pytorch/security/advisories/GHSA-53q9-r3pm-6pq6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "PyTorch is a Python package that provides tensor computation with strong GPU acceleration and deep neural networks built on a tape-based autograd system. In version 2.5.1 and prior, a Remote Command Execution (RCE) vulnerability exists in PyTorch when loading a model using torch.load with weights_only=True. This issue has been patched in version 2.6.0.\n\nReason for inclusion in AVID: CVE-2025-32434 describes a remote code execution vulnerability in PyTorch (a core AI framework) triggered by loading a model with weights_only=True. This is a software vulnerability in a widely used library that AI systems rely on for model loading, training, and inference, representing a software supply-chain risk in general-purpose AI stacks. There are explicit CVE/NVD references and a public advisory, and a fix exists in a newer version, indicating clear evidence for inclusion in AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-18"
+}

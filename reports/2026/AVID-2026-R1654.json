@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1654"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ray"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2025-1979"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1979"
+    },
+    {
+      "type": "source",
+      "label": "https://security.snyk.io/vuln/SNYK-PYTHON-RAY-8745212",
+      "url": "https://security.snyk.io/vuln/SNYK-PYTHON-RAY-8745212"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ray-project/ray/pull/50409",
+      "url": "https://github.com/ray-project/ray/pull/50409"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ray-project/ray/commit/64a2e4010522d60b90c389634f24df77b603d85d",
+      "url": "https://github.com/ray-project/ray/commit/64a2e4010522d60b90c389634f24df77b603d85d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ray-project/ray/issues/50266",
+      "url": "https://github.com/ray-project/ray/issues/50266"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Versions of the package ray before 2.43.0 are vulnerable to Insertion of Sensitive Information into Log File where the redis password is being logged in the standard logging. If the redis password is passed as an argument, it will be logged and could potentially leak the password.\r\rThis is only exploitable if:\r\r1) Logging is enabled;\r\r2) Redis is using password authentication;\r\r3) Those logs are accessible to an attacker, who can reach that redis instance.\r\r**Note:**\r\rIt is recommended that anyone who is running in this configuration should update to the latest version of Ray, then rotate their redis password.\n\nReason for inclusion in AVID: CVE-2025-1979 describes a vulnerability in Ray (a widely used AI/ML framework) where Redis passwords may be logged in standard logging. This is a software vulnerability in a component used to build/run AI systems, with clear CVE details, affected versions, exploit conditions, and remediation guidance. It directly impacts AI pipelines and deployment stacks, representing a software supply-chain vulnerability in general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N",
+      "baseScore": 6.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-532",
+        "description": "Insertion of Sensitive Information into Log File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-06"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1624"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Deletion via Relative Path Traversal in aimhubio/aim (CVE-2024-8769)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8769"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/59d3472f-f581-4beb-a090-afd36a00ecf7",
+      "url": "https://huntr.com/bounties/59d3472f-f581-4beb-a090-afd36a00ecf7"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the `LockManager.release_locks` function in aimhubio/aim (commit bb76afe) allows for arbitrary file deletion through relative path traversal. The `run_hash` parameter, which is user-controllable, is concatenated without normalization as part of a path used to specify file deletion. This vulnerability is exposed through the `Repo._close_run()` method, which is accessible via the tracking server instruction API. As a result, an attacker can exploit this to delete any arbitrary file on the machine running the tracking server.\n\nReason for inclusion in AVID: The CVE describes an arbitrary file deletion via path traversal in the aimhubio/aim ML experiment tracking tool, a component commonly used in AI/ML workflows. This is a software supply-chain vulnerability within AI tooling (not hardware/firmware), affecting components used to build/train/deploy AI systems. The vulnerability is security-related (arbitrary file deletion) and the report provides direct details and CVE linkage, supporting curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

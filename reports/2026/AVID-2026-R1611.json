@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1611"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "ollama"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ollama/ollama"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Divide by Zero in ollama/ollama (CVE-2024-8063)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8063"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/fd8e1ed6-21d2-4c9e-8395-2098f11b7db9",
+      "url": "https://huntr.com/bounties/fd8e1ed6-21d2-4c9e-8395-2098f11b7db9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A divide by zero vulnerability exists in ollama/ollama version v0.3.3. The vulnerability occurs when importing GGUF models with a crafted type for `block_count` in the Modelfile. This can lead to a denial of service (DoS) condition when the server processes the model, causing it to crash.\n\nReason for inclusion in AVID: CVE-2024-8063 describes a software vulnerability (divide-by-zero) in the Ollama model-serving tool when importing GGUF models, leading to a DoS. This is a software component used in AI model deployment stacks, constituting a supply-chain-relevant issue in general-purpose AI systems. The report provides a clear vulnerability description, impact, and CVSS metadata, supporting its inclusion."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-369",
+        "description": "CWE-369 Divide By Zero",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

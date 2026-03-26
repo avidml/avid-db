@@ -1,0 +1,83 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1686"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MindSpore"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MindSpore mindspore.numpy.fft.rfft2 memory corruption (CVE-2025-3145)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3145"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.303050",
+      "url": "https://vuldb.com/?id.303050"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.303050",
+      "url": "https://vuldb.com/?ctiid.303050"
+    },
+    {
+      "type": "source",
+      "label": "https://gitee.com/mindspore/mindspore/issues/IBVKM8",
+      "url": "https://gitee.com/mindspore/mindspore/issues/IBVKM8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability, which was classified as problematic, has been found in MindSpore 2.5.0. Affected by this issue is the function mindspore.numpy.fft.rfft2. The manipulation leads to memory corruption. The attack needs to be approached locally. The exploit has been disclosed to the public and may be used.\n\nReason for inclusion in AVID: CVE-2025-3145 affects MindSpore's ML framework (mindspore.numpy.fft.rfft2), causing memory corruption with a local exploit. This is a software vulnerability in a component used to build/train/deploy AI systems, impacting the AI software stack. It is relevant to software supply chains for general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 3.3,
+      "baseSeverity": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-119",
+        "description": "Memory Corruption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-03"
+}

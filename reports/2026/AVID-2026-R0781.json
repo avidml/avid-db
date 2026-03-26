@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0781"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Heap buffer overflow in `AvgPool3DGrad` (CVE-2021-29577)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-29577"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-v6r6-84gr-92rm",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-v6r6-84gr-92rm"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/6fc9141f42f6a72180ecd24021c3e6b36165fe0d",
+      "url": "https://github.com/tensorflow/tensorflow/commit/6fc9141f42f6a72180ecd24021c3e6b36165fe0d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. The implementation of `tf.raw_ops.AvgPool3DGrad` is vulnerable to a heap buffer overflow. The implementation(https://github.com/tensorflow/tensorflow/blob/d80ffba9702dc19d1fac74fc4b766b3fa1ee976b/tensorflow/core/kernels/pooling_ops_3d.cc#L376-L450) assumes that the `orig_input_shape` and `grad` tensors have similar first and last dimensions but does not check that this assumption is validated. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2021-29577 describes a heap buffer overflow in TensorFlow's AvgPool3DGrad, a software vulnerability in a core ML framework component. TensorFlow is widely used to build/train/deploy AI models, so this directly concerns AI systems and their software supply chain (dependencies/frameworks). The vulnerability is documented with references and a fix, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 2.5,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-119",
+        "description": "CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-05-14"
+}

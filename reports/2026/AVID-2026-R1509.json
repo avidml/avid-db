@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1509"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow: DAG Author Code Execution possibility in airflow-scheduler (CVE-2024-39877)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-39877"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/40522",
+      "url": "https://github.com/apache/airflow/pull/40522"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/1xhj9dkp37d6pzn24ll2mf94wbqnb2y1",
+      "url": "https://lists.apache.org/thread/1xhj9dkp37d6pzn24ll2mf94wbqnb2y1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow 2.4.0, and versions before 2.9.3, has a vulnerability that allows authenticated DAG authors to craft a doc_md parameter in a way that could execute arbitrary code in the scheduler context, which should be forbidden according to the Airflow Security model. Users should upgrade to version 2.9.3 or later which has removed the vulnerability.\n\nReason for inclusion in AVID: CVE-2024-39877 describes an authenticated code execution vulnerability in Apache Airflow's scheduler via DAG author input (doc_md). Apache Airflow is a core orchestration/CI-CD-like component used to build, train, deploy, and run AI pipelines and workflows. Thus it is a software supply-chain issue affecting AI systems, not a hardware/firmware-only vulnerability. It is a security/safety vulnerability (remote code execution in scheduler context) with clear evidence in the CVE entry and associated references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-17"
+}

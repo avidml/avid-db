@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0993"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Segfault in `simplifyBroadcast` in Tensorflow (CVE-2022-23593)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23593"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gwcx-jrx4-92w2",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gwcx-jrx4-92w2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/35f0fabb4c178253a964d7aabdbb15c6a398b69a",
+      "url": "https://github.com/tensorflow/tensorflow/commit/35f0fabb4c178253a964d7aabdbb15c6a398b69a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/274df9b02330b790aa8de1cee164b70f72b9b244/tensorflow/compiler/mlir/tfrt/jit/transforms/tf_cpurt_symbolic_shape_optimization.cc#L149-L205",
+      "url": "https://github.com/tensorflow/tensorflow/blob/274df9b02330b790aa8de1cee164b70f72b9b244/tensorflow/compiler/mlir/tfrt/jit/transforms/tf_cpurt_symbolic_shape_optimization.cc#L149-L205"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Tensorflow is an Open Source Machine Learning Framework. The `simplifyBroadcast` function in the MLIR-TFRT infrastructure in TensorFlow is vulnerable to a segfault (hence, denial of service), if called with scalar shapes. If all shapes are scalar, then `maxRank` is 0, so we build an empty `SmallVector`. The fix will be included in TensorFlow 2.8.0. This is the only affected version.\n\nReason for inclusion in AVID: CVE-2022-23593 describes a segfault vulnerability in TensorFlow's MLIR-TFRT path that can cause denial of service when invoked with scalar shapes. TensorFlow is a core AI/ML framework, and this vulnerability affects software used to build/train/deploy AI systems, impacting the AI software supply chain. The report includes CVE details, affected components, and a fix timeline, providing clear evidence for inclusion."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-754",
+        "description": "CWE-754: Improper Check for Unusual or Exceptional Conditions",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-02-04"
+}

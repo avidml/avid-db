@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1220"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache EventMesh (incubating) RabbitMQ connector"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache EventMesh RabbitMQ-Connector plugin allows RCE through deserialization of untrusted data (CVE-2023-26512)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-26512"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/zb1d62wh8o8pvntrnx4t1hj8vz0pm39p",
+      "url": "https://lists.apache.org/thread/zb1d62wh8o8pvntrnx4t1hj8vz0pm39p"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "CWE-502 Deserialization of Untrusted Data\u00a0at the\u00a0rabbitmq-connector plugin\u00a0module in Apache EventMesh (incubating)\u00a0V1.7.0\\V1.8.0 on windows\\linux\\mac os e.g. platforms allows attackers\u00a0to send controlled message and \n\nremote code execute\u00a0via rabbitmq messages. Users can use the code under the master branch in project repo to fix this issue, we will release the new version as soon as possible.\n\nReason for inclusion in AVID: The CVE describes a remote code execution vulnerability in the Apache EventMesh RabbitMQ-Connector plugin via deserialization of untrusted data. This plugin is a software component that can be part of AI deployment/data pipelines (messaging/ingestion) and thus relates to AI software supply chains. The issue affects a component used to build/run AI systems, involves a security vulnerability, and the report provides explicit details (CVE, CWE-502, affected versions, remediation status). Therefore it satisfies all criteria for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-07-17"
+}

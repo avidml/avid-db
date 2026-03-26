@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1191"
+  },
+  "affects": {
+    "developer": [
+      "jupyterhub"
+    ],
+    "deployer": [
+      "jupyterhub"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ltiauthenticator"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "JupyterHub's LTI13Authenticator: JWT signature not validated (CVE-2023-25574)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25574"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/ltiauthenticator/security/advisories/GHSA-mcgx-2gcr-p3hp",
+      "url": "https://github.com/jupyterhub/ltiauthenticator/security/advisories/GHSA-mcgx-2gcr-p3hp"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/ltiauthenticator/blob/3feec2e81b9d3b0ad6b58ab4226af640833039f3/ltiauthenticator/lti13/validator.py#L122-L164",
+      "url": "https://github.com/jupyterhub/ltiauthenticator/blob/3feec2e81b9d3b0ad6b58ab4226af640833039f3/ltiauthenticator/lti13/validator.py#L122-L164"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/ltiauthenticator/blob/main/CHANGELOG.md#140---2023-03-01",
+      "url": "https://github.com/jupyterhub/ltiauthenticator/blob/main/CHANGELOG.md#140---2023-03-01"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "`jupyterhub-ltiauthenticator` is a JupyterHub authenticator for learning tools interoperability (LTI). LTI13Authenticator that was introduced in `jupyterhub-ltiauthenticator` 1.3.0 wasn't validating JWT signatures. This is believed to allow the LTI13Authenticator to authorize a forged request. Only users that has configured a JupyterHub installation to use the authenticator class `LTI13Authenticator` are affected. `jupyterhub-ltiauthenticator` version 1.4.0 removes LTI13Authenticator to address the issue. No known workarounds are available.\n\nReason for inclusion in AVID: The CVE describes a critical vulnerability in jupyterhub-ltiauthenticator's LTI13Authenticator, a component used in JupyterHub deployments to run AI/ML notebook environments. It concerns improper JWT signature verification, enabling forged requests with potential compromise of notebooks and data. This affects a software component in the AI software stack (dependencies/runtimes used to build/run general-purpose AI systems), is a security vulnerability, and the report provides explicit signal (CVE id, affected versions, remediation). Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-347",
+        "description": "CWE-347: Improper Verification of Cryptographic Signature",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-02-25"
+}

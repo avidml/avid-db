@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1495"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-37014"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-37014"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langflow-ai/langflow/issues/1973",
+      "url": "https://github.com/langflow-ai/langflow/issues/1973"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Langflow through 0.6.19 allows remote code execution if untrusted users are able to reach the \"POST /api/v1/custom_component\" endpoint and provide a Python script.\n\nReason for inclusion in AVID: CVE-2024-37014 describes remote code execution in Langflow (an AI workflow/deployment tooling) via unauthenticated Python script submission to /api/v1/custom_component. This is a software vulnerability in a component used to build/deploy AI pipelines, representing a software supply chain issue within general-purpose AI systems. It is not hardware/firmware-only. The evidence (description and CVE reference) supports an RCE vulnerability in an AI software stack."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-06-10"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1593"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Overwrite in h2oai/h2o-3 (CVE-2024-6854)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6854"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/97d013f9-ac51-4c80-8dd7-8dfde11f33b2",
+      "url": "https://huntr.com/bounties/97d013f9-ac51-4c80-8dd7-8dfde11f33b2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In h2oai/h2o-3 version 3.46.0, the endpoint for exporting models does not restrict the export location, allowing an attacker to export a model to any file in the server's file structure, thereby overwriting it. This vulnerability can be exploited to overwrite any file on the target server with a trained model file, although the content of the overwrite is not controllable by the attacker.\n\nReason for inclusion in AVID: CVE-2024-6854 describes an arbitrary file overwrite vulnerability in h2o-3's model export endpoint. This is a software vulnerability in an AI framework/component used to train/deploy AI models, enabling file system tampering on the AI deployment stack. It affects software supply chain components (AI software libraries/serving stacks) and has clear security impact. Evidence is provided by the CVE/NVD entry and details."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-36",
+        "description": "CWE-36 Absolute Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

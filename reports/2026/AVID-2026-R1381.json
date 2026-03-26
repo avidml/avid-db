@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1381"
+  },
+  "affects": {
+    "developer": [
+      "open-mmlab"
+    ],
+    "deployer": [
+      "open-mmlab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "open-mmlab/mmdetection"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution by Pickle Deserialization in open-mmlab/mmdetection (CVE-2024-12044)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12044"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/f7e4fc32-e167-49fb-9fc7-f092b9c27e8a",
+      "url": "https://huntr.com/bounties/f7e4fc32-e167-49fb-9fc7-f092b9c27e8a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A remote code execution vulnerability exists in open-mmlab/mmdetection version v3.3.0. The vulnerability is due to the use of the `pickle.loads()` function in the `all_reduce_dict()` distributed training API without proper sanitization. This allows an attacker to execute arbitrary code by broadcasting a malicious payload to the distributed training network.\n\nReason for inclusion in AVID: CVE-2024-12044 describes remote code execution via unsafe pickle deserialization in open-mmlab/mmdetection, a widely-used ML computer vision library. This vulnerability affects the AI software stack during distributed training, making it a software supply-chain vulnerability in AI systems. It is a security vulnerability with high impact and is well-supported by the CVE text."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

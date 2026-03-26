@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1630"
+  },
+  "affects": {
+    "developer": [
+      "bentoml"
+    ],
+    "deployer": [
+      "bentoml"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "bentoml/bentoml"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service in bentoml/bentoml (CVE-2024-9056)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9056"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/a24a13c2-0300-4a95-b26a-ac7fe8f6521b",
+      "url": "https://huntr.com/bounties/a24a13c2-0300-4a95-b26a-ac7fe8f6521b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "BentoML version v1.3.4post1 is vulnerable to a Denial of Service (DoS) attack. The vulnerability can be exploited by appending characters, such as dashes (-), to the end of a multipart boundary in an HTTP request. This causes the server to continuously process each character, leading to excessive resource consumption and rendering the service unavailable. The issue is unauthenticated and does not require any user interaction, impacting all users of the service.\n\nReason for inclusion in AVID: CVE-2024-9056 describes a Denial of Service in BentoML (bentoml/bentoml), a software component commonly used to deploy and serve AI/ML models. This vulnerability is network-based, unauthenticated, and leads to resource exhaustion, impacting the availability of AI serving functionality. As BentoML is a core piece in AI model deployment stacks, this is a software supply-chain issue relevant to general-purpose AI systems, not just hardware/firmware. The CVE provides explicit security impact (DoS) and evidence in the description and reference sources."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-770",
+        "description": "CWE-770 Allocation of Resources Without Limits or Throttling",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

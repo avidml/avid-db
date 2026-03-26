@@ -1,0 +1,84 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0943"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Integer overflow in Tensorflow (CVE-2022-21727)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-21727"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-c6fh-56w7-fvjw",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-c6fh-56w7-fvjw"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/b64638ec5ccaa77b7c1eb90958e3d85ce381f91b",
+      "url": "https://github.com/tensorflow/tensorflow/commit/b64638ec5ccaa77b7c1eb90958e3d85ce381f91b"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/5100e359aef5c8021f2e71c7b986420b85ce7b3d/tensorflow/core/ops/array_ops.cc#L3001-L3034",
+      "url": "https://github.com/tensorflow/tensorflow/blob/5100e359aef5c8021f2e71c7b986420b85ce7b3d/tensorflow/core/ops/array_ops.cc#L3001-L3034"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Tensorflow is an Open Source Machine Learning Framework. The implementation of shape inference for `Dequantize` is vulnerable to an integer overflow weakness. The `axis` argument can be `-1` (the default value for the optional argument) or any other positive value at most the number of dimensions of the input. Unfortunately, the upper bound is not checked, and, since the code computes `axis + 1`, an attacker can trigger an integer overflow. The fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: The CVE describes an integer overflow vulnerability in TensorFlow's shape inference for the Dequantize operation. TensorFlow is a core AI framework used to build, train, and deploy AI systems, and this issue affects the software components (not hardware/firmware) relied upon in general-purpose AI stacks. It is a legitimate security vulnerability with evidence in CVE/NVD and TensorFlow advisories, affecting software supply chains (dependencies/frameworks) rather than firmware. Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H",
+      "baseScore": 7.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2022-02-03"
+}

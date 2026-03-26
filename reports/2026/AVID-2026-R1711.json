@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1711"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Gradio Allows Unauthorized File Copy via Path Manipulation (CVE-2025-48889)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-48889"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gradio-app/gradio/security/advisories/GHSA-8jw3-6x8j-v96g",
+      "url": "https://github.com/gradio-app/gradio/security/advisories/GHSA-8jw3-6x8j-v96g"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Gradio is an open-source Python package that allows quick building of demos and web application for machine learning models, API, or any arbitrary Python function. Prior to version 5.31.0, an arbitrary file copy vulnerability in Gradio's flagging feature allows unauthenticated attackers to copy any readable file from the server's filesystem. While attackers can't read these copied files, they can cause DoS by copying large files (like /dev/urandom) to fill disk space. This issue has been patched in version 5.31.0.\n\nReason for inclusion in AVID: CVE-2025-48889 describes a software vulnerability in Gradio, a Python library used to build ML demos/AI interfaces. It allows unauthorized file copy and DoS via disk space exhaustion. Gradio is commonly used in AI pipelines and deploy/run stacks; this is a software supply-chain issue affecting components of AI systems. The report provides CVE details and patch info, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-434",
+        "description": "CWE-434: Unrestricted Upload of File with Dangerous Type",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-30"
+}

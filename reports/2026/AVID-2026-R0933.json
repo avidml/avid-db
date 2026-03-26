@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0933"
+  },
+  "affects": {
+    "developer": [
+      "JFrog"
+    ],
+    "deployer": [
+      "JFrog"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "JFrog Artifactory"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-0573"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-0573"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jfrog.com/confluence/display/JFROG/JFrog+Security+Advisories",
+      "url": "https://www.jfrog.com/confluence/display/JFROG/JFrog+Security+Advisories"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jfrog.com/confluence/display/JFROG/CVE-2022-0573%3A+Artifactory+Vulnerable+to+Deserialization+of+Untrusted+Data",
+      "url": "https://www.jfrog.com/confluence/display/JFROG/CVE-2022-0573%3A+Artifactory+Vulnerable+to+Deserialization+of+Untrusted+Data"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "JFrog Artifactory before 7.36.1 and 6.23.41, is vulnerable to Insecure Deserialization of untrusted data which can lead to DoS, Privilege Escalation and Remote Code Execution when a specially crafted request is sent by a low privileged authenticated user due to insufficient validation of a user-provided serialized object.\n\nReason for inclusion in AVID: CVE-2022-0573 describes insecure deserialization in JFrog Artifactory leading to DoS, privilege escalation, and remote code execution. Artifactory is a widely used artifact/repository manager in CI/CD and AI deployment pipelines, making it a software component in the AI supply chain. The issue affects software components used to build/deploy AI systems, is a security vulnerability, and the report provides clear signals (CVE ID, description, affected versions, CVSS). Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-05-16"
+}

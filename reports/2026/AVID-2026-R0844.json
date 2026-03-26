@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0844"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Heap OOB and CHECK fail in `ResourceGather` in TensorFlow (CVE-2021-37654)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-37654"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2r8p-fg3c-wcj4",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2r8p-fg3c-wcj4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/bc9c546ce7015c57c2f15c168b3d9201de679a1d",
+      "url": "https://github.com/tensorflow/tensorflow/commit/bc9c546ce7015c57c2f15c168b3d9201de679a1d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. In affected versions an attacker can trigger a crash via a `CHECK`-fail in debug builds of TensorFlow using `tf.raw_ops.ResourceGather` or a read from outside the bounds of heap allocated data in the same API in a release build. The [implementation](https://github.com/tensorflow/tensorflow/blob/f24faa153ad31a4b51578f8181d3aaab77a1ddeb/tensorflow/core/kernels/resource_variable_ops.cc#L660-L668) does not check that the `batch_dims` value that the user supplies is less than the rank of the input tensor. Since the implementation uses several for loops over the dimensions of `tensor`, this results in reading data from outside the bounds of heap allocated buffer backing the tensor. We have patched the issue in GitHub commit bc9c546ce7015c57c2f15c168b3d9201de679a1d. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: The CVE describes a software vulnerability in TensorFlow (ResourceGather) causing a heap out-of-bounds read and a CHECK failure. TensorFlow is a core AI framework used across ML pipelines to build, train, deploy, and run AI systems. This represents a software supply-chain risk within AI software stacks since a widely used dependency can be exploited to crash or potentially compromise a system. The report provides concrete details (affected versions, patch info, CVSS v3.1 metrics, and a reproducible condition), satisfying evidence for inclusion as a security vulnerability in the AI supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:H",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-125",
+        "description": "CWE-125: Out-of-bounds Read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-12"
+}

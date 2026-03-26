@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1515"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "ggerganov"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "llama.cpp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "llama.cpp null pointer dereference in gguf_init_from_file (CVE-2024-41130)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-41130"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-49q7-2jmh-92fp",
+      "url": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-49q7-2jmh-92fp"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/commit/07283b1a90e1320aae4762c7e03c879043910252",
+      "url": "https://github.com/ggerganov/llama.cpp/commit/07283b1a90e1320aae4762c7e03c879043910252"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "llama.cpp provides LLM inference in C/C++. Prior to b3427, llama.cpp contains a null pointer dereference in gguf_init_from_file. This vulnerability is fixed in b3427.\n\nReason for inclusion in AVID: CVE-2024-41130 describes a null pointer dereference in llama.cpp, a core AI inference library used in general-purpose AI systems. This is a software vulnerability affecting a component commonly used in AI pipelines (models, runtimes, and related tooling). It is not hardware/firmware-only. The advisory notes a fix in a subsequent version, and the CVE is documented with references. Therefore, it is relevant to the AI software supply chain and should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-476",
+        "description": "CWE-476: NULL Pointer Dereference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-22"
+}

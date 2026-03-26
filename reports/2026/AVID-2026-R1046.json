@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1046"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-32997"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-32997"
+    },
+    {
+      "type": "source",
+      "label": "http://pypi.doubanio.com/simple/request",
+      "url": "http://pypi.doubanio.com/simple/request"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/RootInteractive/",
+      "url": "https://pypi.org/project/RootInteractive/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/miranov25/RootInteractive/issues/206",
+      "url": "https://github.com/miranov25/RootInteractive/issues/206"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The RootInteractive package in PyPI v0.0.5 to v0.0.19b0 was discovered to contain a code execution backdoor via the request package. This vulnerability allows attackers to access sensitive user information and digital currency keys, as well as escalate privileges.\n\nReason for inclusion in AVID: CVE-2022-32997 describes a code execution backdoor in the Python PyPI package RootInteractive (versions 0.0.5-0.0.19b0). As a Python package potentially used in AI/ML stacks (data processing, orchestration, model serving, etc.), its compromise constitutes a software supply-chain vulnerability affecting AI systems. It enables remote code execution and credential/key theft, representing a security vulnerability in software dependencies used to build/run AI systems. The report provides explicit vulnerability behavior and references (CVE/NVD), supporting its classification as a supply-chain security issue in AI software stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-06-24"
+}

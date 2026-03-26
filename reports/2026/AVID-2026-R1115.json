@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1115"
+  },
+  "affects": {
+    "developer": [
+      "sigstore"
+    ],
+    "deployer": [
+      "sigstore"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cosign"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerabilities with blob verification in sigstore cosign (CVE-2022-36056)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-36056"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/security/advisories/GHSA-8gw7-4j42-w388",
+      "url": "https://github.com/sigstore/cosign/security/advisories/GHSA-8gw7-4j42-w388"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/commit/80b79ed8b4d28ccbce3d279fd273606b5cddcc25",
+      "url": "https://github.com/sigstore/cosign/commit/80b79ed8b4d28ccbce3d279fd273606b5cddcc25"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cosign is a project under the sigstore organization which aims to make signatures invisible infrastructure. In versions prior to 1.12.0 a number of vulnerabilities have been found in cosign verify-blob, where Cosign would successfully verify an artifact when verification should have failed. First a cosign bundle can be crafted to successfully verify a blob even if the embedded rekorBundle does not reference the given signature. Second, when providing identity flags, the email and issuer of a certificate is not checked when verifying a Rekor bundle, and the GitHub Actions identity is never checked. Third, providing an invalid Rekor bundle without the experimental flag results in a successful verification. And fourth an invalid transparency log entry will result in immediate success for verification. Details and examples of these issues can be seen in the GHSA-8gw7-4j42-w388 advisory linked. Users are advised to upgrade to 1.12.0. There are no known workarounds for these issues.\n\nReason for inclusion in AVID: CVE-2022-36056 describes multiple flaws in cosign's blob verification (sigstore) that can cause invalid artifacts to pass verification, enabling potential tampering in artifact signing/verification workflows. Cosign is a software supply-chain tool used to sign and verify artifacts (e.g., container images, model artifacts) in AI system build/deploy pipelines. This is a software/CI-CD/tooling vulnerability with direct impact on AI pipelines, hence relevant to the general-purpose AI supply chain. Evidence included: advisory mentions version fix and CVE/CWE-347."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-347",
+        "description": "CWE-347: Improper Verification of Cryptographic Signature",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-09-14"
+}

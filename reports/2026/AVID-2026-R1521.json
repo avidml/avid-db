@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1521"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "ggerganov"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "llama.cpp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "llama.cpp allows write-what-where in rpc_server::set_tensor (CVE-2024-42479)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-42479"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-wcr5-566p-9cwj",
+      "url": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-wcr5-566p-9cwj"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/commit/b72942fac998672a79a1ae3c03b340f7e629980b",
+      "url": "https://github.com/ggerganov/llama.cpp/commit/b72942fac998672a79a1ae3c03b340f7e629980b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "llama.cpp provides LLM inference in C/C++. The unsafe `data` pointer member in the `rpc_tensor` structure can cause arbitrary address writing. This vulnerability is fixed in b3561.\n\nReason for inclusion in AVID: CVE-2024-42479 describes a write-what-where vulnerability in llama.cpp (rpc_server::set_tensor) enabling arbitrary memory writes. The issue concerns AI software (LLM inference with llama.cpp), is in a component used to deploy/run general-purpose AI systems, is a security vulnerability (RCE/ tampering potential per CVSS), and the report provides explicit signals (CVE, description, fix commit, references). Therefore it meets all AVID criteria for inclusion in AI supply-chain vulnerability curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-123",
+        "description": "CWE-123: Write-what-where Condition",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-12"
+}

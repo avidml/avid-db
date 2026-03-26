@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1483"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-34997"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-34997"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/joblib/joblib/issues/977",
+      "url": "https://github.com/joblib/joblib/issues/977"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/joblib/joblib/issues/1582",
+      "url": "https://github.com/joblib/joblib/issues/1582"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "joblib v1.4.2 was discovered to contain a deserialization vulnerability via the component joblib.numpy_pickle::NumpyArrayWrapper().read_array(). NOTE: this is disputed by the supplier because NumpyArrayWrapper is only used during caching of trusted content.\n\nReason for inclusion in AVID: CVE-2024-34997 describes a deserialization vulnerability in the Python library joblib, which is widely used in ML pipelines and AI software stacks for caching/serialization. This directly affects software components used to build/train/deploy AI systems (e.g., joblib, typical ML workflows), thus impacting the software supply chain of general-purpose AI systems. The vulnerability is security-focused (deserialization leading to potential exploitation) and the report provides explicit CVE entry, description, and references, establishing sufficient signal for curation. Although there is vendor dispute over the exact scope, the AVID signal remains relevant for AI software supply chains."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-05-17"
+}

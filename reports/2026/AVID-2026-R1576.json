@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1576"
+  },
+  "affects": {
+    "developer": [
+      "man-group"
+    ],
+    "deployer": [
+      "man-group"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "dtale"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "D-Tale allows Remote Code Execution through the Custom Filter Input (CVE-2024-55890)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-55890"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/man-group/dtale/security/advisories/GHSA-832w-fhmw-w4f4",
+      "url": "https://github.com/man-group/dtale/security/advisories/GHSA-832w-fhmw-w4f4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/man-group/dtale/commit/1e26ed3ca12fe83812b90f12a2b3e5fb0b740f7a",
+      "url": "https://github.com/man-group/dtale/commit/1e26ed3ca12fe83812b90f12a2b3e5fb0b740f7a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/man-group/dtale#custom-filter",
+      "url": "https://github.com/man-group/dtale#custom-filter"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "D-Tale is a visualizer for pandas data structures. Prior to version 3.16.1, users hosting D-Tale publicly can be vulnerable to remote code execution allowing attackers to run malicious code on the server. Users should upgrade to version 3.16.1 where the `update-settings` endpoint blocks the ability for users to update the `enable_custom_filters` flag. The only workaround for versions earlier than 3.16.1 is to only host D-Tale to trusted users.\n\nReason for inclusion in AVID: CVE-2024-55890 affects D-Tale, a Python data visualization tool commonly used within ML/AI data pipelines. The vulnerability enables remote code execution when D-Tale is hosted publicly prior to version 3.16.1, with a fix in 3.16.1 that blocks the ability to update the enable_custom_filters flag. This is a software vulnerability in a component that can be part of AI workflows (data exploration, dashboards, etc.), impacting the software supply chain for AI systems. It concerns RCE (security/safety vulnerability) and has explicit remediation guidance and references, providing sufficient signal for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-12-13"
+}

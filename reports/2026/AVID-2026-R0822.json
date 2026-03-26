@@ -1,0 +1,89 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0822"
+  },
+  "affects": {
+    "developer": [
+      "SUSE"
+    ],
+    "deployer": [
+      "SUSE"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Rancher"
+      },
+      {
+        "type": "System",
+        "name": "Rancher"
+      },
+      {
+        "type": "System",
+        "name": "Rancher"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Deleting PRTBs associated to a group doesn't cause deletion of corresponding RoleBindings (CVE-2021-36775)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-36775"
+    },
+    {
+      "type": "source",
+      "label": "https://bugzilla.suse.com/show_bug.cgi?id=1189120",
+      "url": "https://bugzilla.suse.com/show_bug.cgi?id=1189120"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "a Improper Access Control vulnerability in SUSE Rancher allows users to keep privileges that should have been revoked. This issue affects: SUSE Rancher Rancher versions prior to 2.4.18; Rancher versions prior to 2.5.12; Rancher versions prior to 2.6.3.\n\nReason for inclusion in AVID: The CVE describes an improper access control flaw in SUSE Rancher where deleting PRTBs does not delete corresponding RoleBindings, enabling privilege retention. Rancher is a software component commonly used to deploy and manage containerized workloads, including AI/ML pipelines. This places the vulnerability within the software stack that underpins general-purpose AI systems (deployment/orchestration, runtimes, CI/CD, etc.). It is a security/vulnerability issue with clear CVE details and references, providing sufficient evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-284",
+        "description": "CWE-284: Improper Access Control",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-04-01"
+}

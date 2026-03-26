@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1677"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2025-29189"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-29189"
+    },
+    {
+      "type": "source",
+      "label": "https://drive.google.com/file/d/1WHPslTmQmAM9xPJifULS2qAo7hcidB4L/view?usp=sharing",
+      "url": "https://drive.google.com/file/d/1WHPslTmQmAM9xPJifULS2qAo7hcidB4L/view?usp=sharing"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Flowise <= 2.2.3 is vulnerable to SQL Injection. via tableName parameter at Postgres_VectorStores.\n\nReason for inclusion in AVID: CVE-2025-29189 describes a SQL injection in Flowise <= 2.2.3 via a tableName parameter used with Postgres_VectorStores. Flowise is an AI workflow/tool used in building AI pipelines and vector stores; the vulnerability affects software components commonly used in AI systems and their deployment. It's a CVE with explicit vulnerability behavior (SQL injection) in a software supply-chain context. The report references an NVD entry/security advisory, providing sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2025-04-09"
+}

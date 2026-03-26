@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1119"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Docker Provider <3.0 RCE vulnerability in example dag (CVE-2022-38362)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-38362"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/614p38nf4gbk8xhvnskj9b1sqo2dknkb",
+      "url": "https://lists.apache.org/thread/614p38nf4gbk8xhvnskj9b1sqo2dknkb"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2022/08/16/1",
+      "url": "http://www.openwall.com/lists/oss-security/2022/08/16/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow Docker's Provider prior to 3.0.0 shipped with an example DAG that was vulnerable to (authenticated) remote code exploit of code on the Airflow worker host.\n\nReason for inclusion in AVID: CVE-2022-38362 describes an authenticated remote code execution in Apache Airflow's Docker Provider due to a vulnerable example DAG shipped prior to 3.0.0. Airflow is a widely used orchestration tool in ML/AI pipelines and related software stacks. This constitutes a software supply-chain issue affecting components commonly used to build/run general-purpose AI systems (orchestration, deployment, and workflow tooling). The vulnerability is security-focused (RCE), and the provided description with references offers sufficient signal for AVID classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-08-16"
+}

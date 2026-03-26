@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1292"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-48023"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-48023"
+    },
+    {
+      "type": "source",
+      "label": "https://bishopfox.com/blog/ray-versions-2-6-3-2-8-0",
+      "url": "https://bishopfox.com/blog/ray-versions-2-6-3-2-8-0"
+    },
+    {
+      "type": "source",
+      "label": "https://docs.ray.io/en/latest/ray-security/index.html",
+      "url": "https://docs.ray.io/en/latest/ray-security/index.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Anyscale Ray 2.6.3 and 2.8.0 allows /log_proxy SSRF. NOTE: the vendor's position is that this report is irrelevant because Ray, as stated in its documentation, is not intended for use outside of a strictly controlled network environment\n\nReason for inclusion in AVID: CVE-2023-48023 identifies a SSRF vulnerability in Anyscale Ray (versions 2.6.3 and 2.8.0). Ray is a core framework used to build, train, deploy, and serve AI workloads, so a vulnerability in this software is directly a concern for AI pipelines and general-purpose AI systems. The issue affects a software component integral to AI stacks, representing a vulnerability in the software supply chain for AI systems. Evidence includes the CVE entry and related Ray/security documentation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-11-28"
+}

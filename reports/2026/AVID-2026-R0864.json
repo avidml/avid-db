@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0864"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Incomplete validation in `MaxPoolGrad` in TensorFlow (CVE-2021-37674)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-37674"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-7ghq-fvr3-pj2x",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-7ghq-fvr3-pj2x"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/136b51f10903e044308cf77117c0ed9871350475",
+      "url": "https://github.com/tensorflow/tensorflow/commit/136b51f10903e044308cf77117c0ed9871350475"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/security/advisory/tfsa-2021-068.md",
+      "url": "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/security/advisory/tfsa-2021-068.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. In affected versions an attacker can trigger a denial of service via a segmentation fault in `tf.raw_ops.MaxPoolGrad` caused by missing validation. The [implementation](https://github.com/tensorflow/tensorflow/blob/460e000de3a83278fb00b61a16d161b1964f15f4/tensorflow/core/kernels/maxpooling_op.cc) misses some validation for the `orig_input` and `orig_output` tensors. The fixes for CVE-2021-29579 were incomplete. We have patched the issue in GitHub commit 136b51f10903e044308cf77117c0ed9871350475. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: TensorFlow is a core ML framework; CVE-2021-37674 describes a vulnerability in MaxPoolGrad causing a denial of service due to incomplete input validation. It affects AI pipelines built with TensorFlow and there is a patch/commit referenced, with advisories noting remediation. This is a software vulnerability in a component used to build/train/deploy AI systems, i.e., a software supply chain issue in AI software stacks. Hardware-only issues are not involved. Evidence includes CVE entry, commit, and security advisory."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-12"
+}

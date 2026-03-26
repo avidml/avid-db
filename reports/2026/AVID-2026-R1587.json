@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1587"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File/Directory Deletion in aimhubio/aim (CVE-2024-6483)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6483"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/dc45d480-e579-4af4-8603-c52ecfd5e363",
+      "url": "https://huntr.com/bounties/dc45d480-e579-4af4-8603-c52ecfd5e363"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the `runs/delete-batch` endpoint of aimhubio/aim version 3.19.3 allows for arbitrary file or directory deletion through path traversal. The endpoint does not mitigate path traversal when handling user-specified run-names, which are used to specify log/metadata files for deletion. This can be exploited to delete arbitrary files or directories, potentially causing denial of service or data loss.\n\nReason for inclusion in AVID: CVE-2024-6483 describes a path traversal vulnerability in aimhubio/aim's runs/delete-batch endpoint, enabling arbitrary file/directory deletion. The affected component is used in AI experimentation/artifact management, i.e., part of AI pipelines. This aligns with AI-related software and the general-purpose AI software supply chain, and it is a CVE-style security vulnerability with clear exploit potential and evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-23",
+        "description": "CWE-23 Relative Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

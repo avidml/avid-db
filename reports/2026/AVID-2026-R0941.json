@@ -1,0 +1,84 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0941"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Division by zero in Tensorflow (CVE-2022-21725)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-21725"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-v3f7-j968-4h5f",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-v3f7-j968-4h5f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/3218043d6d3a019756607643cf65574fbfef5d7a",
+      "url": "https://github.com/tensorflow/tensorflow/commit/3218043d6d3a019756607643cf65574fbfef5d7a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/ffa202a17ab7a4a10182b746d230ea66f021fe16/tensorflow/core/grappler/costs/op_level_cost_estimator.cc#L189-L198",
+      "url": "https://github.com/tensorflow/tensorflow/blob/ffa202a17ab7a4a10182b746d230ea66f021fe16/tensorflow/core/grappler/costs/op_level_cost_estimator.cc#L189-L198"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Tensorflow is an Open Source Machine Learning Framework. The estimator for the cost of some convolution operations can be made to execute a division by 0. The function fails to check that the stride argument is strictly positive. Hence, the fix is to add a check for the stride argument to ensure it is valid. The fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2022-21725 describes a vulnerability in TensorFlow (an AI framework) causing a division by zero in an operation's cost estimator. It affects a core AI software stack used in building/training/deploying general-purpose AI systems, i.e., a software supply-chain component (TensorFlow op-level cost estimation). It has security impact (availability), is AI-related, and there is explicit evidence (CVE entry, CVSS, advisories) supporting it."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2022-02-03"
+}

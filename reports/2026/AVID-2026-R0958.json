@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0958"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA FLARE"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-21822"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-21822"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/NVIDIA/NVFlare/security/advisories/GHSA-jx8f-cpx7-fv47",
+      "url": "https://github.com/NVIDIA/NVFlare/security/advisories/GHSA-jx8f-cpx7-fv47"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA FLARE contains a vulnerability in the admin interface, where an un-authorized attacker can cause Allocation of Resources Without Limits or Throttling, which may lead to cause system unavailable.\n\nReason for inclusion in AVID: CVE-2022-21822 describes a software vulnerability in NVIDIA FLARE (an AI federation/ML framework) enabling resource exhaustion via the admin interface, causing potential denial of service. NVIDIA FLARE is a component used in AI/ML pipelines, i.e., part of the software stack for building/training/deploying AI systems. This is a security vulnerability within a software supply-chain component relevant to general-purpose AI systems. The report provides explicit CVE details, CWE, and CVSS data as evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-770",
+        "description": "CWE-770: Allocation of Resources Without Limits or Throttling",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-03-17"
+}

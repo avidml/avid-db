@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0833"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Null pointer dereference in `MatrixDiagPartOp` in TensorFlow (CVE-2021-37643)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-37643"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-fcwc-p4fc-c5cc",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-fcwc-p4fc-c5cc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/482da92095c4d48f8784b1f00dda4f81c28d2988",
+      "url": "https://github.com/tensorflow/tensorflow/commit/482da92095c4d48f8784b1f00dda4f81c28d2988"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. If a user does not provide a valid padding value to `tf.raw_ops.MatrixDiagPartOp`, then the code triggers a null pointer dereference (if input is empty) or produces invalid behavior, ignoring all values after the first. The [implementation](https://github.com/tensorflow/tensorflow/blob/8d72537c6abf5a44103b57b9c2e22c14f5f49698/tensorflow/core/kernels/linalg/matrix_diag_op.cc#L89) reads the first value from a tensor buffer without first checking that the tensor has values to read from. We have patched the issue in GitHub commit 482da92095c4d48f8784b1f00dda4f81c28d2988. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2021-37643 describes a null pointer dereference vulnerability in TensorFlow's MatrixDiagPartOp. TensorFlow is an AI framework widely used in ML pipelines; the issue affects software components used to build/train/deploy AI systems, i.e., the AI software supply chain. It is a CVE-style security vulnerability with potential disruption (crash/DoS) and has a patched fix in TF, with evidence in the advisory and commit. Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 7.7,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-476",
+        "description": "CWE-476: NULL Pointer Dereference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-12"
+}

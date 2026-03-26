@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1218"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-26263"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-26263"
+    },
+    {
+      "type": "source",
+      "label": "https://talend.com",
+      "url": "https://talend.com"
+    },
+    {
+      "type": "source",
+      "label": "https://www.talend.com/security/incident-response/#CVE-2023-26264",
+      "url": "https://www.talend.com/security/incident-response/#CVE-2023-26264"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "All versions of Talend Data Catalog before 8.0-20230110 are potentially vulnerable to XML External Entity (XXE) attacks in the /MIMBWebServices/license endpoint of the remote harvesting server.\n\nReason for inclusion in AVID: CVE-2023-26263 describes an XML External Entity (XXE) vulnerability in Talend Data Catalog (pre-8.0-20230110). Talend Data Catalog is a data-management/tooling component commonly used in data pipelines for AI/ML workflows (data ingestion/feature pipelines), making it relevant to the software supply chain of general-purpose AI systems. The vulnerability is a security flaw (XXE) with potential impact, and the report provides CVE/NVD references as evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-04-13"
+}

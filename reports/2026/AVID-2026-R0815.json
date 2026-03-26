@@ -1,0 +1,111 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0815"
+  },
+  "affects": {
+    "developer": [
+      "python-restx"
+    ],
+    "deployer": [
+      "python-restx"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "flask-restx"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Regular Expression Denial of Service in flask-restx (CVE-2021-32838)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-32838"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/advisories/GHSA-3q6g-vf58-7m4g",
+      "url": "https://github.com/advisories/GHSA-3q6g-vf58-7m4g"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/python-restx/flask-restx/issues/372",
+      "url": "https://github.com/python-restx/flask-restx/issues/372"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/python-restx/flask-restx/commit/bab31e085f355dd73858fd3715f7ed71849656da",
+      "url": "https://github.com/python-restx/flask-restx/commit/bab31e085f355dd73858fd3715f7ed71849656da"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/python-restx/flask-restx/blob/fd99fe11a88531f5f3441a278f7020589f9d2cc0/flask_restx/inputs.py#L51",
+      "url": "https://github.com/python-restx/flask-restx/blob/fd99fe11a88531f5f3441a278f7020589f9d2cc0/flask_restx/inputs.py#L51"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/flask-restx/",
+      "url": "https://pypi.org/project/flask-restx/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/5UCTFVDU3677B5OBGK4EF5NMUPJLL6SQ/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/5UCTFVDU3677B5OBGK4EF5NMUPJLL6SQ/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QUD6SWZLX52AAZUHDETJ2CDMQGEPGFL3/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QUD6SWZLX52AAZUHDETJ2CDMQGEPGFL3/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Flask-RESTX (pypi package flask-restx) is a community driven fork of Flask-RESTPlus. Flask-RESTX before version 0.5.1 is vulnerable to ReDoS (Regular Expression Denial of Service) in email_regex. This is fixed in version 0.5.1.\n\nReason for inclusion in AVID: CVE-2021-32838 describes a Regular Expression Denial of Service in flask-restx, a Python web API framework widely used to build and serve AI/ML model endpoints. While the vulnerability targets a general web framework, such frameworks are commonly part of AI model serving stacks and deployment pipelines. The issue is a software vulnerability with measurable impact (DoS) and has clear versions affected and a fixed version, providing sufficient evidence for curation as a software supply-chain vulnerability affecting AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-400",
+        "description": "CWE-400 Uncontrolled Resource Consumption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-09-20"
+}

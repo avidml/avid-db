@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1541"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF in the path parameter of /queue/join in Gradio (CVE-2024-47167)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-47167"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gradio-app/gradio/security/advisories/GHSA-576c-3j53-r9jj",
+      "url": "https://github.com/gradio-app/gradio/security/advisories/GHSA-576c-3j53-r9jj"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Gradio is an open-source Python package designed for quick prototyping. This vulnerability relates to **Server-Side Request Forgery (SSRF)** in the `/queue/join` endpoint. Gradio\u2019s `async_save_url_to_cache` function allows attackers to force the Gradio server to send HTTP requests to user-controlled URLs. This could enable attackers to target internal servers or services within a local network and possibly exfiltrate data or cause unwanted internal requests. Additionally, the content from these URLs is stored locally, making it easier for attackers to upload potentially malicious files to the server. This impacts users deploying Gradio servers that use components like the Video component which involve URL fetching. Users are advised to upgrade to `gradio>=5` to address this issue.  As a workaround, users can disable or heavily restrict URL-based inputs in their Gradio applications to trusted domains only. Additionally, implementing stricter URL validation (such as allowinglist-based validation) and ensuring that local or internal network addresses cannot be requested via the `/queue/join` endpoint can help mitigate the risk of SSRF attacks.\n\nReason for inclusion in AVID: CVE-2024-47167 is a software vulnerability (SSRF) in Gradio, a Python package widely used to build and serve AI demos/apps. The flaw occurs in the Gradio server component via the /queue/join endpoint and can cause requests to user-controlled URLs, potentially reaching internal networks and enabling data exfiltration or other misuse. Gradio is a common AI tooling/framework component in ML pipelines and model-serving UIs, so this is a software supply-chain vulnerability in components used to build/deploy general-purpose AI systems. The CVE is documented with references and a recommended fix (gradio>=5) and mitigations. Therefore, it should be kept for AVID curation as an AI software supply-chain vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-10"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1098"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "`CHECK` fail in `Conv2DBackpropInput` in TensorFlow (CVE-2022-35999)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-35999"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-37jf-mjv6-xfqw",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-37jf-mjv6-xfqw"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/27a65a43cf763897fecfa5cdb5cc653fc5dd0346",
+      "url": "https://github.com/tensorflow/tensorflow/commit/27a65a43cf763897fecfa5cdb5cc653fc5dd0346"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. When `Conv2DBackpropInput` receives empty `out_backprop` inputs (e.g. `[3, 1, 0, 1]`), the current CPU/GPU kernels `CHECK` fail (one with dnnl, the other with cudnn). This can be used to trigger a denial of service attack. We have patched the issue in GitHub commit 27a65a43cf763897fecfa5cdb5cc653fc5dd0346. The fix will be included in TensorFlow 2.10.0. We will also cherrypick this commit on TensorFlow 2.9.1, TensorFlow 2.8.1, and TensorFlow 2.7.2, as these are also affected and still in supported range. There are no known workarounds for this issue.\n\nReason for inclusion in AVID: CVE-2022-35999 describes a vulnerability in TensorFlow's Conv2DBackpropInput that can trigger a denial of service. TensorFlow is a core AI/ML framework used to build/train/deploy AI systems, so this vulnerability concerns AI software stacks and their supply chain. It is a software security vulnerability with established CVE references and a patched commit, indicating sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-617",
+        "description": "CWE-617: Reachable Assertion",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-09-16"
+}

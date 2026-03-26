@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1666"
+  },
+  "affects": {
+    "developer": [
+      "AWcode & KingfisherFox"
+    ],
+    "deployer": [
+      "AWcode & KingfisherFox"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Salvador \u2013 AI Image Generator"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "WordPress Salvador \u2013 AI Image Generator plugin <= 1.0.11 - Broken Access Control vulnerability (CVE-2025-23954)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-23954"
+    },
+    {
+      "type": "source",
+      "label": "https://patchstack.com/database/wordpress/plugin/salvador-ai-image-generator/vulnerability/wordpress-salvador-ai-image-generator-plugin-1-0-11-broken-access-control-vulnerability?_s_id=cve",
+      "url": "https://patchstack.com/database/wordpress/plugin/salvador-ai-image-generator/vulnerability/wordpress-salvador-ai-image-generator-plugin-1-0-11-broken-access-control-vulnerability?_s_id=cve"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Missing Authorization vulnerability in AWcode & KingfisherFox Salvador \u2013 AI Image Generator allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Salvador \u2013 AI Image Generator: from n/a through 1.0.11.\n\nReason for inclusion in AVID: CVE-2025-23954 concerns a WordPress plugin (Salvador \u2013 AI Image Generator) that provides AI image generation capabilities. It describes a broken access control (missing authorization) vulnerability in a component used to deliver AI-enabled functionality, which is directly related to AI tooling/utilities and could affect AI workflows deployed via WordPress. This falls under a software supply chain issue for AI systems since the plugin is a software component in AI image generation pipelines and can impact the security of AI deployments. The report provides CVE details, CWE-862, and CVSS data, offering clear evidence of a vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-862",
+        "description": "CWE-862 Missing Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-16"
+}

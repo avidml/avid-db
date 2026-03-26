@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1272"
+  },
+  "affects": {
+    "developer": [
+      "jupyter-server"
+    ],
+    "deployer": [
+      "jupyter-server"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "jupyter_server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Open Redirect Vulnerability in jupyter-server (CVE-2023-39968)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-39968"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-r726-vmfq-j9j3",
+      "url": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-r726-vmfq-j9j3"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter_server/commit/290362593b2ffb23c59f8114d76f77875de4b925",
+      "url": "https://github.com/jupyter-server/jupyter_server/commit/290362593b2ffb23c59f8114d76f77875de4b925"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XDKQAWQN6SQTOVACZNXYKEHWQXGG4DOF/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XDKQAWQN6SQTOVACZNXYKEHWQXGG4DOF/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NRP7DNZYVOIA4ZB3U3ZWKTFZEPYWNGCQ/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NRP7DNZYVOIA4ZB3U3ZWKTFZEPYWNGCQ/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "jupyter-server is the backend for Jupyter web applications. Open Redirect Vulnerability. Maliciously crafted login links to known Jupyter Servers can cause successful login or an already logged-in session to be redirected to arbitrary sites, which should be restricted to Jupyter Server-served URLs. This issue has been addressed in commit `29036259` which is included in release 2.7.2. Users are advised to upgrade. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: CVE-2023-39968 describes an open redirect vulnerability in jupyter-server, a core component used in Jupyter notebooks and widely employed in AI workflows. This is a software vulnerability affecting a component that is commonly part of AI pipelines (data prep, experimentation, model development, deployment tools). Therefore it is relevant to AI systems and their software supply chain (dependencies/runtimes for AI workloads); it is a security vulnerability with an upgrade path provided by the CVE. The evidence in the description and references supports its classification as a software security issue in a component used in AI stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-601",
+        "description": "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-28"
+}

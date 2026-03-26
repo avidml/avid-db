@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1309"
+  },
+  "affects": {
+    "developer": [
+      "PaddlePaddle"
+    ],
+    "deployer": [
+      "PaddlePaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PaddlePaddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "FPE in paddle.lerp (CVE-2023-52306)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-52306"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-015.md",
+      "url": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-015.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "FPE in paddle.lerp\u00a0in PaddlePaddle before 2.6.0. This flaw can cause a runtime crash and a denial of service.\n\nReason for inclusion in AVID: CVE-2023-52306 describes a runtime crash/denial-of-service due to a divide-by-zero in PaddlePaddle's paddle.lerp. PaddlePaddle is a widely-used AI framework; a vulnerability in this software component is directly relevant to AI systems that rely on PaddlePaddle for training, inference, or pipeline orchestration. This is a software supply-chain vulnerability in a dependency/framework used to build/run general-purpose AI systems, not hardware/firmware-only. It is a security/safety vulnerability with potential availability impact, and explicit CVE evidence is provided."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:L",
+      "baseScore": 4.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-369",
+        "description": "CWE-369 Divide By Zero",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-03"
+}

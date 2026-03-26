@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1596"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in Calculate Function in parisneo/lollms (CVE-2024-6982)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6982"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/4f8e73ac-aaaf-4d5c-a6dd-58215b5a7fea",
+      "url": "https://huntr.com/bounties/4f8e73ac-aaaf-4d5c-a6dd-58215b5a7fea"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/parisneo/lollms/commit/30e7eaba2ccfb751a81e7cb29fdef2ae8ffa6832",
+      "url": "https://github.com/parisneo/lollms/commit/30e7eaba2ccfb751a81e7cb29fdef2ae8ffa6832"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A remote code execution vulnerability exists in the Calculate function of parisneo/lollms version 9.8. The vulnerability arises from the use of Python's `eval()` function to evaluate mathematical expressions within a Python sandbox that disables `__builtins__` and only allows functions from the `math` module. This sandbox can be bypassed by loading the `os` module using the `_frozen_importlib.BuiltinImporter` class, allowing an attacker to execute arbitrary commands on the server. The issue is fixed in version 9.10.\n\nReason for inclusion in AVID: The CVE describes a remote code execution vulnerability in parisneo/lollms, an AI framework/library used in ML pipelines. It exploits unsafe use of eval in a Calculate function, enabling arbitrary command execution within an AI software stack. This is a software component used to build/deploy AI systems, not hardware/firmware, and it poses a security risk (RCE) with public CVE details and a fixed version. Therefore it is a relevant software supply chain vulnerability for general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

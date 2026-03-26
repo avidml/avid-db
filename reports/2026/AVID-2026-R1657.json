@@ -1,0 +1,82 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1657"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AutoGPT"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AutoGPT SSRF vulnerability (CVE-2025-22603)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-22603"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-4c8v-hwxc-2356",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-4c8v-hwxc-2356"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/Significant-Gravitas/AutoGPT/commit/26214e1b2c6777e0fae866642b23420adaadd6c4",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT/commit/26214e1b2c6777e0fae866642b23420adaadd6c4"
+    },
+    {
+      "type": "source",
+      "label": "https://boatneck-faucet-cba.notion.site/SSRF-of-AutoGPT-153b650a4d88804d923ad65a015a7d61",
+      "url": "https://boatneck-faucet-cba.notion.site/SSRF-of-AutoGPT-153b650a4d88804d923ad65a015a7d61"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/Significant-Gravitas/AutoGPT/blob/2121ffd06b26a438706bf642372cc46d81c94ddc/autogpt_platform/backend/backend/util/request.py#L11",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT/blob/2121ffd06b26a438706bf642372cc46d81c94ddc/autogpt_platform/backend/backend/util/request.py#L11"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "AutoGPT is a platform that allows users to create, deploy, and manage continuous artificial intelligence agents that automate complex workflows. Versions prior to autogpt-platform-beta-v0.4.2 contains a server-side request forgery (SSRF) vulnerability inside component (or block) `Send Web Request`. The root cause is  that IPV6 address is not restricted or filtered, which allows attackers to perform a server side request forgery to visit an IPV6 service. autogpt-platform-beta-v0.4.2 fixes the issue.\n\nReason for inclusion in AVID: CVE-2025-22603 describes a server-side request forgery (SSRF) in AutoGPT platform prior to v0.4.2. AutoGPT is an AI platform used to create, deploy, and manage AI agents, i.e., software involved in building and running AI workflows. This is a software vulnerability affecting a component in the AI software stack, with clear references (CVE/NVD/advisories). It fits AI-related and GPAI supply chain criteria (software components used to build/deploy AI systems)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-10"
+}

@@ -1,0 +1,126 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0939"
+  },
+  "affects": {
+    "developer": [
+      "pypa"
+    ],
+    "deployer": [
+      "pypa"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "pipenv"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Pipenv's requirements.txt parsing allows malicious index url in comments (CVE-2022-21668)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-21668"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pypa/pipenv/security/advisories/GHSA-qc9x-gjcv-465w",
+      "url": "https://github.com/pypa/pipenv/security/advisories/GHSA-qc9x-gjcv-465w"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pypa/pipenv/commit/439782a8ae36c4762c88e43d5f0d8e563371b46f",
+      "url": "https://github.com/pypa/pipenv/commit/439782a8ae36c4762c88e43d5f0d8e563371b46f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pypa/pipenv/releases/tag/v2022.1.8",
+      "url": "https://github.com/pypa/pipenv/releases/tag/v2022.1.8"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QHQRIWKDP3SVJABAPEXBIQPKDI6UP7G4/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QHQRIWKDP3SVJABAPEXBIQPKDI6UP7G4/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/KCROBYHUS6DKQPCXBRPCZ5CDBNQTYAWT/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/KCROBYHUS6DKQPCXBRPCZ5CDBNQTYAWT/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/56HBA3EOSLEDNCCBJVHE6DO34P56EOUM/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/56HBA3EOSLEDNCCBJVHE6DO34P56EOUM/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "pipenv is a Python development workflow tool. Starting with version 2018.10.9 and prior to version 2022.1.8, a flaw in pipenv's parsing of requirements files allows an attacker to insert a specially crafted string inside a comment anywhere within a requirements.txt file, which will cause victims who use pipenv to install the requirements file to download dependencies from a package index server controlled by the attacker. By embedding malicious code in packages served from their malicious index server, the attacker can trigger arbitrary remote code execution (RCE) on the victims' systems. If an attacker is able to hide a malicious `--index-url` option in a requirements file that a victim installs with pipenv, the attacker can embed arbitrary malicious code in packages served from their malicious index server that will be executed on the victim's host during installation (remote code execution/RCE). When pip installs from a source distribution, any code in the setup.py is executed by the install process. This issue is patched in version 2022.1.8. The GitHub Security Advisory contains more information about this vulnerability.\n\nReason for inclusion in AVID: CVE-2022-21668 describes a flaw in Pipenv's requirements.txt parsing that allows an attacker to specify a malicious index URL in a comment, causing installation to fetch dependencies from a attacker-controlled index and potentially execute arbitrary code during installation. This is a software supply-chain vulnerability in a tool (Pipenv) that is commonly used in AI pipelines to manage/install dependencies, impacting the build/deploy/run chain for general-purpose AI systems. The vulnerability is explicitly security-related (RCE), with evidence and remediation provided in the advisory."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "baseScore": 8.0,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-77",
+        "description": "CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-427",
+        "description": "CWE-427: Uncontrolled Search Path Element",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-791",
+        "description": "CWE-791: Incomplete Filtering of Special Elements",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-01-10"
+}

@@ -1,0 +1,87 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1256"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow: Exposure of sensitive connection information, DOS and SSRF on \"test connection\" feature (CVE-2023-37379)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-37379"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/32052",
+      "url": "https://github.com/apache/airflow/pull/32052"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/g5c9vcn27lr14go48thrjpo6f4vw571r",
+      "url": "https://lists.apache.org/thread/g5c9vcn27lr14go48thrjpo6f4vw571r"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/08/23/4",
+      "url": "http://www.openwall.com/lists/oss-security/2023/08/23/4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow, in versions prior to 2.7.0, contains a security vulnerability that can be exploited by an authenticated user possessing Connection edit privileges. This vulnerability allows the user to access connection information and exploit the test connection feature by sending many requests, leading to a denial of service (DoS) condition on the server. Furthermore, malicious actors can leverage this vulnerability to establish harmful connections with the server.\n\nUsers of Apache Airflow are strongly advised to upgrade to version 2.7.0 or newer to mitigate the risk associated with this vulnerability. Additionally, administrators are encouraged to review and adjust user permissions to restrict access to sensitive functionalities, reducing the attack surface.\n\nReason for inclusion in AVID: CVE-2023-37379 describes a software vulnerability in Apache Airflow (an orchestration component commonly used in ML pipelines) that enables authenticated users to access sensitive connection information, trigger DoS via the test-connection feature, and potentially SSRF. Airflow is frequently part of AI system supply chains (build/train/deploy/serve pipelines), so this qualifies as a software supply-chain vulnerability affecting AI tooling. It is a security vulnerability with verifiable CVE details and recommended mitigations."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-400",
+        "description": "CWE-400 Uncontrolled Resource Consumption",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-200",
+        "description": "CWE-200 Exposure of Sensitive Information to an Unauthorized Actor",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-23"
+}

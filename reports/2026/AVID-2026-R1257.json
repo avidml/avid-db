@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1257"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Pulsar Function Worker"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Pulsar Function Worker: Incorrect Authorization for Function Worker Can Leak Sink/Source Credentials (CVE-2023-37579)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-37579"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz",
+      "url": "https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar Function Worker.\n\nThis issue affects Apache Pulsar: before 2.10.4, and 2.11.0.\n\nAny authenticated user can retrieve a source's configuration or a sink's configuration without authorization. Many sources and sinks contain credentials in the configuration, which could lead to leaked credentials. This vulnerability is mitigated by the fact that there is not a known way for an authenticated user to enumerate another tenant's sources or sinks, meaning the source or sink name would need to be guessed in order to exploit this vulnerability.\n\nThe recommended mitigation for impacted users is to upgrade the Pulsar Function Worker to a patched version.\n\n2.10 Pulsar Function Worker users should upgrade to at least 2.10.4.\n2.11 Pulsar Function Worker users should upgrade to at least 2.11.1.\n3.0 Pulsar Function Worker users are unaffected.\nAny users running the Pulsar Function Worker for 2.9.* and earlier should upgrade to one of the above patched versions.\n\nReason for inclusion in AVID: CVE-2023-37579 describes an incorrect authorization vulnerability in Apache Pulsar Function Worker, enabling an authenticated user to retrieve source/sink credentials from configuration. This is a software vulnerability in a component commonly used in data processing pipelines for AI/ML workloads (data streaming for training/serving, etc.). It affects software supply chain elements (Pulsar Function Worker, dependencies, runtimes) that can be part of general-purpose AI systems. The vulnerability is security-related (credential leakage, potential data exposure) with CVSS 3.1 score HIGH. Sufficient evidence provided (affected versions, mitigation)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863 Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-07-12"
+}

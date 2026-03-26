@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1588"
+  },
+  "affects": {
+    "developer": [
+      "pytorch"
+    ],
+    "deployer": [
+      "pytorch"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "pytorch/serve"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unclaimed S3 Bucket Usage in pytorch/serve (CVE-2024-6577)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6577"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/20917570-8328-428f-bd1d-4fcd71fb2359",
+      "url": "https://huntr.com/bounties/20917570-8328-428f-bd1d-4fcd71fb2359"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In the latest version of pytorch/serve, the script 'upload_results_to_s3.sh' references the S3 bucket 'benchmarkai-metrics-prod' without ensuring its ownership or confirming its accessibility. This could lead to potential security vulnerabilities or unauthorized access to the bucket if it is not properly secured or claimed by the appropriate entity. The issue may result in data breaches, exposure of proprietary information, or unauthorized modifications to stored data.\n\nReason for inclusion in AVID: CVE-2024-6577 describes a vulnerability in PyTorch Serve where a script writes to an S3 bucket without ownership/authorization checks, enabling potential data exposure or modification. This directly affects the AI serving stack used to deploy and run general-purpose AI systems, constituting a software supply-chain issue within AI pipelines (model serving/data workflows). It is a CVE-style security concern with clear impact signals appropriate for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "baseScore": 6.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-840",
+        "description": "CWE-840 Business Logic Errors",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

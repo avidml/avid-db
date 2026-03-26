@@ -1,0 +1,159 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1625"
+  },
+  "affects": {
+    "developer": [
+      "Red Hat"
+    ],
+    "deployer": [
+      "Red Hat"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Ansible Automation Platform Execution Environments"
+      },
+      {
+        "type": "System",
+        "name": "Ansible Automation Platform Execution Environments"
+      },
+      {
+        "type": "System",
+        "name": "Ansible Automation Platform Execution Environments"
+      },
+      {
+        "type": "System",
+        "name": "Ansible Automation Platform Execution Environments"
+      },
+      {
+        "type": "System",
+        "name": "Ansible Automation Platform Execution Environments"
+      },
+      {
+        "type": "System",
+        "name": "Discovery 1 for RHEL 9"
+      },
+      {
+        "type": "System",
+        "name": "Discovery 1 for RHEL 9"
+      },
+      {
+        "type": "System",
+        "name": "Red Hat Ansible Automation Platform 2.4 for RHEL 8"
+      },
+      {
+        "type": "System",
+        "name": "Red Hat Ansible Automation Platform 2.4 for RHEL 9"
+      },
+      {
+        "type": "System",
+        "name": "Red Hat Ansible Automation Platform 2.5 for RHEL 8"
+      },
+      {
+        "type": "System",
+        "name": "Red Hat Ansible Automation Platform 2.5 for RHEL 9"
+      },
+      {
+        "type": "System",
+        "name": "Red Hat Enterprise Linux 10"
+      },
+      {
+        "type": "System",
+        "name": "Red Hat Enterprise Linux AI (RHEL AI)"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Ansible-core: exposure of sensitive information in ansible vault files due to improper logging (CVE-2024-8775)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8775"
+    },
+    {
+      "type": "source",
+      "label": "https://access.redhat.com/errata/RHSA-2024:10762",
+      "url": "https://access.redhat.com/errata/RHSA-2024:10762"
+    },
+    {
+      "type": "source",
+      "label": "https://access.redhat.com/errata/RHSA-2024:8969",
+      "url": "https://access.redhat.com/errata/RHSA-2024:8969"
+    },
+    {
+      "type": "source",
+      "label": "https://access.redhat.com/errata/RHSA-2024:9894",
+      "url": "https://access.redhat.com/errata/RHSA-2024:9894"
+    },
+    {
+      "type": "source",
+      "label": "https://access.redhat.com/errata/RHSA-2025:1249",
+      "url": "https://access.redhat.com/errata/RHSA-2025:1249"
+    },
+    {
+      "type": "source",
+      "label": "https://access.redhat.com/security/cve/CVE-2024-8775",
+      "url": "https://access.redhat.com/security/cve/CVE-2024-8775"
+    },
+    {
+      "type": "source",
+      "label": "https://bugzilla.redhat.com/show_bug.cgi?id=2312119",
+      "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2312119"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/advisories/GHSA-jpxc-vmjf-9fcj",
+      "url": "https://github.com/advisories/GHSA-jpxc-vmjf-9fcj"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A flaw was found in Ansible, where sensitive information stored in Ansible Vault files can be exposed in plaintext during the execution of a playbook. This occurs when using tasks such as include_vars to load vaulted variables without setting the no_log: true parameter, resulting in sensitive data being printed in the playbook output or logs. This can lead to the unintentional disclosure of secrets like passwords or API keys, compromising security and potentially allowing unauthorized access or actions.\n\nReason for inclusion in AVID: CVE-2024-8775 describes exposure of sensitive data in Ansible Vault files due to improper logging in Ansible-core. While not AI-specific, Ansible is widely used to deploy and manage AI/ML infrastructures and pipelines (orchestrating deployment, configuration, and runtime environments). A leak of secrets during automation can compromise AI system deployment/build processes, making it a software supply-chain concern for general-purpose AI systems. It is a vulnerability (privacy/confidentiality impact) in a software component commonly used in AI stacks. The report provides explicit evidence (CVE description, CVSS, and references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-532",
+        "description": "Insertion of Sensitive Information into Log File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-14"
+}

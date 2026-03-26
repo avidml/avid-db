@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1690"
+  },
+  "affects": {
+    "developer": [
+      "1Panel-dev"
+    ],
+    "deployer": [
+      "1Panel-dev"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MaxKB"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MaxKB has a reverse shell vulnerability in function library (CVE-2025-32383)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32383"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-fjf6-6cvf-xr72",
+      "url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-fjf6-6cvf-xr72"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/1Panel-dev/MaxKB/commit/4ae02c8d3eb65542c88ef58c0abd94c52c949d8f",
+      "url": "https://github.com/1Panel-dev/MaxKB/commit/4ae02c8d3eb65542c88ef58c0abd94c52c949d8f"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "MaxKB (Max Knowledge Base) is an open source knowledge base question-answering system based on a large language model and retrieval-augmented generation (RAG). A reverse shell vulnerability exists in the module of function library. The vulnerability allow privileged\u200c users to create a reverse shell. This vulnerability is fixed in v1.10.4-lts.\n\nReason for inclusion in AVID: CVE-2025-32383 describes a reverse shell vulnerability in MaxKB, an open-source AI system (LLM/RAG-based) used in AI workflows. The issue resides in a software component (function library) of an AI application and represents a code-injection-style security vulnerability with network access, impacting the software supply chain used to build/deploy AI systems. The report provides CVE and advisory references, supporting classification as a security vulnerability in AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:L",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-10"
+}

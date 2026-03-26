@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1470"
+  },
+  "affects": {
+    "developer": [
+      "bmaltais"
+    ],
+    "deployer": [
+      "bmaltais"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "kohya_ss"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Kohya_ss vulnerable to path injection in `common_gui.py` `find_and_replace` function (`GHSL-2024-024`) (CVE-2024-32023)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-32023"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bmaltais/kohya_ss/security/advisories/GHSA-p945-7qm7-7j53",
+      "url": "https://github.com/bmaltais/kohya_ss/security/advisories/GHSA-p945-7qm7-7j53"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bmaltais/kohya_ss/commit/8bc67a7467f8366db1a4b9b3b14525ec763f1650",
+      "url": "https://github.com/bmaltais/kohya_ss/commit/8bc67a7467f8366db1a4b9b3b14525ec763f1650"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2024-019_GHSL-2024-024_kohya_ss",
+      "url": "https://securitylab.github.com/advisories/GHSL-2024-019_GHSL-2024-024_kohya_ss"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Kohya_ss is a GUI for Kohya's Stable Diffusion trainers. Kohya_ss is vulnerable to a path injection in the `common_gui.py` `find_and_replace` function. This vulnerability is fixed in 23.1.5.\n\nReason for inclusion in AVID: CVE-2024-32023 describes a path traversal vulnerability in kohya_ss GUI used for Stable Diffusion trainer workflows. This is a software vulnerability affecting a tool commonly used in AI model training pipelines, i.e., part of the AI software supply chain. It targets a software component (training tooling) rather than hardware/firmware. The CVE, CWE-22, and public advisories provide clear evidence of a security vulnerability within AI-related tooling."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-16"
+}

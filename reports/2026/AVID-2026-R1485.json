@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1485"
+  },
+  "affects": {
+    "developer": [
+      "pytorch"
+    ],
+    "deployer": [
+      "pytorch"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "serve"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "TorchServe bypass allowed_urls configuration (CVE-2024-35198)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-35198"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/serve/security/advisories/GHSA-wxcx-gg9c-fwp2",
+      "url": "https://github.com/pytorch/serve/security/advisories/GHSA-wxcx-gg9c-fwp2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/serve/pull/3082",
+      "url": "https://github.com/pytorch/serve/pull/3082"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/serve/releases/tag/v0.11.0",
+      "url": "https://github.com/pytorch/serve/releases/tag/v0.11.0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TorchServe is a flexible and easy-to-use tool for serving and scaling PyTorch models in production. TorchServe 's check on allowed_urls configuration can be by-passed if the URL contains characters such as \"..\" but it does not prevent the model from being downloaded into the model store. Once a file is downloaded, it can be referenced without providing a URL the second time, which effectively bypasses the allowed_urls security check. Customers using PyTorch inference Deep Learning Containers (DLC) through Amazon SageMaker and EKS are not affected. This issue in TorchServe has been fixed by validating the URL without characters such as \"..\" before downloading see PR #3082. TorchServe release 0.11.0 includes the fix to address this vulnerability. Users are advised to upgrade. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: CVE-2024-35198 concerns TorchServe, a model-serving component used in AI deployments. It describes a bypass of allowed_urls when downloading model artifacts, enabling potential security breaches in AI inference pipelines. This directly impacts AI systems' deployment/serving stack and their supply chain (model-serving libraries and artifacts). The CVE is high-severity (CVSS 9.8) and includes a fix in TorchServe 0.11.0, with clear remediation. It is a software vulnerability (not hardware/firmware-only) and pertains to software commonly used in ML pipelines."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-706",
+        "description": "CWE-706: Use of Incorrectly-Resolved Name or Reference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-18"
+}

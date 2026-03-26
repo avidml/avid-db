@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1635"
+  },
+  "affects": {
+    "developer": [
+      "transformeroptimus"
+    ],
+    "deployer": [
+      "transformeroptimus"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "transformeroptimus/superagi"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Privilege Management in transformeroptimus/superagi (CVE-2024-9431)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9431"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/9b33d7c1-ed0a-4f5b-a378-694570fd990b",
+      "url": "https://huntr.com/bounties/9b33d7c1-ed0a-4f5b-a378-694570fd990b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In version v0.0.14 of transformeroptimus/superagi, there is an improper privilege management vulnerability. After logging into the system, users can change the passwords of other users, leading to potential account takeover.\n\nReason for inclusion in AVID: CVE-2024-9431 describes an improper privilege management vulnerability in transformeroptimus/superagi that allows an authenticated user to change other users' passwords, enabling account takeover. This is a software vulnerability in a component (AI orchestration/management platform) used to build and run AI systems, i.e., part of the AI supply chain. The issue concerns software security (privilege escalation/integrity) with clear evidence in the CVE entry and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-620",
+        "description": "CWE-620 Unverified Password Change",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1416"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) Extension for Transformers software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21799"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21799"
+    },
+    {
+      "type": "source",
+      "label": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01190.html",
+      "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01190.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Path traversal for some Intel(R) Extension for Transformers software before version 1.5 may allow an authenticated user to potentially enable escalation of privilege via local access.\n\nReason for inclusion in AVID: CVE-2024-21799 describes a path traversal vulnerability in Intel Extension for Transformers software before version 1.5, enabling local privilege escalation. The affected component is a software library used in AI pipelines, thus a software supply chain issue for general-purpose AI systems. It is a security vulnerability with documented references (NVD, Intel advisory)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "Path traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-13"
+}

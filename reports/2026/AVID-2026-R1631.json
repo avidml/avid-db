@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1631"
+  },
+  "affects": {
+    "developer": [
+      "lunary-ai"
+    ],
+    "deployer": [
+      "lunary-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "lunary-ai/lunary"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Privilege Escalation in lunary-ai/lunary (CVE-2024-9098)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9098"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/75d466ae-8591-44d5-9160-eea7cad0c4fc",
+      "url": "https://huntr.com/bounties/75d466ae-8591-44d5-9160-eea7cad0c4fc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lunary-ai/lunary/commit/a8d7b2959e87c30fbafdb12af7ffa093385dcc60",
+      "url": "https://github.com/lunary-ai/lunary/commit/a8d7b2959e87c30fbafdb12af7ffa093385dcc60"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In lunary-ai/lunary before version 1.4.30, a privilege escalation vulnerability exists where admins can invite new members with billing permissions, thereby gaining unauthorized access to billing resources. This issue arises because the user creation endpoint does not restrict admins from inviting users with billing roles. As a result, admins can circumvent the intended access control, posing a risk to the organization's financial resources.\n\nReason for inclusion in AVID: The CVE describes a software vulnerability (privilege escalation via improper authorization) in the Lunary AI platform. This platform is a software component commonly used in AI workflows, serving as part of the AI tooling/stack. It concerns how admins can invite users with billing permissions, affecting access control and billing resources\u2014clearly a security vulnerability impacting AI software stacks. The issue lies in a component that would be part of the supply chain for general-purpose AI systems (build/deploy/run AI workloads via Lunary), not hardware/firmware alone. Sufficient signals are provided (description, CVSS, references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863 Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

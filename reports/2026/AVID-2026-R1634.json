@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1634"
+  },
+  "affects": {
+    "developer": [
+      "polyaxon"
+    ],
+    "deployer": [
+      "polyaxon"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "polyaxon/polyaxon"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Cross-Site Request Forgery (CSRF) in polyaxon/polyaxon (CVE-2024-9365)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9365"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/cdfa012b-a694-4beb-9a9a-12a9dde07ef9",
+      "url": "https://huntr.com/bounties/cdfa012b-a694-4beb-9a9a-12a9dde07ef9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Cross-Site Request Forgery (CSRF) vulnerability in polyaxon/polyaxon v2.4.0 allows attackers to perform unauthorized actions in the context of the victim's browser. This includes creating projects, model versions, and artifact versions, or changing settings. The impact of this vulnerability includes potential data loss and service disruption.\n\nReason for inclusion in AVID: CVE-2024-9365 describes a CSRF vulnerability in polyaxon, an ML orchestration platform used in AI workflows. This is a software vulnerability affecting a tool used in building/training/deploying AI systems, i.e., in the AI software stack. It concerns software supply chain components (library/framework/platform) rather than hardware/firmware, and impacts security, with potential unauthorized actions in the AI pipeline. The report provides CVE details, CVSS, etc."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

@@ -1,0 +1,111 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0899"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Incomplete validation of shapes in multiple TF ops (CVE-2021-41206)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-41206"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-pgcq-h79j-2f69",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-pgcq-h79j-2f69"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/4d74d8a00b07441cba090a02e0dd9ed385145bf4",
+      "url": "https://github.com/tensorflow/tensorflow/commit/4d74d8a00b07441cba090a02e0dd9ed385145bf4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/4dddb2fd0b01cdd196101afbba6518658a2c9e07",
+      "url": "https://github.com/tensorflow/tensorflow/commit/4dddb2fd0b01cdd196101afbba6518658a2c9e07"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/579261dcd446385831fe4f7457d802a59685121d",
+      "url": "https://github.com/tensorflow/tensorflow/commit/579261dcd446385831fe4f7457d802a59685121d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/68422b215e618df5ad375bcdc6d2052e9fd3080a",
+      "url": "https://github.com/tensorflow/tensorflow/commit/68422b215e618df5ad375bcdc6d2052e9fd3080a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/da4aad5946be30e5f049920fa076e1f7ef021261",
+      "url": "https://github.com/tensorflow/tensorflow/commit/da4aad5946be30e5f049920fa076e1f7ef021261"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/e7f497570abb6b4ae5af4970620cd880e4c0c904",
+      "url": "https://github.com/tensorflow/tensorflow/commit/e7f497570abb6b4ae5af4970620cd880e4c0c904"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. In affected versions several TensorFlow operations are missing validation for the shapes of the tensor arguments involved in the call. Depending on the API, this can result in undefined behavior and segfault or `CHECK`-fail related crashes but in some scenarios writes and reads from heap populated arrays are also possible. We have discovered these issues internally via tooling while working on improving/testing GPU op determinism. As such, we don't have reproducers and there will be multiple fixes for these issues. These fixes will be included in TensorFlow 2.7.0. We will also cherrypick these commits on TensorFlow 2.6.1, TensorFlow 2.5.2, and TensorFlow 2.4.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: TensorFlow vulnerability (CVE-2021-41206) involves improper shape validation in TF ops causing crashes and potential memory writes. TensorFlow is a core ML framework used in AI systems, so this is an AI-related security issue in a component of the AI software stack. It affects the software supply chain as a widely used dependency in AI pipelines. The CVE entry and linked advisories provide explicit evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 7.0,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-354",
+        "description": "CWE-354: Improper Validation of Integrity Check Value",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-11-05"
+}

@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0940"
+  },
+  "affects": {
+    "developer": [
+      "jupyterhub"
+    ],
+    "deployer": [
+      "jupyterhub"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "jupyter-server-proxy"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF vulnerability (requires authentication) (CVE-2022-21697)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-21697"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/jupyter-server-proxy/security/advisories/GHSA-gcv9-6737-pjqw",
+      "url": "https://github.com/jupyterhub/jupyter-server-proxy/security/advisories/GHSA-gcv9-6737-pjqw"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/jupyter-server-proxy/commit/fd31930bacd12188c448c886e0783529436b99eb",
+      "url": "https://github.com/jupyterhub/jupyter-server-proxy/commit/fd31930bacd12188c448c886e0783529436b99eb"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/jupyter-server-proxy/compare/v3.2.0...v3.2.1.patch",
+      "url": "https://github.com/jupyterhub/jupyter-server-proxy/compare/v3.2.0...v3.2.1.patch"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jupyter Server Proxy is a Jupyter notebook server extension to proxy web services. Versions of Jupyter Server Proxy prior to 3.2.1 are vulnerable to Server-Side Request Forgery (SSRF). Any user deploying Jupyter Server or Notebook with jupyter-proxy-server extension enabled is affected. A lack of input validation allows authenticated clients to proxy requests to other hosts, bypassing the `allowed_hosts` check. Because authentication is required, which already grants permissions to make the same requests via kernel or terminal execution, this is considered low to moderate severity. Users may upgrade to version 3.2.1 to receive a patch or, as a workaround, install the patch manually.\n\nReason for inclusion in AVID: CVE-2022-21697 describes a Server-Side Request Forgery (SSRF) in jupyter-server-proxy (pre-3.2.1). Jupyter Server Proxy is a component commonly used in AI development/deployment stacks (Jupyter notebooks, ML pipelines). It is a software supply-chain component affecting deployment/serving pipelines. The vulnerability is software-based (RCE/SSRF potential), and the report provides clear affected versions and a patch, satisfying evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:L/A:N",
+      "baseScore": 6.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-01-25"
+}

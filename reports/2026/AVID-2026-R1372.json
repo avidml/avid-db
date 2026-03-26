@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1372"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio-app/gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Regular Expression Denial of Service (ReDoS) in gradio-app/gradio (CVE-2024-10624)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10624"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e8d0b248-8feb-4c23-9ef9-be4d1e868374",
+      "url": "https://huntr.com/bounties/e8d0b248-8feb-4c23-9ef9-be4d1e868374"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Regular Expression Denial of Service (ReDoS) vulnerability exists in the gradio-app/gradio repository, affecting the gr.Datetime component. The affected version is git commit 98cbcae. The vulnerability arises from the use of a regular expression `^(?:\\s*now\\s*(?:-\\s*(\\d+)\\s*([dmhs]))?)?\\s*$` to process user input. In Python's default regex engine, this regular expression can take polynomial time to match certain crafted inputs. An attacker can exploit this by sending a crafted HTTP request, causing the gradio process to consume 100% CPU and potentially leading to a Denial of Service (DoS) condition on the server.\n\nReason for inclusion in AVID: CVE-2024-10624 describes a Regular Expression Denial of Service (ReDoS) vulnerability in the gradio-app/gradio repository, specifically in the gr.Datetime component. Gradio is a key library used in building and deploying AI applications and dashboards, meaning this vulnerability affects software commonly used in AI pipelines and serving stacks. It targets a software supply chain component (the Gradio library) that is part of the AI software stack, can be exploited via crafted HTTP requests to cause DoS, and has a documented CVSS score and CWE. Therefore, it satisfies the criteria for AI/GPAI-related supply chain vulnerability with explicit evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1333",
+        "description": "CWE-1333 Inefficient Regular Expression Complexity",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

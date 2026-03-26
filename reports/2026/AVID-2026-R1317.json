@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1317"
+  },
+  "affects": {
+    "developer": [
+      "PaddlePaddle"
+    ],
+    "deployer": [
+      "PaddlePaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PaddlePaddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Command injection in convert_shape_compare (CVE-2023-52314)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-52314"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-023.md",
+      "url": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-023.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "PaddlePaddle before 2.6.0 has a command injection in convert_shape_compare. This resulted in the ability to execute arbitrary commands on the operating system.\n\nReason for inclusion in AVID: The CVE describes a command injection vulnerability in PaddlePaddle (an AI framework) prior to 2.6.0, enabling arbitrary OS command execution. PaddlePaddle is a core component used in AI model training and deployment stacks, making this a software supply-chain issue within AI systems. The vulnerability is security-related (OS command injection) with high impact, and the report provides explicit signals (CVE entry, CWE-78, CVSS details, and references) sufficient for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "baseScore": 9.6,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-03"
+}

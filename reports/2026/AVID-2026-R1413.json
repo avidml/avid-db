@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1413"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) oneAPI Math Kernel Library software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21766"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21766"
+    },
+    {
+      "type": "source",
+      "label": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01072.html",
+      "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01072.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Uncontrolled search path for some Intel(R) oneAPI Math Kernel Library software before version 2024.1 may allow an authenticated user to potentially enable escalation of privilege via local access.\n\nReason for inclusion in AVID: CVE-2024-21766 describes an uncontrolled search path in Intel oneAPI Math Kernel Library (MKL), a runtime library widely used in AI/ML stacks for linear algebra. This is a software component in AI pipelines/deployments, representing a software supply chain vulnerability in AI systems. The vulnerability enables local privilege escalation, and the report includes the CVE, product, impact, and references, providing sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 6.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-427",
+        "description": "Uncontrolled search path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-14"
+}

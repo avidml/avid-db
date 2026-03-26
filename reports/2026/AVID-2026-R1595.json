@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1595"
+  },
+  "affects": {
+    "developer": [
+      "JFrog"
+    ],
+    "deployer": [
+      "JFrog"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Artifactory"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "JFrog Artifactory Cache Poisoning (CVE-2024-6915)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6915"
+    },
+    {
+      "type": "source",
+      "label": "https://jfrog.com/help/r/jfrog-release-information/jfrog-security-advisories",
+      "url": "https://jfrog.com/help/r/jfrog-release-information/jfrog-security-advisories"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "JFrog Artifactory versions below 7.90.6, 7.84.20, 7.77.14, 7.71.23, 7.68.22, 7.63.22, 7.59.23, 7.55.18 are vulnerable to Improper Input Validation that could potentially lead to cache poisoning.\n\nReason for inclusion in AVID: CVE-2024-6915 describes a cache poisoning vulnerability in JFrog Artifactory due to improper input validation. Artifactory is a widely used artifact repository in software supply chains, including those used for AI/ML pipelines (dependency registries, containers, etc.). A successful cache poisoning could compromise the integrity of artifacts (models, dependencies, containers) distributed and consumed during building, training, deploying, or serving AI systems. Given this directly affects software supply chain components that general-purpose AI systems rely on, it qualifies as a security vulnerability impacting the AI supply chain. The report cites authoritative sources (NVD entry and vendor advisories) confirming the issue and its risk."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:L",
+      "baseScore": 9.3,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-05"
+}

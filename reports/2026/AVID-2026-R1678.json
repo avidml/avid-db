@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1678"
+  },
+  "affects": {
+    "developer": [
+      "vllm-project"
+    ],
+    "deployer": [
+      "vllm-project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vllm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "vLLM  Allows Remote Code Execution via Mooncake Integration (CVE-2025-29783)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-29783"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x3m8-f7g5-qhm7",
+      "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x3m8-f7g5-qhm7"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/pull/14228",
+      "url": "https://github.com/vllm-project/vllm/pull/14228"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/commit/288ca110f68d23909728627d3100e5a8db820aa2",
+      "url": "https://github.com/vllm-project/vllm/commit/288ca110f68d23909728627d3100e5a8db820aa2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "vLLM is a high-throughput and memory-efficient inference and serving engine for LLMs. When vLLM is configured to use Mooncake, unsafe deserialization exposed directly over ZMQ/TCP on all network interfaces will allow attackers to execute remote code on distributed hosts. This is a remote code execution vulnerability impacting any deployments using Mooncake to distribute KV across distributed hosts. This vulnerability is fixed in 0.8.0.\n\nReason for inclusion in AVID: The CVE-2025-29783 entry describes a remote code execution vulnerability in vLLM caused by unsafe deserialization over Mooncake integration via ZMQ/TCP. This directly concerns AI software stacks (model serving/deployment) and affects components used to build/run general-purpose AI systems. It is a security vulnerability (RCE) with explicit exploitation potential and CVE/NVD references provide evidence. Therefore it meets all AVID criteria for inclusion in AI supply chain curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "ADJACENT_NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-19"
+}

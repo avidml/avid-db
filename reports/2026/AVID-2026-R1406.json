@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1406"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure SDK"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Azure SDK Spoofing Vulnerability (CVE-2024-21421)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21421"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-21421",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-21421"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Azure SDK Spoofing Vulnerability\n\nReason for inclusion in AVID: CVE-2024-21421 describes a spoofing vulnerability in the Azure SDK, a software library widely used in cloud environments. This library can be part of AI system deployments (data ingestion, storage, orchestration, and resource management in AI workflows on Azure). The issue is a vulnerability in a dependency used to build/run AI systems, representing a software supply chain risk within general-purpose AI stacks. It is a CVE-style security vulnerability with accessible references (NVD/MSRC)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1395",
+        "description": "CWE-1395: Dependency on Vulnerable Third-Party Component",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2024-03-12"
+}

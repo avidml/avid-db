@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1269"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-39659"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-39659"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langchain-ai/langchain/issues/7700",
+      "url": "https://github.com/langchain-ai/langchain/issues/7700"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langchain-ai/langchain/pull/5640",
+      "url": "https://github.com/langchain-ai/langchain/pull/5640"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in langchain langchain-ai v.0.0.232 and before allows a remote attacker to execute arbitrary code via a crafted script to the PythonAstREPLTool._run component.\n\nReason for inclusion in AVID: CVE-2023-39659 describes remote code execution via LangChain's PythonAstREPLTool._run in langchain-ai <= 0.0.232. LangChain is a core AI tooling/Framework library used to build AI agents and pipelines. The vulnerability is exploitable through crafted input, enabling arbitrary code execution in affected environments. This is a software supply chain issue affecting components commonly used to build, deploy, and run general-purpose AI systems (dependencies and tooling). It is a clear security vulnerability with practical impact (RCE) and is supported by the CVE references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-08-15"
+}

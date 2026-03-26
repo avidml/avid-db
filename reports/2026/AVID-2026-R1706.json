@@ -1,0 +1,82 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1706"
+  },
+  "affects": {
+    "developer": [
+      "OZI-Project"
+    ],
+    "deployer": [
+      "OZI-Project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "publish"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OZI-Project/ozi-publish Code Injection vulnerability (CVE-2025-47271)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-47271"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/OZI-Project/publish/security/advisories/GHSA-2487-9f55-2vg9",
+      "url": "https://github.com/OZI-Project/publish/security/advisories/GHSA-2487-9f55-2vg9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/OZI-Project/publish/commit/abd8524ec69800890529846b3ccfb09ce7c10b5c",
+      "url": "https://github.com/OZI-Project/publish/commit/abd8524ec69800890529846b3ccfb09ce7c10b5c"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The OZI action is a GitHub Action that publishes releases to PyPI and mirror releases, signature bundles, and provenance in a tagged release. In versions 1.13.2 through 1.13.5, potentially untrusted data flows into PR creation logic. A malicious actor could construct a branch name that injects arbitrary code. This is patched in 1.13.6. As a workaround, one may downgrade to a version prior to 1.13.2.\n\nReason for inclusion in AVID: The CVE-2025-47271 describes a code injection vulnerability in a GitHub Action (ozi-publish) used to publish Python releases and provenance data. This creates a potential remote code execution path via untrusted branch data during PR creation. While not AI-specific, AI systems rely on CI/CD pipelines, artifact packaging, and deployment workflows (e.g., Python packages, model-serving stacks, data pipelines). Therefore, this vulnerability impacts the software supply chain used to build, package, and deploy AI systems. The report includes affected versions, patch info, and references, providing sufficient evidence of the vulnerability and remediation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-95",
+        "description": "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-1116",
+        "description": "CWE-1116: Inaccurate Comments",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-12"
+}

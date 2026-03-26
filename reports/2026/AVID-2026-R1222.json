@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1222"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) Optimization for Tensorflow software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-27506"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-27506"
+    },
+    {
+      "type": "source",
+      "label": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00840.html",
+      "url": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00840.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper buffer restrictions in the Intel(R) Optimization for Tensorflow software before version 2.12 may allow an authenticated user to potentially enable escalation of privilege via local access.\n\nReason for inclusion in AVID: CVE-2023-27506 describes a software vulnerability (local privilege escalation) in Intel Optimization for TensorFlow, a component used to accelerate AI workloads. This affects AI software stacks (TensorFlow optimization tools) and thus is relevant to the AI supply chain (dependencies/ runtimes in ML pipelines). It is not hardware- or firmware-only. The CVE text provides clear vulnerability behavior and scope, supporting its inclusion in AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:L/I:H/A:L",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-92",
+        "description": "Improper buffer restrictions",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-11"
+}

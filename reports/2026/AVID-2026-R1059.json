@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1059"
+  },
+  "affects": {
+    "developer": [
+      "sigstore"
+    ],
+    "deployer": [
+      "sigstore"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cosign"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "False positive signature verification in cosign (CVE-2022-35929)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-35929"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/security/advisories/GHSA-vjxv-45g9-9296",
+      "url": "https://github.com/sigstore/cosign/security/advisories/GHSA-vjxv-45g9-9296"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/commit/c5fda01a8ff33ca981f45a9f13e7fb6bd2080b94",
+      "url": "https://github.com/sigstore/cosign/commit/c5fda01a8ff33ca981f45a9f13e7fb6bd2080b94"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "cosign is a container signing and verification utility. In versions prior to 1.10.1 cosign can report a false positive if any attestation exists. `cosign verify-attestation` used with the `--type` flag will report a false positive verification when there is at least one attestation with a valid signature and there are NO attestations of the type being verified (--type defaults to \"custom\"). This can happen when signing with a standard keypair and with \"keyless\" signing with Fulcio. This vulnerability can be reproduced with the `distroless.dev/static@sha256:dd7614b5a12bc4d617b223c588b4e0c833402b8f4991fb5702ea83afad1986e2` image. This image has a `vuln` attestation but not an `spdx` attestation. However, if you run `cosign verify-attestation --type=spdx` on this image, it incorrectly succeeds. This issue has been addressed in version 1.10.1 of cosign. Users are advised to upgrade. There are no known workarounds for this issue.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in cosign's attestation verification that can incorrectly verify attestations, potentially undermining container image supply chain integrity. Cosign is widely used to sign/verify artifacts in AI pipelines and general-purpose AI systems. This directly impacts software supply chain security for AI stacks (build/deploy/run phases) and constitutes a clear security vulnerability in the software supply chain. The report provides explicit CVE details, affected version, impact, and references, offering sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-347",
+        "description": "CWE-347: Improper Verification of Cryptographic Signature",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-08-04"
+}

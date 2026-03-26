@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1356"
+  },
+  "affects": {
+    "developer": [
+      "mintplex-labs"
+    ],
+    "deployer": [
+      "mintplex-labs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mintplex-labs/anything-llm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Download and export of file via default user role (CVE-2024-0551)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0551"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/f114c787-ab5f-4f83-afa5-c000435efb78",
+      "url": "https://huntr.com/bounties/f114c787-ab5f-4f83-afa5-c000435efb78"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mintplex-labs/anything-llm/commit/7aaa4b38e7112a6cd879c1238310c56b1844c6d8",
+      "url": "https://github.com/mintplex-labs/anything-llm/commit/7aaa4b38e7112a6cd879c1238310c56b1844c6d8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Enable exports of the database and associated exported information of the system via the default user role. The attacked would have to have been granted access to the system prior to the attack.\n\nIt is worth noting that the deterministic nature of the export name is lower risk as the UI for exporting would start the download at the same time, which once downloaded - deletes the export from the system.\n\nThe endpoint for exporting should simply be patched to a higher privilege level.\n\nReason for inclusion in AVID: The CVE describes improper access control enabling export of database data via the default user role, leading to potential data exfiltration. The affected artifact is mintplex-labs/anything-llm, an AI system component, implying relevance to AI software stacks and pipelines. This constitutes a software supply-chain vulnerability within AI systems (data exposure via a component used to build/deploy AI). The vulnerability is security-related (data leakage due to insufficient access control) and the report provides explicit evidence (CVE entry, description, affected artifacts)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-284",
+        "description": "CWE-284 Improper Access Control",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-27"
+}

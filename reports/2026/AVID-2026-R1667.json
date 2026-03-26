@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1667"
+  },
+  "affects": {
+    "developer": [
+      "snowflakedb"
+    ],
+    "deployer": [
+      "snowflakedb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "snowflake-connector-python"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "The Snowflake Connector for Python uses insecure cache files permissions (CVE-2025-24795)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-24795"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/snowflakedb/snowflake-connector-python/security/advisories/GHSA-r2x6-cjg7-8r43",
+      "url": "https://github.com/snowflakedb/snowflake-connector-python/security/advisories/GHSA-r2x6-cjg7-8r43"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/snowflakedb/snowflake-connector-python/commit/3769b43822357c3874c40f5e74068458c2dc79af",
+      "url": "https://github.com/snowflakedb/snowflake-connector-python/commit/3769b43822357c3874c40f5e74068458c2dc79af"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Snowflake Connector for Python provides an interface for developing Python applications that can connect to Snowflake and perform all standard operations. Snowflake discovered and remediated a vulnerability in the Snowflake Connector for Python. On Linux systems, when temporary credential caching is enabled, the Snowflake Connector for Python will cache temporary credentials locally in a world-readable file. This vulnerability affects versions 2.3.7 through 3.13.0. Snowflake fixed the issue in version 3.13.1.\n\nReason for inclusion in AVID: The report describes CVE-2025-24795 for Snowflake Connector for Python, which caches temporary credentials in a world-readable file on Linux, affecting versions 2.3.7\u20133.13.0 and fixed in 3.13.1. Snowflake Connector Python is a common data-access dependency used in AI/ML pipelines; insecure credential caching constitutes a security vulnerability with potential impact on the software supply chain for AI systems. It affects software components used to build/run AI systems and has clear remediation, making it relevant for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 4.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-276",
+        "description": "CWE-276: Incorrect Default Permissions",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-29"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1298"
+  },
+  "affects": {
+    "developer": [
+      "mindsdb"
+    ],
+    "deployer": [
+      "mindsdb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mindsdb"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MindsDB Server-Side Request Forgery vulnerability (CVE-2023-49795)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-49795"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-34mr-6q8x-g9r6",
+      "url": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-34mr-6q8x-g9r6"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/commit/8d13c9c28ebcf3b36509eb679378004d4648d8fe",
+      "url": "https://github.com/mindsdb/mindsdb/commit/8d13c9c28ebcf3b36509eb679378004d4648d8fe"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "MindsDB connects artificial intelligence models to real time data. Versions prior to 23.11.4.1 contain a server-side request forgery vulnerability in `file.py`. This can lead to limited information disclosure. Users should use MindsDB's `staging` branch or v23.11.4.1, which contain a fix for the issue.\n\nReason for inclusion in AVID: CVE-2023-49795 is a server-side request forgery vulnerability in MindsDB server (AI data/model integration platform) prior to 23.11.4.1. This is a software vulnerability affecting an AI-related server component used in AI pipelines to connect models to real-time data. It concerns the AI software stack (deployment/runtime) rather than hardware/firmware. It has clear CVE signaling, impact (information disclosure), and a fixed version, making it relevant to the software supply chain for general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-11"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1396"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Cross-Site Request Forgery (CSRF) Leading to Remote Code Execution in parisneo/lollms-webui (CVE-2024-1522)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1522"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/687cef92-3432-4d6c-af92-868eccabbb71",
+      "url": "https://huntr.com/bounties/687cef92-3432-4d6c-af92-868eccabbb71"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/parisneo/lollms-webui/commit/0b51063119cfb5e391925d232a4af1de9dc32e2b",
+      "url": "https://github.com/parisneo/lollms-webui/commit/0b51063119cfb5e391925d232a4af1de9dc32e2b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Cross-Site Request Forgery (CSRF) vulnerability in the parisneo/lollms-webui project allows remote attackers to execute arbitrary code on a victim's system. The vulnerability stems from the `/execute_code` API endpoint, which does not properly validate requests, enabling an attacker to craft a malicious webpage that, when visited by a victim, submits a form to the victim's local lollms-webui instance to execute arbitrary OS commands. This issue allows attackers to take full control of the victim's system without requiring direct network access to the vulnerable application.\n\nReason for inclusion in AVID: The CVE describes a CSRF leading to remote code execution in the parisneo/lollms-webui web UI, a component commonly used in AI model hosting/inference stacks. This is a software vulnerability in an AI tooling component that could impact general-purpose AI systems, and the report provides explicit CVE details and impact (RCE, CSRF, affected endpoint). This aligns with software supply chain concerns in AI stacks (dependencies/tools used to run AI models)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-30"
+}

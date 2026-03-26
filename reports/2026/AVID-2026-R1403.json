@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1403"
+  },
+  "affects": {
+    "developer": [
+      "vertaai"
+    ],
+    "deployer": [
+      "vertaai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vertaai/modeldb"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal leading to Arbitrary File Write and RCE in vertaai/modeldb (CVE-2024-1961)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1961"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/5f602914-3e5d-407a-b8ce-fb444a4e8bb3",
+      "url": "https://huntr.com/bounties/5f602914-3e5d-407a-b8ce-fb444a4e8bb3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "vertaai/modeldb is vulnerable to a path traversal attack due to improper sanitization of user-supplied file paths in its file upload functionality. Attackers can exploit this vulnerability to write arbitrary files anywhere in the file system by manipulating the 'artifact_path' parameter. This flaw can lead to Remote Code Execution (RCE) by overwriting critical files, such as the application's configuration file, especially when the application is run outside of Docker. The vulnerability is present in the NFSController.java and NFSService.java components of the application.\n\nReason for inclusion in AVID: CVE-2024-1961 describes a path traversal vulnerability in vertaai/modeldb that allows arbitrary file write and remote code execution. This is a security vulnerability in an AI infrastructure component (model metadata store) used in ML pipelines. It affects software used to build/deploy/run general-purpose AI systems, constituting a software supply-chain risk for AI stacks. Evidence includes explicit description of path traversal, RCE, affected components, and CVSS details."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-16"
+}

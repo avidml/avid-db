@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1361"
+  },
+  "affects": {
+    "developer": [
+      "paddlepaddle"
+    ],
+    "deployer": [
+      "paddlepaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "paddlepaddle/paddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-0917"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0917"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/2d840735-e255-4700-9709-6f7361829119",
+      "url": "https://huntr.com/bounties/2d840735-e255-4700-9709-6f7361829119"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "remote code execution in paddlepaddle/paddle 2.6.0\n\nReason for inclusion in AVID: CVE-2024-0917 describes remote code execution in PaddlePaddle (a major ML framework). This vulnerability affects software used in AI model development, training, and deployment, i.e., general-purpose AI systems. It is in a software component (PaddlePaddle) that AI pipelines rely on, posing a security risk with potential RCE. The report provides explicit CVE reference, affected product, impact details, and CVSS/CWE signals, offering sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L",
+      "baseScore": 9.4,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-07"
+}

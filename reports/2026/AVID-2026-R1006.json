@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1006"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) oneAPI Collective Communications Library (oneCCL) for Intel(R) oneAPI Base Toolkit"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-26425"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-26425"
+    },
+    {
+      "type": "source",
+      "label": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00674.html",
+      "url": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00674.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Uncontrolled search path element in the Intel(R) oneAPI Collective Communications Library (oneCCL) before version 2021.6 for Intel(R) oneAPI Base Toolkit may allow an authenticated user to potentially enable escalation of privilege via local access.\n\nReason for inclusion in AVID: CVE-2022-26425 describes a local privilege escalation in Intel oneAPI Collective Communications Library (oneCCL), a dependency used in AI/ML pipelines for distributed training. This is a software component commonly used to build/run AI systems, thus a software supply-chain issue affecting AI stacks. The description and CVE reference provide clear security vulnerability evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 6.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2023-02-16"
+}

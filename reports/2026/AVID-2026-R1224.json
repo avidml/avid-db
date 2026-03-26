@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1224"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson CloudPak for Data Data Stores"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson CloudPak for Data Data Stores information disclosure (CVE-2023-27545)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-27545"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/6965446",
+      "url": "https://www.ibm.com/support/pages/node/6965446"
+    },
+    {
+      "type": "source",
+      "label": "https://exchange.xforce.ibmcloud.com/vulnerabilities/248947",
+      "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/248947"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson CloudPak for Data Data Stores information disclosure 4.6.0 allows web pages to be stored locally which can be read by another user on the system.  IBM X-Force ID:  248947.\n\nReason for inclusion in AVID: CVE-2023-27545 describes an information disclosure vulnerability in IBM Watson CloudPak for Data Data Stores, a software component used in AI/data science pipelines. This affects software used to build/deploy AI systems (data stores for AI workloads), representing a software supply-chain component vulnerability with potential data exposure. The report provides clear CVE details and references, supporting classification as a security vulnerability in an AI-related software stack."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 4.0,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-525",
+        "description": "CWE-525 Information Exposure Through Browser Caching",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-29"
+}

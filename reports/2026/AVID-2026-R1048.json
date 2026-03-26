@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1048"
+  },
+  "affects": {
+    "developer": [
+      "Qualcomm, Inc."
+    ],
+    "deployer": [
+      "Qualcomm, Inc."
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Snapdragon"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper authentication in Qualcomm IPC (CVE-2022-33242)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-33242"
+    },
+    {
+      "type": "source",
+      "label": "https://www.qualcomm.com/company/product-security/bulletins/march-2023-bulletin",
+      "url": "https://www.qualcomm.com/company/product-security/bulletins/march-2023-bulletin"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Memory corruption due to improper authentication in Qualcomm IPC while loading unsigned lib in audio PD.\n\nReason for inclusion in AVID: CVE-2022-33242 describes a software/firmware vulnerability in Qualcomm IPC that allows memory corruption when loading unsigned libraries in the audio processing domain. The affected component is a driver/IPC used on Snapdragon SoCs, which is part of the software stack that runs general-purpose AI workloads on such hardware. This constitutes a software supply-chain entry affecting AI deployment stacks, with a known vulnerability (CVE) and explicit references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-287",
+        "description": "CWE-287 Improper Authentication",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-03-07"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1639"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Missing Authentication Check in parisneo/lollms-webui (CVE-2024-9919)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9919"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/5c00f56b-32a8-4e26-a4e3-de64f139da6b",
+      "url": "https://huntr.com/bounties/5c00f56b-32a8-4e26-a4e3-de64f139da6b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A missing authentication check in the uninstall endpoint of parisneo/lollms-webui V13 allows attackers to perform unauthorized directory deletions. The /uninstall/{app_name} API endpoint does not call the check_access() function to verify the client_id, enabling attackers to delete directories without proper authentication.\n\nReason for inclusion in AVID: CVE-2024-9919 describes a missing authentication check in the parisneo/lollms-webui uninstall endpoint, enabling unauthorized deletion of directories. This affects AI deployment/management tooling used in general-purpose AI systems, i.e., a component in the AI software stack that could be used to build, deploy, or run AI models. It is a security vulnerability with actionable details (endpoint, missing auth, CWE-306, CVSS 3.0 metrics). The report provides sufficient signal to classify it as a software supply-chain vulnerability within AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-306",
+        "description": "CWE-306 Missing Authentication for Critical Function",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

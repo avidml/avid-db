@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1303"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Pulsar"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Pulsar: Timing attack in SASL token signature verification (CVE-2023-51437)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-51437"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/5kgmvvolf5tzp5rz9xjwfg2ncwvqqgl5",
+      "url": "https://lists.apache.org/thread/5kgmvvolf5tzp5rz9xjwfg2ncwvqqgl5"
+    },
+    {
+      "type": "source",
+      "label": "https://www.openwall.com/lists/oss-security/2024/02/07/1",
+      "url": "https://www.openwall.com/lists/oss-security/2024/02/07/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Observable timing discrepancy vulnerability in Apache Pulsar SASL Authentication Provider can allow an attacker to forge a SASL Role Token that will pass signature verification.\nUsers are recommended to upgrade to version 2.11.3, 3.0.2, or 3.1.1 which fixes the issue. Users should also consider updating the configured secret in the `saslJaasServerRoleTokenSignerSecretPath` file.\n\nAny component matching an above version running the SASL Authentication Provider is affected. That includes the Pulsar Broker, Proxy, Websocket Proxy, or Function Worker.\n\n2.11 Pulsar users should upgrade to at least 2.11.3.\n3.0 Pulsar users should upgrade to at least 3.0.2.\n3.1 Pulsar users should upgrade to at least 3.1.1.\nAny users running Pulsar 2.8, 2.9, 2.10, and earlier should upgrade to one of the above patched versions.\n\nFor additional details on this attack vector, please refer to  https://codahale.com/a-lesson-in-timing-attacks/ .\n\nReason for inclusion in AVID: CVE-2023-51437 describes a timing-attack vulnerability in Apache Pulsar's SASL token verification that can allow forging SASL tokens, impacting multiple Pulsar components (Broker, Proxy, Websocket Proxy, Function Worker). It is a software vulnerability with clear upgrade guidance and CVSS high severity. Apache Pulsar is a widely used component in data pipelines and AI deployment stacks for streaming/ingest-serve workloads; thus, this vulnerability is relevant to the software supply chain of general-purpose AI systems. Therefore, it should be kept for AVID curation as a vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "baseScore": 7.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-203",
+        "description": "CWE-203 Observable Discrepancy",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-07"
+}

@@ -1,0 +1,88 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1367"
+  },
+  "affects": {
+    "developer": [
+      "chidiwilliams"
+    ],
+    "deployer": [
+      "chidiwilliams"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "buzz"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "chidiwilliams buzz model_loader.py download_model temp file (CVE-2024-10372)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10372"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.281764",
+      "url": "https://vuldb.com/?id.281764"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.281764",
+      "url": "https://vuldb.com/?ctiid.281764"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.425441",
+      "url": "https://vuldb.com/?submit.425441"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/Startr4ck/CVE_lists/blob/main/buzz/Insecure%20Temporary%20File%20in%20BUZZ.md",
+      "url": "https://github.com/Startr4ck/CVE_lists/blob/main/buzz/Insecure%20Temporary%20File%20in%20BUZZ.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability classified as problematic was found in chidiwilliams buzz 1.1.0. This vulnerability affects the function download_model of the file buzz/model_loader.py. The manipulation leads to insecure temporary file. It is possible to launch the attack on the local host. The complexity of an attack is rather high. The exploitation appears to be difficult. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.\n\nReason for inclusion in AVID: The CVE concerns an AI-related library (buzz) used to download/load models (model_loader.py download_model). The insecure temporary file vulnerability is a software risk in the AI stack (model download/loading) that could affect model integrity or data on systems running AI workloads. It targets a dependency used in ML pipelines, thus a software supply-chain issue for general-purpose AI systems. Hardware/firmware-only issues are not implicated, and the report provides CVE, CWE, and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 4.5,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-377",
+        "description": "Insecure Temporary File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-25"
+}

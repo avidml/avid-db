@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1276"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson CP4D Data Stores"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson CP4D Data Stores information disclosure (CVE-2023-40694)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-40694"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/7150286",
+      "url": "https://www.ibm.com/support/pages/node/7150286"
+    },
+    {
+      "type": "source",
+      "label": "https://exchange.xforce.ibmcloud.com/vulnerabilities/264838",
+      "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/264838"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson CP4D Data Stores 4.0.0 through 4.8.4 stores potentially sensitive information in log files that could be read by a local user.  IBM X-Force ID:  264838.\n\nReason for inclusion in AVID: CVE-2023-40694 describes an information-disclosure vulnerability in IBM Watson CP4D Data Stores where sensitive data could be written to log files and read by a local user. This is a software vulnerability (security/confidentiality) in a component (Data Stores) that is used within AI data platforms and pipelines, making it relevant to general-purpose AI system stacks. It affects software used to build/train/deploy AI workloads, thus relevant to the AI supply chain. The CVE provides explicit details (CWE-532, log file leakage) and references, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 6.2,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-532",
+        "description": "CWE-532 Insertion of Sensitive Information into Log File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-07"
+}

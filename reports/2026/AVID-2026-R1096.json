@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1096"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "`CHECK` fail in `tf.sparse.cross` in TensorFlow (CVE-2022-35997)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-35997"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-p7hr-f446-x6qf",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-p7hr-f446-x6qf"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/83dcb4dbfa094e33db084e97c4d0531a559e0ebf",
+      "url": "https://github.com/tensorflow/tensorflow/commit/83dcb4dbfa094e33db084e97c4d0531a559e0ebf"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. If `tf.sparse.cross` receives an input `separator` that is not a scalar, it gives a `CHECK` fail that can be used to trigger a denial of service attack. We have patched the issue in GitHub commit 83dcb4dbfa094e33db084e97c4d0531a559e0ebf. The fix will be included in TensorFlow 2.10.0. We will also cherrypick this commit on TensorFlow 2.9.1, TensorFlow 2.8.1, and TensorFlow 2.7.2, as these are also affected and still in supported range. There are no known workarounds for this issue.\n\nReason for inclusion in AVID: CVE-2022-35997 describes a vulnerability in TensorFlow (tf.sparse.cross) that can trigger a denial of service via an input leading to a CHECK failure. TensorFlow is an ML framework widely used to build/train/deploy AI systems, so this is a vulnerability in a software component that sits in the AI software stack. It directly affects software used in AI pipelines, constitutes a security/safety vulnerability (DoS), and has a published patch/commit, with affected versions and remediation, providing clear evidence for curation in the AI supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-617",
+        "description": "CWE-617: Reachable Assertion",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-09-16"
+}

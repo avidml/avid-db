@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1600"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI ChatBot with ChatGPT and Content Generator by AYS"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AI Chatbot with ChatGPT by AYS <= 2.0.9 - Unauthenticated OpenAI Key Disclosure (CVE-2024-7713)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7713"
+    },
+    {
+      "type": "source",
+      "label": "https://wpscan.com/vulnerability/061eab97-4a84-4738-a1e8-ef9a1261ff73/",
+      "url": "https://wpscan.com/vulnerability/061eab97-4a84-4738-a1e8-ef9a1261ff73/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The AI ChatBot with ChatGPT and Content Generator by AYS WordPress plugin before 2.1.0 discloses the Open AI API Key, allowing unauthenticated users to obtain it\n\nReason for inclusion in AVID: CVE-2024-7713 describes an unauthenticated disclosure of an OpenAI API key via a WordPress plugin that integrates with AI services. This concerns a software component used in AI workflows (connecting to OpenAI APIs), representing a vulnerability within the AI software supply chain (dependency/plugin used to build/run AI features). It is a security/safety vuln (credential leakage that enables misuse of AI services). The report provides explicit evidence (unauthenticated key disclosure) to support this."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-09-27"
+}

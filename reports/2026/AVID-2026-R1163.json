@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1163"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-42044"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42044"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/d8s-asns/",
+      "url": "https://pypi.org/project/d8s-asns/"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/democritus-html/",
+      "url": "https://pypi.org/project/democritus-html/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/dadadadada111/info/issues/4",
+      "url": "https://github.com/dadadadada111/info/issues/4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The d8s-asns package for Python, as distributed on PyPI, included a potential code-execution backdoor inserted by a third party. The backdoor is the democritus-html package. The affected version is 0.1.0.\n\nReason for inclusion in AVID: This CVE describes a backdoored Python package (d8s-asns) with a code execution backdoor (democritus-html) distributed on PyPI. It constitutes a software supply-chain vulnerability in a Python dependency that could be pulled into AI software stacks (dependencies, runtimes, packaging, deployment) used to build/train/deploy AI systems. Therefore it is AI-related and relevant to the GP AI supply chain. The vulnerability is clearly security-related (potential code execution), and the report provides explicit evidence (CVE entry, references to PyPI packages)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-10-11"
+}

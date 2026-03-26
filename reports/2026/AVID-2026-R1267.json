@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1267"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-38976"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-38976"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/weaviate/weaviate/issues/3258",
+      "url": "https://github.com/weaviate/weaviate/issues/3258"
+    },
+    {
+      "type": "source",
+      "label": "https://aisec.today/Weaviate-26981c6c5f794077bd51d24c88cebf7a",
+      "url": "https://aisec.today/Weaviate-26981c6c5f794077bd51d24c88cebf7a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in weaviate v.1.20.0 allows a remote attacker to cause a denial of service via the handleUnbatchedGraphQLRequest function.\n\nReason for inclusion in AVID: The CVE describes a remote denial-of-service vulnerability in Weaviate v1.20.0 via handleUnbatchedGraphQLRequest. Weaviate is a vector database commonly used in AI data pipelines and model-serving stacks; this is a software supply-chain issue affecting components used to build/deploy AI systems. It is a security vulnerability with explicit impact, and the report provides explicit references (NVD entry, GitHub issue)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-08-21"
+}

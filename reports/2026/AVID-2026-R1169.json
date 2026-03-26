@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1169"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow: Security vulnerability on AirFlow Connections (CVE-2022-46651)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-46651"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/32309",
+      "url": "https://github.com/apache/airflow/pull/32309"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/n45h3y82og125rnlgt6rbm9szfb6q24d",
+      "url": "https://lists.apache.org/thread/n45h3y82og125rnlgt6rbm9szfb6q24d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows an unauthorized actor to gain access to sensitive information in Connection edit view. This vulnerability is considered low since it requires someone with access to Connection resources specifically updating the connection to exploit it. Users should upgrade to version 2.6.3 or later which has removed the vulnerability.\n\nReason for inclusion in AVID: CVE-2022-46651 describes a security vulnerability in Apache Airflow that allows an unauthorized actor to access sensitive information via the Connection edit view. Airflow is a widely used orchestration tool in AI/ML pipelines, and vulnerabilities in such software can impact the deployment, management, and security of AI systems. This vulnerability is software-based (not hardware/firmware), affects components commonly used to build/run AI workflows, constitutes a security vulnerability (CWE-200), and the report provides evidence (NVD entry, Apache PR) and a fix in version 2.6.3."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-200",
+        "description": "CWE-200 Exposure of Sensitive Information to an Unauthorized Actor",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-07-12"
+}

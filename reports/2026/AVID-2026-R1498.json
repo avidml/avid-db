@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1498"
+  },
+  "affects": {
+    "developer": [
+      "Elastic"
+    ],
+    "deployer": [
+      "Elastic"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Kibana"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-37288"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-37288"
+    },
+    {
+      "type": "source",
+      "label": "https://discuss.elastic.co/t/kibana-8-15-1-security-update-esa-2024-27-esa-2024-28/366119",
+      "url": "https://discuss.elastic.co/t/kibana-8-15-1-security-update-esa-2024-27-esa-2024-28/366119"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A deserialization issue in Kibana can lead to arbitrary code execution when Kibana attempts to parse a YAML document containing a crafted payload. This issue only affects users that use  Elastic Security\u2019s built-in AI tools https://www.elastic.co/guide/en/security/current/ai-for-security.html \u00a0and have configured an  Amazon Bedrock connector https://www.elastic.co/guide/en/security/current/assistant-connect-to-bedrock.html .\n\nReason for inclusion in AVID: The CVE describes a deserialization vulnerability in Kibana that leads to arbitrary code execution when parsing crafted YAML, specifically affecting users of Elastic Security's built-in AI tools and an Amazon Bedrock connector. This places the issue squarely in AI tooling used within AI workflows, and the vulnerability resides in software components (Kibana/Elastic stack) that are part of AI pipelines and deployment stacks. It is a clear security vulnerability with direct impact on AI software systems, and the evidence in the report supports it being considered in the AI supply chain context."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.9,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-09"
+}

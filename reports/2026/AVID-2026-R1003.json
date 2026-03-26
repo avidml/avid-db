@@ -1,0 +1,104 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1003"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "com.alibaba:fastjson"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Deserialization of Untrusted Data (CVE-2022-25845)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-25845"
+    },
+    {
+      "type": "source",
+      "label": "https://snyk.io/vuln/SNYK-JAVA-COMALIBABA-2859222",
+      "url": "https://snyk.io/vuln/SNYK-JAVA-COMALIBABA-2859222"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ddosi.org/fastjson-poc/",
+      "url": "https://www.ddosi.org/fastjson-poc/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/alibaba/fastjson/commit/8f3410f81cbd437f7c459f8868445d50ad301f15",
+      "url": "https://github.com/alibaba/fastjson/commit/8f3410f81cbd437f7c459f8868445d50ad301f15"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/alibaba/fastjson/commit/35db4adad70c32089542f23c272def1ad920a60d",
+      "url": "https://github.com/alibaba/fastjson/commit/35db4adad70c32089542f23c272def1ad920a60d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/alibaba/fastjson/wiki/security_update_20220523",
+      "url": "https://github.com/alibaba/fastjson/wiki/security_update_20220523"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/alibaba/fastjson/releases/tag/1.2.83",
+      "url": "https://github.com/alibaba/fastjson/releases/tag/1.2.83"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The package com.alibaba:fastjson before 1.2.83 are vulnerable to Deserialization of Untrusted Data by bypassing the default autoType shutdown restrictions, which is possible under certain conditions. Exploiting this vulnerability allows attacking remote servers. Workaround: If upgrading is not possible, you can enable [safeMode](https://github.com/alibaba/fastjson/wiki/fastjson_safemode).\n\nReason for inclusion in AVID: CVE-2022-25845 describes a deserialization of untrusted data vulnerability in the com.alibaba:fastjson library (versions before 1.2.83), allowing remote code execution by bypassing autoType shutdown restrictions. This is a software supply-chain risk in a widely-used library that can be part of AI data ingestion, processing, or service stacks. Although not AI-specific, such libraries are commonly used in components that build, deploy, or serve AI systems, making this a relevant vulnerability in the AI software stack. The CVE has clear security impact (RCE, remote exploitation) and is well-documented with multiple references. Therefore it qualifies as an AI-related supply-chain vulnerability with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2022-06-10"
+}

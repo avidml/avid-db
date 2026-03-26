@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1589"
+  },
+  "affects": {
+    "developer": [
+      "stangirard"
+    ],
+    "deployer": [
+      "stangirard"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "stangirard/quivr"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal in stangirard/quivr (CVE-2024-6583)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6583"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/c310b500-ec26-4121-8d3a-8e863181346f",
+      "url": "https://huntr.com/bounties/c310b500-ec26-4121-8d3a-8e863181346f"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A path traversal vulnerability exists in the latest version of stangirard/quivr. This vulnerability allows an attacker to upload files to arbitrary paths in an S3 bucket by manipulating the file path in the upload request.\n\nReason for inclusion in AVID: The CVE describes a path traversal vulnerability in stangirard/quivr, a software component leveraged in AI workflows to build/deploy AI-enabled apps. This is a software supply chain issue affecting a component used in general-purpose AI systems, with a clear security impact (arbitrary file upload path traversal). The report provides explicit vulnerability details and references, making it sufficient for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-23",
+        "description": "CWE-23 Relative Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

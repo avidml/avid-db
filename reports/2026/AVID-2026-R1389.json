@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1389"
+  },
+  "affects": {
+    "developer": [
+      "langgenius"
+    ],
+    "deployer": [
+      "langgenius"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "langgenius/dify"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF in langgenius/dify (CVE-2024-12775)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12775"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e90e929a-9bc9-46ad-a5e5-1f6f124d0f12",
+      "url": "https://huntr.com/bounties/e90e929a-9bc9-46ad-a5e5-1f6f124d0f12"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "langgenius/dify version 0.10.1 contains a Server-Side Request Forgery (SSRF) vulnerability in the test functionality for the Create Custom Tool option via the REST API `POST /console/api/workspaces/current/tool-provider/api/test/pre`. Attackers can set the `url` in the `servers` dictionary in OpenAI's schema with arbitrary URL targets, allowing them to abuse the victim server's credentials to access unauthorized web resources.\n\nReason for inclusion in AVID: CVE-2024-12775 describes a Server-Side Request Forgery (SSRF) in langgenius/dify v0.10.1, a tool/framework used for AI tooling and integration. The vulnerability resides in a REST API endpoint used to test custom tools, allowing an attacker to supply arbitrary URLs and abuse the server's credentials to access internal resources. This directly concerns AI tooling/framework software and can impact AI pipelines, serving stacks, and related dependencies. Therefore, it is a software supply-chain vulnerability within components used to build/run general-purpose AI systems, and it is a CVE-style security vulnerability with clear exploitation potential."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

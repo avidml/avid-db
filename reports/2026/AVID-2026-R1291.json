@@ -1,0 +1,80 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1291"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-48022"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-48022"
+    },
+    {
+      "type": "source",
+      "label": "https://bishopfox.com/blog/ray-versions-2-6-3-2-8-0",
+      "url": "https://bishopfox.com/blog/ray-versions-2-6-3-2-8-0"
+    },
+    {
+      "type": "source",
+      "label": "https://docs.ray.io/en/latest/ray-security/index.html",
+      "url": "https://docs.ray.io/en/latest/ray-security/index.html"
+    },
+    {
+      "type": "source",
+      "label": "https://www.vicarius.io/vsociety/posts/shadowray-cve-2023-48022-exploit",
+      "url": "https://www.vicarius.io/vsociety/posts/shadowray-cve-2023-48022-exploit"
+    },
+    {
+      "type": "source",
+      "label": "https://atlas.mitre.org/studies/AML.CS0023",
+      "url": "https://atlas.mitre.org/studies/AML.CS0023"
+    },
+    {
+      "type": "source",
+      "label": "https://docs.ray.io/en/latest/ray-security/token-auth.html",
+      "url": "https://docs.ray.io/en/latest/ray-security/token-auth.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Anyscale Ray 2.6.3 and 2.8.0 allows a remote attacker to execute arbitrary code via the job submission API. NOTE: the vendor's position is that this report is irrelevant because Ray, as stated in its documentation, is not intended for use outside of a strictly controlled network environment. (Also, within that environment, customers at version 2.52.0 and later can choose to use token authentication.)\n\nReason for inclusion in AVID: CVE-2023-48022 describes a remote code execution vulnerability in Anyscale Ray (versions 2.6.3 and 2.8.0) via the job submission API. Ray is a core AI framework used in ML pipelines for building, deploying, and running AI systems, placing this squarely in software supply-chain relevance for general-purpose AI stacks. The vulnerability is a security risk (RCE) and is evidenced by the CVE/NVD entry and related security discussions/advisories. The report provides explicit vulnerability behavior and references, supporting classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-11-28"
+}

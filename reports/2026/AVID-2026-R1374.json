@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1374"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "binary-husky/gpt_academic"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Open Redirect in binary-husky/gpt_academic (CVE-2024-10812)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10812"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/51408ebd-e0be-489d-8088-f210087dbd6a",
+      "url": "https://huntr.com/bounties/51408ebd-e0be-489d-8088-f210087dbd6a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An open redirect vulnerability exists in binary-husky/gpt_academic version 3.83. The vulnerability occurs when a user is redirected to a URL specified by user-controlled input in the 'file' parameter without proper validation or sanitization. This can be exploited by attackers to conduct phishing attacks, distribute malware, and steal user credentials.\n\nReason for inclusion in AVID: CVE-2024-10812 describes an open redirect vulnerability in binary-husky/gpt_academic, a GPT/AI-related project. The flaw is within a software artifact that could be used in AI workflows (e.g., model serving or tooling). It is a security vulnerability (open redirect) and affects a component that could be part of AI supply chains. The report provides CVE/NVD signal and details sufficient to assess risk."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 6.1,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-601",
+        "description": "CWE-601 URL Redirection to Untrusted Site",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

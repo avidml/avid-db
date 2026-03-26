@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1663"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NeMo Framework"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2025-23249"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-23249"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5641",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5641"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA NeMo Framework contains a vulnerability where a user could cause a deserialization of untrusted data by remote code execution. A successful exploit of this vulnerability might lead to code execution and data tampering.\n\nReason for inclusion in AVID: The CVE describes a deserialization vulnerability in NVIDIA NeMo Framework enabling remote code execution, a known security risk. NeMo is an AI framework used in ML pipelines, modeling, and deployment, so this is a software supply-chain relevant issue affecting components used to build/run general-purpose AI systems. The vulnerability is clearly security-related with RCE/tampering, and the report provides sufficient evidence (CVE, description, CVSS, references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:L",
+      "baseScore": 7.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-22"
+}

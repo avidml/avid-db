@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1426"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) Neural Compressor software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-22476"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-22476"
+    },
+    {
+      "type": "source",
+      "label": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01109.html",
+      "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01109.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper input validation in some Intel(R) Neural Compressor software before version 2.5.0 may allow an unauthenticated user to potentially enable escalation of privilege via remote access.\n\nReason for inclusion in AVID: CVE-2024-22476 describes improper input validation in Intel Neural Compressor software, enabling unauthenticated remote privilege escalation. Neural Compressor is a software component commonly used in AI model optimization pipelines, i.e., part of the software stack for building/deploying AI systems. This is a software supply-chain/installation-time vulnerability with clear security impact (privilege escalation via network). Therefore it is AI-related, affects a GPAI tech stack, is a security vulnerability, and has sufficient evidence in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "Improper input validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-16"
+}

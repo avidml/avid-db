@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1215"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Gradio contains Use of Hard-coded Credentials (CVE-2023-25823)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25823"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gradio-app/gradio/security/advisories/GHSA-3x5j-9vwr-8rr5",
+      "url": "https://github.com/gradio-app/gradio/security/advisories/GHSA-3x5j-9vwr-8rr5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Gradio is an open-source Python library to build machine learning and data science demos and web applications. Versions prior to 3.13.1 contain Use of Hard-coded Credentials. When using Gradio's share links (i.e. creating a Gradio app and then setting `share=True`), a private SSH key is sent to any user that connects to the Gradio machine, which means that a user could access other users' shared Gradio demos. From there, other exploits are possible depending on the level of access/exposure the Gradio app provides. This issue is patched in version 3.13.1, however, users  are recommended to update to 3.19.1 or later where the FRP solution has been properly tested.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in the Gradio Python library (an AI tooling/framework used to build ML demos and web apps) where a private SSH key could be exposed to users via share links. This is a software vulnerability in a component commonly used in AI pipelines and deployment stacks. It affects software supply chains since downstream AI applications and demos rely on Gradio as a dependency; exploitation could impact AI systems\u2019 security (credentials leakage, potential in-app access). The report provides CVE details and references, and the issue has remediation in newer Gradio versions. Therefore, it meets AI relevance, supply-chain relevance, security impact, and sufficiency criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:L",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-798",
+        "description": "CWE-798: Use of Hard-coded Credentials",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-02-23"
+}

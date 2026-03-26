@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1613"
+  },
+  "affects": {
+    "developer": [
+      "prefecthq"
+    ],
+    "deployer": [
+      "prefecthq"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "prefecthq/prefect"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CORS Misconfiguration in prefecthq/prefect (CVE-2024-8183)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8183"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/b801de43-ff9f-4db9-b583-4797d4f7d3d2",
+      "url": "https://huntr.com/bounties/b801de43-ff9f-4db9-b583-4797d4f7d3d2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/prefecthq/prefect/commit/a69266e077169b8a32ad76b1dd3ea63b96d011c2",
+      "url": "https://github.com/prefecthq/prefect/commit/a69266e077169b8a32ad76b1dd3ea63b96d011c2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A CORS (Cross-Origin Resource Sharing) misconfiguration in prefecthq/prefect version 2.20.2 allows unauthorized domains to access sensitive data. This vulnerability can lead to unauthorized access to the database, resulting in potential data leaks, loss of confidentiality, service disruption, and data integrity risks.\n\nReason for inclusion in AVID: CVE-2024-8183 describes a CORS misconfiguration in prefecthq/prefect that can allow unauthorized domains to access sensitive data. Prefect is a workflow/orchestration tool widely used to build, deploy, and run AI/ML pipelines, making this vulnerability relevant to AI systems and their software stack. It constitutes a security vulnerability with potential data exposure, and the report provides explicit CVE details, impact, and references, supporting its inclusion in AI software supply chain curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L",
+      "baseScore": 7.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-346",
+        "description": "CWE-346 Origin Validation Error",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

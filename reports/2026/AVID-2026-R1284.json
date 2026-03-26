@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1284"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Submarine"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Submarine: Fix CVE-2022-1471 SnakeYaml unsafe deserialization (CVE-2023-46302)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-46302"
+    },
+    {
+      "type": "source",
+      "label": "https://issues.apache.org/jira/browse/SUBMARINE-1371",
+      "url": "https://issues.apache.org/jira/browse/SUBMARINE-1371"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/submarine/pull/1054",
+      "url": "https://github.com/apache/submarine/pull/1054"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5",
+      "url": "https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Software Foundation Apache Submarine has a bug when serializing against yaml. The bug is caused by snakeyaml  https://nvd.nist.gov/vuln/detail/CVE-2022-1471 .\n\nApache Submarine uses JAXRS to define REST endpoints.  In order to\nhandle YAML requests (using application/yaml content-type), it defines\na YamlEntityProvider entity provider that will process all incoming\nYAML requests.  In order to unmarshal the request, the readFrom method\nis invoked, passing the entityStream containing the user-supplied data in `submarine-server/server-core/src/main/java/org/apache/submarine/server/utils/YamlUtils.java`.\n \nWe have now fixed this issue in the new version by replacing to `jackson-dataformat-yaml`.\nThis issue affects Apache Submarine: from 0.7.0 before 0.8.0.\u00a0Users are recommended to upgrade to version 0.8.0, which fixes this issue.\nIf using the version smaller than 0.8.0  and not want to upgrade, you can try cherry-pick PR  https://github.com/apache/submarine/pull/1054  and rebuild the submart-server image to fix this.\n\nReason for inclusion in AVID: The CVE describes a deserialization vulnerability in Apache Submarine's YAML processing (CWE-502) that can be exploited via untrusted YAML input. This lies squarely in the software supply chain of AI systems (AI platform component used to build/run AI workloads) and could impact security/safety of AI pipelines. The advisory notes the fix and upgrade path, indicating an actionable vulnerability in AI software stacks. Therefore it meets AVID criteria for AI-related supply chain vulnerability within general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-20"
+}

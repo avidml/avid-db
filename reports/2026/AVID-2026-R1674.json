@@ -1,0 +1,87 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1674"
+  },
+  "affects": {
+    "developer": [
+      "IAHispano"
+    ],
+    "deployer": [
+      "IAHispano"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Applio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Applio allows unsafe deserialization in inference.py (CVE-2025-27781)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-27781"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2024-341_GHSL-2024-353_Applio/",
+      "url": "https://securitylab.github.com/advisories/GHSL-2024-341_GHSL-2024-353_Applio/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/IAHispano/Applio/commit/eb21d9dd349a6ae1a28c440b30d306eafba65097",
+      "url": "https://github.com/IAHispano/Applio/commit/eb21d9dd349a6ae1a28c440b30d306eafba65097"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/IAHispano/Applio/blob/29b4a00e4be209f9aac51cd9ccffcc632dfb2973/tabs/inference/inference.py#L325",
+      "url": "https://github.com/IAHispano/Applio/blob/29b4a00e4be209f9aac51cd9ccffcc632dfb2973/tabs/inference/inference.py#L325"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/IAHispano/Applio/blob/29b4a00e4be209f9aac51cd9ccffcc632dfb2973/tabs/inference/inference.py#L338-L345",
+      "url": "https://github.com/IAHispano/Applio/blob/29b4a00e4be209f9aac51cd9ccffcc632dfb2973/tabs/inference/inference.py#L338-L345"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/IAHispano/Applio/blob/29b4a00e4be209f9aac51cd9ccffcc632dfb2973/tabs/tts/tts.py#L50-L57",
+      "url": "https://github.com/IAHispano/Applio/blob/29b4a00e4be209f9aac51cd9ccffcc632dfb2973/tabs/tts/tts.py#L50-L57"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Applio is a voice conversion tool. Versions 3.2.8-bugfix and prior are vulnerable to unsafe deserialization in inference.py. `model_file` in inference.py as well as `model_file` in tts.py take user-supplied input (e.g. a path to a model) and pass that value to the `change_choices` and later to `get_speakers_id` function, which loads that model with `torch.load` in inference.py (line 326 in 3.2.8-bugfix), which is vulnerable to unsafe deserialization. The issue can lead to remote code execution. A patch is available on the `main` branch of the repository.\n\nReason for inclusion in AVID: Unsafe deserialization in Applio's inference pathway allows remote code execution by loading user-supplied model files via torch.load. This directly concerns AI inference/model-loading components and their software stack, impacting the deployment/run of AI systems. The CVE description and references provide clear vulnerability behavior and remediation signals."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-19"
+}

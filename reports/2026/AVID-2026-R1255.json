@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1255"
+  },
+  "affects": {
+    "developer": [
+      "awslabs"
+    ],
+    "deployer": [
+      "awslabs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aws-dataall"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AWS data.all vulnerable to RCE through user injection of Python Commands (CVE-2023-36467)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-36467"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/awslabs/aws-dataall/security/advisories/GHSA-m922-chh7-8qcr",
+      "url": "https://github.com/awslabs/aws-dataall/security/advisories/GHSA-m922-chh7-8qcr"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/awslabs/aws-dataall/pull/472",
+      "url": "https://github.com/awslabs/aws-dataall/pull/472"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/awslabs/aws-dataall/releases/tag/v1.5.2",
+      "url": "https://github.com/awslabs/aws-dataall/releases/tag/v1.5.2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/awslabs/aws-dataall/releases/tag/v1.5.4",
+      "url": "https://github.com/awslabs/aws-dataall/releases/tag/v1.5.4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "AWS data.all is an open source development framework to help users build a data marketplace on Amazon Web Services. data.all versions 1.2.0 through 1.5.1 do not prevent remote code execution when a user injects Python commands into the \u2018Template\u2019 field when configuring a data pipeline. The issue can only be triggered by authenticated users. A fix for this issue is available in data.all version 1.5.2 and later. There is no recommended work around.\n\nReason for inclusion in AVID: CVE-2023-36467 describes a remote code execution in aws-dataall (data.all), a data-pipeline framework often used in AI data preparation/governance. It is a software supply-chain issue in a component used to build/run AI data workflows, with explicit CVE details and a fix in v1.5.2+; therefore it constitutes a security vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.0,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-06-28"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1333"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal: '\\..\\filename' in mlflow/mlflow (CVE-2023-6831)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6831"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/0acdd745-0167-4912-9d5c-02035fe5b314",
+      "url": "https://huntr.com/bounties/0acdd745-0167-4912-9d5c-02035fe5b314"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1",
+      "url": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Path Traversal: '\\..\\filename' in GitHub repository mlflow/mlflow prior to 2.9.2.\n\nReason for inclusion in AVID: CVE-2023-6831 is a path traversal vulnerability in mlflow<2.9.2. MLflow is a core AI tooling/framework used in building, training, deploying AI models, making this a software supply-chain issue in AI systems. It is a security vulnerability with documented impact, and the report provides sufficient signals (CVE, affected version, commit)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-15"
+}

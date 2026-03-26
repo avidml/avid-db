@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0956"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA Data Center GPU Manager"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-21820"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-21820"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5328",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5328"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/167396/NVIDIA-Data-Center-GPU-Manager-Remote-Memory-Corruption.html",
+      "url": "http://packetstormsecurity.com/files/167396/NVIDIA-Data-Center-GPU-Manager-Remote-Memory-Corruption.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA DCGM contains a vulnerability in nvhostengine, where a network user can cause detection of error conditions without action, which may lead to limited code execution, some denial of service, escalation of privileges, and limited impacts to both data confidentiality and integrity.\n\nReason for inclusion in AVID: CVE-2022-21820 describes a remote memory corruption vulnerability in NVIDIA Data Center GPU Manager (DCGM) nvhostengine that can lead to limited code execution, denial of service, privilege escalation, and impacts to confidentiality and integrity. DCGM is a software component used to manage NVIDIA GPUs in data-center AI workloads, making it AI-related and part of the software stack used to build/train/deploy AI systems. It concerns software supply chain elements (management/runtime components used in AI deployments). The vulnerability is clearly CVE-listed with explicit security impacts. Therefore, it satisfies the AVID criteria for an AI-supply-chain vulnerability with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 6.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-03-24"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0886"
+  },
+  "affects": {
+    "developer": [
+      "in-toto"
+    ],
+    "deployer": [
+      "in-toto"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "in-toto-golang"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improperly Implemented path matching for in-toto-golang (CVE-2021-41087)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-41087"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/in-toto/in-toto-golang/security/advisories/GHSA-vrxp-mg9f-hwf3",
+      "url": "https://github.com/in-toto/in-toto-golang/security/advisories/GHSA-vrxp-mg9f-hwf3"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/in-toto/in-toto-golang/commit/f2c57d1e0f15e3ffbeac531829c696b72ecc4290",
+      "url": "https://github.com/in-toto/in-toto-golang/commit/f2c57d1e0f15e3ffbeac531829c696b72ecc4290"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "in-toto-golang is a go implementation of the in-toto framework to protect software supply chain integrity. In affected versions authenticated attackers posing as functionaries (i.e., within a trusted set of users for a layout) are able to create attestations that may bypass DISALLOW rules in the same layout. An attacker with access to trusted private keys, may issue an attestation that contains a disallowed artifact by including path traversal semantics (e.g., foo vs dir/../foo). Exploiting this vulnerability is dependent on the specific policy applied. The problem has been fixed in version 0.3.0.\n\nReason for inclusion in AVID: CVE-2021-41087 describes a vulnerability in in-toto-golang, a software supply chain attestation framework. The flaw allows authenticated attackers with trusted keys to craft attestations containing disallowed artifacts via path traversal, bypassing policy checks. This directly concerns software supply chain tooling and integrity checks, which are components used to build, package, deploy, and run general-purpose AI systems (CI/CD, artifact verification, dependency/artifact ecosystems). Although the flaw is not AI-specific, it impacts the reliability of AI pipelines that rely on secure software supply chains. The report provides explicit vulnerability details, affected versions, impact, and references, supporting its relevance for AVID curation in AI software stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:N",
+      "baseScore": 5.6,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-345",
+        "description": "CWE-345: Insufficient Verification of Data Authenticity",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-09-21"
+}

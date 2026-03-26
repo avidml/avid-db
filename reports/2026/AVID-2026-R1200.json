@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1200"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "TensorFlow vulnerable to heap out-of-buffer read in the QuantizeAndDequantize operation (CVE-2023-25668)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25668"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gw97-ff7c-9v96",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gw97-ff7c-9v96"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/7b174a0f2e40ff3f3aa957aecddfd5aaae35eccb",
+      "url": "https://github.com/tensorflow/tensorflow/commit/7b174a0f2e40ff3f3aa957aecddfd5aaae35eccb"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. Attackers using Tensorflow prior to 2.12.0 or 2.11.1 can access heap memory which is not in the control of user, leading to a crash or remote code execution. The fix will be included in TensorFlow version 2.12.0 and will also cherrypick this commit on TensorFlow version 2.11.1.\n\nReason for inclusion in AVID: CVE-2023-25668 is a security vulnerability in TensorFlow (a core ML framework) that could enable remote code execution or crashes via a heap-out-of-bounds read in QuantizeAndDequantize. TensorFlow is a foundational library used to build, train, deploy, and run AI systems. The issue affects software components in AI pipelines (framework/library level), and the report provides explicit CVE details, affected versions, impact, and remediation, offering sufficient evidence for a supply-chain vulnerability classification in general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-122",
+        "description": "CWE-122: Heap-based Buffer Overflow",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-125",
+        "description": "CWE-125: Out-of-bounds Read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-03-24"
+}

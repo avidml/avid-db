@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1399"
+  },
+  "affects": {
+    "developer": [
+      "paddlepaddle"
+    ],
+    "deployer": [
+      "paddlepaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "paddlepaddle/paddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "confirmed (CVE-2024-1603)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1603"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/7739eced-73a3-4a96-afcd-9c753c55929e",
+      "url": "https://huntr.com/bounties/7739eced-73a3-4a96-afcd-9c753c55929e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "paddlepaddle/paddle 2.6.0 allows arbitrary file read via paddle.vision.ops.read_file.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in PaddlePaddle (an AI framework) that enables arbitrary file read via paddle.vision.ops.read_file. This affects a software component commonly used to build/train/deploy AI systems, i.e., a dependency in AI pipelines, which constitutes a software supply chain issue for general-purpose AI systems. The vulnerability is clearly security-related (CVE, CVSS shows confidentiality impact), and there is sufficient evidence in the report to classify it. Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73 External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-23"
+}

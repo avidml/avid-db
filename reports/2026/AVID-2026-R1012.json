@@ -1,0 +1,89 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1012"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-2884"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-2884"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/371098",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/371098"
+    },
+    {
+      "type": "source",
+      "label": "https://hackerone.com/reports/1672388",
+      "url": "https://hackerone.com/reports/1672388"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-2884.json",
+      "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-2884.json"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/171628/GitLab-15.3-Remote-Code-Execution.html",
+      "url": "http://packetstormsecurity.com/files/171628/GitLab-15.3-Remote-Code-Execution.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in GitLab CE/EE affecting all versions from 11.3.4 prior to 15.1.5, 15.2 to 15.2.3, 15.3 to 15.3 to 15.3.1 allows an an authenticated user to achieve remote code execution via the Import from GitHub API endpoint\n\nReason for inclusion in AVID: CVE-2022-2884 describes a remote code execution vulnerability in GitLab CE/EE. GitLab is widely used in AI development pipelines for CI/CD, model training orchestration, and artifact management. As such, this is a software supply-chain vulnerability affecting components (CI/CD, deployment pipelines) used to build, package, deploy, or run AI systems. It is clearly a security vulnerability with high impact, and the report provides explicit CVE details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.9,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2022-10-17"
+}

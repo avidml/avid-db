@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1050"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Spark"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Spark shell command injection vulnerability via Spark UI (CVE-2022-33891)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-33891"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/p847l3kopoo5bjtmxrcwk21xp6tjxqlc",
+      "url": "https://lists.apache.org/thread/p847l3kopoo5bjtmxrcwk21xp6tjxqlc"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/168309/Apache-Spark-Unauthenticated-Command-Injection.html",
+      "url": "http://packetstormsecurity.com/files/168309/Apache-Spark-Unauthenticated-Command-Injection.html"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/05/02/1",
+      "url": "http://www.openwall.com/lists/oss-security/2023/05/02/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This affects Apache Spark versions 3.0.3 and earlier, versions 3.1.1 to 3.1.2, and versions 3.2.0 to 3.2.1.\n\nReason for inclusion in AVID: The CVE-2022-33891 describes a command injection vulnerability (CWE-78) in Apache Spark UI that enables arbitrary shell command execution. Apache Spark is a widely used software component in AI/ML data processing pipelines and model training/serving stacks. As a vulnerability in a dependency commonly used to build, train, deploy, or run general-purpose AI systems, it constitutes a software supply chain issue for AI stacks. The vulnerability is explicitly of a security nature (RCE) with clear exploitation potential. Evidence is provided by the CVE entry and description of the OS command injection and affected versions."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-07-18"
+}

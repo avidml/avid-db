@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0834"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "`std::abort` raised from `TensorListReserve` in TensorFlow (CVE-2021-37644)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-37644"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-27j5-4p9v-pp67",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-27j5-4p9v-pp67"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/8a6e874437670045e6c7dc6154c7412b4a2135e2",
+      "url": "https://github.com/tensorflow/tensorflow/commit/8a6e874437670045e6c7dc6154c7412b4a2135e2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. In affected versions providing a negative element to `num_elements` list argument of `tf.raw_ops.TensorListReserve` causes the runtime to abort the process due to reallocating a `std::vector` to have a negative number of elements. The [implementation](https://github.com/tensorflow/tensorflow/blob/8d72537c6abf5a44103b57b9c2e22c14f5f49698/tensorflow/core/kernels/list_kernels.cc#L312) calls `std::vector.resize()` with the new size controlled by input given by the user, without checking that this input is valid. We have patched the issue in GitHub commit 8a6e874437670045e6c7dc6154c7412b4a2135e2. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2021-37644 is a vulnerability in TensorFlow, a core AI software stack. It describes a software flaw in TensorListReserve that can cause the process to abort (availability impact) when given invalid input, and there is a patch in the commit referenced. This is a software supply-chain issue affecting AI systems/components (TensorFlow framework) used to build/train/deploy AI, not hardware/firmware-only. The report provides CVE details, affected versions, a fix, and CVSS metrics, which collectively indicate a security vulnerability in AI software components."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-617",
+        "description": "CWE-617: Reachable Assertion",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-12"
+}

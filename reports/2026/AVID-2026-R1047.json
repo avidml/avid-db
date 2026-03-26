@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1047"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-33002"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-33002"
+    },
+    {
+      "type": "source",
+      "label": "http://pypi.doubanio.com/simple/request",
+      "url": "http://pypi.doubanio.com/simple/request"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/kgexplore/",
+      "url": "https://pypi.org/project/kgexplore/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/smoothnlp/KGExplore/issues/13",
+      "url": "https://github.com/smoothnlp/KGExplore/issues/13"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The KGExplore package in PyPI v0.1.1 to v0.1.2 was discovered to contain a code execution backdoor via the request package. This vulnerability allows attackers to access sensitive user information and digital currency keys, as well as escalate privileges.\n\nReason for inclusion in AVID: CVE-2022-33002 describes a backdoor allowing code execution in the PyPI KGExplore package (versions 0.1.1 to 0.1.2), enabling access to sensitive data and privilege escalation via a compromised dependency path. KGExplore is a Python package that can be used within AI/data processing workflows, making it a relevant component in AI software stacks. This constitutes a software supply-chain vulnerability affecting general-purpose AI systems. The report provides explicit affected versions and references (NVD, PyPI, GitHub issue), supporting sufficiency of the evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-06-24"
+}

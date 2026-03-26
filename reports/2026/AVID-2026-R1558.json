@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1558"
+  },
+  "affects": {
+    "developer": [
+      "onnx"
+    ],
+    "deployer": [
+      "onnx"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "onnx/onnx"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Overwrite in download_model_with_test_data in onnx/onnx (CVE-2024-5187)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-5187"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/50235ebd-3410-4ada-b064-1a648e11237e",
+      "url": "https://huntr.com/bounties/50235ebd-3410-4ada-b064-1a648e11237e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the `download_model_with_test_data` function of the onnx/onnx framework, version 1.16.0, allows for arbitrary file overwrite due to inadequate prevention of path traversal attacks in malicious tar files. This vulnerability enables attackers to overwrite any file on the system, potentially leading to remote code execution, deletion of system, personal, or application files, thus impacting the integrity and availability of the system. The issue arises from the function's handling of tar file extraction without performing security checks on the paths within the tar file, as demonstrated by the ability to overwrite the `/home/kali/.ssh/authorized_keys` file by specifying an absolute path in the malicious tar file.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in the onnx/onnx library (an AI framework) that allows arbitrary file overwrite via path traversal in tar extraction during model/data handling. This directly affects software used to build/deploy AI systems, representing a software supply-chain risk within general-purpose AI stacks. The issue has clear security implications (potential RCE, data/integrity impact) and is well evidenced by the CVE details and CVSS metrics."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

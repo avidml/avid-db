@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1555"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson Speech Services Cartridge for IBM Cloud Pak for Data"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson Speech Services Cartridge for IBM Cloud Pak for Data denial of service (CVE-2024-49353)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-49353"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/7177065",
+      "url": "https://www.ibm.com/support/pages/node/7177065"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson Speech Services Cartridge for IBM Cloud Pak for Data 4.0.0 through 5.0.2 does not properly check inputs to resources that are used concurrently, which might lead to unexpected states, possibly resulting in a crash.\n\nReason for inclusion in AVID: CVE-2024-49353 describes a denial-of-service vulnerability in IBM Watson Speech Services Cartridge for IBM Cloud Pak for Data, a software component used in AI pipelines to provide speech services. It impacts runtime/serving components used to build/run AI systems, representing a software supply-chain risk within AI stacks. The CVE description and CVSS data provide clear vulnerability behavior (DoS) and affected versions, supporting AI-supply-chain relevance."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-362",
+        "description": "CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-26"
+}

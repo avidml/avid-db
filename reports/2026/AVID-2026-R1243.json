@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1243"
+  },
+  "affects": {
+    "developer": [
+      "sigstore"
+    ],
+    "deployer": [
+      "sigstore"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "rekor"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "malformed proposed intoto v0.0.2 entries can cause a panic in Rekor (CVE-2023-33199)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-33199"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/rekor/security/advisories/GHSA-frqx-jfcm-6jjr",
+      "url": "https://github.com/sigstore/rekor/security/advisories/GHSA-frqx-jfcm-6jjr"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/rekor/commit/140c5add105179e5ffd9e3e114fd1b6b93aebbd4",
+      "url": "https://github.com/sigstore/rekor/commit/140c5add105179e5ffd9e3e114fd1b6b93aebbd4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Rekor's goals are to provide an immutable tamper resistant ledger of metadata generated within a software projects supply chain. A malformed proposed entry of the `intoto/v0.0.2` type can cause a panic on a thread within the Rekor process. The thread is recovered so the client receives a 500 error message and service still continues, so the availability impact of this is minimal. This has been fixed in v1.2.0 of Rekor. Users are advised to upgrade. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: CVE-2023-33199 describes a vulnerability in Rekor (part of the Sigstore supply chain tooling) where malformed intoto/v0.0.2 entries can cause a panic. Rekor provides a tamper-evident ledger for software provenance and is used in software supply chain workflows, which include AI systems and models through artifact signing/verification and provenance logging. The issue affects the availability of the supply chain tooling, is a security vulnerability, and there is sufficient public evidence (CVE entry, advisory, and references) with a fixed version (v1.2.0). Therefore, it is relevant to the AI general-purpose software supply chain and should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-617",
+        "description": "CWE-617: Reachable Assertion",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-05-26"
+}

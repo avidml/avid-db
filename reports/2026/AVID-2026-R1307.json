@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1307"
+  },
+  "affects": {
+    "developer": [
+      "PaddlePaddle"
+    ],
+    "deployer": [
+      "PaddlePaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PaddlePaddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Stack overflow in paddle.searchsorted (CVE-2023-52304)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-52304"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-013.md",
+      "url": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-013.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Stack overflow in paddle.searchsorted\u00a0in PaddlePaddle before 2.6.0. This flaw can lead to a denial of service, or even more damage.\n\nReason for inclusion in AVID: CVE-2023-52304 concerns PaddlePaddle, a major AI framework. The vulnerability is a software defect (stack overflow) in a component used within ML pipelines, with potential denial of service and broader impact. This sits squarely in the software supply chain for general-purpose AI systems, and there is public CVE/NVD advisory coverage. Therefore, it meets criteria for AI relevance, supply-chain relevance, security risk, and sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:H/A:L",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-120",
+        "description": "CWE-120 Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-03"
+}

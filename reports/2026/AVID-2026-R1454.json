@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1454"
+  },
+  "affects": {
+    "developer": [
+      "bentoml"
+    ],
+    "deployer": [
+      "bentoml"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "bentoml/bentoml"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Insecure Deserialization Leading to RCE in bentoml/bentoml (CVE-2024-2912)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2912"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/349a1cce-6bb5-4345-82a5-bf7041b65a68",
+      "url": "https://huntr.com/bounties/349a1cce-6bb5-4345-82a5-bf7041b65a68"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bentoml/bentoml/commit/fd70379733c57c6368cc022ac1f841b7b426db7b",
+      "url": "https://github.com/bentoml/bentoml/commit/fd70379733c57c6368cc022ac1f841b7b426db7b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An insecure deserialization vulnerability exists in the BentoML framework, allowing remote code execution (RCE) by sending a specially crafted POST request. By exploiting this vulnerability, attackers can execute arbitrary commands on the server hosting the BentoML application. The vulnerability is triggered when a serialized object, crafted to execute OS commands upon deserialization, is sent to any valid BentoML endpoint. This issue poses a significant security risk, enabling attackers to compromise the server and potentially gain unauthorized access or control.\n\nReason for inclusion in AVID: CVE-2024-2912 describes an insecure deserialization vulnerability in BentoML (bentoml/bentoml) that enables remote code execution via AI model-serving infrastructure. BentoML is a framework/library used to build, deploy, and serve AI models, making this vulnerability directly relevant to AI software stacks and their supply chain. The issue is a software vulnerability in a dependency/tooling used in AI deployment pipelines, not a hardware/firmware issue. The description provides explicit security impact (RCE) and CVSS signals, supporting its classification as a security vulnerability in AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1188",
+        "description": "CWE-1188 Insecure Default Initialization of Resource",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-16"
+}

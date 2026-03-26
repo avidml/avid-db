@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0813"
+  },
+  "affects": {
+    "developer": [
+      "sylabs"
+    ],
+    "deployer": [
+      "sylabs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "singularity"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Action Commands (run/shell/exec) Against Library URIs Ignore Configured Remote Endpoint (CVE-2021-32635)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-32635"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sylabs/singularity/security/advisories/GHSA-5mv9-q7fq-9394",
+      "url": "https://github.com/sylabs/singularity/security/advisories/GHSA-5mv9-q7fq-9394"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sylabs/singularity/releases/tag/v3.7.4",
+      "url": "https://github.com/sylabs/singularity/releases/tag/v3.7.4"
+    },
+    {
+      "type": "source",
+      "label": "https://security.gentoo.org/glsa/202107-50",
+      "url": "https://security.gentoo.org/glsa/202107-50"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Singularity is an open source container platform. In verions 3.7.2 and 3.7.3, Dde to incorrect use of a default URL, `singularity` action commands (`run`/`shell`/`exec`) specifying a container using a `library://` URI will always attempt to retrieve the container from the default remote endpoint (`cloud.sylabs.io`) rather than the configured remote endpoint. An attacker may be able to push a malicious container to the default remote endpoint with a URI that is identical to the URI used by a victim with a non-default remote endpoint, thus executing the malicious container. Only action commands (`run`/`shell`/`exec`) against `library://` URIs are affected. Other commands such as `pull` / `push` respect the configured remote endpoint. The vulnerability is patched in Singularity version 3.7.4. Two possible workarounds exist: Users can only interact with the default remote endpoint, or an installation can have an execution control list configured to restrict execution to containers signed with specific secure keys.\n\nReason for inclusion in AVID: CVE-2021-32635 describes a vulnerability in the Singularity container platform where action commands against library:// URIs ignore the configured remote endpoint and pull from the default endpoint, enabling potential execution of a malicious container. This is a software vulnerability in a container runtime used to build/run AI workflows, impacting the software supply chain for general-purpose AI systems (containers, runtimes, and deployment tooling). The issue affects AI-related software stacks and packaging/deployment pipelines; evidence includes the CVE description, affected versions, and remediation guidance. Therefore it qualifies as an AI-related software supply chain vulnerability with clear security implications."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "baseScore": 6.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-923",
+        "description": "CWE-923: Improper Restriction of Communication Channel to Intended Endpoints",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-05-28"
+}

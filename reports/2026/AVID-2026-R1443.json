@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1443"
+  },
+  "affects": {
+    "developer": [
+      "Unknown"
+    ],
+    "deployer": [
+      "Unknown"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Unknown System"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Excessive directory permissions in MLflow leads to local privilege escalation when using spark_udf (CVE-2024-27134)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-27134"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/pull/10874",
+      "url": "https://github.com/mlflow/mlflow/pull/10874"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Excessive directory permissions in MLflow leads to local privilege escalation when using spark_udf. This behavior can be exploited by a local attacker to gain elevated permissions by using a ToCToU attack. The issue is only relevant when the spark_udf() MLflow API is called.\n\nReason for inclusion in AVID: The CVE describes a software vulnerability in MLflow (a tool commonly used in ML pipelines) that enables local privilege escalation via spark_udf due to excessive directory permissions. This is a vulnerability affecting software components used to build/deploy/run AI systems, i.e., a general-purpose AI software supply chain issue. Evidence includes the CVE description and referenced PR, indicating a TOCTOU/permission-related exploit. The issue is not hardware-only and has clear security impacts (privilege escalation)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.0,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-367",
+        "description": "CWE-367 Time-of-check Time-of-use (TOCTOU) Race Condition",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-276",
+        "description": "CWE-276 Incorrect Default Permissions",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-25"
+}

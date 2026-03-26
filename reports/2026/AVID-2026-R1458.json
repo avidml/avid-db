@@ -1,0 +1,93 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1458"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Qdrant"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Qdrant Full Snapshot REST API snapshots.rs path traversal (CVE-2024-3078)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-3078"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.258611",
+      "url": "https://vuldb.com/?id.258611"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.258611",
+      "url": "https://vuldb.com/?ctiid.258611"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/qdrant/qdrant/pull/3856",
+      "url": "https://github.com/qdrant/qdrant/pull/3856"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/qdrant/qdrant/commit/3ab5172e9c8f14fa1f7b24e7147eac74e2412b62",
+      "url": "https://github.com/qdrant/qdrant/commit/3ab5172e9c8f14fa1f7b24e7147eac74e2412b62"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/qdrant/qdrant/releases/tag/v1.8.3",
+      "url": "https://github.com/qdrant/qdrant/releases/tag/v1.8.3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability was found in Qdrant up to 1.6.1/1.7.4/1.8.2 and classified as critical. This issue affects some unknown processing of the file lib/collection/src/collection/snapshots.rs of the component Full Snapshot REST API. The manipulation leads to path traversal. Upgrading to version 1.8.3 is able to address this issue. The patch is named 3ab5172e9c8f14fa1f7b24e7147eac74e2412b62. It is recommended to upgrade the affected component. The associated identifier of this vulnerability is VDB-258611.\n\nReason for inclusion in AVID: CVE-2024-3078 describes a path traversal vulnerability in Qdrant's Full Snapshot REST API affecting multiple versions; it is a software security issue with a published patch in v1.8.3. Qdrant is widely used as a data store in AI/ML pipelines (vector search, embeddings) and thus is a software component in the AI supply chain. The vulnerability impacts the security of AI deployment stacks, and the CVE provides clear evidence (CVE id, affected versions, patch) supporting its inclusion as a software supply-chain vulnerability in general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-29"
+}

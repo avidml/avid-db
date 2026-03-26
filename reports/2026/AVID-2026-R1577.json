@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1577"
+  },
+  "affects": {
+    "developer": [
+      "1Panel-dev"
+    ],
+    "deployer": [
+      "1Panel-dev"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MaxKB"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MaxKB RCE vulnerability in function library (CVE-2024-56137)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-56137"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-76w2-2g72-cg85",
+      "url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-76w2-2g72-cg85"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "MaxKB, which stands for Max Knowledge Base, is an open source knowledge base question-answering system based on a large language model and retrieval-augmented generation (RAG). Prior to version 1.9.0, a remote command execution vulnerability exists in the module of function library. The vulnerability allow privileged\u200c users to execute OS command in custom scripts. The vulnerability has been fixed in v1.9.0.\n\nReason for inclusion in AVID: CVE-2024-56137 describes a remote code execution vulnerability in MaxKB's function library. MaxKB is an AI-related system (LLM/RAG-based knowledge base) used within AI pipelines, comprising software components that can be part of the AI stack. The issue is a software vulnerability (RCE) in a component relevant to building/deploying AI systems, thus a software supply-chain risk for general-purpose AI workflows. The report provides explicit vulnerability behavior and a fix in v1.9.0, with references to the CVE/NVD and advisories, indicating sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 6.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-02"
+}

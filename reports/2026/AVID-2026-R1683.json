@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1683"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure Machine Learning"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Azure ML Compute Elevation of Privilege Vulnerability (CVE-2025-30390)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-30390"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30390",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30390"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper authorization in Azure allows an authorized attacker to elevate privileges over a network.\n\nReason for inclusion in AVID: The CVE targets Azure ML Compute, a software service used to build/train/deploy AI systems. It is a software vulnerability (privilege escalation) in a component used in AI workflows, thus a candidate in the AI software supply chain. Evidence includes CVE-2025-30390 with high severity and references to NVD and Microsoft MSRC."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "baseScore": 9.9,
+      "baseSeverity": "CRITICAL"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-285",
+        "description": "CWE-285: Improper Authorization",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2025-04-30"
+}

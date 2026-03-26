@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0884"
+  },
+  "affects": {
+    "developer": [
+      "jupyterhub"
+    ],
+    "deployer": [
+      "jupyterhub"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "nbgitpuller"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Code injection in nbgitpuller (CVE-2021-39160)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-39160"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/nbgitpuller/security/advisories/GHSA-mq5p-2mcr-m52j",
+      "url": "https://github.com/jupyterhub/nbgitpuller/security/advisories/GHSA-mq5p-2mcr-m52j"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/nbgitpuller/commit/07690644f29a566011dd0d7ba14cae3eb0490481",
+      "url": "https://github.com/jupyterhub/nbgitpuller/commit/07690644f29a566011dd0d7ba14cae3eb0490481"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/nbgitpuller/blob/main/CHANGELOG.md#0102---2021-08-25",
+      "url": "https://github.com/jupyterhub/nbgitpuller/blob/main/CHANGELOG.md#0102---2021-08-25"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "nbgitpuller is a Jupyter server extension to sync a git repository one-way to a local path. Due to unsanitized input, visiting maliciously crafted links could result in arbitrary code execution in the user environment. This has been resolved in version 0.10.2 and all users are advised to upgrade. No work around exist for users who can not upgrade.\n\nReason for inclusion in AVID: CVE-2021-39160 describes a code injection vulnerability in nbgitpuller, a Jupyter server extension that can be used in AI/ML workflows to fetch code from Git repositories. The flaw arises from unsanitized input and can lead to arbitrary code execution in the user environment, which is a security vulnerability with high impact. nbgitpuller is a software component commonly used in AI development/deployment stacks (Jupyter-based workflows, notebooks, and CI/CD within AI labs), thus it is part of the software supply chain for general-purpose AI systems. The advisory includes remediation (upgrade to 0.10.2) and CVSS 3.1 score (9.6), providing sufficient evidence of the vulnerability and its impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "baseScore": 9.6,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-25"
+}

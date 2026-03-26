@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1636"
+  },
+  "affects": {
+    "developer": [
+      "transformeroptimus"
+    ],
+    "deployer": [
+      "transformeroptimus"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "transformeroptimus/superagi"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in transformeroptimus/superagi (CVE-2024-9439)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9439"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/d710884f-b5ab-4b31-a2e6-e4b38488def1",
+      "url": "https://huntr.com/bounties/d710884f-b5ab-4b31-a2e6-e4b38488def1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "SuperAGI is vulnerable to remote code execution in the latest version. The `agent template update` API allows attackers to control certain parameters, which are then fed to the eval function without any sanitization or checks in place. This vulnerability can lead to full system compromise.\n\nReason for inclusion in AVID: CVE-2024-9439 describes a remote code execution vulnerability in the AI framework/agent platform (transformeroptimus/superagi). The attack leverages an API (agent template update) to feed unsanitized input into an eval, enabling full system compromise. This directly concerns AI software stacks and their deployment/runtime components, i.e., GPAI-related supply chain elements (AI frameworks/tools and their dependencies). The report provides explicit vulnerability behavior (RCE), affected artifact, and CVE details, satisfying sufficient evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

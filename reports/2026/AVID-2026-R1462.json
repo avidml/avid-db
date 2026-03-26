@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1462"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gpt_academic"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "GPT Academic: Pickle deserializing cookies may pose RCE risk (CVE-2024-31224)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-31224"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/binary-husky/gpt_academic/security/advisories/GHSA-jcjc-89wr-vv7g",
+      "url": "https://github.com/binary-husky/gpt_academic/security/advisories/GHSA-jcjc-89wr-vv7g"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/binary-husky/gpt_academic/pull/1648",
+      "url": "https://github.com/binary-husky/gpt_academic/pull/1648"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/binary-husky/gpt_academic/commit/8af6c0cab6d96f5c4520bec85b24802e6e823f35",
+      "url": "https://github.com/binary-husky/gpt_academic/commit/8af6c0cab6d96f5c4520bec85b24802e6e823f35"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "GPT Academic provides interactive interfaces for large language models. A vulnerability was found in gpt_academic versions 3.64 through 3.73. The server deserializes untrustworthy data from the client, which may risk remote code execution. Any device that exposes the GPT Academic service to the Internet is vulnerable. Version 3.74 contains a patch for the issue. There are no known workarounds aside from upgrading to a patched version.\n\nReason for inclusion in AVID: CVE-2024-31224 describes a remote code execution via pickle deserialization in GPT Academic server (versions 3.64\u20133.73). The vulnerability exists in software that provides AI model interaction interfaces, i.e., a component used to deploy AI systems. It is a security flaw within a software component that sits in the AI deployment/serving stack, making it a software supply-chain risk for general-purpose AI systems. A patched version (3.74) is available, with references to NVD/GHSA and vendor commits, providing clear remediation signals."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-08"
+}

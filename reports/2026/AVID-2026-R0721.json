@@ -1,0 +1,87 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0721"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow: Lineage API endpoint for Experimental API missed authentication check (CVE-2021-26697)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-26697"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cusers.airflow.apache.org%3E",
+      "url": "https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cusers.airflow.apache.org%3E"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2021/02/17/2",
+      "url": "http://www.openwall.com/lists/oss-security/2021/02/17/2"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cdev.airflow.apache.org%3E",
+      "url": "https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cdev.airflow.apache.org%3E"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cusers.airflow.apache.org%3E",
+      "url": "https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cusers.airflow.apache.org%3E"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread.html/r36111262a59219a3e2704c71e97cf84937dae5ba7a1da99499e5d8f9%40%3Cannounce.apache.org%3E",
+      "url": "https://lists.apache.org/thread.html/r36111262a59219a3e2704c71e97cf84937dae5ba7a1da99499e5d8f9%40%3Cannounce.apache.org%3E"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The lineage endpoint of the deprecated Experimental API was not protected by authentication in Airflow 2.0.0. This allowed unauthenticated users to hit that endpoint. This is low-severity issue as the attacker needs to be aware of certain parameters to pass to that endpoint and even after can just get some metadata about a DAG and a Task. This issue affects Apache Airflow 2.0.0.\n\nReason for inclusion in AVID: CVE-2021-26697 describes an authentication bypass vulnerability in Apache Airflow's Experimental API lineage endpoint. Airflow is a workflow/orchestration tool commonly used to run AI/ML pipelines, so the vulnerability is AI-related and resides in a component used to build/deploy AI systems. It is a security vulnerability with unauthorized access risk, and the candidate report provides explicit CVE details and references to support classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-269",
+        "description": "CWE-269 Improper Privilege Management",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-02-17"
+}

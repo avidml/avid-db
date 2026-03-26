@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1581"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service via Invalid Argument in h2oai/h2o-3 (CVE-2024-5979)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-5979"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/d80a2139-fc03-44b7-b739-de41e323b458",
+      "url": "https://huntr.com/bounties/d80a2139-fc03-44b7-b739-de41e323b458"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/h2oai/h2o-3/commit/d0899f8e0f7a584b60405a65b1d7b439aaaa55a5",
+      "url": "https://github.com/h2oai/h2o-3/commit/d0899f8e0f7a584b60405a65b1d7b439aaaa55a5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In h2oai/h2o-3 version 3.46.0, the `run_tool` command in the `rapids` component allows the `main` function of any class under the `water.tools` namespace to be called. One such class, `MojoConvertTool`, crashes the server when invoked with an invalid argument, causing a denial of service.\n\nReason for inclusion in AVID: CVE-2024-5979 describes a denial-of-service vulnerability in h2o-3 (rapids component) that allows invoking the main function of any class under water.tools, causing the server to crash when given invalid arguments. This is a software vulnerability in a dependency used in AI workflows and model serving, with network-based trigger and availability impact. It is not hardware/firmware-only and concerns components commonly used in AI pipelines, thus relevant to the AI supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-27"
+}

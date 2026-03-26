@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1572"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AIKCT Engine Chatbot, ChatGPT, Gemini, GPT-4o Best AI Chatbot"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "WordPress AIKCT Engine Chatbot, ChatGPT, Gemini, GPT-4o Best AI Chatbot plugin <= 1.6.2 - Cross Site Request Forgery (CSRF) vulnerability (CVE-2024-54306)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-54306"
+    },
+    {
+      "type": "source",
+      "label": "https://patchstack.com/database/wordpress/plugin/ai-seo-translator/vulnerability/wordpress-aikct-engine-chatbot-chatgpt-gemini-gpt-4o-best-ai-chatbot-plugin-1-6-2-cross-site-request-forgery-csrf-vulnerability?_s_id=cve",
+      "url": "https://patchstack.com/database/wordpress/plugin/ai-seo-translator/vulnerability/wordpress-aikct-engine-chatbot-chatgpt-gemini-gpt-4o-best-ai-chatbot-plugin-1-6-2-cross-site-request-forgery-csrf-vulnerability?_s_id=cve"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cross-Site Request Forgery (CSRF) vulnerability in KCT AIKCT Engine Chatbot, ChatGPT, Gemini, GPT-4o Best AI Chatbot allows Cross Site Request Forgery.This issue affects AIKCT Engine Chatbot, ChatGPT, Gemini, GPT-4o Best AI Chatbot: from n/a through 1.6.2.\n\nReason for inclusion in AVID: CVE-2024-54306 describes a Cross-Site Request Forgery vulnerability in a WordPress plugin that provides an AI chatbot experience. The vulnerable component is a software artifact used to deploy AI chatbot functionality, thus a part of the software supply chain for general-purpose AI systems. It is a security vulnerability with potential impact on AI service integrity and availability, and the report includes explicit CVE details and CVSS metrics."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-12-13"
+}

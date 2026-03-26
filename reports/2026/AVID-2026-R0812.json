@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0812"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-31681"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-31681"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.dev/bounties/1-other-yolov3/",
+      "url": "https://huntr.dev/bounties/1-other-yolov3/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Deserialization of Untrusted Data vulnerability in yolo 3 allows attackers to execute arbitrary code via crafted yaml file.\n\nReason for inclusion in AVID: CVE-2021-31681 describes a deserialization-based remote code execution vulnerability in YOLOv3 via crafted YAML input. This directly impacts AI software stacks (models/config parsing, inference pipelines) and affects components used to build/deploy AI systems. It is a software vulnerability with clear security impact, and the affected artifact is part of AI tooling, thus relevant to the AI general-purpose systems supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-07-31"
+}

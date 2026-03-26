@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1435"
+  },
+  "affects": {
+    "developer": [
+      "protocolbuffers"
+    ],
+    "deployer": [
+      "protocolbuffers"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "protobuf"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Use after free in C++ protobuf (CVE-2024-2410)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2410"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/protocolbuffers/protobuf/releases/tag/v25.0",
+      "url": "https://github.com/protocolbuffers/protobuf/releases/tag/v25.0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The JsonToBinaryStream()\u00a0function is part of the protocol buffers C++ implementation and is used to parse JSON from a stream. If the input is broken up into separate chunks in a certain way, the parser will attempt to read bytes from a chunk that has already been freed.\n\nReason for inclusion in AVID: The CVEVac is a software vulnerability (use-after-free) in the protocol buffers C++ library (protobuf). Protobuf is a widely used dependency in AI software stacks for data serialization, ingestion, and model serving pipelines. This vulnerability concerns software components that are part of the AI supply chain (dependencies, runtimes, libraries) and could affect AI systems during build/deploy/run phases. It is a security vulnerability with clear CVE signaling and CVSS details, providing sufficient evidence in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L",
+      "baseScore": 7.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-416",
+        "description": "CWE-416 Use After Free",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-03"
+}

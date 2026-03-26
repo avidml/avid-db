@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1563"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "CUDA Toolkit"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-53872"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-53872"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5594",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5594"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA CUDA toolkit for all platforms contains a vulnerability in the cuobjdump binary, where a user could cause an out-of-bounds read by passing a malformed ELF file to cuobjdump. A successful exploit of this vulnerability might lead to a partial denial of service.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in NVIDIA CUDA toolkit's cuobjdump with local, out-of-bounds read leading to DoS. CUDA tooling is a core software stack used in training, compiling, and deploying AI workloads, so this is a software supply-chain issue affecting AI systems. The vulnerability is security-related and affects a component in the AI software stack; the report provides sufficient details (CVE ID, affected artifact, impact, references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+      "baseScore": 3.3,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-125",
+        "description": "CWE-125 Out-of-bounds Read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-02-25"
+}

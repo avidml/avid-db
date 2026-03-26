@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1159"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-42037"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42037"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/d8s-asns/",
+      "url": "https://pypi.org/project/d8s-asns/"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/democritus-csv/",
+      "url": "https://pypi.org/project/democritus-csv/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/democritus-project/d8s-asns/issues/9",
+      "url": "https://github.com/democritus-project/d8s-asns/issues/9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The d8s-asns package for Python, as distributed on PyPI, included a potential code-execution backdoor inserted by a third party. The backdoor is the democritus-csv package. The affected version is 0.1.0.\n\nReason for inclusion in AVID: CVE-2022-42037 documents a code-execution backdoor introduced into the Python PyPI package d8s-asns (version 0.1.0) via a third-party backdoor (democritus-csv). This is a software supply chain vulnerability in a Python package that could be pulled into AI stacks as a dependency, thereby impacting general-purpose AI systems. The report includes explicit security implications and references (NVD, PyPI pages, issue tracker)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-10-11"
+}

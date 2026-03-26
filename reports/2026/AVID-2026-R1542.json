@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1542"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "The `enable_monitoring` flag set to `False` does not disable monitoring in Gradio (CVE-2024-47168)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-47168"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gradio-app/gradio/security/advisories/GHSA-hm3c-93pg-4cxw",
+      "url": "https://github.com/gradio-app/gradio/security/advisories/GHSA-hm3c-93pg-4cxw"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Gradio is an open-source Python package designed for quick prototyping. This vulnerability involves data exposure due to the enable_monitoring flag not properly disabling monitoring when set to False. Even when monitoring is supposedly disabled, an attacker or unauthorized user can still access the monitoring dashboard by directly requesting the /monitoring endpoint. This means that sensitive application analytics may still be exposed, particularly in environments where monitoring is expected to be disabled. Users who set enable_monitoring=False to prevent unauthorized access to monitoring data are impacted. Users are advised to upgrade to gradio>=4.44 to address this issue. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: CVE-2024-47168 describes a vulnerability in the Gradio library where monitoring data can be exposed via the /monitoring endpoint even when monitoring is disabled. Gradio is a software package commonly used in AI workflows to build and deploy ML apps, making this a security issue within a component of the AI software stack. It affects the supply chain of general-purpose AI systems as a dependency used in ML tooling and deployment pipelines. The report provides clear vulnerability behavior and remediation (upgrade to gradio>=4.44). This is a software vulnerability with direct impact on AI systems, not hardware/firmware."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-670",
+        "description": "CWE-670: Always-Incorrect Control Flow Implementation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-10"
+}

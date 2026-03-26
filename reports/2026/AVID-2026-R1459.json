@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1459"
+  },
+  "affects": {
+    "developer": [
+      "mintplex-labs"
+    ],
+    "deployer": [
+      "mintplex-labs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mintplex-labs/anything-llm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Privilege Escalation via Improper Input Validation in mintplex-labs/anything-llm (CVE-2024-3101)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-3101"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/c114c03e-3348-450f-88f7-538502047bcc",
+      "url": "https://huntr.com/bounties/c114c03e-3348-450f-88f7-538502047bcc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mintplex-labs/anything-llm/commit/52fac844221a9b951d08ceb93c4c014e9397b1f2",
+      "url": "https://github.com/mintplex-labs/anything-llm/commit/52fac844221a9b951d08ceb93c4c014e9397b1f2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In mintplex-labs/anything-llm, an improper input validation vulnerability allows attackers to escalate privileges by deactivating 'Multi-User Mode'. By sending a specially crafted curl request with the 'multi_user_mode' parameter set to false, an attacker can deactivate 'Multi-User Mode'. This action permits the creation of a new admin user without requiring a password, leading to unauthorized administrative access.\n\nReason for inclusion in AVID: The CVE describes a privilege escalation via improper input validation in mintplex-labs/anything-llm, a software component used within AI systems to manage LLM deployments. Exploiting this vulnerability allows an attacker to create an admin account without a password, compromising the AI runtime/deployment stack. This is a software supply-chain issue within AI software stacks (not hardware/firmware), affecting components used to build, deploy, or run general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:L",
+      "baseScore": 6.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

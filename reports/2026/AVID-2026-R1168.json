@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1168"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Hive Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Hive Provider: Hive Provider RCE vulnerability with hive_cli_params (CVE-2022-46421)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-46421"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/28101",
+      "url": "https://github.com/apache/airflow/pull/28101"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/09twdoyoybldlfj5gvk0qswtofh0rmp4",
+      "url": "https://lists.apache.org/thread/09twdoyoybldlfj5gvk0qswtofh0rmp4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability in Apache Software Foundation Apache Airflow Hive Provider.This issue affects Apache Airflow Hive Provider: before 5.0.0.\n\nReason for inclusion in AVID: CVE-2022-46421 describes a remote code execution (command injection) vulnerability in the Apache Airflow Hive Provider, exploitable before version 5.0.0. Apache Airflow and its providers are widely used to orchestrate AI/ML pipelines (data preparation, feature extraction, model training/validation, deployment workflows). As a vulnerability in a software component commonly used in AI workflows, this constitutes a software supply-chain issue impacting general-purpose AI systems. The vulnerability is security-related (RCE) and the report provides explicit CVE details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-77",
+        "description": "CWE-77 Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-12-20"
+}

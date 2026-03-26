@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1523"
+  },
+  "affects": {
+    "developer": [
+      "berriai"
+    ],
+    "deployer": [
+      "berriai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "berriai/litellm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in berriai/litellm (CVE-2024-4264)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-4264"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/a3221b0c-6e25-4295-ab0f-042997e8fc61",
+      "url": "https://huntr.com/bounties/a3221b0c-6e25-4295-ab0f-042997e8fc61"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A remote code execution (RCE) vulnerability exists in the berriai/litellm project due to improper control of the generation of code when using the `eval` function unsafely in the `litellm.get_secret()` method. Specifically, when the server utilizes Google KMS, untrusted data is passed to the `eval` function without any sanitization. Attackers can exploit this vulnerability by injecting malicious values into environment variables through the `/config/update` endpoint, which allows for the update of settings in `proxy_server_config.yaml`.\n\nReason for inclusion in AVID: CVE-2024-4264 describes a remote code execution vulnerability in berriai/litellm caused by unsafe eval usage when handling data in server config, enabling exploitation in AI software stacks that rely on litellm. This is a software supply chain issue affecting AI frameworks/tools and can impact general-purpose AI deployment pipelines."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-18"
+}

@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1010"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA FLARE"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-28199"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-28199"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5389",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5389"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2022/09/06/2",
+      "url": "http://www.openwall.com/lists/oss-security/2022/09/06/2"
+    },
+    {
+      "type": "source",
+      "label": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-mlx5-jbPCrqD8",
+      "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-mlx5-jbPCrqD8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA\u2019s distribution of the Data Plane Development Kit (MLNX_DPDK) contains a vulnerability in the network stack, where error recovery is not handled properly, which can allow a remote attacker to cause denial of service and some impact to data integrity and confidentiality.\n\nReason for inclusion in AVID: CVE-2022-28199 describes a vulnerability in NVIDIA's Data Plane Development Kit (MLNX_DPDK) network stack that can cause remote denial of service and impact data integrity/confidentiality. MLNX_DPDK is a software component used in AI infrastructure (e.g., NVIDIA FLARE) and other AI deployments for packet processing, making this a software supply-chain issue relevant to AI systems. The vulnerability is CVE-listed with explicit impact and references, satisfying the security/vulnerability criteria. Evidence is provided in the CVE entry and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1284",
+        "description": "CWE-1284: Improper Validation of Specified Quantity in Input",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-09-01"
+}

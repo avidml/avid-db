@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1182"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Relative Path Traversal in mlflow/mlflow (CVE-2023-2356)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-2356"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.dev/bounties/7b5d130d-38eb-4133-8c7d-0dfc9a9d9896",
+      "url": "https://huntr.dev/bounties/7b5d130d-38eb-4133-8c7d-0dfc9a9d9896"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/commit/f73147496e05c09a8b83d95fb4f1bf86696c6342",
+      "url": "https://github.com/mlflow/mlflow/commit/f73147496e05c09a8b83d95fb4f1bf86696c6342"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Relative Path Traversal in GitHub repository mlflow/mlflow prior to 2.3.1.\n\nReason for inclusion in AVID: CVE-2023-2356 describes a relative path traversal vulnerability in mlflow/mlflow (before 2.3.1). MLflow is a software component widely used in AI/ML pipelines for tracking, packaging, and serving models. This is a software-supply-chain-type issue affecting AI systems, not hardware/firmware. The CVE provides explicit vulnerability behavior (path traversal) and references (NVD, commit), offering sufficient signal for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:L",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-23",
+        "description": "CWE-23 Relative Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-28"
+}

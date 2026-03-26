@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1602"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CSRF in aimhubio/aim (CVE-2024-7760)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7760"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/2038df5f-4829-4040-8573-67bf9bb89229",
+      "url": "https://huntr.com/bounties/2038df5f-4829-4040-8573-67bf9bb89229"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "aimhubio/aim version 3.22.0 contains a Cross-Site Request Forgery (CSRF) vulnerability in the tracking server. The vulnerability is due to overly permissive CORS settings, allowing cross-origin requests from all origins. This enables CSRF attacks on all endpoints of the tracking server, which can be chained with other existing vulnerabilities such as remote code execution, denial of service, and arbitrary file read/write.\n\nReason for inclusion in AVID: CVE-2024-7760 describes a CSRF vulnerability in aimhubio/aim, an AI experiment tracking/server. This software is commonly used within ML pipelines to build/train/deploy AI experiments, making it a component in the AI software supply chain. The issue arises from overly permissive CORS enabling CSRF across endpoints, with potential chaining to other vulnerabilities (e.g., RCE). The report provides CVSS details and references, giving concrete vulnerability behavior. Therefore it is relevant to AI systems and qualifies as a software supply-chain vulnerability in general-purpose AI stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "baseScore": 7.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

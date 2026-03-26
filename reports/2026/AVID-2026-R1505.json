@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1505"
+  },
+  "affects": {
+    "developer": [
+      "FishAudio"
+    ],
+    "deployer": [
+      "FishAudio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Bert-VITS2"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "fishaudio/Bert-VITS2 Command Injection in webui_preprocess.py bert_gen function (CVE-2024-39686)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-39686"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2024-045_GHSL-2024-047_fishaudio_Bert-VITS2/",
+      "url": "https://securitylab.github.com/advisories/GHSL-2024-045_GHSL-2024-047_fishaudio_Bert-VITS2/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/fishaudio/Bert-VITS2/blob/3f8c537f4aeb281df3fb3c455eed9a1b64871a81/webui_preprocess.py#L82C9-L82C57",
+      "url": "https://github.com/fishaudio/Bert-VITS2/blob/3f8c537f4aeb281df3fb3c455eed9a1b64871a81/webui_preprocess.py#L82C9-L82C57"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/fishaudio/Bert-VITS2/blob/76653b5b6d657143721df2ed6c5c246b4b1d9277/webui_preprocess.py#L130-L133",
+      "url": "https://github.com/fishaudio/Bert-VITS2/blob/76653b5b6d657143721df2ed6c5c246b4b1d9277/webui_preprocess.py#L130-L133"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Bert-VITS2 is the VITS2 Backbone with multilingual bert. User input supplied to the data_dir variable is used directly in a command executed with subprocess.run(cmd, shell=True) in the bert_gen function, which leads to arbitrary command execution. This affects fishaudio/Bert-VITS2 2.3 and earlier.\n\nReason for inclusion in AVID: CVE-2024-39686 describes an OS command injection in Bert-VITS2 (webui_preprocess.py bert_gen) where untrusted user input is used in a shell command via subprocess.run, enabling arbitrary code execution. This is a software vulnerability in an AI model/tooling package that sits in the AI software stack, with high impact. The report provides explicit evidence of the vulnerability and affected version(s). Therefore it is relevant for AVID curation as a software supply-chain vulnerability in general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-22"
+}

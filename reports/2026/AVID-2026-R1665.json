@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1665"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NeMo Framework"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2025-23360"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-23360"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5623",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5623"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Nemo Framework contains a vulnerability where a user could cause a relative path traversal issue by arbitrary file write. A successful exploit of this vulnerability may lead to code execution and data tampering.\n\nReason for inclusion in AVID: CVE-2025-23360 describes a relative path traversal vulnerability in NVIDIA Nemo Framework that can lead to code execution and data tampering. Nemo is an AI framework used to build, train, deploy, and run AI systems, making this a software supply-chain issue within AI pipelines. The flaw is exploitable locally with low attack complexity and requires user interaction, representing a security/safety vulnerability with potential integrity and availability impact. The report provides explicit vulnerability behavior and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-23",
+        "description": "CWE-23: Relative Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-11"
+}

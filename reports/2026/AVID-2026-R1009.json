@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1009"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "CVAT software maintained by Intel(R)"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-27234"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-27234"
+    },
+    {
+      "type": "source",
+      "label": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00762.html",
+      "url": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00762.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Server-side request forgery in the CVAT software maintained by Intel(R) before version 2.0.1 may allow an authenticated user to potentially enable information disclosure via network access.\n\nReason for inclusion in AVID: CVAT is an AI data-labeling tool used within AI/ML pipelines. The CVE-2022-27234 describes a server-side request forgery vulnerability in CVAT (Intel-maintained) that could lead to information disclosure. This directly concerns software in the AI stack (data labeling tooling and deployment of AI infrastructure) and is a vulnerability in a component used to build/train/deploy AI systems. Therefore it is relevant to the AI supply chain and security, with ample evidence provided by the CVE/NVD/Intel advisory."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2023-02-16"
+}

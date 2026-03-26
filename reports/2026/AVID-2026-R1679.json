@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1679"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Parquet Java"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Parquet Java: Arbitrary code execution in the parquet-avro module when reading an Avro schema from a Parquet file metadata (CVE-2025-30065)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-30065"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/okzqb3kn479gqzxm21gg5vqr35om9gw5",
+      "url": "https://lists.apache.org/thread/okzqb3kn479gqzxm21gg5vqr35om9gw5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Schema parsing in the parquet-avro module of Apache Parquet 1.15.0 and previous versions allows bad actors to execute arbitrary code\n\n\nUsers are recommended to upgrade to version 1.15.1, which fixes the issue.\n\nReason for inclusion in AVID: CVE-2025-30065 describes an arbitrary code execution vulnerability in Apache Parquet Java's parquet-avro module when reading an Avro schema from Parquet file metadata. This is a security vulnerability (RCE) in a widely-used data ingestion/processing library that is commonly part of AI/ML data pipelines. It affects software components used to build/train/deploy AI systems, representing a software supply chain risk for general-purpose AI systems. The report provides sufficient details (affected versions, CVE, fix version)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-01"
+}

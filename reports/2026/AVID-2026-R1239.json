@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1239"
+  },
+  "affects": {
+    "developer": [
+      "nvidia"
+    ],
+    "deployer": [
+      "nvidia"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Triton Inference Server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CVE (CVE-2023-31036)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-31036"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5509",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5509"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Triton Inference Server for Linux and Windows contains a vulnerability where, when it is launched with the non-default command line option --model-control explicit, an attacker may use the model load API to cause a relative path traversal. A successful exploit of this vulnerability may lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.\n\nReason for inclusion in AVID: CVE-2023-31036 affects NVIDIA Triton Inference Server, a model-serving/runtime component used in AI pipelines. The vulnerability is a software path traversal that can lead to code execution, DoS, privilege escalation, information disclosure, and data tampering. This is clearly a software supply-chain-relevant issue in AI software stacks (AI frameworks/serving components), with explicit security impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-23",
+        "description": "CWE-23",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-12"
+}

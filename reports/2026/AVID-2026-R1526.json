@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1526"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution due to LFI in '/install_extension' in parisneo/lollms-webui (CVE-2024-4320)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-4320"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/d6564f04-0f59-4686-beb2-11659342279b",
+      "url": "https://huntr.com/bounties/d6564f04-0f59-4686-beb2-11659342279b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A remote code execution (RCE) vulnerability exists in the '/install_extension' endpoint of the parisneo/lollms-webui application, specifically within the `@router.post(\"/install_extension\")` route handler. The vulnerability arises due to improper handling of the `name` parameter in the `ExtensionBuilder().build_extension()` method, which allows for local file inclusion (LFI) leading to arbitrary code execution. An attacker can exploit this vulnerability by crafting a malicious `name` parameter that causes the server to load and execute a `__init__.py` file from an arbitrary location, such as the upload directory for discussions. This vulnerability affects the latest version of parisneo/lollms-webui and can lead to remote code execution without requiring user interaction, especially when the application is exposed to an external endpoint or operated in headless mode.\n\nReason for inclusion in AVID: CVE-2024-4320 describes a remote code execution due to local file inclusion in the install_extension endpoint of parisneo/lollms-webui. This is a vulnerability in a software component used to deploy/serve AI models (AI web UI extension loading), i.e., part of the AI software stack. It is a security vulnerability (RCE) with a CVSS score and CWE-29, providing clear evidence of exploitation potential in AI deployment tooling. Therefore it is relevant to the AI supply chain and should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

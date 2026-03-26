@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1210"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Sqoop Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Sqoop Apache Airflow Provider Remote Code Execution Vulnerability (CVE-2023-25693)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25693"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/29500",
+      "url": "https://github.com/apache/airflow/pull/29500"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/79qn8g5xbq036f8crb115obvr22l52q4",
+      "url": "https://lists.apache.org/thread/79qn8g5xbq036f8crb115obvr22l52q4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Input Validation vulnerability in the Apache Airflow Sqoop Provider.\n\nThis issue affects Apache Airflow Sqoop Provider versions before 3.1.1.\n\nReason for inclusion in AVID: CVE-2023-25693 is a remote code execution vulnerability in the Apache Airflow Sqoop Provider (improper input validation). Airflow is a workflow/orchestration tool frequently used to manage AI/ML data pipelines and model workflows; a vulnerability in such a component constitutes a software supply-chain issue for general-purpose AI systems. The advisory clearly states the vulnerability type, affected versions, and references, providing sufficient signal for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-02-24"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1370"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Jdbc Deserialization in h2oai/h2o-3 (CVE-2024-10553)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10553"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e6f550dd-eda2-428c-a740-ed8f893a084b",
+      "url": "https://huntr.com/bounties/e6f550dd-eda2-428c-a740-ed8f893a084b"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/h2oai/h2o-3/commit/ac1d642b4d86f10a02d75974055baf2a4b2025ac",
+      "url": "https://github.com/h2oai/h2o-3/commit/ac1d642b4d86f10a02d75974055baf2a4b2025ac"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the h2oai/h2o-3 REST API versions 3.46.0.4 allows unauthenticated remote attackers to execute arbitrary code via deserialization of untrusted data. The vulnerability exists in the endpoints POST /99/ImportSQLTable and POST /3/SaveToHiveTable, where user-controlled JDBC URLs are passed to DriverManager.getConnection, leading to deserialization if a MySQL or PostgreSQL driver is available in the classpath. This issue is fixed in version 3.47.0.\n\nReason for inclusion in AVID: The CVE pertains to h2o-3, a machine learning framework used in AI pipelines. The vulnerability enables unauthenticated remote code execution via deserialization in the ML software stack, affecting components used to build/deploy AI systems (model training/serving, data pipelines). This is a software supply-chain issue within AI software stacks. The report provides explicit vulnerability details and a fix version, including CVSS metrics and affected endpoints, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

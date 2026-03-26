@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1043"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-31523"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-31523"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/github/securitylab/issues/669#issuecomment-1117265726",
+      "url": "https://github.com/github/securitylab/issues/669#issuecomment-1117265726"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The PaddlePaddle/Anakin repository through 0.1.1 on GitHub allows absolute path traversal because the Flask send_file function is used unsafely.\n\nReason for inclusion in AVID: The CVE describes a security vulnerability (absolute path traversal) in an AI-related repository (PaddlePaddle/Anakin) that could impact AI deployments and model-serving workflows. It affects a component used in AI software stacks, making it relevant to the general-purpose AI supply chain. The issue is a CVE with documented references, providing sufficient signal for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-07-11"
+}

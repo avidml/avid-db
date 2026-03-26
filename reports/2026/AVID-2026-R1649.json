@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1649"
+  },
+  "affects": {
+    "developer": [
+      "AWS"
+    ],
+    "deployer": [
+      "AWS"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "DeepJavaLibrary"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path traversal issue in Deep Java Library (CVE-2025-0851)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0851"
+    },
+    {
+      "type": "source",
+      "label": "https://aws.amazon.com/security/security-bulletins/AWS-2025-003/",
+      "url": "https://aws.amazon.com/security/security-bulletins/AWS-2025-003/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/deepjavalibrary/djl/security/advisories/GHSA-jcrp-x7w3-ffmg",
+      "url": "https://github.com/deepjavalibrary/djl/security/advisories/GHSA-jcrp-x7w3-ffmg"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/deepjavalibrary/djl/releases/tag/v0.31.1",
+      "url": "https://github.com/deepjavalibrary/djl/releases/tag/v0.31.1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A path traversal issue in ZipUtils.unzip and TarUtils.untar in Deep Java Library (DJL) on all platforms allows a bad actor to write files to arbitrary locations.\n\nReason for inclusion in AVID: CVE-2025-0851 describes a path traversal vulnerability in DJL's unzip and untar utilities. DJL (Deep Java Library) is an AI framework/library used in ML pipelines for model loading/inference, making this vulnerability relevant to AI software stacks. The issue affects software components used to build/run general-purpose AI systems (dependency/artifact handling), constituting a software supply chain vulnerability rather than hardware/firmware. The CVE entry, CWE mappings, CVSS metrics, and references provide clear signals of impact and exploitation potential."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-36",
+        "description": "CWE-36: Absolute Path Traversal",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73: External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-29"
+}

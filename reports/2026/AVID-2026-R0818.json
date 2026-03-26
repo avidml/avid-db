@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0818"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openEuler:mindspore"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-33648"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-33648"
+    },
+    {
+      "type": "source",
+      "label": "https://gitee.com/mindspore/community/blob/master/security/security_advisory_list/mssa-2021-007_en.md",
+      "url": "https://gitee.com/mindspore/community/blob/master/security/security_advisory_list/mssa-2021-007_en.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "When performing the inference shape operation of Affine, Concat, MatMul, ArgMinMax, EmbeddingLookup, and Gather operators, if the input shape size is 0, it will access data outside of bounds of shape which allocated from heap buffers.\n\nReason for inclusion in AVID: CVE-2021-33648 describes an out-of-bounds read in MindSpore operators (Affine, Concat, MatMul, ArgMinMax, EmbeddingLookup, Gather) when the input shape size is 0. MindSpore is an AI framework used in ML pipelines, so this is a software vulnerability affecting components used to build/train/deploy AI systems. This constitutes a software supply-chain issue in AI stacks. The report provides explicit CVE references (NVD) and a MindSpore advisory as sources."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-125",
+        "description": "CWE-125 Out-of-bounds Read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-06-27"
+}

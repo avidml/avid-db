@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1644"
+  },
+  "affects": {
+    "developer": [
+      "berriai"
+    ],
+    "deployer": [
+      "berriai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "berriai/litellm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Exposure of Sensitive Information in berriai/litellm (CVE-2025-0330)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0330"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/661b388a-44d8-4ad5-862b-4dc5b80be30a",
+      "url": "https://huntr.com/bounties/661b388a-44d8-4ad5-862b-4dc5b80be30a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In berriai/litellm version v1.52.1, an issue in proxy_server.py causes the leakage of Langfuse API keys when an error occurs while parsing team settings. This vulnerability exposes sensitive information, including langfuse_secret and langfuse_public_key, which can provide full access to the Langfuse project storing all requests.\n\nReason for inclusion in AVID: CVE-2025-0330 describes a software vulnerability in berriai/litellm where proxy_server.py leaks Langfuse API keys during error handling. This is a confidentiality breach (exposure of secrets) in a software component commonly used in AI workflows and pipelines, affecting the software supply chain for general-purpose AI systems. The CVE provides explicit vulnerability details (secret exposure, high severity, CWE-1230) and references, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1230",
+        "description": "CWE-1230 Exposure of Sensitive Information Through Metadata",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

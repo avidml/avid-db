@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1684"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure AI Bot Service"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Azure AI Bot Elevation of Privilege Vulnerability (CVE-2025-30392)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-30392"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30392",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30392"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper authorization in Azure Bot Framework SDK allows an unauthorized attacker to elevate privileges over a network.\n\nReason for inclusion in AVID: The CVE describes an improper authorization vulnerability in the Azure Bot Framework SDK, enabling privilege escalation over a network. This is a software vulnerability in a component (Azure Bot Service/SDK) used to build or deploy AI-driven bots, which are part of AI systems and their software supply chains. The issue affects the tooling/runtime used to run AI bots, fitting the general-purpose AI (GP AI) supply chain, and it is a security vulnerability with clear CVE/NVD/MSRC references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-285",
+        "description": "CWE-285: Improper Authorization",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2025-04-30"
+}

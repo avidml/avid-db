@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1481"
+  },
+  "affects": {
+    "developer": [
+      "CycloneDX"
+    ],
+    "deployer": [
+      "CycloneDX"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cyclonedx-javascript-library"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "@cyclonedx/cyclonedx-library Improper Restriction of XML External Entity Reference vulnerability (CVE-2024-34345)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-34345"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/CycloneDX/cyclonedx-javascript-library/security/advisories/GHSA-38gf-rh2w-gmj7",
+      "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/security/advisories/GHSA-38gf-rh2w-gmj7"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/CycloneDX/cyclonedx-javascript-library/pull/1063",
+      "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/pull/1063"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/CycloneDX/cyclonedx-javascript-library/commit/5e5e1e0b9422f47d2de81c7c4064b803a01e7203",
+      "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/commit/5e5e1e0b9422f47d2de81c7c4064b803a01e7203"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The CycloneDX JavaScript library contains the core functionality of OWASP CycloneDX for JavaScript. In 6.7.0, XML External entity injections were possible, when running the provided XML Validator on arbitrary input. This issue was fixed in version 6.7.1.\n\nReason for inclusion in AVID: CVE-2024-34345 describes an XML External Entity (XXE) vulnerability in the CycloneDX JavaScript library (cyclonedx-javascript-library), affecting version 6.7.0 and fixed in 6.7.1. The issue arises during XML validation where external entities can be processed, enabling potential data disclosure or other impacts. While the vulnerability is not AI-specific, CycloneDX is a widely used software supply-chain tooling library for generating SBOMs and managing dependencies, which AI systems rely on in their software supply chains (build, package, deploy, run). Therefore, this is a software supply-chain vulnerability that could affect AI pipelines and deployments if the tool is used within those stacks. The CVE description, CVSS details (high severity, network attack vector, no privileges required), and references provide sufficient evidence for inclusion."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-611",
+        "description": "CWE-611: Improper Restriction of XML External Entity Reference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-09"
+}

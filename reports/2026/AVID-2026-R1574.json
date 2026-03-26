@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1574"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-55459"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-55459"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/keras-team/keras",
+      "url": "https://github.com/keras-team/keras"
+    },
+    {
+      "type": "source",
+      "label": "https://keras.io",
+      "url": "https://keras.io"
+    },
+    {
+      "type": "source",
+      "label": "https://river-bicycle-f1e.notion.site/Arbitrary-File-Write-Vulnerability-in-get_file-function-11888e31952580179224e50892976d32",
+      "url": "https://river-bicycle-f1e.notion.site/Arbitrary-File-Write-Vulnerability-in-get_file-function-11888e31952580179224e50892976d32"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in keras 3.7.0 allows attackers to write arbitrary files to the user's machine via downloading a crafted tar file through the get_file function.\n\nReason for inclusion in AVID: CVE-2024-55459 describes a vulnerability in Keras 3.7.0 that allows arbitrary file write when downloading a crafted tar via the get_file function. Keras is a core AI framework used to build/train/deploy AI models, so this vulnerability concerns AI software stacks and dependencies. It is a security vulnerability (arbitrary file write) with explicit CVE and multiple references, providing sufficient signal for AVID curation. As the issue resides in a software dependency used in general-purpose AI systems, it is relevant to the GP AI supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2025-01-08"
+}

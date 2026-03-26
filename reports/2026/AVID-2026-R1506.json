@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1506"
+  },
+  "affects": {
+    "developer": [
+      "FishAudio"
+    ],
+    "deployer": [
+      "FishAudio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Bert-VITS2"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "fishaudio/Bert-VITS2 Limited File Write in webui_preprocess.py generate_config function (CVE-2024-39688)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-39688"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2024-045_GHSL-2024-047_fishaudio_Bert-VITS2/",
+      "url": "https://securitylab.github.com/advisories/GHSL-2024-045_GHSL-2024-047_fishaudio_Bert-VITS2/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/fishaudio/Bert-VITS2/blob/76653b5b6d657143721df2ed6c5c246b4b1d9277/webui_preprocess.py#L130-L133",
+      "url": "https://github.com/fishaudio/Bert-VITS2/blob/76653b5b6d657143721df2ed6c5c246b4b1d9277/webui_preprocess.py#L130-L133"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/fishaudio/Bert-VITS2/blob/76653b5b6d657143721df2ed6c5c246b4b1d9277/webui_preprocess.py#L34",
+      "url": "https://github.com/fishaudio/Bert-VITS2/blob/76653b5b6d657143721df2ed6c5c246b4b1d9277/webui_preprocess.py#L34"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Bert-VITS2 is the VITS2 Backbone with multilingual bert. User input supplied to the data_dir variable is concatenated with other folders and used to open a new file in the generate_config function, which leads to a limited file write. The issue allows for writing /config/config.json file in arbitrary directory on the server. If a given directory path doesn\u2019t exist, the application will return an error, so this vulnerability could also be used to gain information about existing directories on the server. This affects fishaudio/Bert-VITS2 2.3 and earlier.\n\nReason for inclusion in AVID: CVE-2024-39688 describes a path traversal vulnerability in fishaudio/Bert-VITS2 web UI generate_config that allows limited file write to arbitrary directories, potentially exposing server configuration and directories. This affects an AI model deployment/serving component and is relevant to software used in AI pipelines; thus it is a software supply-chain issue within AI systems. It is a security vulnerability with CVSS details provided. Evidence includes the CVE entry and referenced advisories."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-22"
+}

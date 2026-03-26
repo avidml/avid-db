@@ -1,0 +1,126 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1670"
+  },
+  "affects": {
+    "developer": [
+      "rmosolgo"
+    ],
+    "deployer": [
+      "rmosolgo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "graphql-ruby"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote code execution when loading a crafted GraphQL schema (CVE-2025-27407)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-27407"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/security/advisories/GHSA-q92j-grw3-h492",
+      "url": "https://github.com/rmosolgo/graphql-ruby/security/advisories/GHSA-q92j-grw3-h492"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/commit/28233b16c0eb9d0fb7808f4980e061dc7507c4cd",
+      "url": "https://github.com/rmosolgo/graphql-ruby/commit/28233b16c0eb9d0fb7808f4980e061dc7507c4cd"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/commit/2d2f4ed1f79472f8eed29c864b039649e1de238f",
+      "url": "https://github.com/rmosolgo/graphql-ruby/commit/2d2f4ed1f79472f8eed29c864b039649e1de238f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/commit/5c5a7b9a9bdce143be048074aea50edb7bb747be",
+      "url": "https://github.com/rmosolgo/graphql-ruby/commit/5c5a7b9a9bdce143be048074aea50edb7bb747be"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/commit/6eca16b9fa553aa957099a30dbde64ddcdac52ca",
+      "url": "https://github.com/rmosolgo/graphql-ruby/commit/6eca16b9fa553aa957099a30dbde64ddcdac52ca"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/commit/d0963289e0dab4ea893bbecf12bb7d89294957bb",
+      "url": "https://github.com/rmosolgo/graphql-ruby/commit/d0963289e0dab4ea893bbecf12bb7d89294957bb"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/commit/d1117ae0361d9ed67e0795b07f5c3e98e62f3c7c",
+      "url": "https://github.com/rmosolgo/graphql-ruby/commit/d1117ae0361d9ed67e0795b07f5c3e98e62f3c7c"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/rmosolgo/graphql-ruby/commit/e3b33ace05391da2871c75ab4d3b66e29133b367",
+      "url": "https://github.com/rmosolgo/graphql-ruby/commit/e3b33ace05391da2871c75ab4d3b66e29133b367"
+    },
+    {
+      "type": "source",
+      "label": "https://about.gitlab.com/releases/2025/03/12/patch-release-gitlab-17-9-2-released",
+      "url": "https://about.gitlab.com/releases/2025/03/12/patch-release-gitlab-17-9-2-released"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/github-community-projects/graphql-client",
+      "url": "https://github.com/github-community-projects/graphql-client"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "graphql-ruby is a Ruby implementation of GraphQL. Starting in version 1.11.5 and prior to versions 1.11.8, 1.12.25, 1.13.24, 2.0.32, 2.1.14, 2.2.17, and 2.3.21, loading a malicious schema definition in `GraphQL::Schema.from_introspection` (or `GraphQL::Schema::Loader.load`) can result in remote code execution. Any system which loads a schema by JSON from an untrusted source is vulnerable, including those that use GraphQL::Client to load external schemas via GraphQL introspection. Versions 1.11.8, 1.12.25, 1.13.24, 2.0.32, 2.1.14, 2.2.17, and 2.3.21 contain a patch for the issue.\n\nReason for inclusion in AVID: CVE-2025-27407 describes remote code execution in graphql-ruby when loading crafted GraphQL schemas. graphql-ruby is a library used in AI service stacks and model-serving infrastructures, and this vulnerability could affect the software supply chain of general-purpose AI systems that rely on GraphQL APIs or schema loading from untrusted sources. The CVE provides explicit vulnerable versions, the affected functionality, and patches, indicating a concrete security risk (RCE) with clear evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-12"
+}

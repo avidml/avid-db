@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1499"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GPT3 AI Content Writer"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "WordPress AI Power: Complete AI Pack \u2013 Powered by GPT-4 plugin <= 1.8.66 - Cross Site Scripting (XSS) vulnerability (CVE-2024-37465)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-37465"
+    },
+    {
+      "type": "source",
+      "label": "https://patchstack.com/database/vulnerability/gpt3-ai-content-generator/wordpress-ai-power-complete-ai-pack-powered-by-gpt-4-plugin-1-8-66-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "url": "https://patchstack.com/database/vulnerability/gpt3-ai-content-generator/wordpress-ai-power-complete-ai-pack-powered-by-gpt-4-plugin-1-8-66-cross-site-scripting-xss-vulnerability?_s_id=cve"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Senol Sahin GPT3 AI Content Writer allows Stored XSS.This issue affects GPT3 AI Content Writer: from n/a through 1.8.66.\n\nReason for inclusion in AVID: The CVE describes a cross-site scripting vulnerability in a WordPress plugin that provides AI-powered content generation (GPT-4 powered). This plugin is a software component used in AI content pipelines and deployment stacks, making it part of the AI software supply chain. It is a security vulnerability (CVE) with potential impact on integrity/confidentiality, etc. Sufficient evidence provided via CVE entry and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:L",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-21"
+}

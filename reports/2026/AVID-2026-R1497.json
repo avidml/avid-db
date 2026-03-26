@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1497"
+  },
+  "affects": {
+    "developer": [
+      "YdataAI"
+    ],
+    "deployer": [
+      "YdataAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ydata-profiling"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-37062"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-37062"
+    },
+    {
+      "type": "source",
+      "label": "https://hiddenlayer.com/sai-security-advisory/ydata-june2024",
+      "url": "https://hiddenlayer.com/sai-security-advisory/ydata-june2024"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Deserialization of untrusted data can occur in versions 3.7.0 or newer of Ydata's ydata-profiling open-source library, enabling a malicously crafted report to run arbitrary code on an end user's system when loaded.\n\nReason for inclusion in AVID: The report describes CVE-2024-37062, a deserialization vulnerability in Ydata's ydata-profiling library (>=3.7.0) that enables arbitrary code execution when loading a crafted report. This is a software vulnerability in a component commonly used in ML/AI data processing pipelines, and such libraries are often dependencies in AI workflows. Therefore it is a relevant supply-chain risk for general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-04"
+}

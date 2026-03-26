@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1438"
+  },
+  "affects": {
+    "developer": [
+      "Allegro.AI"
+    ],
+    "deployer": [
+      "Allegro.AI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ClearML"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-24593"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-24593"
+    },
+    {
+      "type": "source",
+      "label": "https://hiddenlayer.com/research/not-so-clear-how-mlops-solutions-can-muddy-the-waters-of-your-supply-chain/",
+      "url": "https://hiddenlayer.com/research/not-so-clear-how-mlops-solutions-can-muddy-the-waters-of-your-supply-chain/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A cross-site request forgery (CSRF) vulnerability in all versions up to 1.14.1 of the api server component of Allegro AI\u2019s ClearML platform allows a remote attacker to impersonate a user by sending API requests via maliciously crafted html. Exploitation of the vulnerability allows an attacker to compromise confidential workspaces and files, leak sensitive information, and target instances of the ClearML platform within closed off networks.\n\nReason for inclusion in AVID: CVE-2024-24593 describes a cross-site request forgery vulnerability in the API server component of Allegro AI\u2019s ClearML platform. ClearML is an AI/ML workflow management platform widely used in ML pipelines for experiment tracking, data handling, and deployment. A CSRF vulnerability enabling impersonation and access to confidential workspaces/files constitutes a security vulnerability with direct impact on AI software stacks. The issue affects a software component used to build/deploy/run general-purpose AI systems, making it a relevant supply-chain risk in GP AI contexts. The report provides explicit vulnerability behavior, scope, and references (CVE/NVD)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "baseScore": 9.6,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-06"
+}

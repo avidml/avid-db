@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1645"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "significant-gravitas/autogpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF Check Bypass in Requests Utility in significant-gravitas/autogpt (CVE-2025-0454)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0454"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/0664fdee-bdc2-4650-8075-74d7b8d3e308",
+      "url": "https://huntr.com/bounties/0664fdee-bdc2-4650-8075-74d7b8d3e308"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/significant-gravitas/autogpt/commit/ff065cd24c2289878c0abdb9adbf91c305f0d70a",
+      "url": "https://github.com/significant-gravitas/autogpt/commit/ff065cd24c2289878c0abdb9adbf91c305f0d70a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Server-Side Request Forgery (SSRF) vulnerability was identified in the Requests utility of significant-gravitas/autogpt versions prior to v0.4.0. The vulnerability arises due to a hostname confusion between the `urlparse` function from the `urllib.parse` library and the `requests` library. A malicious user can exploit this by submitting a specially crafted URL, such as `http://localhost:\\@google.com/../`, to bypass the SSRF check and perform an SSRF attack.\n\nReason for inclusion in AVID: The CVE describes a server-side request forgery (SSRF) vulnerability in the Requests utility of significant-gravitas/autogpt, an AI system. This is a software vulnerability within an AI framework/tooling stack used to build/run general-purpose AI systems. It affects the software supply chain for AI deployments (e.g., CI/CD, packaging, and runtime) since it resides in the application's code path and could be exploited during operation. It is not hardware/firmware-only. The report provides explicit vulnerability behavior, affected versions, CVSS details, and references, supporting clear evidence for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1382"
+  },
+  "affects": {
+    "developer": [
+      "haotian-liu"
+    ],
+    "deployer": [
+      "haotian-liu"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "haotian-liu/llava"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Server-Side Request Forgery in haotian-liu/llava (CVE-2024-12068)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12068"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/9d0b908d-63cd-4d62-91ff-6ceef3183752",
+      "url": "https://huntr.com/bounties/9d0b908d-63cd-4d62-91ff-6ceef3183752"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Server-Side Request Forgery (SSRF) vulnerability was discovered in haotian-liu/llava, affecting version git c121f04. This vulnerability allows an attacker to make the server perform HTTP requests to arbitrary URLs, potentially accessing sensitive data that is only accessible from the server, such as AWS metadata credentials.\n\nReason for inclusion in AVID: CVE-2024-12068 describes a Server-Side Request Forgery vulnerability in the haotian-liu/llava project, an AI model/serving stack. The vulnerability enables the server to make HTTP requests to arbitrary URLs, potentially exposing internal data (e.g., AWS metadata). This is a software vulnerability affecting a component used to deploy/run AI systems, representing a software supply-chain risk for general-purpose AI pipelines. Hardware/firmware-only issues are not applicable here. The report provides clear CVE details and impact signals."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

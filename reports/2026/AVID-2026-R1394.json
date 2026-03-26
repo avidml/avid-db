@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1394"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal Vulnerability in mlflow/mlflow (CVE-2024-1483)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1483"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/52a3855d-93ff-4460-ac24-9c7e4334198d",
+      "url": "https://huntr.com/bounties/52a3855d-93ff-4460-ac24-9c7e4334198d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A path traversal vulnerability exists in mlflow/mlflow version 2.9.2, allowing attackers to access arbitrary files on the server. By crafting a series of HTTP POST requests with specially crafted 'artifact_location' and 'source' parameters, using a local URI with '#' instead of '?', an attacker can traverse the server's directory structure. The issue occurs due to insufficient validation of user-supplied input in the server's handlers.\n\nReason for inclusion in AVID: CVE-2024-1483 describes a path traversal vulnerability in mlflow/mlflow, a software component widely used in AI/ML workflows for experiment tracking, packaging, and deployment. This vulnerability is in software used to build/deploy AI systems, representing a security flaw in the AI supply chain stack (dependencies/serving components). It is not hardware-only, has clear exploitation mechanics (path traversal leading to file access), and is well-documented with CVE and CVSS details. Therefore it satisfies AI relevance, GPAI supply chain relevance, security impact, and sufficiency of evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-16"
+}

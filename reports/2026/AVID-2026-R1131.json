@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1131"
+  },
+  "affects": {
+    "developer": [
+      "Jenkins project"
+    ],
+    "deployer": [
+      "Jenkins project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Jenkins DotCi Plugin"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-41237"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-41237"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jenkins.io/security/advisory/2022-09-21/#SECURITY-1737",
+      "url": "https://www.jenkins.io/security/advisory/2022-09-21/#SECURITY-1737"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jenkins DotCi Plugin 2.40.00 and earlier does not configure its YAML parser to prevent the instantiation of arbitrary types, resulting in a remote code execution vulnerability.\n\nReason for inclusion in AVID: CVE-2022-41237 describes a remote code execution vulnerability in the Jenkins DotCi Plugin due to unsafe YAML deserialization. While not AI-specific, Jenkins is a common CI/CD platform used in AI software pipelines for building, testing, and deploying AI models and workflows. This vulnerability affects a component in the software supply chain (CI/CD) that can impact AI system deployment and artifacts, posing a security risk in AI pipelines. There is explicit evidence (CVE entry and Jenkins advisory) supporting the vulnerability and its impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-09-21"
+}

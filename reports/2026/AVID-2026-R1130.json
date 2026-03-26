@@ -1,0 +1,76 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1130"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Spark Provider"
+      },
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Spark Provider RCE that bypass restrictions to read arbitrary files (CVE-2022-40954)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-40954"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/27646",
+      "url": "https://github.com/apache/airflow/pull/27646"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/0tmdlnmjs5t4gsx5fy73tb6zd3jztq45",
+      "url": "https://lists.apache.org/thread/0tmdlnmjs5t4gsx5fy73tb6zd3jztq45"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Apache Airflow Spark Provider, Apache Airflow allows an attacker to read arbtrary files in the task execution context, without write access to DAG files. This issue affects Spark Provider versions prior to 4.0.0. It also impacts any Apache Airflow versions prior to 2.3.0 in case Spark Provider is installed (Spark Provider 4.0.0 can only be installed for Airflow 2.3.0+). Note that you need to manually install the Spark Provider version 4.0.0 in order to get rid of the vulnerability on top of Airflow 2.3.0+ version that has lower version of the Spark Provider installed).\n\nReason for inclusion in AVID: CVE-2022-40954 is an OS command injection vulnerability in the Apache Airflow Spark Provider that allows reading arbitrary files in the task execution context (RCE). While not AI-specific, Airflow and the Spark Provider are commonly used to orchestrate and run ML/AI data pipelines and workloads, making this a software supply chain issue relevant to general-purpose AI systems. The vulnerability affects software components (Airflow, Spark Provider) used in AI pipelines and can impact AI workloads if exploited. The report provides clear signals: vulnerability description, affected versions, and references. Therefore, it meets AI relevance, GP AI supply chain relevance, security/vulnerability nature, and sufficiency of evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-11-22"
+}

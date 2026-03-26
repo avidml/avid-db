@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0715"
+  },
+  "affects": {
+    "developer": [
+      "Jenkins project"
+    ],
+    "deployer": [
+      "Jenkins project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Jenkins"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-21605"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-21605"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jenkins.io/security/advisory/2021-01-13/#SECURITY-2021",
+      "url": "https://www.jenkins.io/security/advisory/2021-01-13/#SECURITY-2021"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jenkins 2.274 and earlier, LTS 2.263.1 and earlier allows users with Agent/Configure permission to choose agent names that cause Jenkins to override the global `config.xml` file.\n\nReason for inclusion in AVID: CVE-2021-21605 describes a vulnerability in Jenkins (a CI/CD server) enabling an authenticated user to cause the global config.xml to be overridden via agent naming. Jenkins is a key component in AI software pipelines (build/deploy/test) and such a vulnerability can affect the integrity and security of AI systems supply chains. The report provides CVE details and references, sufficient to evaluate security impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2021-01-13"
+}

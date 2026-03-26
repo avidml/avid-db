@@ -1,0 +1,127 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0928"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Log4j2"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Log4j2 vulnerable to RCE via JDBC Appender when attacker controls configuration (CVE-2021-44832)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-44832"
+    },
+    {
+      "type": "source",
+      "label": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+      "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/s1o5vlo78ypqxnzn6p8zf6t9shtq5143",
+      "url": "https://lists.apache.org/thread/s1o5vlo78ypqxnzn6p8zf6t9shtq5143"
+    },
+    {
+      "type": "source",
+      "label": "https://issues.apache.org/jira/browse/LOG4J2-3293",
+      "url": "https://issues.apache.org/jira/browse/LOG4J2-3293"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2021/12/28/1",
+      "url": "http://www.openwall.com/lists/oss-security/2021/12/28/1"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.debian.org/debian-lts-announce/2021/12/msg00036.html",
+      "url": "https://lists.debian.org/debian-lts-announce/2021/12/msg00036.html"
+    },
+    {
+      "type": "source",
+      "label": "https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf",
+      "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/EVV25FXL4FU5X6X5BSL7RLQ7T6F65MRA/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/EVV25FXL4FU5X6X5BSL7RLQ7T6F65MRA/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/T57MPJUW3MA6QGWZRTMCHHMMPQNVKGFC/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/T57MPJUW3MA6QGWZRTMCHHMMPQNVKGFC/"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpujan2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpujan2022.html"
+    },
+    {
+      "type": "source",
+      "label": "https://security.netapp.com/advisory/ntap-20220104-0001/",
+      "url": "https://security.netapp.com/advisory/ntap-20220104-0001/"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to a remote code execution (RCE) attack when a configuration uses a JDBC Appender with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.\n\nReason for inclusion in AVID: CVE-2021-44832 describes a remote code execution vulnerability in Apache Log4j2 (JDBC Appender with LDAP data source). This is a software vulnerability in a widely used library that can be part of AI system deployment stacks (depends on Java components, logging, and data processing pipelines). Therefore it concerns AI/ML software, affects components used to build/deploy AI systems, is a security/vulnerability issue, and has sufficient evidence in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-74",
+        "description": "CWE-74 Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-12-28"
+}

@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1232"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Spark Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Spark Provider Arbitrary File Read via JDBC (CVE-2023-28710)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28710"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/30223",
+      "url": "https://github.com/apache/airflow/pull/30223"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2",
+      "url": "https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/04/07/3",
+      "url": "http://www.openwall.com/lists/oss-security/2023/04/07/3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Spark Provider.This issue affects Apache Airflow Spark Provider: before 4.0.1.\n\nReason for inclusion in AVID: CVE-2023-28710 describes an arbitrary file read via JDBC in Apache Airflow Spark Provider (pre-4.0.1). This is a software vulnerability in a component commonly used to orchestrate data pipelines and prepare data for AI workflows. As such, it affects a dependency/stack element used to build, train, deploy, or run general-purpose AI systems, satisfying a software supply-chain issue relevant to AI stacks. The report provides explicit vulnerability behavior and references (NVD, PR), giving sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-07"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1322"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "H2O Remote Code Execution via POJO Model Import (CVE-2023-6016)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6016"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/83dd17ec-053e-453c-befb-7d6736bf1836",
+      "url": "https://huntr.com/bounties/83dd17ec-053e-453c-befb-7d6736bf1836"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An attacker is able to gain remote code execution on a server hosting the H2O dashboard through it's POJO model import feature.\n\nReason for inclusion in AVID: CVE-2023-6016 describes a remote code execution vulnerability in H2O's POJO model import feature. H2O-3 is a general-purpose machine learning platform used for building, deploying, and serving AI models. A remote attacker could execute arbitrary code on a server hosting the H2O dashboard, representing a security/safety vulnerability within AI software stack. This vulnerability affects AI pipelines and deployment components, i.e., the supply chain of general-purpose AI systems. Evidence includes CVSS v3.0 base score 10 (CRITICAL), CWE-94, and official CVE/NVD references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-16"
+}

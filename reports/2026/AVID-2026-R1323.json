@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1323"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MLflow Arbitrary File Write (CVE-2023-6018)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6018"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/7cf918b5-43f4-48c0-a371-4d963ce69b30",
+      "url": "https://huntr.com/bounties/7cf918b5-43f4-48c0-a371-4d963ce69b30"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An attacker can overwrite any file on the server hosting MLflow without any authentication.\n\nReason for inclusion in AVID: CVE-2023-6018 describes an Arbitrary File Write vulnerability in MLflow, allowing an unauthenticated attacker to overwrite files on the server. This is a software vulnerability with clear security impact. MLflow is a core AI lifecycle tool used to build, deploy, and run AI/ML systems, placing the issue squarely in the AI software stack. As MLflow is part of the AI deployment/serving ecosystem, this constitutes a software supply-chain risk for general-purpose AI systems. The report provides explicit vulnerability details (unrestricted file write, no auth) and references, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-16"
+}

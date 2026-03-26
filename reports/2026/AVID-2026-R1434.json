@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1434"
+  },
+  "affects": {
+    "developer": [
+      "vantage6"
+    ],
+    "deployer": [
+      "vantage6"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vantage6"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CORS settings overly permissive in vantage6 (CVE-2024-23823)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-23823"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vantage6/vantage6/security/advisories/GHSA-4946-85pr-fvxh",
+      "url": "https://github.com/vantage6/vantage6/security/advisories/GHSA-4946-85pr-fvxh"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vantage6/vantage6/commit/70bb4e1d889230a841eb364d6c03accd7dd01a41",
+      "url": "https://github.com/vantage6/vantage6/commit/70bb4e1d889230a841eb364d6c03accd7dd01a41"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "vantage6 is an open source framework built to enable, manage and deploy privacy enhancing technologies like Federated Learning and Multi-Party Computation. The vantage6 server has no restrictions on CORS settings. It should be possible for people to set the allowed origins of the server.  The impact is limited because v6 does not use session cookies. This issue has been addressed in commit `70bb4e1d8` and is expected to ship in subsequent releases. Users are advised to upgrade as soon as a new release is available. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: The CVE pertains to a software vulnerability in vantage6, an open-source framework used to enable privacy-preserving AI workflows (e.g., Federated Learning, MPC). A permissive CORS configuration can enable cross-origin access to the AI workflow server, impacting security/privacy within AI pipelines. This is a software supply-chain-relevant issue (framework/dependency used in AI stacks) rather than hardware/firmware. The report includes evidence (description, impact, fix commit, upgrade guidance, references) supporting its classification as a vulnerability in the AI software stack."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "baseScore": 4.2,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-942",
+        "description": "CWE-942: Permissive Cross-domain Policy with Untrusted Domains",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863: Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-14"
+}

@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1345"
+  },
+  "affects": {
+    "developer": [
+      "nvidia"
+    ],
+    "deployer": [
+      "nvidia"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA Triton Inference Server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CVE (CVE-2024-0103)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0103"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5546",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5546"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Triton Inference Server for Linux contains a vulnerability where a user may cause an incorrect Initialization of resource by network issue. A successful exploit of this vulnerability may lead to information disclosure.\n\nReason for inclusion in AVID: CVE-2024-0103 describes a software vulnerability in NVIDIA Triton Inference Server (an AI model-serving component). Triton is used in AI deployment stacks, and the issue could lead to information disclosure via network-related initialization problems. This directly concerns AI software stacks and their supply chain components, with CVE/CVSS details provided as evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1419",
+        "description": "CWE-1419",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-13"
+}

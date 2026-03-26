@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1366"
+  },
+  "affects": {
+    "developer": [
+      "horovod"
+    ],
+    "deployer": [
+      "horovod"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "horovod/horovod"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unauthenticated Remote Code Execution in ElasticRendezvousHandler in horovod/horovod (CVE-2024-10190)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10190"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/3e398d1f-70c2-4e05-ae22-f5d66b19a754",
+      "url": "https://huntr.com/bounties/3e398d1f-70c2-4e05-ae22-f5d66b19a754"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Horovod versions up to and including v0.28.1 are vulnerable to unauthenticated remote code execution. The vulnerability is due to improper handling of base64-encoded data in the `ElasticRendezvousHandler`, a subclass of `KVStoreHandler`. Specifically, the `_put_value` method in `ElasticRendezvousHandler` calls `codec.loads_base64(value)`, which eventually invokes `cloudpickle.loads(decoded)`. This allows an attacker to send a malicious pickle object via a PUT request, leading to arbitrary code execution on the server.\n\nReason for inclusion in AVID: CVE-2024-10190 describes unauthenticated remote code execution via deserialization in Horovod's ElasticRendezvousHandler. Horovod is a software library widely used in AI model training and distributed ML pipelines, making this a software supply chain vulnerability affecting AI systems. The report includes the vulnerability details (attack via base64-encoded data leading to code execution), affected versions, CVSS metrics, and references, providing sufficient signal for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

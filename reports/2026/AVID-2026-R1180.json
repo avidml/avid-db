@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1180"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow JDBC Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow JDBC Provider: RCE Vulnerability (CVE-2023-22886)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-22886"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3",
+      "url": "https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow JDBC Provider.\nAirflow JDBC Provider Connection\u2019s [Connection URL] parameters had no\nrestrictions, which made it possible to implement RCE attacks via\ndifferent type JDBC drivers, obtain airflow server permission.\nThis issue affects Apache Airflow JDBC Provider: before 4.0.0.\n\nReason for inclusion in AVID: The CVE describes an RCE vulnerability in Apache Airflow JDBC Provider. Airflow is widely used in ML/AI pipelines for orchestration, serving as a software component in the AI stack. This affects a component (Airflow JDBC Provider) used to build/run AI workflows, i.e., a software supply chain element for general-purpose AI systems. It is a security vulnerability with clear CVE description and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-06-29"
+}

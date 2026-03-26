@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1569"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "CUDA Toolkit"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-53878"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-53878"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5594",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5594"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA CUDA toolkit for Linux and Windows contains a vulnerability in the cuobjdump binary, where a user could cause a crash by passing a malformed ELF file to cuobjdump. A successful exploit of this vulnerability might lead to a partial denial of service.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in NVIDIA CUDA cuobjdump that can crash when presented with a malformed ELF, causing a partial DoS. CUDA toolchain components are widely used in AI/ML workloads for training and deployment, and cuobjdump is a software tool within that stack. This is a software vulnerability in a dependency/toolchain used to build/run general-purpose AI systems, with clear CVE-based evidence. Therefore it satisfies AI relevance, GP AI supply chain relevance, security/safety vulnerability criteria, and sufficent signal for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:L",
+      "baseScore": 2.8,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1284",
+        "description": "CWE-1284 Improper Validation of Specified Quantity in Input",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-02-25"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1544"
+  },
+  "affects": {
+    "developer": [
+      "cvat-ai"
+    ],
+    "deployer": [
+      "cvat-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cvat"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Computer Vision Annotation Tool (CVAT) access control is broken in several PATCH endpoints (CVE-2024-47172)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-47172"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-gxhm-hg65-5gh2",
+      "url": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-gxhm-hg65-5gh2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/commit/59ce6ca784a0d426b2cfb8cf2850ba1d520c03f5",
+      "url": "https://github.com/cvat-ai/cvat/commit/59ce6ca784a0d426b2cfb8cf2850ba1d520c03f5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Computer Vision Annotation Tool (CVAT) is an interactive video and image annotation tool for computer vision. An attacker with a CVAT account may retrieve certain information about any project, task, job or membership resource on the CVAT instance. The information exposed in this way is the same as the information returned on a GET request to the resource. In addition, the attacker can also alter the default source and target storage associated with any project or task. Upgrade to CVAT 2.19.1 or any later version to fix the issue.\n\nReason for inclusion in AVID: CVE-2024-47172 targets CVAT, a widely-used AI data labeling tool. It describes broken access control (CWE-863) allowing information disclosure about projects/tasks/members and the ability to alter default storage associations, exploitable by an attacker with a CVAT account. CVAT is part of the AI data preparation and labeling pipeline, thus a software component used to build/train/deploy AI systems. The vulnerability is a software security issue with potential impact on data confidentiality and integrity within AI workflows, supported by CVSS details and advisories. This satisfies AI-related, GP AI supply chain, security/safety vuln, and sufficiency criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863: Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-30"
+}

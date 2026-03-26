@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1594"
+  },
+  "affects": {
+    "developer": [
+      "mudler"
+    ],
+    "deployer": [
+      "mudler"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mudler/localai"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Write in mudler/LocalAI (CVE-2024-6868)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6868"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/752d2376-2d9a-4e17-b462-3c267f9dd229",
+      "url": "https://huntr.com/bounties/752d2376-2d9a-4e17-b462-3c267f9dd229"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mudler/localai/commit/a181dd0ebc5d3092fc50f61674d552604fe8ef9c",
+      "url": "https://github.com/mudler/localai/commit/a181dd0ebc5d3092fc50f61674d552604fe8ef9c"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "mudler/LocalAI version 2.17.1 allows for arbitrary file write due to improper handling of automatic archive extraction. When model configurations specify additional files as archives (e.g., .tar), these archives are automatically extracted after downloading. This behavior can be exploited to perform a 'tarslip' attack, allowing files to be written to arbitrary locations on the server, bypassing checks that normally restrict files to the models directory. This vulnerability can lead to remote code execution (RCE) by overwriting backend assets used by the server.\n\nReason for inclusion in AVID: The CVE describes an arbitrary file write vulnerability in mudler/LocalAI, a runtime/tool used to run AI models. This directly concerns AI systems, affects a component used to deploy/run AI workloads, poses a security risk (potential RCE), and the report provides explicit CVE details, impact, and references. Therefore it is relevant to the general-purpose AI software supply chain and has sufficient evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-59",
+        "description": "CWE-59 Improper Link Resolution Before File Access",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-29"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1442"
+  },
+  "affects": {
+    "developer": [
+      "Unknown"
+    ],
+    "deployer": [
+      "Unknown"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Unknown System"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Insufficient sanitization in MLflow leads to XSS when running a recipe that uses an untrusted dataset. (CVE-2024-27133)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-27133"
+    },
+    {
+      "type": "source",
+      "label": "https://research.jfrog.com/vulnerabilities/mlflow-untrusted-dataset-xss-jfsa-2024-000631932/",
+      "url": "https://research.jfrog.com/vulnerabilities/mlflow-untrusted-dataset-xss-jfsa-2024-000631932/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/pull/10893",
+      "url": "https://github.com/mlflow/mlflow/pull/10893"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Insufficient sanitization in MLflow leads to XSS when running a recipe that uses an untrusted dataset. This issue leads to a client-side RCE when running the recipe in Jupyter Notebook. The vulnerability stems from lack of sanitization over dataset table fields.\n\nReason for inclusion in AVID: The CVE-2024-27133 entry describes an insufficient sanitization in MLflow causing cross-site scripting (XSS) and a potential client-side RCE when running a recipe with an untrusted dataset. MLflow is a widely used AI tooling/component in ML pipelines, experimentation, and deployment workflows. This vulnerability impacts software used to build/train/package/deploy AI systems, i.e., a software supply-chain component in the general-purpose AI stack, rather than hardware/firmware. The CVE provides explicit vulnerability behavior (XSS/RCE) and references, supporting evaluation as a security vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-23"
+}

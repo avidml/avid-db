@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1704"
+  },
+  "affects": {
+    "developer": [
+      "davisking"
+    ],
+    "deployer": [
+      "davisking"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "dlib"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Divide By Zero in dlib (CVE-2025-4637)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-4637"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/davisking/dlib/pull/3058",
+      "url": "https://github.com/davisking/dlib/pull/3058"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Divide By Zero vulnerability in davisking dlib allows \n\nremote attackers to cause a denial of service via a crafted file.\n\n.This issue affects dlib: before <19.24.7.\n\nReason for inclusion in AVID: The CVE pertains to the dlib library, a widely-used AI/ML utility library. Vulnerability (divide-by-zero leading to DoS) affects software components commonly used to build/train/deploy AI systems, i.e., a software supply chain issue within AI stacks. It is a security vulnerability with evidence in the CVE/NVD description and referenced PR, indicating a concrete flaw in a software dependency used in AI pipelines."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-369",
+        "description": "CWE-369 Divide By Zero",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-14"
+}

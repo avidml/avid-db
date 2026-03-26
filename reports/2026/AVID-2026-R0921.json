@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0921"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-42951"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42951"
+    },
+    {
+      "type": "source",
+      "label": "http://algorithmia.com",
+      "url": "http://algorithmia.com"
+    },
+    {
+      "type": "source",
+      "label": "https://seclists.org/fulldisclosure/2022/Feb/33",
+      "url": "https://seclists.org/fulldisclosure/2022/Feb/33"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Remote Code Execution (RCE) vulnerability exists in Algorithmia MSOL all versions before October 10 2021 of SaaS. Users can register for an account and are allocated a set number of credits to try the product. Once users authenticate, they can proceed to create a new, specially crafted Algorithm and subsequently launch remote code execution with their desired result.\n\nReason for inclusion in AVID: CVE-2021-42951 describes a remote code execution vulnerability in Algorithmia MSOL SaaS, where authenticated users can create and execute algorithms leading to RCE on the platform. This platform is used to deploy and run AI algorithms/models, i.e., part of the software stack that builds, deploys, and serves AI systems. The issue is a software vulnerability in a component used in AI pipelines, not hardware/firmware. The CVE/NVD sources provide explicit security impact signals, supporting its relevance to AI software supply chains. Therefore, it satisfies AI relevance, GP AI supply-chain scope, and security/safety impact with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-03-01"
+}

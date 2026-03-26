@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1519"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "ggerganov"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "llama.cpp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "llama.cpp global-buffer-overflow in ggml_type_size (CVE-2024-42477)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-42477"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-mqp6-7pv6-fqjf",
+      "url": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-mqp6-7pv6-fqjf"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/commit/b72942fac998672a79a1ae3c03b340f7e629980b",
+      "url": "https://github.com/ggerganov/llama.cpp/commit/b72942fac998672a79a1ae3c03b340f7e629980b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "llama.cpp provides LLM inference in C/C++. The unsafe `type` member in the `rpc_tensor` structure can cause `global-buffer-overflow`. This vulnerability may lead to memory data leakage. The vulnerability is fixed in b3561.\n\nReason for inclusion in AVID: CVE-2024-42477 describes a global-buffer-overflow vulnerability in llama.cpp (ggml_type_size) that can lead to memory data leakage. llama.cpp is a core AI inference library used to deploy/general-purpose AI models. This fits the software supply chain domain for AI systems (dependencies/runtime used to run models). The issue is a security vulnerability (memory safety) with an available fix. The CVE and advisory provide sufficient signals for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-125",
+        "description": "CWE-125: Out-of-bounds Read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-12"
+}

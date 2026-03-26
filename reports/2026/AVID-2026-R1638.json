@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1638"
+  },
+  "affects": {
+    "developer": [
+      "kedro-org"
+    ],
+    "deployer": [
+      "kedro-org"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "kedro-org/kedro"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in kedro-org/kedro (CVE-2024-9701)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9701"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/96c77fef-93b2-4d4d-8cbe-57a718d8eea5",
+      "url": "https://huntr.com/bounties/96c77fef-93b2-4d4d-8cbe-57a718d8eea5"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/kedro-org/kedro/commit/d79fa51de55ac0ccb58cce1a482df1b445f0fe7c",
+      "url": "https://github.com/kedro-org/kedro/commit/d79fa51de55ac0ccb58cce1a482df1b445f0fe7c"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Remote Code Execution (RCE) vulnerability has been identified in the Kedro ShelveStore class (version 0.19.8). This vulnerability allows an attacker to execute arbitrary Python code via deserialization of malicious payloads, potentially leading to a full system compromise. The ShelveStore class uses Python's shelve module to manage session data, which relies on pickle for serialization. Crafting a malicious payload and storing it in the shelve file can lead to RCE when the payload is deserialized.\n\nReason for inclusion in AVID: CVE-2024-9701 describes a remote code execution vulnerability in Kedro (a data science/ML pipeline framework) via deserialization of malicious payloads in ShelveStore. This is a software vulnerability in a component commonly used to build/train/deploy AI pipelines, representing a software supply-chain risk for general-purpose AI systems. The report provides explicit vulnerability details and references, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

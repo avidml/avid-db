@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1648"
+  },
+  "affects": {
+    "developer": [
+      "EmbedAI"
+    ],
+    "deployer": [
+      "EmbedAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "EmbedAI"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Access Control vulnerability in EmbedAI (CVE-2025-0744)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0744"
+    },
+    {
+      "type": "source",
+      "label": "https://www.incibe.es/en/incibe-cert/notices/aviso/multiple-vulnerabilities-embedai",
+      "url": "https://www.incibe.es/en/incibe-cert/notices/aviso/multiple-vulnerabilities-embedai"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "an Improper Access Control vulnerability has been found in EmbedAI 2.1 and below. This vulnerability allows an authenticated attacker change his subscription plan without paying by making a POST request changing the parameters of the \"/demos/embedai/pmt_cash_on_delivery/pay\" endpoint.\n\nReason for inclusion in AVID: The CVE describes an improper access control vulnerability in an AI-related software product (EmbedAI), which is a component that could be used in AI pipelines or deployments. As a vulnerability in a software product used to build/deploy AI systems, it affects the AI supply chain (dependencies/runtimes/model-serving stacks). It is a security/safety vulnerability, and the report provides CVE details and references, supporting evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-284",
+        "description": "CWE-284: Improper Access Control",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-30"
+}

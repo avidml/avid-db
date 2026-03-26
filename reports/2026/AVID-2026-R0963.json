@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0963"
+  },
+  "affects": {
+    "developer": [
+      "auth0"
+    ],
+    "deployer": [
+      "auth0"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "node-jsonwebtoken"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "jsonwebtoken unrestricted key type could lead to legacy keys usage (CVE-2022-23539)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23539"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-8cf7-32gw-wr33",
+      "url": "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-8cf7-32gw-wr33"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3",
+      "url": "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3"
+    },
+    {
+      "type": "source",
+      "label": "https://security.netapp.com/advisory/ntap-20240621-0007/",
+      "url": "https://security.netapp.com/advisory/ntap-20240621-0007/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Versions `<=8.5.1` of `jsonwebtoken` library could be misconfigured so that legacy, insecure key types are used for signature verification. For example, DSA keys could be used with the RS256 algorithm. You are affected if you are using an algorithm and a key type other than a combination listed in the GitHub Security Advisory as unaffected. This issue has been fixed, please update to version 9.0.0. This version validates for asymmetric key type and algorithm combinations. Please refer to the above mentioned algorithm / key type combinations for the valid secure configuration. After updating to version 9.0.0, if you still intend to continue with signing or verifying tokens using invalid key type/algorithm value combinations, you\u2019ll need to set the `allowInvalidAsymmetricKeyTypes` option  to `true` in the `sign()` and/or `verify()` functions.\n\nReason for inclusion in AVID: CVE-2022-23539 describes an insecure key-type handling vulnerability in the jsonwebtoken library (node-jsonwebtoken) that allows legacy/insecure key types to be used for signature verification. This is a software vulnerability in a widely used dependency that can appear in AI deployment stacks (token authentication, signing/verifying tokens for ML services, model serving, APIs). It constitutes a supply-chain risk in the software components used to build/run AI systems. It is not hardware/firmware-only. The report provides the CVE, affected versions, fix (upgrade to 9.0.0), and references, satisfying sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:N",
+      "baseScore": 5.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-327",
+        "description": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-12-22"
+}

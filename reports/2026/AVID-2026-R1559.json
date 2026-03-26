@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1559"
+  },
+  "affects": {
+    "developer": [
+      "Giskard-AI"
+    ],
+    "deployer": [
+      "Giskard-AI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "giskard"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "ReDoS in Giskard Scan text perturbation (CVE-2024-52524)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-52524"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/Giskard-AI/giskard/security/advisories/GHSA-pjwm-cr36-mwv3",
+      "url": "https://github.com/Giskard-AI/giskard/security/advisories/GHSA-pjwm-cr36-mwv3"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/Giskard-AI/giskard/commit/48ce81f5c626171767188d6f0669498fb613b4d3",
+      "url": "https://github.com/Giskard-AI/giskard/commit/48ce81f5c626171767188d6f0669498fb613b4d3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Giskard is an evaluation and testing framework for AI systems. A Remote Code Execution (ReDoS) vulnerability was discovered in Giskard component by the GitHub Security Lab team. When processing datasets with specific text patterns with Giskard detectors, this vulnerability could trigger exponential regex evaluation times, potentially leading to denial of service. Giskard versions prior to 2.15.5 are affected.\n\nReason for inclusion in AVID: This CVE describes a Denial-of-Service (ReDoS) vulnerability in Giskard, an evaluation framework used in AI systems. It affects a software artifact (Giskard) used in AI pipelines for testing/evaluation, thus is relevant to the AI software supply chain. The issue arises from inefficient regular expression evaluation (CWE-1333) and can cause denial of service, a security vulnerability. Sufficient evidence is provided via CVE-2024-52524, GHSA advisory, and references to the affected commit and NVD entry."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1333",
+        "description": "CWE-1333: Inefficient Regular Expression Complexity",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-14"
+}

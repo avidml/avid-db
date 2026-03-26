@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1643"
+  },
+  "affects": {
+    "developer": [
+      "wandb"
+    ],
+    "deployer": [
+      "wandb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "wandb/openui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Stored Cross-site Scripting (XSS) in wandb/openui (CVE-2025-0192)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0192"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/5f82c722-b674-456a-8691-a6565bf90e39",
+      "url": "https://huntr.com/bounties/5f82c722-b674-456a-8691-a6565bf90e39"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A stored Cross-site Scripting (XSS) vulnerability exists in the latest version of wandb/openui. The vulnerability is present in the edit HTML functionality, where an attacker can inject malicious scripts. When the modified HTML is shared with another user, the XSS payload executes, potentially leading to the theft of user prompt history and other sensitive information.\n\nReason for inclusion in AVID: The CVE targets wandb/openui, an AI experiment tracking/visualization tool commonly used in ML pipelines. It is a software vulnerability (stored XSS) in AI tooling, with potential data exfiltration from AI workflows. This is a software supply-chain component (dependency/tooling) used to build/train/deploy AI systems. The report provides clear CVE details, impact, CVSS, CWE, and references, giving sufficient evidence to classify as a vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

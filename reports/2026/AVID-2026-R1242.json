@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1242"
+  },
+  "affects": {
+    "developer": [
+      "xerial"
+    ],
+    "deployer": [
+      "xerial"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "sqlite-jdbc"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Sqlite-jdbc vulnerable to remote code execution when JDBC url is attacker controlled (CVE-2023-32697)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-32697"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/xerial/sqlite-jdbc/security/advisories/GHSA-6phf-6h5g-97j2",
+      "url": "https://github.com/xerial/sqlite-jdbc/security/advisories/GHSA-6phf-6h5g-97j2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/xerial/sqlite-jdbc/releases/tag/3.41.2.2",
+      "url": "https://github.com/xerial/sqlite-jdbc/releases/tag/3.41.2.2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "SQLite JDBC is a library for accessing and creating SQLite database files in Java. Sqlite-jdbc addresses a remote code execution vulnerability via JDBC URL. This issue impacting versions 3.6.14.1 through 3.41.2.1 and has been fixed in version 3.41.2.2.\n\nReason for inclusion in AVID: CVE-2023-32697 describes remote code execution in sqlite-jdbc via attacker-controlled JDBC URL; sqlite-jdbc is a Java library used to access SQLite databases. Such libraries are commonly used in AI software stacks and data processing pipelines, making this a software supply chain risk for general-purpose AI systems. The vulnerability is a security issue with high impact, and the report provides CVE details and a fix version, giving sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-05-23"
+}

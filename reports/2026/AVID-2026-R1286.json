@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1286"
+  },
+  "affects": {
+    "developer": [
+      "Elastic"
+    ],
+    "deployer": [
+      "Elastic"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Elasticsearch-Hadoop"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Elasticsearch-hadoop Unsafe Deserialization (CVE-2023-46674)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-46674"
+    },
+    {
+      "type": "source",
+      "label": "https://discuss.elastic.co/t/elasticsearch-hadoop-7-17-11-8-9-0-security-update-esa-2023-28/348663",
+      "url": "https://discuss.elastic.co/t/elasticsearch-hadoop-7-17-11-8-9-0-security-update-esa-2023-28/348663"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue was identified that allowed the unsafe deserialization of java objects from hadoop or spark configuration properties that could have been modified by authenticated users. Elastic would like to thank Yakov Shafranovich, with Amazon Web Services for reporting this issue.\n\nReason for inclusion in AVID: CVE-2023-46674 describes an unsafe deserialization vulnerability in Elasticsearch-Hadoop, a component used to bridge Hadoop/Spark data processing with Elasticsearch. This component is commonly used in AI data pipelines (data ingestion, feature pipelines, and model-serving stack support) within general-purpose AI systems. As a software vulnerability in a dependency used to build/run AI workflows, it directly concerns the AI software supply chain. It is a CWE-502 deserialization issue with potential integrity/availability impact, and the report provides sufficient evidence (CVSS, CWE, references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:L/I:H/A:H",
+      "baseScore": 6.0,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-05"
+}

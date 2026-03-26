@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1042"
+  },
+  "affects": {
+    "developer": [
+      "cvat-ai"
+    ],
+    "deployer": [
+      "cvat-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cvat"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Server-Side Request Forgery Vulnerability in Computer Vision Annotation Tool (CVAT) (CVE-2022-31188)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-31188"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-7vpj-j5xv-29pr",
+      "url": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-7vpj-j5xv-29pr"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/commit/6fad1764efd922d99dbcda28c4ee72d071aa5a07",
+      "url": "https://github.com/cvat-ai/cvat/commit/6fad1764efd922d99dbcda28c4ee72d071aa5a07"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/169814/CVAT-2.0-Server-Side-Request-Forgery.html",
+      "url": "http://packetstormsecurity.com/files/169814/CVAT-2.0-Server-Side-Request-Forgery.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "CVAT is an opensource interactive video and image annotation tool for computer vision. Versions prior to 2.0.0 were found to be subject to a Server-side request forgery (SSRF) vulnerability. Validation has been added to urls used in the affected code path in version 2.0.0. Users are advised to upgrade. There are no known workarounds for this issue.\n\nReason for inclusion in AVID: CVE-2022-31188 describes a server-side request forgery vulnerability in CVAT, an open-source data annotation tool widely used in AI/ML pipelines for labeling training data. This is a software vulnerability in a component (CVAT) that is part of the AI supply chain (data labeling, preprocessing, tooling, and deployment workflows). The vulnerability is security-focused (SSRF, potential data exposure) and the report provides explicit details and references, indicating sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
+      "baseScore": 8.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-08-01"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1616"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Protection of Alternate Path in GitLab (CVE-2024-8311)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8311"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/479315",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/479315"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue was discovered with pipeline execution policies in GitLab EE affecting all versions from 17.2 prior to 17.2.5, 17.3 prior to 17.3.2 which allows authenticated users to bypass variable overwrite protection via inclusion of a CI/CD template.\n\nReason for inclusion in AVID: CVE-2024-8311 describes a concrete security vulnerability in GitLab's CI/CD pipeline execution policies that allows authenticated users to bypass variable overwrite protection via inclusion of a CI/CD template. GitLab is a widely used tool in software development and is commonly part of AI/ML workflows for building, packaging, deploying, and running AI systems. As such, this vulnerability sits in a software supply chain component (CI/CD pipelines) used to build and deploy AI software, representing a legitimate general-purpose AI supply chain risk. The issue is a clear security vulnerability (potentially enabling tampering with pipeline behavior) and the report provides explicit details and references (CVE entry, CWE-424, CVSS 3.1, and GitLab issue), meeting sufficent signal for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-424",
+        "description": "CWE-424: Improper Protection of Alternate Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-12"
+}

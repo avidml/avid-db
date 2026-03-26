@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0999"
+  },
+  "affects": {
+    "developer": [
+      "jupyter-server"
+    ],
+    "deployer": [
+      "jupyter-server"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "jupyter_server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Sensitive Auth & Cookie data stored in Jupyter server logs (CVE-2022-24757)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-24757"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-p737-p57g-4cpr",
+      "url": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-p737-p57g-4cpr"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter_server/commit/a5683aca0b0e412672ac6218d09f74d44ca0de5a",
+      "url": "https://github.com/jupyter-server/jupyter_server/commit/a5683aca0b0e412672ac6218d09f74d44ca0de5a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Jupyter Server provides the backend (i.e. the core services, APIs, and REST endpoints) for Jupyter web applications. Prior to version 1.15.4, unauthorized actors can access sensitive information from server logs. Anytime a 5xx error is triggered, the auth cookie and other header values are recorded in Jupyter Server logs by default. Considering these logs do not require root access, an attacker can monitor these logs, steal sensitive auth/cookie information, and gain access to the Jupyter server. Jupyter Server version 1.15.4 contains a patch for this issue. There are currently no known workarounds.\n\nReason for inclusion in AVID: CVE-2022-24757 describes a software vulnerability in Jupyter Server where sensitive authentication data could be written to server logs, enabling leakage of cookies. This is a software issue affecting a component (Jupyter Server) commonly used in AI development and deployment pipelines (not hardware/firmware). It directly impacts the security of AI workflows by potentially exposing credentials. The report provides CVE details, affected version range, and a patch, satisfying AVID evidence requirements. This vulnerability sits in the software supply chain (dependencies/runtimes used in AI systems)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-532",
+        "description": "CWE-532: Insertion of Sensitive Information into Log File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-03-23"
+}

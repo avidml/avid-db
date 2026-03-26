@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1599"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Neutralization of Special Elements used in a Command ('Command Injection') in GitLab (CVE-2024-7110)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7110"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/472603",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/472603"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue was discovered in GitLab EE affecting all versions starting 17.0 to 17.1.6, 17.2 prior to 17.2.4, and 17.3 prior to 17.3.1 allows an attacker to execute arbitrary command in a victim's pipeline through prompt injection.\n\nReason for inclusion in AVID: CVE-2024-7110 is a command-injection vulnerability in GitLab that enables arbitrary command execution in a victim's CI pipeline. GitLab is a widely used tool in ML/AI development and deployment pipelines, so this directly affects the software supply chain for AI systems. The vulnerability is clearly security-related and the report provides explicit details (scope, impact, references), supporting its relevance to AI supply chains. Therefore it meets all four criteria for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "baseScore": 6.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-77",
+        "description": "CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-22"
+}

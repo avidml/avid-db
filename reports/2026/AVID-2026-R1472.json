@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1472"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gaizhenbiao/chuanhuchatgpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal in gaizhenbiao/chuanhuchatgpt (CVE-2024-3234)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-3234"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/277e3ff0-5878-4809-a4b9-73cdbb70dc9f",
+      "url": "https://huntr.com/bounties/277e3ff0-5878-4809-a4b9-73cdbb70dc9f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gaizhenbiao/chuanhuchatgpt/commit/6b8f7db347b390f6f8bd07ea2a4ef01a47382f00",
+      "url": "https://github.com/gaizhenbiao/chuanhuchatgpt/commit/6b8f7db347b390f6f8bd07ea2a4ef01a47382f00"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The gaizhenbiao/chuanhuchatgpt application is vulnerable to a path traversal attack due to its use of an outdated gradio component. The application is designed to restrict user access to resources within the `web_assets` folder. However, the outdated version of gradio it employs is susceptible to path traversal, as identified in CVE-2023-51449. This vulnerability allows unauthorized users to bypass the intended restrictions and access sensitive files, such as `config.json`, which contains API keys. The issue affects the latest version of chuanhuchatgpt prior to the fixed version released on 20240305.\n\nReason for inclusion in AVID: The CVE-2024-3234 report describes a path traversal vulnerability in the gaizhenbiao/chuanhuchatgpt application caused by an outdated Gradio component. This is a software supply-chain risk since it arises from a vulnerable dependency used in an AI-related application (an AI chat/serving stack). It can lead to unauthorized access to sensitive files (e.g., config.json with API keys), representing a security/safety vulnerability in AI software pipelines. The report provides explicit details, CVSS metrics, and references, supporting its classification as a vulnerability to curate."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

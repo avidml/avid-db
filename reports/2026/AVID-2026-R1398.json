@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1398"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Stored XSS leading to RCE in parisneo/lollms-webui (CVE-2024-1602)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1602"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/59be0d5a-f18e-4418-8f29-72320269a097",
+      "url": "https://huntr.com/bounties/59be0d5a-f18e-4418-8f29-72320269a097"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "parisneo/lollms-webui is vulnerable to stored Cross-Site Scripting (XSS) that leads to Remote Code Execution (RCE). The vulnerability arises due to inadequate sanitization and validation of model output data, allowing an attacker to inject malicious JavaScript code. This code can be executed within the user's browser context, enabling the attacker to send a request to the `/execute_code` endpoint and establish a reverse shell to the attacker's host. The issue affects various components of the application, including the handling of user input and model output.\n\nReason for inclusion in AVID: CVE-2024-1602 describes a stored XSS vulnerability in the parisneo/lollms-webui web UI that leads to remote code execution. This is a software vulnerability in a component used to deploy/run AI systems (web UI for LollMS), making it relevant to GP AI stacks. The issue is security-related (RCE via XSS) and the report provides sufficient signal (CVSS details, description, and references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

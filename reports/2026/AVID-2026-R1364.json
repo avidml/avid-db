@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1364"
+  },
+  "affects": {
+    "developer": [
+      "comfyanonymous"
+    ],
+    "deployer": [
+      "comfyanonymous"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "comfyanonymous/comfyui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Stored XSS in comfyanonymous/comfyui (CVE-2024-10099)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10099"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/14fb8c9a-692a-4d8c-b4b2-24c6f91a383c",
+      "url": "https://huntr.com/bounties/14fb8c9a-692a-4d8c-b4b2-24c6f91a383c"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A stored cross-site scripting (XSS) vulnerability exists in comfyanonymous/comfyui version 0.2.2 and possibly earlier. The vulnerability occurs when an attacker uploads an HTML file containing a malicious XSS payload via the `/api/upload/image` endpoint. The payload is executed when the file is viewed through the `/view` API endpoint, leading to potential execution of arbitrary JavaScript code.\n\nReason for inclusion in AVID: The CVE describes a stored XSS vulnerability in the comfyanonymous/comfyui web UI. This is a software vulnerability in an AI tooling component used to build/deploy AI workflows, potentially affecting the integrity and security of AI pipelines served by this stack. It is a software supply-chain relevant issue (dependency/tooling used in AI systems) and qualifies as a security vulnerability with clear exploit vector via API endpoints. Evidence is present in the CVE description (endpoints, payload execution)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 6.1,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-17"
+}

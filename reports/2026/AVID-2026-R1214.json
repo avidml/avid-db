@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1214"
+  },
+  "affects": {
+    "developer": [
+      "reportportal"
+    ],
+    "deployer": [
+      "reportportal"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "reportportal"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "ReportPortal DoS vulnerability on creating a Launch with too many recursively nested elements (CVE-2023-25822)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25822"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/reportportal/reportportal/security/advisories/GHSA-mj24-gpw7-23m9",
+      "url": "https://github.com/reportportal/reportportal/security/advisories/GHSA-mj24-gpw7-23m9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/reportportal/reportportal/releases/tag/v23.2",
+      "url": "https://github.com/reportportal/reportportal/releases/tag/v23.2"
+    },
+    {
+      "type": "source",
+      "label": "https://reportportal.io/docs/releases/Version23.2/",
+      "url": "https://reportportal.io/docs/releases/Version23.2/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "ReportPortal is an AI-powered test automation platform. Prior to version 5.10.0 of the `com.epam.reportportal:service-api` module, corresponding to ReportPortal version 23.2, the ReportPortal database becomes unstable and reporting almost fully stops except for small launches with approximately 1 test inside when the test_item.path field is exceeded the allowable `ltree` field type indexing limit (path length>=120, approximately recursive nesting of the nested steps). REINDEX INDEX path_gist_idx and path_idx aren't helped. The problem was fixed in `com.epam.reportportal:service-api` module version 5.10.0 (product release 23.2), where the maximum number of nested elements were programmatically limited. A workaround is available. After deletion of the data with long paths, and reindexing both indexes (path_gist_idx and path_idx), the database becomes stable and ReportPortal works properly.\n\nReason for inclusion in AVID: CVE-2023-25822 describes a DoS vulnerability in ReportPortal's service-api that can destabilize the system when creating deeply nested launches. ReportPortal is an AI-powered test automation platform, and the component is used in AI software pipelines (CI/CD, testing, deployment tooling). This is a software supply-chain component vulnerability relevant to AI systems, with explicit details on impact and remediation in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:H",
+      "baseScore": 6.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-770",
+        "description": "CWE-770: Allocation of Resources Without Limits or Throttling",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-10-09"
+}

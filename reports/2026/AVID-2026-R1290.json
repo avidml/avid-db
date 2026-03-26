@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1290"
+  },
+  "affects": {
+    "developer": [
+      "aio-libs"
+    ],
+    "deployer": [
+      "aio-libs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aiohttp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Inconsistent interpretation of `Content-Length` vs. `Transfer-Encoding` in aiohttp (CVE-2023-47641)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-47641"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aio-libs/aiohttp/security/advisories/GHSA-xx9p-xxvh-7g8j",
+      "url": "https://github.com/aio-libs/aiohttp/security/advisories/GHSA-xx9p-xxvh-7g8j"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aio-libs/aiohttp/commit/f016f0680e4ace6742b03a70cb0382ce86abe371",
+      "url": "https://github.com/aio-libs/aiohttp/commit/f016f0680e4ace6742b03a70cb0382ce86abe371"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. Affected versions of aiohttp have a security vulnerability regarding the inconsistent interpretation of the http protocol. HTTP/1.1 is a persistent protocol, if both Content-Length(CL) and Transfer-Encoding(TE) header values are present it can lead to incorrect interpretation of two entities that parse the HTTP and we can poison other sockets with this incorrect interpretation. A possible Proof-of-Concept (POC) would be a configuration with a reverse proxy(frontend) that accepts both CL and TE headers and aiohttp as backend. As aiohttp parses anything with chunked, we can pass a chunked123 as TE, the frontend entity will ignore this header and will parse Content-Length. The impact of this vulnerability is that it is possible to bypass any proxy rule, poisoning sockets to other users like passing Authentication Headers, also if it is present an Open Redirect an attacker could combine it to redirect random users to another website and log the request. This vulnerability has been addressed in release 3.8.0 of aiohttp. Users are advised to upgrade. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: CVE-2023-47641 targets aiohttp, a widely used Python HTTP framework often employed in AI model serving and data pipeline services. The vulnerability concerns HTTP request handling (Content-Length vs Transfer-Encoding) that can lead to request smuggling, proxy bypass, and potential redirects. This is a software vulnerability in a component commonly used in AI deployment stacks, representing a software supply-chain risk for general-purpose AI systems. Evidence includes the CVE entry, description, and patch release details."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:N/A:N",
+      "baseScore": 3.4,
+      "baseSeverity": "LOW",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-444",
+        "description": "CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-14"
+}

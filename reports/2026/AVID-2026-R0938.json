@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0938"
+  },
+  "affects": {
+    "developer": [
+      "Jenkins project"
+    ],
+    "deployer": [
+      "Jenkins project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Jenkins Docker Commons Plugin"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-20617"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-20617"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jenkins.io/security/advisory/2022-01-12/#SECURITY-1878",
+      "url": "https://www.jenkins.io/security/advisory/2022-01-12/#SECURITY-1878"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2022/01/12/6",
+      "url": "http://www.openwall.com/lists/oss-security/2022/01/12/6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jenkins Docker Commons Plugin 1.17 and earlier does not sanitize the name of an image or a tag, resulting in an OS command execution vulnerability exploitable by attackers with Item/Configure permission or able to control the contents of a previously configured job's SCM repository.\n\nReason for inclusion in AVID: CVE-2022-20617 describes an OS command execution vulnerability in the Jenkins Docker Commons Plugin due to unsanitized image/tag names. This plugin is commonly used in CI/CD pipelines for building/deploying containerized artifacts, including those used in AI/ML workflows. As such, it is a software supply chain issue affecting components used to build, package, deploy, or run AI systems (CI/CD, artifact pipelines), and it represents a security vulnerability with potential remote code execution. The evidence in the report supports all required aspects."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-01-12"
+}

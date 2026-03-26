@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1040"
+  },
+  "affects": {
+    "developer": [
+      "TIBCO Software Inc."
+    ],
+    "deployer": [
+      "TIBCO Software Inc."
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "TIBCO Data Science - Workbench"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Statistica"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Statistica - Estore Edition"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Statistica Trial"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "TIBCO Statistica Reflected Cross Site Scripting (XSS) Vulnerability (CVE-2022-30575)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-30575"
+    },
+    {
+      "type": "source",
+      "label": "https://www.tibco.com/services/support/advisories",
+      "url": "https://www.tibco.com/services/support/advisories"
+    },
+    {
+      "type": "source",
+      "label": "https://www.tibco.com/support/advisories/2022/08/tibco-security-advisory-august-16-2022-tibco-statistica-cve-2022-30575",
+      "url": "https://www.tibco.com/support/advisories/2022/08/tibco-security-advisory-august-16-2022-tibco-statistica-cve-2022-30575"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Web Console component of TIBCO Software Inc.'s TIBCO Data Science - Workbench, TIBCO Statistica, TIBCO Statistica - Estore Edition, and TIBCO Statistica Trial contains easily exploitable Reflected Cross Site Scripting (XSS) vulnerabilities that allow a low privileged attacker with network access to execute scripts targeting the affected system or the victim's local system. Affected releases are TIBCO Software Inc.'s TIBCO Data Science - Workbench: versions 14.0.0 and below, TIBCO Statistica: versions 14.0.0 and below, TIBCO Statistica - Estore Edition: versions 14.0.0 and below, and TIBCO Statistica Trial: versions 14.0.0 and below.\n\nReason for inclusion in AVID: The CVE describes a reflected Cross-Site Scripting (XSS) vulnerability in the Web Console components of TIBCO Data Science - Workbench and TIBCO Statistica, a data science/AI platform. This is a software vulnerability in a component that can be used in AI/ML workflows (data prep, analytics, model development). It affects software used to build/deploy/run AI systems, i.e., a relevant supply-chain component, and it is a genuine security vulnerability (remote exploitation with user interaction). The report provides explicit CVE details, affected products/versions, impact, and CVSS metrics, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2022-08-16"
+}

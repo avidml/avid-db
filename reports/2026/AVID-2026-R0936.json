@@ -1,0 +1,84 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0936"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-1423"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-1423"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/330047",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/330047"
+    },
+    {
+      "type": "source",
+      "label": "https://hackerone.com/reports/1182375",
+      "url": "https://hackerone.com/reports/1182375"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-1423.json",
+      "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-1423.json"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper access control in the CI/CD cache mechanism in GitLab CE/EE affecting all versions starting from 1.0.2 before 14.8.6, all versions from 14.9.0 before 14.9.4, and all versions from 14.10.0 before 14.10.1 allows a malicious actor with Developer privileges to perform cache poisoning leading to arbitrary code execution in protected branches\n\nReason for inclusion in AVID: CVE-2022-1423 describes improper access control in GitLab CI/CD cache, enabling a developer to poison caches and achieve arbitrary code execution in protected branches. GitLab CI/CD is a widely used component in AI software pipelines for building, testing, packaging, and deploying ML systems, making this a software supply chain vulnerability affecting AI workflows. It is a security/vulnerability issue with explicit evidence and references in the CVE entry and associated sources."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2022-05-19"
+}

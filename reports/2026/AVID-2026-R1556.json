@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1556"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "XSS and Open Redirect via SVG File Upload in parisneo/lollms-webui (CVE-2024-5125)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-5125"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e6ae8cfd-9f8b-41df-a0cc-1e7a47416995",
+      "url": "https://huntr.com/bounties/e6ae8cfd-9f8b-41df-a0cc-1e7a47416995"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/parisneo/lollms-webui/commit/9b0f6c4ad1b9a2cd3466dcefaa278df30feed67e",
+      "url": "https://github.com/parisneo/lollms-webui/commit/9b0f6c4ad1b9a2cd3466dcefaa278df30feed67e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "parisneo/lollms-webui version 9.6 is vulnerable to Cross-Site Scripting (XSS) and Open Redirect due to inadequate input validation and processing of SVG files during the upload process. The XSS vulnerability allows attackers to embed malicious JavaScript code within SVG files, which is executed upon rendering, leading to potential credential theft and unauthorized data access. The Open Redirect vulnerability arises from insufficient URL validation within SVG files, enabling attackers to redirect users to malicious websites, thereby exposing them to phishing attacks, malware distribution, and reputation damage. These vulnerabilities are present in the application's functionality to send files to the AI module.\n\nReason for inclusion in AVID: The CVE describes XSS and Open Redirect vulnerabilities in parisneo/lollms-webui, a web UI component used to interact with and deploy AI models. This is a software vulnerability within an AI software stack (deployment/serving interface) that could impact AI systems. The issue is relevant to AI supply chains as it affects components used to build/run AI workloads, with clear security implications. The report provides explicit vulnerability details, CVE metadata, and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:H",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-14"
+}

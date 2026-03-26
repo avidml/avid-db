@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1681"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure AI Document Intelligence Studio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Document Intelligence Studio On-Prem Elevation of Privilege Vulnerability (CVE-2025-30387)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-30387"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30387",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30387"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper limitation of a pathname to a restricted directory ('path traversal') in Azure allows an unauthorized attacker to elevate privileges over a network.\n\nReason for inclusion in AVID: CVE-2025-30387 describes a path traversal vulnerability in Document Intelligence Studio On-Prem (an AI document processing product). It is a software vulnerability in an AI-related component used in AI workflows, with privilege escalation risk. This aligns with AI supply-chain concerns (software used to build/deploy/run AI systems) and is clearly a security vulnerability with high impact signals."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2025-05-13"
+}

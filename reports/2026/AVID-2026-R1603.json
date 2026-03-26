@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1603"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service in h2oai/h2o-3 (CVE-2024-7765)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7765"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/0e58b1a5-bdca-4e60-af92-09de9c76a9ff",
+      "url": "https://huntr.com/bounties/0e58b1a5-bdca-4e60-af92-09de9c76a9ff"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In h2oai/h2o-3 version 3.46.0.2, a vulnerability exists where uploading and repeatedly parsing a large GZIP file can cause a denial of service. The server becomes unresponsive due to memory exhaustion and a large number of concurrent slow-running jobs. This issue arises from the improper handling of highly compressed data, leading to significant data amplification.\n\nReason for inclusion in AVID: CVE-2024-7765 describes a Denial of Service in h2oai/h2o-3 caused by improper handling of highly compressed data, leading to memory exhaustion and server unavailability. This is a software vulnerability within a general-purpose AI platform, specifically impacting components (data ingestion/serving) used in training, deploying, and serving AI systems. It fits the software supply chain domain as it concerns a widely used AI stack component and can be exploited in AI workflows."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-409",
+        "description": "CWE-409 Improper Handling of Highly Compressed Data (Data Amplification)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

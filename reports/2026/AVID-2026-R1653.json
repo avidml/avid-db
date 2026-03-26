@@ -1,0 +1,108 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1653"
+  },
+  "affects": {
+    "developer": [
+      "vLLM"
+    ],
+    "deployer": [
+      "vLLM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AIBrix"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "vLLM AIBrix Prefix Caching hash.go random values (CVE-2025-1953)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1953"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.298543",
+      "url": "https://vuldb.com/?id.298543"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.298543",
+      "url": "https://vuldb.com/?ctiid.298543"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.509958",
+      "url": "https://vuldb.com/?submit.509958"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/aibrix/issues/749",
+      "url": "https://github.com/vllm-project/aibrix/issues/749"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/aibrix/pull/752",
+      "url": "https://github.com/vllm-project/aibrix/pull/752"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/aibrix/pull/752/commits/3d25d95aebd66f24a549200edcebc5ea423b317a",
+      "url": "https://github.com/vllm-project/aibrix/pull/752/commits/3d25d95aebd66f24a549200edcebc5ea423b317a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/aibrix/issues/749#event-16488517974",
+      "url": "https://github.com/vllm-project/aibrix/issues/749#event-16488517974"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability has been found in vLLM AIBrix 0.2.0 and classified as problematic. Affected by this vulnerability is an unknown functionality of the file pkg/plugins/gateway/prefixcacheindexer/hash.go of the component Prefix Caching. The manipulation leads to insufficiently random values. The complexity of an attack is rather high. The exploitation appears to be difficult. Upgrading to version 0.3.0 is able to address this issue. It is recommended to upgrade the affected component.\n\nReason for inclusion in AVID: CVE-2025-1953 documents a vulnerability in the vLLM AIBrix component (prefix caching) involving insufficiently random values in a hashing function. This affects a software component used in AI serving/Inference stacks, i.e., part of AI systems infrastructure. It is a software vulnerability (CWE-330/310) with remediation provided (upgrade to 0.3.0). The issue concerns components used to build/deploy AI systems, thus relevant to AI supply chains. Evidence includes version impact, remediation, and references (NVD, GitHub discussions/PRs)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 2.6,
+      "baseSeverity": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-330",
+        "description": "Insufficiently Random Values",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-310",
+        "description": "Cryptographic Issues",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-04"
+}

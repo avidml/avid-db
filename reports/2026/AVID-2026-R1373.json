@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1373"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio-app/gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal in gradio-app/gradio (CVE-2024-10648)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10648"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/667d664d-8189-458c-8ed7-483fe8f33c76",
+      "url": "https://huntr.com/bounties/667d664d-8189-458c-8ed7-483fe8f33c76"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A path traversal vulnerability exists in the Gradio Audio component of gradio-app/gradio, as of version git 98cbcae. This vulnerability allows an attacker to control the format of the audio file, leading to arbitrary file content deletion. By manipulating the output format, an attacker can reset any file to an empty file, causing a denial of service (DOS) on the server.\n\nReason for inclusion in AVID: CVE-2024-10648 describes a path traversal vulnerability in the Gradio Audio component of gradio-app/gradio, a library/framework widely used to build and deploy AI/demo apps. This is a security vulnerability affecting software commonly used in ML pipelines and AI deployments, i.e., a software supply-chain component (dependency) used to build, deploy, or run general-purpose AI systems. The vulnerability can cause file content deletion and DoS, aligning with common security/safety vulnerability categories. There is explicit CVE information and description available."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1480"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) oneAPI DPC++/C++ Compiler"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-34165"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-34165"
+    },
+    {
+      "type": "source",
+      "label": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01217.html",
+      "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01217.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Uncontrolled search path in some Intel(R) oneAPI DPC++/C++ Compiler before version 2024.2 may allow an authenticated user to potentially enable escalation of privilege via local access.\n\nReason for inclusion in AVID: CVE-2024-34165 describes an Uncontrolled search path leading to potential local privilege escalation in Intel oneAPI DPC++/C++ Compiler. This is a general-purpose software development tool widely used to build AI/ML software stacks (compilers are part of the AI development toolchain), representing a vulnerability in the software supply chain of general-purpose AI systems. It affects the compiler component (a dependency/runtime used in building AI software) and constitutes a security vulnerability (privilege escalation). Sufficient details are provided (CVE ID, description, affected product, CVSS metrics, references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 6.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-427",
+        "description": "Uncontrolled search path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-13"
+}

@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1011"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) Distribution for Python"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-28696"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-28696"
+    },
+    {
+      "type": "source",
+      "label": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00684.html",
+      "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00684.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Uncontrolled search path in the Intel(R) Distribution for Python before version 2022.0.3 may allow an authenticated user to potentially enable escalation of privilege via local access.\n\nReason for inclusion in AVID: CVE-2022-28696 affects Intel Distribution for Python (IDP), a Python runtime used in AI/ML workflows. As a Python distribution commonly involved in AI software stacks and pipelines, this is a software supply-chain risk impacting AI systems. The vulnerability is a security issue (uncontrolled search path enabling privilege escalation) and there is explicit evidence (CVE record, Intel advisory) describing the flaw."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-08-18"
+}

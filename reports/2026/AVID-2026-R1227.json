@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1227"
+  },
+  "affects": {
+    "developer": [
+      "huggingface"
+    ],
+    "deployer": [
+      "huggingface"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "huggingface/transformers"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Insecure Temporary File in huggingface/transformers (CVE-2023-2800)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-2800"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.dev/bounties/a3867b4e-6701-4418-8c20-3c6e7084a44a",
+      "url": "https://huntr.dev/bounties/a3867b4e-6701-4418-8c20-3c6e7084a44a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/huggingface/transformers/commit/80ca92470938bbcc348e2d9cf4734c7c25cb1c43",
+      "url": "https://github.com/huggingface/transformers/commit/80ca92470938bbcc348e2d9cf4734c7c25cb1c43"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Insecure Temporary File in GitHub repository huggingface/transformers prior to 4.30.0.\n\nReason for inclusion in AVID: CVE-2023-2800 describes an insecure temporary file vulnerability in the Hugging Face Transformers library (pre-4.30.0). This library is a core software component in many AI pipelines, making it a software supply-chain issue for general-purpose AI systems. The vulnerability is security-related (insecure file handling) and the report provides the CVE, affected artifact, and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 4.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-377",
+        "description": "CWE-377 Insecure Temporary File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-05-18"
+}

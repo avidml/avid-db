@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1484"
+  },
+  "affects": {
+    "developer": [
+      "jupyter-server"
+    ],
+    "deployer": [
+      "jupyter-server"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "jupyter_server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Jupyter server on Windows discloses Windows user password hash (CVE-2024-35178)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-35178"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-hrw6-wg82-cm62",
+      "url": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-hrw6-wg82-cm62"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-server/jupyter_server/commit/79fbf801c5908f4d1d9bc90004b74cfaaeeed2df",
+      "url": "https://github.com/jupyter-server/jupyter_server/commit/79fbf801c5908f4d1d9bc90004b74cfaaeeed2df"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Jupyter Server provides the backend for Jupyter web applications. Jupyter Server on Windows has a vulnerability that lets unauthenticated attackers leak the NTLMv2 password hash of the Windows user running the Jupyter server. An attacker can crack this password to gain access to the Windows machine hosting the Jupyter server, or access other network-accessible machines or 3rd party services using that credential. Or an attacker perform an NTLM relay attack without cracking the credential to gain access to other network-accessible machines. This vulnerability is fixed in 2.14.1.\n\nReason for inclusion in AVID: CVE-2024-35178 describes a software vulnerability in Jupyter Server (a component widely used in AI/ML workflows) that leaks Windows credentials. This is a security vulnerability in a software component commonly used to build/operate AI pipelines (serving notebooks, execution environments, etc.), with explicit references to the affected artifact and a fix version. Therefore it is AI-related, relates to the AI software supply chain (dependencies/run-time stack), is a security vulnerability, and the report provides sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-200",
+        "description": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

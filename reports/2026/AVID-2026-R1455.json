@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1455"
+  },
+  "affects": {
+    "developer": [
+      "deepjavalibrary"
+    ],
+    "deployer": [
+      "deepjavalibrary"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "deepjavalibrary/djl"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "TarSlip Vulnerability in deepjavalibrary/djl (CVE-2024-2914)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2914"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/b064bd2f-bf6e-4fc0-898e-7d02a9b97e24",
+      "url": "https://huntr.com/bounties/b064bd2f-bf6e-4fc0-898e-7d02a9b97e24"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/deepjavalibrary/djl/commit/5235be508cec9e8cb6f496a4ed2fa40e4f62c370",
+      "url": "https://github.com/deepjavalibrary/djl/commit/5235be508cec9e8cb6f496a4ed2fa40e4f62c370"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A TarSlip vulnerability exists in the deepjavalibrary/djl, affecting version 0.26.0 and fixed in version 0.27.0. This vulnerability allows an attacker to manipulate file paths within tar archives to overwrite arbitrary files on the target system. Exploitation of this vulnerability could lead to remote code execution, privilege escalation, data theft or manipulation, and denial of service. The vulnerability is due to improper validation of file paths during the extraction of tar files, as demonstrated in multiple occurrences within the library's codebase, including but not limited to the files_util.py and extract_imagenet.py scripts.\n\nReason for inclusion in AVID: CVE-2024-2914 is a TarSlip path-traversal vulnerability in the DJL (deepjavalibrary/djl) library that allows manipulation of tar extraction resulting in potential RCE, privilege escalation, data theft/manipulation, and DoS. The library is used as part of AI workflows (model loading/training/deployment) and is a dependency in AI software stacks, making this a software supply-chain vulnerability affecting AI systems. The advisory provides CVE, CWE, CVSS metrics, and remediation (version 0.27.0+)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

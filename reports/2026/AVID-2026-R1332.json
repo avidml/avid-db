@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1332"
+  },
+  "affects": {
+    "developer": [
+      "allegroai"
+    ],
+    "deployer": [
+      "allegroai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "allegroai/clearml-server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Cross-site Scripting (XSS) - Stored in allegroai/clearml-server (CVE-2023-6778)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6778"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/5f3fffac-0358-48e6-a500-81bac13e0e2b",
+      "url": "https://huntr.com/bounties/5f3fffac-0358-48e6-a500-81bac13e0e2b"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/allegroai/clearml-server/commit/4684fd5b74af582c894b67a0a06e865c948b763a",
+      "url": "https://github.com/allegroai/clearml-server/commit/4684fd5b74af582c894b67a0a06e865c948b763a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cross-site Scripting (XSS) - Stored in GitHub repository allegroai/clearml-server prior to 1.13.0.\n\nReason for inclusion in AVID: CVE-2023-6778 is a stored cross-site scripting vulnerability in allegroai/clearml-server (prior to 1.13.0). ClearML-server is a web service used to manage AI experiments and pipelines, making this a vulnerability in a software component commonly used in general-purpose AI stacks. This aligns with software supply-chain issues in AI systems (dependencies/runtimes serving AI workloads). It is a security vulnerability (XSS) with documented impact signals. The report provides explicit CVE details, affected artifact, and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-18"
+}

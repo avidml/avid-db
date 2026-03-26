@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1496"
+  },
+  "affects": {
+    "developer": [
+      "MLflow"
+    ],
+    "deployer": [
+      "MLflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MLflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-37061"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-37061"
+    },
+    {
+      "type": "source",
+      "label": "https://hiddenlayer.com/sai-security-advisory/mlflow-june2024",
+      "url": "https://hiddenlayer.com/sai-security-advisory/mlflow-june2024"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Remote Code Execution can occur in versions of the MLflow platform running version 1.11.0 or newer, enabling a maliciously crafted MLproject to execute arbitrary code on an end user\u2019s system when run.\n\nReason for inclusion in AVID: CVE-2024-37061 describes a remote code execution vulnerability in MLflow (versions 1.11.0+), triggered by a maliciously crafted MLproject, enabling arbitrary code execution on the end user\u2019s system. MLflow is a core tool used in AI/ML pipelines for building, training, packaging, deploying, and serving AI models, making this vulnerability relevant to AI systems. The issue affects a software component used to build/run AI systems, which places it in the general-purpose AI software supply chain. It is a security vulnerability (code execution) with explicit CVE details and references, satisfying AVID\u2019s criteria for exposure in AI supply chains."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-04"
+}

@@ -1,0 +1,78 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1385"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Post Saint: ChatGPT, GPT4, DALL-E, Stable Diffusion, Pexels, Dezgo AI Text & Image Generator"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Post Saint: ChatGPT, GPT4, DALL-E, Stable Diffusion, Pexels, Dezgo AI Text & Image Generator <= 1.3.1 - Missing Authorization to Authenticated (Subscriber+) Arbitrary File Upload (CVE-2024-12471)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12471"
+    },
+    {
+      "type": "source",
+      "label": "https://www.wordfence.com/threat-intel/vulnerabilities/id/bc17284e-65ea-4e67-aba9-3475f0174657?source=cve",
+      "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/bc17284e-65ea-4e67-aba9-3475f0174657?source=cve"
+    },
+    {
+      "type": "source",
+      "label": "https://wordpress.org/plugins/post-saint/",
+      "url": "https://wordpress.org/plugins/post-saint/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Post Saint: ChatGPT, GPT4, DALL-E, Stable Diffusion, Pexels, Dezgo AI Text & Image Generator plugin for WordPress is vulnerable to arbitrary files uploads due to a missing capability check and file type validation on the add_image_to_library AJAX action function in all versions up to, and including, 1.3.1. This makes it possible for authenticated attackers, with subscriber-level access and above, to upload arbitrary files that make remote code execution possible.\n\nReason for inclusion in AVID: The CVE describes an authenticated arbitrary file upload vulnerability (leading to remote code execution) in a WordPress plugin that integrates AI tools (ChatGPT, GPT-4, DALL-E, Stable Diffusion). This plugin is used to deploy AI-generated content, making it a component within AI software stacks. The vulnerability affects a software supply chain component used to build/run AI features on websites, and constitutes a security vulnerability with clear exploitation potential."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-07"
+}

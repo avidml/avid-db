@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1166"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-45907"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-45907"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/88868",
+      "url": "https://github.com/pytorch/pytorch/issues/88868"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/commit/767f6aa49fe20a2766b9843d01e3b7f7793df6a3",
+      "url": "https://github.com/pytorch/pytorch/commit/767f6aa49fe20a2766b9843d01e3b7f7793df6a3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In PyTorch before trunk/89695, torch.jit.annotations.parse_type_line can cause arbitrary code execution because eval is used unsafely.\n\nReason for inclusion in AVID: CVE-2022-45907 describes an arbitrary code execution vulnerability in PyTorch (torch.jit.annotations.parse_type_line) due to unsafe use of eval. PyTorch is a core AI/ML framework and is widely used to build/train/deploy general-purpose AI systems. This is a software vulnerability in a dependency used in AI stacks, i.e., a software supply-chain issue, not hardware/firmware alone."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-11-26"
+}

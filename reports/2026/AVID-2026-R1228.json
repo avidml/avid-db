@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1228"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) AI Hackathon software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-28380"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28380"
+    },
+    {
+      "type": "source",
+      "label": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00877.html",
+      "url": "http://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00877.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Uncontrolled search path for the Intel(R) AI Hackathon software before version 2.0.0 may allow an unauthenticated user to potentially enable escalation of privilege via network access.\n\nReason for inclusion in AVID: CVE-2023-28380 describes an Uncontrolled search path vulnerability in Intel AI Hackathon software prior to 2.0.0, enabling privilege escalation via network access. The affected product is an AI development/tooling component, which is part of AI software stacks; this places it within the supply chain for general-purpose AI systems (as a dependency/tooling artifact). It is a standard security vulnerability with clear exploitation potential (RCE/privilege escalation). The CVE entry and references provide sufficient signal for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-427",
+        "description": "Uncontrolled search path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-11"
+}

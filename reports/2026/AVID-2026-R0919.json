@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0919"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Parquet"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Parquet-MR potential DoS in case of malicious Parquet file (CVE-2021-41561)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-41561"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/1bjlscbqtfzl160hrm9lnpjpppp5z3zr",
+      "url": "https://lists.apache.org/thread/1bjlscbqtfzl160hrm9lnpjpppp5z3zr"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2021/12/20/1",
+      "url": "http://www.openwall.com/lists/oss-security/2021/12/20/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Input Validation vulnerability in Parquet-MR of Apache Parquet allows an attacker to DoS by malicious Parquet files. This issue affects Apache Parquet-MR version 1.9.0 and later versions.\n\nReason for inclusion in AVID: CVE-2021-41561 describes an improper input validation vulnerability in Apache Parquet-MR that can cause denial of service when processing a malicious Parquet file. Parquet is a common data format and is widely used in AI/ML data pipelines for training and inference. Therefore, this vulnerability affects software components (Parquet libraries) used to build and run general-purpose AI systems, constitutes a security vulnerability (DoS), and is evidenced by the CVE description and references. Suitable for AVID curation as a software supply chain issue in AI stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-12-20"
+}

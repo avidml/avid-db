@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1646"
+  },
+  "affects": {
+    "developer": [
+      "aws"
+    ],
+    "deployer": [
+      "aws"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aws/sagemaker-python-sdk"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MD5 Hash Collision in SageMaker Workflow in aws/sagemaker-python-sdk (CVE-2025-0508)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0508"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/eb056818-5b81-466f-81ee-916058d34af2",
+      "url": "https://huntr.com/bounties/eb056818-5b81-466f-81ee-916058d34af2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/sagemaker-python-sdk/commit/dcdd99f911e8b1a05d19cf1ad939b0fefae47864",
+      "url": "https://github.com/aws/sagemaker-python-sdk/commit/dcdd99f911e8b1a05d19cf1ad939b0fefae47864"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the SageMaker Workflow component of aws/sagemaker-python-sdk allows for the possibility of MD5 hash collisions in all versions. This can lead to workflows being inadvertently replaced due to the reuse of results from different configurations that produce the same MD5 hash. This issue can cause integrity problems within the pipeline, potentially leading to erroneous processing outcomes.\n\nReason for inclusion in AVID: The CVE describes an MD5 hash collision vulnerability in the SageMaker Workflow component of the aws/sagemaker-python-sdk, which can cause integrity issues in ML pipelines. This directly concerns AI software tooling and workflows used to build/deploy general-purpose AI systems, representing a software supply chain risk in AI stacks (dependencies, runtimes, model serving/workflow orchestration). The vulnerability is security-related (integrity risk) and is supported by CVE details and references, providing sufficient evidence for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 5.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-328",
+        "description": "CWE-328 Reversible One-Way Hash",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

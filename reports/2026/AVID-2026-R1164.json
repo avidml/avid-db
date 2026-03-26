@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1164"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vGPU software (Virtual GPU Manager), NVIDIA Cloud Gaming (Virtual GPU Manager)"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-42261"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42261"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5415",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5415"
+    },
+    {
+      "type": "source",
+      "label": "https://security.gentoo.org/glsa/202310-02",
+      "url": "https://security.gentoo.org/glsa/202310-02"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA vGPU software contains a vulnerability in the Virtual GPU Manager (vGPU plugin), where an input index is not validated, which may lead to buffer overrun, which in turn may cause data tampering, information disclosure, or denial of service.\n\nReason for inclusion in AVID: CVE-2022-42261 describes a vulnerability in NVIDIA vGPU's Virtual GPU Manager that can cause buffer overrun, leading to data tampering, information disclosure, or denial of service. NVIDIA vGPU software is a key component in AI deployment environments (virtualized GPU infrastructure used for ML training/inference). This is a software supply chain issue affecting components used to build/run general-purpose AI systems (drivers/virtualization in AI stacks). The report provides explicit vulnerability details and affected artifacts, enabling assessment and remediation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-120",
+        "description": "CWE-120",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-12-30"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1546"
+  },
+  "affects": {
+    "developer": [
+      "Dell"
+    ],
+    "deployer": [
+      "Dell"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Data Lakehouse"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-47483"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-47483"
+    },
+    {
+      "type": "source",
+      "label": "https://www.dell.com/support/kbdoc/en-us/000240535/dsa-2024-419-security-update-for-dell-data-lakehouse-system-software-for-multiple-third-party-component-vulnerabilities",
+      "url": "https://www.dell.com/support/kbdoc/en-us/000240535/dsa-2024-419-security-update-for-dell-data-lakehouse-system-software-for-multiple-third-party-component-vulnerabilities"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Dell Data Lakehouse, version(s) 1.0.0.0 and 1.1.0.0, contain(s) an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability. An unauthenticated attacker with local access could potentially exploit this vulnerability, leading to Information disclosure.\n\nReason for inclusion in AVID: CVE-2024-47483 describes a SQL injection vulnerability in Dell Data Lakehouse (versions 1.0.0.0 and 1.1.0.0) that could lead to information disclosure. Dell Data Lakehouse is a software component often used in AI data pipelines for storage/processing of training and feature data. As such, this vulnerability affects a software component that can be part of the general-purpose AI stack (data ingestion/storage) and poses a security risk to AI data availability/confidentiality. Therefore it fits the criteria for AI-related vulnerability in the AI supply chain, with clear vulnerability behavior and evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 2.9,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-89",
+        "description": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-25"
+}

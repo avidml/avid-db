@@ -1,0 +1,111 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1020"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Missing validation causes denial of service in TensorFlow via `UnsortedSegmentJoin` (CVE-2022-29197)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-29197"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hrg5-737c-2p56",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hrg5-737c-2p56"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/13d38a07ce9143e044aa737cfd7bb759d0e9b400",
+      "url": "https://github.com/tensorflow/tensorflow/commit/13d38a07ce9143e044aa737cfd7bb759d0e9b400"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/core/kernels/unsorted_segment_join_op.cc#L92-L95",
+      "url": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/core/kernels/unsorted_segment_join_op.cc#L92-L95"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, the implementation of `tf.raw_ops.UnsortedSegmentJoin` does not fully validate the input arguments. This results in a `CHECK`-failure which can be used to trigger a denial of service attack. The code assumes `num_segments` is a scalar but there is no validation for this before accessing its value. Versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4 contain a patch for this issue.\n\nReason for inclusion in AVID: CVE-2022-29197 describes a vulnerability in TensorFlow (an AI/ML framework) that allows denial of service due to missing input validation in tf.raw_ops.UnsortedSegmentJoin. TensorFlow is a core component used to build/train/deploy AI systems, so this affects the AI software stack and the broader supply chain for general-purpose AI. The report provides affected versions and patches, satisfying evidence criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-05-20"
+}

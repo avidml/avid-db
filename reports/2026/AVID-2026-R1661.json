@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1661"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Riva"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2025-23243"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-23243"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5625",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5625"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Riva contains a vulnerability where a user could cause an improper access control issue. A successful exploit of this vulnerability might lead to data tampering or denial of service.\n\nReason for inclusion in AVID: CVE-2025-23243 affects NVIDIA Riva, an AI inference/serving component. It describes an improper access control vulnerability that could lead to data tampering or denial of service. Riva is a software component used in AI pipelines and deployments, making this a software supply-chain vulnerability within general-purpose AI systems. The CVE entry, CWE reference, and CVSS details provide sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-284",
+        "description": "CWE-284 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-11"
+}

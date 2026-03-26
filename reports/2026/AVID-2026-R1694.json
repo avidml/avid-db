@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1694"
+  },
+  "affects": {
+    "developer": [
+      "conda-forge"
+    ],
+    "deployer": [
+      "conda-forge"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "conda-forge-webservices"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "conda-forge-webservices has an Unauthorized Artifact Modification Race Condition (CVE-2025-32784)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32784"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/conda-forge/conda-forge-webservices/security/advisories/GHSA-28cx-74fp-g2g2",
+      "url": "https://github.com/conda-forge/conda-forge-webservices/security/advisories/GHSA-28cx-74fp-g2g2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/conda-forge/conda-forge-webservices/commit/141ed27617068debd150956341551df3a5a3807d",
+      "url": "https://github.com/conda-forge/conda-forge-webservices/commit/141ed27617068debd150956341551df3a5a3807d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "conda-forge-webservices is the web app deployed to run conda-forge admin commands and linting. In versions prior to 2025.4.10, a race condition vulnerability has been identified in the conda-forge-webservices component used within the shared build infrastructure. This vulnerability, categorized as a Time-of-Check to Time-of-Use (TOCTOU) issue, can be exploited to introduce unauthorized modifications to build artifacts stored in the cf-staging Anaconda channel. Exploitation may result in the unauthorized publication of malicious artifacts to the production conda-forge channel. The core vulnerability results from the absence of atomicity between the hash validation and the artifact copy operation. This gap allows an attacker, with access to the cf-staging token, to overwrite the validated artifact with a malicious version immediately after hash verification, but before the copy action is executed. As the cf-staging channel permits artifact overwrites, such an operation can be carried out using the anaconda upload --force command. This vulnerability is fixed in 2025.4.10.\n\nReason for inclusion in AVID: CVE-2025-32784 describes a TOCTOU race condition in conda-forge-webservices that allows unauthorized modification of artifacts in the staging pipeline, potentially publishing malicious artifacts to production. This directly affects the software supply chain for general-purpose AI systems, since AI/ML libraries and dependencies are commonly distributed via conda-forge. The report provides CVE details, affected versions, impact, and a fix, giving sufficient evidence for inclusion."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-367",
+        "description": "CWE-367: Time-of-check Time-of-use (TOCTOU) Race Condition",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-15"
+}

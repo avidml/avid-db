@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1129"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-40811"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-40811"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/democritus-file-system/",
+      "url": "https://pypi.org/project/democritus-file-system/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/democritus-project/d8s-urls/issues/11",
+      "url": "https://github.com/democritus-project/d8s-urls/issues/11"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The d8s-urls for python, as distributed on PyPI, included a potential code-execution backdoor inserted by a third party. The backdoor is the democritus-file-system package. The affected version is 0.1.0.\n\nReason for inclusion in AVID: CVE-2022-40811 describes a backdoor inserted into a PyPI-distributed package (democritus-file-system) bundled with d8s-urls for Python, enabling potential code execution. This is a software supply-chain compromise in a Python package, which can impact AI workflows that rely on PyPI dependencies in AI pipelines, model serving stacks, or tooling. The report provides concrete signals (NVD entry, PyPI project page, GitHub issue) indicating a genuine vulnerability in a software supply chain. While not AI-specific, it affects components commonly used to build/run AI systems, satisfying the AI-supply-chain criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-09-19"
+}

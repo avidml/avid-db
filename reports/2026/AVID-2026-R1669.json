@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1669"
+  },
+  "affects": {
+    "developer": [
+      "danielgatis"
+    ],
+    "deployer": [
+      "danielgatis"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "rembg"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Rembg CORS misconfiguration (CVE-2025-25302)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-25302"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2024-161_GHSL-2024-162_rembg/",
+      "url": "https://securitylab.github.com/advisories/GHSL-2024-161_GHSL-2024-162_rembg/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/danielgatis/rembg/blob/d1e00734f8a996abf512a3a5c251c7a9a392c90a/rembg/commands/s_command.py#L93",
+      "url": "https://github.com/danielgatis/rembg/blob/d1e00734f8a996abf512a3a5c251c7a9a392c90a/rembg/commands/s_command.py#L93"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Rembg is a tool to remove images background. In Rembg 2.0.57 and earlier, the CORS middleware is setup incorrectly. All origins are reflected, which allows any website to send cross site requests to the rembg server and thus query any API. Even if authentication were to be enabled, allow_credentials is set to True, which would allow any website to send authenticated cross site requests.\n\nReason for inclusion in AVID: CVE-2025-25302 describes a CORS misconfiguration in rembg that could allow cross-site requests and data exposure via a server API. This is a software vulnerability in a component commonly used in AI image-processing pipelines, i.e., a general-purpose AI system supply chain artifact. The report provides clear evidence (CVE, description, references, and code links) supporting its AI relevance and security impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-346",
+        "description": "CWE-346: Origin Validation Error",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-03"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1384"
+  },
+  "affects": {
+    "developer": [
+      "dmlc"
+    ],
+    "deployer": [
+      "dmlc"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "dmlc/gluon-cv"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Write via TarSlip in dmlc/gluon-cv (CVE-2024-12216)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12216"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/46081fdc-2951-4deb-a2c9-2627007bdce0",
+      "url": "https://huntr.com/bounties/46081fdc-2951-4deb-a2c9-2627007bdce0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the `ImageClassificationDataset.from_csv()` API of the `dmlc/gluon-cv` repository, version 0.10.0, allows for arbitrary file write. The function downloads and extracts `tar.gz` files from URLs without proper sanitization, making it susceptible to a TarSlip vulnerability. Attackers can exploit this by crafting malicious tar files that, when extracted, can overwrite files on the victim's system via path traversal or faked symlinks.\n\nReason for inclusion in AVID: CVE-2024-12216 describes a TarSlip vulnerability in the dmlc/gluon-cv library, where ImageClassificationDataset.from_csv() downloads and extracts tar.gz files from URLs without proper sanitization, enabling arbitrary file write via path traversal or fake symlinks. This directly affects a software component used in AI data loading pipelines, i.e., a general-purpose AI software stack, representing a software supply chain vulnerability in AI systems. It is security-related (arbitrary file write, potential tampering), and there is explicit CVSS/ CWE evidence included. Therefore, it satisfies all AVID criteria for inclusion."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-59",
+        "description": "CWE-59 Improper Link Resolution Before File Access",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

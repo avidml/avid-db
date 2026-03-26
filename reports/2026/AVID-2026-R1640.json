@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1640"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unrestricted File Upload and Execution in parisneo/lollms-webui (CVE-2024-9920)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9920"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/c70c6732-23b3-4ef8-aec6-0a47467d1ed5",
+      "url": "https://huntr.com/bounties/c70c6732-23b3-4ef8-aec6-0a47467d1ed5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In version v12 of parisneo/lollms-webui, the 'Send file to AL' function allows uploading files with various extensions, including potentially dangerous ones like .py, .sh, .bat, and more. Attackers can exploit this by uploading files with malicious content and then using the '/open_file' API endpoint to execute these files. The vulnerability arises from the use of 'subprocess.Popen' to open files without proper validation, leading to potential remote code execution.\n\nReason for inclusion in AVID: CVE-2024-9920 describes an unrestricted file upload vulnerability in parisneo/lollms-webui that enables remote code execution via the /open_file endpoint using subprocess.Popen. The affected artifact is a web UI component used to deploy/run AI models, making it an AI-related software component in the general-purpose AI stack. It constitutes a security vulnerability with a concrete exploitation path. The report provides explicit details (v12, dangerous extensions, /open_file, subprocess.Popen), giving sufficient signal for AVID evaluation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 6.6,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "PHYSICAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-434",
+        "description": "CWE-434 Unrestricted Upload of File with Dangerous Type",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

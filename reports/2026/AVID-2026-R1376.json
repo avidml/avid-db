@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1376"
+  },
+  "affects": {
+    "developer": [
+      "Hugging Face"
+    ],
+    "deployer": [
+      "Hugging Face"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Transformers"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Hugging Face Transformers MobileViTV2 Deserialization of Untrusted Data Remote Code Execution Vulnerability (CVE-2024-11392)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-11392"
+    },
+    {
+      "type": "source",
+      "label": "https://www.zerodayinitiative.com/advisories/ZDI-24-1513/",
+      "url": "https://www.zerodayinitiative.com/advisories/ZDI-24-1513/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Hugging Face Transformers MobileViTV2 Deserialization of Untrusted Data Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Hugging Face Transformers. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.\n\nThe specific flaw exists within the handling of configuration files. The issue results from the lack of proper validation of user-supplied data, which can result in deserialization of untrusted data. An attacker can leverage this vulnerability to execute code in the context of the current user. Was ZDI-CAN-24322.\n\nReason for inclusion in AVID: CVE-2024-11392 describes a remote code execution vulnerability due to deserialization of untrusted data in the Hugging Face Transformers library (MobileViTV2). This is a software vulnerability in a widely used AI software stack library, representing a risk to the software supply chain for general-purpose AI systems (dependency/framework). It enables RCE, which is a security/safety impact. Sufficient evidence is present in the CVE/NVD/ZDI references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-22"
+}

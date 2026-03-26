@@ -1,0 +1,79 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0996"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-2417"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-2417"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/361179",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/361179"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-2417.json",
+      "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-2417.json"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Insufficient validation in GitLab CE/EE affecting all versions from 12.10 prior to 15.0.5, 15.1 prior to 15.1.4, and 15.2 prior to 15.2.1 allows an authenticated and authorised user to import a project that includes branch names which are 40 hexadecimal characters, which could be abused in supply chain attacks where a victim pinned to a specific Git commit of the project.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in GitLab that can be exploited via crafted branch names to facilitate supply chain attacks by manipulating pinned commits. GitLab is a core component used in software supply chains and commonly used in AI development pipelines (CI/CD, artifact hosting). This is a security vulnerability with clear impact on integrity, and the report provides signal (CVE entry, description, CVSS). Therefore it should be curated as a vulnerability in the AI supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:N/I:H/A:N",
+      "baseScore": 6.2,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2022-08-05"
+}

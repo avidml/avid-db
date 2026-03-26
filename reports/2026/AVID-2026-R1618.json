@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1618"
+  },
+  "affects": {
+    "developer": [
+      "modelscope"
+    ],
+    "deployer": [
+      "modelscope"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "modelscope/agentscope"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal in modelscope/agentscope (CVE-2024-8438)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8438"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/3f170c58-42ee-422d-ab6f-32c7aa05b974",
+      "url": "https://huntr.com/bounties/3f170c58-42ee-422d-ab6f-32c7aa05b974"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A path traversal vulnerability exists in modelscope/agentscope version v.0.0.4. The API endpoint `/api/file` does not properly sanitize the `path` parameter, allowing an attacker to read arbitrary files on the server.\n\nReason for inclusion in AVID: CVE-2024-8438 describes a path traversal vulnerability in modelscope/agentscope, an AI model tooling/component. It affects software used to build/deploy AI systems (AI frameworks/pipelines). It enables reading arbitrary server files, a security/safety vulnerability (data exposure). The report provides explicit CVE details, affected component, and impact, supporting AI-related supply-chain relevance."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

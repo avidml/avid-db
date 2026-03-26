@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1464"
+  },
+  "affects": {
+    "developer": [
+      "Copymatic"
+    ],
+    "deployer": [
+      "Copymatic"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Copymatic \u2013 AI Content Writer & Generator"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "WordPress Copymatic plugin <= 1.6 - Unauthenticated Arbitrary File Upload vulnerability (CVE-2024-31351)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-31351"
+    },
+    {
+      "type": "source",
+      "label": "https://patchstack.com/database/vulnerability/copymatic/wordpress-copymatic-plugin-1-6-unauthenticated-arbitrary-file-upload-vulnerability?_s_id=cve",
+      "url": "https://patchstack.com/database/vulnerability/copymatic/wordpress-copymatic-plugin-1-6-unauthenticated-arbitrary-file-upload-vulnerability?_s_id=cve"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Unrestricted Upload of File with Dangerous Type vulnerability in Copymatic Copymatic \u2013 AI Content Writer & Generator.This issue affects Copymatic \u2013 AI Content Writer & Generator: from n/a through 1.6.\n\nReason for inclusion in AVID: CVE-2024-31351 describes an unauthenticated arbitrary file upload vulnerability in the Copymatic WordPress plugin (AI Content Writer & Generator). This is a software vulnerability in a component used to deliver AI-generated content, which could impact AI deployment stacks that rely on this plugin. As it concerns a software package/component that could be part of an AI service pipeline, it constitutes a software supply chain vulnerability within AI systems. The issue is a security vulnerability with high impact, and the report provides sufficient details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-434",
+        "description": "CWE-434 Unrestricted Upload of File with Dangerous Type",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-17"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1415"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) Neural Compressor software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21792"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21792"
+    },
+    {
+      "type": "source",
+      "label": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01109.html",
+      "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01109.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Time-of-check Time-of-use race condition in Intel(R) Neural Compressor software before version 2.5.0 may allow an authenticated user to potentially enable information disclosure via local access.\n\nReason for inclusion in AVID: The CVE describes a software vulnerability (time-of-check/time-of-use race) in Intel Neural Compressor, a software component commonly used in AI model optimization pipelines. This component is part of the AI software stack (training/deployment/serving tools), so the issue is within a supply chain element for general-purpose AI systems. It is a security vulnerability with potential information disclosure via local access, and the report provides explicit details (CVE, references, CVSS/CWE). Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 4.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-367",
+        "description": "Time-of-check Time-of-use race condition",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-16"
+}
