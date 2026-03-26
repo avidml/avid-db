@@ -83,6 +83,13 @@ jobs:
             release
             data-version
 
+      - name: Approve pull request
+        if: steps.cpr.outputs.pull-request-number
+        run: |
+          gh pr review ${{ steps.cpr.outputs.pull-request-number }} --approve
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Enable PR auto-merge
         if: ${{ steps.cpr.outputs.pull-request-number != '' && (github.event_name == 'release' || inputs.auto_merge == true) }}
         uses: peter-evans/enable-pull-request-automerge@v3
