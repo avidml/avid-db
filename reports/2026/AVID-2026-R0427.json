@@ -39,7 +39,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "Cline is vulnerable to prompt injection when analyzing source code files. This prompt injection can be used to execute arbitrary code by breaking the model’s ability to analyze an entire potential execution chain for safety."
+    "value": "Cline is vulnerable to prompt injection when analyzing source code files. This prompt injection can be used to execute arbitrary code by breaking the model\u2019s ability to analyze an entire potential execution chain for safety."
   },
   "credit": [
     {
@@ -52,5 +52,5 @@
     }
   ],
   "reported_date": "2025-08-27",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }

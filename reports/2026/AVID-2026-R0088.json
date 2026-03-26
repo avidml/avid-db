@@ -1,6 +1,6 @@
 {
   "data_type": "AVID",
-  "data_version": "0.3.2",
+  "data_version": "0.3.3",
   "metadata": {
     "report_id": "AVID-2026-R0088"
   },
@@ -113,7 +113,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "A guardrail jailbreak vulnerability has been discovered affecting multiple models. The specific flaw manifests through embedding illicit instructions within a futuristic, hypothetical narrative. By framing the request as a task to preserve lost knowledge for humanity's survival, the prompt aligns with the LLM’s educational objectives, thereby allowing the attacker to bypass inference restrictions around providing information hazards and violating laws."
+    "value": "A guardrail jailbreak vulnerability has been discovered affecting multiple models. The specific flaw manifests through embedding illicit instructions within a futuristic, hypothetical narrative. By framing the request as a task to preserve lost knowledge for humanity's survival, the prompt aligns with the LLM\u2019s educational objectives, thereby allowing the attacker to bypass inference restrictions around providing information hazards and violating laws."
   },
   "impact": {
     "odin": {
