@@ -83,43 +83,26 @@ jobs:
             release
             data-version
 
-      - name: Approve pull request
-        if: steps.cpr.outputs.pull-request-number
-        run: |
-          gh pr review ${{ steps.cpr.outputs.pull-request-number }} --approve
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Merge PR
         if: ${{ steps.cpr.outputs.pull-request-number != '' && (github.event_name == 'release' || inputs.auto_merge == true) }}
         shell: bash
         run: |
           set -euo pipefail
           PR_NUMBER=${{ steps.cpr.outputs.pull-request-number }}
+          REPO="avidml/avid-db"
           
-          # Wait briefly for approval to register
-          sleep 3
+          # Get PR commit SHA
+          COMMIT_SHA=$(gh api repos/$REPO/pulls/$PR_NUMBER --jq '.head.sha')
+          echo "Merging PR $PR_NUMBER (commit: $COMMIT_SHA)"
           
-          # Check PR status
-          echo "PR Status:"
-          gh pr view "$PR_NUMBER" --json reviewDecision,mergeStateStatus
+          # Merge via REST API with admin bypass
+          gh api repos/$REPO/pulls/$PR_NUMBER/merge \
+            -X PUT \
+            -f commit_title="chore: apply data_version to reports" \
+            -f merge_method=squash \
+            -f sha="$COMMIT_SHA"
           
-          # Merge with retry logic
-          ATTEMPTS=0
-          while [[ $ATTEMPTS -lt 5 ]]; do
-            if gh pr merge "$PR_NUMBER" --squash --delete-branch 2>&1; then
-              echo "PR merged successfully"
-              exit 0
-            fi
-            ATTEMPTS=$((ATTEMPTS + 1))
-            if [[ $ATTEMPTS -lt 5 ]]; then
-              echo "Merge failed, retrying in 2 seconds... (attempt $ATTEMPTS/5)"
-              sleep 2
-            fi
-          done
-          
-          echo "Failed to merge PR after 5 attempts"
-          exit 1
+          echo "PR merged successfully"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
