@@ -39,7 +39,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "Through malicious instructions planted in a source code file, Cline can be coerced into exfiltrating sensitive key material from a user’s environment to an attacker-controlled location. Cline is vulnerable to prompt injection when analyzing source code files. Furthermore, this prompt injection can be used to execute what is considered a safe command (ping), which requires no user approval, in a way that will exfiltrate sensitive key material to an attacker-controlled location."
+    "value": "Through malicious instructions planted in a source code file, Cline can be coerced into exfiltrating sensitive key material from a user\u2019s environment to an attacker-controlled location. Cline is vulnerable to prompt injection when analyzing source code files. Furthermore, this prompt injection can be used to execute what is considered a safe command (ping), which requires no user approval, in a way that will exfiltrate sensitive key material to an attacker-controlled location."
   },
   "credit": [
     {
@@ -52,5 +52,5 @@
     }
   ],
   "reported_date": "2025-08-27",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }

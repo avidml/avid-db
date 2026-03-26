@@ -35,7 +35,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "The web_fetch tool is intended to accept a public URL and retrieve the contents. When asked to retrieve the contents from a private destination (such as http://localhost), the AI rightly refuses. Unfortunately, it can be easily tricked and subverted. ‍By providing encoded or non-obvious variations, the AI does not validate the input and proceeds to point its fetching client inward, thereby exposing internal information."
+    "value": "The web_fetch tool is intended to accept a public URL and retrieve the contents. When asked to retrieve the contents from a private destination (such as http://localhost), the AI rightly refuses. Unfortunately, it can be easily tricked and subverted. \u200dBy providing encoded or non-obvious variations, the AI does not validate the input and proceeds to point its fetching client inward, thereby exposing internal information."
   },
   "credit": [
     {
@@ -48,5 +48,5 @@
     }
   ],
   "reported_date": "2025-10-10",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }

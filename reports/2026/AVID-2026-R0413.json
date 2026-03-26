@@ -37,7 +37,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "Our investigation demonstrated that it is possible to circumvent OpenAI’s guardrails so that their model can generate images of fictitious and real-life persons that can be manipulated into sexualized positions."
+    "value": "Our investigation demonstrated that it is possible to circumvent OpenAI\u2019s guardrails so that their model can generate images of fictitious and real-life persons that can be manipulated into sexualized positions."
   },
   "credit": [
     {
@@ -50,5 +50,5 @@
     }
   ],
   "reported_date": "2026-01-28",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }
