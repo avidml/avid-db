@@ -97,8 +97,29 @@ jobs:
           set -euo pipefail
           PR_NUMBER=${{ steps.cpr.outputs.pull-request-number }}
           
-          # Bypass branch protection and merge directly as GITHUB_TOKEN has write access
-          gh pr merge "$PR_NUMBER" --squash --admin
+          # Wait briefly for approval to register
+          sleep 3
+          
+          # Check PR status
+          echo "PR Status:"
+          gh pr view "$PR_NUMBER" --json reviewDecision,mergeStateStatus
+          
+          # Merge with retry logic
+          ATTEMPTS=0
+          while [[ $ATTEMPTS -lt 5 ]]; do
+            if gh pr merge "$PR_NUMBER" --squash --delete-branch 2>&1; then
+              echo "PR merged successfully"
+              exit 0
+            fi
+            ATTEMPTS=$((ATTEMPTS + 1))
+            if [[ $ATTEMPTS -lt 5 ]]; then
+              echo "Merge failed, retrying in 2 seconds... (attempt $ATTEMPTS/5)"
+              sleep 2
+            fi
+          done
+          
+          echo "Failed to merge PR after 5 attempts"
+          exit 1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
