@@ -39,7 +39,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "Through malicious instructions planted in a Markdown file within a project’s .clinerules directory, an attacker’s source code repository can coerce Cline into executing unsafe commands without approval which can be leveraged to execute arbitrary code in the context of the user running VSCode."
+    "value": "Through malicious instructions planted in a Markdown file within a project\u2019s .clinerules directory, an attacker\u2019s source code repository can coerce Cline into executing unsafe commands without approval which can be leveraged to execute arbitrary code in the context of the user running VSCode."
   },
   "credit": [
     {
@@ -52,5 +52,5 @@
     }
   ],
   "reported_date": "2025-08-27",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }

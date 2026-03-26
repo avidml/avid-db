@@ -1,6 +1,6 @@
 {
   "data_type": "AVID",
-  "data_version": "0.3.2",
+  "data_version": "0.3.3",
   "metadata": {
     "report_id": "AVID-2025-R0001"
   },
@@ -48,12 +48,12 @@
     },
     {
       "type": "model",
-      "label": "Qwen/Qwen2-VL-7B-Instruct · Hugging Face",
+      "label": "Qwen/Qwen2-VL-7B-Instruct \u00b7 Hugging Face",
       "url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct"
     },
     {
       "type": "model",
-      "label": "meta-llama/Llama-3.2-11B-Vision-Instruct · Hugging Face",
+      "label": "meta-llama/Llama-3.2-11B-Vision-Instruct \u00b7 Hugging Face",
       "url": "https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct"
     }
   ],

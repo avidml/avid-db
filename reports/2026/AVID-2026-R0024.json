@@ -1,6 +1,6 @@
 {
   "data_type": "AVID",
-  "data_version": "0.3.2",
+  "data_version": "0.3.3",
   "metadata": {
     "report_id": "AVID-2026-R0024"
   },
@@ -14,7 +14,7 @@
     "artifacts": [
       {
         "type": "System",
-        "name": "AI Scribe – SEO AI Writer, Content Generator, Humanizer, Blog Writer, SEO Optimizer, DALLE-3, AI WordPress Plugin ChatGPT (GPT-4o 128K)"
+        "name": "AI Scribe \u2013 SEO AI Writer, Content Generator, Humanizer, Blog Writer, SEO Optimizer, DALLE-3, AI WordPress Plugin ChatGPT (GPT-4o 128K)"
       }
     ]
   },
@@ -23,7 +23,7 @@
     "type": "Advisory",
     "description": {
       "lang": "eng",
-      "value": "AI Scribe – SEO AI Writer, Content Generator, Humanizer, Blog Writer, SEO Optimizer, DALLE-3, AI WordPress Plugin ChatGPT (GPT-4o 128K) <= 2.3 - Missing Authorization to Authenticated (Subscriber+) Settings Update (CVE-2024-12606)"
+      "value": "AI Scribe \u2013 SEO AI Writer, Content Generator, Humanizer, Blog Writer, SEO Optimizer, DALLE-3, AI WordPress Plugin ChatGPT (GPT-4o 128K) <= 2.3 - Missing Authorization to Authenticated (Subscriber+) Settings Update (CVE-2024-12606)"
     }
   },
   "references": [
@@ -45,7 +45,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "The AI Scribe – SEO AI Writer, Content Generator, Humanizer, Blog Writer, SEO Optimizer, DALLE-3, AI WordPress Plugin ChatGPT (GPT-4o 128K) plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the engine_request_data() function in all versions up to, and including, 2.3. This makes it possible for authenticated attackers, with Subscriber-level access and above, to update plugin settings."
+    "value": "The AI Scribe \u2013 SEO AI Writer, Content Generator, Humanizer, Blog Writer, SEO Optimizer, DALLE-3, AI WordPress Plugin ChatGPT (GPT-4o 128K) plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the engine_request_data() function in all versions up to, and including, 2.3. This makes it possible for authenticated attackers, with Subscriber-level access and above, to update plugin settings."
   },
   "impact": {
     "avid": {

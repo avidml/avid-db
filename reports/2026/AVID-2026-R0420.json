@@ -31,7 +31,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "The gemini-cli is vulnerable to Arbitrary Code Execution (RCE) via malicious Model Context Protocol (MCP) server definitions in workspace settings. Workspace settings can configure MCP servers through the mcpServers or mcp.serverCommand fields in .gemini/settings.json. ‍"
+    "value": "The gemini-cli is vulnerable to Arbitrary Code Execution (RCE) via malicious Model Context Protocol (MCP) server definitions in workspace settings. Workspace settings can configure MCP servers through the mcpServers or mcp.serverCommand fields in .gemini/settings.json. \u200d"
   },
   "credit": [
     {
@@ -44,5 +44,5 @@
     }
   ],
   "reported_date": "2025-12-26",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }
