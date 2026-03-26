@@ -90,6 +90,22 @@ def _collect_existing_cves(
     return existing_cves
 
 
+def _report_years_from(report_root: Path, start_year: int) -> tuple[int, ...]:
+    """Return sorted report year directories from start_year onward."""
+    years: list[int] = []
+    for child in report_root.iterdir():
+        if not child.is_dir():
+            continue
+        if not child.name.isdigit():
+            continue
+
+        year = int(child.name)
+        if year >= start_year:
+            years.append(year)
+
+    return tuple(sorted(years))
+
+
 def _is_filtered_pass_jsonl(path: Path) -> bool:
     return (
         path.suffix == ".jsonl"
@@ -362,11 +378,12 @@ def main():
         )
 
         report_root = Path(__file__).resolve().parent.parent / "reports"
-        years_to_scan = (2025, 2026)
-        print(
-            "Indexing existing CVEs in "
-            f"reports/{years_to_scan[0]} and reports/{years_to_scan[1]}..."
-        )
+        years_to_scan = _report_years_from(report_root, start_year=2025)
+        if years_to_scan:
+            year_label = f"reports/{years_to_scan[0]} onwards"
+        else:
+            year_label = "reports/2025 onwards"
+        print(f"Indexing existing CVEs in {year_label}...")
         existing_cves = _collect_existing_cves(report_root, years_to_scan)
         print(f"Indexed {len(existing_cves)} existing CVE(s)")
     

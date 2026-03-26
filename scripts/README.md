@@ -4,6 +4,44 @@ Scripts for managing the AVID vulnerability database workflow.
 
 ## Workflow Overview
 
+### Release Workflow (Data Versioning)
+
+This is now automated via GitHub Actions in
+`.github/workflows/release-data-version.yml`.
+
+When a release is cut, the workflow takes the release tag, removes any leading
+`v`, and applies that value as `data_version` across all published report JSON
+files in `reports/2025` onward.
+
+You can also run it manually from the Actions tab with `workflow_dispatch` and
+an explicit `release_tag`.
+
+What the action does:
+- Computes normalized version from tag (`v0.3.3` → `0.3.3`)
+- Runs `set_reports_data_version.py`
+- Opens a PR with all `data_version` updates
+- Enables PR auto-merge (release-triggered runs by default)
+
+```bash
+cd avid-db/scripts
+
+# Preview changes for a release tag
+python set_reports_data_version.py --tag v0.3.3 --dry-run
+
+# Apply changes
+python set_reports_data_version.py --tag v0.3.3
+```
+
+This script:
+- Converts `v0.3.3` → `0.3.3`
+- Updates every `reports/<year>/AVID-*.json` file where `<year> >= 2025`
+- Adds `data_version` if missing, or updates it in place if present
+
+Recommended release sequence:
+1. Cut/publish release tag (or dispatch action with a tag).
+2. Let the action open and merge the `data_version` PR.
+3. Publish/re-publish final release artifacts from updated `main`.
+
 ### Step 1: Data Collection
 Use `avidtools/scripts/mileva.py` to scrape CVE data and generate reports:
 
@@ -70,6 +108,15 @@ Downloads the AI-CVE-Analyser CSV, filters `AI-Supply-Chain` rows, converts matc
 ### `filter_ai_supply_chain_for_avid.py`
 Runs an LLM review filter over the generated AI supply-chain report JSONL,
 records pass/fail reasoning per report, and writes a pass-only JSONL.
+
+### `set_reports_data_version.py`
+Applies release `data_version` to report files in `reports/<year>` directories
+for all years from 2025 onward.
+
+**Arguments:**
+- `--tag`: release tag (for example `v0.3.3` or `0.3.3`)
+- `--start-year`: first report year to update (default: `2025`)
+- `--dry-run`: preview changes without writing
 
 **Arguments:**
 - `input_path`: Path to JSONL or JSON file containing reports

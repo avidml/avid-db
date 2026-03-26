@@ -1,0 +1,92 @@
+name: Release Data Version Sync
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag (for example: v0.3.3 or 0.3.3)"
+        required: false
+        type: string
+      auto_merge:
+        description: "Enable auto-merge for the generated PR"
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-data-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Resolve release tag
+        id: tag
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          TAG="${{ github.event.release.tag_name }}"
+          if [[ -z "$TAG" ]]; then
+            TAG="${{ inputs.release_tag }}"
+          fi
+
+          if [[ -z "$TAG" ]]; then
+            echo "No release tag provided."
+            exit 1
+          fi
+
+          NORMALIZED_TAG="${TAG#v}"
+
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "normalized_tag=$NORMALIZED_TAG" >> "$GITHUB_OUTPUT"
+          echo "branch_slug=${NORMALIZED_TAG//./-}" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Apply data_version updates
+        run: |
+          python scripts/set_reports_data_version.py --tag "${{ steps.tag.outputs.tag }}"
+
+      - name: Create release data_version PR
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/release-data-version-${{ steps.tag.outputs.branch_slug }}
+          delete-branch: true
+          title: "chore: apply data_version ${{ steps.tag.outputs.normalized_tag }} to reports"
+          commit-message: "chore: apply data_version ${{ steps.tag.outputs.normalized_tag }} to reports"
+          body: |
+            This PR was generated automatically from release tag `${{ steps.tag.outputs.tag }}`.
+
+            Changes:
+            - Applies `data_version: ${{ steps.tag.outputs.normalized_tag }}`
+            - Targets all `reports/<year>` directories where `year >= 2025`
+            - Adds `data_version` if missing, or updates in place if present
+
+            After merge, publish/re-publish the release from updated `main`.
+          labels: |
+            automation
+            release
+            data-version
+
+      - name: Enable PR auto-merge
+        if: ${{ steps.cpr.outputs.pull-request-number != '' && (github.event_name == 'release' || inputs.auto_merge == true) }}
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
