@@ -97,3 +97,53 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: squash
+
+      - name: Wait for PR merge
+        if: steps.cpr.outputs.pull-request-number
+        shell: bash
+        run: |
+          set -euo pipefail
+          PR_NUMBER=${{ steps.cpr.outputs.pull-request-number }}
+          TIMEOUT=300  # 5 minutes
+          ELAPSED=0
+          INTERVAL=5
+
+          while [[ $ELAPSED -lt $TIMEOUT ]]; do
+            STATE=$(gh pr view "$PR_NUMBER" --json mergeStateStatus --jq '.mergeStateStatus' || echo "")
+            if [[ "$STATE" == "MERGED" ]]; then
+              echo "PR merged successfully."
+              exit 0
+            fi
+            echo "PR state: $STATE. Waiting..."
+            sleep $INTERVAL
+            ELAPSED=$((ELAPSED + INTERVAL))
+          done
+
+          echo "Timeout waiting for PR to merge."
+          exit 1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Refresh main branch
+        run: |
+          git fetch origin main
+          git checkout origin/main
+
+      - name: Recreate release with updated data_version
+        if: github.event_name == 'release'
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.tag.outputs.tag }}"
+          
+          # Delete old release but keep the tag
+          gh release delete "$TAG" -y || true
+          
+          # Create new release from updated main
+          gh release create "$TAG" \
+            --target main \
+            --title "Release $TAG" \
+            --notes "AVID Database release $TAG with updated data_version in all reports." \
+            --draft=false
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
