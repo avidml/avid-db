@@ -1,6 +1,6 @@
 {
   "data_type": "AVID",
-  "data_version": "0.3.2",
+  "data_version": "0.3.3",
   "metadata": {
     "report_id": "AVID-2026-R0067"
   },
@@ -233,7 +233,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "A prompt injection vulnerability has been discovered affecting multiple models. The specific flaw occurs when the attacker frames an illicit request as a technical field guide for identifying clandestine synthesis operations, embedding detailed drug synthesis instructions within structured procedural language under the guise of forensic training. By mimicking the tone and format of law enforcement documentation—including lists of observable evidence, step-by-step chemical protocols, and instrumentation checklists; the attacker exploits the model's tendency to comply with seemingly safety-aligned instructional prompts and allows the attacker to receive detailed procedures for manufacturing illegal substances such as methamphetamine."
+    "value": "A prompt injection vulnerability has been discovered affecting multiple models. The specific flaw occurs when the attacker frames an illicit request as a technical field guide for identifying clandestine synthesis operations, embedding detailed drug synthesis instructions within structured procedural language under the guise of forensic training. By mimicking the tone and format of law enforcement documentation\u2014including lists of observable evidence, step-by-step chemical protocols, and instrumentation checklists; the attacker exploits the model's tendency to comply with seemingly safety-aligned instructional prompts and allows the attacker to receive detailed procedures for manufacturing illegal substances such as methamphetamine."
   },
   "impact": {
     "odin": {

@@ -1,6 +1,6 @@
 {
   "data_type": "AVID",
-  "data_version": "0.3.2",
+  "data_version": "0.3.3",
   "metadata": {
     "report_id": "AVID-2025-R0002"
   },
@@ -30,18 +30,18 @@
   "references": [
     {
       "type": "source",
-      "label": "Aurélien Géron's tweet",
+      "label": "Aur\u00e9lien G\u00e9ron's tweet",
       "url": "https://x.com/aureliengeron/status/1505402534407524353"
     },
     {
       "type": "model",
-      "label": "distilbert/distilbert-base-uncased-finetuned-sst-2-english · Hugging Face",
+      "label": "distilbert/distilbert-base-uncased-finetuned-sst-2-english \u00b7 Hugging Face",
       "url": "https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
     }
   ],
   "description": {
     "lang": "eng",
-    "value": "As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase “This film was filmed in [country]”. The tweet mentions “India” and “Iraq” explicitly. "
+    "value": "As demonstrated in a tweet on March 19, 2022, which has since been incorporated into the model card as a known bias, the model provides biased analysis of sentiment for a neutral phrase \u201cThis film was filmed in [country]\u201d. The tweet mentions \u201cIndia\u201d and \u201cIraq\u201d explicitly. "
   },
   "impact": {
     "avid": {

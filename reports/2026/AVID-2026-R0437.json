@@ -31,7 +31,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "Shell expansion is not filtered when running commands, so it’s possible to run arbitrary OS commands through $() syntax."
+    "value": "Shell expansion is not filtered when running commands, so it\u2019s possible to run arbitrary OS commands through $() syntax."
   },
   "credit": [
     {
@@ -44,5 +44,5 @@
     }
   ],
   "reported_date": "2026-01-02",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }
