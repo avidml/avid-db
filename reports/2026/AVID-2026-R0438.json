@@ -31,7 +31,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "All python tools defined in the current workspace (./.vibe/tools/*.py) are automatically executed upon start of the assistant. No auto-approval enabled, no user approval needed - code is being executed automatically when the users opens the workspace through Vibe. ‍"
+    "value": "All python tools defined in the current workspace (./.vibe/tools/*.py) are automatically executed upon start of the assistant. No auto-approval enabled, no user approval needed - code is being executed automatically when the users opens the workspace through Vibe. \u200d"
   },
   "credit": [
     {
@@ -44,5 +44,5 @@
     }
   ],
   "reported_date": "2025-12-12",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }
