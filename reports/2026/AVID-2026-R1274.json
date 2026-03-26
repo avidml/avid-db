@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1274"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Spark Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Spark Provider Arbitrary File Read via JDBC (CVE-2023-40272)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-40272"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/t03gktyzyor20rh06okd91jtqmw6k1l7",
+      "url": "https://lists.apache.org/thread/t03gktyzyor20rh06okd91jtqmw6k1l7"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/08/17/1",
+      "url": "http://www.openwall.com/lists/oss-security/2023/08/17/1"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/08/18/1",
+      "url": "http://www.openwall.com/lists/oss-security/2023/08/18/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow Spark Provider, versions before 4.1.3, is affected by a vulnerability that allows an attacker to pass in malicious parameters when establishing a connection giving an opportunity to read files on the Airflow server.\nIt is recommended to upgrade to a version that is not affected.\n\nReason for inclusion in AVID: CVE-2023-40272 is an arbitrary file read vulnerability in Apache Airflow Spark Provider affecting deployment; Apache Airflow/Spark provider are commonly used in ML/AI pipelines, making this a software supply-chain issue relevant to AI systems. The vulnerability is security-related (unauthorized file read) and sufficient evidence is provided (CVE entry, affected versions, remediation)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-17"
+}

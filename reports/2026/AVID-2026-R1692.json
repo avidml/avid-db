@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1692"
+  },
+  "affects": {
+    "developer": [
+      "vllm-project"
+    ],
+    "deployer": [
+      "vllm-project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vllm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "vLLM Vulnerable to Remote Code Execution via Mooncake Integration (CVE-2025-32444)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32444"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/security/advisories/GHSA-hj4w-hm2g-p6w5",
+      "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-hj4w-hm2g-p6w5"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x3m8-f7g5-qhm7",
+      "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-x3m8-f7g5-qhm7"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/commit/a5450f11c95847cf51a17207af9a3ca5ab569b2c",
+      "url": "https://github.com/vllm-project/vllm/commit/a5450f11c95847cf51a17207af9a3ca5ab569b2c"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/blob/32b14baf8a1f7195ca09484de3008063569b43c5/vllm/distributed/kv_transfer/kv_pipe/mooncake_pipe.py#L179",
+      "url": "https://github.com/vllm-project/vllm/blob/32b14baf8a1f7195ca09484de3008063569b43c5/vllm/distributed/kv_transfer/kv_pipe/mooncake_pipe.py#L179"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "vLLM is a high-throughput and memory-efficient inference and serving engine for LLMs. Versions starting from 0.6.5 and prior to 0.8.5, having vLLM integration with mooncake, are vulnerable to remote code execution due to using pickle based serialization over unsecured ZeroMQ sockets. The vulnerable sockets were set to listen on all network interfaces, increasing the likelihood that an attacker is able to reach the vulnerable ZeroMQ sockets to carry out an attack. vLLM instances that do not make use of the mooncake integration are not vulnerable. This issue has been patched in version 0.8.5.\n\nReason for inclusion in AVID: The report describes a targeted security vulnerability in a software component (vLLM) used to deploy and serve AI models. It enables remote code execution via insecure deserialization (CWE-502) over network sockets when Mooncake integration is used, directly impacting AI serving stacks. It is a software supply-chain issue (model-serving/runtime/component in AI pipelines) and not hardware/firmware-only. Patch details and references are provided, including affected versions and mitigation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-30"
+}

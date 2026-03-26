@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1341"
+  },
+  "affects": {
+    "developer": [
+      "nvidia"
+    ],
+    "deployer": [
+      "nvidia"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA Triton Inference Server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CVE (CVE-2024-0087)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0087"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5535",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5535"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Triton Inference Server for Linux contains a vulnerability where a user can set the logging location to an arbitrary file. If this file exists, logs are appended to the file. A successful exploit of this vulnerability might lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.\n\nReason for inclusion in AVID: CVE-2024-0087 affects NVIDIA Triton Inference Server, an AI model serving/deployment component. It is a software vulnerability within a component used to build/deploy AI systems, with potential for code execution, DoS, privilege escalation, information disclosure, or data tampering. This aligns with the software supply chain for general-purpose AI systems (GPAI) and AI tooling stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:H",
+      "baseScore": 9.0,
+      "baseSeverity": "CRITICAL"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-09"
+}

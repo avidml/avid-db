@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1263"
+  },
+  "affects": {
+    "developer": [
+      "PaddlePaddle"
+    ],
+    "deployer": [
+      "PaddlePaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PaddlePaddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "FPE in paddle.linalg.matrix_rank (CVE-2023-38675)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-38675"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-007.md",
+      "url": "https://github.com/PaddlePaddle/Paddle/blob/develop/security/advisory/pdsa-2023-007.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "FPE in paddle.linalg.matrix_rank in PaddlePaddle before 2.6.0. This flaw can cause a runtime crash and a denial of service.\n\nReason for inclusion in AVID: CVE-2023-38675 describes a vulnerability in PaddlePaddle (paddle.linalg.matrix_rank) that can cause a runtime crash and denial of service. PaddlePaddle is a widely used AI framework; this vulnerability affects a component commonly used in AI software stacks, i.e., the software supply chain for general-purpose AI systems. It is a software-level vulnerability (not hardware/firmware-only) with network-based triggering. Therefore it qualifies for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:L",
+      "baseScore": 4.7,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-369",
+        "description": "CWE-369 Divide By Zero",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-03"
+}

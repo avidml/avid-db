@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1057"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-34982"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-34982"
+    },
+    {
+      "type": "source",
+      "label": "http://pypi.doubanio.com/simple/request",
+      "url": "http://pypi.doubanio.com/simple/request"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/eziod/",
+      "url": "https://pypi.org/project/eziod/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/alexw994/eziod/issues/1",
+      "url": "https://github.com/alexw994/eziod/issues/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The eziod package in PyPI before v0.0.1 included a code execution backdoor inserted by a third party.\n\nReason for inclusion in AVID: CVE-2022-34982 describes a code execution backdoor in a PyPI Python package (eziod) prior to v0.0.1. This constitutes a software supply chain vulnerability since a dependency in AI/ML software stacks could be compromised, enabling code execution. The issue is in a package used in software supply chains (Python dependencies), not hardware/firmware. It is clearly a security vulnerability with public references (NVD, GitHub issue). Therefore it meets AVID criteria for AI-related, GPAI supply chain, security risk, with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-07-22"
+}

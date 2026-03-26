@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1423"
+  },
+  "affects": {
+    "developer": [
+      "qdrant"
+    ],
+    "deployer": [
+      "qdrant"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "qdrant/qdrant"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal and Arbitrary File Upload Vulnerability in qdrant/qdrant (CVE-2024-2221)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2221"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/6be8d4e3-67e6-4660-a8db-04215a1cff3e",
+      "url": "https://huntr.com/bounties/6be8d4e3-67e6-4660-a8db-04215a1cff3e"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/qdrant/qdrant/commit/e6411907f0ecf3c2f8ba44ab704b9e4597d9705d",
+      "url": "https://github.com/qdrant/qdrant/commit/e6411907f0ecf3c2f8ba44ab704b9e4597d9705d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "qdrant/qdrant is vulnerable to a path traversal and arbitrary file upload vulnerability via the `/collections/{COLLECTION}/snapshots/upload` endpoint, specifically through the `snapshot` parameter. This vulnerability allows attackers to upload and overwrite any file on the filesystem, leading to potential remote code execution. This issue affects the integrity and availability of the system, enabling unauthorized access and potentially causing the server to malfunction.\n\nReason for inclusion in AVID: CVE-2024-2221 describes a path traversal and arbitrary file upload vulnerability in qdrant/qdrant, enabling potential remote code execution. qdrant is a vector database commonly used in AI pipelines, making this a software component in AI systems and their deployment stack. It is a software supply chain issue affecting AI runtimes/deployments. The report provides explicit vulnerability details (endpoint, snapshot parameter, CWE-434, CVSS 3.0 metrics), establishing a clear security risk. Therefore, it satisfies AI relevance, supply-chain relevance, security risk, and sufficiency of evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-434",
+        "description": "CWE-434 Unrestricted Upload of File with Dangerous Type",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

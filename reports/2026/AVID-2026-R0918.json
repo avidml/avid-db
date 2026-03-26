@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0918"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-41495"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-41495"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/numpy/numpy/issues/19038",
+      "url": "https://github.com/numpy/numpy/issues/19038"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Null Pointer Dereference vulnerability exists in numpy.sort in NumPy &lt and 1.19 in the PyArray_DescrNew function due to missing return-value validation, which allows attackers to conduct DoS attacks by repetitively creating sort arrays. NOTE: While correct that validation is missing, an error can only occur due to an exhaustion of memory. If the user can exhaust memory, they are already privileged. Further, it should be practically impossible to construct an attack which can target the memory exhaustion to occur at exactly this place\n\nReason for inclusion in AVID: CVE-2021-41495 describes a null pointer dereference in NumPy's sort routine due to missing return-value validation, enabling DoS via memory exhaustion. NumPy is a fundamental dependency in AI software stacks (arrays, data preprocessing, numerics), so this is an AI-related vulnerability in software used to build/train/deploy general-purpose AI systems. It is a software supply-chain issue (dependency risk) rather than hardware/firmware. The report provides a CVE and references (NVD, NumPy issue, Oracle CPU advisory) sufficient to establish the vulnerability and its impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2021-12-17"
+}

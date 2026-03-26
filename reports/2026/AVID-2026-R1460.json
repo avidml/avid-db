@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1460"
+  },
+  "affects": {
+    "developer": [
+      "mintplex-labs"
+    ],
+    "deployer": [
+      "mintplex-labs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mintplex-labs/anything-llm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in mintplex-labs/anything-llm (CVE-2024-3104)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-3104"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/4f2fcb45-5828-4bec-985a-9d3a0ee00462",
+      "url": "https://huntr.com/bounties/4f2fcb45-5828-4bec-985a-9d3a0ee00462"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mintplex-labs/anything-llm/commit/bfedfebfab032e6f4d5a369c8a2f947c5d0c5286",
+      "url": "https://github.com/mintplex-labs/anything-llm/commit/bfedfebfab032e6f4d5a369c8a2f947c5d0c5286"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A remote code execution vulnerability exists in mintplex-labs/anything-llm due to improper handling of environment variables. Attackers can exploit this vulnerability by injecting arbitrary environment variables via the `POST /api/system/update-env` endpoint, which allows for the execution of arbitrary code on the host running anything-llm. The vulnerability is present in the latest version of anything-llm, with the latest commit identified as fde905aac1812b84066ff72e5f2f90b56d4c3a59. This issue has been fixed in version 1.0.0. Successful exploitation could lead to code execution on the host, enabling attackers to read and modify data accessible to the user running the service, potentially leading to a denial of service.\n\nReason for inclusion in AVID: CVE-2024-3104 describes a remote code execution flaw in mintplex-labs/anything-llm, an AI-serving application. The vulnerability enables arbitrary code execution via a REST endpoint, impacting the host running the AI service. This is a security vulnerability within software that is used to build/deploy/run general-purpose AI systems, i.e., a component of the AI software supply chain. The CVE provides explicit details (endpoint, impact, CVSS metrics, and a fix) supporting its relevance to AI systems and supply-chain contexts."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "baseScore": 9.6,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

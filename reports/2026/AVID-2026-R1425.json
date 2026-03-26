@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1425"
+  },
+  "affects": {
+    "developer": [
+      "jupyter-lsp"
+    ],
+    "deployer": [
+      "jupyter-lsp"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "jupyterlab-lsp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unsecured endpoints in the jupyter-lsp server extension (CVE-2024-22415)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-22415"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-lsp/jupyterlab-lsp/security/advisories/GHSA-4qhp-652w-c22x",
+      "url": "https://github.com/jupyter-lsp/jupyterlab-lsp/security/advisories/GHSA-4qhp-652w-c22x"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter-lsp/jupyterlab-lsp/commit/4ad12f204ad0b85580fc32137c647baaff044e95",
+      "url": "https://github.com/jupyter-lsp/jupyterlab-lsp/commit/4ad12f204ad0b85580fc32137c647baaff044e95"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "jupyter-lsp is a coding assistance tool for JupyterLab (code navigation + hover suggestions + linters + autocompletion + rename) using Language Server Protocol. Installations of jupyter-lsp running in environments without configured file system access control (on the operating system level), and with jupyter-server instances exposed to non-trusted network are vulnerable to unauthorised access and modification of file system beyond the jupyter root directory. This issue has been patched in version 2.2.2 and all users are advised to upgrade. Users unable to upgrade should uninstall jupyter-lsp.\n\nReason for inclusion in AVID: CVE-2024-22415 describes an unauthenticated access and path traversal vulnerability in the jupyter-lsp extension used with JupyterLab, a component commonly involved in AI model development, experimentation, and deployment workflows. This affects software stack components (AI development tooling) that can be part of the supply chain for general-purpose AI systems, and it is clearly a security vulnerability with publicly documented evidence and a patch. Therefore it satisfies AVID criteria for AI-related, GI/GP AI supply-chain, security/safety vulnerability with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-23",
+        "description": "CWE-23: Relative Path Traversal",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-284",
+        "description": "CWE-284: Improper Access Control",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-306",
+        "description": "CWE-306: Missing Authentication for Critical Function",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-18"
+}

@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1592"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Chatbot with ChatGPT WordPress"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SmartSearchWP < 2.4.6 - Unauthenticated OpenAI Key Disclosure (CVE-2024-6845)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6845"
+    },
+    {
+      "type": "source",
+      "label": "https://wpscan.com/vulnerability/cfaaa843-d89e-42d4-90d9-988293499d26/",
+      "url": "https://wpscan.com/vulnerability/cfaaa843-d89e-42d4-90d9-988293499d26/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Chatbot with ChatGPT WordPress plugin before 2.4.6 does not have proper authorization in one of its REST endpoint, allowing unauthenticated users to retrieve the encoded key and then decode it, thereby leaking the OpenAI API key\n\nReason for inclusion in AVID: CVE-2024-6845 describes an unauthenticated disclosure of an OpenAI API key via a WordPress plugin, enabling retrieval and decoding of the key. This concerns a software component used to enable AI functionality (OpenAI API integration) and represents a security vulnerability in a component of the AI software supply chain (AI tooling/deployment pipeline). The issue is relevant to AI systems and their deployment stack, not hardware/firmware-only."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-09-25"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1258"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Absolute Path Traversal in mlflow/mlflow (CVE-2023-3765)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-3765"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.dev/bounties/4be5fd63-8a0a-490d-9ee1-f33dc768ed76",
+      "url": "https://huntr.dev/bounties/4be5fd63-8a0a-490d-9ee1-f33dc768ed76"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/commit/6dde93758d42455cb90ef324407919ed67668b9b",
+      "url": "https://github.com/mlflow/mlflow/commit/6dde93758d42455cb90ef324407919ed67668b9b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Absolute Path Traversal in GitHub repository mlflow/mlflow prior to 2.5.0.\n\nReason for inclusion in AVID: CVE-2023-3765 describes an Absolute Path Traversal in mlflow/mlflow prior to 2.5.0. MLflow is a core tool in AI/ML workflows (model tracking, deployment, and serving), representing a software component routinely used to build, train, package, deploy, and run general-purpose AI systems. The vulnerability is a security flaw exploitable over a network with high impact (confidentiality, integrity, availability), and the report provides explicit CVE, affected software, and references, meeting AVID sufficiency criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-36",
+        "description": "CWE-36 Absolute Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-07-19"
+}

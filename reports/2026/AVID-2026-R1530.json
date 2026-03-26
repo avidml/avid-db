@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1530"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CSRF in restart_program in parisneo/lollms-webui (CVE-2024-4403)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-4403"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/c9dd6d2f-d83a-488b-9443-d4200c010851",
+      "url": "https://huntr.com/bounties/c9dd6d2f-d83a-488b-9443-d4200c010851"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Cross-Site Request Forgery (CSRF) vulnerability exists in the restart_program function of the parisneo/lollms-webui v9.6. This vulnerability allows attackers to trick users into performing unintended actions, such as resetting the program without their knowledge, by sending specially crafted CSRF forms. This issue affects the installation process, including the installation of Binding zoo and Models zoo, by unexpectedly resetting programs. The vulnerability is due to the lack of CSRF protection in the affected function.\n\nReason for inclusion in AVID: CVE-2024-4403 describes a Cross-Site Request Forgery (CSRF) vulnerability in the restart_program function of parisneo/lollms-webui, including impacts on installation processes for model zoos. This involves an AI tooling component used to deploy/run AI systems (Lollms web UI for managing models and runtimes). The vulnerability is security-related (CSRF) and affects the software stack used to build/deploy AI workflows, i.e., a general-purpose AI supply chain component. The CVE provides sufficient evidence (description, impact, references) to support classification as an AI-supply-chain vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L",
+      "baseScore": 4.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-10"
+}

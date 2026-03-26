@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0816"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Intel(R) Distribution of OpenVINO\u00e2\u201e\u00a2 Toolkit"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-33073"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-33073"
+    },
+    {
+      "type": "source",
+      "label": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00538.html",
+      "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00538.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Uncontrolled resource consumption in the Intel(R) Distribution of OpenVINO\u00e2\u201e\u00a2 Toolkit before version 2021.4 may allow an unauthenticated user to potentially enable denial of service via local access.\n\nReason for inclusion in AVID: CVE-2021-33073 describes an uncontrolled resource consumption vulnerability in the Intel Distribution of OpenVINO Toolkit, which is a software component used to run AI inference workloads. This impacts AI software stacks and could enable denial of service. It affects a runtime/library commonly used in AI pipelines, thus relevant to the software supply chain for general-purpose AI systems. The report provides explicit CVE coverage and a security advisory reference, establishing a clear security vulnerability with evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2021-11-17"
+}

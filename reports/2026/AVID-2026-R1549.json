@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1549"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-48052"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-48052"
+    },
+    {
+      "type": "source",
+      "label": "https://rumbling-slice-eb0.notion.site/FULL-SSRF-in-gr-DownloadButton-in-gradio-app-gradio-870b21e0908b48cbafd914719ac1a4e6?pvs=4",
+      "url": "https://rumbling-slice-eb0.notion.site/FULL-SSRF-in-gr-DownloadButton-in-gradio-app-gradio-870b21e0908b48cbafd914719ac1a4e6?pvs=4"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/AfterSnows/45ffc23797f9127e00755376cc610e12",
+      "url": "https://gist.github.com/AfterSnows/45ffc23797f9127e00755376cc610e12"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In gradio <=4.42.0, the gr.DownloadButton function has a hidden server-side request forgery (SSRF) vulnerability. The reason is that within the save_url_to_cache function, there are no restrictions on the URL, which allows access to local target resources. This can lead to the download of local resources and sensitive information.\n\nReason for inclusion in AVID: The report describes an SSRF vulnerability in Gradio <= 4.42.0 (gr.DownloadButton/save_url_to_cache). Gradio is a widely used AI tooling/library in ML pipelines and AI app deployment, so this is a vulnerability in a component used to build/deploy AI systems. It is a CVE-style security vulnerability with references, signaling a software supply-chain risk in AI software stacks. Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-11-04"
+}

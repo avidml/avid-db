@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1132"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson Knowledge Catalog on-prem"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson Knowledge Catalog on Cloud Pak SQL injection (CVE-2022-41731)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-41731"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/6890729",
+      "url": "https://www.ibm.com/support/pages/node/6890729"
+    },
+    {
+      "type": "source",
+      "label": "https://exchange.xforce.ibmcloud.com/vulnerabilities/237402",
+      "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/237402"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson Knowledge Catalog on Cloud Pak for Data 4.5.0 is vulnerable to SQL injection. A remote attacker could send specially crafted SQL statements, which could allow the attacker to view, add, modify or delete information in the back-end database.  IBM X-Force ID:  237402.\n\nReason for inclusion in AVID: CVE-2022-41731 describes a network-accessible SQL injection in IBM Watson Knowledge Catalog on Cloud Pak for Data, a product used in AI data pipelines and governance. The vulnerability enables remote attackers to view, add, modify, or delete data, impacting confidentiality and potentially integrity. This is a software component used within AI systems/tools and is part of the AI supply chain (data catalog/management). The CVE provides explicit evidence of a security vulnerability with clear impact signals, supporting classification as an AI-relevant, supply-chain software vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
+      "baseScore": 8.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-89",
+        "description": "CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-02-06"
+}

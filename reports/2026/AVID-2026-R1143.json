@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1143"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "`CHECK_EQ` fail in `tf.raw_ops.TensorListResize` in Tensorflow (CVE-2022-41893)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-41893"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-67pf-62xr-q35m",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-67pf-62xr-q35m"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/888e34b49009a4e734c27ab0c43b0b5102682c56",
+      "url": "https://github.com/tensorflow/tensorflow/commit/888e34b49009a4e734c27ab0c43b0b5102682c56"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/list_kernels.cc",
+      "url": "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/list_kernels.cc"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. If `tf.raw_ops.TensorListResize` is given a nonscalar value for input `size`, it results `CHECK` fail which can be used to trigger a denial of service attack. We have patched the issue in GitHub commit 888e34b49009a4e734c27ab0c43b0b5102682c56. The fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: The candidate describes CVE-2022-41893, a vulnerability in TensorFlow (an AI framework) where a CHECK failure in TensorListResize can lead to denial of service. This directly concerns AI/ML software stacks and is in the software supply chain (TensorFlow dependency used to build/train/deploy AI systems). It is a security vulnerability with a confirmed patch in a public commit and advisory, providing sufficient evidence for inclusion."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:H",
+      "baseScore": 4.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-617",
+        "description": "CWE-617: Reachable Assertion",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-11-18"
+}

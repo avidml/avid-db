@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1463"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Command Injection in parisneo/lollms-webui (CVE-2024-3126)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-3126"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/0e2bec70-826e-4c24-8015-31921e23fd12",
+      "url": "https://huntr.com/bounties/0e2bec70-826e-4c24-8015-31921e23fd12"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/parisneo/lollms-webui/commit/41dbb1b3f2e78ea276e5269544e50514252c0c25",
+      "url": "https://github.com/parisneo/lollms-webui/commit/41dbb1b3f2e78ea276e5269544e50514252c0c25"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A command injection vulnerability exists in the 'run_xtts_api_server' function of the parisneo/lollms-webui application, specifically within the 'lollms_xtts.py' script. The vulnerability arises due to the improper neutralization of special elements used in an OS command. The affected function utilizes 'subprocess.Popen' to execute a command constructed with a Python f-string, without adequately sanitizing the 'xtts_base_url' input. This flaw allows attackers to execute arbitrary commands remotely by manipulating the 'xtts_base_url' parameter. The vulnerability affects versions up to and including the latest version before 9.5. Successful exploitation could lead to arbitrary remote code execution (RCE) on the system where the application is deployed.\n\nReason for inclusion in AVID: The CVE describes a command injection in a component (parisneo/lollms-webui) used in AI/ML pipelines (TTS/web UI), enabling remote code execution. This affects a software component that can be part of the AI system serving stack, i.e., a general-purpose AI supply chain vulnerability. The report provides explicit vulnerability type (CWE-78), CVSS details, and exploitation impact, meeting AVID criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-16"
+}

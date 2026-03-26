@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0819"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "openEuler:mindspore"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-33650"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-33650"
+    },
+    {
+      "type": "source",
+      "label": "https://gitee.com/mindspore/community/blob/master/security/security_advisory_list/mssa-2021-005_en.md",
+      "url": "https://gitee.com/mindspore/community/blob/master/security/security_advisory_list/mssa-2021-005_en.md"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "When performing the inference shape operation of the SparseToDense operator, if the number of inputs is less than three, it will access data outside of bounds of inputs which allocated from heap buffers.\n\nReason for inclusion in AVID: The report describes a vulnerability in the MindSpore AI framework (SparseToDense operator) that causes an out-of-bounds read when the number of inputs is less than three. This is a security flaw in an AI software component used to build/train/deploy general-purpose AI systems, with packaging reference (openEuler:mindspore). It maps to a CVE entry (CVE-2021-33650) and CWE-125, indicating a classic out-of-bounds vulnerability. This aligns with AVID's focus on software supply chain issues in AI stacks (libraries/frameworks, runtimes, artifacts)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-125",
+        "description": "CWE-125 Out-of-bounds Read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-06-27"
+}

@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1177"
+  },
+  "affects": {
+    "developer": [
+      "Unknown"
+    ],
+    "deployer": [
+      "Unknown"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI ChatBot"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "ChatBot < 4.4.9 - Subscriber+ OpenAI Settings Update to Stored XSS (CVE-2023-1651)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-1651"
+    },
+    {
+      "type": "source",
+      "label": "https://wpscan.com/vulnerability/c88b22ba-4fc2-49ad-a457-224157521bad",
+      "url": "https://wpscan.com/vulnerability/c88b22ba-4fc2-49ad-a457-224157521bad"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The AI ChatBot WordPress plugin before 4.4.9 does not have authorisation and CSRF in the AJAX action responsible to update the OpenAI settings, allowing any authenticated users, such as subscriber to update them. Furthermore, due to the lack of escaping of the settings, this could also lead to Stored XSS\n\nReason for inclusion in AVID: CVE-2023-1651 describes a vulnerability in the AI ChatBot WordPress plugin (pre-4.4.9) that allows unauthorized updates to OpenAI settings and stored XSS. This plugin is used to deploy AI-enabled chat functionality via OpenAI, thus it concerns AI systems and their deployment stack. It affects a component used to build/run AI-enabled services, i.e., a software supply chain element for general-purpose AI systems. The vulnerability is security-related (CSRF/authorization bypass and XSS) with clear evidence in the CVE description and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-05-08"
+}

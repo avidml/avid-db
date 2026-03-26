@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1586"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Overwrite and Data Exfiltration in aimhubio/aim (CVE-2024-6396)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-6396"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/c1b17afd-4656-47bb-8310-686a9e1b04a0",
+      "url": "https://huntr.com/bounties/c1b17afd-4656-47bb-8310-686a9e1b04a0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the `_backup_run` function in aimhubio/aim version 3.19.3 allows remote attackers to overwrite any file on the host server and exfiltrate arbitrary data. The vulnerability arises due to improper handling of the `run_hash` and `repo.path` parameters, which can be manipulated to create and write to arbitrary file paths. This can lead to denial of service by overwriting critical system files, loss of private data, and potential remote code execution.\n\nReason for inclusion in AVID: The CVE describes a high-severity remote file overwrite and data exfiltration vulnerability in aimhubio/aim, a software component used in ML/AI workflows (experiment tracking/deployment tooling). This affects the software supply chain of general-purpose AI systems since it targets a runtime/tooling component commonly used in building, training, packaging, deploying, or serving AI models. The vulnerability enables file path manipulation leading to potential RCE, data exfiltration, and DoS, with explicit CVSS 3.0 details and CWE-29 path traversal. Sufficient signal is provided to classify and curate."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-12"
+}

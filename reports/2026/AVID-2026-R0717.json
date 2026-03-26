@@ -1,0 +1,94 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0717"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-22205"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-22205"
+    },
+    {
+      "type": "source",
+      "label": "https://hackerone.com/reports/1154542",
+      "url": "https://hackerone.com/reports/1154542"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/327121",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/327121"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22205.json",
+      "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22205.json"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/164768/GitLab-Unauthenticated-Remote-ExifTool-Command-Injection.html",
+      "url": "http://packetstormsecurity.com/files/164768/GitLab-Unauthenticated-Remote-ExifTool-Command-Injection.html"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/164994/GitLab-13.10.2-Remote-Code-Execution.html",
+      "url": "http://packetstormsecurity.com/files/164994/GitLab-13.10.2-Remote-Code-Execution.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue has been discovered in GitLab CE/EE affecting all versions starting from 11.9. GitLab was not properly validating image files that were passed to a file parser which resulted in a remote command execution.\n\nReason for inclusion in AVID: CVE-2021-22205 describes an unauthenticated remote code execution vulnerability in GitLab CE/EE via improper validation of image files passed to a parser. GitLab is widely used in AI/ML pipelines for build/test/deploy and artifact management, so a vulnerability in this component constitutes a software supply-chain risk for general-purpose AI systems. The issue is clearly a security vulnerability with high impact, and the report provides concrete details and CVSS metrics."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2021-04-23"
+}

@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1278"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-41626"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-41626"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/impose1/590472eb0544ef1ec36c8a5a40122adb",
+      "url": "https://gist.github.com/impose1/590472eb0544ef1ec36c8a5a40122adb"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Gradio v3.27.0 was discovered to contain an arbitrary file upload vulnerability via the /upload interface.\n\nReason for inclusion in AVID: CVE-2023-41626 describes an arbitrary file upload vulnerability in Gradio v3.27.0 via the /upload interface. Gradio is an AI/ML framework used to build and serve ML models and apps, placing this vulnerability squarely within AI software stacks. The issue is in a software component used to deploy AI solutions, not hardware/firmware. It is a security vulnerability (unrestricted file upload exposure). The CVE/NVD references provide explicit evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-09-15"
+}

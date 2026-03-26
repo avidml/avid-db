@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1534"
+  },
+  "affects": {
+    "developer": [
+      "mindsdb"
+    ],
+    "deployer": [
+      "mindsdb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mindsdb"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-45846"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-45846"
+    },
+    {
+      "type": "source",
+      "label": "https://hiddenlayer.com/sai-security-advisory/2024-09-mindsdb/",
+      "url": "https://hiddenlayer.com/sai-security-advisory/2024-09-mindsdb/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An arbitrary code execution vulnerability exists in versions 23.10.3.0 up to 24.7.4.1 of the MindsDB platform, when the Weaviate integration is installed on the server. If a specially crafted \u2018SELECT WHERE\u2019 clause containing Python code is run against a database created with the Weaviate engine, the code will be passed to an eval function and executed on the server.\n\nReason for inclusion in AVID: The CVE describes an arbitrary code execution vulnerability in the MindsDB platform (with Weaviate integration) that can be exploited via a crafted SQL-like clause to execute Python code on the server. This is an issue within AI-related software used to build/deploy AI models and serve AI workloads, i.e., part of the AI software stack. It affects the runtime/serving components and dependencies used to run general-purpose AI systems, representing a software supply-chain vulnerability in AI systems. It is a vulnerability type (RCE) with clear security impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-95",
+        "description": "CWE-95 Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-12"
+}

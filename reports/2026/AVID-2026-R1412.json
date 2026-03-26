@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1412"
+  },
+  "affects": {
+    "developer": [
+      "vantage6"
+    ],
+    "deployer": [
+      "vantage6"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vantage6"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "vantage6 insecure SSH configuration for node and server containers (CVE-2024-21653)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21653"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vantage6/vantage6/security/advisories/GHSA-2wgc-48g2-cj5w",
+      "url": "https://github.com/vantage6/vantage6/security/advisories/GHSA-2wgc-48g2-cj5w"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vantage6/vantage6/commit/3fcc6e6a8bd1142fd7a558d8fdd2b246e55c8841",
+      "url": "https://github.com/vantage6/vantage6/commit/3fcc6e6a8bd1142fd7a558d8fdd2b246e55c8841"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The vantage6 technology enables to manage and deploy privacy enhancing technologies like Federated Learning (FL) and Multi-Party Computation (MPC).  Nodes and servers get a ssh config by default that permits root login with password authentication. In a proper deployment, the SSH service is not exposed so there is no risk, but not all deployments are ideal. The default should therefore be less permissive.  The vulnerability can be mitigated by removing the ssh part from the docker file and rebuilding the docker image.  Version 4.2.0 patches the vulnerability.\n\nReason for inclusion in AVID: CVE-2024-21653 concerns an insecure default SSH configuration in the vantage6 container deployment, a software component used to manage AI privacy-preserving workflows (federated learning/MPC). This is a software supply chain issue affecting containers/images used in AI systems, with remediation, CVSS details, and explicit references. It is a security vulnerability (unrestricted root login via SSH) that could impact AI pipelines if exploited."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-284",
+        "description": "CWE-284: Improper Access Control",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-30"
+}

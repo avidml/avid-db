@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1388"
+  },
+  "affects": {
+    "developer": [
+      "Amazon"
+    ],
+    "deployer": [
+      "Amazon"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Amazon Redshift Python Connector"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SQL Injection in the Amazon Redshift Python Connector affecting v2.1.4 (CVE-2024-12745)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12745"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/amazon-redshift-python-driver/security/advisories/GHSA-8gc2-vq6m-rwjw",
+      "url": "https://github.com/aws/amazon-redshift-python-driver/security/advisories/GHSA-8gc2-vq6m-rwjw"
+    },
+    {
+      "type": "source",
+      "label": "https://aws.amazon.com/security/security-bulletins/AWS-2024-015/",
+      "url": "https://aws.amazon.com/security/security-bulletins/AWS-2024-015/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/amazon-redshift-python-driver/releases/tag/v2.1.5",
+      "url": "https://github.com/aws/amazon-redshift-python-driver/releases/tag/v2.1.5"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A SQL injection in the Amazon Redshift Python Connector v2.1.4 allows a user to gain escalated privileges via the get_schemas, get_tables, or get_columns Metadata APIs. Users are recommended to upgrade to the driver version 2.1.5 or revert to driver version 2.1.3.\n\nReason for inclusion in AVID: CVE-2024-12745 describes a SQL injection vulnerability in the Amazon Redshift Python Connector (v2.1.4) that can lead to elevated privileges. The connector is a software dependency commonly used in ML/AI data pipelines to access data from Redshift, making it a component in the AI software supply chain (data ingestion/feature retrieval). The issue is a standard security vulnerability (CWE-89) with high impact (CVSS 3.1 score 8.0). The advisory includes affected and fixed versions and external references (NVD, GHSA advisory, AWS bulletin, release notes). Therefore it is relevant for AVID curation as a software supply-chain vulnerability affecting AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.0,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-89",
+        "description": "CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-12-24"
+}

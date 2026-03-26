@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1524"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-42835"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-42835"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langflow-ai/langflow/issues/2908",
+      "url": "https://github.com/langflow-ai/langflow/issues/2908"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "langflow v1.0.12 was discovered to contain a remote code execution (RCE) vulnerability via the PythonCodeTool component.\n\nReason for inclusion in AVID: CVE-2024-42835 describes a remote code execution vulnerability in LangFlow's PythonCodeTool (v1.0.12). LangFlow is used to build AI workflows and pipelines, making this a vulnerability in a software component commonly used to deploy/run AI systems. It directly affects AI tooling and could compromise AI pipelines, aligning with software supply chain risk in GPAI environments. The CVE evidence and references confirm the vulnerability and its impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-10-31"
+}

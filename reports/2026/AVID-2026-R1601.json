@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1601"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI ChatBot with ChatGPT and Content Generator by AYS"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AI Assistant with ChatGPT by AYS <= 2.0.9 - Unauthenticated AJAX Calls (CVE-2024-7714)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7714"
+    },
+    {
+      "type": "source",
+      "label": "https://wpscan.com/vulnerability/04447c76-a61b-4091-a510-c76fc8ca5664/",
+      "url": "https://wpscan.com/vulnerability/04447c76-a61b-4091-a510-c76fc8ca5664/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The AI ChatBot with ChatGPT and Content Generator by AYS WordPress plugin before 2.1.0 lacks sufficient access controls allowing an unauthenticated user to disconnect the AI ChatBot with ChatGPT and Content Generator by AYS WordPress plugin before 2.1.0 from OpenAI, thereby disabling the AI ChatBot with ChatGPT and Content Generator by AYS WordPress plugin before 2.1.0. Multiple actions are accessible: 'ays_chatgpt_disconnect', 'ays_chatgpt_connect', and  'ays_chatgpt_save_feedback'\n\nReason for inclusion in AVID: CVE-2024-7714 describes an unauthenticated access control vulnerability in a WordPress plugin that provides AI chatbot integration (AI/ML feature). It affects software components used to deploy AI features on websites; thus it's a software supply chain item in AI systems. The vulnerability enables actions like disconnect/connect, effectively tampering with AI service. The report includes CVE and external references, indicating sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-09-27"
+}

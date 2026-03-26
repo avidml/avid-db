@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1393"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "S3 Bucket Takeover in h2oai/h2o-3 (CVE-2024-1456)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1456"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/7c1b7f27-52f3-4b4b-9d81-e277f5e0ab6b",
+      "url": "https://huntr.com/bounties/7c1b7f27-52f3-4b4b-9d81-e277f5e0ab6b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An S3 bucket takeover vulnerability was identified in the h2oai/h2o-3 repository. The issue involves the S3 bucket 'http://s3.amazonaws.com/h2o-training', which was found to be vulnerable to unauthorized takeover.\n\nReason for inclusion in AVID: CVE-2024-1456 describes a S3 bucket takeover vulnerability in the h2oai/h2o-3 AI framework, affecting AI model training/deployment workflows. It is a software supply chain issue within AI software stacks (data ingress/storage and related logic). The vulnerability is security-related (unauthorized access, data integrity/confidentiality impact) and the report provides explicit signals (CVSS metrics, CVE reference, external references). Therefore, it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-840",
+        "description": "CWE-840 Business Logic Errors",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-16"
+}

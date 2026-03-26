@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1270"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-39660"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-39660"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gventuri/pandas-ai/issues/399",
+      "url": "https://github.com/gventuri/pandas-ai/issues/399"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gventuri/pandas-ai/pull/409",
+      "url": "https://github.com/gventuri/pandas-ai/pull/409"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in Gaberiele Venturi pandasai v.0.8.0 and before allows a remote attacker to execute arbitrary code via a crafted request to the prompt function.\n\nReason for inclusion in AVID: CVE-2023-39660 describes remote code execution in the pandasai library (versions before 0.8.0). This is a vulnerability in a software component (AI tooling/library) commonly used in AI pipelines, constituting a security risk in general-purpose AI systems. The issue is relevant to the AI software stack and has explicit references (NVD and GitHub discussions) providing evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-08-21"
+}

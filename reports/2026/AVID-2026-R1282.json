@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1282"
+  },
+  "affects": {
+    "developer": [
+      "man-group"
+    ],
+    "deployer": [
+      "man-group"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "dtale"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "D-Tale vulnerable to Remote Code Execution through the Custom Filter Input (CVE-2023-46134)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-46134"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/man-group/dtale/security/advisories/GHSA-jq6c-r9xf-qxjm",
+      "url": "https://github.com/man-group/dtale/security/advisories/GHSA-jq6c-r9xf-qxjm"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/man-group/dtale/commit/bf8c54ab2490803f45f0652a9a0e221a94d39668",
+      "url": "https://github.com/man-group/dtale/commit/bf8c54ab2490803f45f0652a9a0e221a94d39668"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "D-Tale is the combination of a Flask back-end and a React front-end to view & analyze Pandas data structures. Prior to version 3.7.0, users hosting D-Tale publicly can be vulnerable to remote code execution, allowing attackers to run malicious code on the server. This issue has been patched in version 3.7.0 by turning off \"Custom Filter\" input by default. The only workaround for versions earlier than 3.7.0 is to only host D-Tale to trusted users.\n\nReason for inclusion in AVID: CVE-2023-46134 describes a remote code execution vulnerability in D-Tale (a Flask/React-based tool for viewing and analyzing pandas data), prior to version 3.7.0. D-Tale is commonly used in data science workflows and can be part of AI data preparation or experimentation pipelines. The vulnerability is a security flaw (RCE risk) in a software component that could be used within AI system stacks, thus representing a software supply-chain vulnerability for general-purpose AI systems. The report provides explicit vulnerability details, affected versions, and a patch/workaround, supporting classification as an exploitable security issue with clear evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 6.1,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-10-25"
+}

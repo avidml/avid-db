@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1338"
+  },
+  "affects": {
+    "developer": [
+      "huggingface"
+    ],
+    "deployer": [
+      "huggingface"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "huggingface/transformers"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Deserialization of Untrusted Data in huggingface/transformers (CVE-2023-7018)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-7018"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e1a3e548-e53a-48df-b708-9ee62140963c",
+      "url": "https://huntr.com/bounties/e1a3e548-e53a-48df-b708-9ee62140963c"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/huggingface/transformers/commit/1d63b0ec361e7a38f1339385e8a5a855085532ce",
+      "url": "https://github.com/huggingface/transformers/commit/1d63b0ec361e7a38f1339385e8a5a855085532ce"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Deserialization of Untrusted Data in GitHub repository huggingface/transformers prior to 4.36.\n\nReason for inclusion in AVID: CVE-2023-7018 describes a deserialization vulnerability in the huggingface/transformers library (pre-4.36). This is a security flaw in a widely used AI software library that is integral to model development, deployment, and inference pipelines. It directly concerns software used to build and run general-purpose AI systems, and if exploited could lead to RCE or data integrity issues. Therefore it is a relevant software supply-chain vulnerability for AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "baseScore": 9.6,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-20"
+}

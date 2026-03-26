@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1289"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PyArrow"
+      },
+      {
+        "type": "System",
+        "name": "PyArrow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "PyArrow, PyArrow: Arbitrary code execution when loading a malicious data file (CVE-2023-47248)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-47248"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/yhy7tdfjf9hrl9vfrtzo8p2cyjq87v7n",
+      "url": "https://lists.apache.org/thread/yhy7tdfjf9hrl9vfrtzo8p2cyjq87v7n"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/arrow/commit/f14170976372436ec1d03a724d8d3f3925484ecf",
+      "url": "https://github.com/apache/arrow/commit/f14170976372436ec1d03a724d8d3f3925484ecf"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/pyarrow-hotfix/",
+      "url": "https://pypi.org/project/pyarrow-hotfix/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FR34AIPXVTMB3XPRU5ULV5HHWPMRE33X/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FR34AIPXVTMB3XPRU5ULV5HHWPMRE33X/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MAGWEAJDWO2ACYATUQCPXLSYY5C3L3XU/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MAGWEAJDWO2ACYATUQCPXLSYY5C3L3XU/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MWFYXLVBTBHNKYRXI572RFX7IJDDQGBL/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MWFYXLVBTBHNKYRXI572RFX7IJDDQGBL/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Deserialization of untrusted data in IPC and Parquet readers in PyArrow versions 0.14.0 to 14.0.0 allows arbitrary code execution. An application is vulnerable if it reads Arrow IPC, Feather or Parquet data from untrusted sources (for example user-supplied input files).\n\nThis vulnerability only affects PyArrow, not other Apache Arrow implementations or bindings.\n\nIt is recommended that users of PyArrow upgrade to 14.0.1. Similarly, it is recommended that downstream libraries upgrade their dependency requirements to PyArrow 14.0.1 or later. PyPI packages are already available, and we hope that conda-forge packages will be available soon.\n\nIf it is not possible to upgrade, we provide a separate package `pyarrow-hotfix` that disables the vulnerability on older PyArrow versions. See  https://pypi.org/project/pyarrow-hotfix/  for instructions.\n\nReason for inclusion in AVID: CVE-2023-47248 describes a PyArrow deserialization vulnerability causing arbitrary code execution when loading untrusted data (IPC/Parquet). PyArrow is a common dependency in AI data pipelines and model serving stacks; exploitation affects software used to build/train/deploy AI systems. It is a software supply chain vulnerability in AI software stacks, not hardware-only."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-09"
+}

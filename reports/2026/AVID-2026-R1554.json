@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1554"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson Studio Local"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson Studio Local cross-site request forgery (CVE-2024-49340)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-49340"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/1144438",
+      "url": "https://www.ibm.com/support/pages/node/1144438"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson Studio Local 1.2.3 is vulnerable to cross-site request forgery which could allow an attacker to execute malicious and unauthorized actions transmitted from a user that the website trusts.\n\nReason for inclusion in AVID: CVE-2024-49340 is a CSRF vulnerability affecting IBM Watson Studio Local, an AI development/production tool used in ML pipelines. It is a software vulnerability in a component used to build/run AI systems, i.e., part of the general-purpose AI software supply chain. The issue concerns security (CSRF), with evidence in the description and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-10-15"
+}

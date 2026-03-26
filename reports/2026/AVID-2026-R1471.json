@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1471"
+  },
+  "affects": {
+    "developer": [
+      "bmaltais"
+    ],
+    "deployer": [
+      "bmaltais"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "kohya_ss"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Kohya_ss is vulnerable to a command injection in `group_images_gui.py` (`GHSL-2024-021`) (CVE-2024-32025)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-32025"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bmaltais/kohya_ss/security/advisories/GHSA-qprv-9pg5-h33c",
+      "url": "https://github.com/bmaltais/kohya_ss/security/advisories/GHSA-qprv-9pg5-h33c"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bmaltais/kohya_ss/commit/831af8babeb75faff62bcc6a8c6a4f80354f1ff1",
+      "url": "https://github.com/bmaltais/kohya_ss/commit/831af8babeb75faff62bcc6a8c6a4f80354f1ff1"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2024-019_GHSL-2024-024_kohya_ss",
+      "url": "https://securitylab.github.com/advisories/GHSL-2024-019_GHSL-2024-024_kohya_ss"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Kohya_ss is a GUI for Kohya's Stable Diffusion trainers. Kohya_ss is vulnerable to a command injection in `group_images_gui.py`. This vulnerability is fixed in 23.1.5.\n\nReason for inclusion in AVID: CVE-2024-32025 describes a command injection vulnerability in kohya_ss's group_images_gui.py, a GUI utility used in Stable Diffusion training workflows. This is a software vulnerability within a component commonly used to build/train AI systems, representing a software supply chain issue in AI pipelines. The CVE details and references indicate potential remote exploitation with high impact, satisfying the security/safety criterion. Sufficient evidence is provided by the CVE entry and advisories."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-77",
+        "description": "CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-16"
+}

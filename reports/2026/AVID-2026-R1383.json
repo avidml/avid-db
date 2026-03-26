@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1383"
+  },
+  "affects": {
+    "developer": [
+      "kedro-org"
+    ],
+    "deployer": [
+      "kedro-org"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "kedro-org/kedro"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in kedro-org/kedro (CVE-2024-12215)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12215"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/fad27503-97a4-4933-91d4-96223b8c54d8",
+      "url": "https://huntr.com/bounties/fad27503-97a4-4933-91d4-96223b8c54d8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In kedro-org/kedro version 0.19.8, the `pull_package()` API function allows users to download and extract micro packages from the Internet. However, the function `project_wheel_metadata()` within the code path can execute the `setup.py` file inside the tar file, leading to remote code execution (RCE) by running arbitrary commands on the victim's machine.\n\nReason for inclusion in AVID: The CVE describes a remote code execution vulnerability in kedro's pull_package flow, where setup.py inside downloaded tarballs can be executed, enabling arbitrary code execution. Kedro is a Python framework widely used in ML/data-pipeline contexts; this directly affects software supply chains for AI systems (dependencies, pipelines, tooling). It is a software vulnerability (not hardware/firmware-only) with clear security impact (RCE) and sufficient evidence in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

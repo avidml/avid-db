@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1478"
+  },
+  "affects": {
+    "developer": [
+      "aws"
+    ],
+    "deployer": [
+      "aws"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "sagemaker-python-sdk"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Deserialization of Untrusted Data in sagemaker-python-sdk (CVE-2024-34072)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-34072"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/sagemaker-python-sdk/security/advisories/GHSA-wjvx-jhpj-r54r",
+      "url": "https://github.com/aws/sagemaker-python-sdk/security/advisories/GHSA-wjvx-jhpj-r54r"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/aws/sagemaker-python-sdk/pull/4557",
+      "url": "https://github.com/aws/sagemaker-python-sdk/pull/4557"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "sagemaker-python-sdk is a library for training and deploying machine learning models on Amazon SageMaker. The sagemaker.base_deserializers.NumpyDeserializer module before v2.218.0 allows potentially unsafe deserialization when untrusted data is passed as pickled object arrays. This consequently may allow an unprivileged third party to cause remote code execution, denial of service, affecting both confidentiality and integrity. Users are advised to upgrade to version 2.218.0. Users unable to upgrade should not pass pickled numpy object arrays which originated from an untrusted source, or that could have been tampered with. Only pass pickled numpy object arrays from trusted sources.\n\nReason for inclusion in AVID: CVE-2024-34072 describes a deserialization vulnerability in the sagemaker-python-sdk (NumpyDeserializer) that can lead to remote code execution and DoS. The affected component is a software library used to train/deploy AI models on SageMaker, i.e., part of AI tooling. This is a software supply-chain issue in a component used to build/run general-purpose AI systems. The CVE provides explicit vulnerability behavior and a fix (upgrade to 2.218.0). Evidence is present in the CVE/NVD entry and AWS security advisory."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-03"
+}

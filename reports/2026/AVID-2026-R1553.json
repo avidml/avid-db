@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1553"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-49194"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-49194"
+    },
+    {
+      "type": "source",
+      "label": "https://kb.databricks.com/en_US/data-sources/security-bulletin-databricks-jdbc-driver-vulnerability-advisory-cve-2024-49194",
+      "url": "https://kb.databricks.com/en_US/data-sources/security-bulletin-databricks-jdbc-driver-vulnerability-advisory-cve-2024-49194"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Databricks JDBC Driver 2.x before 2.6.40 could potentially allow remote code execution (RCE) by triggering a JNDI injection via a JDBC URL parameter. The vulnerability is rooted in the improper handling of the krbJAASFile parameter. An attacker could potentially exploit this vulnerability to achieve Remote Code Execution in the context of the driver by tricking a victim into using a crafted connection URL that uses the property krbJAASFile.\n\nReason for inclusion in AVID: CVE-2024-49194 describes remote code execution via the Databricks JDBC Driver, a software component commonly used in AI data ingestion and pipeline tooling. This is a software supply-chain vulnerability affecting a component used to build/train/run AI systems, with clear RCE risk. Hardware/firmware is not implicated; the issue is in a software dependency relevant to AI workflows, and the report provides explicit vulnerability details."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-12-17"
+}

@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1287"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow missing fix for CVE-2023-40611 in 2.7.1 (DAG run broken access) (CVE-2023-47037)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-47037"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/33413",
+      "url": "https://github.com/apache/airflow/pull/33413"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/04y4vrw1t2xl030gswtctc4nt1w90cb0",
+      "url": "https://lists.apache.org/thread/04y4vrw1t2xl030gswtctc4nt1w90cb0"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/11/12/1",
+      "url": "http://www.openwall.com/lists/oss-security/2023/11/12/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "We failed to apply\u00a0CVE-2023-40611 in 2.7.1 and this vulnerability was marked as fixed then.\u00a0\n\nApache Airflow, versions before 2.7.3, is affected by a vulnerability that allows authenticated and DAG-view authorized Users to modify some DAG run detail values when submitting notes. This could have them alter details such as configuration parameters, start date, etc.\u00a0\n\nUsers should upgrade to version 2.7.3 or later which has removed the vulnerability.\n\nReason for inclusion in AVID: CVE-2023-47037 describes an authentication/authorization vulnerability in Apache Airflow (a widely used orchestration tool) that allows authorized users to modify DAG run details. Airflow is a component commonly used to build and run ML/data pipelines, making it a software supply-chain element for general-purpose AI systems. The issue is a security vulnerability (CWE-863) affecting deployment/runtime, with a fix available in 2.7.3 or later. The report provides clear evidence and references (CVE entry, PR, OSS lists)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863 Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-12"
+}

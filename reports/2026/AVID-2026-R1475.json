@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1475"
+  },
+  "affects": {
+    "developer": [
+      "Qualcomm, Inc."
+    ],
+    "deployer": [
+      "Qualcomm, Inc."
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Snapdragon"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Buffer Over-read in Neural Processing Unit (CVE-2024-33037)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-33037"
+    },
+    {
+      "type": "source",
+      "label": "https://docs.qualcomm.com/product/publicresources/securitybulletin/december-2024-bulletin.html",
+      "url": "https://docs.qualcomm.com/product/publicresources/securitybulletin/december-2024-bulletin.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Information disclosure as NPU firmware can send invalid IPC message to NPU driver as the driver doesn`t validate the IPC message received from the firmware.\n\nReason for inclusion in AVID: CVE-2024-33037 describes a buffer over-read in NPU firmware that can disclose information via invalid IPC messages to the NPU driver. This directly involves AI inference hardware/firmware (NPU) and its software stack (firmware and driver), which are components used to build, deploy, and run AI systems on Qualcomm Snapdragon hardware. As such, it is a vulnerability in software components that underpin AI pipelines, with a confirmed security impact (information disclosure) and signal in the CVE entry. This satisfies the criteria for AI relevance and GP AI software supply chain components, with sufficient evidence from the CVE entry."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+      "baseScore": 6.1,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-126",
+        "description": "CWE-126 Buffer Over-read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-12-02"
+}

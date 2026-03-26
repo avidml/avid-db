@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1410"
+  },
+  "affects": {
+    "developer": [
+      "hay86"
+    ],
+    "deployer": [
+      "hay86"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ComfyUI-Ace-Nodes"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21577"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21577"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hay86/ComfyUI_AceNodes/blob/5ba01db8a3b7afb8e4aecfaa48823ddeb132bbbb/nodes.py#L1193",
+      "url": "https://github.com/hay86/ComfyUI_AceNodes/blob/5ba01db8a3b7afb8e4aecfaa48823ddeb132bbbb/nodes.py#L1193"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "ComfyUI-Ace-Nodes is vulnerable to Code Injection. The ACE_ExpressionEval node contains an eval() in its entrypoint function that accepts arbitrary user-controlled data. A user can create a workflow that results in executing arbitrary code on the server.\n\nReason for inclusion in AVID: CVE-2024-21577 describes a code injection vulnerability (eval) in the ComfyUI-Ace-Nodes ACE_ExpressionEval node, enabling arbitrary code execution on the server. The affected component is a plugin/tool used within AI workflow pipelines (ComfyUI), i.e., software commonly used in building/deploying AI systems. This is a security vulnerability in a software component of the AI stack, not hardware/firmware-only. The CVE provides explicit evidence of the vulnerability and impact, supporting its inclusion in AI supply-chain curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "Code Injection",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-12-13"
+}

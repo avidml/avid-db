@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0962"
+  },
+  "affects": {
+    "developer": [
+      "mindsdb"
+    ],
+    "deployer": [
+      "mindsdb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mindsdb"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Write when Extracting Tarballs retrieved from a remote location using in mindsdb (CVE-2022-23522)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23522"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-7x45-phmr-9wqp",
+      "url": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-7x45-phmr-9wqp"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "MindsDB is an open source machine learning platform. An unsafe extraction is being performed using `shutil.unpack_archive()` from a remotely retrieved tarball. Which may lead to the writing of the extracted files to an unintended location. This vulnerability is sometimes called a **TarSlip** or a **ZipSlip variant**. Unpacking files using the high-level function `shutil.unpack_archive()` from a potentially malicious tarball without validating that the destination file path remained within the intended destination directory may cause files to be overwritten outside the destination directory. An attacker could craft a malicious tarball with a filename path, such as `../../../../../../../../etc/passwd`, and then serve the archive remotely using a personal bucket `s3`, thus, retrieve the tarball through **mindsdb** and overwrite the system files of the hosting server. This issue has been addressed in version 22.11.4.3. Users are advised to upgrade. Users unable to upgrade should avoid ingesting archives from untrusted sources.\n\nReason for inclusion in AVID: CVE-2022-23522 describes a TarSlip-like path traversal vulnerability in MindsDB's unsafe extraction of remote tarballs via shutil.unpack_archive, allowing arbitrary file writes. This is a software vulnerability impacting an AI platform used in ML pipelines, i.e., a component in the AI software stack. It affects the supply chain of general-purpose AI systems when ingesting external archives, and there is clear CVE evidence and remediation guidance. Therefore it satisfies AI relevance, supply-chain scope, security impact, and evidence sufficiency."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:N",
+      "baseScore": 8.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-03-30"
+}

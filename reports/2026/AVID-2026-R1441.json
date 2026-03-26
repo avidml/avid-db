@@ -1,0 +1,80 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1441"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-25723"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-25723"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/zenml-io/zenml",
+      "url": "https://github.com/zenml-io/zenml"
+    },
+    {
+      "type": "source",
+      "label": "https://www.zenml.io/blog/critical-security-update-for-zenml-users",
+      "url": "https://www.zenml.io/blog/critical-security-update-for-zenml-users"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/zenml-io/zenml/compare/0.44.3...0.44.4",
+      "url": "https://github.com/zenml-io/zenml/compare/0.44.3...0.44.4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/zenml-io/zenml/compare/0.43.0...0.43.1",
+      "url": "https://github.com/zenml-io/zenml/compare/0.43.0...0.43.1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/zenml-io/zenml/compare/0.42.1...0.42.2",
+      "url": "https://github.com/zenml-io/zenml/compare/0.42.1...0.42.2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "ZenML Server in the ZenML machine learning package before 0.46.7 for Python allows remote privilege escalation because the /api/v1/users/{user_name_or_id}/activate REST API endpoint allows access on the basis of a valid username along with a new password in the request body. These are also patched versions: 0.44.4, 0.43.1, and 0.42.2.\n\nReason for inclusion in AVID: CVE-2024-25723 describes a remote privilege escalation in ZenML Server, an ML tooling platform used to build/deploy AI pipelines. This is a software vulnerability affecting components integral to AI software stacks, representing a software supply chain risk for general-purpose AI systems. The report provides explicit vulnerability behavior and references (NVD, ZenML repo/blog) with patched versions, supporting its relevance for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-02-27"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1453"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI Engine: ChatGPT Chatbot"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "WordPress AI Engine plugin <= 2.1.4 - Arbitrary File Upload vulnerability (CVE-2024-29100)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-29100"
+    },
+    {
+      "type": "source",
+      "label": "https://patchstack.com/database/vulnerability/ai-engine/wordpress-ai-engine-plugin-2-1-4-arbitrary-file-upload-vulnerability?_s_id=cve",
+      "url": "https://patchstack.com/database/vulnerability/ai-engine/wordpress-ai-engine-plugin-2-1-4-arbitrary-file-upload-vulnerability?_s_id=cve"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Unrestricted Upload of File with Dangerous Type vulnerability in Jordy Meow AI Engine: ChatGPT Chatbot.This issue affects AI Engine: ChatGPT Chatbot: from n/a through 2.1.4.\n\nReason for inclusion in AVID: CVE-2024-29100 is an Unrestricted Upload of File with Dangerous Type vulnerability (arbitrary file upload) in the WordPress AI Engine: ChatGPT Chatbot plugin (<= 2.1.4). This is a software vulnerability in a component used to deliver AI capabilities, i.e., an AI software stack dependency/plugin. It affects the AI deployment stack and could enable compromise of an AI-enabled web application, satisfying a security vulnerability in a software supply chain for general-purpose AI systems. The report provides CVSS/CWE signals and references, giving sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-434",
+        "description": "CWE-434 Unrestricted Upload of File with Dangerous Type",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-28"
+}

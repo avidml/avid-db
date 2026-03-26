@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1575"
+  },
+  "affects": {
+    "developer": [
+      "RedisBloom"
+    ],
+    "deployer": [
+      "RedisBloom"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "RedisBloom"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "RedisBloom Integer Overflow Remote Code Execution Vulnerability (CVE-2024-55656)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-55656"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/RedisBloom/RedisBloom/security/advisories/GHSA-x5rx-rmq3-ff3h",
+      "url": "https://github.com/RedisBloom/RedisBloom/security/advisories/GHSA-x5rx-rmq3-ff3h"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "RedisBloom adds a set of probabilistic data structures to Redis. There is an integer overflow vulnerability in RedisBloom, which is a module used in Redis. The integer overflow vulnerability allows an attacker (a redis client which knows the password) to allocate memory in the heap lesser than the required memory due to wraparound. Then read and write can be performed beyond this allocated memory, leading to info leak and OOB write. The integer overflow is in CMS.INITBYDIM command, which initialize a Count-Min Sketch to dimensions specified by user. It accepts two values (width and depth) and uses them to allocate memory in NewCMSketch(). This vulnerability is fixed in 2.2.19, 2.4.12, 2.6.14, and 2.8.2.\n\nReason for inclusion in AVID: The CVE describes a software vulnerability in the RedisBloom module (a component used with Redis, a common datastore in AI deployment stacks). If AI systems use Redis/RedisBloom for caching, feature storage, or orchestration, this vulnerability constitutes a software supply-chain risk in general-purpose AI systems. The report provides explicit vulnerability behavior (RCE, info leak, OOB write), affected versions, and CVE details, supporting mitigation through version upgrades. Therefore it should be kept for AVID curation as an AI-relevant supply-chain vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-190",
+        "description": "CWE-190: Integer Overflow or Wraparound",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-08"
+}

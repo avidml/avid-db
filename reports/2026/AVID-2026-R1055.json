@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1055"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA FLARE"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-34668"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-34668"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/NVIDIA/NVFlare/security/advisories/GHSA-6qv6-q77g-7qm6",
+      "url": "https://github.com/NVIDIA/NVFlare/security/advisories/GHSA-6qv6-q77g-7qm6"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/171483/NVFLARE-Unsafe-Deserialization.html",
+      "url": "http://packetstormsecurity.com/files/171483/NVFLARE-Unsafe-Deserialization.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVFLARE, versions prior to 2.1.4, contains a vulnerability that deserialization of Untrusted Data due to Pickle usage may allow an unprivileged network attacker to cause Remote Code Execution, Denial Of Service, and Impact to both Confidentiality and Integrity.\n\nReason for inclusion in AVID: CVE-2022-34668 concerns NVFlare, an AI/ML software framework used to build/deploy AI systems; the vulnerability is a deserialization (Pickle) issue enabling remote code execution, denial of service, and impacts to confidentiality and integrity within the AI software stack. This affects components in the AI supply chain (deployment/runtime of AI workloads) and is a security vulnerability with clear AI relevance."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-08-29"
+}

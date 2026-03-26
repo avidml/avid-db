@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1671"
+  },
+  "affects": {
+    "developer": [
+      "snowflakedb"
+    ],
+    "deployer": [
+      "snowflakedb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "snowflake-jdbc"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Snowflake JDBC Driver client-side encryption key in DEBUG logs (CVE-2025-27496)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-27496"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/snowflakedb/snowflake-jdbc/security/advisories/GHSA-q298-375f-5q63",
+      "url": "https://github.com/snowflakedb/snowflake-jdbc/security/advisories/GHSA-q298-375f-5q63"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/snowflakedb/snowflake-jdbc/commit/ef81582ce2f1dbc3c8794a696c94f4fe65fad507",
+      "url": "https://github.com/snowflakedb/snowflake-jdbc/commit/ef81582ce2f1dbc3c8794a696c94f4fe65fad507"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Snowflake, a platform for using artificial intelligence in the context of cloud computing, has a vulnerability in the Snowflake JDBC driver (\"Driver\") in versions 3.0.13 through 3.23.0 of the driver. When the logging level was set to DEBUG, the Driver would log locally the client-side encryption master key of the target stage during the execution of GET/PUT commands. This key by itself does not grant access to any sensitive data without additional access authorizations,  and is not logged server-side by Snowflake. Snowflake fixed the issue in version 3.23.1.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in the Snowflake JDBC driver where DEBUG logging could exfiltrate the client-side encryption master key. This is a software supply-chain vulnerability affecting a dependency commonly used in AI/data pipelines to access Snowflake data, thus impacting AI workloads. It is a security vulnerability with potential data exposure, and the report provides affected versions and a fix. Therefore it meets AVID criteria for AI-related, GPAI supply-chain, and security impact with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 3.3,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-532",
+        "description": "CWE-532: Insertion of Sensitive Information into Log File",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-13"
+}

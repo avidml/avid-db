@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1614"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unrestricted Code Execution in aimhubio/aim (CVE-2024-8238)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8238"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/4e140ef9-f6d1-4e68-a44c-3b9e856924d3",
+      "url": "https://huntr.com/bounties/4e140ef9-f6d1-4e68-a44c-3b9e856924d3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In version 3.22.0 of aimhubio/aim, the AimQL query language uses an outdated version of the safer_getattr() function from RestrictedPython. This version does not protect against the str.format_map() method, allowing an attacker to leak server-side secrets or potentially gain unrestricted code execution. The vulnerability arises because str.format_map() can read arbitrary attributes of Python objects, enabling attackers to access sensitive variables such as os.environ. If an attacker can write files to a known location on the Aim server, they can use str.format_map() to load a malicious .dll/.so file into the Python interpreter, leading to unrestricted code execution.\n\nReason for inclusion in AVID: CVE-2024-8238 describes an RCE vulnerability in the aimhubio/aim platform due to unsafe handling in a Python template mechanism (format_map via safer_getattr), allowing leakage of secrets and potential unrestricted code execution. This is a software-level flaw in a component used to build/deploy AI workflows (AimQL/aim platform), not hardware. The vulnerability can impact AI deployment pipelines and therefore constitutes a software supply chain issue within general-purpose AI systems. The report provides explicit security impact signals (RCE, secret leakage) and references, supporting inclusion in AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 5.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1336",
+        "description": "CWE-1336 Improper Neutralization of Special Elements Used in a Template Engine",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

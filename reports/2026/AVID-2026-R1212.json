@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1212"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI Engine: ChatGPT Chatbot, Content Generator, GPT 3 & 4, Ultra-Customizable"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "AI-Engine < 1.6.83 - Admin+ Stored XSS (CVE-2023-2580)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-2580"
+    },
+    {
+      "type": "source",
+      "label": "https://wpscan.com/vulnerability/7ee1efb1-9969-40b2-8ab2-ea427091bbd8",
+      "url": "https://wpscan.com/vulnerability/7ee1efb1-9969-40b2-8ab2-ea427091bbd8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The AI Engine WordPress plugin before 1.6.83 does not sanitize and escape some of its settings, which could allow high-privilege users such as admin to perform Stored Cross-Site Scripting attacks even when the unfiltered_html capability is disallowed (for example, in multisite setup).\n\nReason for inclusion in AVID: The CVE concerns the AI Engine WordPress plugin (an AI-related component used to deliver AI capabilities) with a stored XSS vulnerability in admin settings. This is a software supply-chain component used to build/run AI-enabled functionality on websites, representing a vulnerability in the AI stack (plugin/dependency). It is a CVE-style security vulnerability with public references (NVD/WPScan) providing sufficient signals."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-06-27"
+}

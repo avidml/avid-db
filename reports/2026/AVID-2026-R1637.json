@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1637"
+  },
+  "affects": {
+    "developer": [
+      "Kubeflow"
+    ],
+    "deployer": [
+      "Kubeflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Kubeflow Pipeline View"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Stored XSS in Kubeflow Pipeline View (CVE-2024-9526)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9526"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/kubeflow/pipelines/pull/10315",
+      "url": "https://github.com/kubeflow/pipelines/pull/10315"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "There exists a stored XSS Vulnerability in Kubeflow Pipeline View web UI.\u00a0The Kubeflow Web UI allows to create new pipelines. When creating a new pipeline, it is possible to add a description. The description field allows html tags, which are not filtered properly. Leading to a stored XSS. We recommend upgrading past commit\u00a0930c35f1c543998e60e8d648ce93185c9b5dbe8d\n\nReason for inclusion in AVID: CVE-2024-9526 describes a stored XSS vulnerability in Kubeflow Pipeline View UI, a component used in ML pipelines to build/deploy AI workflows. This is a software vulnerability in a component that participates in the AI software stack, i.e., a general-purpose AI supply chain element. The report provides clear CVE details and references (NVD, GitHub PR), establishing the vulnerability signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-18"
+}

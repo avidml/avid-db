@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1623"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Overwrite in h2oai/h2o-3 (CVE-2024-8616)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8616"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/aebf69a5-b9b1-4d2f-a8ff-902c11a8c97a",
+      "url": "https://huntr.com/bounties/aebf69a5-b9b1-4d2f-a8ff-902c11a8c97a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In h2oai/h2o-3 version 3.46.0, the `/99/Models/{name}/json` endpoint allows for arbitrary file overwrite on the target server. The vulnerability arises from the `exportModelDetails` function in `ModelsHandler.java`, where the user-controllable `mexport.dir` parameter is used to specify the file path for writing model details. This can lead to overwriting files at arbitrary locations on the host system.\n\nReason for inclusion in AVID: CVE-2024-8616 describes an arbitrary file overwrite vulnerability in h2oai/h2o-3 via a user-controllable file path in an endpoint used in AI model serving. This concerns AI software stacks and ML pipelines, is in a software component used to build/run general-purpose AI systems, constitutes a security vulnerability (CWE-73, high CVSS), and the report provides explicit details (affected version, endpoint, parameter, exploit path). Therefore suitable for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73 External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

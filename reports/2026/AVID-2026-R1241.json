@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1241"
+  },
+  "affects": {
+    "developer": [
+      "planetlabs"
+    ],
+    "deployer": [
+      "planetlabs"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "planet-client-python"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Planet's secret file is created with excessive permissions (CVE-2023-32303)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-32303"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/planetlabs/planet-client-python/security/advisories/GHSA-j5fj-rfh6-qj85",
+      "url": "https://github.com/planetlabs/planet-client-python/security/advisories/GHSA-j5fj-rfh6-qj85"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/planetlabs/planet-client-python/commit/d71415a83119c5e89d7b80d5f940d162376ee3b7",
+      "url": "https://github.com/planetlabs/planet-client-python/commit/d71415a83119c5e89d7b80d5f940d162376ee3b7"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/planetlabs/planet-client-python/releases/tag/2.0.1",
+      "url": "https://github.com/planetlabs/planet-client-python/releases/tag/2.0.1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Planet is software that provides satellite data. The secret file stores the user's Planet API authentication information. It should only be accessible by the user, but before version 2.0.1, its permissions allowed the user's group and non-group to read the file as well. This issue was patched in version 2.0.1. As a workaround, set the secret file permissions to only user read/write by hand.\n\nReason for inclusion in AVID: CVE-2023-32303 describes insecure file permissions for a secret file in Planet Client Python, a library that can be used to fetch satellite imagery. This is a vulnerability in a software component that can participate in AI data ingestion pipelines (data/feature pipelines) and training workflows. The issue exposes API credentials, enabling potential credential compromise if the component is misconfigured or exploited, which is a security risk in AI software stacks. The advisory clearly states the affected versions and the patch in 2.0.1, with references to CVE and security advisories. These signals indicate a software supply-chain vulnerability relevant to AI systems, rather than hardware/firmware-only concerns."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
+      "baseScore": 5.2,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-732",
+        "description": "CWE-732: Incorrect Permission Assignment for Critical Resource",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-05-12"
+}

@@ -1,0 +1,102 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0960"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Spring Framework"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-22965"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-22965"
+    },
+    {
+      "type": "source",
+      "label": "https://tanzu.vmware.com/security/cve-2022-22965",
+      "url": "https://tanzu.vmware.com/security/cve-2022-22965"
+    },
+    {
+      "type": "source",
+      "label": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-java-spring-rce-Zx9GUc67",
+      "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-java-spring-rce-Zx9GUc67"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+    },
+    {
+      "type": "source",
+      "label": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0005",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0005"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/166713/Spring4Shell-Code-Execution.html",
+      "url": "http://packetstormsecurity.com/files/166713/Spring4Shell-Code-Execution.html"
+    },
+    {
+      "type": "source",
+      "label": "https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf",
+      "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+    },
+    {
+      "type": "source",
+      "label": "http://packetstormsecurity.com/files/167011/Spring4Shell-Spring-Framework-Class-Property-Remote-Code-Execution.html",
+      "url": "http://packetstormsecurity.com/files/167011/Spring4Shell-Spring-Framework-Class-Property-Remote-Code-Execution.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.\n\nReason for inclusion in AVID: CVE-2022-22965 (Spring4Shell) is a remote code execution vulnerability in the Spring Framework that can affect Java-based web services, including those used to serve AI models or provide AI-related APIs. It concerns a software dependency used in general-purpose AI system stacks (e.g., backend services, model-serving frontends) and represents a security vulnerability in the software supply chain for AI deployments. The report provides explicit vulnerability behavior (RCE), affected components, and references, satisfying sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-04-01"
+}

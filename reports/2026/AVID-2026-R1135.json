@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1135"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Seg fault in `ndarray_tensor_bridge` due to zero and large inputs in Tensorflow (CVE-2022-41884)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-41884"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-jq6x-99hj-q636",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-jq6x-99hj-q636"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/2b56169c16e375c521a3bc8ea658811cc0793784",
+      "url": "https://github.com/tensorflow/tensorflow/commit/2b56169c16e375c521a3bc8ea658811cc0793784"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. If a numpy array is created with a shape such that one element is zero and the others sum to a large number, an error will be raised. We have patched the issue in GitHub commit 2b56169c16e375c521a3bc8ea658811cc0793784. The fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2022-41884 describes a segmentation fault in TensorFlow (an ML framework) triggered by specific numpy array shapes. TensorFlow is a core component used to build, train, deploy, and run AI systems, placing this vulnerability squarely in the software supply chain for general-purpose AI stacks. The issue results in a crash (availability impact) and is documented with affected versions and a fix/commit, satisfying CVE/NVD evidence. Therefore, it is an AI-related, GPAI-supply-chain vulnerability with verifiable security/safety impact and sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:H",
+      "baseScore": 4.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-670",
+        "description": "CWE-670: Always-Incorrect Control Flow Implementation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-11-18"
+}

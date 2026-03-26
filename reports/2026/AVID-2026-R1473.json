@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1473"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "ggerganov"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "llama.cpp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Use of Uninitialized Variable Vulnerability in llama.cpp (CVE-2024-32878)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-32878"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-p5mv-gjc5-mwqv",
+      "url": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-p5mv-gjc5-mwqv"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/releases/tag/b2749",
+      "url": "https://github.com/ggerganov/llama.cpp/releases/tag/b2749"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Llama.cpp is LLM inference in C/C++. There is a use of uninitialized heap variable vulnerability in gguf_init_from_file, the code will free this uninitialized variable later. In a simple POC, it will directly cause a crash. If the file is carefully constructed, it may be possible to control this uninitialized value and cause arbitrary address free problems. This may further lead to be exploited. Causes llama.cpp to crash (DoS) and may even lead to arbitrary code execution (RCE). This vulnerability has been patched in commit b2740.\n\nReason for inclusion in AVID: CVE-2024-32878 describes an uninitialized-variable vulnerability in llama.cpp, a library used for LLM inference. This is a software vulnerability in a component used in AI systems (models/inference stacks). It affects the AI software stack and could lead to DoS or arbitrary code execution, indicating a security/safety vulnerability. llama.cpp is a general-purpose AI tooling library, so this is within the software supply chain of general-purpose AI systems (dependencies, runtimes, model-serving/inference components). The report provides CVE details, CWE, CVSS, and references, giving sufficient signal for inclusion. No hardware/firmware-only issues are involved. Therefore, it should be kept for AVID curation as a GP AI supply chain vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:L",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-456",
+        "description": "CWE-456: Missing Initialization of a Variable",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-26"
+}

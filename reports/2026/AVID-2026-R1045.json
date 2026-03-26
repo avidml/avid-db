@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1045"
+  },
+  "affects": {
+    "developer": [
+      "Puppet"
+    ],
+    "deployer": [
+      "Puppet"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "puppetlabs-mysql"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Puppetlabs-mysql Command Injection (CVE-2022-3276)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-3276"
+    },
+    {
+      "type": "source",
+      "label": "https://puppet.com/security/cve/CVE-2022-3276",
+      "url": "https://puppet.com/security/cve/CVE-2022-3276"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Command injection is possible in the puppetlabs-mysql module prior to version 13.0.0. A malicious actor is able to exploit this vulnerability only if they are able to provide unsanitized input to the module. This condition is rare in most deployments of Puppet and Puppet Enterprise.\n\nReason for inclusion in AVID: CVE-2022-3276 describes a command injection vulnerability in the puppetlabs-mysql Puppet module (pre-13.0.0). This is a software vulnerability in a deployment/orchestration component that could be used in AI system infrastructure deployments, thus impacting the software supply chain of general-purpose AI systems. The description provides actionable vulnerability details (unsanitized input leads to OS command injection; CVSS high). This affects the deployment/operational surface used to build/train/deploy AI systems, not hardware/firmware only."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 8.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "ADJACENT_NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 OS Command Injection",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-10-07"
+}

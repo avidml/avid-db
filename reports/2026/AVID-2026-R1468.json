@@ -1,0 +1,82 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1468"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Zeppelin"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Zeppelin: Remote code execution by adding malicious JDBC connection string (CVE-2024-31864)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-31864"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/zeppelin/pull/4709",
+      "url": "https://github.com/apache/zeppelin/pull/4709"
+    },
+    {
+      "type": "source",
+      "label": "https://www.cve.org/CVERecord?id=CVE-2020-11974",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-11974"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/752qdk0rnkd9nqtornz734zwb7xdwcdb",
+      "url": "https://lists.apache.org/thread/752qdk0rnkd9nqtornz734zwb7xdwcdb"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2024/04/09/8",
+      "url": "http://www.openwall.com/lists/oss-security/2024/04/09/8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Zeppelin.\n\nThe attacker can inject sensitive configuration or malicious code when connecting MySQL database via JDBC driver.\nThis issue affects Apache Zeppelin: before 0.11.1.\n\nUsers are recommended to upgrade to version 0.11.1, which fixes the issue.\n\nReason for inclusion in AVID: CVE-2024-31864 describes remote code execution via code injection in Apache Zeppelin when connecting to MySQL via JDBC, affecting Zeppelin versions < 0.11.1. Zeppelin is a software component used in AI/ML data analysis pipelines, thus a software supply chain element for general-purpose AI systems. It is a security vulnerability (RCE) with explicit details and remediation guidance, supported by multiple references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-09"
+}

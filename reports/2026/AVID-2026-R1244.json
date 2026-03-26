@@ -1,0 +1,97 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1244"
+  },
+  "affects": {
+    "developer": [
+      "n/a",
+      "Red Hat"
+    ],
+    "deployer": [
+      "n/a",
+      "Red Hat"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "odh-dashboard"
+      },
+      {
+        "type": "System",
+        "name": "Red Hat OpenShift Data Science (RHODS)"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "S3 credentials included when exporting elyra notebook (CVE-2023-3361)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-3361"
+    },
+    {
+      "type": "source",
+      "label": "https://access.redhat.com/security/cve/CVE-2023-3361",
+      "url": "https://access.redhat.com/security/cve/CVE-2023-3361"
+    },
+    {
+      "type": "source",
+      "label": "https://bugzilla.redhat.com/show_bug.cgi?id=2216588",
+      "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2216588"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/opendatahub-io/odh-dashboard/issues/1415",
+      "url": "https://github.com/opendatahub-io/odh-dashboard/issues/1415"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A flaw was found in Red Hat OpenShift Data Science. When exporting a pipeline from the Elyra notebook pipeline editor as Python DSL or YAML, it reads S3 credentials from the cluster (ds pipeline server) and saves them in plain text in the generated output instead of an ID for a Kubernetes secret.\n\nReason for inclusion in AVID: The CVE describes a software flaw in Red Hat OpenShift Data Science's Elyra notebook exporter where S3 credentials are saved in plaintext in exported pipeline definitions. This directly concerns AI pipelines/tools used to build/deploy AI systems, representing a software vulnerability in a component (RHODS/Elyra exporter) that lies in the AI software stack. The exposed credentials pose a security risk (credential leakage) in artifacts that can influence AI workflows, aligning with software supply chain risk considerations for AI systems. Sufficient signal is provided by the CVE description and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "baseScore": 7.7,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-200",
+        "description": "Exposure of Sensitive Information to an Unauthorized Actor",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-10-04"
+}

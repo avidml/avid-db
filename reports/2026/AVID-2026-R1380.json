@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1380"
+  },
+  "affects": {
+    "developer": [
+      "langgenius"
+    ],
+    "deployer": [
+      "langgenius"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "langgenius/dify"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Privilege Escalation in langgenius/dify (CVE-2024-11821)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-11821"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/76d5986d-3882-4ea7-81cb-f00400e5c6b6",
+      "url": "https://huntr.com/bounties/76d5986d-3882-4ea7-81cb-f00400e5c6b6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A privilege escalation vulnerability exists in langgenius/dify version 0.9.1. This vulnerability allows a normal user to modify Orchestrate instructions for a chatbot created by an admin user. The issue arises because the application does not properly enforce access controls on the endpoint /console/api/apps/{chatbot-id}/model-config, allowing unauthorized users to alter chatbot configurations.\n\nReason for inclusion in AVID: CVE-2024-11821 describes a privilege escalation vulnerability in langgenius/dify, an AI chatbot framework. This affects the AI software stack used to build/deploy AI chatbots (model-config endpoint access control). It is a security vulnerability (unauthorized modification of configurations with low privileges, potential integrity impact) and is evidenced by CVE details, CVSS data, and references. The issue lies in a software component used to run AI systems, aligning with AI-related and GP AI supply chain concerns. Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-250",
+        "description": "CWE-250 Execution with Unnecessary Privileges",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

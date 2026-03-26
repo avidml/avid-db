@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1629"
+  },
+  "affects": {
+    "developer": [
+      "bentoml"
+    ],
+    "deployer": [
+      "bentoml"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "bentoml/openllm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Local File Inclusion in bentoml/openllm (CVE-2024-8982)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8982"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/b7bdc9a1-51ac-402a-8e6e-0d977699aca6",
+      "url": "https://huntr.com/bounties/b7bdc9a1-51ac-402a-8e6e-0d977699aca6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Local File Inclusion (LFI) vulnerability in OpenLLM version 0.6.10 allows attackers to include files from the local server through the web application. This flaw could expose internal server files and potentially sensitive information such as configuration files, passwords, and other critical data. Unauthorized access to critical server files, such as configuration files, user credentials (/etc/passwd), and private keys, can lead to a complete compromise of the system's security. Attackers could leverage the exposed information to further penetrate the network, exfiltrate data, or escalate privileges within the environment.\n\nReason for inclusion in AVID: CVE-2024-8982 describes a Local File Inclusion vulnerability in the OpenLLM component (bentoml/openllm), which is used to deploy and serve AI models. This directly impacts the software stack used to build, package, deploy, run, and manage general-purpose AI systems, qualifying as a software supply-chain issue within AI workflows. The vulnerability can lead to exposure of sensitive local files (configuration data, credentials), representing a security/safety risk in AI deployments. Hardware/firmware is not implicated, and the evidence clearly links to AI software components and deployment tooling."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 6.2,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

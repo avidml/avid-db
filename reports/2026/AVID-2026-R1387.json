@@ -1,0 +1,105 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1387"
+  },
+  "affects": {
+    "developer": [
+      "NI"
+    ],
+    "deployer": [
+      "NI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Vision Development Module"
+      },
+      {
+        "type": "System",
+        "name": "FlexRIO"
+      },
+      {
+        "type": "System",
+        "name": "NI-IMAQdx"
+      },
+      {
+        "type": "System",
+        "name": "Vision Acquisition Software"
+      },
+      {
+        "type": "System",
+        "name": "Vision Builder for Automated Inspection"
+      },
+      {
+        "type": "System",
+        "name": "Data Record AD"
+      },
+      {
+        "type": "System",
+        "name": "FRC Game Tools"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Dependency on Vulnerable Third-Party Component exposes Vulnerabilities in NI Vision Software (CVE-2024-12740)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12740"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ni.com/en/support/security/available-critical-and-security-updates-for-ni-software/dependency-on-vulnerable-third-party-component-exposes-vulnerabi.html",
+      "url": "https://www.ni.com/en/support/security/available-critical-and-security-updates-for-ni-software/dependency-on-vulnerable-third-party-component-exposes-vulnerabi.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Vision related software from NI used a third-party library for image processing that exposes several vulnerabilities.  These vulnerabilities may result in arbitrary code execution.  Successful exploitation requires an attacker to get a user to open a specially crafted file.\n\nReason for inclusion in AVID: CVE-2024-12740 describes a vulnerability in NI Vision software caused by a vulnerable third-party image-processing library, enabling arbitrary code execution when a user opens a crafted file. NI Vision components (e.g., Vision Development Module, Vision Acquisition Software) can be used in AI data capture/processing pipelines, making this a software supply-chain issue relevant to general-purpose AI systems. The report provides explicit CVE details, affected artifacts, and CVSS metrics, offering sufficient evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1395",
+        "description": "CWE-1395 Dependency on Vulnerable Third-Party Component",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-27"
+}

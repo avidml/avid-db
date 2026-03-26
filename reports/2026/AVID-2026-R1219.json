@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1219"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson CP4D Data Stores"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson CP4D Data Stores file modificiation (CVE-2023-26282)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-26282"
+    },
+    {
+      "type": "source",
+      "label": "https://https://www.ibm.com/support/pages/node/6965452",
+      "url": "https://https://www.ibm.com/support/pages/node/6965452"
+    },
+    {
+      "type": "source",
+      "label": "https://exchange.xforce.ibmcloud.com/vulnerabilities/248415",
+      "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/248415"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson CP4D Data Stores 4.6.0 through 4.6.3 could allow a user with physical access and specific knowledge of the system to modify files or data on the system.  IBM X-Force ID:  248415.\n\nReason for inclusion in AVID: CVE-2023-26282 describes a software vulnerability in IBM Watson CP4D Data Stores (versions 4.6.0\u20134.6.3) that could allow a user with physical access to modify files or data on the system. This concerns a software component used within AI platforms to store data, thereby affecting AI systems and their data pipelines. It is a vulnerability in a software supply-chain-relevant component (data store/runtime used in AI deployments), not a hardware/firmware-only issue. The report includes affected versions, CVSS details, and a CWE mapping, providing sufficient evidence for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:P/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 4.2,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "PHYSICAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73 External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-05"
+}

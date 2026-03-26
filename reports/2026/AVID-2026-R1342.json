@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1342"
+  },
+  "affects": {
+    "developer": [
+      "nvidia"
+    ],
+    "deployer": [
+      "nvidia"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA Triton Inference Server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CVE (CVE-2024-0095)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0095"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5546",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5546"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Triton Inference Server for Linux and Windows contains a vulnerability where a user can inject forged logs and executable commands by injecting arbitrary data as a new log entry. A successful exploit of this vulnerability might lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.\n\nReason for inclusion in AVID: CVE-2024-0095 describes a vulnerability in NVIDIA Triton Inference Server (a software component used to deploy and serve AI models). The issue enables forged log injection that can lead to code execution, DoS, privilege escalation, information disclosure, and data tampering. This directly concerns AI systems and their software stack, as Triton is a common component in model serving pipelines. It is a software supply-chain relevant vulnerability (dependencies/servers used to run AI workloads) and clearly qualifies as a security/safety vulnerability with actionable impact. The description and references provide sufficient signal to classify it for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:H",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-117",
+        "description": "CWE-117",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-13"
+}

@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0920"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-42343"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42343"
+    },
+    {
+      "type": "source",
+      "label": "https://docs.dask.org/en/latest/changelog.html",
+      "url": "https://docs.dask.org/en/latest/changelog.html"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/dask/dask/tags",
+      "url": "https://github.com/dask/dask/tags"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/dask/distributed/security/advisories/GHSA-hwqr-f3v9-hwxr",
+      "url": "https://github.com/dask/distributed/security/advisories/GHSA-hwqr-f3v9-hwxr"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue was discovered in the Dask distributed package before 2021.10.0 for Python. Single machine Dask clusters started with dask.distributed.LocalCluster or dask.distributed.Client (which defaults to using LocalCluster) would mistakenly configure their respective Dask workers to listen on external interfaces (typically with a randomly selected high port) rather than only on localhost. A Dask cluster created using this method (when running on a machine that has an applicable port exposed) could be used by a sophisticated attacker to achieve remote code execution.\n\nReason for inclusion in AVID: This CVE describes a remote code execution vulnerability in the Python Dask distributed package (a common component in AI/ML pipelines). It affects software commonly used to build/deploy AI systems, i.e., the software supply chain (dependencies, runtimes, orchestration). The vulnerability has clear security impact (RCE) and is in a software component relevant to AI stacks. The report provides sufficient evidence (description of attack vector and CVE reference)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2021-10-26"
+}

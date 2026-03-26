@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0929"
+  },
+  "affects": {
+    "developer": [
+      "JFrog"
+    ],
+    "deployer": [
+      "JFrog"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "JFrog Artifactory"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-45074"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-45074"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jfrog.com/confluence/display/JFROG/JFrog+Security+Advisories",
+      "url": "https://www.jfrog.com/confluence/display/JFROG/JFrog+Security+Advisories"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jfrog.com/confluence/display/JFROG/CVE-2021-45074%3A+Artifactory+Broken+Access+Control+on+Delete+OAuth+Tokens",
+      "url": "https://www.jfrog.com/confluence/display/JFROG/CVE-2021-45074%3A+Artifactory+Broken+Access+Control+on+Delete+OAuth+Tokens"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "JFrog Artifactory before 7.29.3 and 6.23.38, is vulnerable to Broken Access Control, a low-privileged user is able to delete other known users OAuth token, which will force a reauthentication on an active session or in the next UI session.\n\nReason for inclusion in AVID: CVE-2021-45074 describes a broken access control vulnerability in JFrog Artifactory affecting OAuth tokens; Artifactory is a widely-used artifact/repository tool in software supply chains and ML pipelines, so this is a software supply chain vulnerability relevant to general-purpose AI systems; it is a security vulnerability with clear evidence (CVE entry, CVSS details, references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-284",
+        "description": "CWE-284 Improper Access Control",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-03-02"
+}

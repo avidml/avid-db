@@ -1,0 +1,111 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1023"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Missing validation causes denial of service in TensorFlow via `LSTMBlockCell` (CVE-2022-29200)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-29200"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2vv3-56qg-g2cf",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2vv3-56qg-g2cf"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/803404044ae7a1efac48ba82d74111fce1ddb09a",
+      "url": "https://github.com/tensorflow/tensorflow/commit/803404044ae7a1efac48ba82d74111fce1ddb09a"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/core/kernels/rnn/lstm_ops.cc",
+      "url": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/core/kernels/rnn/lstm_ops.cc"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, the implementation of `tf.raw_ops.LSTMBlockCell` does not fully validate the input arguments. This results in a `CHECK`-failure which can be used to trigger a denial of service attack. The code does not validate the ranks of any of the arguments to this API call. This results in `CHECK`-failures when the elements of the tensor are accessed. Versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4 contain a patch for this issue.\n\nReason for inclusion in AVID: CVE-2022-29200 describes a denial-of-service vulnerability in TensorFlow's LSTMBlockCell due to improper input validation. TensorFlow is a core ML framework used to build, train, deploy, and serve general-purpose AI systems; this is a software supply-chain vulnerability within the AI stack. The flaw is a software vulnerability (CWE-20) with a CVSS indicating available impact (availability impact) and local access requirements. The report provides explicit details and references, enabling curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-05-20"
+}

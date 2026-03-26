@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1405"
+  },
+  "affects": {
+    "developer": [
+      "zenml-io"
+    ],
+    "deployer": [
+      "zenml-io"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "zenml-io/zenml"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Directory Traversal in zenml-io/zenml (CVE-2024-2083)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2083"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/f24b2216-6a4b-42a1-becb-9b47e6cf117f",
+      "url": "https://huntr.com/bounties/f24b2216-6a4b-42a1-becb-9b47e6cf117f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/zenml-io/zenml/commit/00e934f33a243a554f5f65b80eefd5ea5117367b",
+      "url": "https://github.com/zenml-io/zenml/commit/00e934f33a243a554f5f65b80eefd5ea5117367b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A directory traversal vulnerability exists in the zenml-io/zenml repository, specifically within the /api/v1/steps endpoint. Attackers can exploit this vulnerability by manipulating the 'logs' URI path in the request to fetch arbitrary file content, bypassing intended access restrictions. The vulnerability arises due to the lack of validation for directory traversal patterns, allowing attackers to access files outside of the restricted directory.\n\nReason for inclusion in AVID: CVE-2024-2083 describes a directory traversal vulnerability in zenml-io/zenml affecting its API endpoint. This is a software vulnerability in an ML pipeline framework used in AI workflows, impacting components (the framework) used to build/deploy AI systems. It enables arbitrary file access, representing a security risk within the AI software stack. The issue clearly concerns software supply chain elements (dependencies/frameworks) for general-purpose AI systems, supported by the CVE details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.9,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-16"
+}

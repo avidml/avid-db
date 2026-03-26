@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1501"
+  },
+  "affects": {
+    "developer": [
+      "Dell"
+    ],
+    "deployer": [
+      "Dell"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Dell Data Lakehouse"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-38302"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-38302"
+    },
+    {
+      "type": "source",
+      "label": "https://www.dell.com/support/kbdoc/en-us/000227053/dsa-2024-303-security-update-for-dell-data-lakehouse-system-software-for-multiple-security-vulnerabilities",
+      "url": "https://www.dell.com/support/kbdoc/en-us/000227053/dsa-2024-303-security-update-for-dell-data-lakehouse-system-software-for-multiple-security-vulnerabilities"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Dell Data Lakehouse, version(s) 1.0.0.0, contain(s) a Missing Encryption of Sensitive Data vulnerability in the DDAE (Starburst). A low privileged attacker with adjacent network access could potentially exploit this vulnerability, leading to Information disclosure.\n\nReason for inclusion in AVID: CVE-2024-38302 describes a missing encryption vulnerability in Dell Data Lakehouse (DDAE/Starburst) that allows information disclosure with adjacent network access. Dell Data Lakehouse is software used in data pipelines for AI/ML workflows (data storage/processing for training, serving, etc.), making it AI-related and part of the general-purpose AI systems supply chain. The issue is a security vulnerability (data leakage) with evidence in the CVE/NVD references. Therefore it should be kept for AVID curation as a software supply chain vulnerability affecting AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "baseScore": 6.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "ADJACENT_NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-311",
+        "description": "CWE-311: Missing Encryption of Sensitive Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-18"
+}

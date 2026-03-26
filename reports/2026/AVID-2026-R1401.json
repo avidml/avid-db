@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1401"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "significant-gravitas/autogpt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CSRF to RCE in significant-gravitas/autogpt (CVE-2024-1879)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1879"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/125c2d0c-0481-4e5c-ae90-fec263acdf32",
+      "url": "https://huntr.com/bounties/125c2d0c-0481-4e5c-ae90-fec263acdf32"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/significant-gravitas/autogpt/commit/26324f29849967fa72c207da929af612f1740669",
+      "url": "https://github.com/significant-gravitas/autogpt/commit/26324f29849967fa72c207da929af612f1740669"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Cross-Site Request Forgery (CSRF) vulnerability in significant-gravitas/autogpt version v0.5.0 allows attackers to execute arbitrary commands on the AutoGPT server. The vulnerability stems from the lack of protections on the API endpoint receiving instructions, enabling an attacker to direct a user running AutoGPT in their local network to a malicious website. This site can then send crafted requests to the AutoGPT server, leading to command execution. The issue is exacerbated by CORS being enabled for arbitrary origins by default, allowing the attacker to read the response of all cross-site queries. This vulnerability was addressed in version 5.1.\n\nReason for inclusion in AVID: CVE-2024-1879 describes a CSRF-to-RCE vulnerability in significant-gravitas/autogpt (AutoGPT server) enabling arbitrary command execution via crafted requests; this is a software vulnerability in an AI tooling component used in AI systems, affecting deployment/run-time of AI agents, i.e., a general-purpose AI supply-chain component. Evidence includes CVE entry, CVSS data, and description."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-352",
+        "description": "CWE-352 Cross-Site Request Forgery (CSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

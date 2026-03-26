@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0932"
+  },
+  "affects": {
+    "developer": [
+      "stanfordnlp"
+    ],
+    "deployer": [
+      "stanfordnlp"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "stanfordnlp/corenlp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Restriction of XML External Entity Reference in stanfordnlp/corenlp (CVE-2022-0198)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-0198"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.dev/bounties/3d7e70fe-dddd-4b79-af62-8e058c4d5763",
+      "url": "https://huntr.dev/bounties/3d7e70fe-dddd-4b79-af62-8e058c4d5763"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/stanfordnlp/corenlp/commit/1f52136321cfca68b991bd7870563d06cf96624d",
+      "url": "https://github.com/stanfordnlp/corenlp/commit/1f52136321cfca68b991bd7870563d06cf96624d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "corenlp is vulnerable to Improper Restriction of XML External Entity Reference\n\nReason for inclusion in AVID: CVE-2022-0198 affects stanfordnlp/corenlp, a library used in NLP/AI pipelines. This is a software vulnerability in a dependency that can impact AI systems built, trained, or deployed with such tooling, fulfilling the software supply chain relevance for GP AI stacks. The CVE description, CWE-611, and references (NVD entry, commit) provide clear vulnerability and evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+      "baseScore": 6.1,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-611",
+        "description": "CWE-611 Improper Restriction of XML External Entity Reference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-01-13"
+}

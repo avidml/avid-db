@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1641"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio-app/gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service (DoS) by Sending Large Filename at File Upload Endpoint in gradio-app/gradio (CVE-2025-0187)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0187"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/77f3ed54-9e1c-4d9f-948f-ee6f82e2fe24",
+      "url": "https://huntr.com/bounties/77f3ed54-9e1c-4d9f-948f-ee6f82e2fe24"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Denial of Service (DoS) vulnerability was discovered in the file upload feature of gradio-app/gradio version 0.39.1. The vulnerability is due to improper handling of form-data with a large filename in the file upload request. By sending a payload with an excessively large filename, the server becomes overwhelmed and unresponsive, leading to unavailability for legitimate users.\n\nReason for inclusion in AVID: CVE-2025-0187 describes a Denial of Service vulnerability in the Gradio library (gradio-app/gradio) via improper handling of large filenames during file uploads. Gradio is a framework used to build and deploy AI apps, so the issue affects software components commonly used in AI pipelines and general-purpose AI systems. This is a software vulnerability with potential impact on availability of AI services, aligning with software supply chain concerns since it resides in a dependency/framework used in AI stacks. The report provides explicit vulnerability details (DoS, resource exhaustion), CVSS metrics, and CWE taxonomy, which together constitute sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-400",
+        "description": "CWE-400 Uncontrolled Resource Consumption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

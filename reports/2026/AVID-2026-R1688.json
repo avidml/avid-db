@@ -1,0 +1,98 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1688"
+  },
+  "affects": {
+    "developer": [
+      "InternLM"
+    ],
+    "deployer": [
+      "InternLM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "LMDeploy"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "InternLM LMDeploy conf.py open code injection (CVE-2025-3163)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3163"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.303109",
+      "url": "https://vuldb.com/?id.303109"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.303109",
+      "url": "https://vuldb.com/?ctiid.303109"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.542527",
+      "url": "https://vuldb.com/?submit.542527"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/InternLM/lmdeploy/issues/3254",
+      "url": "https://github.com/InternLM/lmdeploy/issues/3254"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/InternLM/lmdeploy/issues/3254#issue-2918865448",
+      "url": "https://github.com/InternLM/lmdeploy/issues/3254#issue-2918865448"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability was found in InternLM LMDeploy up to 0.7.1. It has been declared as critical. Affected by this vulnerability is the function Open of the file lmdeploy/docs/en/conf.py. The manipulation leads to code injection. It is possible to launch the attack on the local host. The exploit has been disclosed to the public and may be used.\n\nReason for inclusion in AVID: The CVE describes a code injection vulnerability in InternLM LMDeploy (a deployment tool used in AI pipelines). It affects a component used to deploy AI systems and could enable code execution on the host. This is a software supply-chain/infrastructure vulnerability within AI software stacks, with public CVE and CWE references supporting its severity and nature."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "Code Injection",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-74",
+        "description": "Injection",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-03"
+}

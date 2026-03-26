@@ -1,0 +1,88 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1627"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "h2oai h2o-3 JDBC Connection 1 getConnectionSafe deserialization (CVE-2024-8862)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8862"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.277499",
+      "url": "https://vuldb.com/?id.277499"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.277499",
+      "url": "https://vuldb.com/?ctiid.277499"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.403200",
+      "url": "https://vuldb.com/?submit.403200"
+    },
+    {
+      "type": "source",
+      "label": "https://rumbling-slice-eb0.notion.site/Unauthenticated-Remote-Command-Execution-via-Panda-df-query-9dc40f0477ee4b65806de7921876c222?pvs=4",
+      "url": "https://rumbling-slice-eb0.notion.site/Unauthenticated-Remote-Command-Execution-via-Panda-df-query-9dc40f0477ee4b65806de7921876c222?pvs=4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability, which was classified as critical, has been found in h2oai h2o-3 3.46.0.4. This issue affects the function getConnectionSafe of the file /dtale/chart-data/1 of the component JDBC Connection Handler. The manipulation of the argument query leads to deserialization. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.\n\nReason for inclusion in AVID: CVE-2024-8862 describes a deserialization vulnerability in the h2o-3 JDBC Connection Handler, a component used in AI/ML data processing pipelines. This is a vulnerability in a software dependency relevant to building, training, deploying, or running general-purpose AI systems, i.e., a software supply-chain issue in AI stacks. It enables remote execution (security/safety risk) and is backed by CVE, CWE-502, and public disclosure details, providing sufficient evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "Deserialization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-14"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0925"
+  },
+  "affects": {
+    "developer": [
+      "Chain Sea Information Integration Co., Ltd"
+    ],
+    "deployer": [
+      "Chain Sea Information Integration Co., Ltd"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ai chatbot system"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Chain Sea Information Integration Co., Ltd ai chatbot system - Reflected XSS (CVE-2021-44163)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-44163"
+    },
+    {
+      "type": "source",
+      "label": "https://www.twcert.org.tw/tw/cp-132-5399-03b81-1.html",
+      "url": "https://www.twcert.org.tw/tw/cp-132-5399-03b81-1.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Chain Sea ai chatbot backend has improper filtering of special characters in URL parameters, which allows a remote attacker to perform JavaScript injection for XSS (reflected Cross-site scripting) attack without authentication.\n\nReason for inclusion in AVID: The CVE describes a reflected XSS vulnerability in the Chain Sea AI chatbot backend. This is a software vulnerability within an AI-related system component that could be used in building/serving AI chat capabilities. It affects the software stack rather than hardware/firmware, and it relates to security/safety risks (XSS). The report provides clear signals (CVE reference, description, impact) to support classification in the AI software supply chain context."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 6.1,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Cross-site Scripting (XSS)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-12-20"
+}

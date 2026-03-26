@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1329"
+  },
+  "affects": {
+    "developer": [
+      "kubeflow"
+    ],
+    "deployer": [
+      "kubeflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "kubeflow/kubeflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Server-Side Request Forgery (SSRF) in kubeflow/kubeflow (CVE-2023-6570)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6570"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/82d6e853-013b-4029-a23f-8b50ec56602a",
+      "url": "https://huntr.com/bounties/82d6e853-013b-4029-a23f-8b50ec56602a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Server-Side Request Forgery (SSRF) in kubeflow/kubeflow\n\nReason for inclusion in AVID: The CVE describes a server-side request forgery (SSRF) in Kubeflow, which is an ML workflow/orchestration platform widely used in AI pipelines. This directly concerns components used to build, train, deploy, and run AI systems, i.e., the software supply chain of general-purpose AI systems. It is a security vulnerability with clear CVE/SSRF details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "baseScore": 7.7,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-14"
+}

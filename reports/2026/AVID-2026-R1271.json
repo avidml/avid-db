@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1271"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-39662"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-39662"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jerryjliu/llama_index/issues/7054",
+      "url": "https://github.com/jerryjliu/llama_index/issues/7054"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in llama_index v.0.7.13 and before allows a remote attacker to execute arbitrary code via the `exec` parameter in PandasQueryEngine function.\n\nReason for inclusion in AVID: CVE-2023-39662 describes a remote code execution vulnerability via the exec parameter in the PandasQueryEngine of llama_index, a Python library commonly used to build AI/ML applications and pipelines. This is a software vulnerability in a component (library) that is part of AI system stacks, affecting the software supply chain (dependencies, runtimes, and frameworks used to deploy AI solutions). It directly concerns AI/ML software and its safe operation, not hardware/firmware only."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-08-15"
+}

@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1226"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Sqoop Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Sqoop Provider: Airflow Sqoop Provider RCE Vulnerability (CVE-2023-27604)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-27604"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/33039",
+      "url": "https://github.com/apache/airflow/pull/33039"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/lswlxf11do51ob7f6xyyg8qp3n7wdrgd",
+      "url": "https://lists.apache.org/thread/lswlxf11do51ob7f6xyyg8qp3n7wdrgd"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow Sqoop Provider, versions before 4.0.0, is affected by a vulnerability that allows an attacker pass parameters with the connections, which makes it possible to implement RCE attacks via \u2018sqoop import --connect\u2019, obtain airflow server permissions, etc. The attacker needs to be logged in and have authorization (permissions) to create/edit connections.\n\n It is recommended to upgrade to a version that is not affected.\nThis issue was reported independently by happyhacking-k, And Xie Jianming and LiuHui of Caiji Sec Team also reported it.\n\nReason for inclusion in AVID: CVE-2023-27604 describes an RCE vulnerability in Apache Airflow Sqoop Provider that can be exploited through crafted connection parameters. Airflow is widely used to orchestrate data pipelines, including AI/ML workflows; thus this is a software supply-chain vulnerability affecting components commonly used to build/run AI systems. It targets a software artifact (the Sqoop provider) and is a security risk (RCE) with evidence in the advisory."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-28"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1632"
+  },
+  "affects": {
+    "developer": [
+      "zenml-io"
+    ],
+    "deployer": [
+      "zenml-io"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "zenml-io/zenml"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service (DoS) via Multipart Boundary in zenml-io/zenml (CVE-2024-9340)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9340"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/c9200654-7dc0-4c1d-8573-ab79a87fb4f6",
+      "url": "https://huntr.com/bounties/c9200654-7dc0-4c1d-8573-ab79a87fb4f6"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/zenml-io/zenml/commit/cba152eb9ca3071c8372b0b91c02d9d3351de48d",
+      "url": "https://github.com/zenml-io/zenml/commit/cba152eb9ca3071c8372b0b91c02d9d3351de48d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A Denial of Service (DoS) vulnerability in zenml-io/zenml version 0.66.0 allows unauthenticated attackers to cause excessive resource consumption by sending malformed multipart requests with arbitrary characters appended to the end of multipart boundaries. This flaw in the multipart request boundary processing mechanism leads to an infinite loop, resulting in a complete denial of service for all users. Affected endpoints include `/api/v1/login` and `/api/v1/device_authorization`.\n\nReason for inclusion in AVID: CVE-2024-9340 describes a Denial of Service vulnerability in zenml-io/zenml (a software component used in ML pipelines). It affects a dependency/tooling commonly used in AI workflows, representing a software supply chain issue within AI systems. It has clear security impact (DoS with high CVSS score). Sufficient evidence is provided in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-835",
+        "description": "CWE-835 Loop with Unreachable Exit Condition",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

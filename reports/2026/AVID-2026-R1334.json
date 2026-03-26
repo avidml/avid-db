@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1334"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal: '\\..\\filename' in mlflow/mlflow (CVE-2023-6909)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6909"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/11209efb-0f84-482f-add0-587ea6b7e850",
+      "url": "https://huntr.com/bounties/11209efb-0f84-482f-add0-587ea6b7e850"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1",
+      "url": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Path Traversal: '\\..\\filename' in GitHub repository mlflow/mlflow prior to 2.9.2.\n\nReason for inclusion in AVID: CVE-2023-6909 describes a path traversal vulnerability in MLflow prior to 2.9.2. MLflow is a core tool used in ML/AI pipelines for tracking, packaging, and deploying models. This is a software vulnerability affecting AI software stacks and their dependencies, enabling unauthorized file access. The issue pertains to components used to build/run general-purpose AI systems, i.e., the AI supply chain (dependencies, runtimes, model-serving stacks). The report provides CVE ID, description, severity, and references, satisfying sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-18"
+}

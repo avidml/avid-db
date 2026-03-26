@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1279"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow: Improper access control to DAG resources (CVE-2023-42792)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-42792"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/34366",
+      "url": "https://github.com/apache/airflow/pull/34366"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/1spbo9nkn49fc2hnxqm9tf6mgqwp9tjq",
+      "url": "https://lists.apache.org/thread/1spbo9nkn49fc2hnxqm9tf6mgqwp9tjq"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/12/21/1",
+      "url": "http://www.openwall.com/lists/oss-security/2023/12/21/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Airflow, in versions prior to 2.7.2, contains a security vulnerability that allows an authenticated user with limited access to some DAGs, to craft a request that could give the user write access to various DAG resources for DAGs that the user had no access to, thus, enabling the user to clear DAGs they shouldn't.\n\nUsers of Apache Airflow are strongly advised to upgrade to version 2.7.2 or newer to mitigate the risk associated with this vulnerability.\n\nReason for inclusion in AVID: CVE-2023-42792 describes an authorization flaw in Apache Airflow where an authenticated user with limited access to some DAGs can craft requests to gain write access to DAG resources, enabling actions such as clearing DAGs. This is a software vulnerability in a workflow orchestration component commonly used in AI/ML pipelines, impacting the integrity and security of AI workloads. As Airflow is a widely used tool in building, deploying, and running AI systems, this is relevant to the general-purpose AI supply chain. The description and references provide sufficient signal and mitigation guidance (upgrade to 2.7.2+)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-668",
+        "description": "CWE-668 Exposure of Resource to Wrong Sphere",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-10-14"
+}

@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1440"
+  },
+  "affects": {
+    "developer": [
+      "RedisBloom"
+    ],
+    "deployer": [
+      "RedisBloom"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "RedisBloom"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "RedisBloom heap buffer overflow in CF.LOADCHUNK command (CVE-2024-25115)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-25115"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/RedisBloom/RedisBloom/security/advisories/GHSA-w583-p2wh-4vj5",
+      "url": "https://github.com/RedisBloom/RedisBloom/security/advisories/GHSA-w583-p2wh-4vj5"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/RedisBloom/RedisBloom/commit/2f3b38394515fc6c9b130679bcd2435a796a49ad",
+      "url": "https://github.com/RedisBloom/RedisBloom/commit/2f3b38394515fc6c9b130679bcd2435a796a49ad"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "RedisBloom adds a set of probabilistic data structures to Redis. Starting in version 2.0.0 and prior to version 2.4.7 and 2.6.10, specially crafted `CF.LOADCHUNK` commands may be used by authenticated users to perform heap overflow, which may lead to remote code execution. The problem is fixed in RedisBloom 2.4.7 and 2.6.10.\n\nReason for inclusion in AVID: CVE-2024-25115 describes a heap-based buffer overflow in RedisBloom (a Redis module) that could allow authenticated users to achieve remote code execution. RedisBloom is a software component used to provide probabilistic data structures within Redis, and Redis-based deployments are commonly part of AI/ML data processing, feature pipelines, caching, and model serving stacks. Thus, this vulnerability is in a software component that can be part of the supply chain for general-purpose AI systems. The issue is a security vulnerability (RCE risk) with clear evidence and fixes in newer versions, and the report includes explicit CVE details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 7.0,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-122",
+        "description": "CWE-122: Heap-based Buffer Overflow",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-120",
+        "description": "CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-09"
+}

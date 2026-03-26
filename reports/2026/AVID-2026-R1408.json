@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1408"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "SuperAGI"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21552"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21552"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/TransformerOptimus/SuperAGI/blob/9361f0491716e56bd0c0ae2f3b49da201a18c58c/superagi/agent/output_handler.py#L149",
+      "url": "https://github.com/TransformerOptimus/SuperAGI/blob/9361f0491716e56bd0c0ae2f3b49da201a18c58c/superagi/agent/output_handler.py#L149"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/TransformerOptimus/SuperAGI/blob/9361f0491716e56bd0c0ae2f3b49da201a18c58c/superagi/agent/output_handler.py#L180",
+      "url": "https://github.com/TransformerOptimus/SuperAGI/blob/9361f0491716e56bd0c0ae2f3b49da201a18c58c/superagi/agent/output_handler.py#L180"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "All versions of `SuperAGI` are vulnerable to Arbitrary Code Execution due to unsafe use of the \u2018eval\u2019 function. An attacker could induce the LLM output to exploit this vulnerability and gain arbitrary code execution on the SuperAGI application server.\n\nReason for inclusion in AVID: CVE-2024-21552 describes arbitrary code execution in SuperAGI due to unsafe use of eval, enabling code execution on the application server. This is a vulnerability in AI-software (an AI agent framework) used in building and running general-purpose AI systems, affecting deployment/runtime components. It is a clear security vulnerability with evidence in the CVE entry and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "Arbitrary Code Execution",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-22"
+}

@@ -1,0 +1,113 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1713"
+  },
+  "affects": {
+    "developer": [
+      "erdogant"
+    ],
+    "deployer": [
+      "erdogant"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "pypickle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "erdogant pypickle pypickle.py save improper authorization (CVE-2025-5175)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5175"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.310263",
+      "url": "https://vuldb.com/?id.310263"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.310263",
+      "url": "https://vuldb.com/?ctiid.310263"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.579824",
+      "url": "https://vuldb.com/?submit.579824"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/issues/3",
+      "url": "https://github.com/erdogant/pypickle/issues/3"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/issues/3#issuecomment-2888589652",
+      "url": "https://github.com/erdogant/pypickle/issues/3#issuecomment-2888589652"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/issues/3#issue-3070689116",
+      "url": "https://github.com/erdogant/pypickle/issues/3#issue-3070689116"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/commit/14b4cae704a0bb4eb6723e238f25382d847a1917",
+      "url": "https://github.com/erdogant/pypickle/commit/14b4cae704a0bb4eb6723e238f25382d847a1917"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/releases/tag/2.0.0",
+      "url": "https://github.com/erdogant/pypickle/releases/tag/2.0.0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability was found in erdogant pypickle up to 1.1.5. It has been classified as critical. This affects the function Save of the file pypickle/pypickle.py. The manipulation leads to improper authorization. Attacking locally is a requirement. The exploit has been disclosed to the public and may be used. Upgrading to version 2.0.0 is able to address this issue. The patch is named 14b4cae704a0bb4eb6723e238f25382d847a1917. It is recommended to upgrade the affected component.\n\nReason for inclusion in AVID: CVE-2025-5175 describes an improper authorization vulnerability in erdogant pypickle's Save function (versions up to 1.1.5, patched in 2.0.0). This is a software supply-chain issue in a Python library commonly used in AI/ML pipelines, with a disclosed local-exploit and documented remediation. The CVE clearly identifies a security/safety vulnerability with actionable details and evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-285",
+        "description": "Improper Authorization",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-266",
+        "description": "Incorrect Privilege Assignment",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-26"
+}

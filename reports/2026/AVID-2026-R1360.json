@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1360"
+  },
+  "affects": {
+    "developer": [
+      "paddlepaddle"
+    ],
+    "deployer": [
+      "paddlepaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "paddlepaddle/paddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-0818"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0818"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/85b06a1b-ac0b-4096-a06d-330891570cd9",
+      "url": "https://huntr.com/bounties/85b06a1b-ac0b-4096-a06d-330891570cd9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Arbitrary File Overwrite Via Path Traversal in paddlepaddle/paddle before 2.6\n\nReason for inclusion in AVID: CVE-2024-0818 describes a path traversal vulnerability in paddlepaddle/paddle prior to 2.6 that allows arbitrary file overwrites. PaddlePaddle is a widely used AI framework for training and deploying AI models, placing this as an issue in the AI software stack. The vulnerability directly affects software components used to build/run general-purpose AI systems (dependencies/runtime in AI pipelines), and its CVSS indicates a high-severity security impact (high integrity/availability impact, network-based exploitation with no user interaction). The report provides explicit vulnerability details and references, sufficient to classify as a software supply chain vulnerability in AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-07"
+}

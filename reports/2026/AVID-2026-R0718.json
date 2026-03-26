@@ -1,0 +1,114 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0718"
+  },
+  "affects": {
+    "developer": [
+      "Google LLC"
+    ],
+    "deployer": [
+      "Google LLC"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "protobuf-java"
+      },
+      {
+        "type": "System",
+        "name": "protobuf-kotlin"
+      },
+      {
+        "type": "System",
+        "name": "google-protobuf [JRuby Gem]"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service of protobuf-java parsing procedure (CVE-2021-22569)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-22569"
+    },
+    {
+      "type": "source",
+      "label": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39330",
+      "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39330"
+    },
+    {
+      "type": "source",
+      "label": "https://cloud.google.com/support/bulletins#gcp-2022-001",
+      "url": "https://cloud.google.com/support/bulletins#gcp-2022-001"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2022/01/12/4",
+      "url": "http://www.openwall.com/lists/oss-security/2022/01/12/4"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2022/01/12/7",
+      "url": "http://www.openwall.com/lists/oss-security/2022/01/12/7"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.debian.org/debian-lts-announce/2023/04/msg00019.html",
+      "url": "https://lists.debian.org/debian-lts-announce/2023/04/msg00019.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in protobuf-java allowed the interleaving of com.google.protobuf.UnknownFieldSet fields in such a way that would be processed out of order. A small malicious payload can occupy the parser for several minutes by creating large numbers of short-lived objects that cause frequent, repeated pauses. We recommend upgrading libraries beyond the vulnerable versions.\n\nReason for inclusion in AVID: CVE-2021-22569 describes a Denial of Service vulnerability in protobuf-java parsing, causing significant parser delays. The affected artifacts include protobuf-java, protobuf-kotlin, and google-protobuf JRuby Gem, which are common dependencies in AI/ML software stacks for data serialization and communication. This is a software supply chain issue affecting components used to build, train, deploy, or run general-purpose AI systems, and it is a security vulnerability with a high impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-696",
+        "description": "CWE-696 Incorrect Behavior Order",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-01-07"
+}

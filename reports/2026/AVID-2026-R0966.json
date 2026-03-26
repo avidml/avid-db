@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0966"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Integer overflow in Tensorflow (CVE-2022-23562)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23562"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/pull/51733",
+      "url": "https://github.com/tensorflow/tensorflow/pull/51733"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-qx3f-p745-w4hr",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-qx3f-p745-w4hr"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/issues/52676",
+      "url": "https://github.com/tensorflow/tensorflow/issues/52676"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/f0147751fd5d2ff23251149ebad9af9f03010732",
+      "url": "https://github.com/tensorflow/tensorflow/commit/f0147751fd5d2ff23251149ebad9af9f03010732"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Tensorflow is an Open Source Machine Learning Framework. The implementation of `Range` suffers from integer overflows. These can trigger undefined behavior or, in some scenarios, extremely large allocations. The fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2022-23562 describes an integer overflow in TensorFlow's Range implementation. TensorFlow is a core AI framework, so this vulnerability concerns AI/ML systems and their tooling. It affects a component used in building, training, and deploying general-purpose AI systems, representing a software supply-chain risk within AI stacks. The advisory provides concrete vulnerability details and references (CVSS data, fix notes), indicating a real security flaw with actionable remediation; thus the evidence is sufficient to classify."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:H",
+      "baseScore": 7.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-190",
+        "description": "CWE-190: Integer Overflow or Wraparound",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-02-04"
+}

@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0710"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "NVIDIA Jetson AGX Xavier series, Jetson Xavier NX, Jetson TX2 series, Jetson TX2 NX"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-1114"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-1114"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5216",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5216"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA Linux kernel distributions contain a vulnerability in the kernel crypto node, where use after free may lead to complete denial of service.\n\nReason for inclusion in AVID: CVE-2021-1114 is a software vulnerability in NVIDIA's Linux kernel crypto node that can cause denial of service via use-after-free. NVIDIA Jetson devices running AI workloads rely on this kernel as part of the software stack; thus it is a software supply-chain component (kernel/driver) relevant to building/running general-purpose AI systems. It is a security vulnerability with clear exploitation risk (local access, availability impact). The report provides explicit CVE details and affected products, giving sufficient signal for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 4.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2021-08-11"
+}

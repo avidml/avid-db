@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1487"
+  },
+  "affects": {
+    "developer": [
+      "huggingface"
+    ],
+    "deployer": [
+      "huggingface"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "huggingface/transformers"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary Code Execution via Deserialization in huggingface/transformers (CVE-2024-3568)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-3568"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/b3c36992-5264-4d7f-9906-a996efafba8f",
+      "url": "https://huntr.com/bounties/b3c36992-5264-4d7f-9906-a996efafba8f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/huggingface/transformers/commit/693667b8ac8138b83f8adb6522ddaf42fa07c125",
+      "url": "https://github.com/huggingface/transformers/commit/693667b8ac8138b83f8adb6522ddaf42fa07c125"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The huggingface/transformers library is vulnerable to arbitrary code execution through deserialization of untrusted data within the `load_repo_checkpoint()` function of the `TFPreTrainedModel()` class. Attackers can execute arbitrary code and commands by crafting a malicious serialized payload, exploiting the use of `pickle.load()` on data from potentially untrusted sources. This vulnerability allows for remote code execution (RCE) by deceiving victims into loading a seemingly harmless checkpoint during a normal training process, thereby enabling attackers to execute arbitrary code on the targeted machine.\n\nReason for inclusion in AVID: CVE-2024-3568 describes arbitrary code execution via deserialization in the HuggingFace Transformers library when loading a potentially malicious checkpoint, enabling remote code execution through pickle.load. This directly concerns an AI framework used in building/training/serving AI models, i.e., an AI software stack. The vulnerability resides in a component (transformers) used to build/deploy general-purpose AI systems, representing a software supply-chain risk related to dependencies/artifacts in AI pipelines. The report provides explicit vulnerability behavior (RCE via deserialization of untrusted data) and references, giving sufficient evidence for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:N/I:N/A:L",
+      "baseScore": 3.4,
+      "baseSeverity": "LOW",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

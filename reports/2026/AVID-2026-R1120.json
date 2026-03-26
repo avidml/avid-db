@@ -1,0 +1,76 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1120"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Pinot Provider"
+      },
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Pinot provider allowed Command Injection (CVE-2022-38649)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-38649"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/27641",
+      "url": "https://github.com/apache/airflow/pull/27641"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/033o1gbc4ly6dpd2xf1o201v56fbl4dz",
+      "url": "https://lists.apache.org/thread/033o1gbc4ly6dpd2xf1o201v56fbl4dz"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Apache Airflow Pinot Provider, Apache Airflow allows an attacker to control commands executed in the task execution context, without write access to DAG files. This issue affects Apache Airflow Pinot Provider versions prior to 4.0.0. It also impacts any Apache Airflow versions prior to 2.3.0 in case Apache Airflow Pinot Provider is installed (Apache Airflow Pinot Provider 4.0.0 can only be installed for Airflow 2.3.0+). Note that you need to manually install the Pinot Provider version 4.0.0 in order to get rid of the vulnerability on top of Airflow 2.3.0+ version.\n\nReason for inclusion in AVID: The CVE pertains to OS command injection in Apache Airflow Pinot Provider, a component used within Apache Airflow to orchestrate data workflows. Airflow is widely employed in ML/AI pipelines to manage data prep, model training, and deployment tasks, making this a vulnerability in a software component that's part of AI system ecosystems. It affects supply-chain-relevant software (Airflow and its Pinot provider), enabling potential remote code execution within task execution contexts if exploited. This aligns with AI-related vulnerabilities and general-purpose AI system supply chains. Evidence includes the CVE description, affected versions, and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-11-22"
+}

@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1155"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Segfault in `CompositeTensorVariantToComponents` in Tensorflow (CVE-2022-41909)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-41909"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-rjx6-v474-2ch9",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-rjx6-v474-2ch9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/660ce5a89eb6766834bdc303d2ab3902aef99d3d",
+      "url": "https://github.com/tensorflow/tensorflow/commit/660ce5a89eb6766834bdc303d2ab3902aef99d3d"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/bf594d08d377dc6a3354d9fdb494b32d45f91971",
+      "url": "https://github.com/tensorflow/tensorflow/commit/bf594d08d377dc6a3354d9fdb494b32d45f91971"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/lib/core/py_func.cc",
+      "url": "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/lib/core/py_func.cc"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. An input `encoded` that is not a valid `CompositeTensorVariant` tensor will trigger a segfault in `tf.raw_ops.CompositeTensorVariantToComponents`. We have patched the issue in GitHub commits bf594d08d377dc6a3354d9fdb494b32d45f91971 and 660ce5a89eb6766834bdc303d2ab3902aef99d3d. The fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2022-41909 describes a segfault in TensorFlow's CompositeTensorVariantToComponents triggered by an invalid input. TensorFlow is a core AI framework, and the vulnerability is in the software stack used to build, train, deploy, and run general-purpose AI systems. There is clear evidence (CVE entry, advisory references, commit patches) that this is a software vulnerability in a widely-used AI dependency, with a patch and CVSS indicating impact on availability. Although not a remote-exploit RCE, it constitutes a security/safety vulnerability in an AI software supply chain component."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:H",
+      "baseScore": 4.8,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-11-18"
+}

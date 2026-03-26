@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1419"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in aimhubio/aim (CVE-2024-2195)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2195"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/22f2355e-b875-4c01-b454-327e5951c018",
+      "url": "https://huntr.com/bounties/22f2355e-b875-4c01-b454-327e5951c018"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A critical Remote Code Execution (RCE) vulnerability was identified in the aimhubio/aim project, specifically within the `/api/runs/search/run/` endpoint, affecting versions >= 3.0.0. The vulnerability resides in the `run_search_api` function of the `aim/web/api/runs/views.py` file, where improper restriction of user access to the `RunView` object allows for the execution of arbitrary code via the `query` parameter. This issue enables attackers to execute arbitrary commands on the server, potentially leading to full system compromise.\n\nReason for inclusion in AVID: This CVE describes a remote code execution vulnerability in an AI tooling component (aimhubio/aim) with a direct impact on AI software stacks. The vulnerable API is part of an AI experiment-tracking/automation workflow, and exploitation could compromise systems deploying general-purpose AI applications. Therefore it concerns AI/ML tooling and the software supply chain for AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94 Improper Control of Generation of Code",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

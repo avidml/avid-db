@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1277"
+  },
+  "affects": {
+    "developer": [
+      "ethyca"
+    ],
+    "deployer": [
+      "ethyca"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "fides"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote Code Execution in Custom Integration Upload in Fides (CVE-2023-41319)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-41319"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ethyca/fides/security/advisories/GHSA-p6p2-qq95-vq5h",
+      "url": "https://github.com/ethyca/fides/security/advisories/GHSA-p6p2-qq95-vq5h"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ethyca/fides/commit/5989b5fa744c8d8c340963b895a054883549358a",
+      "url": "https://github.com/ethyca/fides/commit/5989b5fa744c8d8c340963b895a054883549358a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Fides is an open-source privacy engineering platform for managing the fulfillment of data privacy requests in a runtime environment, and the enforcement of privacy regulations in code. The Fides webserver API allows custom integrations to be uploaded as a ZIP file. This ZIP file must contain YAML files, but Fides can be configured to also accept the inclusion of custom Python code in it. The custom code is executed in a restricted, sandboxed environment, but the sandbox can be bypassed to execute any arbitrary code. The vulnerability allows the execution of arbitrary code on the target system within the context of the webserver python process owner on the webserver container, which by default is `root`, and leverage that access to attack underlying infrastructure and integrated systems. This vulnerability affects Fides versions `2.11.0` through `2.19.0`. Exploitation is limited to API clients with the `CONNECTOR_TEMPLATE_REGISTER` authorization scope. In the Fides Admin UI this scope is restricted to highly privileged users, specifically root users and users with the owner role.  Exploitation is only possible if the security configuration parameter `allow_custom_connector_functions` is enabled by the user deploying the Fides webserver container, either in `fides.toml` or by setting the env var `FIDES__SECURITY__ALLOW_CUSTOM_CONNECTOR_FUNCTIONS=True`. By default this configuration parameter is disabled. The vulnerability has been patched in Fides version `2.19.0`. Users are advised to upgrade to this version or later to secure their systems against this threat. Users unable to upgrade should ensure that `allow_custom_connector_functions` in `fides.toml` and the `FIDES__SECURITY__ALLOW_CUSTOM_CONNECTOR_FUNCTIONS` are both either unset or explicit set to `False`.\n\nReason for inclusion in AVID: The CVE describes a remote code execution vulnerability in Fides' custom integration upload feature. Fides is a software component used in managing data privacy enforcement within ML/AI data pipelines and deployments. A successful exploit could allow arbitrary code execution in the webserver container, potentially compromising the AI data workflow and underlying infrastructure. The report provides affected versions, exploitation conditions, and a patch, satisfying evidence requirements for a software supply-chain vulnerability in a component commonly used in AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-693",
+        "description": "CWE-693: Protection Mechanism Failure",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-09-06"
+}

@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1659"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Gradio Blocked Path ACL Bypass Vulnerability (CVE-2025-23042)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-23042"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gradio-app/gradio/security/advisories/GHSA-j2jg-fq62-7c3h",
+      "url": "https://github.com/gradio-app/gradio/security/advisories/GHSA-j2jg-fq62-7c3h"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Gradio is an open-source Python package that allows quick building of demos and web application for machine learning models, API, or any arbitrary Python function. Gradio's Access Control List (ACL) for file paths can be bypassed by altering the letter case of a blocked file or directory path. This vulnerability arises due to the lack of case normalization in the file path validation logic. On case-insensitive file systems, such as those used by Windows and macOS, this flaw enables attackers to circumvent security restrictions and access sensitive files that should be protected. This issue can lead to unauthorized data access, exposing sensitive information and undermining the integrity of Gradio's security model. Given Gradio's popularity for building web applications, particularly in machine learning and AI, this vulnerability may pose a substantial threat if exploited in production environments. This issue has been addressed in release version 5.6.0. Users are advised to upgrade. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: The CVE concerns a vulnerability in Gradio, a Python package widely used to build AI demos and ML web apps. It affects AI software stacks as a component (access control bypass in file paths within the Gradio interface), representing a software security vulnerability with potential data access impacts. This directly pertains to software components used to build/run general-purpose AI systems, i.e., the AI software supply chain. The report provides explicit CVE details and a fix release, satisfying sufficiency criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-285",
+        "description": "CWE-285: Improper Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-14"
+}

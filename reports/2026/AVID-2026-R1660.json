@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1660"
+  },
+  "affects": {
+    "developer": [
+      "cvat-ai"
+    ],
+    "deployer": [
+      "cvat-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cvat"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "CVAT allows remote code execution via tracker Nuclio functions (CVE-2025-23045)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-23045"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-wq36-mxf8-hv62",
+      "url": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-wq36-mxf8-hv62"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/commit/563e1dfde64b15fa042b23f9d09cd854b35f0366",
+      "url": "https://github.com/cvat-ai/cvat/commit/563e1dfde64b15fa042b23f9d09cd854b35f0366"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Computer Vision Annotation Tool (CVAT) is an interactive video and image annotation tool for computer vision. An attacker with an account on an affected CVAT instance is able to run arbitrary code in the context of the Nuclio function container. This vulnerability affects CVAT deployments that run any of the serverless functions of type tracker from the CVAT Git repository, namely TransT and SiamMask. Deployments with custom functions of type tracker may also be affected, depending on how they handle state serialization. If a function uses an unsafe serialization library such as pickle or jsonpickle, it's likely to be vulnerable. Upgrade to CVAT 2.26.0 or later. If you are unable to upgrade, shut down any instances of the TransT or SiamMask functions you're running.\n\nReason for inclusion in AVID: CVE-2025-23045 describes a remote code execution vulnerability in CVAT's tracker Nuclio functions, allowing an attacker with an account on an affected CVAT instance to run arbitrary code in the Nuclio function container. This is a software vulnerability within AI tooling used in ML data labeling pipelines (CVAT with TransT/SiamMask trackers). It affects components used to build/run AI systems (CVAT deployments, Nuclio function containers, and potential custom tracker functions), making it a software supply-chain issue in the AI software stack. The vulnerability is clearly security-related (RCE/CWE-502) and is supported by CVE/NVD references and remediation guidance. Sufficient evidence is provided in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-01-28"
+}

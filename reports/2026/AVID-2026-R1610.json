@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1610"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service in h2oai/h2o-3 (CVE-2024-8062)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8062"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/a04190d9-4acb-449a-9a7f-f1bf6be1ed23",
+      "url": "https://huntr.com/bounties/a04190d9-4acb-449a-9a7f-f1bf6be1ed23"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the typeahead endpoint of h2oai/h2o-3 version 3.46.0 allows for a denial of service. The endpoint performs a `HEAD` request to verify the existence of a specified resource without setting a timeout. An attacker can exploit this by sending multiple requests to an attacker-controlled server that hangs, causing the application to block and become unresponsive to other requests.\n\nReason for inclusion in AVID: CVE-2024-8062 describes a Denial of Service vulnerability in the h2oai/h2o-3 machine learning framework. This vulnerability affects a software component commonly used in AI model building/serving pipelines, impacting availability of AI services. It is a vulnerability in a software package (not hardware/firmware) that is part of AI stacks, thus relevant to the general-purpose AI systems supply chain. The report provides CVE text, description, impact (including CVSS 3.0 metrics), and references, supplying sufficient evidence for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1088",
+        "description": "CWE-1088 Synchronous Access of Remote Resource without Timeout",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

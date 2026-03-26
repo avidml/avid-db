@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1118"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Cloud Pak for Data"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Cloud Pak for Data file upload (CVE-2022-36769)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-36769"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/6980959",
+      "url": "https://www.ibm.com/support/pages/node/6980959"
+    },
+    {
+      "type": "source",
+      "label": "https://exchange.xforce.ibmcloud.com/vulnerabilities/232034",
+      "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/232034"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Cloud Pak for Data 4.5 and 4.6 could allow a privileged user to upload malicious files of dangerous types that can be automatically processed within the product's environment. IBM X-Force ID: 232034.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in IBM Cloud Pak for Data that allows a privileged user to upload malicious files which can be automatically processed within the product. Cloud Pak for Data is a platform used to manage data and run AI workflows, so the issue directly affects the AI stack and its supply chain. It is a software vulnerability with potential code execution and data/process integrity impacts, and the report provides explicit details (CVE ID, CWE-77, impact metrics) sufficient for AVID consideration."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 7.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-77",
+        "description": "CWE-77 Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-26"
+}

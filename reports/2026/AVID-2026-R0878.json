@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0878"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Segfault on strings tensors with mistmatched dimensions in TensorFlow (CVE-2021-37692)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-37692"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-cmgw-8vpc-rc59",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-cmgw-8vpc-rc59"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/pull/50508",
+      "url": "https://github.com/tensorflow/tensorflow/pull/50508"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/8721ba96e5760c229217b594f6d2ba332beedf22",
+      "url": "https://github.com/tensorflow/tensorflow/commit/8721ba96e5760c229217b594f6d2ba332beedf22"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. In affected versions under certain conditions, Go code can trigger a segfault in string deallocation. For string tensors, `C.TF_TString_Dealloc` is called during garbage collection within a finalizer function. However, tensor structure isn't checked until encoding to avoid a performance penalty. The current method for dealloc assumes that encoding succeeded, but segfaults when a string tensor is garbage collected whose encoding failed (e.g., due to mismatched dimensions). To fix this, the call to set the finalizer function is deferred until `NewTensor` returns and, if encoding failed for a string tensor, deallocs are determined based on bytes written. We have patched the issue in GitHub commit 8721ba96e5760c229217b594f6d2ba332beedf22. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, which is the other affected version.\n\nReason for inclusion in AVID: The CVE-2021-37692 entry describes a vulnerability in TensorFlow (an AI/ML framework) causing a segfault during string tensor deallocation, which is a software vulnerability affecting AI pipelines. TensorFlow is a core component used to build/train/deploy AI systems, making this a software supply chain issue in general-purpose AI stacks. The report provides details of the vulnerability, affected versions, a fix commit, and references, offering sufficient signal to classify as a security-related vulnerability in the AI software stack. Therefore, it should be kept for AVID curation as a vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-12"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1336"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Server-Side Request Forgery (SSRF) (CVE-2023-6974)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6974"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/438b0524-da0e-4d08-976a-6f270c688393",
+      "url": "https://huntr.com/bounties/438b0524-da0e-4d08-976a-6f270c688393"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/commit/8174250f83352a04c2d42079f414759060458555",
+      "url": "https://github.com/mlflow/mlflow/commit/8174250f83352a04c2d42079f414759060458555"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A malicious user could use this issue to access internal HTTP(s) servers and in the worst case (ie: aws instance) it could be abuse to get a remote code execution on the victim machine.\n\nReason for inclusion in AVID: This CVE describes an SSRF vulnerability in MLflow (mlflow/mlflow), a component commonly used in AI/ML pipelines for experimentation, deployment, and serving. It affects software used to build and run general-purpose AI systems, and has security implications including potential remote code execution in worst-case scenarios. The CVE entry provides description, CVSS metrics, and references, offering sufficient evidence to classify as an AI-related software supply chain vulnerability in AI stacks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "baseScore": 8.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-20"
+}

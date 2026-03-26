@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1582"
+  },
+  "affects": {
+    "developer": [
+      "lightning-ai"
+    ],
+    "deployer": [
+      "lightning-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "lightning-ai/pytorch-lightning"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Write via /v1/runs API endpoint in lightning-ai/pytorch-lightning (CVE-2024-5980)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-5980"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/55a6ac6f-89c7-42ea-86f3-c6e93a2679f3",
+      "url": "https://huntr.com/bounties/55a6ac6f-89c7-42ea-86f3-c6e93a2679f3"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lightning-ai/pytorch-lightning/commit/330af381de88cff17515418a341cbc1f9f127f9a",
+      "url": "https://github.com/lightning-ai/pytorch-lightning/commit/330af381de88cff17515418a341cbc1f9f127f9a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the /v1/runs API endpoint of lightning-ai/pytorch-lightning v2.2.4 allows attackers to exploit path traversal when extracting tar.gz files. When the LightningApp is running with the plugin_server, attackers can deploy malicious tar.gz plugins that embed arbitrary files with path traversal vulnerabilities. This can result in arbitrary files being written to any directory in the victim's local file system, potentially leading to remote code execution.\n\nReason for inclusion in AVID: The CVE describes an arbitrary file write via an API endpoint in lightning-ai/pytorch-lightning (plugin_server) enabling path traversal during tar.gz plugin extraction, potentially leading to remote code execution. This is a software component used in AI pipelines and model deployments, representing a security vulnerability in the software supply chain of general-purpose AI systems (dependencies/plugins for AI frameworks). The report provides explicit signals (path traversal, tar.gz plugin abuse, RCE potential) and references, making it sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-27"
+}

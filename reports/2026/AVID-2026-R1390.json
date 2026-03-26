@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1390"
+  },
+  "affects": {
+    "developer": [
+      "aimhubio"
+    ],
+    "deployer": [
+      "aimhubio"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "aimhubio/aim"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service in aimhubio/aim (CVE-2024-12777)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12777"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/cdf8db79-c290-4fe5-9383-4c518bfba4a8",
+      "url": "https://huntr.com/bounties/cdf8db79-c290-4fe5-9383-4c518bfba4a8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in aimhubio/aim version 3.25.0 allows for a denial of service through the misuse of the sshfs-client. The tracking server, which is single-threaded, can be made unresponsive by requesting it to connect to an unresponsive socket via sshfs. The lack of an additional timeout setting in the sshfs-client causes the server to hang for a significant amount of time, preventing it from responding to other requests.\n\nReason for inclusion in AVID: CVE-2024-12777 describes a denial-of-service vulnerability in aimhubio/aim (an AI experiment tracking/management platform). The issue arises from the sshfs-client usage in a single-threaded tracking server, causing hangs when connecting to an unresponsive remote socket, leading to DoS. This affects software components used in AI pipelines and deployment (AI experiment tracking stacks), representing a software supply-chain/security vulnerability within AI stacks. The CVE/NVD references provide sufficient evidence of the vulnerability and impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1088",
+        "description": "CWE-1088 Synchronous Access of Remote Resource without Timeout",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

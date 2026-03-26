@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1039"
+  },
+  "affects": {
+    "developer": [
+      "jupyter"
+    ],
+    "deployer": [
+      "jupyter"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "notebook"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Forced Browsing in Jupyter Notebook (CVE-2022-29238)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-29238"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyter/notebook/security/advisories/GHSA-v7vq-3x77-87vg",
+      "url": "https://github.com/jupyter/notebook/security/advisories/GHSA-v7vq-3x77-87vg"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jupyter Notebook is a web-based notebook environment for interactive computing. Prior to version 6.4.12, authenticated requests to the notebook server with `ContentsManager.allow_hidden = False` only prevented listing the contents of hidden directories, not accessing individual hidden files or files in hidden directories (i.e. hidden files were 'hidden' but not 'inaccessible'). This could lead to notebook configurations allowing authenticated access to files that may reasonably be expected to be disallowed. Because fully authenticated requests are required, this is of relatively low impact. But if a server's root directory contains sensitive files whose only protection from the server is being hidden (e.g. `~/.ssh` while serving $HOME), then any authenticated requests could access files if their names are guessable. Such contexts also necessarily have full access to the server and therefore execution permissions, which also generally grants access to all the same files. So this does not generally result in any privilege escalation or increase in information access, only an additional, unintended means by which the files could be accessed. Version 6.4.12 contains a patch for this issue. There are currently no known workarounds.\n\nReason for inclusion in AVID: CVE-2022-29238 describes a forced browsing vulnerability in Jupyter Notebook prior to 6.4.12 that could allow authenticated users to access hidden files. Jupyter Notebook is widely used in ML/AI workflows, and this vulnerability resides in a software component (notebook server) that is part of typical AI development and deployment stacks, representing a software supply-chain vulnerability within AI tooling. The report provides CVE details and a patched version, indicating a genuine security issue with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 4.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-425",
+        "description": "CWE-425: Direct Request ('Forced Browsing')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-06-14"
+}

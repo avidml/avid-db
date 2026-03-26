@@ -1,0 +1,75 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1551"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-48063"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-48063"
+    },
+    {
+      "type": "source",
+      "label": "https://rumbling-slice-eb0.notion.site/Distributed-RPC-Framework-RemoteModule-has-Deserialization-RCE-in-pytorch-pytorch-111e3cda9e8c8021a7d3cbc61ee1a20c",
+      "url": "https://rumbling-slice-eb0.notion.site/Distributed-RPC-Framework-RemoteModule-has-Deserialization-RCE-in-pytorch-pytorch-111e3cda9e8c8021a7d3cbc61ee1a20c"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/hexian2001/c046c066895a963ecc0a2cf9e1180065",
+      "url": "https://gist.github.com/hexian2001/c046c066895a963ecc0a2cf9e1180065"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/129228",
+      "url": "https://github.com/pytorch/pytorch/issues/129228"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/security/policy#using-distributed-features",
+      "url": "https://github.com/pytorch/pytorch/security/policy#using-distributed-features"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In PyTorch <=2.4.1, the RemoteModule has Deserialization RCE. NOTE: this is disputed by multiple parties because this is intended behavior in PyTorch distributed computing.\n\nReason for inclusion in AVID: CVE-2024-48063 describes a deserialization remote code execution vulnerability in PyTorch RemoteModule for versions <= 2.4.1. This is a security issue in a core AI framework (PyTorch) that is widely used to build, train, and deploy AI systems, including distributed AI workflows. It directly affects software components and runtimes in AI pipelines, representing a tangible vulnerability in the AI software supply chain. The report includes CVE entry and multiple references (NVD, GitHub issues, etc.), providing sufficient signals, despite some dispute over whether the behavior is intended. Therefore it qualifies as a supply-chain-relevant AI vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-10-29"
+}

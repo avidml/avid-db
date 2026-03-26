@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1658"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "OpenVINO\u2122 model server software maintained by Intel(R)"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2025-22892"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-22892"
+    },
+    {
+      "type": "source",
+      "label": "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01272.html",
+      "url": "https://intel.com/content/www/us/en/security-center/advisory/intel-sa-01272.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Uncontrolled resource consumption for some OpenVINO\u2122 model server software maintained by Intel(R) before version 2024.4 may allow an unauthenticated user to potentially enable denial of service via adjacent access.\n\nReason for inclusion in AVID: The CVE describes an uncontrolled resource consumption (DoS) vulnerability in OpenVINO model server software, a software component used to deploy and serve AI models. This directly affects AI inference pipelines and deployment stacks. It is a software issue in a component (model serving/runtime) used to build/run general-purpose AI systems, not hardware/firmware-only. The vulnerability is security-focused (denial of service) with explicit CVSS details. The available description and references provide sufficient signal to classify this as an AI software supply chain vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "ADJACENT_NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-400",
+        "description": "Uncontrolled Resource Consumption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-13"
+}

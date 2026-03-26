@@ -1,0 +1,103 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1695"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PyTorch"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "PyTorch LossCTC.cpp torch.nn.functional.ctc_loss denial of service (CVE-2025-3730)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3730"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.305076",
+      "url": "https://vuldb.com/?id.305076"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.305076",
+      "url": "https://vuldb.com/?ctiid.305076"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.553645",
+      "url": "https://vuldb.com/?submit.553645"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/150835",
+      "url": "https://github.com/pytorch/pytorch/issues/150835"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/pull/150981",
+      "url": "https://github.com/pytorch/pytorch/pull/150981"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pytorch/pytorch/issues/150835#issue-2979082232",
+      "url": "https://github.com/pytorch/pytorch/issues/150835#issue-2979082232"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/timocafe/tewart-pytorch/commit/46fc5d8e360127361211cb237d5f9eef0223e567",
+      "url": "https://github.com/timocafe/tewart-pytorch/commit/46fc5d8e360127361211cb237d5f9eef0223e567"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability, which was classified as problematic, was found in PyTorch 2.6.0. Affected is the function torch.nn.functional.ctc_loss of the file aten/src/ATen/native/LossCTC.cpp. The manipulation leads to denial of service. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. The real existence of this vulnerability is still doubted at the moment. The name of the patch is 46fc5d8e360127361211cb237d5f9eef0223e567. It is recommended to apply a patch to fix this issue. The security policy of the project warns to use unknown models which might establish malicious effects.\n\nReason for inclusion in AVID: The candidate describes a vulnerability in PyTorch (a core AI framework) affecting the ctc_loss function, which is used in AI model training/inference. It is a software vulnerability within a component (PyTorch) used to build/run general-purpose AI systems, representing a software supply-chain issue through a widely-used dependency. The CVE indicates local access is required, a DoS outcome, and patches exist, with multiple references. This aligns with AI-related, supply-chain-relevant security concerns in ML stacks. Despite low CVSS severity, the issue is real within AI software stacks and warrants curating for AVID."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 3.3,
+      "baseSeverity": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-404",
+        "description": "Denial of Service",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-16"
+}

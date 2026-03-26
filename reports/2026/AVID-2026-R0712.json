@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0712"
+  },
+  "affects": {
+    "developer": [
+      "MongoDB Inc."
+    ],
+    "deployer": [
+      "MongoDB Inc."
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MongoDB Node.js Driver mongodb-client-encryption module"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MongoDB Node.js client side field level encryption library may not be validating KMS certificate (CVE-2021-20327)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-20327"
+    },
+    {
+      "type": "source",
+      "label": "https://jira.mongodb.org/browse/NODE-3125",
+      "url": "https://jira.mongodb.org/browse/NODE-3125"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A specific version of the Node.js mongodb-client-encryption module does not perform correct validation of the KMS server\u2019s certificate. This vulnerability in combination with a privileged network position active MITM attack could result in interception of traffic between the Node.js driver and the KMS service rendering client-side field level encryption (CSFLE) ineffective. This issue was discovered during internal testing and affects mongodb-client-encryption module version 1.2.0, which was available from 2021-Jan-29 and deprecated in the NPM Registry on 2021-Feb-04. This vulnerability does not impact driver traffic payloads with CSFLE-supported key services from applications residing inside the AWS, GCP, and Azure nework fabrics due to compensating controls in these environments. This issue does not impact driver workloads that don\u2019t use Field Level Encryption. This issue affect MongoDB Node.js Driver mongodb-client-encryption module version 1.2.0\n\nReason for inclusion in AVID: CVE-2021-20327 describes a flaw in the mongodb-client-encryption Node.js module (1.2.0) where KMS server certificate validation is improper, enabling potential MITM to intercept encryption key traffic and undermine client-side field-level encryption (CSFLE). This is a software vulnerability in a dependency used in Node.js environments. Such a library can be part of AI data pipelines and deployment stacks (e.g., data storage/encryption for AI workloads), making it a relevant supply-chain item for general-purpose AI systems. Therefore, it should be considered a vulnerability in the GP AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "baseScore": 6.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "ADJACENT_NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-295",
+        "description": "CWE-295 Improper Certificate Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-02-25"
+}

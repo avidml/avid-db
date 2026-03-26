@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1431"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Neutralization of Special Elements used in an OS Command in parisneo/lollms-webui (CVE-2024-2359)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2359"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/62144831-8d4b-4cf2-9737-5e559f7bc67e",
+      "url": "https://huntr.com/bounties/62144831-8d4b-4cf2-9737-5e559f7bc67e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the parisneo/lollms-webui version 9.3 allows attackers to bypass intended access restrictions and execute arbitrary code. The issue arises from the application's handling of the `/execute_code` endpoint, which is intended to be blocked from external access by default. However, attackers can exploit the `/update_setting` endpoint, which lacks proper access control, to modify the `host` configuration at runtime. By changing the `host` setting to an attacker-controlled value, the restriction on the `/execute_code` endpoint can be bypassed, leading to remote code execution. This vulnerability is due to improper neutralization of special elements used in an OS command (`Improper Neutralization of Special Elements used in an OS Command`).\n\nReason for inclusion in AVID: CVE-2024-2359 describes a remote code execution vulnerability in parisneo/lollms-webui, an AI-related web UI used to run general-purpose AI models. It affects the AI software stack (web endpoints and access control) and enables arbitrary code execution, a security vulnerability. It impacts components used to deploy/run AI systems, i.e., the GP AI supply chain. The report provides CVE details and an exploit scenario, giving sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-06"
+}

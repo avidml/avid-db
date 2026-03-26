@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1002"
+  },
+  "affects": {
+    "developer": [
+      "Jenkins project"
+    ],
+    "deployer": [
+      "Jenkins project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Jenkins Checkmarx Plugin"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-25201"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-25201"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jenkins.io/security/advisory/2022-02-15/#SECURITY-1017",
+      "url": "https://www.jenkins.io/security/advisory/2022-02-15/#SECURITY-1017"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Missing permission checks in Jenkins Checkmarx Plugin 2022.1.2 and earlier allow attackers with Overall/Read permission to connect to an attacker-specified webserver using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.\n\nReason for inclusion in AVID: CVE-2022-25201 describes a credential leakage vulnerability in the Jenkins Checkmarx Plugin (older versions) where an attacker with basic Jenkins permissions can exfiltrate credentials by connecting to an attacker-controlled server. Jenkins and its plugins are widely used in CI/CD pipelines that build, test, and deploy AI software, models, and data pipelines. Therefore, this is a software supply chain vulnerability that can impact general-purpose AI systems when such CI/CD components are part of their build/deploy workflow. It is an actionable security flaw (credential theft) with clear impact in software supply chains, not hardware-only."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-02-15"
+}

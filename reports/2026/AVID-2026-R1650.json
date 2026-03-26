@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1650"
+  },
+  "affects": {
+    "developer": [
+      "Orthanc"
+    ],
+    "deployer": [
+      "Orthanc"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Orthanc server"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Orthanc Server Missing Authentication for Critical Function (CVE-2025-0896)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-0896"
+    },
+    {
+      "type": "source",
+      "label": "https://www.cisa.gov/news-events/ics-medical-advisories/icsma-25-037-02",
+      "url": "https://www.cisa.gov/news-events/ics-medical-advisories/icsma-25-037-02"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Orthanc server prior to version 1.5.8 does not enable basic authentication by default when remote access is enabled. This could result in unauthorized access by an attacker.\n\nReason for inclusion in AVID: CVE-2025-0896 describes a network-accessible missing authentication vulnerability in Orthanc Server, enabling unauthorized access with high impact. Orthanc can function as a data ingestion/serving component in AI-enabled medical imaging pipelines, making this a software supply-chain issue affecting general-purpose AI systems when such components are used in data workflows, model training, or deployment. Evidence is provided by the CVE entry and CVSS data."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-306",
+        "description": "CWE-306 Missing Authentication for Critical Function",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-02-13"
+}

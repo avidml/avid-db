@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1041"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-30882"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-30882"
+    },
+    {
+      "type": "source",
+      "label": "http://pypi.doubanio.com/simple/request",
+      "url": "http://pypi.doubanio.com/simple/request"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/pyanxdns/",
+      "url": "https://pypi.org/project/pyanxdns/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/egeback/pyanxdns/issues/1",
+      "url": "https://github.com/egeback/pyanxdns/issues/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "pyanxdns package in PyPI version 0.2 is vulnerable to code execution backdoor. The impact is: execute arbitrary code (remote). When installing the pyanxdns package of version 0.2, the request package will be installed.\n\nReason for inclusion in AVID: The CVE describes a code execution backdoor in a Python packaging dependency (pyanxdns 0.2) that executes during installation by pulling in the request package. This is a software supply chain vulnerability affecting package dependencies. While not AI-specific, it directly impacts components commonly used in AI/ML workflows (Python ecosystems, dependencies, packaging). The report provides explicit vulnerability behavior and references, supporting a security/supply-chain classification relevant to AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-06-08"
+}

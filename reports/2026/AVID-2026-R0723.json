@@ -1,0 +1,115 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0723"
+  },
+  "affects": {
+    "developer": [
+      "TIBCO Software Inc."
+    ],
+    "deployer": [
+      "TIBCO Software Inc."
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "TIBCO Enterprise Runtime for R - Server Edition"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Enterprise Runtime for R - Server Edition"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Enterprise Runtime for R - Server Edition"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Spotfire Analytics Platform for AWS Marketplace"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Spotfire Server"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Spotfire Server"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Spotfire Server"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Spotfire Statistics Services"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Spotfire Statistics Services"
+      },
+      {
+        "type": "System",
+        "name": "TIBCO Spotfire Statistics Services"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "TIBCO Spotfire Windows Platform Artifact Search vulnerability (CVE-2021-28830)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-28830"
+    },
+    {
+      "type": "source",
+      "label": "http://www.tibco.com/services/support/advisories",
+      "url": "http://www.tibco.com/services/support/advisories"
+    },
+    {
+      "type": "source",
+      "label": "https://www.tibco.com/support/advisories/2021/06/tibco-security-advisory-june-29-2021-tibco-spotfire-2021-28830",
+      "url": "https://www.tibco.com/support/advisories/2021/06/tibco-security-advisory-june-29-2021-tibco-spotfire-2021-28830"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The TIBCO Spotfire Server and TIBCO Enterprise Runtime for R components of TIBCO Software Inc.'s TIBCO Enterprise Runtime for R - Server Edition, TIBCO Enterprise Runtime for R - Server Edition, TIBCO Enterprise Runtime for R - Server Edition, TIBCO Spotfire Analytics Platform for AWS Marketplace, TIBCO Spotfire Server, TIBCO Spotfire Server, TIBCO Spotfire Server, TIBCO Spotfire Statistics Services, TIBCO Spotfire Statistics Services, and TIBCO Spotfire Statistics Services contain a vulnerability that theoretically allows a low privileged attacker with local access on the Windows operating system to insert malicious software. The affected component can be abused to execute the malicious software inserted by the attacker with the elevated privileges of the component. This vulnerability results from the affected component searching for run-time artifacts outside of the installation hierarchy. Affected releases are TIBCO Software Inc.'s TIBCO Enterprise Runtime for R - Server Edition: versions 1.2.4 and below, TIBCO Enterprise Runtime for R - Server Edition: versions 1.3.0 and 1.3.1, TIBCO Enterprise Runtime for R - Server Edition: versions 1.4.0, 1.5.0, and 1.6.0, TIBCO Spotfire Analytics Platform for AWS Marketplace: versions 11.3.0 and below, TIBCO Spotfire Server: versions 10.3.12 and below, TIBCO Spotfire Server: versions 10.4.0, 10.5.0, 10.6.0, 10.6.1, 10.7.0, 10.8.0, 10.8.1, 10.9.0, 10.10.0, 10.10.1, 10.10.2, 10.10.3, and 10.10.4, TIBCO Spotfire Server: versions 11.0.0, 11.1.0, 11.2.0, and 11.3.0, TIBCO Spotfire Statistics Services: versions 10.3.0 and below, TIBCO Spotfire Statistics Services: versions 10.10.0, 10.10.1, and 10.10.2, and TIBCO Spotfire Statistics Services: versions 11.1.0, 11.2.0, and 11.3.0.\n\nReason for inclusion in AVID: CVE-2021-28830 describes a software vulnerability in TIBCO Spotfire and TIBCO Enterprise Runtime for R components, which are used in analytics pipelines and AI-related workflows (R runtime, Spotfire server, statistics services). It enables a low-privileged, locally authenticated attacker to execute malicious code with elevated privileges by abusing artifact search outside the installation hierarchy. This is a software supply-chain-relevant issue in components that can be used to build/run AI systems, and it is a (local) security vulnerability with clear exploitability signals. Therefore it should be kept for AVID curation as a vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2021-06-29"
+}

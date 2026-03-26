@@ -1,0 +1,101 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1038"
+  },
+  "affects": {
+    "developer": [
+      "jpadilla"
+    ],
+    "deployer": [
+      "jpadilla"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "pyjwt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Key confusion through non-blocklisted public key formats in PyJWT (CVE-2022-29217)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-29217"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-ffqj-6fqr-9h24",
+      "url": "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-ffqj-6fqr-9h24"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc",
+      "url": "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jpadilla/pyjwt/releases/tag/2.4.0",
+      "url": "https://github.com/jpadilla/pyjwt/releases/tag/2.4.0"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/6HIYEYZRQEP6QTHT3EHH3RGFYJIHIMAO/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/6HIYEYZRQEP6QTHT3EHH3RGFYJIHIMAO/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/5PK7IQCBVNLYJEFTPHBBPFP72H4WUFNX/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/5PK7IQCBVNLYJEFTPHBBPFP72H4WUFNX/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "PyJWT is a Python implementation of RFC 7519. PyJWT supports multiple different JWT signing algorithms. With JWT, an attacker submitting the JWT token can choose the used signing algorithm. The PyJWT library requires that the application chooses what algorithms are supported. The application can specify `jwt.algorithms.get_default_algorithms()` to get support for all algorithms, or specify a single algorithm. The issue is not that big as `algorithms=jwt.algorithms.get_default_algorithms()` has to be used. Users should upgrade to v2.4.0 to receive a patch for this issue. As a workaround, always be explicit with the algorithms that are accepted and expected when decoding.\n\nReason for inclusion in AVID: CVE-2022-29217 describes a vulnerability in PyJWT (a widely used Python library for JWT handling). PyJWT is a software dependency that can be part of AI service stacks (authentication/authorization in ML pipelines, deployments, APIs, etc.). The issue is a security vulnerability (CWE-327) with practical risk, and the report provides explicit remediation and references. As a dependency vulnerability in software commonly used to build/run AI systems, it qualifies as a general-purpose AI supply chain issue."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "baseScore": 7.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-327",
+        "description": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-05-24"
+}

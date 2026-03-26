@@ -1,0 +1,79 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0713"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Cloud Pak for Data"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-20486"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-20486"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/6456033",
+      "url": "https://www.ibm.com/support/pages/node/6456033"
+    },
+    {
+      "type": "source",
+      "label": "https://exchange.xforce.ibmcloud.com/vulnerabilities/197668",
+      "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/197668"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Cloud Pak for Data 3.0 could allow an authenticated user to obtain sensitive information when installed with additional plugins. IBM X-Force ID: 197668.\n\nReason for inclusion in AVID: CVE-2021-20486 describes an information disclosure vulnerability in IBM Cloud Pak for Data 3.0, a software product used to run AI-related data and model workflows. The issue stems from the software stack and could affect AI pipelines when plugins are involved, making it relevant to AI systems and their deployment. It affects software components used to build/deploy AI systems, and is a documented security vulnerability with references (NVD, IBM page). Therefore it fits AI-related supply chain vulnerability criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/PR:L/AC:H/I:N/UI:N/AV:N/C:H/A:N/S:U/E:U/RL:O/RC:C",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2021-05-26"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1414"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal Vulnerability in parisneo/lollms-webui (CVE-2024-2178)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2178"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e585f1dd-a026-4419-8f42-5835e85fad9e",
+      "url": "https://huntr.com/bounties/e585f1dd-a026-4419-8f42-5835e85fad9e"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A path traversal vulnerability exists in the parisneo/lollms-webui, specifically within the 'copy_to_custom_personas' endpoint in the 'lollms_personalities_infos.py' file. This vulnerability allows attackers to read arbitrary files by manipulating the 'category' and 'name' parameters during the 'Copy to custom personas folder for editing' process. By inserting '../' sequences in these parameters, attackers can traverse the directory structure and access files outside of the intended directory. Successful exploitation results in unauthorized access to sensitive information.\n\nReason for inclusion in AVID: CVE-2024-2178 describes a path traversal vulnerability in parisneo/lollms-webui, an AI web UI component used to deploy/run general-purpose AI models. It affects software used in AI system deployment, constitutes a security vulnerability (read arbitrary files), and the report provides clear signal (description, affected component, CVSS metrics). This satisfies all four label checks."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-29",
+        "description": "CWE-29 Path Traversal: '\\..\\filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-02"
+}

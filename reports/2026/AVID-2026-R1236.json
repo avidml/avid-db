@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1236"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson Machine Learning on Cloud Pak for Data"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson Machine Learning on Cloud Pak for Data server-side request forgery (CVE-2023-30444)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-30444"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/6985859",
+      "url": "https://www.ibm.com/support/pages/node/6985859"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/6985859",
+      "url": "https://www.ibm.com/support/pages/node/6985859"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson Machine Learning on Cloud Pak for Data 4.0 and 4.5 is vulnerable to server-side request forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks.  IBM X-Force ID:  253350.\n\nReason for inclusion in AVID: CVE-2023-30444 describes a server-side request forgery vulnerability in IBM Watson Machine Learning on Cloud Pak for Data, an AI platform component. It is a software vulnerability impacting AI tooling used to build/deploy/run ML systems, with potential for unauthorized requests and network-facing impact. This aligns with software supply-chain concerns in AI stacks. Sufficient evidence is provided in the CVE entry and IBM references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-27"
+}

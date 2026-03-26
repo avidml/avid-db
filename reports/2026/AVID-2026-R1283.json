@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1283"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-46229"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-46229"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langchain-ai/langchain/pull/11925",
+      "url": "https://github.com/langchain-ai/langchain/pull/11925"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langchain-ai/langchain/commit/9ecb7240a480720ec9d739b3877a52f76098a2b8",
+      "url": "https://github.com/langchain-ai/langchain/commit/9ecb7240a480720ec9d739b3877a52f76098a2b8"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "LangChain before 0.0.317 allows SSRF via document_loaders/recursive_url_loader.py because crawling can proceed from an external server to an internal server.\n\nReason for inclusion in AVID: CVE-2023-46229 describes an SSRF vulnerability in LangChain (before 0.0.317) affecting its document_loaders/recursive_url_loader, enabling an attacker to crawl from an external server to internal resources. LangChain is an AI framework used to build AI systems, pipelines, and tooling, so this is a vulnerability in a software component commonly used to build/run general-purpose AI systems. It is a security vulnerability with potential impact on AI software stacks. The report provides explicit evidence (CVE entry, PR link, commit) supporting the claim."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-10-19"
+}

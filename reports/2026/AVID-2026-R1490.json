@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1490"
+  },
+  "affects": {
+    "developer": [
+      "AMD"
+    ],
+    "deployer": [
+      "AMD"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AMD Ryzen\u2122 AI Software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-36328"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-36328"
+    },
+    {
+      "type": "source",
+      "label": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7037.html",
+      "url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7037.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Integer overflow within AMD NPU Driver could allow a local attacker to write out of bounds, potentially leading to loss of integrity or availability.\n\nReason for inclusion in AVID: CVE-2024-36328 describes an integer overflow in the AMD NPU (neural processing unit) driver, which is a software component used to accelerate AI workloads (Ryzen AI Software). This is a vulnerability in a software/drivers layer that is part of the stack used to build, run, and accelerate general-purpose AI systems. It has potential to impact integrity/availability and is exploitable locally, aligning with typical security risks in AI software pipelines. As the issue concerns a software component (driver) used in AI stacks, it qualifies for AVID curation under the general AI supply chain scope."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:H",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-190",
+        "description": "CWE-190 Integer Overflow or Wraparound",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-04-02"
+}

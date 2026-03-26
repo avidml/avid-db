@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1359"
+  },
+  "affects": {
+    "developer": [
+      "paddlepaddle"
+    ],
+    "deployer": [
+      "paddlepaddle"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "paddlepaddle/paddle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-0815"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0815"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/83bf8191-b259-4b24-8ec9-0115d7c05350",
+      "url": "https://huntr.com/bounties/83bf8191-b259-4b24-8ec9-0115d7c05350"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Command injection in paddle.utils.download._wget_download (bypass filter) in paddlepaddle/paddle 2.6.0\n\nReason for inclusion in AVID: CVE-2024-0815 is a command injection vulnerability in PaddlePaddle's download utility, affecting the PaddlePaddle software framework. PaddlePaddle is a general-purpose AI framework; the flaw resides in its software supply chain (a dependency used to build/train/deploy AI systems). It's a security vulnerability with high impact, meeting AVID criteria for AI-related, GP AI supply-chain, and evidence-based assessment."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.3,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-78",
+        "description": "CWE-78 Improper Neutralization of Special Elements used in an OS Command",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-07"
+}

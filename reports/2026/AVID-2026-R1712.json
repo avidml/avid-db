@@ -1,0 +1,108 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1712"
+  },
+  "affects": {
+    "developer": [
+      "erdogant"
+    ],
+    "deployer": [
+      "erdogant"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "pypickle"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "erdogant pypickle pypickle.py load deserialization (CVE-2025-5174)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5174"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.310262",
+      "url": "https://vuldb.com/?id.310262"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.310262",
+      "url": "https://vuldb.com/?ctiid.310262"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?submit.579157",
+      "url": "https://vuldb.com/?submit.579157"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/issues/2",
+      "url": "https://github.com/erdogant/pypickle/issues/2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/issues/2#issuecomment-2889146579",
+      "url": "https://github.com/erdogant/pypickle/issues/2#issuecomment-2889146579"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/commit/14b4cae704a0bb4eb6723e238f25382d847a1917",
+      "url": "https://github.com/erdogant/pypickle/commit/14b4cae704a0bb4eb6723e238f25382d847a1917"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/erdogant/pypickle/releases/tag/2.0.0",
+      "url": "https://github.com/erdogant/pypickle/releases/tag/2.0.0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability was found in erdogant pypickle up to 1.1.5 and classified as problematic. Affected by this issue is the function load of the file pypickle/pypickle.py. The manipulation leads to deserialization. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. Upgrading to version 2.0.0 is able to address this issue. The patch is identified as 14b4cae704a0bb4eb6723e238f25382d847a1917. It is recommended to upgrade the affected component.\n\nReason for inclusion in AVID: CVE-2025-5174 describes a load() deserialization vulnerability in erdogant pypickle (versions up to 1.1.5). It is a software security vulnerability (CWE-502) with evidence of exploitation potential and a patch in 2.0.0. This package is a Python library that can be used in AI/ML pipelines for serialization/deserialization tasks, making it relevant to the supply chain of general-purpose AI systems. The issue affects software components that could be deployed, trained, or run within AI stacks, and the CVE provides concrete remediation guidance. Therefore it qualifies as a software supply-chain vulnerability in AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "Deserialization",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-20",
+        "description": "Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-26"
+}

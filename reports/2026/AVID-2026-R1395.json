@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1395"
+  },
+  "affects": {
+    "developer": [
+      "parisneo"
+    ],
+    "deployer": [
+      "parisneo"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "parisneo/lollms-webui"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal Vulnerability in parisneo/lollms-webui (CVE-2024-1511)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1511"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/62b77589-772d-4d6e-aef4-2aec4cfe5f8b",
+      "url": "https://huntr.com/bounties/62b77589-772d-4d6e-aef4-2aec4cfe5f8b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The parisneo/lollms-webui repository is susceptible to a path traversal vulnerability due to inadequate validation of user-supplied file paths. This flaw allows an unauthenticated attacker to read, write, and in certain configurations execute arbitrary files on the server by exploiting various endpoints. The vulnerability can be exploited even when the service is bound to localhost, through cross-site requests facilitated by malicious HTML/JS pages.\n\nReason for inclusion in AVID: CVE-2024-1511 documents a path traversal vulnerability in parisneo/lollms-webui, enabling unauthenticated attackers to read, write, and potentially execute arbitrary files via the web UI. This is a software vulnerability in a component commonly used to host or serve AI models (AI deployment/UI stack). As such, it directly pertains to the software supply chain of general-purpose AI systems (model serving stacks, UI front-ends, and related tooling) rather than hardware/firmware. The CVE details (path traversal CWE-22, CVSSv3.0 9.8, network-based, no user interaction) provide clear security risk signals and references, supporting its relevance to AI software supply chains."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

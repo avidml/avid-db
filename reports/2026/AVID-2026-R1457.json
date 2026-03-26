@@ -1,0 +1,101 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1457"
+  },
+  "affects": {
+    "developer": [
+      "sigstore"
+    ],
+    "deployer": [
+      "sigstore"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cosign"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Cosign vulnerable to machine-wide denial of service via malicious artifacts (CVE-2024-29903)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-29903"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/security/advisories/GHSA-95pr-fxf5-86gv",
+      "url": "https://github.com/sigstore/cosign/security/advisories/GHSA-95pr-fxf5-86gv"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/commit/629f5f8fa672973503edde75f84dcd984637629e",
+      "url": "https://github.com/sigstore/cosign/commit/629f5f8fa672973503edde75f84dcd984637629e"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/blob/14795db16417579fac0c00c11e166868d7976b61/pkg/cosign/verify.go#L948-L955",
+      "url": "https://github.com/sigstore/cosign/blob/14795db16417579fac0c00c11e166868d7976b61/pkg/cosign/verify.go#L948-L955"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/blob/286a98a4a99c1b2f32f84b0d560e324100312280/pkg/oci/remote/signatures.go#L56-L70",
+      "url": "https://github.com/sigstore/cosign/blob/286a98a4a99c1b2f32f84b0d560e324100312280/pkg/oci/remote/signatures.go#L56-L70"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/sigstore/cosign/releases/tag/v2.2.4",
+      "url": "https://github.com/sigstore/cosign/releases/tag/v2.2.4"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cosign provides code signing and transparency for containers and binaries. Prior to version 2.2.4, maliciously-crafted software artifacts can cause denial of service of the machine running Cosign thereby impacting all services on the machine. The root cause is that Cosign creates slices based on the number of signatures, manifests or attestations in untrusted artifacts. As such, the untrusted artifact can control the amount of memory that Cosign allocates. The exact issue is Cosign allocates excessive memory on the lines that creates a slice of the same length as the manifests. Version 2.2.4 contains a patch for the vulnerability.\n\nReason for inclusion in AVID: CVE-2024-29903 describes a denial-of-service vulnerability in cosign, a software supply chain tool used to sign/verify artifacts in CI/CD pipelines. This affects the artifact signing/verification step, which is a component of the software supply chain for AI deployments, making it relevant to general-purpose AI system stacks. It is a security vulnerability (DoS) with available CVE details and a patch in version 2.2.4. Sufficient evidence is provided in the report and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:N/I:N/A:H",
+      "baseScore": 4.2,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-770",
+        "description": "CWE-770: Allocation of Resources Without Limits or Throttling",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1580"
+  },
+  "affects": {
+    "developer": [
+      "stitionai"
+    ],
+    "deployer": [
+      "stitionai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "stitionai/devika"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unprotected WebSocket in stitionai/devika (CVE-2024-5820)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-5820"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/2ba757bf-8ede-445b-b143-2de7769758a6",
+      "url": "https://huntr.com/bounties/2ba757bf-8ede-445b-b143-2de7769758a6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An unprotected WebSocket connection in the latest version of stitionai/devika (commit ecee79f) allows a malicious website to connect to the backend and issue commands on behalf of the user. The backend serves all listeners on the given socket, enabling any such malicious website to intercept all communication between the user and the backend. This vulnerability can lead to unauthorized command execution and potential server-side request forgery.\n\nReason for inclusion in AVID: CVE-2024-5820 describes an unprotected WebSocket in stitionai/devika enabling remote command execution and potential server-side request forgery. This is a software vulnerability within a backend component that could be used in AI model serving/deployment stacks, i.e., part of the software supply chain for general-purpose AI systems. The issue concerns AI-related software (backend used in AI workflows) and provides CVE, description, and impact details, indicating a clear security vulnerability with evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L",
+      "baseScore": 7.6,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-862",
+        "description": "CWE-862 Missing Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-27"
+}

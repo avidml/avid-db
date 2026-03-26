@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1122"
+  },
+  "affects": {
+    "developer": [
+      "davedoesdev"
+    ],
+    "deployer": [
+      "davedoesdev"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "python-jwt"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Python-jwt subject to Authentication Bypass by Spoofing (CVE-2022-39227)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-39227"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/davedoesdev/python-jwt/security/advisories/GHSA-5p8v-58qm-c7fp",
+      "url": "https://github.com/davedoesdev/python-jwt/security/advisories/GHSA-5p8v-58qm-c7fp"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/davedoesdev/python-jwt/commit/88ad9e67c53aa5f7c43ec4aa52ed34b7930068c9",
+      "url": "https://github.com/davedoesdev/python-jwt/commit/88ad9e67c53aa5f7c43ec4aa52ed34b7930068c9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/pypa/advisory-database/blob/main/vulns/python-jwt/PYSEC-2022-259.yaml",
+      "url": "https://github.com/pypa/advisory-database/blob/main/vulns/python-jwt/PYSEC-2022-259.yaml"
+    },
+    {
+      "type": "source",
+      "label": "https://www.vicarius.io/vsociety/posts/authentication-bypass-in-python-jwt",
+      "url": "https://www.vicarius.io/vsociety/posts/authentication-bypass-in-python-jwt"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "python-jwt is a module for generating and verifying JSON Web Tokens. Versions prior to 3.3.4 are subject to Authentication Bypass by Spoofing, resulting in identity spoofing, session hijacking or authentication bypass. An attacker who obtains a JWT can arbitrarily forge its contents without knowing the secret key. Depending on the application, this may for example enable the attacker to spoof other user's identities, hijack their sessions, or bypass authentication. Users should upgrade to version 3.3.4. There are no known workarounds.\n\nReason for inclusion in AVID: CVE-2022-39227 describes a critical authentication bypass vulnerability in the python-jwt library (versions <3.3.4). This library is commonly used in Python-based systems, including AI/ML services for token-based authentication in model serving, APIs, and data pipelines. As a dependency affecting software used to build/deploy/run general-purpose AI systems, it constitutes a software supply chain issue within AI stacks. The vulnerability is explicitly security-related (authentication bypass with high impact) and the report provides concrete details and references, supporting AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-290",
+        "description": "CWE-290: Authentication Bypass by Spoofing",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-09-23"
+}

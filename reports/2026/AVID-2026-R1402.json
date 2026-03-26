@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1402"
+  },
+  "affects": {
+    "developer": [
+      "lunary-ai"
+    ],
+    "deployer": [
+      "lunary-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "lunary-ai/lunary"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Session Reuse Vulnerability in lunary-ai/lunary (CVE-2024-1902)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-1902"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e536310e-abe7-4585-9cf6-21f77390a5e8",
+      "url": "https://huntr.com/bounties/e536310e-abe7-4585-9cf6-21f77390a5e8"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lunary-ai/lunary/commit/d8e2e73efd53ab4e92cf47bbf4b639a9f08853d2",
+      "url": "https://github.com/lunary-ai/lunary/commit/d8e2e73efd53ab4e92cf47bbf4b639a9f08853d2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "lunary-ai/lunary is vulnerable to a session reuse attack, allowing a removed user to change the organization name without proper authorization. The vulnerability stems from the lack of validation to check if a user is still part of an organization before allowing them to make changes. An attacker can exploit this by using an old authorization token to send a PATCH request, modifying the organization's name even after being removed from the organization. This issue is due to incorrect synchronization and affects the orgs.patch route.\n\nReason for inclusion in AVID: CVE-2024-1902 describes a session reuse vulnerability in lunary-ai/lunary that allows an attacker with an old token to modify organization data, indicating a security vulnerability in a software component commonly used in AI platforms. This component is part of the software stack that builds/deploys AI systems, aligning with general-purpose AI supply chain concerns. Sufficient evidence is provided via the CVE entry and related references. Therefore, it meets all four criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-821",
+        "description": "CWE-821 Incorrect Synchronization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-04-10"
+}

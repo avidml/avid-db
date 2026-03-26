@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1682"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure AI Bot Service"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Azure Bot Framework SDK Elevation of Privilege Vulnerability (CVE-2025-30389)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-30389"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30389",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-30389"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper authorization in Azure Bot Framework SDK allows an unauthorized attacker to elevate privileges over a network.\n\nReason for inclusion in AVID: The CVE-2025-30389 vulnerability is a software security issue in the Azure Bot Framework SDK, enabling elevation of privilege via improper authorization. The Bot Framework SDK is a component used in building and deploying AI-powered chatbots and AI systems, placing it squarely in the software supply chain for general-purpose AI systems (deployment/serving stacks and orchestration). It is not hardware/firmware-only. The report provides clear vulnerability behavior, affected product (Azure Bot Service), and a CVSS score indicating high risk, offering sufficient evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N/E:P/RL:O/RC:C",
+      "baseScore": 8.7,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-285",
+        "description": "CWE-285: Improper Authorization",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2025-04-30"
+}

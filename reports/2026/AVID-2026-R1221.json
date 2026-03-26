@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1221"
+  },
+  "affects": {
+    "developer": [
+      "IBM"
+    ],
+    "deployer": [
+      "IBM"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Watson CP4D Data Stores"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "IBM Watson CP4D Data Stores information disclosure (CVE-2023-27291)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-27291"
+    },
+    {
+      "type": "source",
+      "label": "https://www.ibm.com/support/pages/node/6965458",
+      "url": "https://www.ibm.com/support/pages/node/6965458"
+    },
+    {
+      "type": "source",
+      "label": "https://exchange.xforce.ibmcloud.com/vulnerabilities/248740",
+      "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/248740"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "IBM Watson CP4D Data Stores 4.6.0, 4.6.1, 4.6.2, and 4.6.3 does not encrypt sensitive or critical information before storage or transmission which could allow an attacker to obtain sensitive information.  IBM X-Force ID:  248740.\n\nReason for inclusion in AVID: CVE-2023-27291 describes an information disclosure vulnerability in IBM Watson CP4D Data Stores, a component used within an AI platform. This is a software vulnerability affecting a data storage component that can impact AI pipelines (data used for training/serving), fitting within the software supply chain for general-purpose AI systems. The report provides explicit impact (cleartext transmission/storage of sensitive data) and references, supporting its relevance to AI systems and their supply chains."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:N/A:N",
+      "baseScore": 4.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-319",
+        "description": "CWE-319 Cleartext Transmission of Sensitive Information",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-03"
+}

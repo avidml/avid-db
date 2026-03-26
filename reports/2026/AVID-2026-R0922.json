@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0922"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-42969"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42969"
+    },
+    {
+      "type": "source",
+      "label": "https://yuaneuro.cn/anaconda/anaconda_command_execution.docx",
+      "url": "https://yuaneuro.cn/anaconda/anaconda_command_execution.docx"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Certain Anaconda3 2021.05 are affected by OS command injection. When a user installs Anaconda, an attacker can create a new file and write something in usercustomize.py. When the user opens the terminal or activates Anaconda, the command will be executed.\n\nReason for inclusion in AVID: CVE-2021-42969 describes an OS command injection in Anaconda3 2021.05 where an attacker could create usercustomize.py during install and cause command execution when the terminal is opened or Anaconda is activated. Anaconda is a widely used software stack in AI/ML workflows (environment/dependency management, data science tooling). This is a software supply-chain risk within AI tooling, with explicit code execution potential, satisfying AI relevance, GP AI supply chain involvement, and vulnerability criteria. The report provides explicit vulnerability behavior and impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-05-13"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1422"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio-app/gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "SSRF Vulnerability in gradio-app/gradio (CVE-2024-2206)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-2206"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/2286c1ed-b889-45d6-adda-7014ea06d98e",
+      "url": "https://huntr.com/bounties/2286c1ed-b889-45d6-adda-7014ea06d98e"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gradio-app/gradio/commit/49d9c48537aa706bf72628e3640389470138bdc6",
+      "url": "https://github.com/gradio-app/gradio/commit/49d9c48537aa706bf72628e3640389470138bdc6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An SSRF vulnerability exists in the gradio-app/gradio due to insufficient validation of user-supplied URLs in the `/proxy` route. Attackers can exploit this vulnerability by manipulating the `self.replica_urls` set through the `X-Direct-Url` header in requests to the `/` and `/config` routes, allowing the addition of arbitrary URLs for proxying. This flaw enables unauthorized proxying of requests and potential access to internal endpoints within the Hugging Face space. The issue arises from the application's inadequate checking of safe URLs in the `build_proxy_request` function.\n\nReason for inclusion in AVID: The CVE describes an SSRF vulnerability in gradio-app/gradio, a widely used AI demo framework. This directly concerns software used to build and deploy AI/model-serving demos, impacting AI pipelines and general-purpose AI systems. It affects the software supply chain through the Gradio dependency, enabling exposure or manipulation via proxying. The vulnerability is clearly security-related with concrete impact (SSRF), and the report provides explicit details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 7.3,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-27"
+}

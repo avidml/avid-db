@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1439"
+  },
+  "affects": {
+    "developer": [
+      "mindsdb"
+    ],
+    "deployer": [
+      "mindsdb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mindsdb"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MindsDB Vulnerable to Bypass of SSRF Protection with DNS Rebinding (CVE-2024-24759)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-24759"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-4jcv-vp96-94xr",
+      "url": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-4jcv-vp96-94xr"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/commit/5f7496481bd3db1d06a2d2e62c0dce960a1fe12b",
+      "url": "https://github.com/mindsdb/mindsdb/commit/5f7496481bd3db1d06a2d2e62c0dce960a1fe12b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "MindsDB is a platform for building artificial intelligence from enterprise data. Prior to version 23.12.4.2, a threat actor can bypass the server-side request forgery protection on the whole website with DNS Rebinding. The vulnerability can also lead to denial of service. Version 23.12.4.2 contains a patch.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in MindsDB, an AI platform used to build/deploy AI solutions. It is a software vulnerability in a component integral to AI workflows (AI model training/deployment stack) with potential SSRF-related security impact. This is relevant to the software supply chain of general-purpose AI systems (not hardware/firmware-only). The report provides explicit vulnerability details, impact, and a patched version, giving sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L",
+      "baseScore": 9.3,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-05"
+}

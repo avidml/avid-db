@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1608"
+  },
+  "affects": {
+    "developer": [
+      "gradio-app"
+    ],
+    "deployer": [
+      "gradio-app"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "gradio-app/gradio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Open Redirect in gradio-app/gradio (CVE-2024-8021)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8021"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/adc23067-ec04-47ef-9265-afd452071888",
+      "url": "https://huntr.com/bounties/adc23067-ec04-47ef-9265-afd452071888"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An open redirect vulnerability exists in the latest version of gradio-app/gradio. The vulnerability allows an attacker to redirect users to a malicious website by URL encoding. This can be exploited by sending a crafted request to the application, which results in a 302 redirect to an attacker-controlled site.\n\nReason for inclusion in AVID: CVE-2024-8021 describes an open redirect vulnerability in gradio-app/gradio, a Python library widely used to build and deploy AI/ML apps and dashboards. This directly concerns software used in AI pipelines and general-purpose AI systems (deployment/runtime stacks, UI for models, etc.). It is a security vulnerability (open redirect) in a component that is part of AI software stacks, not hardware/firmware. The report provides CVE details and CWE mapping, indicating sufficient evidence for classification as a software supply chain vulnerability in AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-601",
+        "description": "CWE-601 URL Redirection to Untrusted Site",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

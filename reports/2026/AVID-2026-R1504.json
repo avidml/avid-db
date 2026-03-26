@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1504"
+  },
+  "affects": {
+    "developer": [
+      "OpenAI"
+    ],
+    "deployer": [
+      "OpenAI"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "AI Engine: ChatGPT Chatbot"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "WordPress AI ENGINE plugin <= 2.4.7 - Server Side Request Forgery (SSRF) vulnerability (CVE-2024-38791)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-38791"
+    },
+    {
+      "type": "source",
+      "label": "https://patchstack.com/database/vulnerability/ai-engine/wordpress-ai-engine-plugin-2-4-7-server-side-request-forgery-ssrf-vulnerability?_s_id=cve",
+      "url": "https://patchstack.com/database/vulnerability/ai-engine/wordpress-ai-engine-plugin-2-4-7-server-side-request-forgery-ssrf-vulnerability?_s_id=cve"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Server-Side Request Forgery (SSRF) vulnerability in Jordy Meow AI Engine: ChatGPT Chatbot allows Server Side Request Forgery.This issue affects AI Engine: ChatGPT Chatbot: from n/a through 2.4.7.\n\nReason for inclusion in AVID: CVE-2024-38791 documents a Server-Side Request Forgery (SSRF) vulnerability in the WordPress AI Engine plugin (<= 2.4.7), specifically in the AI Engine: ChatGPT Chatbot component. This plugin is a software component used to deliver AI features within a web application, i.e., part of an AI deployment stack. Although not a core AI framework, it is a dependency/tooling commonly involved in building/serving AI-enabled websites and services, which places it within the software supply chain for general-purpose AI systems. The CVE includes standard vulnerability details (CVSS) and a clear security impact (SSRF), providing sufficient evidence for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:N",
+      "baseScore": 4.9,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-01"
+}

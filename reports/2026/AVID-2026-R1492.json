@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1492"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-36732"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-36732"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/Redmept1on/3feef7639b2bc7891d0cfda6d932adfd",
+      "url": "https://gist.github.com/Redmept1on/3feef7639b2bc7891d0cfda6d932adfd"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in OneFlow-Inc. Oneflow v0.9.1 allows attackers to cause a Denial of Service (DoS) when an empty array is processed with oneflow.tensordot.\n\nReason for inclusion in AVID: CVE-2024-36732 describes a Denial of Service vulnerability in the OneFlow framework (v0.9.1) when processing an empty array with oneflow.tensordot. OneFlow is a machine learning framework used in AI model development and deployment, placing this issue squarely in the AI software stack. The vulnerability affects software components used to build/train/deploy AI systems, i.e., a supply-chain-relevant dependency. The impact is a security-related DoS. The report provides a specific CVE ID and description, offering sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-06-06"
+}

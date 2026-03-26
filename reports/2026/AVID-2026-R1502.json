@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1502"
+  },
+  "affects": {
+    "developer": [
+      "CycloneDX"
+    ],
+    "deployer": [
+      "CycloneDX"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cyclonedx-core-java"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Improper Restriction of XML External Entity Reference in org.cyclonedx:cyclonedx-core-java (CVE-2024-38374)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-38374"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/CycloneDX/cyclonedx-core-java/security/advisories/GHSA-683x-4444-jxh8",
+      "url": "https://github.com/CycloneDX/cyclonedx-core-java/security/advisories/GHSA-683x-4444-jxh8"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/CycloneDX/cyclonedx-core-java/pull/434",
+      "url": "https://github.com/CycloneDX/cyclonedx-core-java/pull/434"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/CycloneDX/cyclonedx-core-java/pull/434/commits/ab0bc9c530d24f737970dbd0287d1190b129853d",
+      "url": "https://github.com/CycloneDX/cyclonedx-core-java/pull/434/commits/ab0bc9c530d24f737970dbd0287d1190b129853d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The CycloneDX core module provides a model representation of the SBOM along with utilities to assist in creating, validating, and parsing SBOMs. Before deserializing CycloneDX Bill of Materials in XML format, _cyclonedx-core-java_ leverages XPath expressions to determine the schema version of the BOM. The `DocumentBuilderFactory` used to evaluate XPath expressions was not configured securely, making the library vulnerable to XML External Entity (XXE) injection. This vulnerability has been fixed in cyclonedx-core-java version 9.0.4.\n\nReason for inclusion in AVID: CVE-2024-38374 is an XXE vulnerability in CycloneDX core Java (SBOM parsing). SBOM tooling is a key component of software supply chain management, including for AI systems. The issue is a security vulnerability in a tool used to build/run AI software supply chains, with a high-severity CVSS and a public fix version. The report provides clear evidence (CVE id, affected artifact, remediation) to support inclusion in AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-611",
+        "description": "CWE-611: Improper Restriction of XML External Entity Reference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-28"
+}

@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1517"
+  },
+  "affects": {
+    "developer": [
+      "open-telemetry"
+    ],
+    "deployer": [
+      "open-telemetry"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "opentelemetry-collector-contrib"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "open-telemetry has an Observable Timing Discrepancy (CVE-2024-42368)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-42368"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/open-telemetry/opentelemetry-collector-contrib/security/advisories/GHSA-rfxf-mf63-cpqv",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-contrib/security/advisories/GHSA-rfxf-mf63-cpqv"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/34516",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/34516"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/open-telemetry/opentelemetry-collector-contrib/commit/c9bd3eff0bb357d9c812a0d8defd3b09db95699a",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-contrib/commit/c9bd3eff0bb357d9c812a0d8defd3b09db95699a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "OpenTelemetry, also known as OTel, is a vendor-neutral open source Observability framework for instrumenting, generating, collecting, and exporting telemetry data such as traces, metrics, and logs. The bearertokenauth extension's server authenticator performs a simple, non-constant time string comparison of the received & configured bearer tokens. This impacts anyone using the `bearertokenauth` server authenticator. Malicious clients with network access to the collector may perform a timing attack against a collector with this authenticator to guess the configured token, by iteratively sending tokens and comparing the response time. This would allow an attacker to introduce fabricated or bad data into the collector's telemetry pipeline. The observable timing vulnerability was fixed by using constant-time comparison in  0.107.0\n\nReason for inclusion in AVID: The CVE describes a timing-attack vulnerability in the bearer token authenticator of OpenTelemetry Collector Contrib, a software component used in deployment/operational stacks. This component is commonly used in ML/AI pipelines for observability (traces/metrics/logs). The issue affects a software supply chain component (dependencies/serving/monitoring stack) that AI systems rely on, and it is a security vulnerability (timing-based token guess could impact data integrity of telemetry). The report includes explicit details, affected artifacts, CVSS data, and references, providing sufficient signal for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-208",
+        "description": "CWE-208: Observable Timing Discrepancy",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-13"
+}

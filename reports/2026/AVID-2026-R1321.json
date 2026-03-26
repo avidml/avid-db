@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1321"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "H2O Local File Include (CVE-2023-6013)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6013"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/9881569f-dc2a-437e-86b0-20d4b70ae7af",
+      "url": "https://huntr.com/bounties/9881569f-dc2a-437e-86b0-20d4b70ae7af"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "H2O is vulnerable to stored XSS vulnerability which can lead to a Local File Include attack.\n\nReason for inclusion in AVID: CVE-2023-6013 affects H2O-3, an AI platform component; the vuln is a network-accessible web vulnerability (XSS leading to Local File Include) that can impact AI software stacks used for model building/deployment. This is a security flaw in software components used in GP AI systems, with explicit CVE and CVSS signals."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N",
+      "baseScore": 9.3,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-11-16"
+}

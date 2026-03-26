@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1117"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Calcite Avatica"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Calcite Avatica JDBC driver `httpclient_impl` connection property can be used as an RCE vector (CVE-2022-36364)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-36364"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/5csdj8bv4h3hfgw27okm84jh1j2fyw0c",
+      "url": "https://lists.apache.org/thread/5csdj8bv4h3hfgw27okm84jh1j2fyw0c"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2022/07/28/1",
+      "url": "http://www.openwall.com/lists/oss-security/2022/07/28/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Calcite Avatica JDBC driver creates HTTP client instances based on class names provided via `httpclient_impl` connection property; however, the driver does not verify if the class implements the expected interface before instantiating it, which can lead to code execution loaded via arbitrary classes and in rare cases remote code execution. To exploit the vulnerability: 1) the attacker needs to have privileges to control JDBC connection parameters; 2) and there should be a vulnerable class (constructor with URL parameter and ability to execute code) in the classpath. From Apache Calcite Avatica 1.22.0 onwards, it will be verified that the class implements the expected interface before invoking its constructor.\n\nReason for inclusion in AVID: CVE-2022-36364 describes a remote code execution vulnerability in the Apache Calcite Avatica JDBC driver via the httpclient_impl property. This is a software vulnerability in a dependency that can be present in AI data pipelines and general-purpose AI system stacks (e.g., data ingestion/connection layers). Therefore it qualifies as a software supply chain risk for general-purpose AI systems, provided through widely-used runtime/dependency components. The report provides clear vulnerability behavior and how exploitation can occur, satisfying sufficient_evidence. It is AI-related insofar as it can impact AI pipelines that rely on this driver, and it is a supply-chain issue since it concerns a component that may be used to build/run AI systems. It is a security vulnerability (RCE)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-665",
+        "description": "CWE-665 Improper Initialization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-07-28"
+}

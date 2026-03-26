@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1578"
+  },
+  "affects": {
+    "developer": [
+      "mendableai"
+    ],
+    "deployer": [
+      "mendableai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "firecrawl"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Firecrawl has SSRF Vulnerability via malicious scrape target (CVE-2024-56800)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-56800"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mendableai/firecrawl/security/advisories/GHSA-vjp8-2wgg-p734",
+      "url": "https://github.com/mendableai/firecrawl/security/advisories/GHSA-vjp8-2wgg-p734"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mendableai/firecrawl/commit/4d1f92f4c8c36403022428285a03621fd90d62ec",
+      "url": "https://github.com/mendableai/firecrawl/commit/4d1f92f4c8c36403022428285a03621fd90d62ec"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Firecrawl is a web scraper that allows users to extract the content of a webpage for a large language model. Versions prior to 1.1.1 contain a server-side request forgery (SSRF) vulnerability. The scraping engine could be exploited by crafting a malicious site that redirects to a local IP address. This allowed exfiltration of local network resources through the API. The cloud service was patched on December 27th, 2024, and the maintainers have checked that no user data was exposed by this vulnerability. Scraping engines used in the open sourced version of Firecrawl were patched on December 29th, 2024, except for the playwright services which the maintainers have determined to be un-patchable. All users of open-source software (OSS) Firecrawl should upgrade to v1.1.1. As a workaround, OSS Firecrawl users should supply the playwright services with a secure proxy. A proxy can be specified through the `PROXY_SERVER` env in the environment variables. Please refer to the documentation for instructions. Ensure that the proxy server one is using is setup to block all traffic going to link-local IP addresses.\n\nReason for inclusion in AVID: CVE-2024-56800 concerns Firecrawl, a web scraping tool used to gather data for large language model training pipelines. It is a software vulnerability (SSRF) with high severity (CVSS 7.4). The issue affects OSS components used in data collection for AI systems, i.e., a core part of the AI supply chain (data ingestion for training/deployment). The report provides CVE details, impact, and remediation steps, giving sufficient signal to categorize as a security vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L",
+      "baseScore": 7.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-12-30"
+}

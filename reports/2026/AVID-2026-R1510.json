@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1510"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-40441"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-40441"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/doccano/doccano/releases/tag/v1.8.4",
+      "url": "https://github.com/doccano/doccano/releases/tag/v1.8.4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/doccano/auto-labeling-pipeline/releases/tag/v0.1.23",
+      "url": "https://github.com/doccano/auto-labeling-pipeline/releases/tag/v0.1.23"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/gian2dchris/CVEs/tree/main/CVE-2024-40441",
+      "url": "https://github.com/gian2dchris/CVEs/tree/main/CVE-2024-40441"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in Doccano Open source annotation tools for machine learning practitioners v.1.8.4 and Doccano Auto Labeling Pipeline module to annotate a document automatically v.0.1.23 allows a remote attacker to escalate privileges via the model_attribs parameter.\n\nReason for inclusion in AVID: CVE-2024-40441 describes a remote privilege escalation in Doccano (a data labeling/annotation tool) versions 1.8.4 and 0.1.23. Doccano is a component commonly used in ML data preparation and annotation pipelines, i.e., part of the AI model training/serving stack. This is a software vulnerability affecting a component used in AI workflows, representing a potential risk to the supply chain of general-purpose AI systems. The report provides explicit CVE details, affected versions, impact (privilege escalation), and references (NVD and project release pages), offering sufficient signal for curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-09-23"
+}

@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1512"
+  },
+  "affects": {
+    "developer": [
+      "opengeos"
+    ],
+    "deployer": [
+      "opengeos"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "streamlit-geospatial"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Remote code execution in streamlit geospatial in pages/1_\ud83d\udcf7_Timelapse.py MODIS Ocean Color SMI option palette (CVE-2024-41115)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-41115"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2024-100_GHSL-2024-108_streamlit-geospatial/",
+      "url": "https://securitylab.github.com/advisories/GHSL-2024-100_GHSL-2024-108_streamlit-geospatial/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/opengeos/streamlit-geospatial/commit/c4f81d9616d40c60584e36abb15300853a66e489",
+      "url": "https://github.com/opengeos/streamlit-geospatial/commit/c4f81d9616d40c60584e36abb15300853a66e489"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/opengeos/streamlit-geospatial/blob/4b89495f3bdd481998aadf1fc74b10de0f71c237/pages/1_%F0%9F%93%B7_Timelapse.py#L488",
+      "url": "https://github.com/opengeos/streamlit-geospatial/blob/4b89495f3bdd481998aadf1fc74b10de0f71c237/pages/1_%F0%9F%93%B7_Timelapse.py#L488"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/opengeos/streamlit-geospatial/blob/4b89495f3bdd481998aadf1fc74b10de0f71c237/pages/1_%F0%9F%93%B7_Timelapse.py#L493",
+      "url": "https://github.com/opengeos/streamlit-geospatial/blob/4b89495f3bdd481998aadf1fc74b10de0f71c237/pages/1_%F0%9F%93%B7_Timelapse.py#L493"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "streamlit-geospatial is a streamlit multipage app for geospatial applications. Prior to commit c4f81d9616d40c60584e36abb15300853a66e489, the `palette` variable on line 488 in `pages/1_\ud83d\udcf7_Timelapse.py` takes user input, which is later used in the `eval()` function on line 493, leading to remote code execution. Commit c4f81d9616d40c60584e36abb15300853a66e489 fixes this issue.\n\nReason for inclusion in AVID: CVE-2024-41115 describes a remote code execution vulnerability in streamlit-geospatial caused by unsafe eval of user input, which is a software supply-chain issue in a component commonly used to build/deploy AI apps/pipelines. This affects software used to run general-purpose AI systems (e.g., dashboards/apps built with Streamlit), is an RCE vulnerability, and the report provides explicit evidence and a fix commit. Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 9.8,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-07-26"
+}

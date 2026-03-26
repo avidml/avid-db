@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1051"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-34061"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-34061"
+    },
+    {
+      "type": "source",
+      "label": "http://pypi.doubanio.com/simple/request",
+      "url": "http://pypi.doubanio.com/simple/request"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/catly-translate/",
+      "url": "https://pypi.org/project/catly-translate/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/CatNeverCodes/catly_translate/issues/1",
+      "url": "https://github.com/CatNeverCodes/catly_translate/issues/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The Catly-Translate package in PyPI v0.0.3 to v0.0.5 was discovered to contain a code execution backdoor. This vulnerability allows attackers to access sensitive user information and digital currency keys, as well as escalate privileges.\n\nReason for inclusion in AVID: CVE-2022-34061 describes a backdoor in the PyPI package catly-translate (versions 0.0.3\u20130.0.5) enabling code execution and access to sensitive data, i.e., a software supply chain vulnerability. The package is a library used in AI-related workflows (translation/NLP tooling) and could be integrated into general-purpose AI systems, making it relevant to the AI software stack. The vulnerability is clearly security/malware in nature and the report provides CVE ID plus references (NVD, GitHub issues) that substantiate the risk."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-06-24"
+}

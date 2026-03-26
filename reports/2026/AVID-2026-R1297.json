@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1297"
+  },
+  "affects": {
+    "developer": [
+      "iterative"
+    ],
+    "deployer": [
+      "iterative"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "PyDrive2"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unsafe YAML deserialization in PyDrive2 (CVE-2023-49297)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-49297"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/iterative/PyDrive2/security/advisories/GHSA-v5f6-hjmf-9mc5",
+      "url": "https://github.com/iterative/PyDrive2/security/advisories/GHSA-v5f6-hjmf-9mc5"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/iterative/PyDrive2/commit/c57355dc2033ad90b7050d681b2c3ba548ff0004",
+      "url": "https://github.com/iterative/PyDrive2/commit/c57355dc2033ad90b7050d681b2c3ba548ff0004"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CYR5SJKOFSSXFV3E3D2SLXBUBA5WMJJG/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CYR5SJKOFSSXFV3E3D2SLXBUBA5WMJJG/"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K34YWTDKBAYWZPOAKBYDM72WIFL5CAYW/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K34YWTDKBAYWZPOAKBYDM72WIFL5CAYW/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "PyDrive2 is a wrapper library of google-api-python-client that simplifies many common Google Drive API V2 tasks. Unsafe YAML deserilization will result in arbitrary code execution. A maliciously crafted YAML file can cause arbitrary code execution if PyDrive2 is run in the same directory as it, or if it is loaded in via `LoadSettingsFile`. This is a deserilization attack that will affect any user who initializes GoogleAuth from this package while a malicious yaml file is present in the same directory. This vulnerability does not require the file to be directly loaded through the code, only present. This issue has been addressed in commit `c57355dc` which is included in release version `1.16.2`. Users are advised to upgrade. There are no known workarounds for this vulnerability.\n\nReason for inclusion in AVID: CVE-2023-49297 describes unsafe YAML deserialization in PyDrive2 leading to arbitrary code execution when a malicious YAML file is present. PyDrive2 is a Python library commonly used in data handling within AI/ML workflows (e.g., data ingestion from Google Drive); thus this affects software used to build/run AI systems. The vulnerability is a code execution security issue (CWE-502). The CVE entry provides explicit details and a fix commit/release, satisfying sufficient_evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "baseScore": 3.3,
+      "baseSeverity": "LOW",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-05"
+}

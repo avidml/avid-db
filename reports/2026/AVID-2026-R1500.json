@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1500"
+  },
+  "affects": {
+    "developer": [
+      "deepjavalibrary"
+    ],
+    "deployer": [
+      "deepjavalibrary"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "djl"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path thraversal in DeepJavaLibrary (CVE-2024-37902)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-37902"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/deepjavalibrary/djl/security/advisories/GHSA-w877-jfw7-46rj",
+      "url": "https://github.com/deepjavalibrary/djl/security/advisories/GHSA-w877-jfw7-46rj"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/deepjavalibrary/djl/releases/tag/v0.28.0",
+      "url": "https://github.com/deepjavalibrary/djl/releases/tag/v0.28.0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "DeepJavaLibrary(DJL) is an Engine-Agnostic Deep Learning Framework in Java. DJL versions 0.1.0 through 0.27.0 do not prevent absolute path archived artifacts from inserting archived files directly into the system, overwriting system files. This is fixed in DJL 0.28.0 and patched in DJL Large Model Inference containers version 0.27.0. Users are advised to upgrade.\n\nReason for inclusion in AVID: CVE-2024-37902 describes a path traversal vulnerability in DeepJavaLibrary (DJL) affecting versions 0.1.0\u20130.27.0, allowing an attacker to insert archived files and overwrite system files when unpacking archives. DJL is a Java-based deep learning library used in AI workloads (models, pipelines, deployment tooling), making this a software supply-chain vulnerability within AI ecosystems. The issue is fixed in DJL 0.28.0 (and patched in container images), with clear references (NVD entry, GitHub advisory, release notes). This fits AI-related, supply-chain, security/vulnerability criteria with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 10.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-17"
+}

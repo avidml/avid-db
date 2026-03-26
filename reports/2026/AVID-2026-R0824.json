@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0824"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "ansible-runner"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-3702"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-3702"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ansible/ansible-runner/pull/742/commits",
+      "url": "https://github.com/ansible/ansible-runner/pull/742/commits"
+    },
+    {
+      "type": "source",
+      "label": "https://bugzilla.redhat.com/show_bug.cgi?id=1977965",
+      "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1977965"
+    },
+    {
+      "type": "source",
+      "label": "https://access.redhat.com/security/cve/CVE-2021-3702",
+      "url": "https://access.redhat.com/security/cve/CVE-2021-3702"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A race condition flaw was found in ansible-runner, where an attacker could watch for rapid creation and deletion of a temporary directory, substitute their directory at that name, and then have access to ansible-runner's private_data_dir the next time ansible-runner made use of the private_data_dir. The highest Threat out of this flaw is to integrity and confidentiality.\n\nReason for inclusion in AVID: CVE-2021-3702 describes a race condition in ansible-runner that can allow an attacker to access or tamper with private_data_dir, impacting integrity and confidentiality. Ansible-runner is a deployment/orchestration tool frequently used in pipelines that build, deploy, and operate AI/ML workloads, making this a relevant software supply-chain vulnerability for general-purpose AI systems. The issue is in a software component used to deploy/run AI systems (not purely hardware/firmware), it represents a security vulnerability with clear exploitation behavior, and the report provides explicit evidence (description and references)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-362",
+        "description": "CWE-362 - Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-08-23"
+}

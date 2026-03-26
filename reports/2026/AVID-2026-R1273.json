@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1273"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Spark Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Spark Provider Deserialization Vulnerability RCE (CVE-2023-40195)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-40195"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/33233",
+      "url": "https://github.com/apache/airflow/pull/33233"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/fzy95b1d6zv31j5wrx3znhzcscck2o24",
+      "url": "https://lists.apache.org/thread/fzy95b1d6zv31j5wrx3znhzcscck2o24"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Deserialization of Untrusted Data, Inclusion of Functionality from Untrusted Control Sphere vulnerability in Apache Software Foundation Apache Airflow Spark Provider.\n\nWhen the Apache Spark provider is installed on an Airflow deployment, an Airflow user that is authorized to configure Spark hooks can effectively run arbitrary code on the Airflow node by pointing it at a malicious Spark server. Prior to version 4.1.3, this was not called out in the documentation explicitly, so it is possible that administrators provided authorizations to configure Spark hooks without taking this into account. We recommend administrators to review their configurations to make sure the authorization to configure Spark hooks is only provided to fully trusted users.\n\nTo view the warning in the docs please visit\u00a0 https://airflow.apache.org/docs/apache-airflow-providers-apache-spark/4.1.3/connections/spark.html\n\nReason for inclusion in AVID: The CVE describes a remote code execution via deserialization in the Apache Airflow Spark Provider, a software component commonly used in AI/ML pipeline orchestration and data processing. It affects tooling used to build, deploy, or run AI workloads, representing a software supply-chain vulnerability within AI stacks. The issue has a clear exploitation path (deserialization leading to RCE) and is documented with impact details."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-829",
+        "description": "CWE-829 Inclusion of Functionality from Untrusted Control Sphere",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-28"
+}

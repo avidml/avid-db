@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0711"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Bot Framework SDK for .NET Framework"
+      },
+      {
+        "type": "System",
+        "name": "Bot Framework SDK for JavaScript"
+      },
+      {
+        "type": "System",
+        "name": "Bot Framework SDK for Python"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Bot Framework SDK Information Disclosure Vulnerability (CVE-2021-1725)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-1725"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-1725",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-1725"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Bot Framework SDK Information Disclosure Vulnerability\n\nReason for inclusion in AVID: CVE-2021-1725 is a software vulnerability in the Bot Framework SDK (for .NET, JavaScript, and Python) that leads to information disclosure. The Bot Framework SDK is a software component used to build and deploy AI-enabled chatbots and related AI services, making it part of the software stack for general-purpose AI systems. This is a security/vulnerability issue in a dependency used to develop/run AI applications, thus a software supply chain concern for AI systems. The CVE is documented with references (NVD/MSRC) and describes a disclosure risk, meeting the evidence criteria."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM"
+    }
+  },
+  "reported_date": "2021-01-12"
+}

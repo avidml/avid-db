@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0880"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Spark"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Spark Key Negotiation Vulnerability (CVE-2021-38296)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-38296"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/70x8fw2gx3g9ty7yk0f2f1dlpqml2smd",
+      "url": "https://lists.apache.org/thread/70x8fw2gx3g9ty7yk0f2f1dlpqml2smd"
+    },
+    {
+      "type": "source",
+      "label": "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "url": "https://www.oracle.com/security-alerts/cpujul2022.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Apache Spark supports end-to-end encryption of RPC connections via \"spark.authenticate\" and \"spark.network.crypto.enabled\". In versions 3.1.2 and earlier, it uses a bespoke mutual authentication protocol that allows for full encryption key recovery. After an initial interactive attack, this would allow someone to decrypt plaintext traffic offline. Note that this does not affect security mechanisms controlled by \"spark.authenticate.enableSaslEncryption\", \"spark.io.encryption.enabled\", \"spark.ssl\", \"spark.ui.strictTransportSecurity\". Update to Apache Spark 3.1.3 or later\n\nReason for inclusion in AVID: CVE-2021-38296 describes a Spark authentication key negotiation vulnerability that allows capture-replay-based authentication bypass and decryption of traffic. Apache Spark is a core data processing framework frequently used in AI/ML pipelines for data ingestion/processing; vulnerabilities in Spark affect the software stack used to build/train/deploy AI systems, hence within the AI supply chain. The issue is a software security vulnerability with clear affected versions and remediation guidance, as evidenced by the CVE/NVD sources provided."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-294",
+        "description": "CWE-294 Authentication Bypass by Capture-replay",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-03-10"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1605"
+  },
+  "affects": {
+    "developer": [
+      "onnx"
+    ],
+    "deployer": [
+      "onnx"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "onnx/onnx"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Arbitrary File Overwrite in onnx/onnx (CVE-2024-7776)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7776"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/a7a46cf6-1fa0-454b-988c-62d222e83f63",
+      "url": "https://huntr.com/bounties/a7a46cf6-1fa0-454b-988c-62d222e83f63"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the `download_model` function of the onnx/onnx framework, before and including version 1.16.1, allows for arbitrary file overwrite due to inadequate prevention of path traversal attacks in malicious tar files. This vulnerability can be exploited by an attacker to overwrite files in the user's directory, potentially leading to remote command execution.\n\nReason for inclusion in AVID: CVE-2024-7776 describes an arbitrary file overwrite (path traversal) vulnerability in the onnx/onnx library, exploitable via download_model. ONNX is a core ML framework widely used in AI model development, deployment, and serving. The issue is in a software dependency commonly used to build/run general-purpose AI systems, representing a software supply chain vulnerability with potential remote command execution. This aligns with AI-related, GPAI supply chain, and security/safety vulnerability criteria, and the report provides explicit evidence (CVE entry, CVSS metrics)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

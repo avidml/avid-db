@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1235"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-30172"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-30172"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/issues/7166",
+      "url": "https://github.com/mlflow/mlflow/issues/7166"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/issues/7166#issuecomment-1541543234",
+      "url": "https://github.com/mlflow/mlflow/issues/7166#issuecomment-1541543234"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A directory traversal vulnerability in the /get-artifact API method of the mlflow platform up to v2.0.1 allows attackers to read arbitrary files on the server via the path parameter.\n\nReason for inclusion in AVID: CVE-2023-30172 describes a directory traversal vulnerability in MLflow's /get-artifact API (up to v2.0.1) that can read arbitrary server files. MLflow is an AI/ML platform used in general-purpose AI pipelines, and the issue affects software components used to build/deploy/run AI systems (artifact access). This is a clear security vulnerability with CVE signals and references, relevant to the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-05-11"
+}

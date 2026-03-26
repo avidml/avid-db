@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0883"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "caffe"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Dependency injection in NVCaffe (CVE-2021-39158)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-39158"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/NVIDIA/caffe/security/advisories/GHSA-fmpp-8pwg-vwh9",
+      "url": "https://github.com/NVIDIA/caffe/security/advisories/GHSA-fmpp-8pwg-vwh9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVCaffe's python required dependencies list used to contain `gfortran`version prior to 0.17.4, entry which does not exist in the repository pypi.org. An attacker could potentially have posted malicious files to pypi.org causing a user to install it within NVCaffe.\n\nReason for inclusion in AVID: The candidate describes CVE-2021-39158 affecting NVCaffe with a dependency mis-verification that could allow a malicious PyPI package to be installed, enabling a supply-chain-level attack. This directly concerns AI software stacks (NVCaffe) and their dependencies, representing a security vulnerability in software supply chains used to build/run general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-345",
+        "description": "CWE-345: Insufficient Verification of Data Authenticity",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-23"
+}

@@ -1,0 +1,74 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1424"
+  },
+  "affects": {
+    "developer": [
+      "Spring by VMware Tanzu"
+    ],
+    "deployer": [
+      "Spring by VMware Tanzu"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Spring Cloud Function Framework"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Spring Cloud Function Web DOS Vulnerability (CVE-2024-22271)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-22271"
+    },
+    {
+      "type": "source",
+      "label": "https://spring.io/security/cve-2024-22271",
+      "url": "https://spring.io/security/cve-2024-22271"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "In Spring Cloud Function framework, versions 4.1.x prior to 4.1.2, 4.0.x prior to 4.0.8 an application is vulnerable to a DOS attack when attempting to compose functions with non-existing functions.\n\nSpecifically, an application is vulnerable when all of the following are true:\n\nUser is using Spring Cloud Function Web module\n\nAffected Spring Products and Versions Spring Cloud Function Framework 4.1.0 to 4.1.2 4.0.0 to 4.0.8\n\nReferences  https://spring.io/security/cve-2022-22979 \u00a0 https://checkmarx.com/blog/spring-function-cloud-dos-cve-2022-22979-and-unintended-function-invocation/ \u00a0History 2020-01-16: Initial vulnerability report published.\n\nReason for inclusion in AVID: CVE-2024-22271 describes a DoS vulnerability in the Spring Cloud Function Web module that affects framework versions 4.1.x and 4.0.x. This is a software vulnerability in a dependency that could be used to build or deploy AI-serving microservices, making it relevant to the software supply chain of general-purpose AI systems. The issue concerns a vulnerability behavior (DoS) with high severity (CVSS 8.2) and is documented with affected versions and references, satisfying evidence requirements. It is not hardware/firmware-only. Therefore, it should be kept for AVID curation as a vulnerability in the AI supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "baseScore": 8.2,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    }
+  },
+  "reported_date": "2024-07-09"
+}

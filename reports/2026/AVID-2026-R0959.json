@@ -1,0 +1,84 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0959"
+  },
+  "affects": {
+    "developer": [
+      "GitLab"
+    ],
+    "deployer": [
+      "GitLab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "GitLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-2185"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-2185"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/gitlab/-/issues/366088",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/366088"
+    },
+    {
+      "type": "source",
+      "label": "https://hackerone.com/reports/1609965",
+      "url": "https://hackerone.com/reports/1609965"
+    },
+    {
+      "type": "source",
+      "label": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-2185.json",
+      "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2022/CVE-2022-2185.json"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A critical issue has been discovered in GitLab affecting all versions starting from 14.0 prior to 14.10.5, 15.0 prior to 15.0.4, and 15.1 prior to 15.1.1 where an authenticated user authorized to import projects could import a maliciously crafted project leading to remote code execution.\n\nReason for inclusion in AVID: CVE-2022-2185 describes a remote code execution vulnerability in GitLab triggered by importing a malicious project. GitLab is widely used to manage AI/ML pipelines (CI/CD, artifact management, deployment). Exploitation could compromise AI software supply chains by injecting or executing malicious code during builds/deployments, affecting the software stack used to build, train, or serve general-purpose AI systems. This is a software-supply-chain-relevant vulnerability with clear exploit behavior (RCE) and supporting CVE details."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.9,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2022-07-01"
+}

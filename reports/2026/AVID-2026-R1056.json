@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1056"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vGPU software (guest driver) - Linux, vGPU software (Virtual GPU Manager), NVIDIA Cloud Gaming (guest driver), NVIDIA Cloud Gaming (Virtual GPU Manager)"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-34676"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-34676"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5415",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5415"
+    },
+    {
+      "type": "source",
+      "label": "https://security.gentoo.org/glsa/202310-02",
+      "url": "https://security.gentoo.org/glsa/202310-02"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA GPU Display Driver for Linux contains a vulnerability in the kernel mode layer handler, where an out-of-bounds read may lead to denial of service, information disclosure, or data tampering.\n\nReason for inclusion in AVID: CVE-2022-34676 describes a vulnerability in the NVIDIA GPU Display Driver for Linux (kernel mode layer) that can lead to denial of service, information disclosure, or data tampering via an out-of-bounds read. The affected components include vGPU software and related NVIDIA guest drivers, which are software stack elements used to run general-purpose AI workloads (ML training/inference) on GPUs. This is a software component within the AI software supply chain (drivers/runtimes used to deploy/run AI systems), not hardware- or firmware-only. The vulnerability is CVE-listed with measurable impact (CWE-197) and CVSS signals. Therefore it is relevant to AI systems and their supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-197",
+        "description": "CWE-197",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-12-30"
+}

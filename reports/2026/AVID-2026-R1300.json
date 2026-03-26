@@ -1,0 +1,80 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1300"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-50447"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-50447"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/python-pillow/Pillow/releases",
+      "url": "https://github.com/python-pillow/Pillow/releases"
+    },
+    {
+      "type": "source",
+      "label": "https://devhub.checkmarx.com/cve-details/CVE-2023-50447/",
+      "url": "https://devhub.checkmarx.com/cve-details/CVE-2023-50447/"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2024/01/20/1",
+      "url": "http://www.openwall.com/lists/oss-security/2024/01/20/1"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.debian.org/debian-lts-announce/2024/01/msg00019.html",
+      "url": "https://lists.debian.org/debian-lts-announce/2024/01/msg00019.html"
+    },
+    {
+      "type": "source",
+      "label": "https://duartecsantos.github.io/2024-01-02-CVE-2023-50447/",
+      "url": "https://duartecsantos.github.io/2024-01-02-CVE-2023-50447/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Pillow through 10.1.0 allows PIL.ImageMath.eval Arbitrary Code Execution via the environment parameter, a different vulnerability than CVE-2022-22817 (which was about the expression parameter).\n\nReason for inclusion in AVID: CVE-2023-50447 describes an arbitrary code execution vulnerability in Pillow (PIL.ImageMath.eval via the environment parameter). Pillow is a widely used image processing library in AI/data pipelines, and thus a component commonly involved in building, training, and deploying general-purpose AI systems. This is a software vulnerability affecting a software stack used in AI workflows, not hardware/firmware-only. The CVE description and references provide clear evidence of the vulnerability and its exploit nature."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2024-01-19"
+}

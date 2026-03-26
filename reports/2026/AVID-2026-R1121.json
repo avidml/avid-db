@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1121"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-38881"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-38881"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/democritus-strings/",
+      "url": "https://pypi.org/project/democritus-strings/"
+    },
+    {
+      "type": "source",
+      "label": "https://pypi.org/project/d8s-archives/",
+      "url": "https://pypi.org/project/d8s-archives/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/democritus-project/d8s-archives/issues/12",
+      "url": "https://github.com/democritus-project/d8s-archives/issues/12"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "The d8s-archives for python, as distributed on PyPI, included a potential code-execution backdoor inserted by a third party. The backdoor is the democritus-strings package. The affected version is 0.1.0.\n\nReason for inclusion in AVID: CVE-2022-38881 describes a backdoored Python package (d8s-archives 0.1.0) distributed via PyPI, enabling potential code execution. This is a software supply chain vulnerability in a Python package that could be used in AI pipelines and general-purpose AI system stacks (dependencies/runtimes). The report cites NVD, PyPI pages, and GitHub issue, providing sufficient evidence to classify as a vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-09-19"
+}

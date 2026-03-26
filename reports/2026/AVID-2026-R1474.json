@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1474"
+  },
+  "affects": {
+    "developer": [
+      "lobehub"
+    ],
+    "deployer": [
+      "lobehub"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "lobe-chat"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "lobe-chat `/api/proxy` endpoint Server-Side Request Forgery vulnerability (CVE-2024-32964)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-32964"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lobehub/lobe-chat/security/advisories/GHSA-mxhq-xw3g-rphc",
+      "url": "https://github.com/lobehub/lobe-chat/security/advisories/GHSA-mxhq-xw3g-rphc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/lobehub/lobe-chat/commit/465665a735556669ee30446c7ea9049a20cc7c37",
+      "url": "https://github.com/lobehub/lobe-chat/commit/465665a735556669ee30446c7ea9049a20cc7c37"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Lobe Chat is a chatbot framework that supports speech synthesis, multimodal, and extensible Function Call plugin system. Prior to 0.150.6, lobe-chat had an unauthorized Server-Side Request Forgery vulnerability in the /api/proxy endpoint. An attacker can construct malicious requests to cause Server-Side Request Forgery without logging in, attack intranet services, and leak sensitive information.\n\nReason for inclusion in AVID: CVE-2024-32964 describes an unauthenticated Server-Side Request Forgery in lobe-chat's /api/proxy endpoint. This affects a chatbot framework used to build AI chat systems, enabling potential access to intranet resources and data leakage. As a vulnerability in a software component commonly used in AI pipelines (deployment/serving of AI chat systems), it is a relevant software supply-chain issue for general-purpose AI systems. The CVE is clearly security-related with a high impact (SSRF, data leakage, potential RCE/Tampering via indirect effects). The report provides explicit details and references to confirm the vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:H",
+      "baseScore": 9.0,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-918",
+        "description": "CWE-918: Server-Side Request Forgery (SSRF)",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-05-10"
+}

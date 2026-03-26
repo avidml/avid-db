@@ -1,0 +1,75 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1252"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-36189"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-36189"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/rharang/9c58d39db8c01db5b7c888e467c0533f",
+      "url": "https://gist.github.com/rharang/9c58d39db8c01db5b7c888e467c0533f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hwchase17/langchain/issues/5923",
+      "url": "https://github.com/hwchase17/langchain/issues/5923"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hwchase17/langchain/pull/6051",
+      "url": "https://github.com/hwchase17/langchain/pull/6051"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langchain-ai/langchain/issues/5923#issuecomment-1696053841",
+      "url": "https://github.com/langchain-ai/langchain/issues/5923#issuecomment-1696053841"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "SQL injection vulnerability in langchain before v0.0.247 allows a remote attacker to obtain sensitive information via the SQLDatabaseChain component.\n\nReason for inclusion in AVID: CVE-2023-36189 describes a SQL injection vulnerability in the LangChain library (pre-0.0.247) that could let a remote attacker obtain sensitive information via the SQLDatabaseChain component. LangChain is an AI tooling/framework used to build AI/ML pipelines, so the issue affects software components used to build, deploy, and run general-purpose AI systems. It is a security vulnerability with potential data exposure, and the report provides explicit CVE, description, and multiple references, supporting evidence for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-07-06"
+}

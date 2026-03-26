@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1710"
+  },
+  "affects": {
+    "developer": [
+      "vllm-project"
+    ],
+    "deployer": [
+      "vllm-project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vllm"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "vLLM has a Regular Expression Denial of Service (ReDoS, Exponential Complexity) Vulnerability in `pythonic_tool_parser.py` (CVE-2025-48887)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-48887"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/security/advisories/GHSA-w6q7-j642-7c25",
+      "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-w6q7-j642-7c25"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/pull/18454",
+      "url": "https://github.com/vllm-project/vllm/pull/18454"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vllm-project/vllm/commit/4fc1bf813ad80172c1db31264beaef7d93fe0601",
+      "url": "https://github.com/vllm-project/vllm/commit/4fc1bf813ad80172c1db31264beaef7d93fe0601"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "vLLM, an inference and serving engine for large language models (LLMs), has a Regular Expression Denial of Service (ReDoS) vulnerability in the file `vllm/entrypoints/openai/tool_parsers/pythonic_tool_parser.py` of versions 0.6.4 up to but excluding 0.9.0. The root cause is the use of a highly complex and nested regular expression for tool call detection, which can be exploited by an attacker to cause severe performance degradation or make the service unavailable. The pattern contains multiple nested quantifiers, optional groups, and inner repetitions which make it vulnerable to catastrophic backtracking. Version 0.9.0 contains a patch for the issue.\n\nReason for inclusion in AVID: The AVID candidate is a software vulnerability (CVE-2025-48887) in vLLM's tool parsing component, causing Regular Expression Denial of Service. It affects an AI serving framework used to deploy/run general-purpose AI systems, with potential exploitation via crafted input leading to denial of service. This is a software supply chain issue (a library/dependency used in AI stacks), not hardware/firmware. The report provides sufficient details (affected versions, root cause, patch, CVSS metrics)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 6.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-1333",
+        "description": "CWE-1333: Inefficient Regular Expression Complexity",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-30"
+}

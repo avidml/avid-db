@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1537"
+  },
+  "affects": {
+    "developer": [
+      "cvat-ai"
+    ],
+    "deployer": [
+      "cvat-ai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cvat"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Computer Vision Annotation Tool (CVAT) contains a stored XSS via the quality report data endpoint (CVE-2024-47063)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-47063"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-2c85-39cc-2px9",
+      "url": "https://github.com/cvat-ai/cvat/security/advisories/GHSA-2c85-39cc-2px9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/cvat-ai/cvat/commit/75c3d573bc9468b718f53b442c2ef69ad1d5de12",
+      "url": "https://github.com/cvat-ai/cvat/commit/75c3d573bc9468b718f53b442c2ef69ad1d5de12"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Computer Vision Annotation Tool (CVAT) is an interactive video and image annotation tool for computer vision. If a malicious CVAT user with permissions to either create a task, or edit an existing task can trick another logged-in user into visiting a maliciously-constructed URL, they can initiate any API calls on that user's behalf. This gives the attacker temporary access to all data that the victim user has access to. Upgrade to CVAT 2.19.0 or a later version to fix this issue.\n\nReason for inclusion in AVID: CVE-2024-47063 describes a stored XSS in CVAT, a widely used AI data labeling tool. An attacker can induce a logged-in user to trigger API calls on their behalf, exposing data and enabling unauthorized actions. This is a security vulnerability within a software component (CVAT) that is part of AI data pipelines, i.e., a general-purpose AI system supply chain element. The report provides explicit evidence and remediation (upgrade to CVAT 2.19.0+)."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-30"
+}

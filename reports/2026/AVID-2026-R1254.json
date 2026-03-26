@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1254"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Azure Identity SDK for .NET"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Azure Identity SDK Remote Code Execution Vulnerability (CVE-2023-36414)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-36414"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36414",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36414"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Azure Identity SDK Remote Code Execution Vulnerability\n\nReason for inclusion in AVID: CVE-2023-36414 is a remote code execution vulnerability in the Azure Identity SDK for .NET. This SDK is a common dependency in AI deployment stacks on Azure (authentication/authorization for AI services, storage, compute). As a vulnerability in a library used to build/run AI systems, it represents a software supply-chain risk for general-purpose AI workflows. It has clear security impact (RCE) with public references (NVD, MSRC). Therefore it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:W/RC:C",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-77",
+        "description": "CWE-77: Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2023-10-10"
+}

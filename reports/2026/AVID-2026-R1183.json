@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1183"
+  },
+  "affects": {
+    "developer": [
+      "vantage6"
+    ],
+    "deployer": [
+      "vantage6"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vantage6"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "vantage6's Pickle serialization is insecure (CVE-2023-23930)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-23930"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vantage6/vantage6/security/advisories/GHSA-5m22-cfq9-86x6",
+      "url": "https://github.com/vantage6/vantage6/security/advisories/GHSA-5m22-cfq9-86x6"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vantage6/vantage6/commit/e62f03bacf2247bd59eed217e2e7338c3a01a5f0",
+      "url": "https://github.com/vantage6/vantage6/commit/e62f03bacf2247bd59eed217e2e7338c3a01a5f0"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/vantage6/vantage6/blob/0682c4288f43fee5bcc72dc448cdd99bd7e57f76/docs/release_notes.rst#400",
+      "url": "https://github.com/vantage6/vantage6/blob/0682c4288f43fee5bcc72dc448cdd99bd7e57f76/docs/release_notes.rst#400"
+    },
+    {
+      "type": "source",
+      "label": "https://medium.com/ochrona/python-pickle-is-notoriously-insecure-d6651f1974c9",
+      "url": "https://medium.com/ochrona/python-pickle-is-notoriously-insecure-d6651f1974c9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "vantage6 is privacy preserving federated learning infrastructure. Versions prior to 4.0.0 use pickle, which has known security issue, as a default serialization module but that has known security issues. All users of vantage6 that post tasks with the default serialization are affected. Version 4.0.0 contains a patch. Users may specify JSON serialization as a workaround.\n\nReason for inclusion in AVID: CVE-2023-23930 concerns insecure deserialization via Python's pickle in vantage6 prior to 4.0.0, enabling an attacker to influence task serialization in a federated learning platform. This is a software vulnerability in a component used to build/deploy AI workflows, i.e., an AI supply chain component. It affects AI systems (federated learning/inference orchestrations) and is a CVE-style security vulnerability with clear evidence (CWE-502, CVSS). So it meets AVID criteria for AI-related, GP AI supply chain, security vulnerability, and sufficent evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:N",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-10-11"
+}

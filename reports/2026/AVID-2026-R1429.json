@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1429"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "llama.cpp"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "llama.cpp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-23496"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-23496"
+    },
+    {
+      "type": "source",
+      "label": "https://talosintelligence.com/vulnerability_reports/TALOS-2024-1913",
+      "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2024-1913"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A heap-based buffer overflow vulnerability exists in the GGUF library gguf_fread_str functionality of llama.cpp Commit 18c2e17. A specially crafted .gguf file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.\n\nReason for inclusion in AVID: CVE-2024-23496 describes a heap-based buffer overflow in the GGUF library's gguf_fread_str, exploitable via a crafted .gguf file to achieve code execution. It affects llama.cpp, a component used to load AI models, which is a core part of AI software stacks. This is a software supply-chain issue within AI pipelines (model loading/serving libraries) with a clear security impact (RCE). The report provides CVE details, affected component, and CVSS data, supporting a vulnerability classification in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-190",
+        "description": "CWE-190: Integer Overflow or Wraparound",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-26"
+}

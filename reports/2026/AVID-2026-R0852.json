@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0852"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Reference binding to nullptr in boosted trees in TensorFlow (CVE-2021-37662)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-37662"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-f5cx-5wr3-5qrc",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-f5cx-5wr3-5qrc"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/429f009d2b2c09028647dd4bb7b3f6f414bbaad7",
+      "url": "https://github.com/tensorflow/tensorflow/commit/429f009d2b2c09028647dd4bb7b3f6f414bbaad7"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/9c87c32c710d0b5b53dc6fd3bfde4046e1f7a5ad",
+      "url": "https://github.com/tensorflow/tensorflow/commit/9c87c32c710d0b5b53dc6fd3bfde4046e1f7a5ad"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an end-to-end open source platform for machine learning. In affected versions an attacker can generate undefined behavior via a reference binding to nullptr in `BoostedTreesCalculateBestGainsPerFeature` and similar attack can occur in `BoostedTreesCalculateBestFeatureSplitV2`. The [implementation](https://github.com/tensorflow/tensorflow/blob/84d053187cb80d975ef2b9684d4b61981bca0c41/tensorflow/core/kernels/boosted_trees/stats_ops.cc) does not validate the input values. We have patched the issue in GitHub commit 9c87c32c710d0b5b53dc6fd3bfde4046e1f7a5ad and in commit 429f009d2b2c09028647dd4bb7b3f6f414bbaad7. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.\n\nReason for inclusion in AVID: CVE-2021-37662 describes a vulnerability in TensorFlow (an ML framework) where a reference binding to nullptr in boosted trees can cause undefined behavior. This is a software vulnerability affecting a core AI software stack component used to build/train/deploy AI systems. It is in a dependency/framework (TensorFlow) used for general-purpose AI pipelines, thus relevant to the AI supply chain. The report provides explicit vulnerability behavior, affected versions, fixes, and CVSS details, satisfying evidence requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-824",
+        "description": "CWE-824: Access of Uninitialized Pointer",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-08-12"
+}

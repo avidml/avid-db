@@ -1,0 +1,82 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1703"
+  },
+  "affects": {
+    "developer": [
+      "RVC-Project"
+    ],
+    "deployer": [
+      "RVC-Project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Retrieval-based-Voice-Conversion-WebUI"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "GHSL-2025-021_Retrieval-based-Voice-Conversion-WebUI (CVE-2025-43851)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-43851"
+    },
+    {
+      "type": "source",
+      "label": "https://securitylab.github.com/advisories/GHSL-2025-012_GHSL-2025-022_Retrieval-based-Voice-Conversion-WebUI/",
+      "url": "https://securitylab.github.com/advisories/GHSL-2025-012_GHSL-2025-022_Retrieval-based-Voice-Conversion-WebUI/"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/7ef19867780cf703841ebafb565a4e47d1ea86ff/infer/modules/onnx/export.py#L7",
+      "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/7ef19867780cf703841ebafb565a4e47d1ea86ff/infer/modules/onnx/export.py#L7"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/9f2f0559e6932c10c48642d404e7d2e771d9db43/infer-web.py#L1073",
+      "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/9f2f0559e6932c10c48642d404e7d2e771d9db43/infer-web.py#L1073"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/9f2f0559e6932c10c48642d404e7d2e771d9db43/infer-web.py#L1098",
+      "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/9f2f0559e6932c10c48642d404e7d2e771d9db43/infer-web.py#L1098"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Retrieval-based-Voice-Conversion-WebUI is a voice changing framework based on VITS. Versions 2.2.231006 and prior are vulnerable to unsafe deserialization. The\u00a0model_choose\u00a0variable\u00a0takes user input\u00a0(e.g. a path to a model) and\u00a0passes\u00a0it to the\u00a0uvr\u00a0function in\u00a0vr.py. In\u00a0uvr\u00a0, a new instance of\u00a0AudioPre\u00a0class is created with the\u00a0model_path\u00a0attribute containing the aformentioned user input. In the\u00a0AudioPre\u00a0class, the user input, is used to\u00a0load the model on that path with\u00a0torch.load, which can lead to unsafe deserialization and remote code execution. As of time of publication, no known patches exist.\n\nReason for inclusion in AVID: CVE-2025-43851 describes an unsafe deserialization vulnerability in Retrieval-based-Voice-Conversion-WebUI, an AI framework used for voice conversion. User-controlled input leads to loading models via torch.load, enabling remote code execution. This is a software vulnerability in an AI framework/component used to build/deploy AI models, not hardware-only. It directly affects AI pipelines and software stacks, with CVE details and references provided."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-05"
+}

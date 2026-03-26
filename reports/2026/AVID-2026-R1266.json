@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1266"
+  },
+  "affects": {
+    "developer": [
+      "mindsdb"
+    ],
+    "deployer": [
+      "mindsdb"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mindsdb"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MindsDB 'Call to requests with verify=False disabling SSL certificate checks, security issue.' issue (CVE-2023-38699)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-38699"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-8hx6-qv6f-xgcw",
+      "url": "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-8hx6-qv6f-xgcw"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/commit/083afcf6567cf51aa7d89ea892fd97689919053b",
+      "url": "https://github.com/mindsdb/mindsdb/commit/083afcf6567cf51aa7d89ea892fd97689919053b"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mindsdb/mindsdb/releases/tag/v23.7.4.0",
+      "url": "https://github.com/mindsdb/mindsdb/releases/tag/v23.7.4.0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "MindsDB's AI Virtual Database allows developers to connect any AI/ML model to any datasource. Prior to version 23.7.4.0, a call to requests with `verify=False` disables SSL certificate checks. This rule enforces always verifying SSL certificates for methods in the Requests library. In version 23.7.4.0, certificates are validated by default, which is the desired behavior.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in MindsDB's AI stack (AI Virtual Database) where a call to requests with verify=False disables SSL certificate checks prior to version 23.7.4.0. This directly affects software used in AI data pipelines and model deployment/serving, enabling potential eavesdropping or tampering during data source communication. Since the issue is a software vulnerability in a component commonly used to build/run general-purpose AI systems, it constitutes a software supply-chain risk for AI stacks. The report provides explicit evidence (CVE ID, description, fix version) and references, supporting its relevance and severity."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-311",
+        "description": "CWE-311: Missing Encryption of Sensitive Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-08-04"
+}

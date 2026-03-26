@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1449"
+  },
+  "affects": {
+    "developer": [
+      "jupyterhub"
+    ],
+    "deployer": [
+      "jupyterhub"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "jupyter-server-proxy"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Jupyter Server Proxy's Websocket Proxying does not require authentication (CVE-2024-28179)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-28179"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/jupyter-server-proxy/security/advisories/GHSA-w3vc-fx9p-wp4v",
+      "url": "https://github.com/jupyterhub/jupyter-server-proxy/security/advisories/GHSA-w3vc-fx9p-wp4v"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/jupyter-server-proxy/commit/764e499f61a87641916a7a427d4c4b1ac3f321a9",
+      "url": "https://github.com/jupyterhub/jupyter-server-proxy/commit/764e499f61a87641916a7a427d4c4b1ac3f321a9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/jupyter-server-proxy/commit/bead903b7c0354b6efd8b4cde94b89afab653e03",
+      "url": "https://github.com/jupyterhub/jupyter-server-proxy/commit/bead903b7c0354b6efd8b4cde94b89afab653e03"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/jupyterhub/jupyter-server-proxy/blob/9b624c4d9507176334b46a85d94a4aa3bcd29bed/jupyter_server_proxy/handlers.py#L433",
+      "url": "https://github.com/jupyterhub/jupyter-server-proxy/blob/9b624c4d9507176334b46a85d94a4aa3bcd29bed/jupyter_server_proxy/handlers.py#L433"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jupyter Server Proxy allows users to run arbitrary external processes alongside their Jupyter notebook servers and provides authenticated web access. Prior to versions 3.2.3 and 4.1.1, Jupyter Server Proxy did not check user authentication appropriately when proxying websockets, allowing unauthenticated access to anyone who had network access to the Jupyter server endpoint. This vulnerability can allow unauthenticated remote access to any websocket endpoint set up to be accessible via Jupyter Server Proxy. In many cases, this leads to remote unauthenticated arbitrary code execution, due to how affected instances use websockets. The websocket endpoints exposed by `jupyter_server` itself is not affected. Projects that do not rely on websockets are also not affected. Versions 3.2.3 and 4.1.1 contain a fix for this issue.\n\nReason for inclusion in AVID: CVE-2024-28179 describes a vulnerability in jupyter-server-proxy where websocket proxying did not require authentication, enabling unauthenticated access and potential remote code execution. Jupyter Server Proxy is a software component commonly used in AI/ML notebook and deployment stacks (e.g., JupyterHub/JupyterLab setups) to facilitate web and websocket interactions. This directly impacts the software supply chain for general-purpose AI systems, as it concerns a dependency/framework used in building, deploying, and running AI workloads. It is a software vulnerability (RCE possibilities) and is supported by CVE details and fixes."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-306",
+        "description": "CWE-306: Missing Authentication for Critical Function",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-20"
+}

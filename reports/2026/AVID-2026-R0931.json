@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0931"
+  },
+  "affects": {
+    "developer": [
+      "Amazon Web Services"
+    ],
+    "deployer": [
+      "Amazon Web Services"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "log4j-cve-2021-44228-hotpatch"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Log4j hot patch package privilege escalation (CVE-2022-0070)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-0070"
+    },
+    {
+      "type": "source",
+      "label": "https://unit42.paloaltonetworks.com/aws-log4shell-hot-patch-vulnerabilities",
+      "url": "https://unit42.paloaltonetworks.com/aws-log4shell-hot-patch-vulnerabilities"
+    },
+    {
+      "type": "source",
+      "label": "https://alas.aws.amazon.com/cve/html/CVE-2022-0070.html",
+      "url": "https://alas.aws.amazon.com/cve/html/CVE-2022-0070.html"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Incomplete fix for CVE-2021-3100. The Apache Log4j hotpatch package starting with log4j-cve-2021-44228-hotpatch-1.1-16 will now explicitly mimic the Linux capabilities and cgroups of the target Java process that the hotpatch is applied to.\n\nReason for inclusion in AVID: CVE-2022-0070 describes a privilege escalation vulnerability in the Apache Log4j hotpatch package, a software component that can be part of AI system deployment stacks (Java-based services, logging pipelines, etc.). This is a software supply chain issue affecting components used to build/run AI systems, with a high-severity security impact (local escalation, high confidentiality/integrity/availability impact). The report includes CVSS details and references, providing clear evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-250",
+        "description": "CWE-250 Execution with Unnecessary Privileges",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-04-19"
+}

@@ -1,0 +1,73 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1552"
+  },
+  "affects": {
+    "developer": [
+      "Microsoft"
+    ],
+    "deployer": [
+      "Microsoft"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Microsoft TorchGeo"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "TorchGeo Remote Code Execution Vulnerability (CVE-2024-49048)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-49048"
+    },
+    {
+      "type": "source",
+      "label": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-49048",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-49048"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TorchGeo Remote Code Execution Vulnerability\n\nReason for inclusion in AVID: CVE-2024-49048 describes a remote code execution vulnerability in TorchGeo, a Python library used in ML/AI workflows (e.g., geospatial data processing with PyTorch). This directly concerns software used to build/train/deploy AI systems, representing a supply chain vulnerability in AI software stacks (dependencies/frameworks). It is a security/safety vulnerability (RCE) with available CVE reference and sources. The evidence in the report (CVE ID, description, and references) supports classification as a software supply chain vulnerability affecting AI pipelines."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "baseScore": 8.1,
+      "baseSeverity": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-94",
+        "description": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "reported_date": "2024-11-12"
+}

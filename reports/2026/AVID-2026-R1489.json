@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1489"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Submarine Server Core"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Submarine Server Core: authorization bypass (CVE-2024-36265)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-36265"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz",
+      "url": "https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2024/06/12/3",
+      "url": "http://www.openwall.com/lists/oss-security/2024/06/12/3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Submarine Server Core.\n\nThis issue affects Apache Submarine Server Core: from 0.8.0.\n\nAs this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer.\n\nReason for inclusion in AVID: CVE-2024-36265 is an incorrect authorization vulnerability in Apache Submarine Server Core, an ML/AI platform component. It concerns software used in AI pipelines, is a security vulnerability (CWE-863), and affects components used to build/deploy AI systems. The CVE provides evidence (NVD entry and references). Although the project is retired and no fix is planned, it remains a software supply chain risk signal for AI systems relying on this component."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-863",
+        "description": "CWE-863 Incorrect Authorization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-06-12"
+}

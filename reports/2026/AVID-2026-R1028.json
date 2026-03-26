@@ -1,0 +1,121 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1028"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Segfault due to missing support for quantized types in TensorFlow (CVE-2022-29205)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-29205"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-54ch-gjq5-4976",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-54ch-gjq5-4976"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/237822b59fc504dda2c564787f5d3ad9c4aa62d9",
+      "url": "https://github.com/tensorflow/tensorflow/commit/237822b59fc504dda2c564787f5d3ad9c4aa62d9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/python/eager/pywrap_tfe_src.cc#L296-L320",
+      "url": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/python/eager/pywrap_tfe_src.cc#L296-L320"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/python/eager/pywrap_tfe_src.cc#L480-L482",
+      "url": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/python/eager/pywrap_tfe_src.cc#L480-L482"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, there is a potential for segfault / denial of service in TensorFlow by calling `tf.compat.v1.*` ops which don't yet have support for quantized types, which was added after migration to TensorFlow 2.x. In these scenarios, since the kernel is missing, a `nullptr` value is passed to `ParseDimensionValue` for the `py_value` argument. Then, this is dereferenced, resulting in segfault. Versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4 contain a patch for this issue.\n\nReason for inclusion in AVID: The AVID candidate describes a vulnerability in TensorFlow, a core ML framework, causing a segmentation fault/denial of service due to missing support for quantized types in tf.compat.v1 ops. TensorFlow is a widely used AI software component in training, packaging, deployment, and serving pipelines; this constitutes a software supply-chain vulnerability within AI software stacks. The issue is exploitable via local access and has patches in newer releases. Evidence from the CVE/NVD and release notes provides sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-908",
+        "description": "CWE-908: Use of Uninitialized Resource",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-476",
+        "description": "CWE-476: NULL Pointer Dereference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-05-20"
+}

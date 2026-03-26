@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1536"
+  },
+  "affects": {
+    "developer": [
+      "Cleanlab"
+    ],
+    "deployer": [
+      "Cleanlab"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "cleanlab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-45857"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-45857"
+    },
+    {
+      "type": "source",
+      "label": "https://hiddenlayer.com/sai-security-advisory/2024-09-cleanlab/",
+      "url": "https://hiddenlayer.com/sai-security-advisory/2024-09-cleanlab/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Deserialization of untrusted data can occur in versions 2.4.0 or newer of the Cleanlab project, enabling a maliciously crafted datalab.pkl file to run arbitrary code on an end user\u2019s system when the data directory is loaded.\n\nReason for inclusion in AVID: CVE-2024-45857 describes a deserialization vulnerability in the Cleanlab library (versions >= 2.4.0) that allows arbitrary code execution when loading a crafted datalab.pkl. Cleanlab is an ML data preprocessing/cleaning library commonly used in AI pipelines, making this a software supply-chain vulnerability in AI systems. It affects software components used to build/run AI systems. The vulnerability is clearly security-related (RCE). Evidence provided includes CVE entry and description."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 7.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-09-12"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1337"
+  },
+  "affects": {
+    "developer": [
+      "mlflow"
+    ],
+    "deployer": [
+      "mlflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "mlflow/mlflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Unrestricted Upload of File with Dangerous Type (CVE-2023-6976)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6976"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/2408a52b-f05b-4cac-9765-4f74bac3f20f",
+      "url": "https://huntr.com/bounties/2408a52b-f05b-4cac-9765-4f74bac3f20f"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mlflow/mlflow/commit/5044878da0c1851ccfdd5c0a867157ed9a502fbc",
+      "url": "https://github.com/mlflow/mlflow/commit/5044878da0c1851ccfdd5c0a867157ed9a502fbc"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "This vulnerability is capable of writing arbitrary files into arbitrary locations on the remote filesystem in the context of the server process.\n\nReason for inclusion in AVID: CVE-2023-6976 describes an Unrestricted Upload of File with Dangerous Type in the MLflow server, enabling arbitrary file writes on the remote filesystem. This is a security vulnerability in a software component (MLflow) that is widely used in AI pipelines to manage experiments, deployments, and model packaging. As MLflow is a key part of AI software stacks, this constitutes a software supply chain issue in general-purpose AI systems. The CVE includes severity details and references indicating a real vulnerability with a published fix."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-434",
+        "description": "CWE-434 Unrestricted Upload of File with Dangerous Type",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-20"
+}

@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0887"
+  },
+  "affects": {
+    "developer": [
+      "scrapy-plugins"
+    ],
+    "deployer": [
+      "scrapy-plugins"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "scrapy-splash"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Splash authentication credentials potentially leaked to target websites in scrapy-splash (CVE-2021-41124)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-41124"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/scrapy-plugins/scrapy-splash/security/advisories/GHSA-823f-cwm9-4g74",
+      "url": "https://github.com/scrapy-plugins/scrapy-splash/security/advisories/GHSA-823f-cwm9-4g74"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/scrapy-plugins/scrapy-splash/commit/2b253e57fe64ec575079c8cdc99fe2013502ea31",
+      "url": "https://github.com/scrapy-plugins/scrapy-splash/commit/2b253e57fe64ec575079c8cdc99fe2013502ea31"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Scrapy-splash is a library which provides Scrapy and JavaScript integration. In affected versions users who use [`HttpAuthMiddleware`](http://doc.scrapy.org/en/latest/topics/downloader-middleware.html#module-scrapy.downloadermiddlewares.httpauth) (i.e. the `http_user` and `http_pass` spider attributes) for Splash authentication will have any non-Splash request expose your credentials to the request target. This includes `robots.txt` requests sent by Scrapy when the `ROBOTSTXT_OBEY` setting is set to `True`. Upgrade to scrapy-splash 0.8.0 and use the new `SPLASH_USER` and `SPLASH_PASS` settings instead to set your Splash authentication credentials safely. If you cannot upgrade, set your Splash request credentials on a per-request basis, [using the `splash_headers` request parameter](https://github.com/scrapy-plugins/scrapy-splash/tree/0.8.x#http-basic-auth), instead of defining them globally using the [`HttpAuthMiddleware`](http://doc.scrapy.org/en/latest/topics/downloader-middleware.html#module-scrapy.downloadermiddlewares.httpauth). Alternatively, make sure all your requests go through Splash. That includes disabling the [robots.txt middleware](https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#topics-dlmw-robots).\n\nReason for inclusion in AVID: CVE-2021-41124 describes a credential leakage vulnerability in Scrapy-Splash when using HttpAuthMiddleware, exposing authentication data to target websites. Scrapy-Splash is a library used in data collection pipelines, which can be part of AI data ingestions and general-purpose AI system workflows. This constitutes a software supply-chain vulnerability in components that could be used to build AI systems (data harvesting/processing stacks). The vulnerability is clearly security-related (credential exposure) with actionable mitigations."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "baseScore": 7.4,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-200",
+        "description": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2021-10-05"
+}

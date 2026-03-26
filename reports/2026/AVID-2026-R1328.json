@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1328"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "External Control of File Name or Path in h2oai/h2o-3 (CVE-2023-6569)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6569"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/a5d003dc-c23e-4c98-8dcf-35ba9252fa3c",
+      "url": "https://huntr.com/bounties/a5d003dc-c23e-4c98-8dcf-35ba9252fa3c"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "External Control of File Name or Path in h2oai/h2o-3\n\nReason for inclusion in AVID: CVE-2023-6569 describes external control of a file name or path in h2oai/h2o-3, a machine learning framework. This is a software vulnerability within a component used to build/train/deploy AI systems, with remote exploitation potential (network-based) and impact on availability and integrity. It directly concerns AI software stacks and their pipelines, not hardware/firmware. The AVID candidate includes official CVE context and references, providing sufficient evidence for inclusion."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:H",
+      "baseScore": 9.3,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-73",
+        "description": "CWE-73 External Control of File Name or Path",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-14"
+}

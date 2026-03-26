@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0716"
+  },
+  "affects": {
+    "developer": [
+      "Jenkins project"
+    ],
+    "deployer": [
+      "Jenkins project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Jenkins Code Coverage API Plugin"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2021-21677"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-21677"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jenkins.io/security/advisory/2021-08-31/#SECURITY-2376",
+      "url": "https://www.jenkins.io/security/advisory/2021-08-31/#SECURITY-2376"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2021/08/31/1",
+      "url": "http://www.openwall.com/lists/oss-security/2021/08/31/1"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Jenkins Code Coverage API Plugin 1.4.0 and earlier does not apply Jenkins JEP-200 deserialization protection to Java objects it deserializes from disk, resulting in a remote code execution vulnerability.\n\nReason for inclusion in AVID: CVE-2021-21677 describes a remote code execution vulnerability in the Jenkins Code Coverage API Plugin due to improper deserialization protection. Jenkins is a CI/CD tool widely used in AI/ML pipelines for building, testing, packaging, and deploying models and related software. As such, this vulnerability affects a component in the software supply chain that AI systems rely on (CI/CD, artifact generation, and deployment pipelines). The CVE clearly describes a security vulnerability (RCE) with referenced advisories and sources, providing sufficient evidence for inclusion as an AI general-purpose software supply chain vulnerability."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2021-08-31"
+}

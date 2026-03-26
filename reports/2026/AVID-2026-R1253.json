@@ -1,0 +1,70 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1253"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-36281"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-36281"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hwchase17/langchain/issues/4394",
+      "url": "https://github.com/hwchase17/langchain/issues/4394"
+    },
+    {
+      "type": "source",
+      "label": "https://aisec.today/LangChain-2e6244a313dd46139c5ef28cbcab9e55",
+      "url": "https://aisec.today/LangChain-2e6244a313dd46139c5ef28cbcab9e55"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/langchain-ai/langchain/releases/tag/v0.0.312",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/v0.0.312"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An issue in langchain v.0.0.171 allows a remote attacker to execute arbitrary code via a JSON file to load_prompt. This is related to __subclasses__ or a template.\n\nReason for inclusion in AVID: CVE-2023-36281 describes a remote code execution vulnerability in LangChain v0.0.171 via loading a JSON to load_prompt, enabling arbitrary code execution in AI app pipelines. LangChain is an AI framework commonly used in ML/AI stacks; the issue is in a software dependency used to build/train/deploy AI systems; thus a software supply chain vulnerability affecting AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-08-22"
+}

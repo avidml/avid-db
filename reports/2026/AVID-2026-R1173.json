@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1173"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vGPU software (guest driver - Linux), NVIDIA Cloud Gaming (guest driver - Linux)"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-0189"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-0189"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5452",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5452"
+    },
+    {
+      "type": "source",
+      "label": "https://security.gentoo.org/glsa/202310-02",
+      "url": "https://security.gentoo.org/glsa/202310-02"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA GPU Display Driver for Linux contains a vulnerability in the kernel mode layer handler which may lead to code execution, denial of service, escalation of privileges, information disclosure, and data tampering.\n\nReason for inclusion in AVID: The CVE describes a vulnerability in the NVIDIA Linux GPU Display Driver kernel mode layer that can lead to code execution, DoS, privilege escalation, information disclosure, and data tampering. This driver is a core software component used to run general-purpose AI workloads (GPU-accelerated ML/DL tasks) and is part of the software stack (dependencies/runtimes/drivers) that AI systems rely on. Therefore, it is a security vulnerability with direct implications for the software supply chain of AI systems. Sufficient signal is provided by the vulnerability description, CVSS scoring, and affected products/references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-822",
+        "description": "CWE-822: Untrusted Pointer Dereference",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-04-01"
+}

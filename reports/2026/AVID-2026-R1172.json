@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1172"
+  },
+  "affects": {
+    "developer": [
+      "MongoDB Inc"
+    ],
+    "deployer": [
+      "MongoDB Inc"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MongoDB .NET/C# Driver"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Deserializing compromised object with MongoDB .NET/C# Driver may cause remote code execution (CVE-2022-48282)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-48282"
+    },
+    {
+      "type": "source",
+      "label": "https://jira.mongodb.org/browse/CSHARP-4475",
+      "url": "https://jira.mongodb.org/browse/CSHARP-4475"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/mongodb/mongo-csharp-driver/releases/tag/v2.19.0",
+      "url": "https://github.com/mongodb/mongo-csharp-driver/releases/tag/v2.19.0"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Under very specific circumstances (see Required configuration section below), a privileged user is able to cause arbitrary code to be executed which may cause further disruption to services. This is specific to applications written in C#. This affects all MongoDB .NET/C# Driver versions prior to and including v2.18.0\n\nFollowing configuration must be true for the vulnerability to be applicable:  *  Application must written in C# taking arbitrary data from users and serializing data using _t without any validation AND\n  *  Application must be running on a Windows host using the full .NET Framework, not .NET Core AND\n  *  Application must have domain model class with a property/field explicitly of type System.Object or a collection of type System.Object (against MongoDB best practice) AND\n  *  Malicious attacker must have unrestricted insert access to target database to add a _t discriminator.\"Following configuration must be true for the vulnerability to be applicable\n\nReason for inclusion in AVID: The CVE describes a remote code execution vulnerability in the MongoDB .NET/C# Driver via deserialization. This is a software vulnerability in a library that can be used in applications, including AI/data-processing pipelines, making it relevant to the supply chain of general-purpose AI systems. The vulnerability affects software components (drivers) used to build/run AI systems and data workflows. There is clear evidence of vulnerability type (RCE), affected versions, and conditions, satisfying the criteria for a security/safety vulnerability with sufficient evidence. Therefore it should be kept for AVID curation as a vulnerability in the AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "baseScore": 6.6,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-02-21"
+}

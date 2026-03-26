@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1622"
+  },
+  "affects": {
+    "developer": [
+      "modelscope"
+    ],
+    "deployer": [
+      "modelscope"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "modelscope/agentscope"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Path Traversal in modelscope/agentscope (CVE-2024-8551)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-8551"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/e0c0c294-f1e2-4f2c-a632-a9be9fd06989",
+      "url": "https://huntr.com/bounties/e0c0c294-f1e2-4f2c-a632-a9be9fd06989"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A path traversal vulnerability exists in the save-workflow and load-workflow functionality of modelscope/agentscope versions prior to the fix. This vulnerability allows an attacker to read and write arbitrary JSON files on the filesystem, potentially leading to the exposure or modification of sensitive information such as configuration files, API keys, and hardcoded passwords.\n\nReason for inclusion in AVID: The CVE describes a path traversal vulnerability in modelscope/agentscope's save-workflow and load-workflow, allowing an attacker to read and write arbitrary JSON files on the filesystem, potentially exposing or modifying sensitive information. This affects an AI software component used in AI pipelines, representing a software supply-chain issue for general-purpose AI systems. The vulnerability is security-related with clear impact (CWE-23, CVSS 3.0 base score 9.1). Evidence is provided in the CVE entry and CVSS details."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "baseScore": 9.1,
+      "baseSeverity": "CRITICAL",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-23",
+        "description": "CWE-23 Relative Path Traversal",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

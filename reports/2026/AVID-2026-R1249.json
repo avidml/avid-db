@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1249"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow Apache Hive Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow Hive Provider Beeline RCE with Principal (CVE-2023-35797)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-35797"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/31983",
+      "url": "https://github.com/apache/airflow/pull/31983"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/30y19ok07fw52x5hnkbhwqo3ho0wwc1y",
+      "url": "https://lists.apache.org/thread/30y19ok07fw52x5hnkbhwqo3ho0wwc1y"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2023/07/12/3",
+      "url": "http://www.openwall.com/lists/oss-security/2023/07/12/3"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Hive Provider.\nThis issue affects Apache Airflow Apache Hive Provider: before 6.1.1.\n\nBefore version 6.1.1 it was\u00a0possible to bypass the security check to RCE via\nprincipal parameter. For this to be\u00a0exploited it requires access to modifying the connection details.\n\nIt is recommended updating provider version to 6.1.1 in order to avoid this\u00a0vulnerability.\n\nReason for inclusion in AVID: CVE-2023-35797 describes an improper input validation vulnerability enabling remote code execution in Apache Airflow Hive Provider (before 6.1.1). Airflow is a workflow/orchestration tool commonly used in ML pipelines; vulnerabilities in such components affect the software supply chain for AI systems. The issue is in a software component used to build/deploy/run AI workflows, not hardware; it is a CVE-style security vulnerability with RCE. The report provides sufficient details and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-07-03"
+}

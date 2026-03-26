@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1520"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "ggerganov"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "llama.cpp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "llama.cpp allows Arbitrary Address Read in rpc_server::get_tensor (CVE-2024-42478)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-42478"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-5vm9-p64x-gqw9",
+      "url": "https://github.com/ggerganov/llama.cpp/security/advisories/GHSA-5vm9-p64x-gqw9"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/ggerganov/llama.cpp/commit/b72942fac998672a79a1ae3c03b340f7e629980b",
+      "url": "https://github.com/ggerganov/llama.cpp/commit/b72942fac998672a79a1ae3c03b340f7e629980b"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "llama.cpp provides LLM inference in C/C++. The unsafe `data` pointer member in the `rpc_tensor` structure can cause arbitrary address reading. This vulnerability is fixed in b3561.\n\nReason for inclusion in AVID: The CVE targets llama.cpp, a general-purpose AI inference library used in ML pipelines. It describes an out-of-bounds read vulnerability in a component (rpc_tensor) of llama.cpp that can be exploited remotely, which is a software vulnerability affecting AI software stacks used to build/serve AI models. The issue is in a software dependency/component relevant to AI systems, and there are references and a fix commit, providing sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-125",
+        "description": "CWE-125: Out-of-bounds Read",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-08-12"
+}

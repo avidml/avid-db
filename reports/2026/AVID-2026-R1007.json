@@ -1,0 +1,75 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1007"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-26526"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-26526"
+    },
+    {
+      "type": "source",
+      "label": "https://docs.conda.io/en/latest/miniconda.html",
+      "url": "https://docs.conda.io/en/latest/miniconda.html"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/continuumio/anaconda-issues/issues",
+      "url": "https://github.com/continuumio/anaconda-issues/issues"
+    },
+    {
+      "type": "source",
+      "label": "https://improsec.com/tech-blog/privilege-escalation-vulnerability-in-anaconda3-and-miniconda3",
+      "url": "https://improsec.com/tech-blog/privilege-escalation-vulnerability-in-anaconda3-and-miniconda3"
+    },
+    {
+      "type": "source",
+      "label": "https://repo.anaconda.com/miniconda/",
+      "url": "https://repo.anaconda.com/miniconda/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Anaconda Anaconda3 (Anaconda Distribution) through 2021.11.0.0 and Miniconda3 through 4.11.0.0 can create a world-writable directory under %PROGRAMDATA% and place that directory into the system PATH environment variable. Thus, for example, local users can gain privileges by placing a Trojan horse file into that directory. (This problem can only happen in a non-default installation. The person who installs the product must specify that it is being installed for all users. Also, the person who installs the product must specify that the system PATH should be changed.\n\nReason for inclusion in AVID: CVE-2022-26526 describes a privilege-escalation vulnerability in the Anaconda/Miniconda installer that can create a world-writable directory and insert it into PATH, enabling a local attacker to place a malicious file and gain privileges. Anaconda/Miniconda are widely used in AI/ML stacks to provision environments and dependencies, making this a software-supply-chain-impacting issue for general-purpose AI systems. It is a security vulnerability with practical impact and there is sufficient evidence in the report."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-03-17"
+}

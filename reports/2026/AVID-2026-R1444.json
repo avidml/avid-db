@@ -1,0 +1,96 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1444"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Pulsar"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Pulsar: Improper Input Validation in Pulsar Function Worker allows Remote Code Execution (CVE-2024-27135)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-27135"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/dh8nj2vmb2br6thjltq74lk9jxkz62wn",
+      "url": "https://lists.apache.org/thread/dh8nj2vmb2br6thjltq74lk9jxkz62wn"
+    },
+    {
+      "type": "source",
+      "label": "https://pulsar.apache.org/security/CVE-2024-27135/",
+      "url": "https://pulsar.apache.org/security/CVE-2024-27135/"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2024/03/12/9",
+      "url": "http://www.openwall.com/lists/oss-security/2024/03/12/9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper input validation in the Pulsar Function Worker allows a malicious authenticated user to execute arbitrary Java code on the Pulsar Function worker, outside of the sandboxes designated for running user-provided functions. This vulnerability also applies to the Pulsar Broker when it is configured with \"functionsWorkerEnabled=true\".\n\nThis issue affects Apache Pulsar versions from 2.4.0 to 2.10.5, from 2.11.0 to 2.11.3, from 3.0.0 to 3.0.2, from 3.1.0 to 3.1.2, and 3.2.0. \n\n2.10 Pulsar Function Worker users should upgrade to at least 2.10.6.\n2.11 Pulsar Function Worker users should upgrade to at least 2.11.4.\n3.0 Pulsar Function Worker users should upgrade to at least 3.0.3.\n3.1 Pulsar Function Worker users should upgrade to at least 3.1.3.\n3.2 Pulsar Function Worker users should upgrade to at least 3.2.1.\n\nUsers operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.\n\nReason for inclusion in AVID: CVE-2024-27135 describes remote code execution via improper input validation in Apache Pulsar's Function Worker, a software component commonly used in data pipelines and AI/ML workflows. This affects the software stack used to build/run AI systems (messaging/processing components), representing a genuine security vulnerability in a supply-chain-relevant dependency. The report provides CVSS details and patch guidance, giving sufficient signals for evaluation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "baseScore": 8.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "CHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-913",
+        "description": "CWE-913 Improper Control of Dynamically-Managed Code Resources",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20 Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-03-12"
+}

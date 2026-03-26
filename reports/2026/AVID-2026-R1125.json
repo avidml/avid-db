@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1125"
+  },
+  "affects": {
+    "developer": [
+      "fluent"
+    ],
+    "deployer": [
+      "fluent"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "fluentd"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Fluentd vulnerable to remote code execution due to insecure deserialization (in non-default configuration) (CVE-2022-39379)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-39379"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/fluent/fluentd/security/advisories/GHSA-fppq-mj76-fpj2",
+      "url": "https://github.com/fluent/fluentd/security/advisories/GHSA-fppq-mj76-fpj2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/fluent/fluentd/commit/48e5b85dab1b6d4c273090d538fc11b3f2fd8135",
+      "url": "https://github.com/fluent/fluentd/commit/48e5b85dab1b6d4c273090d538fc11b3f2fd8135"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MYD5QV66OLDHES6IKVYYM3Y3YID3VVCO/",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/MYD5QV66OLDHES6IKVYYM3Y3YID3VVCO/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Fluentd collects events from various data sources and writes them to files, RDBMS, NoSQL, IaaS, SaaS, Hadoop and so on. A remote code execution (RCE) vulnerability in non-default configurations of Fluentd allows unauthenticated attackers to execute arbitrary code via specially crafted JSON payloads. Fluentd setups are only affected if the environment variable `FLUENT_OJ_OPTION_MODE` is explicitly set to `object`. Please note: The option FLUENT_OJ_OPTION_MODE was introduced in Fluentd version 1.13.2. Earlier versions of Fluentd are not affected by this vulnerability. This issue was patched in version 1.15.3. As a workaround do not use `FLUENT_OJ_OPTION_MODE=object`.\n\nReason for inclusion in AVID: CVE-2022-39379 describes a remote code execution vulnerability in Fluentd via insecure deserialization when a non-default configuration (FLUENT_OJ_OPTION_MODE=object) is used. Fluentd is a data/logging component commonly used in data pipelines and AI workflows to ingest, process, and transport data for ML models and deployments. Therefore, this vulnerability affects a software component that can be part of the AI software stack (data/feature pipelines, logging/telemetry, deployment pipelines). It is a CVE-style security vulnerability (RCE via deserialization) with clear exploitation conditions and affected versions, and there is evidence of patched versions. This satisfies the criteria for an AI-relevant supply-chain vulnerability in general-purpose AI systems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "baseScore": 3.1,
+      "baseSeverity": "LOW",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-11-02"
+}

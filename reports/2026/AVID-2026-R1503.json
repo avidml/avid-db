@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1503"
+  },
+  "affects": {
+    "developer": [
+      "QNAP Systems Inc."
+    ],
+    "deployer": [
+      "QNAP Systems Inc."
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "QNAP AI Core"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "QNAP AI Core (CVE-2024-38647)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-38647"
+    },
+    {
+      "type": "source",
+      "label": "https://www.qnap.com/en/security-advisory/qsa-24-40",
+      "url": "https://www.qnap.com/en/security-advisory/qsa-24-40"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "An exposure of sensitive information vulnerability has been reported to affect QNAP AI Core. If exploited, the vulnerability could allow remote attackers to compromise the security of the system.\n\nWe have already fixed the vulnerability in the following version:\nQNAP AI Core 3.4.1 and later\n\nReason for inclusion in AVID: CVE-2024-38647 concerns QNAP AI Core, an AI software component used to provide AI capabilities on QNAP devices. This is a software vulnerability within an AI-related stack and could affect AI deployments running on or relying on QNAP AI Core. The issue is exploitable remotely and involves sensitive data exposure, with a fixed version (3.4.1+). This fits as a software supply-chain issue in AI systems (dependencies/runtime component) and has clear security impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-540",
+        "description": "CWE-540",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-200",
+        "description": "CWE-200",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-22"
+}

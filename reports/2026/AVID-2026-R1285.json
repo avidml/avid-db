@@ -1,0 +1,60 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1285"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "n/a"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-46492"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-46492"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/cd80/a75b618419d5afb137cd5a29e8156420",
+      "url": "https://gist.github.com/cd80/a75b618419d5afb137cd5a29e8156420"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cross Site Scripting vulnerability in MLDB.ai v.2017.04.17.0 allows a remote attacker to execute arbitrary code via a crafted payload to the public_html/doc/index.html.\n\nReason for inclusion in AVID: The AVID candidate describes CVE-2023-46492 affecting MLDB.ai, a machine learning/data platform. It is a software vulnerability in an AI software component used in ML workflows, with explicit remote code execution via crafted payload. This affects the AI stack/software supply chain, not hardware/firmware-only. The description and references provide sufficient signal."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2023-11-09"
+}

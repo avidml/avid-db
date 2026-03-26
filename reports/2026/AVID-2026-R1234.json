@@ -1,0 +1,88 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1234"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "MindSpore"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "MindSpore json_helper.cc UpdateArray memory corruption (CVE-2023-2970)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-2970"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.230176",
+      "url": "https://vuldb.com/?id.230176"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.230176",
+      "url": "https://vuldb.com/?ctiid.230176"
+    },
+    {
+      "type": "source",
+      "label": "https://gitee.com/mindspore/mindspore/issues/I73DOS",
+      "url": "https://gitee.com/mindspore/mindspore/issues/I73DOS"
+    },
+    {
+      "type": "source",
+      "label": "https://gitee.com/mindspore/mindspore/commit/30f4729ea2c01e1ed437ba92a81e2fc098d608a9",
+      "url": "https://gitee.com/mindspore/mindspore/commit/30f4729ea2c01e1ed437ba92a81e2fc098d608a9"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability classified as problematic was found in MindSpore 2.0.0-alpha/2.0.0-rc1. This vulnerability affects the function JsonHelper::UpdateArray of the file mindspore/ccsrc/minddata/dataset/util/json_helper.cc. The manipulation leads to memory corruption. The name of the patch is 30f4729ea2c01e1ed437ba92a81e2fc098d608a9. It is recommended to apply a patch to fix this issue. The identifier of this vulnerability is VDB-230176.\n\nReason for inclusion in AVID: CVE-2023-2970 describes a memory corruption vulnerability in MindSpore (an AI framework), affecting software used to build/train/deploy AI systems. It concerns a code path in the AI software stack (JsonHelper::UpdateArray) and has patch and CVE references, indicating a software vulnerability in AI supply chain components. Not hardware/firmware-only. The evidence supports a security vulnerability in AI software supply chain."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 3.5,
+      "baseSeverity": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-119",
+        "description": "CWE-119 Memory Corruption",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-05-30"
+}

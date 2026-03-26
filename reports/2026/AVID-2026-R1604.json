@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1604"
+  },
+  "affects": {
+    "developer": [
+      "h2oai"
+    ],
+    "deployer": [
+      "h2oai"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "h2oai/h2o-3"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Denial of Service in h2oai/h2o-3 (CVE-2024-7768)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7768"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/3fe640df-bef4-4072-8890-0d12bc2818f6",
+      "url": "https://huntr.com/bounties/3fe640df-bef4-4072-8890-0d12bc2818f6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability in the `/3/ImportFiles` endpoint of h2oai/h2o-3 version 3.46.1 allows an attacker to cause a denial of service. The endpoint takes a single GET parameter, `path`, which can be recursively set to reference itself. This leads the server to repeatedly call its own endpoint, eventually filling up the request queue and leaving the server unable to handle other requests.\n\nReason for inclusion in AVID: The CVE describes a denial-of-service vulnerability in h2oai/h2o-3, a machine learning framework/library. It is a software vulnerability in a component used to build/deploy AI systems, with impact on availability in AI tooling and pipelines. This is within the software supply chain for general-purpose AI, since H2O-3 is commonly used in ML workflows. The report provides concrete details (endpoint, parameter abuse, CVSS, CWE) sufficient for evaluation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-770",
+        "description": "CWE-770 Allocation of Resources Without Limits or Throttling",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-03-20"
+}

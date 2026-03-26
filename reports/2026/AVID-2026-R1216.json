@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1216"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow AWS Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow AWS Provider: Arbitrary file read via AWS provider (CVE-2023-25956)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25956"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/29587",
+      "url": "https://github.com/apache/airflow/pull/29587"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/07pl9y4gdpw2c6rzqm77dvkm2z2kb5gv",
+      "url": "https://lists.apache.org/thread/07pl9y4gdpw2c6rzqm77dvkm2z2kb5gv"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Generation of Error Message Containing Sensitive Information vulnerability in the Apache Airflow AWS Provider.\n\nThis issue affects Apache Airflow AWS Provider versions before 7.2.1.\n\nReason for inclusion in AVID: CVE-2023-25956 describes an Arbitrary file read vulnerability in the Apache Airflow AWS Provider. Airflow is commonly used to orchestrate data/ML pipelines and AI workflows, making this a vulnerability in a component that can be part of the software supply chain for general-purpose AI systems. It is a security vulnerability with potential impact on AI data/models when used in AI deployments. The CVE and references provide sufficient signal and affected versions."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-209",
+        "description": "CWE-209 Generation of Error Message Containing Sensitive Information",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-02-24"
+}

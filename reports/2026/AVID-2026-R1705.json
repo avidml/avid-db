@@ -1,0 +1,86 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1705"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "hiyouga"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "LLaMA-Factory"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "LLaMA-Factory Allows Arbitrary Code Execution via Unsafe Deserialization in Ilamafy_baichuan2.py (CVE-2025-46567)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-46567"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hiyouga/LLaMA-Factory/security/advisories/GHSA-f2f7-gj54-6vpv",
+      "url": "https://github.com/hiyouga/LLaMA-Factory/security/advisories/GHSA-f2f7-gj54-6vpv"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hiyouga/LLaMA-Factory/commit/2989d39239d2f46e584c1e1180ba46b9768afb2a",
+      "url": "https://github.com/hiyouga/LLaMA-Factory/commit/2989d39239d2f46e584c1e1180ba46b9768afb2a"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "LLama Factory enables fine-tuning of large language models. Prior to version 1.0.0, a critical vulnerability exists in the `llamafy_baichuan2.py` script of the LLaMA-Factory project. The script performs insecure deserialization using `torch.load()` on user-supplied `.bin` files from an input directory. An attacker can exploit this behavior by crafting a malicious `.bin` file that executes arbitrary commands during deserialization. This issue has been patched in version 1.0.0.\n\nReason for inclusion in AVID: The CVE targets LLaMA-Factory, a tool used in AI model fine-tuning pipelines. It describes arbitrary code execution via unsafe deserialization of user-supplied model binaries, a software vulnerability within a component used to build/deploy AI systems. This directly affects the software supply chain for general-purpose AI systems (model training/fine-tuning tooling) and is CVE-documented with a patch. Therefore, it should be kept for AVID curation as a software supply-chain vulnerability in AI ecosystems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:L/A:L",
+      "baseScore": 6.1,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "LOW"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502: Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-05-01"
+}

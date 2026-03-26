@@ -1,0 +1,91 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1560"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "hiyouga"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "LLaMA-Factory"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "LLama Factory Remote OS Command Injection Vulnerability (CVE-2024-52803)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-52803"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hiyouga/LLaMA-Factory/security/advisories/GHSA-hj3w-wrh4-44vp",
+      "url": "https://github.com/hiyouga/LLaMA-Factory/security/advisories/GHSA-hj3w-wrh4-44vp"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/hiyouga/LLaMA-Factory/commit/b3aa80d54a67da45e9e237e349486fb9c162b2ac",
+      "url": "https://github.com/hiyouga/LLaMA-Factory/commit/b3aa80d54a67da45e9e237e349486fb9c162b2ac"
+    },
+    {
+      "type": "source",
+      "label": "https://gist.github.com/superboy-zjc/f2d2b93ae511c445ba97e144b70e534d",
+      "url": "https://gist.github.com/superboy-zjc/f2d2b93ae511c445ba97e144b70e534d"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "LLama Factory enables fine-tuning of large language models. A critical remote OS command injection vulnerability has been identified in the LLama Factory training process. This vulnerability arises from improper handling of user input, allowing malicious actors to execute arbitrary OS commands on the host system. The issue is caused by insecure usage of the `Popen` function with `shell=True`, coupled with unsanitized user input. Immediate remediation is required to mitigate the risk. This vulnerability is fixed in 0.9.1.\n\nReason for inclusion in AVID: The CVE describes a remote OS command injection vulnerability in LLama Factory (LLaMA-Factory) used to fine-tune LLMs. This is a software vulnerability in AI tooling that could be exploited to execute arbitrary commands on the host, impacting AI model training/serving pipelines. The issue affects software used to build/run AI systems and has a fixed version 0.9.1. It is a software supply-chain-relevant vulnerability in AI tooling."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "baseScore": 7.5,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-11-21"
+}

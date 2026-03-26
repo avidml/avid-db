@@ -1,0 +1,72 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1248"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow ODBC Provider"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow ODBC Provider: Remote code execution vulnerability (CVE-2023-34395)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-34395"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/apache/airflow/pull/31713",
+      "url": "https://github.com/apache/airflow/pull/31713"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/l26yykftzbhc9tgcph8cso88bc2lqwwd",
+      "url": "https://lists.apache.org/thread/l26yykftzbhc9tgcph8cso88bc2lqwwd"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Apache Software Foundation Apache Airflow ODBC Provider.\nIn OdbcHook, A privilege escalation vulnerability exists in a system due to controllable ODBC driver parameters that allow the loading of arbitrary dynamic-link libraries, resulting in command execution.\nStarting version 4.0.0 driver can be set only from the hook constructor.\nThis issue affects Apache Airflow ODBC Provider: before 4.0.0.\n\nReason for inclusion in AVID: The CVE describes a remote code execution vulnerability in Apache Airflow ODBC Provider, a software component commonly used in AI/ML data pipelines and orchestration. It affects a dependency used to build, deploy, or run AI systems (Airflow/OdbcHook), enabling arbitrary DLL loading and command execution. This is a security vulnerability affecting software supply chain elements (dependencies/orchestrators) used in general-purpose AI systems. Sufficient evidence is provided in the report: CVE description, CWE-88, affected version range, and references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-88",
+        "description": "CWE-88: Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-06-27"
+}

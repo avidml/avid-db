@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1268"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Avro Java SDK"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Avro Java SDK: Memory when deserializing untrusted data in Avro Java SDK (CVE-2023-39410)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-39410"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds",
+      "url": "https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds"
+    },
+    {
+      "type": "source",
+      "label": "https://www.openwall.com/lists/oss-security/2023/09/29/6",
+      "url": "https://www.openwall.com/lists/oss-security/2023/09/29/6"
+    },
+    {
+      "type": "source",
+      "label": "https://security.netapp.com/advisory/ntap-20240621-0006/",
+      "url": "https://security.netapp.com/advisory/ntap-20240621-0006/"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "When deserializing untrusted or corrupted data, it is possible for a reader to consume memory beyond the allowed constraints and thus lead to out of memory on the system.\n\nThis issue affects Java applications using Apache Avro Java SDK up to and including 1.11.2.  Users should update to apache-avro version 1.11.3 which addresses this issue.\n\nReason for inclusion in AVID: CVE-2023-39410 is a deserialization vulnerability in the Apache Avro Java SDK that can cause memory exhaustion when processing untrusted data. Apache Avro is a widely used data serialization library in data pipelines and ML/AI workflows for training, feature processing, and data serving. As such, it is a software component commonly used in AI system stacks; vulnerabilities in it constitute a software supply chain issue for AI systems. The CVE describes a security vulnerability (DoS via memory exhaustion) with actionable remediation (update to 1.11.3). The evidence provided (CVE description, affected versions, and remediation) is sufficient to classify this as a vulnerability affecting AI software supply chains."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization of Untrusted Data",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-09-29"
+}

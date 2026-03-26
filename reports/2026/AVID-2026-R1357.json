@@ -1,0 +1,88 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1357"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "DeepFaceLab"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "DeepFaceLab Util.py deserialization (CVE-2024-0654)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-0654"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.251382",
+      "url": "https://vuldb.com/?id.251382"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.251382",
+      "url": "https://vuldb.com/?ctiid.251382"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bayuncao/vul-cve-4",
+      "url": "https://github.com/bayuncao/vul-cve-4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/bayuncao/vul-cve-4/blob/main/picture/1071705290840_.pic_hd.jpg",
+      "url": "https://github.com/bayuncao/vul-cve-4/blob/main/picture/1071705290840_.pic_hd.jpg"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability, which was classified as problematic, was found in DeepFaceLab pretrained DF.wf.288res.384.92.72.22. Affected is an unknown function of the file mainscripts/Util.py. The manipulation leads to deserialization. Local access is required to approach this attack. The exploit has been disclosed to the public and may be used. VDB-251382 is the identifier assigned to this vulnerability.\n\nReason for inclusion in AVID: CVE-2024-0654 describes a deserialization vulnerability in DeepFaceLab's Util.py, enabling potential exploitation via crafted input with local access. This is a software vulnerability in an AI-related tool used in ML workflows (deepfake/AI model tooling), affecting an artifact within the AI software stack. The issue is in a component that can be used to build/run AI systems, not purely hardware/firmware. The report provides CVE details, CWE type (Deserialization), CVSS data, and public references, giving sufficient signal for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-502",
+        "description": "CWE-502 Deserialization",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-01-18"
+}

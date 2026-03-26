@@ -1,0 +1,67 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0930"
+  },
+  "affects": {
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "deployer": [
+      "Apache Software Foundation"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Apache Airflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Apache Airflow: Reflected XSS via Origin Query Argument in URL (CVE-2021-45229)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-45229"
+    },
+    {
+      "type": "source",
+      "label": "https://lists.apache.org/thread/phx76cgtmhwwdy780rvwhobx8qoy4bnk",
+      "url": "https://lists.apache.org/thread/phx76cgtmhwwdy780rvwhobx8qoy4bnk"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "It was discovered that the \"Trigger DAG with config\" screen was susceptible to XSS attacks via the `origin` query argument. This issue affects Apache Airflow versions 2.2.3 and below.\n\nReason for inclusion in AVID: CVE-2021-45229 describes a reflected XSS vulnerability in Apache Airflow's web UI (Origin query parameter) affecting versions <= 2.2.3. Apache Airflow is a widely used component for orchestrating ML/data pipelines, deployment, and runtime workflows in AI systems. As such, a security vulnerability in Airflow constitutes a software supply chain issue relevant to AI systems, and the report provides explicit vulnerability behavior and affected versions with references."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-02-25"
+}

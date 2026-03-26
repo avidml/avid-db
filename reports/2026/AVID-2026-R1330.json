@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1330"
+  },
+  "affects": {
+    "developer": [
+      "kubeflow"
+    ],
+    "deployer": [
+      "kubeflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "kubeflow/kubeflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Cross-site Scripting (XSS) - Reflected in kubeflow/kubeflow (CVE-2023-6571)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6571"
+    },
+    {
+      "type": "source",
+      "label": "https://huntr.com/bounties/f02781e7-2a53-4c66-aa32-babb16434632",
+      "url": "https://huntr.com/bounties/f02781e7-2a53-4c66-aa32-babb16434632"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Cross-site Scripting (XSS) - Reflected in kubeflow/kubeflow\n\nReason for inclusion in AVID: CVE-2023-6571 describes a reflected cross-site scripting (XSS) vulnerability in Kubeflow UI. Kubeflow is a platform used to build, deploy, and manage AI workflows, making it a software component within AI stacks. This constitutes a security vulnerability in a software component that supports AI systems, i.e., a potential supply-chain element for general-purpose AI deployments. The CVE entry and CWE-79 signaling provide explicit vulnerability behavior and impact. Therefore, it satisfies AI relevance, supply-chain relevance (as a dependent/runner in AI pipelines), security impact, and sufficiency of evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.0",
+      "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "baseScore": 5.4,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "REQUIRED",
+      "scope": "CHANGED",
+      "confidentialityImpact": "LOW",
+      "integrityImpact": "LOW",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-79",
+        "description": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-12-14"
+}

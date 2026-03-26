@@ -1,0 +1,77 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1668"
+  },
+  "affects": {
+    "developer": [
+      "HumanSignal"
+    ],
+    "deployer": [
+      "HumanSignal"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "label-studio"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Label Studio has a Path Traversal Vulnerability via image Field (CVE-2025-25295)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-25295"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/HumanSignal/label-studio/security/advisories/GHSA-rgv9-w7jp-m23g",
+      "url": "https://github.com/HumanSignal/label-studio/security/advisories/GHSA-rgv9-w7jp-m23g"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/HumanSignal/label-studio-sdk/commit/4a9715c6b0b619371e89c09ea8d1c86ce5c880df",
+      "url": "https://github.com/HumanSignal/label-studio-sdk/commit/4a9715c6b0b619371e89c09ea8d1c86ce5c880df"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "Label Studio is an open source data labeling tool. A path traversal vulnerability in Label Studio SDK versions prior to 1.0.10 allows unauthorized file access outside the intended directory structure. The flaw exists in the VOC, COCO and YOLO export functionalities. These functions invoke a `download` function on the `label-studio-sdk` python package, which fails to validate file paths when processing image references during task exports. By creating tasks with path traversal sequences in the image field, an attacker can force the application to read files from arbitrary server filesystem locations when exporting projects in any of the mentioned formats. This is authentication-required vulnerability allowing arbitrary file reads from the server filesystem. It may lead to potential exposure of sensitive information like configuration files, credentials, and confidential data. Label Studio versions before 1.16.0 specified SDK versions prior to 1.0.10 as dependencies, and the issue was confirmed in Label Studio version 1.13.2.dev0; therefore, Label Studio users should upgrade to 1.16.0 or newer to mitigate it.\n\nReason for inclusion in AVID: CVE-2025-25295 describes a path traversal vulnerability in Label Studio's SDK used during task export, allowing unauthorized reads of arbitrary server files. As Label Studio (a data labeling/tooling stack) is used to prepare and curate data for ML/AI pipelines, this is a software supply-chain issue in components (data labeling, SDKs, export tooling) that are part of building/training AI systems. The vulnerability is security-related (path traversal, file read), has clear affected versions and upgrade mitigation, and the report provides sufficient evidence (CVE entry, affected versions, impact, references). Thus it should be kept for AVID curation."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-22",
+        "description": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "lang": "en"
+      },
+      {
+        "cweId": "CWE-26",
+        "description": "CWE-26: Path Traversal: '/dir/../filename'",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2025-02-14"
+}

@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1189"
+  },
+  "affects": {
+    "developer": [
+      "NVIDIA"
+    ],
+    "deployer": [
+      "NVIDIA"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "vGPU software"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2023-25517"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-25517"
+    },
+    {
+      "type": "source",
+      "label": "https://nvidia.custhelp.com/app/answers/detail/a_id/5468",
+      "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5468"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "NVIDIA vGPU software contains a vulnerability in the Virtual GPU Manager (vGPU plugin), where a guest OS may be able to control resources for which it is not authorized, which may lead to information disclosure and data tampering.\n\nReason for inclusion in AVID: CVE-2023-25517 describes a vulnerability in NVIDIA vGPU software (vGPU plugin) that allows a guest OS to access resources it is not authorized to control, leading to information disclosure and data tampering. This is a software component in the GPU virtualization stack used to run AI workloads, i.e., part of the software supply chain for general-purpose AI systems. It is a security vulnerability with local access requirements."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "baseScore": 7.1,
+      "baseSeverity": "HIGH",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "NONE"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-285",
+        "description": "CWE-285",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-07-03"
+}

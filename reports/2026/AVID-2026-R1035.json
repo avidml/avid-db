@@ -1,0 +1,116 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1035"
+  },
+  "affects": {
+    "developer": [
+      "tensorflow"
+    ],
+    "deployer": [
+      "tensorflow"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "tensorflow"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Core dump when loading TFLite models with quantization in TensorFlow (CVE-2022-29212)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-29212"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.6.4"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.7.2"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.8.1"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8wwm-6264-x792",
+      "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8wwm-6264-x792"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/issues/43661",
+      "url": "https://github.com/tensorflow/tensorflow/issues/43661"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/commit/a989426ee1346693cc015792f11d715f6944f2b8",
+      "url": "https://github.com/tensorflow/tensorflow/commit/a989426ee1346693cc015792f11d715f6944f2b8"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/lite/kernels/internal/quantization_util.cc#L114-L123",
+      "url": "https://github.com/tensorflow/tensorflow/blob/f3b9bf4c3c0597563b289c0512e98d4ce81f886e/tensorflow/lite/kernels/internal/quantization_util.cc#L114-L123"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, certain TFLite models that were created using TFLite model converter would crash when loaded in the TFLite interpreter. The culprit is that during quantization the scale of values could be greater than 1 but code was always assuming sub-unit scaling. Thus, since code was calling `QuantizeMultiplierSmallerThanOneExp`, the `TFLITE_CHECK_LT` assertion would trigger and abort the process. Versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4 contain a patch for this issue.\n\nReason for inclusion in AVID: CVE-2022-29212 describes a core dump (availability impact) when loading TFLite models with quantization in TensorFlow, before patches were released. It is a software vulnerability in a widely used AI framework that directly affects AI model loading and execution, thus impacting general-purpose AI system stacks. The affected components are TensorFlow/TFLite runtime, a core dependency in AI pipelines, serving, and deployment. Evidence includes CVE details, affected versions, and references to fixes. Therefore it satisfies AI-related, GP AI supply chain, and security criteria with sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "baseScore": 5.5,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "LOCAL",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "LOW",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "NONE",
+      "integrityImpact": "NONE",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-20",
+        "description": "CWE-20: Improper Input Validation",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2022-05-20"
+}

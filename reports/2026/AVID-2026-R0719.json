@@ -1,0 +1,79 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R0719"
+  },
+  "affects": {
+    "developer": [
+      "n/a"
+    ],
+    "deployer": [
+      "n/a"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "qlib"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Deserialization of Untrusted Data (CVE-2021-23338)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23338"
+    },
+    {
+      "type": "source",
+      "label": "https://snyk.io/vuln/SNYK-PYTHON-QLIB-1054635",
+      "url": "https://snyk.io/vuln/SNYK-PYTHON-QLIB-1054635"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/418sec/huntr/pull/1329",
+      "url": "https://github.com/418sec/huntr/pull/1329"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "This affects all versions of package qlib. The workflow function in cli part of qlib was using an unsafe YAML load function.\n\nReason for inclusion in AVID: CVE-2021-23338 describes unsafe YAML deserialization in the qlib package, a library used in AI/ML workflows. This is a software vulnerability in a dependency used to build/run AI systems, affecting the software supply chain for general-purpose AI systems. It involves deserialization (security/safety vuln) with network-based access and potential impact on confidentiality, integrity, and availability. The report provides explicit details (unsafe YAML load function in CLI; qlib affected), offering sufficient evidence."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H/E:P/RL:U/RC:C",
+      "baseScore": 6.6,
+      "baseSeverity": "MEDIUM",
+      "attackVector": "NETWORK",
+      "attackComplexity": "HIGH",
+      "privilegesRequired": "HIGH",
+      "userInteraction": "NONE",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    }
+  },
+  "reported_date": "2021-02-15"
+}

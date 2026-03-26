@@ -1,0 +1,81 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1417"
+  },
+  "affects": {
+    "developer": [
+      "Meta"
+    ],
+    "deployer": [
+      "llama.cpp"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "llama.cpp"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2024-21802"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21802"
+    },
+    {
+      "type": "source",
+      "label": "https://talosintelligence.com/vulnerability_reports/TALOS-2024-1914",
+      "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2024-1914"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A heap-based buffer overflow vulnerability exists in the GGUF library info-&gt;ne functionality of llama.cpp Commit 18c2e17. A specially crafted .gguf file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.\n\nReason for inclusion in AVID: The CVE describes a heap-based buffer overflow in the GGUF handling of llama.cpp that can lead to code execution via a crafted .gguf file. This is a software vulnerability in a component (llama.cpp) used to load/infer AI models, affecting AI model loading/execution pipelines. It concerns software used to build/deploy/run AI systems (libraries, runtimes, artifact ecosystems) rather than hardware/firmware, thus relevant to the AI supply chain. The report provides explicit signals (CVE-2024-21802, CVSS 3.1 HIGH, references to NVD/Talos) that establish vulnerability and impact."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "baseScore": 8.8,
+      "baseSeverity": "HIGH",
+      "attackVector": "NETWORK",
+      "attackComplexity": "LOW",
+      "privilegesRequired": "NONE",
+      "userInteraction": "REQUIRED",
+      "scope": "UNCHANGED",
+      "confidentialityImpact": "HIGH",
+      "integrityImpact": "HIGH",
+      "availabilityImpact": "HIGH"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-122",
+        "description": "CWE-122: Heap-based Buffer Overflow",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2024-02-26"
+}

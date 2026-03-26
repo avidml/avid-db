@@ -1,0 +1,65 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1008"
+  },
+  "affects": {
+    "developer": [
+      "Jenkins project"
+    ],
+    "deployer": [
+      "Jenkins project"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "Jenkins CloudBees AWS Credentials Plugin"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "Vulnerability CVE-2022-27199"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-27199"
+    },
+    {
+      "type": "source",
+      "label": "https://www.jenkins.io/security/advisory/2022-03-15/#SECURITY-2351",
+      "url": "https://www.jenkins.io/security/advisory/2022-03-15/#SECURITY-2351"
+    },
+    {
+      "type": "source",
+      "label": "http://www.openwall.com/lists/oss-security/2022/03/15/2",
+      "url": "http://www.openwall.com/lists/oss-security/2022/03/15/2"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A missing permission check in Jenkins CloudBees AWS Credentials Plugin 189.v3551d5642995 and earlier allows attackers with Overall/Read permission to connect to an AWS service using an attacker-specified token.\n\nReason for inclusion in AVID: CVE-2022-27199 describes a missing permission check in Jenkins CloudBees AWS Credentials Plugin, enabling attackers with Overall/Read permission to connect to AWS using attacker-specified tokens. The plugin is a software component commonly used in CI/CD pipelines, including AI/ML workflows, and represents a software supply chain dependency affecting building/deploying AI systems. This is a security vulnerability with potential impact on AI deployments and data access. The AVID evidence is provided by the NVD entry and Jenkins advisory, which is sufficient signal for classification."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    }
+  },
+  "reported_date": "2022-03-15"
+}

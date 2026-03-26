@@ -1,0 +1,88 @@
+{
+  "data_type": "AVID",
+  "data_version": "0.2",
+  "metadata": {
+    "report_id": "AVID-2026-R1217"
+  },
+  "affects": {
+    "developer": [
+      "OpenCV"
+    ],
+    "deployer": [
+      "OpenCV"
+    ],
+    "artifacts": [
+      {
+        "type": "System",
+        "name": "wechat_qrcode Module"
+      }
+    ]
+  },
+  "problemtype": {
+    "classof": "CVE Entry",
+    "type": "Advisory",
+    "description": {
+      "lang": "eng",
+      "value": "OpenCV wechat_qrcode Module decoded_bit_stream_parser.cpp decodeHanziSegment memory leak (CVE-2023-2618)"
+    }
+  },
+  "references": [
+    {
+      "type": "source",
+      "label": "NVD entry",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-2618"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?id.228548",
+      "url": "https://vuldb.com/?id.228548"
+    },
+    {
+      "type": "source",
+      "label": "https://vuldb.com/?ctiid.228548",
+      "url": "https://vuldb.com/?ctiid.228548"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/opencv/opencv_contrib/pull/3484",
+      "url": "https://github.com/opencv/opencv_contrib/pull/3484"
+    },
+    {
+      "type": "source",
+      "label": "https://github.com/opencv/opencv_contrib/pull/3484/commits/2b62ff6181163eea029ed1cab11363b4996e9cd6",
+      "url": "https://github.com/opencv/opencv_contrib/pull/3484/commits/2b62ff6181163eea029ed1cab11363b4996e9cd6"
+    }
+  ],
+  "description": {
+    "lang": "eng",
+    "value": "A vulnerability, which was classified as problematic, has been found in OpenCV wechat_qrcode Module up to 4.7.0. Affected by this issue is the function DecodedBitStreamParser::decodeHanziSegment of the file qrcode/decoder/decoded_bit_stream_parser.cpp. The manipulation leads to memory leak. The attack may be launched remotely. The name of the patch is 2b62ff6181163eea029ed1cab11363b4996e9cd6. It is recommended to apply a patch to fix this issue. The identifier of this vulnerability is VDB-228548.\n\nReason for inclusion in AVID: This CVE concerns a memory leak vulnerability in OpenCV's wechat_qrcode module affecting QR code decoding. OpenCV is a widely-used library in AI/ML pipelines and computer vision applications; the issue is in a software dependency/tooling used to build/run AI systems. It is a CVE with a patch and references, representing a software supply-chain vulnerability in general-purpose AI ecosystems."
+  },
+  "impact": {
+    "avid": {
+      "risk_domain": [
+        "Security"
+      ],
+      "sep_view": [
+        "S0100: Software Vulnerability"
+      ],
+      "lifecycle_view": [
+        "L06: Deployment"
+      ],
+      "taxonomy_version": "0.2"
+    },
+    "cvss": {
+      "version": "3.1",
+      "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "baseScore": 5.3,
+      "baseSeverity": "MEDIUM"
+    },
+    "cwe": [
+      {
+        "cweId": "CWE-401",
+        "description": "CWE-401 Memory Leak",
+        "lang": "en"
+      }
+    ]
+  },
+  "reported_date": "2023-05-10"
+}
