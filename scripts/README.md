@@ -14,6 +14,28 @@ python mileva.py --output-dir ../../avid-db/reports/review
 
 This creates timestamped JSONL files like `cve_digest_20251206_143052.jsonl` in the review folder.
 
+For the AI-CVE-Analyser AI supply chain dataset, use:
+
+```bash
+cd avid-db/scripts
+python generate_ai_supply_chain_cve_reports.py
+```
+
+This downloads the CSV into `reports/review/`, fetches the AI-Supply-Chain CVEs through the `avidtools` CVE connector, shows async progress with `tqdm`, and writes `ai_supply_chain_cve_reports_2021_2025_openai_gpt-4o-mini.jsonl`.
+
+To run an LLM filter that double-checks whether each report is truly about the
+supply chain of general-purpose AI systems and suitable for AVID curation,
+and keep only passing entries:
+
+```bash
+cd avid-db/scripts
+python filter_ai_supply_chain_for_avid.py
+```
+
+This writes:
+- decisions with reasoning: `reports/review/ai_supply_chain_cve_reports_2021_2025_openai_gpt-4o-mini.filter_decisions.jsonl`
+- pass-only reports: `reports/review/ai_supply_chain_cve_reports_2021_2025_openai_gpt-4o-mini.filtered_pass.jsonl`
+
 ### Step 2: Review and Publishing
 Use `avid-db/scripts/publish.py` to:
 - Assign AVID Report IDs
@@ -41,6 +63,13 @@ python publish.py ../reports/review/cve_digest_20251206_143052.jsonl --year 2025
 
 ### `publish.py`
 Main publishing script for processing reports from the review folder.
+
+### `generate_ai_supply_chain_cve_reports.py`
+Downloads the AI-CVE-Analyser CSV, filters `AI-Supply-Chain` rows, converts matching CVEs into AVID reports with the `avidtools` CVE connector, and writes a review JSONL.
+
+### `filter_ai_supply_chain_for_avid.py`
+Runs an LLM review filter over the generated AI supply-chain report JSONL,
+records pass/fail reasoning per report, and writes a pass-only JSONL.
 
 **Arguments:**
 - `input_path`: Path to JSONL or JSON file containing reports
