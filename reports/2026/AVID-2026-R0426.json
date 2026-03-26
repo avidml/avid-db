@@ -41,13 +41,13 @@
       "url": "https://antigravity.google/"
     },
     {
-      "label": "Forbes: Google’s Hot New AI Coding Tool Was Hacked A Day After Launch",
+      "label": "Forbes: Google\u2019s Hot New AI Coding Tool Was Hacked A Day After Launch",
       "url": "https://www.forbes.com/sites/thomasbrewster/2025/11/26/google-antigravity-ai-hacked/"
     }
   ],
   "description": {
     "lang": "eng",
-    "value": "Within 24 hours of launch, our team leveraging Mindgard technology identified a flaw in the new Google Antigravity IDE where a malicious “trusted workspace” (a required prerequisite to use the product) can embed a persistent backdoor to execute arbitrary code. This code then triggers on any future application launch, even when no specific project is opened. In effect, a compromised workspace becomes a long-term backdoor into every new session. Even after a complete uninstall and re-install of Antigravity, the backdoor remains in effect. Because Antigravity’s core intended design requires trusted workspace access, the vulnerability translates into cross-workspace risk, meaning one tainted workspace can impact all subsequent usage of Antigravity regardless of trust settings."
+    "value": "Within 24 hours of launch, our team leveraging Mindgard technology identified a flaw in the new Google Antigravity IDE where a malicious \u201ctrusted workspace\u201d (a required prerequisite to use the product) can embed a persistent backdoor to execute arbitrary code. This code then triggers on any future application launch, even when no specific project is opened. In effect, a compromised workspace becomes a long-term backdoor into every new session. Even after a complete uninstall and re-install of Antigravity, the backdoor remains in effect. Because Antigravity\u2019s core intended design requires trusted workspace access, the vulnerability translates into cross-workspace risk, meaning one tainted workspace can impact all subsequent usage of Antigravity regardless of trust settings."
   },
   "credit": [
     {
@@ -60,5 +60,5 @@
     }
   ],
   "reported_date": "2025-11-19",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }

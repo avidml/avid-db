@@ -39,7 +39,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "The Zed IDE loads Language Server Protocol (LSP) configurations from the settings.json file located within a project’s .zed subdirectory. A malicious LSP configuration can contain arbitrary shell commands that run on the host system with the privileges of the user running the IDE. This can be triggered when a user opens project file for which there is an LSP entry."
+    "value": "The Zed IDE loads Language Server Protocol (LSP) configurations from the settings.json file located within a project\u2019s .zed subdirectory. A malicious LSP configuration can contain arbitrary shell commands that run on the host system with the privileges of the user running the IDE. This can be triggered when a user opens project file for which there is an LSP entry."
   },
   "credit": [
     {
@@ -52,5 +52,5 @@
     }
   ],
   "reported_date": "2025-11-16",
-  "data_version": "0.3.2"
+  "data_version": "0.3.3"
 }

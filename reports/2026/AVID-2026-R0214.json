@@ -1,6 +1,6 @@
 {
   "data_type": "AVID",
-  "data_version": "0.3.2",
+  "data_version": "0.3.3",
   "metadata": {
     "report_id": "AVID-2026-R0214"
   },
@@ -55,7 +55,7 @@
   ],
   "description": {
     "lang": "eng",
-    "value": "OpenClaw (formerly  Clawdbot) is a personal AI assistant you run on your own devices. Prior to 2026.1.29, a command injection vulnerability existed in OpenClaw’s Docker sandbox execution mechanism due to unsafe handling of the PATH environment variable when constructing shell commands. An authenticated user able to control environment variables could influence command execution within the container context. This vulnerability is fixed in 2026.1.29."
+    "value": "OpenClaw (formerly  Clawdbot) is a personal AI assistant you run on your own devices. Prior to 2026.1.29, a command injection vulnerability existed in OpenClaw\u2019s Docker sandbox execution mechanism due to unsafe handling of the PATH environment variable when constructing shell commands. An authenticated user able to control environment variables could influence command execution within the container context. This vulnerability is fixed in 2026.1.29."
   },
   "impact": {
     "avid": {
